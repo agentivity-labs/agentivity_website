@@ -1,0 +1,194 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+
+const posts = (await getCollection('blog'))
+  .filter(p => p.data.lang !== 'fr' && !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Agentivity Blog",
+  "description": "Articles on AI agents, multi-agent systems, automation, and the future of AI-powered work.",
+  "url": "https://agentivity.io/blog"
+};
+---
+<Base
+  title="Blog — AI Agents, Multi-Agent Systems & Automation | Agentivity"
+  description="Articles on building AI agent teams, multi-agent architectures, workflow automation, and practical guides for using Agentivity."
+  schema={schema}
+>
+  <Nav lang={lang} />
+
+  <!-- HERO -->
+  <section class="s-black blog-hero">
+    <div class="blog-hero-bg" aria-hidden="true"></div>
+    <div class="wrap blog-hero-inner">
+      <span class="eyebrow" style="color:var(--violet-l)">Blog</span>
+      <h1 class="h1 blog-h1">Thoughts on<br /><span class="grad-text">AI teams.</span></h1>
+      <p class="blog-sub">
+        Guides, architecture deep-dives, and practical articles on building
+        multi-agent systems that actually work.
+      </p>
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <section class="s-navy blog-list-section">
+    <div class="wrap">
+
+{posts.length === 0 ? (
+        <p class="blog-empty">No posts yet — check back soon.</p>
+      ) : (
+        <div class="blog-grid">
+          {posts.map((post, i) => (
+            <article class={`blog-card ${i === 0 ? 'blog-card--featured' : ''}`}>
+              <a href={`/blog/${post.id.replace(/\.(md|mdx)$/, '')}`} class="blog-card-link" aria-label={post.data.title}>
+
+                <div class="blog-card-meta">
+                  <time datetime={post.data.pubDate.toISOString()} class="blog-date">
+                    {formatDate(post.data.pubDate)}
+                  </time>
+                  {post.data.tags.slice(0, 2).map(tag => (
+                    <span class="blog-tag">{tag}</span>
+                  ))}
+                </div>
+
+                <h2 class="blog-card-title">{post.data.title}</h2>
+                <p class="blog-card-desc">{post.data.description}</p>
+
+                <div class="blog-card-footer">
+                  <span class="blog-author">{post.data.author}</span>
+                  <span class="blog-read-more">Read →</span>
+                </div>
+
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Base>
+
+<style>
+/* ── Hero ── */
+.blog-hero { padding: 120px 0 80px; position: relative; overflow: hidden; }
+.blog-hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 55% at 70% 20%, rgba(109,0,245,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 40% at 10% 80%, rgba(0,207,255,.06) 0%, transparent 60%);
+}
+.blog-hero-inner { position: relative; z-index: 1; }
+.blog-h1 { font-size: clamp(48px, 8vw, 96px); margin: 16px 0 20px; letter-spacing: -.05em; line-height: 1.05; }
+.blog-sub { font-size: clamp(16px, 1.3vw, 18px); color: rgba(255,255,255,.45); line-height: 1.75; max-width: 50ch; }
+
+/* ── List ── */
+.blog-list-section { padding: 80px 0 100px; }
+.blog-empty { color: rgba(255,255,255,.3); font-size: 16px; padding: 40px 0; }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 960px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+/* Featured card — spans 2 columns */
+.blog-card--featured {
+  grid-column: span 2;
+}
+@media (max-width: 600px) { .blog-card--featured { grid-column: span 1; } }
+
+.blog-card {
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.025);
+  transition: border-color .2s, background .2s;
+  overflow: hidden;
+}
+.blog-card:hover {
+  border-color: rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+.blog-card--featured {
+  border-color: rgba(139,47,248,.2);
+  background: rgba(109,0,245,.05);
+}
+.blog-card--featured:hover {
+  border-color: rgba(139,47,248,.35);
+  background: rgba(109,0,245,.09);
+}
+
+.blog-card-link {
+  display: flex; flex-direction: column;
+  padding: 32px;
+  text-decoration: none;
+  height: 100%;
+  gap: 14px;
+}
+
+.blog-card-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.blog-date {
+  font-size: 12px; color: rgba(255,255,255,.3);
+  font-family: 'JetBrains Mono', monospace;
+}
+.blog-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 999px;
+  background: rgba(109,0,245,.15);
+  color: rgba(139,47,248,.9);
+  border: 1px solid rgba(109,0,245,.25);
+}
+
+.blog-card-title {
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  flex: 1;
+}
+.blog-card--featured .blog-card-title {
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.blog-card-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.blog-author { font-size: 12px; color: rgba(255,255,255,.25); }
+.blog-read-more {
+  font-size: 13px; font-weight: 600; color: var(--violet-l);
+  transition: color .15s;
+}
+.blog-card:hover .blog-read-more { color: #fff; }
+</style>

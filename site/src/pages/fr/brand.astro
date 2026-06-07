@@ -1,0 +1,259 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'fr';
+
+const colors = [
+  { name: 'Rouge',   cssVar: '--red',    hex: '#FF0A30', dark: false, label: 'Primaire · CTA · Accents' },
+  { name: 'Violet',  cssVar: '--violet', hex: '#6D00F5', dark: false, label: 'Secondaire · Liens · Tags' },
+  { name: 'Menthe',  cssVar: '--mint',   hex: '#00C896', dark: false, label: 'Synergi · Succès' },
+  { name: 'Cyan',    cssVar: '--cyan',   hex: '#00CFFF', dark: false, label: 'Topologies · Info' },
+  { name: 'Navy',    cssVar: '--navy',   hex: '#0D1B35', dark: true,  label: 'Fonds de section sombre' },
+  { name: 'Noir',    cssVar: '--black',  hex: '#0A0F1E', dark: true,  label: 'Hero · Sections sombres' },
+  { name: 'Perle',   cssVar: '--pearl',  hex: '#F0F2FF', dark: false, label: 'Fonds de section claire' },
+  { name: 'Blanc',   cssVar: '--white',  hex: '#FFFFFF', dark: false, label: 'Fond de base' },
+];
+---
+<Base
+  title="Brand Kit — Agentivity"
+  description="Charte graphique Agentivity — logos, couleurs, typographie et règles d'utilisation.">
+
+<Nav lang={lang} />
+
+<div class="brand-page">
+
+  <section class="brand-hero s-black dots">
+    <div class="blob" style="width:500px;height:500px;background:rgba(109,0,245,.15);top:-160px;left:-100px"></div>
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--violet)">Brand Kit</span>
+      <h1 class="h1" style="margin-top:16px;color:#fff">
+        Construire avec <span class="u-red">Agentivity.</span><br />
+        <span class="grad-text">Rester cohérent.</span>
+      </h1>
+      <p style="color:rgba(255,255,255,.65);font-size:clamp(16px,1.4vw,19px);max-width:44ch;margin-top:20px;line-height:1.7">
+        Les règles d'utilisation de la marque Agentivity — logos, couleurs, typographie et directives pour garder une identité cohérente.
+      </p>
+    </div>
+  </section>
+
+  <section class="brand-section s-white" id="logo">
+    <div class="wrap">
+      <h2 class="brand-h2">Logo</h2>
+      <p class="brand-sub">Utilisez uniquement le wordmark officiel. Ne le déformez pas, ne le recolorisez pas, n'y ajoutez pas d'effets. Conservez un espace libre égal à la hauteur du « A » sur tous les côtés.</p>
+      <div class="logo-grid">
+        <div class="logo-swatch dark">
+          <img src="/agentivity-wordmark-white.svg" alt="Wordmark blanc Agentivity" />
+          <span>Blanc — sur fonds sombres</span>
+        </div>
+        <div class="logo-swatch light">
+          <img src="/agentivity-wordmark-dark.svg" alt="Wordmark sombre Agentivity" onerror="this.style.opacity='.25'" />
+          <span>Sombre — sur fonds clairs</span>
+        </div>
+        <div class="logo-swatch violet-bg">
+          <img src="/agentivity-wordmark-white.svg" alt="Wordmark sur violet" />
+          <span>Blanc — sur couleur de marque</span>
+        </div>
+      </div>
+      <div class="brand-rule">
+        <div class="brand-do">
+          <strong>✓ À faire</strong>
+          <ul>
+            <li>Utiliser les fichiers SVG officiels</li>
+            <li>Respecter les proportions — ne jamais étirer</li>
+            <li>Utiliser sur des fonds solides et contrastés</li>
+            <li>Conserver un espace libre généreux</li>
+          </ul>
+        </div>
+        <div class="brand-dont">
+          <strong>✗ À ne pas faire</strong>
+          <ul>
+            <li>Recoloriser le logo</li>
+            <li>Ajouter ombres, contours ou dégradés</li>
+            <li>Placer sur des fonds chargés ou peu contrastés</li>
+            <li>Utiliser à moins de 120px de large</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-section s-pearl" id="colours">
+    <div class="wrap">
+      <h2 class="brand-h2">Système de couleurs</h2>
+      <p class="brand-sub">Notre palette est électrique et intentionnelle. Chaque couleur a un rôle défini — ne les interchangez pas arbitrairement.</p>
+      <div class="colour-grid">
+        {colors.map(c => (
+          <div class="colour-swatch" style={`background:${c.hex}`}>
+            <div class="colour-info" style={c.dark ? 'color:rgba(255,255,255,.9)' : 'color:rgba(0,0,0,.8)'}>
+              <strong>{c.name}</strong>
+              <code>{c.hex}</code>
+              <span class="colour-var">{c.cssVar}</span>
+              <span class="colour-label">{c.label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="gradient-swatch">
+        <div class="grad-bar"></div>
+        <div class="grad-info">
+          <strong>Dégradé de marque</strong>
+          <code>linear-gradient(135deg, #FF0A30 0%, #6D00F5 100%)</code>
+          <span>Utilisé sur les chiffres clés, highlights et accents. Jamais sur de grandes surfaces.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-section s-white" id="typography">
+    <div class="wrap">
+      <h2 class="brand-h2">Typographie</h2>
+      <p class="brand-sub">Deux polices uniquement. Inter pour tout ce qui est humain. JetBrains Mono pour tout ce qui est technique.</p>
+      <div class="type-grid">
+        <div class="type-card">
+          <div class="type-sample" style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(40px,6vw,72px);letter-spacing:-.05em;line-height:1">Inter</div>
+          <div class="type-details">
+            <strong>Inter</strong>
+            <p>Titres, corps de texte, labels UI. Graisses utilisées : 900 (display), 800 (h1–h2), 700 (h3, boutons), 400 (corps).</p>
+            <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer">Google Fonts ↗</a>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-sample" style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(24px,3vw,40px);letter-spacing:.05em;line-height:1.3;color:var(--violet)">JetBrains<br/>Mono</div>
+          <div class="type-details">
+            <strong>JetBrains Mono</strong>
+            <p>Eyebrows, labels, code, badges, métadonnées. Toujours en majuscules pour les eyebrows. Graisses : 700 (labels), 400 (code).</p>
+            <a href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">Google Fonts ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-section s-black dots" id="voice">
+    <div class="blob" style="width:400px;height:400px;background:rgba(109,0,245,.1);bottom:-100px;right:0"></div>
+    <div class="wrap">
+      <h2 class="brand-h2" style="color:#fff">Ton éditorial</h2>
+      <p class="brand-sub" style="color:rgba(255,255,255,.6)">Comment parle Agentivity — confiant, humain, direct. Pas de jargon. Pas d'emphase.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <strong>Direct</strong>
+          <p>Dites exactement ce que vous voulez dire. Pas de rembourrage, pas de formules creuses. Les phrases courtes gagnent.</p>
+          <div class="voice-ex good">✓ "Vos agents travaillent pendant que vous dormez."</div>
+          <div class="voice-ex bad">✗ "Exploitez la puissance de l'orchestration d'agents autonomes pilotés par l'IA."</div>
+        </div>
+        <div class="voice-card">
+          <strong>Humain</strong>
+          <p>Écrivez comme un collègue intelligent, pas comme un communiqué de presse. Utilisez "vous", pas "l'utilisateur".</p>
+          <div class="voice-ex good">✓ "Vous posez les règles. Votre équipe livre."</div>
+          <div class="voice-ex bad">✗ "Les utilisateurs peuvent configurer les paramètres des agents pour optimiser les sorties."</div>
+        </div>
+        <div class="voice-card">
+          <strong>Confiant</strong>
+          <p>Nous croyons en ce produit. Pas de formules atténuées. Dites ce qu'Agentivity fait, pas ce qu'il "pourrait" faire.</p>
+          <div class="voice-ex good">✓ "15+ heures économisées par semaine."</div>
+          <div class="voice-ex bad">✗ "Susceptible de vous faire potentiellement gagner un temps considérable."</div>
+        </div>
+        <div class="voice-card">
+          <strong>Sans prétention</strong>
+          <p>Pas de buzz, pas de jargon. Les professionnels sont occupés — respectez leur temps.</p>
+          <div class="voice-ex good">✓ "Créez votre équipe IA. Sans code."</div>
+          <div class="voice-ex bad">✗ "Révolutionnez le paradigme de l'intelligence agentique de nouvelle génération."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-section s-pearl" id="downloads">
+    <div class="wrap">
+      <h2 class="brand-h2">Téléchargements</h2>
+      <p class="brand-sub">Assets officiels pour la presse, les partenariats et les intégrations. Tous les fichiers sont fournis au format SVG.</p>
+      <div class="dl-grid">
+        <div class="dl-card">
+          <div class="dl-preview dark"><img src="/agentivity-wordmark-white.svg" alt="Wordmark blanc" /></div>
+          <div class="dl-info">
+            <strong>Wordmark — Blanc</strong>
+            <span>SVG · Pour fonds sombres</span>
+            <a href="/agentivity-wordmark-white.svg" download class="btn btn-black">Télécharger SVG</a>
+          </div>
+        </div>
+        <div class="dl-card">
+          <div class="dl-preview light"><img src="/agentivity-wordmark-dark.svg" alt="Wordmark sombre" onerror="this.style.opacity='.2'" /></div>
+          <div class="dl-info">
+            <strong>Wordmark — Sombre</strong>
+            <span>SVG · Pour fonds clairs</span>
+            <a href="/agentivity-wordmark-dark.svg" download class="btn btn-black">Télécharger SVG</a>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-3);margin-top:32px">
+        Pour les demandes presse ou assets partenariats, contactez <a href="mailto:hello@agentivity.io" style="color:var(--violet)">hello@agentivity.io</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<Footer lang={lang} />
+
+<style>
+.brand-page{}
+.brand-hero{padding:100px 0 80px;position:relative;overflow:hidden}
+.brand-section{padding:80px 0}
+.brand-h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-.04em;margin-bottom:12px}
+.brand-sub{font-size:clamp(15px,1.3vw,17px);color:var(--ink-2);max-width:52ch;margin-bottom:40px;line-height:1.7}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.logo-swatch{border-radius:var(--r-xl);padding:40px 32px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;min-height:160px}
+.logo-swatch img{max-width:200px;max-height:40px;object-fit:contain}
+.logo-swatch span{font-size:12px;font-family:"JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
+.logo-swatch.dark{background:var(--black);color:#fff}
+.logo-swatch.light{background:#fff;border:1px solid var(--line);color:var(--ink-2)}
+.logo-swatch.violet-bg{background:var(--violet);color:#fff}
+.brand-rule{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.brand-do,.brand-dont{padding:24px 28px;border-radius:var(--r-xl)}
+.brand-do{background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.2)}
+.brand-dont{background:rgba(255,10,48,.05);border:1px solid rgba(255,10,48,.2)}
+.brand-do strong{color:#007a5e;font-size:14px;font-weight:700;display:block;margin-bottom:12px}
+.brand-dont strong{color:var(--red);font-size:14px;font-weight:700;display:block;margin-bottom:12px}
+.brand-do ul,.brand-dont ul{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.brand-do li,.brand-dont li{font-size:14px;color:var(--ink-2);line-height:1.5}
+.colour-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.colour-swatch{border-radius:var(--r-xl);padding:24px 20px;min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.06)}
+.colour-info{display:flex;flex-direction:column;gap:3px}
+.colour-info strong{font-size:15px;font-weight:800}
+.colour-info code{font-family:"JetBrains Mono",monospace;font-size:12px;opacity:.75}
+.colour-var{font-family:"JetBrains Mono",monospace;font-size:10px;opacity:.55;letter-spacing:.04em}
+.colour-label{font-size:11px;opacity:.65;margin-top:2px}
+.gradient-swatch{display:flex;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:24px 28px;margin-top:4px}
+.grad-bar{width:120px;height:80px;flex-shrink:0;border-radius:var(--r-lg);background:linear-gradient(135deg,#FF0A30 0%,#6D00F5 100%)}
+.grad-info{display:flex;flex-direction:column;gap:6px}
+.grad-info strong{font-size:15px;font-weight:700}
+.grad-info code{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-2)}
+.grad-info span{font-size:13px;color:var(--ink-3)}
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.type-card{border:1px solid var(--line);border-radius:var(--r-xl);padding:36px 32px;display:flex;flex-direction:column;gap:20px}
+.type-details strong{font-size:16px;font-weight:700;display:block;margin-bottom:8px}
+.type-details p{font-size:14px;color:var(--ink-2);line-height:1.65}
+.type-details a{font-size:13px;color:var(--violet);font-weight:600}
+.voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.voice-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-xl);padding:28px 24px}
+.voice-card strong{display:block;font-size:16px;font-weight:800;color:#fff;margin-bottom:10px}
+.voice-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:16px}
+.voice-ex{font-size:13px;padding:10px 14px;border-radius:var(--r-md);margin-bottom:8px;line-height:1.5}
+.voice-ex.good{background:rgba(0,200,150,.1);color:rgba(255,255,255,.8);border-left:3px solid var(--mint)}
+.voice-ex.bad{background:rgba(255,10,48,.08);color:rgba(255,255,255,.5);border-left:3px solid rgba(255,10,48,.4);text-decoration:line-through;text-decoration-color:rgba(255,10,48,.4)}
+.dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.dl-card{border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;display:flex;flex-direction:column}
+.dl-preview{display:flex;align-items:center;justify-content:center;padding:40px;min-height:140px}
+.dl-preview img{max-width:180px;max-height:36px;object-fit:contain}
+.dl-preview.dark{background:var(--black)}
+.dl-preview.light{background:#fff}
+.dl-info{padding:20px 24px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line)}
+.dl-info strong{font-size:15px;font-weight:700}
+.dl-info span{font-size:13px;color:var(--ink-3);margin-bottom:8px}
+@media(max-width:900px){.logo-grid,.colour-grid,.type-grid,.voice-grid,.dl-grid,.brand-rule{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.logo-grid,.colour-grid,.type-grid,.voice-grid,.dl-grid,.brand-rule{grid-template-columns:1fr}}
+</style>
+
+</Base>

@@ -1,0 +1,177 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const slug = post.id.replace(/\.(md|mdx)$/, '');
+
+const lang = post.data.lang ?? 'en';
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const allPosts = (await getCollection('blog')).filter(p => p.data.lang !== 'fr' && !p.data.draft);
+const related = allPosts
+  .filter(p => p.id !== post.id && p.data.tags.some(t => post.data.tags.includes(t)))
+  .slice(0, 3);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate.toISOString(),
+  "author": { "@type": "Organization", "name": post.data.author },
+  "publisher": { "@type": "Organization", "name": "Agentivity", "url": "https://agentivity.io" },
+  "url": `https://agentivity.io/blog/${slug}`,
+};
+---
+<Base
+  title={`${post.data.title} | Agentivity Blog`}
+  description={post.data.description}
+  schema={schema}
+  lang={lang}
+>
+  <Nav lang={lang as 'en' | 'fr'} />
+
+  <!-- HERO -->
+  <section class="s-black post-hero">
+    <div class="post-hero-bg" aria-hidden="true"></div>
+    <div class="wrap post-hero-inner">
+      <a href="/blog" class="post-back">← Blog</a>
+
+      <div class="post-meta">
+        <time datetime={post.data.pubDate.toISOString()} class="post-date">
+          {formatDate(post.data.pubDate)}
+        </time>
+        {post.data.tags.map(tag => (
+          <span class="post-tag">{tag}</span>
+        ))}
+      </div>
+
+      <h1 class="h1 post-title">{post.data.title}</h1>
+      <p class="post-desc">{post.data.description}</p>
+
+      <div class="post-byline">
+        <div class="post-avatar" aria-hidden="true">A</div>
+        <span class="post-author">{post.data.author}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="s-black post-content-section">
+    <div class="wrap post-wrap">
+      <article class="post-body prose">
+        <Content />
+      </article>
+
+      <aside class="post-sidebar">
+        <div class="post-sidebar-card">
+          <p class="post-sidebar-label">Built with Agentivity</p>
+          <p class="post-sidebar-body">The open-source platform for building multi-agent AI teams. Free, self-hosted, no lock-in.</p>
+          <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:12px;width:100%;justify-content:center">Star on GitHub</a>
+          <a href="/how-it-works" class="btn btn-ghost" style="margin-top:8px;width:100%;justify-content:center">How it works →</a>
+        </div>
+        {post.data.tags.length > 0 && (
+          <div class="post-sidebar-tags">
+            <p class="post-sidebar-label">Tags</p>
+            <div class="post-tag-list">
+              {post.data.tags.map(tag => <span class="post-tag">{tag}</span>)}
+            </div>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  {related.length > 0 && (
+    <section class="s-navy related-section">
+      <div class="wrap">
+        <h2 class="related-title">Keep reading</h2>
+        <div class="related-grid">
+          {related.map(p => (
+            <a href={`/blog/${p.id.replace(/\.(md|mdx)$/, '')}`} class="related-card">
+              <time datetime={p.data.pubDate.toISOString()} class="blog-date">
+                {formatDate(p.data.pubDate)}
+              </time>
+              <h3 class="related-card-title">{p.data.title}</h3>
+              <span class="related-read">Read →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer lang={lang as 'en' | 'fr'} />
+</Base>
+
+<style>
+.post-hero { padding: 100px 0 60px; position: relative; overflow: hidden; }
+.post-hero-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 50% 55% at 60% 10%, rgba(109,0,245,.08) 0%, transparent 60%); }
+.post-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.35); text-decoration: none; margin-bottom: 32px; transition: color .15s; }
+.post-back:hover { color: rgba(255,255,255,.7); }
+.post-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.post-date { font-size: 12px; color: rgba(255,255,255,.3); font-family: 'JetBrains Mono', monospace; }
+.post-tag { font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(109,0,245,.15); color: rgba(139,47,248,.9); border: 1px solid rgba(109,0,245,.25); }
+.post-title { font-size: clamp(28px, 4vw, 52px); margin-bottom: 20px; letter-spacing: -.04em; line-height: 1.15; }
+.post-desc { font-size: clamp(15px, 1.3vw, 17px); color: rgba(255,255,255,.45); line-height: 1.75; margin-bottom: 32px; }
+.post-byline { display: flex; align-items: center; gap: 12px; }
+.post-avatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(109,0,245,.25); color: var(--violet-l); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(109,0,245,.3); flex-shrink: 0; }
+.post-author { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); }
+
+.post-content-section { padding: 60px 0 80px; }
+.post-wrap { display: grid; grid-template-columns: 1fr 280px; gap: 64px; align-items: start; }
+@media (max-width: 860px) { .post-wrap { grid-template-columns: 1fr; } }
+
+.prose { font-size: clamp(15px, 1.2vw, 16px); line-height: 1.85; color: rgba(255,255,255,.65); max-width: 70ch; }
+.prose :global(h2) { font-size: clamp(20px, 2vw, 26px); font-weight: 800; color: #fff; letter-spacing: -.03em; margin: 48px 0 16px; line-height: 1.2; }
+.prose :global(h3) { font-size: clamp(16px, 1.5vw, 19px); font-weight: 700; color: rgba(255,255,255,.85); letter-spacing: -.02em; margin: 32px 0 12px; }
+.prose :global(p) { margin-bottom: 20px; }
+.prose :global(strong) { color: rgba(255,255,255,.85); font-weight: 600; }
+.prose :global(em) { color: rgba(255,255,255,.6); }
+.prose :global(a) { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+.prose :global(a:hover) { color: #fff; }
+.prose :global(ul), .prose :global(ol) { padding-left: 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+.prose :global(li) { color: rgba(255,255,255,.6); }
+.prose :global(code) { font-family: 'JetBrains Mono', monospace; font-size: .88em; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 4px; padding: 2px 6px; color: var(--cyan); }
+.prose :global(pre) { background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r-lg); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.75); }
+.prose :global(pre code) { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+.prose :global(blockquote) { border-left: 3px solid var(--violet); padding-left: 20px; margin: 24px 0; color: rgba(255,255,255,.45); font-style: italic; }
+.prose :global(hr) { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 48px 0; }
+.prose :global(table) { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px; }
+.prose :global(th) { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.3); border-bottom: 1px solid rgba(255,255,255,.1); }
+.prose :global(td) { padding: 10px 14px; color: rgba(255,255,255,.55); border-bottom: 1px solid rgba(255,255,255,.05); }
+
+.post-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
+.post-sidebar-card { padding: 24px; border-radius: var(--r-xl); border: 1px solid rgba(109,0,245,.2); background: rgba(109,0,245,.06); display: flex; flex-direction: column; }
+.post-sidebar-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 8px; }
+.post-sidebar-body { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.65; }
+.post-sidebar-tags { display: flex; flex-direction: column; gap: 10px; }
+.post-tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.related-section { padding: 64px 0 80px; }
+.related-title { font-size: clamp(20px, 2vw, 26px); font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: 28px; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 720px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: var(--r-xl); border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.02); text-decoration: none; transition: background .15s, border-color .15s; }
+.related-card:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+.blog-date { font-size: 11px; color: rgba(255,255,255,.25); font-family: 'JetBrains Mono', monospace; }
+.related-card-title { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; flex: 1; }
+.related-read { font-size: 12px; font-weight: 600; color: var(--violet-l); }
+</style>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+<form
+  name="waitlist"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class={`waitlist-form ${dark ? 'waitlist-form--dark' : ''}`}
+  id="waitlist"
+>
+  <input type="hidden" name="form-name" value="waitlist" />
+  <p style="display:none">
+    <label>Don't fill this out: <input name="bot-field" /></label>
+  </p>
+  <input
+    type="email"
+    name="email"
+    placeholder="your@email.com"
+    required
+    autocomplete="email"
+  />
+  <button type="submit" class="btn btn-primary">Join the waitlist</button>
+</form>
+
+<style>
+.waitlist-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.waitlist-form input[type="email"] {
+  flex: 1;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: var(--text-primary);
+}
+.waitlist-form input[type="email"]:focus {
+  border-color: var(--rouge);
+  box-shadow: 0 0 0 3px rgba(255,77,31,.15);
+}
+.waitlist-form--dark input[type="email"] {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.2);
+  color: #fff;
+}
+.waitlist-form--dark input[type="email"]::placeholder {
+  color: rgba(255,255,255,.4);
+}
+</style>

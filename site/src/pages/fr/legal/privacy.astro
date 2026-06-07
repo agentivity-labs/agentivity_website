@@ -1,0 +1,160 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+const lang = 'fr';
+---
+<Base title="Politique de confidentialité — Agentivity" description="Comment Agentivity collecte, utilise et protège vos données personnelles. Conforme au RGPD.">
+<Nav lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Documents légaux</p>
+    <nav class="legal-sidebar-links">
+      <a href="/fr/legal">Vue d'ensemble</a>
+      <a href="/fr/legal/terms">CGU</a>
+      <a href="/fr/legal/privacy" class="active">Confidentialité</a>
+      <a href="/fr/legal/disclaimer">Disclaimer</a>
+      <a href="/fr/legal/ai-policy">IA &amp; Automatisation</a>
+    </nav>
+    <div class="legal-sidebar-meta">En vigueur : juin 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Légal</span>
+      <h1>Politique de confidentialité</h1>
+      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : juin 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <p>La version anglaise de ce document fait foi en cas de litige. <a href="/legal/privacy">Lire la version anglaise</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Responsable du traitement</h2>
+      <p>Agentivity ("<strong>nous</strong>") est le responsable du traitement des données personnelles collectées via notre site web (<a href="https://agentivity.io">agentivity.io</a>) et nos services cloud hébergés. Contact pour toutes questions relatives à la protection des données : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+      <p>Cette Politique de confidentialité s'applique aux données personnelles que nous collectons dans le cadre du site web et du service cloud Agentivity. Elle ne s'applique pas aux données traitées dans des déploiements auto-hébergés du logiciel open source, que vous exploitez en tant que responsable de traitement indépendant.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Données collectées</h2>
+      <h3>2.1 Données que vous nous fournissez directement</h3>
+      <ul>
+        <li><strong>Adresse e-mail</strong> — lors de la soumission du formulaire de liste d'attente ou de la création d'un compte.</li>
+        <li><strong>Informations de compte</strong> — nom, nom de l'organisation (si fourni lors de l'inscription).</li>
+        <li><strong>Communications</strong> — contenu des e-mails ou messages que vous nous adressez.</li>
+        <li><strong>Informations de paiement</strong> — pour les abonnements payants, le traitement est effectué par un prestataire tiers (ex. Stripe). Nous ne stockons pas vos données de carte bancaire complètes.</li>
+      </ul>
+      <h3>2.2 Données collectées automatiquement</h3>
+      <ul>
+        <li><strong>Données techniques</strong> — adresse IP, type et version de navigateur, système d'exploitation, URL de référence, horodatages d'accès.</li>
+        <li><strong>Données d'utilisation</strong> — pages visitées, fonctionnalités utilisées, actions effectuées dans la Plateforme (service cloud uniquement), collectées sous forme anonymisée ou pseudonymisée dans la mesure du possible.</li>
+      </ul>
+      <h3>2.3 Données traitées via vos agents</h3>
+      <p>Lorsque vous utilisez Agentivity pour créer des agents IA, vous pouvez traiter des données personnelles de tiers (vos clients, employés, contacts) dans vos workflows. Vous êtes le responsable de traitement indépendant pour ces données. Nous les traitons en tant que sous-traitant, dans le cadre d'un éventuel Accord de traitement des données.</p>
+      <div class="legal-alert violet"><p><strong>Important :</strong> Les données soumises aux fournisseurs de LLM (OpenAI, Anthropic, etc.) via vos clés API sont traitées par ces fournisseurs selon leurs propres politiques de confidentialité. Agentivity n'a ni accès ni contrôle sur ce traitement.</p></div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Bases légales du traitement (RGPD)</h2>
+      <p>Nous traitons vos données personnelles sur les bases légales suivantes définies à l'article 6 du RGPD :</p>
+      <ul>
+        <li><strong>Consentement (Art. 6, §1, a) :</strong> Lorsque vous soumettez le formulaire de liste d'attente, vous consentez à ce que nous vous contactions avec des nouvelles du lancement cloud d'Agentivity. Vous pouvez retirer votre consentement à tout moment.</li>
+        <li><strong>Exécution d'un contrat (Art. 6, §1, b) :</strong> Traitement nécessaire à la fourniture des services que vous avez demandés, y compris la gestion du compte et la facturation.</li>
+        <li><strong>Intérêts légitimes (Art. 6, §1, f) :</strong> Traitement nécessaire à nos intérêts commerciaux légitimes, tels que l'amélioration de la Plateforme, la prévention des fraudes et la sécurité.</li>
+        <li><strong>Obligation légale (Art. 6, §1, c) :</strong> Traitement requis pour respecter nos obligations légales, notamment en matière comptable et fiscale.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Utilisation de vos données</h2>
+      <ul>
+        <li>Vous envoyer une confirmation d'accès et des mises à jour lors du lancement du service cloud Agentivity (abonnés à la liste d'attente).</li>
+        <li>Gérer votre compte et vous fournir les services auxquels vous avez souscrit.</li>
+        <li>Traiter les paiements et émettre des factures (abonnés payants).</li>
+        <li>Répondre à vos demandes et assurer le support client.</li>
+        <li>Améliorer la Plateforme en analysant des patterns d'utilisation anonymisés.</li>
+        <li>Détecter, enquêter et prévenir les activités frauduleuses, les abus ou les incidents de sécurité.</li>
+        <li>Respecter nos obligations légales et réglementaires.</li>
+      </ul>
+      <p>Nous ne <strong>vendons, louons ni partageons pas</strong> vos données personnelles à des tiers à des fins marketing.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Partage des données et tiers</h2>
+      <h3>5.1 Prestataires de services (sous-traitants)</h3>
+      <ul>
+        <li><strong>Netlify</strong> — hébergement du site web et traitement des formulaires.</li>
+        <li><strong>Prestataires de paiement</strong> — pour les abonnements payants (prestataire spécifique à annoncer).</li>
+        <li><strong>Prestataires d'e-mail</strong> — pour les e-mails transactionnels et de notification.</li>
+        <li><strong>Fournisseurs d'infrastructure cloud</strong> — pour l'hébergement du service cloud.</li>
+      </ul>
+      <p>Tous les prestataires sont contractuellement tenus de traiter vos données uniquement selon nos instructions et conformément au droit applicable en matière de protection des données.</p>
+      <h3>5.2 Obligations légales</h3>
+      <p>Nous pouvons divulguer vos données si la loi, une décision de justice ou une autorité compétente l'exige, ou si nous estimons que cette divulgation est nécessaire pour protéger les droits, la propriété ou la sécurité d'Agentivity, de nos utilisateurs ou du public.</p>
+      <h3>5.3 Cessions d'entreprise</h3>
+      <p>En cas de fusion, acquisition ou vente de tout ou partie de nos actifs, vos données peuvent être transférées dans le cadre de cette transaction. Nous vous en informerons avant que vos données soient soumises à une politique de confidentialité différente.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Transferts internationaux de données</h2>
+      <p>Nous sommes basés en Belgique et traitons principalement les données au sein de l'Espace économique européen (EEE). Certains de nos prestataires peuvent traiter des données en dehors de l'EEE (notamment aux États-Unis). Dans ce cas, nous veillons à ce que des garanties appropriées soient en place, notamment des Clauses contractuelles types (CCT) approuvées par la Commission européenne.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Durée de conservation</h2>
+      <ul>
+        <li><strong>Adresses e-mail (liste d'attente) :</strong> Conservées jusqu'à votre demande de suppression, ou 24 mois après la soumission si le service cloud n'a pas encore été lancé.</li>
+        <li><strong>Données de compte :</strong> Conservées pendant la durée de votre compte, plus une période raisonnable pour la conformité légale (généralement jusqu'à 3 ans après la clôture du compte).</li>
+        <li><strong>Dossiers de transactions :</strong> Conservés 7 ans à des fins comptables et fiscales.</li>
+        <li><strong>Journaux d'utilisation :</strong> Conservés sous forme anonymisée pendant 13 mois maximum.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Mesures de sécurité</h2>
+      <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées au risque lié au traitement de vos données, notamment : le chiffrement en transit (TLS) et au repos, les contrôles d'accès limitant l'accès aux personnels autorisés, les examens réguliers de la sécurité de notre infrastructure, et les procédures de détection et de notification des violations de données.</p>
+      <p>Aucun mode de transmission par Internet ou de stockage électronique n'est sécurisé à 100 %. En cas de violation de données susceptible de présenter un risque élevé pour vos droits et libertés, nous vous en informerons sans délai.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Cookies et technologies de traçage</h2>
+      <p>Le site web Agentivity n'utilise <strong>aucun cookie d'analyse ou de publicité tiers</strong>. Nous n'utilisons pas Google Analytics, Meta Pixel, LinkedIn Insight Tag ou toute technologie de traçage comportemental ou de reciblage publicitaire.</p>
+      <p>Nous pouvons utiliser des cookies strictement nécessaires pour maintenir la session des utilisateurs connectés au service cloud hébergé. Ces cookies sont essentiels au fonctionnement du service et ne nécessitent pas de consentement au sens de la directive ePrivacy.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Vos droits au titre du RGPD</h2>
+      <p>Si vous êtes situé dans l'Espace économique européen, vous disposez des droits suivants concernant vos données personnelles :</p>
+      <ul>
+        <li><strong>Droit d'accès (Art. 15) :</strong> Obtenir une copie des données personnelles que nous détenons sur vous.</li>
+        <li><strong>Droit de rectification (Art. 16) :</strong> Demander la correction de données inexactes ou incomplètes.</li>
+        <li><strong>Droit à l'effacement (Art. 17) :</strong> Demander la suppression de vos données, sous réserve de nos obligations légales.</li>
+        <li><strong>Droit à la limitation du traitement (Art. 18) :</strong> Demander que nous limitions le traitement de vos données dans certaines circonstances.</li>
+        <li><strong>Droit à la portabilité (Art. 20) :</strong> Recevoir vos données dans un format structuré et lisible par machine.</li>
+        <li><strong>Droit d'opposition (Art. 21) :</strong> Vous opposer au traitement fondé sur l'intérêt légitime ou à des fins de prospection directe.</li>
+        <li><strong>Droit de retrait du consentement :</strong> Retirer votre consentement à tout moment lorsque le traitement est fondé sur le consentement.</li>
+      </ul>
+      <p>Pour exercer l'un de ces droits, écrivez-nous à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. Nous répondrons dans les <strong>30 jours</strong>. Nous pourrons vous demander de vérifier votre identité avant de traiter votre demande.</p>
+      <p>Vous avez également le droit d'introduire une réclamation auprès de l'Autorité de protection des données belge (<a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer">dataprotectionauthority.be</a>) ou de l'autorité de contrôle de votre pays de résidence.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Protection des mineurs</h2>
+      <p>Agentivity ne s'adresse pas aux personnes âgées de moins de 18 ans. Nous ne collectons pas sciemment de données personnelles de mineurs. Si vous estimez que nous avons collecté des données d'un mineur sans consentement approprié, contactez-nous immédiatement à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Modifications de cette politique</h2>
+      <p>Nous pouvons mettre à jour cette Politique de confidentialité à tout moment. En cas de modifications substantielles, nous vous en informerons en mettant à jour la date de "Dernière mise à jour" et, lorsque la loi l'exige, en sollicitant un nouveau consentement ou en vous envoyant une notification directe.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. Contact</h2>
+      <p>Pour toute question relative à cette politique :<br/><strong>Agentivity</strong><br/>E-mail : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Délai de réponse : 30 jours (demandes RGPD), 5 jours ouvrables (demandes générales)</p>
+    </div>
+  </main>
+</div>
+</div>
+<Footer lang={lang} />
+</Base>

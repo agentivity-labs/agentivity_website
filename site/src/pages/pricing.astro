@@ -1,0 +1,893 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'en';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    "name": "Free — Self-hosted",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Open source, Docker, unlimited agents and teams. Bring your own API key."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    "name": "Enterprise",
+    "description": "SSO, RBAC, audit logs, budget management, white-label, dedicated support."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is the Free plan really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open source, self-hosted, no time limit. You need Docker and your own API key. That's it." } },
+      { "@type": "Question", "name": "What's Docker?", "acceptedAnswer": { "@type": "Answer", "text": "A tool that runs Agentivity on your machine or server in one command. Full guide in the docs." } },
+      { "@type": "Question", "name": "Do I need an API key?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — for all plans. You connect your own key from Anthropic, OpenAI, or a compatible provider. We never touch your tokens or mark up your usage." } },
+      { "@type": "Question", "name": "When do the cloud plans launch?", "acceptedAnswer": { "@type": "Answer", "text": "We're working on it. Join the waitlist — you'll be notified first and get access to launch pricing." } },
+      { "@type": "Question", "name": "Can I use Agentivity as a white-label platform for my clients?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the Enterprise plan includes white-label options. You build on Agentivity, deliver under your brand." } },
+      { "@type": "Question", "name": "What's the difference between Free and Enterprise?", "acceptedAnswer": { "@type": "Answer", "text": "Free is self-hosted, community-supported, and requires Docker. Enterprise adds SSO, audit logs, on-premise option, white-label, SLA, and dedicated support — designed for organisations with compliance and governance requirements." } }
+    ]
+  }
+];
+---
+<Base
+  title="Agentivity Pricing — Free Open Source, Cloud & Enterprise"
+  description="Start free with Docker — unlimited agents, no time limit. Cloud plans coming. Enterprise: SSO, audit logs, white-label. Bring your own API key."
+  schema={schema}
+>
+  <Nav lang={lang} />
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-black pr-hero">
+    <div class="pr-hero-bg" aria-hidden="true"></div>
+    <div class="wrap pr-hero-inner">
+      <span class="eyebrow" style="color:var(--mint)">Pricing</span>
+      <h1 class="h1 pr-h1">Simple, transparent<br /><span class="grad-text">pricing.</span></h1>
+      <p class="pr-sub">
+        Open source at the core — self-host free, forever.<br class="br-md" />
+        Cloud when you need it. Your API keys, always.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       PRICING CARDS
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-navy pr-cards-section">
+    <div class="wrap">
+
+      <!-- ── Available now ── -->
+      <div class="pr-tier-label">
+        <span class="pr-tier-badge pr-tier-badge--live">
+          <span class="live-dot"></span>Available now
+        </span>
+      </div>
+
+      <div class="pr-free-card">
+        <div class="pr-free-left">
+          <div class="pr-free-price">
+            <span class="pr-price-num">$0</span>
+            <span class="pr-price-note">forever · self-hosted</span>
+          </div>
+          <h2 class="pr-plan-name">Free</h2>
+          <p class="pr-plan-tag">Self-host. Full control.</p>
+          <p class="pr-free-desc">
+            The most flexible self-hosted AI agent platform — free, forever, no usage cap.
+            Your infrastructure, your data, your rules.
+          </p>
+          <div class="pr-free-ctas">
+            <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              Star on GitHub
+            </a>
+            <a href="/how-it-works" class="btn btn-ghost">See how it works</a>
+          </div>
+          <p class="pr-free-note">
+            Not on Docker yet? The cloud version is coming —
+            <a href="#waitlist" class="pr-note-link">join the waitlist →</a>
+          </p>
+        </div>
+
+        <div class="pr-free-right">
+          <ul class="pr-features">
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">Unlimited agents &amp; teams</span>
+                <span class="pr-feat-desc">No cap on what you build</span>
+              </div>
+            </li>
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">All topologies</span>
+                <span class="pr-feat-desc">Sequential · Group Chat · Concurrent</span>
+              </div>
+            </li>
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">Synergi template library</span>
+                <span class="pr-feat-desc">Pre-built teams, ready to customise</span>
+              </div>
+            </li>
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">Bring your own API key</span>
+                <span class="pr-feat-desc">Anthropic · OpenAI · any compatible provider</span>
+              </div>
+            </li>
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">Community support</span>
+                <span class="pr-feat-desc">Discord · GitHub Issues</span>
+              </div>
+            </li>
+            <li class="pr-feature">
+              <span class="pr-feat-check" style="color:var(--mint)">✓</span>
+              <div>
+                <span class="pr-feat-name">Open source · MIT-adjacent licence</span>
+                <span class="pr-feat-desc">Audit the code. Run it anywhere.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Coming soon ── -->
+      <div class="pr-tier-label" style="margin-top:56px">
+        <span class="pr-tier-badge">
+          🔜 Cloud plans — coming soon
+        </span>
+      </div>
+
+      <div class="pr-cloud-grid">
+
+        <!-- Personal -->
+        <div class="pr-card">
+          <div class="pr-card-top">
+            <h3 class="pr-card-name">Personal</h3>
+            <p class="pr-card-tag">Cloud-hosted. No setup.</p>
+          </div>
+          <ul class="pr-card-features">
+            <li>Everything in Free</li>
+            <li>Cloud hosted — no Docker needed</li>
+            <li>Single workspace</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost pr-card-btn">Join the waitlist</a>
+          <p class="pr-card-note">First in, launch pricing.</p>
+        </div>
+
+        <!-- Pro — highlighted -->
+        <div class="pr-card pr-card--pro">
+          <div class="pr-popular-badge">Most popular</div>
+          <div class="pr-card-top">
+            <h3 class="pr-card-name">Pro</h3>
+            <p class="pr-card-tag">More power. Same simplicity.</p>
+          </div>
+          <ul class="pr-card-features">
+            <li>Everything in Personal</li>
+            <li>More agents · More executions</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-primary pr-card-btn">Join the waitlist</a>
+          <p class="pr-card-note">First in, launch pricing.</p>
+        </div>
+
+        <!-- Business -->
+        <div class="pr-card">
+          <div class="pr-card-top">
+            <h3 class="pr-card-name">Business</h3>
+            <p class="pr-card-tag">Built for teams.</p>
+          </div>
+          <ul class="pr-card-features">
+            <li>Everything in Pro</li>
+            <li>Multiple workspaces</li>
+            <li>Team management &amp; collaboration</li>
+            <li>Usage tracking per workspace</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost pr-card-btn">Join the waitlist</a>
+          <p class="pr-card-note">First in, launch pricing.</p>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pr-card pr-card--enterprise">
+          <div class="pr-card-top">
+            <h3 class="pr-card-name">Enterprise</h3>
+            <p class="pr-card-tag">Enterprise-grade. Your infra or ours.</p>
+          </div>
+          <ul class="pr-card-features">
+            <li>Everything in Business</li>
+            <li>SSO / SAML · On-premise option</li>
+            <li>Audit logs · Budget management</li>
+            <li>White-label — sell under your brand</li>
+            <li>Dedicated support · SLA</li>
+          </ul>
+          <a href="mailto:hello@agentivity.io" class="btn btn-ghost pr-card-btn">Contact us</a>
+          <p class="pr-card-note">Need onboarding? We run setup sessions for teams and agencies.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       BYOK — Bring your own key
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-pearl byok-section">
+    <div class="wrap byok-wrap">
+      <div class="byok-intro">
+        <span class="eyebrow" style="color:var(--violet)">BYOK — Bring your own key</span>
+        <h2 class="h2 byok-h2">You control your<br />API keys. Always.</h2>
+        <p class="byok-body">
+          Agentivity doesn't provide or mark up LLM tokens. Connect your own key — and pay your provider directly.
+          Compatible with any OpenAI-compatible provider, not just Anthropic and OpenAI.
+        </p>
+      </div>
+
+      <div class="byok-pillars">
+
+        <div class="byok-pillar">
+          <div class="byok-icon" style="--c:var(--mint)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="byok-pillar-title">Your data</h3>
+          <p class="byok-pillar-body">Your prompts, your outputs, your agent configurations never touch our infrastructure. Everything stays between you and your LLM provider.</p>
+        </div>
+
+        <div class="byok-pillar">
+          <div class="byok-icon" style="--c:var(--cyan)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="byok-pillar-title">Your costs</h3>
+          <p class="byok-pillar-body">We don't sit between you and the token. No markup, no mystery fees. You know exactly what you spend — because you pay the provider directly.</p>
+        </div>
+
+        <div class="byok-pillar">
+          <div class="byok-icon" style="--c:var(--violet-l)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3 class="byok-pillar-title">Your control</h3>
+          <p class="byok-pillar-body">Anthropic, OpenAI, Mistral, or any OpenAI-compatible endpoint including local models. Switch providers, rotate keys, set limits — no permission needed.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       LICENCE
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-navy licence-section">
+    <div class="wrap licence-wrap">
+      <div class="licence-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <div class="licence-text">
+        <h2 class="h3 licence-title">A word on our licence.</h2>
+        <p class="licence-body">
+          Agentivity is source-available under the Agentivity Sustainable Use Licence.
+          The code is public and auditable. Free for personal and internal commercial use.
+        </p>
+        <p class="licence-body">
+          One limit: you can't use it to build a competing platform. That's it.
+        </p>
+        <a href="https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md" target="_blank" rel="noopener noreferrer" class="licence-link">
+          Read the full licence →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-black faq-section">
+    <div class="wrap faq-wrap">
+      <h2 class="h2" style="color:#fff;margin-bottom:48px">Common questions</h2>
+
+      <div class="faq-list">
+
+        <details class="faq-item" open>
+          <summary class="faq-q">Is the Free plan really free?</summary>
+          <div class="faq-a">Yes. Open source, self-hosted, no time limit. You need Docker and your own API key. That's it. No credit card, no trial period, no "free tier" with artificial caps.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What's Docker?</summary>
+          <div class="faq-a">
+            A tool that runs Agentivity on your machine or server in one command. Full guide in the
+            <a href="/docs" class="faq-link">docs →</a>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do I need an API key?</summary>
+          <div class="faq-a">Yes — for all plans. You connect your own key from Anthropic, OpenAI, or any compatible provider. We never touch your tokens or mark up your usage. <a href="/docs" class="faq-link">How to get an API key →</a></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">When do the cloud plans launch?</summary>
+          <div class="faq-a">We're working on it. Join the waitlist below — you'll be notified first and get access to launch pricing before it goes public.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Can I use Agentivity as a white-label platform for my clients?</summary>
+          <div class="faq-a">Yes — the Enterprise plan includes white-label options. You build on Agentivity, deliver under your brand. <a href="mailto:hello@agentivity.io" class="faq-link">Contact us →</a></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What's the difference between Free and Enterprise?</summary>
+          <div class="faq-a">Free is self-hosted, community-supported, and requires Docker. Enterprise adds SSO, audit logs, on-premise options, white-label, SLA, and dedicated support — designed for organisations with compliance and governance requirements.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       CTA — Waitlist form inline
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-violet pr-cta" id="waitlist">
+    <div class="pr-cta-glow" aria-hidden="true"></div>
+    <div class="wrap pr-cta-inner">
+
+      <div class="pr-cta-text">
+        <h2 class="h2 pr-cta-h2">
+          The cloud<br /><span class="grad-text">is coming.</span>
+        </h2>
+        <p class="pr-cta-sub">
+          Join the list — first in, launch pricing, no spam.
+        </p>
+        <p class="pr-cta-note">We'll only reach out when it matters.</p>
+      </div>
+
+      <div class="pr-form-wrap">
+        <form
+          method="POST"
+          action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_WAITLIST ?? 'YOUR_FORM_ID'}`}
+          class="pr-form"
+        >
+          <input type="hidden" name="_next" value="https://agentivity.io/thank-you" />
+          <input type="hidden" name="_gotcha" style="display:none" />
+
+          <div class="pr-form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="pr-email-input"
+              autocomplete="email"
+            />
+            <button type="submit" class="btn btn-primary lg pr-submit">
+              Join the waitlist
+            </button>
+          </div>
+
+          <p class="pr-form-note">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12" style="opacity:.4"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0 1 10 0v2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2zm8-2v2H7V7a3 3 0 0 1 6 0z" clip-rule="evenodd"/></svg>
+            No spam. Just the important updates. Unsubscribe anytime.
+          </p>
+        </form>
+
+        <div class="pr-social-proof">
+          <div class="pr-sp-avatars">
+            <div class="sp-av" style="--c:var(--mint)">A</div>
+            <div class="sp-av" style="--c:var(--cyan)">J</div>
+            <div class="sp-av" style="--c:var(--red)">M</div>
+            <div class="sp-av" style="--c:var(--violet-l)">+</div>
+          </div>
+          <p class="pr-sp-text">Join the early builders already on the list</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+
+</Base>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(other => {
+          if (other !== detail) other.open = false;
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+/* ════════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════════ */
+.pr-hero {
+  padding: 120px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.pr-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(109,0,245,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pr-hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pr-h1 {
+  font-size: clamp(48px, 8vw, 100px);
+  margin-top: 20px;
+}
+.pr-sub {
+  margin-top: 20px;
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+  max-width: 50ch;
+}
+.br-md { display: none; }
+@media (min-width: 640px) { .br-md { display: initial; } }
+
+/* ════════════════════════════════════════════════════
+   PRICING CARDS SECTION
+════════════════════════════════════════════════════ */
+.pr-cards-section { padding: 72px 0 96px; }
+
+.pr-tier-label { margin-bottom: 20px; }
+.pr-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04);
+}
+.pr-tier-badge--live { color: var(--mint); border-color: rgba(0,200,150,.25); background: rgba(0,200,150,.07); }
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 6px var(--mint);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .6; transform: scale(.85); }
+}
+
+/* Free card — large, confident */
+.pr-free-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(0,200,150,.2);
+  background: rgba(0,200,150,.04);
+  overflow: hidden;
+}
+@media (max-width: 820px) { .pr-free-card { grid-template-columns: 1fr; } }
+
+.pr-free-left {
+  padding: 48px;
+  border-right: 1px solid rgba(0,200,150,.12);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 820px) {
+  .pr-free-left { border-right: none; border-bottom: 1px solid rgba(0,200,150,.12); }
+}
+.pr-free-right {
+  padding: 48px;
+}
+@media (max-width: 600px) {
+  .pr-free-left, .pr-free-right { padding: 28px 24px; }
+}
+
+.pr-free-price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.pr-price-num {
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 900;
+  color: var(--mint);
+  letter-spacing: -.05em;
+  line-height: 1;
+}
+.pr-price-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.3);
+  font-weight: 500;
+}
+.pr-plan-name {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.04em;
+}
+.pr-plan-tag {
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+.pr-free-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 36ch;
+}
+.pr-free-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.pr-free-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.3);
+  line-height: 1.6;
+  margin-top: auto;
+  padding-top: 16px;
+}
+.pr-note-link {
+  color: var(--mint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pr-features { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.pr-feature {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.pr-feat-check {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+.pr-feat-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.pr-feat-desc {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Cloud plans grid */
+.pr-cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 960px) { .pr-cloud-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .pr-cloud-grid { grid-template-columns: 1fr; } }
+
+.pr-card {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pr-card--pro {
+  border-color: rgba(139,47,248,.35);
+  background: rgba(109,0,245,.08);
+}
+.pr-card--enterprise {
+  border-color: rgba(0,207,255,.15);
+  background: rgba(0,207,255,.03);
+}
+
+.pr-popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--violet);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pr-card-top { margin-bottom: 20px; }
+.pr-card-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.03em;
+}
+.pr-card-tag {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  margin-top: 4px;
+}
+.pr-card-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.pr-card-features li {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.pr-card-features li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,.2);
+}
+.pr-card-btn { width: 100%; justify-content: center; margin-bottom: 12px; }
+.pr-card-note {
+  font-size: 11px;
+  color: rgba(255,255,255,.22);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════
+   BYOK
+════════════════════════════════════════════════════ */
+.byok-section { padding: 96px 0; }
+.byok-wrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+@media (max-width: 860px) { .byok-wrap { grid-template-columns: 1fr; gap: 48px; } }
+
+.byok-h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--ink);
+  margin: 16px 0 20px;
+}
+.byok-body {
+  font-size: clamp(15px, 1.2vw, 16px);
+  color: var(--ink-2);
+  line-height: 1.75;
+  max-width: 40ch;
+}
+
+.byok-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 700px) { .byok-pillars { grid-template-columns: 1fr; gap: 24px; } }
+
+.byok-pillar { display: flex; flex-direction: column; gap: 12px; }
+.byok-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--c) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 20%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c);
+}
+.byok-pillar-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.02em;
+}
+.byok-pillar-body {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════════════════════
+   LICENCE
+════════════════════════════════════════════════════ */
+.licence-section { padding: 64px 0; }
+.licence-wrap {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 680px;
+}
+.licence-icon {
+  color: rgba(255,255,255,.25);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.licence-title {
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: #fff;
+  margin-bottom: 12px;
+}
+.licence-body {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.licence-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+.licence-link:hover { color: #fff; }
+
+/* ════════════════════════════════════════════════════
+   FAQ
+════════════════════════════════════════════════════ */
+.faq-section { padding: 80px 0; }
+.faq-wrap { max-width: 760px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid rgba(255,255,255,.07); }
+.faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,.07); }
+.faq-q {
+  padding: 20px 0;
+  font-size: clamp(15px, 1.2vw, 16px);
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after { content: '+'; font-size: 20px; font-weight: 300; color: rgba(255,255,255,.25); flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 0 20px; font-size: 15px; color: rgba(255,255,255,.45); line-height: 1.75; }
+.faq-link { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ════════════════════════════════════════════════════
+   CTA + FORM
+════════════════════════════════════════════════════ */
+.pr-cta {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pr-cta-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 30% 120%, rgba(255,10,48,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% -10%, rgba(0,207,255,.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.pr-cta-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 780px) {
+  .pr-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+.pr-cta-h2 { font-size: clamp(36px, 5vw, 64px); color: #fff; margin-bottom: 12px; }
+.pr-cta-sub { font-size: clamp(15px, 1.3vw, 17px); color: rgba(255,255,255,.45); line-height: 1.6; margin-bottom: 8px; }
+.pr-cta-note { font-size: 13px; color: rgba(255,255,255,.25); margin-top: 4px; }
+
+.pr-form { display: flex; flex-direction: column; gap: 12px; }
+.pr-form-row { display: flex; gap: 8px; }
+@media (max-width: 480px) { .pr-form-row { flex-direction: column; } }
+
+.pr-email-input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .15s, background .15s;
+}
+.pr-email-input::placeholder { color: rgba(255,255,255,.3); }
+.pr-email-input:focus {
+  border-color: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.09);
+}
+.pr-submit { flex-shrink: 0; }
+.pr-form-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.25);
+  line-height: 1.5;
+}
+.hidden { display: none; }
+
+.pr-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.pr-sp-avatars { display: flex; }
+.sp-av {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 20%, rgba(13,27,53,1));
+  border: 2px solid rgba(13,27,53,.8);
+  color: var(--c);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+}
+.sp-av:first-child { margin-left: 0; }
+.pr-sp-text { font-size: 13px; color: rgba(255,255,255,.3); }
+</style>

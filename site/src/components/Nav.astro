@@ -1,0 +1,61 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href={lang === 'fr' ? '/fr/' : '/'}>
+      <img class="logo" src="/agentivity-wordmark-white.svg" alt="Agentivity" />
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      {t.nav.links.map(link => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+          <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
+        </svg>
+        <span class="hide-sm">{t.nav.github}</span>
+      </a>
+      <a class="btn btn-primary" href="#cta">{t.nav.cta}</a>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/"    class:list={['lang-btn', { active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+        <a href="/fr/" class:list={['lang-btn', { active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  margin-left: 8px;
+  background: rgba(255,255,255,.08);
+  border-radius: 6px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.lang-btn {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.45);
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 150ms, color 150ms;
+}
+.lang-btn:hover { color: #fff; }
+.lang-btn.active { background: rgba(255,255,255,.18); color: #fff; }
+</style>

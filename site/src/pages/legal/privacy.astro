@@ -1,0 +1,176 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+const lang = 'en';
+---
+<Base title="Privacy Policy — Agentivity" description="How Agentivity collects, uses, and protects your personal data. GDPR compliant.">
+<Nav lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Legal documents</p>
+    <nav class="legal-sidebar-links">
+      <a href="/legal">Overview</a>
+      <a href="/legal/terms">Terms of Use</a>
+      <a href="/legal/privacy" class="active">Privacy Policy</a>
+      <a href="/legal/disclaimer">Disclaimer</a>
+      <a href="/legal/ai-policy">AI &amp; Automation</a>
+    </nav>
+    <div class="legal-sidebar-meta">Effective: June 2026<br/>Governed by Belgian law.<br/><br/><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Legal</span>
+      <h1>Privacy Policy</h1>
+      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: June 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <h2>1. Data Controller</h2>
+      <p>Agentivity ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") is the data controller responsible for the personal data collected through our website (<a href="https://agentivity.io">agentivity.io</a>) and hosted cloud services.</p>
+      <p>Contact for all data protection enquiries: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+      <p>This Privacy Policy applies to all personal data we collect in connection with the Agentivity website and cloud services. It does not apply to data processed within self-hosted deployments of the open-source software, which you operate as an independent data controller.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Data We Collect</h2>
+      <h3>2.1 Data you provide directly</h3>
+      <ul>
+        <li><strong>Email address</strong> — when you submit the waitlist form or create an account.</li>
+        <li><strong>Account information</strong> — name, organisation name (if provided during registration).</li>
+        <li><strong>Communications</strong> — content of emails or messages you send to us.</li>
+        <li><strong>Payment information</strong> — when you subscribe to a paid plan, payment processing is handled by a third-party provider (e.g. Stripe). We do not store your full payment card details.</li>
+      </ul>
+      <h3>2.2 Data collected automatically</h3>
+      <ul>
+        <li><strong>Technical data</strong> — IP address, browser type and version, operating system, referring URL, and timestamps of access.</li>
+        <li><strong>Usage data</strong> — pages visited, features used, actions taken within the Platform (for the hosted cloud service only). This data is collected in anonymised or pseudonymised form where possible.</li>
+      </ul>
+      <h3>2.3 Data processed through your agents</h3>
+      <p>When you use Agentivity to build AI agents, you may process personal data of third parties (your customers, employees, contacts) through your agent workflows. You are the independent data controller for such data. We process it as your data processor, subject to any Data Processing Agreement in place.</p>
+      <div class="legal-alert violet"><p><strong>Important:</strong> Data submitted to LLM providers (OpenAI, Anthropic, etc.) via your API keys is processed by those providers under their own privacy policies. Agentivity does not have access to or control over that processing.</p></div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Legal Bases for Processing (GDPR)</h2>
+      <p>We process your personal data under the following legal bases as defined in Article 6 of the GDPR:</p>
+      <ul>
+        <li><strong>Consent (Art. 6(1)(a)):</strong> When you submit the waitlist form, you consent to us contacting you with updates about the Agentivity cloud launch and product news. You may withdraw consent at any time.</li>
+        <li><strong>Contract performance (Art. 6(1)(b)):</strong> Processing necessary to provide you with the services you have requested, including account management and billing.</li>
+        <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Processing necessary for our legitimate business interests, such as improving the Platform, preventing fraud, and ensuring security, where those interests are not overridden by your fundamental rights.</li>
+        <li><strong>Legal obligation (Art. 6(1)(c)):</strong> Processing required to comply with applicable law, such as accounting and tax obligations.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. How We Use Your Data</h2>
+      <ul>
+        <li>To send you access confirmation and updates when the Agentivity cloud service launches (waitlist subscribers).</li>
+        <li>To manage your account and provide you with the services you have subscribed to.</li>
+        <li>To process payments and issue invoices (paid subscribers).</li>
+        <li>To respond to your enquiries and provide customer support.</li>
+        <li>To improve the Platform by analysing anonymised usage patterns.</li>
+        <li>To detect, investigate, and prevent fraudulent activity, abuse, or security incidents.</li>
+        <li>To comply with applicable legal and regulatory obligations.</li>
+      </ul>
+      <p>We do <strong>not</strong> sell, rent, or share your personal data with third parties for their own marketing purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Data Sharing and Third Parties</h2>
+      <p>We share your personal data only in the following circumstances:</p>
+      <h3>5.1 Service providers (processors)</h3>
+      <ul>
+        <li><strong>Netlify</strong> — website hosting and form processing. Netlify processes form submission data on our behalf.</li>
+        <li><strong>Payment processors</strong> — for paid subscriptions (specific provider to be announced). Payment processing is conducted under PCI DSS compliance.</li>
+        <li><strong>Email service providers</strong> — for transactional and notification emails.</li>
+        <li><strong>Cloud infrastructure providers</strong> — for hosting the cloud service.</li>
+      </ul>
+      <p>All service providers are contractually bound to process your data only on our instructions and in accordance with applicable data protection law.</p>
+      <h3>5.2 Legal requirements</h3>
+      <p>We may disclose your data if required to do so by law, court order, or at the request of a competent authority, or if we believe disclosure is necessary to protect the rights, property, or safety of Agentivity, our users, or the public.</p>
+      <h3>5.3 Business transfers</h3>
+      <p>In the event of a merger, acquisition, or sale of all or a portion of our assets, your data may be transferred as part of that transaction. We will notify you before your data is transferred and becomes subject to a different privacy policy.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. International Data Transfers</h2>
+      <p>We are based in Belgium and primarily process data within the European Economic Area (EEA). Some of our third-party service providers may process data outside the EEA (for example, in the United States).</p>
+      <p>Where data is transferred outside the EEA, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission, or we rely on an adequacy decision. You may request information about the specific safeguards applied to international transfers by contacting us at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Data Retention</h2>
+      <ul>
+        <li><strong>Waitlist email addresses:</strong> Retained until you request deletion, or for 24 months from submission if no cloud service has launched, whichever comes first.</li>
+        <li><strong>Account data:</strong> Retained for the duration of your account plus a reasonable period thereafter for legal compliance purposes (typically up to 3 years after account closure).</li>
+        <li><strong>Transaction records:</strong> Retained for 7 years for accounting and tax compliance purposes.</li>
+        <li><strong>Support communications:</strong> Retained for up to 3 years from the date of the last communication.</li>
+        <li><strong>Usage logs:</strong> Retained in anonymised form for up to 13 months.</li>
+      </ul>
+      <p>We will delete or anonymise your data promptly once it is no longer required for the purpose for which it was collected.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Security Measures</h2>
+      <p>We implement technical and organisational security measures appropriate to the risk of processing your personal data. These include:</p>
+      <ul>
+        <li>Encryption in transit (TLS) and at rest where applicable.</li>
+        <li>Access controls limiting data access to authorised personnel only.</li>
+        <li>Regular security reviews of our infrastructure and third-party providers.</li>
+        <li>Procedures for detecting, reporting, and investigating personal data breaches.</li>
+      </ul>
+      <p>No method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security, but we are committed to protecting your data using commercially reasonable means.</p>
+      <p>In the event of a personal data breach that is likely to result in a high risk to your rights and freedoms, we will notify you without undue delay in accordance with our obligations under the GDPR.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Cookies and Tracking Technologies</h2>
+      <p>The Agentivity website uses <strong>no third-party analytics or advertising cookies</strong>. We do not use Google Analytics, Meta Pixel, LinkedIn Insight Tag, or any behavioural tracking or retargeting technology.</p>
+      <p>We may use strictly necessary cookies to maintain session state for logged-in users of the hosted cloud service. These cookies are essential for the service to function and do not require consent under the ePrivacy Directive.</p>
+      <p>If we introduce any non-essential cookies in the future, we will update this policy and obtain your consent in advance.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Your Rights Under the GDPR</h2>
+      <p>If you are located in the European Economic Area, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access (Art. 15):</strong> To request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to rectification (Art. 16):</strong> To request correction of inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure (Art. 17):</strong> To request deletion of your data, subject to our legal obligations.</li>
+        <li><strong>Right to restriction (Art. 18):</strong> To request that we restrict the processing of your data in certain circumstances.</li>
+        <li><strong>Right to data portability (Art. 20):</strong> To receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to object (Art. 21):</strong> To object to processing based on legitimate interests or for direct marketing purposes.</li>
+        <li><strong>Right to withdraw consent:</strong> To withdraw consent at any time where processing is based on consent, without affecting the lawfulness of prior processing.</li>
+      </ul>
+      <p>To exercise any of these rights, please email us at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. We will respond within <strong>30 days</strong>. We may need to verify your identity before processing your request.</p>
+      <p>You also have the right to lodge a complaint with the Belgian Data Protection Authority (<a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer">dataprotectionauthority.be</a>) or the supervisory authority in your country of residence.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Children's Privacy</h2>
+      <p>Agentivity is not directed at children under the age of 18. We do not knowingly collect personal data from anyone under 18. If you believe we have collected data from a minor without appropriate consent, please contact us immediately at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a> and we will take steps to delete that data promptly.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Links to Third-Party Services</h2>
+      <p>Our website and Platform may contain links to or integrations with third-party websites and services. This Privacy Policy does not apply to those third parties. We encourage you to review the privacy policies of any third-party services you connect to your agents, as their data practices may differ significantly from ours.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by updating the "Last Updated" date and, where required by law, by seeking fresh consent or providing direct notification.</p>
+      <p>We encourage you to review this policy periodically. Your continued use of the Platform after changes are published constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>14. Contact</h2>
+      <p>For any privacy-related questions, requests, or complaints:</p>
+      <p><strong>Agentivity</strong><br/>Email: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Response time: within 30 days (GDPR requests), within 5 business days (general enquiries)</p>
+    </div>
+  </main>
+</div>
+</div>
+<Footer lang={lang} />
+</Base>

@@ -1,0 +1,223 @@
+---
+import '../styles/main.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+  ogImage?: string;
+  schema?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  lang = 'en',
+  ogImage = '/og-default.png',
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL  = new URL(Astro.url.pathname, Astro.site);
+const schemaJson    = schema ? JSON.stringify(schema) : null;
+
+// hreflang: derive alternate URLs
+const pathWithoutLang = Astro.url.pathname.replace(/^\/fr/, '') || '/';
+const hrefEN = new URL(pathWithoutLang, Astro.site).href;
+const hrefFR = new URL('/fr' + pathWithoutLang.replace(/\/$/, '') , Astro.site).href;
+
+// GTM — set GTM_ID env var at build time (e.g. GTM-XXXXXXX)
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
+
+// IndexNow key — must match /public/<key>.txt filename
+const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="alternate" hreflang="en"    href={hrefEN} />
+  <link rel="alternate" hreflang="fr"    href={hrefFR} />
+  <link rel="alternate" hreflang="x-default" href={hrefEN} />
+
+  <!-- Primary meta -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content={canonicalURL} />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image"       content={new URL(ogImage, Astro.site)} />
+  <meta property="og:locale"      content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+  <meta property="og:site_name"   content="Agentivity" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@agentivity" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={new URL(ogImage, Astro.site)} />
+
+  <!-- IndexNow -->
+  {INDEXNOW_KEY && <meta name="indexnow-key" content={INDEXNOW_KEY} />}
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts — preconnect first, then stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
+
+  <!-- Schema.org -->
+  {schemaJson && <Fragment set:html={"<script type='application/ld+json'>" + schemaJson + "</script>"} />}
+
+  <!-- Google Tag Manager — loads only after cookie consent -->
+  {GTM_ID && (
+    <Fragment set:html={`<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+/* GTM loads after consent — see cookie banner */
+window.__gtmId='${GTM_ID}';
+})(window,document,'script','dataLayer','${GTM_ID}');
+</script>`} />
+  )}
+</head>
+<body>
+
+  <!-- GTM noscript fallback -->
+  {GTM_ID && (
+    <Fragment set:html={`<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`} />
+  )}
+
+  <slot />
+
+  <!-- Cookie consent banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+    <p class="cookie-text">
+      We use cookies to understand how you use Agentivity and improve the experience.
+      <a href="/legal/privacy" class="cookie-link">Privacy policy</a>
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-decline" class="cookie-btn cookie-btn--ghost">Decline</button>
+      <button id="cookie-accept"  class="cookie-btn cookie-btn--primary">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    // Cookie consent + GTM gate
+    const CONSENT_KEY = 'ag_cookie_consent';
+
+    function loadGTM() {
+      const id = (window as any).__gtmId;
+      if (!id || (window as any).dataLayer?.find((e: any) => e.event === 'gtm.js')) return;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
+      document.head.appendChild(s);
+    }
+
+    function initConsent() {
+      const banner = document.getElementById('cookie-banner');
+      const stored = localStorage.getItem(CONSENT_KEY);
+
+      if (stored === 'accepted') { loadGTM(); return; }
+      if (stored === 'declined') return;
+
+      // Show banner after short delay
+      setTimeout(() => { banner?.removeAttribute('hidden'); }, 800);
+
+      document.getElementById('cookie-accept')?.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        banner?.setAttribute('hidden', '');
+        loadGTM();
+      });
+      document.getElementById('cookie-decline')?.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        banner?.setAttribute('hidden', '');
+      });
+    }
+
+    initConsent();
+  </script>
+
+</body>
+</html>
+
+<style is:global>
+/* ── Cookie banner ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, calc(100vw - 32px));
+  background: rgba(13, 27, 53, 0.97);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 40px rgba(0,0,0,.45);
+  animation: cookie-in .3s ease;
+}
+.cookie-banner[hidden] { display: none; }
+@keyframes cookie-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@media (max-width: 560px) {
+  .cookie-banner { flex-direction: column; gap: 12px; align-items: flex-start; }
+}
+.cookie-text {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.55;
+  flex: 1;
+  margin: 0;
+}
+.cookie-link {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn--ghost {
+  background: rgba(255,255,255,.07);
+  color: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.cookie-btn--primary {
+  background: var(--violet);
+  color: #fff;
+}
+</style>
