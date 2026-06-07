@@ -1,0 +1,367 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Agentivity vs Make — AI Agent Teams, Workflow Editor & Prompt Studio vs SaaS Automation",
+  "description": "Make automates SaaS scenarios. Agentivity adds Agent Studio, Team Studio, multi-agent topologies and Prompt Studio on top of its workflow editor. Self-hosted and free. Honest comparison."
+};
+
+type Status = 'yes' | 'partial' | 'no';
+interface Row { feature: string; ag: Status; make: Status; note?: string; }
+
+const rows: Row[] = [
+  { feature: "Workflow editor",              ag: "yes",     make: "yes",     },
+  { feature: "AI agent support",             ag: "yes",     make: "partial", note: "Make has AI modules (OpenAI, Claude) — single LLM call per module" },
+  { feature: "Multi-agent teams",            ag: "yes",     make: "no",      },
+  { feature: "Team topologies",              ag: "yes",     make: "no",      note: "Sequential · Group Chat · Concurrent" },
+  { feature: "Agent Studio",                 ag: "yes",     make: "no",      },
+  { feature: "Team Studio",                  ag: "yes",     make: "no",      },
+  { feature: "Prompt Studio",                ag: "yes",     make: "no",      },
+  { feature: "Synergi template library",     ag: "yes",     make: "partial", note: "Make has 1,500+ scenario templates — not agent/team templates" },
+  { feature: "Self-hostable",                ag: "yes",     make: "no",      note: "Make is cloud-only — your data lives on their servers" },
+  { feature: "Open source",                  ag: "yes",     make: "no",      },
+  { feature: "Free tier (unlimited)",        ag: "yes",     make: "partial", note: "Make free = 1,000 ops/month · Agentivity free = unlimited, self-hosted" },
+  { feature: "Bring your own API key",       ag: "yes",     make: "partial", note: "Make requires their HTTP module — not native BYOK" },
+  { feature: "1,500+ SaaS integrations",    ag: "no",      make: "yes",     note: "Make's main strength" },
+  { feature: "Per-operation billing",        ag: "no",      make: "yes",     note: "Make bills per operation — costs scale with usage" },
+  { feature: "Data stays on your infra",     ag: "yes",     make: "no",      },
+  { feature: "Low-code",                     ag: "yes",     make: "yes",     },
+];
+---
+<Base
+  title="Agentivity vs Make — AI Agent Teams & Workflow Editor vs SaaS Automation"
+  description="Make is great for automating SaaS tools. Agentivity adds Agent Studio, Team Studio, multi-agent topologies and a Prompt Studio — self-hosted and free, no operation caps. Honest comparison."
+  schema={schema}
+>
+  <Nav lang={lang} />
+
+  <!-- HERO -->
+  <section class="s-black cmp-hero">
+    <div class="cmp-hero-bg" aria-hidden="true"></div>
+    <div class="wrap cmp-hero-inner">
+      <span class="eyebrow" style="color:var(--red)">Compare</span>
+      <h1 class="h1 cmp-h1">
+        Agentivity<br />
+        <span class="cmp-vs-word">vs</span>
+        <span class="cmp-vs-name">Make</span>
+      </h1>
+      <p class="cmp-sub">
+        Make connects your SaaS tools in visual scenarios — 1,500+ integrations, per-operation billing, cloud-only.
+        Agentivity gives you a <strong>workflow editor</strong>, an <strong>Agent Studio</strong>, a <strong>Team Studio</strong>,
+        and a <strong>Prompt Studio</strong> — self-hosted, free, no operation counter.
+      </p>
+      <div class="cmp-hero-pills">
+        <span class="cmp-pill" style="--c:var(--mint)">Both have workflow editors</span>
+        <span class="cmp-pill" style="--c:var(--mint)">Agentivity is free &amp; self-hosted</span>
+        <span class="cmp-pill" style="--c:var(--red)">Make = cloud-only, usage-billed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDICT -->
+  <section class="s-navy cmp-verdict-section">
+    <div class="wrap">
+      <h2 class="h3 cmp-section-title">Pick the right tool</h2>
+      <div class="cmp-verdict-grid">
+        <div class="cmp-verdict-card cmp-verdict-card--them">
+          <h3 class="cmp-verdict-name">Make is a better fit if…</h3>
+          <ul class="cmp-verdict-list">
+            <li>You need 1,500+ native integrations with SaaS tools out of the box</li>
+            <li>Your workflow connects Slack, Notion, HubSpot, Google Sheets, etc.</li>
+            <li>Cloud hosting is fine — data privacy is not a requirement</li>
+            <li>AI is a small module inside a larger automation, not the core</li>
+          </ul>
+        </div>
+        <div class="cmp-verdict-card cmp-verdict-card--us">
+          <div class="cmp-verdict-badge">Agentivity</div>
+          <h3 class="cmp-verdict-name">Agentivity is a better fit if…</h3>
+          <ul class="cmp-verdict-list">
+            <li>You want AI agents with roles, tools, and memory — not generic LLM calls</li>
+            <li>Data privacy matters — nothing leaves your server</li>
+            <li>You want unlimited scale with no per-operation billing</li>
+            <li>AI orchestration — not SaaS glue — is the product</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON GRID -->
+  <section class="s-black cmp-table-section">
+    <div class="wrap">
+      <h2 class="h2 cmp-section-title" style="color:#fff">Feature by feature</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th class="cmp-th-feature">Feature</th>
+              <th class="cmp-th-ag">Agentivity</th>
+              <th class="cmp-th-them">Make</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'cmp-row-even' : ''}>
+                <td class="cmp-td-feature">
+                  <span class="cmp-feat-name">{row.feature}</span>
+                  {row.note && <span class="cmp-td-note">{row.note}</span>}
+                </td>
+                <td class="cmp-td-ag">
+                  <span class={`cmp-badge cmp-badge--${row.ag}`}>
+                    {row.ag === 'yes' ? 'Yes' : row.ag === 'partial' ? 'Partial' : 'No'}
+                  </span>
+                </td>
+                <td class="cmp-td-them">
+                  <span class={`cmp-badge cmp-badge--${row.make}`}>
+                    {row.make === 'yes' ? 'Yes' : row.make === 'partial' ? 'Partial' : 'No'}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="cmp-table-legend">
+          <span class="cmp-badge cmp-badge--yes">Yes</span> Supported &nbsp;
+          <span class="cmp-badge cmp-badge--partial">Partial</span> Partial / basic &nbsp;
+          <span class="cmp-badge cmp-badge--no">No</span> Not supported
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT AGENTIVITY ADDS -->
+  <section class="s-navy cmp-deep-section">
+    <div class="wrap">
+      <h2 class="h2 cmp-section-title" style="color:#fff;margin-bottom:8px">What Agentivity adds on top</h2>
+      <p class="cmp-deep-intro">Both have a workflow editor. Agentivity layers three additional studios that Make doesn't have.</p>
+
+      <div class="cmp-studios">
+
+        <div class="cmp-studio-card">
+          <div class="cmp-studio-header">
+            <div class="cmp-studio-dot" style="--c:var(--mint)"></div>
+            <h3 class="cmp-studio-name">Agent Studio</h3>
+          </div>
+          <p class="cmp-studio-body">
+            Design each agent individually: name, role, system prompt, tool set (web search, code execution, APIs), and memory scope. In Make, an AI module is a single LLM call with no concept of identity, role, or specialisation.
+          </p>
+        </div>
+
+        <div class="cmp-studio-card">
+          <div class="cmp-studio-header">
+            <div class="cmp-studio-dot" style="--c:var(--cyan)"></div>
+            <h3 class="cmp-studio-name">Team Studio &amp; Topologies</h3>
+          </div>
+          <p class="cmp-studio-body">
+            Compose agents into teams and choose a collaboration topology:
+            <strong>Sequential</strong> (hand-off chain),
+            <strong>Group Chat</strong> (agents reason together),
+            or <strong>Concurrent</strong> (parallel execution + synthesis).
+            Make has no equivalent — its modules run in order, independently.
+          </p>
+        </div>
+
+        <div class="cmp-studio-card">
+          <div class="cmp-studio-header">
+            <div class="cmp-studio-dot" style="--c:var(--violet-l)"></div>
+            <h3 class="cmp-studio-name">Prompt Studio</h3>
+          </div>
+          <p class="cmp-studio-body">
+            A dedicated environment to write, version, and iterate on system prompts — per agent. Compare outputs across prompt versions, refine agent behaviour, and maintain a library of tested prompts. Make has no prompt management layer.
+          </p>
+        </div>
+
+        <div class="cmp-studio-card">
+          <div class="cmp-studio-header">
+            <div class="cmp-studio-dot" style="--c:var(--red)"></div>
+            <h3 class="cmp-studio-name">Self-hosted &amp; free, forever</h3>
+          </div>
+          <p class="cmp-studio-body">
+            Make is cloud-only and bills per operation. Agentivity runs on your infrastructure — Docker, your server, your rules. No operation counter, no monthly bill, no data leaving your network. Your only cost is the LLM tokens you pay directly to your provider.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEST CAVEAT -->
+  <section class="s-black cmp-caveat-section">
+    <div class="wrap cmp-caveat-wrap">
+      <div class="cmp-honest-box">
+        <span class="cmp-honest-label">Honest caveat</span>
+        <p class="cmp-honest-text">
+          If you need deep SaaS integrations — Slack, HubSpot, Google Workspace, Notion — Make's 1,500+ connectors are hard to beat without custom dev. Agentivity ships the tools agents need (web search, code execution, APIs), not a universal SaaS connector. Many teams use both: Make to trigger and pipe data, Agentivity to do the reasoning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="s-violet cmp-cta">
+    <div class="wrap cmp-cta-inner">
+      <h2 class="h2 cmp-cta-h2">AI that reasons.<br /><span class="grad-text">Free. On your infra.</span></h2>
+      <p class="cmp-cta-sub">Low-code. Self-hosted. Open source. No operation counter.</p>
+      <div class="cmp-cta-btns">
+        <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Star on GitHub</a>
+        <a href="/how-it-works" class="btn btn-ghost">See how it works →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Base>
+
+<style>
+/* ═══ HERO ═══ */
+.cmp-hero { padding: 120px 0 80px; position: relative; overflow: hidden; }
+.cmp-hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 50% 60% at 15% 50%, rgba(255,10,48,.06) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 50% at 85% 30%, rgba(109,0,245,.07) 0%, transparent 60%);
+}
+.cmp-hero-inner { position: relative; z-index: 1; }
+.cmp-h1 { font-size: clamp(48px, 8vw, 96px); line-height: 1.05; margin: 16px 0 24px; letter-spacing: -.05em; }
+.cmp-vs-word { display: block; font-size: .45em; color: rgba(255,255,255,.2); font-weight: 400; letter-spacing: 0; }
+.cmp-vs-name { color: var(--red); }
+.cmp-sub { font-size: clamp(15px, 1.3vw, 17px); color: rgba(255,255,255,.5); line-height: 1.75; max-width: 58ch; margin-bottom: 32px; }
+.cmp-sub strong { color: rgba(255,255,255,.85); font-weight: 600; }
+.cmp-hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.cmp-pill {
+  font-size: 12px; font-weight: 700; letter-spacing: .06em;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+  color: var(--c);
+}
+
+/* ═══ VERDICT ═══ */
+.cmp-verdict-section { padding: 80px 0; }
+.cmp-section-title { margin-bottom: 32px; }
+.cmp-verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 700px) { .cmp-verdict-grid { grid-template-columns: 1fr; } }
+.cmp-verdict-card { padding: 32px; border-radius: var(--r-xl); border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.03); }
+.cmp-verdict-card--us { border-color: rgba(139,47,248,.3); background: rgba(109,0,245,.07); position: relative; }
+.cmp-verdict-badge { position: absolute; top: -12px; left: 24px; background: var(--violet); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
+.cmp-verdict-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.cmp-verdict-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.cmp-verdict-list li { font-size: 13px; color: rgba(255,255,255,.5); padding-left: 16px; position: relative; line-height: 1.55; }
+.cmp-verdict-list li::before { content: '–'; position: absolute; left: 0; color: rgba(255,255,255,.2); }
+.cmp-verdict-card--us .cmp-verdict-list li { color: rgba(255,255,255,.72); }
+.cmp-verdict-card--us .cmp-verdict-list li::before { color: var(--violet-l); }
+
+/* ═══ TABLE ═══ */
+.cmp-table-section { padding: 80px 0; }
+.cmp-table-wrap { margin-top: 32px; overflow-x: auto; }
+.cmp-table { width: 100%; border-collapse: collapse; }
+.cmp-table th, .cmp-table td { padding: 13px 20px; border-bottom: 1px solid rgba(255,255,255,.06); vertical-align: middle; }
+.cmp-th-feature { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.3); width: 52%; text-align: left; }
+.cmp-th-ag { font-size: 13px; font-weight: 800; color: #fff; background: rgba(109,0,245,.15); border-bottom: 2px solid rgba(139,47,248,.4) !important; width: 24%; text-align: center; }
+.cmp-th-them { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.4); width: 24%; text-align: center; }
+.cmp-td-feature { text-align: left; }
+.cmp-feat-name { display: block; font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
+.cmp-td-note { display: block; font-size: 11px; color: rgba(255,255,255,.28); margin-top: 3px; font-style: italic; line-height: 1.4; }
+.cmp-td-ag { background: rgba(109,0,245,.06); text-align: center; }
+.cmp-td-them { text-align: center; }
+.cmp-row-even td { background: rgba(255,255,255,.02); }
+.cmp-row-even .cmp-td-ag { background: rgba(109,0,245,.09); }
+
+/* Status badges — no Unicode emoji, pure CSS */
+.cmp-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.cmp-badge--yes {
+  background: rgba(0,200,150,.15);
+  color: var(--mint);
+  border: 1px solid rgba(0,200,150,.3);
+}
+.cmp-badge--partial {
+  background: rgba(0,207,255,.1);
+  color: var(--cyan);
+  border: 1px solid rgba(0,207,255,.25);
+  opacity: .9;
+}
+.cmp-badge--no {
+  background: rgba(255,10,48,.1);
+  color: var(--red);
+  border: 1px solid rgba(255,10,48,.25);
+  opacity: .85;
+}
+
+.cmp-table-legend {
+  margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.3);
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+}
+
+/* ═══ STUDIOS ═══ */
+.cmp-deep-section { padding: 80px 0; }
+.cmp-deep-intro { font-size: 16px; color: rgba(255,255,255,.45); margin-bottom: 40px; max-width: 56ch; }
+.cmp-studios { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 720px) { .cmp-studios { grid-template-columns: 1fr; } }
+.cmp-studio-card { padding: 28px 32px; border-radius: var(--r-xl); border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.025); }
+.cmp-studio-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.cmp-studio-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); flex-shrink: 0; }
+.cmp-studio-name { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+.cmp-studio-body { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.75; }
+.cmp-studio-body strong { color: rgba(255,255,255,.8); font-weight: 600; }
+
+/* ═══ COST — on pearl ═══ */
+.cmp-cost-section { padding: 80px 0; }
+.cmp-cost-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+@media (max-width: 760px) { .cmp-cost-wrap { grid-template-columns: 1fr; gap: 40px; } }
+.cmp-cost-h2 { font-size: clamp(28px, 3.5vw, 44px); color: var(--ink); margin: 12px 0 20px; }
+.cmp-cost-body { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 8px; }
+.cmp-cost-right { display: flex; flex-direction: column; gap: 12px; }
+.cmp-cost-card {
+  padding: 28px 32px; border-radius: var(--r-xl);
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.cmp-cost-card--us {
+  border-color: rgba(0,200,150,.3);
+  background: rgba(0,200,150,.06);
+}
+.cmp-cost-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+.cmp-cost-price { font-size: clamp(32px, 4vw, 48px); font-weight: 900; letter-spacing: -.04em; line-height: 1; margin-bottom: 10px; }
+.cmp-cost-price span { font-size: 16px; font-weight: 500; color: var(--ink-3); }
+.cmp-cost-detail { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+
+/* ═══ HONEST CAVEAT ═══ */
+.cmp-caveat-section { padding: 32px 0 64px; }
+.cmp-caveat-wrap { max-width: 760px; }
+.cmp-honest-box {
+  padding: 20px 24px; border-radius: var(--r-lg);
+  border: 1px solid rgba(255,207,0,.15);
+  background: rgba(255,207,0,.05);
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.cmp-honest-label {
+  flex-shrink: 0; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,207,0,.7); padding: 3px 8px; border-radius: 4px;
+  border: 1px solid rgba(255,207,0,.25); background: rgba(255,207,0,.08);
+  margin-top: 2px; white-space: nowrap;
+}
+.cmp-honest-text { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.7; }
+
+/* ═══ CTA ═══ */
+.cmp-cta { padding: 100px 0; }
+.cmp-cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.cmp-cta-h2 { font-size: clamp(36px, 5vw, 64px); color: #fff; }
+.cmp-cta-sub { font-size: 17px; color: rgba(255,255,255,.4); }
+.cmp-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+</style>

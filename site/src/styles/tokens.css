@@ -1,0 +1,41 @@
+:root {
+  /* Couleurs principales */
+  --navy:        #1B2F4E;
+  --rouge:      #FF4D1F;
+  --indigo:      #4F46E5;
+  --white:       #FFFFFF;
+  --slate:       #0F172A;
+  --indigo-dark: #1E1B4B;
+
+  /* Texte */
+  --text-primary:   #111827;
+  --text-secondary: #4B5563;
+  --text-muted:     #6B7280;
+
+  /* Fonds utilitaires */
+  --bg-rouge-soft: #FFF2EE;
+  --bg-indigo-soft: #EEF2FF;
+  --bg-gray-light:  #F9FAFB;
+  --border-light:   #E5E7EB;
+
+  /* Sémantique */
+  --color-success:  #16A34A;
+  --text-on-rouge: #CC3010;
+  --text-on-indigo: #3730A3;
+
+  /* Gradient décoratif */
+  --gradient-hero: linear-gradient(90deg, #FF4D1F 0%, #4F46E5 100%);
+
+  /* Typographie */
+  --font-ui:   'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radius */
+  --radius-sm: 7px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-card:       0 8px 40px rgba(0,0,0,.08);
+  --shadow-screenshot: 0 8px 40px rgba(0,0,0,.12);
+}

@@ -1,0 +1,210 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'fr';
+---
+<Base
+  title="Tu es sur la liste — Agentivity"
+  description="Merci d'avoir rejoint la liste d'attente Agentivity. On t'écrira au lancement du cloud."
+  lang="fr"
+>
+  <Nav lang={lang} />
+
+  <section class="s-black ty-section">
+    <div class="ty-glow" aria-hidden="true"></div>
+    <div class="wrap ty-inner">
+
+      <div class="ty-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" width="64" height="64">
+          <circle cx="32" cy="32" r="31" stroke="rgba(0,200,150,.25)" stroke-width="1.5"/>
+          <circle cx="32" cy="32" r="31" stroke="url(#ty-ring)" stroke-width="1.5" stroke-dasharray="195" stroke-dashoffset="195" class="ty-ring-fill"/>
+          <polyline points="20,33 28,41 44,25" stroke="var(--mint)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ty-check"/>
+          <defs>
+            <linearGradient id="ty-ring" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="var(--mint)"/>
+              <stop offset="100%" stop-color="var(--cyan)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <span class="eyebrow" style="color:var(--mint)">C'est bon</span>
+      <h1 class="h1 ty-h1">Tu es sur la liste.</h1>
+      <p class="ty-sub">
+        On t'écrira au lancement du cloud — en premier, tarif de lancement.<br class="br-md" />
+        Pas de spam. Juste le signal.
+      </p>
+
+      <div class="ty-actions">
+        <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          Étoiler sur GitHub
+        </a>
+        <a href="/fr/use-cases" class="btn btn-ghost">Ce que les équipes construisent →</a>
+      </div>
+
+      <div class="ty-divider" aria-hidden="true"></div>
+
+      <div class="ty-while-wait">
+        <p class="ty-while-label">En attendant —</p>
+        <div class="ty-links">
+          <a href="/fr/how-it-works" class="ty-link">
+            <span class="ty-link-icon">⚡</span>
+            <span>
+              <strong>Comment ça marche</strong>
+              <span>Compose des agents, structure des équipes, lance des workflows</span>
+            </span>
+          </a>
+          <a href="/fr/use-cases" class="ty-link">
+            <span class="ty-link-icon">🔬</span>
+            <span>
+              <strong>Cas d'usage</strong>
+              <span>Finance, RH, Marketing, Personnel — des workflows concrets</span>
+            </span>
+          </a>
+          <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="ty-link">
+            <span class="ty-link-icon">🛠</span>
+            <span>
+              <strong>Auto-héberger maintenant</strong>
+              <span>Docker · Gratuit · Sans attente</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+
+</Base>
+
+<style>
+.ty-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.ty-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 55% at 50% 10%, rgba(0,200,150,.1) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(109,0,245,.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.ty-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Animated icon */
+.ty-icon {
+  margin-bottom: 28px;
+}
+.ty-ring-fill {
+  animation: ring-fill .9s cubic-bezier(.4,0,.2,1) .2s forwards;
+}
+.ty-check {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: check-draw .4s ease .9s forwards;
+}
+@keyframes ring-fill {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes check-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.ty-h1 {
+  font-size: clamp(40px, 7vw, 88px);
+  margin: 12px 0 20px;
+  color: #fff;
+}
+.ty-sub {
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+  max-width: 48ch;
+  margin-bottom: 36px;
+}
+.br-md { display: none; }
+@media (min-width: 640px) { .br-md { display: initial; } }
+
+.ty-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.ty-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+  margin-bottom: 40px;
+}
+
+.ty-while-wait {
+  max-width: 560px;
+  width: 100%;
+  text-align: left;
+}
+.ty-while-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 16px;
+}
+.ty-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ty-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(255,255,255,.05);
+  background: rgba(255,255,255,.02);
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.ty-link:hover {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.1);
+}
+.ty-link-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+.ty-link strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.ty-link span span {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+}
+</style>

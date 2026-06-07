@@ -1,0 +1,401 @@
+{
+  "meta": {
+    "title": "Construisez votre équipe IA — Agents autonomes et workflows structurés | Agentivity",
+    "description": "Composez des équipes d'agents IA visuellement. Sans code. Collaboration autonome ou workflows déterministes — finance, RH, marketing en quelques minutes. Open source."
+  },
+  "nav": {
+    "links": [
+      { "label": "Comment ça marche", "href": "/fr/how-it-works" },
+      { "label": "Cas d'usage",       "href": "/fr/use-cases" },
+      { "label": "Services",          "href": "/services" },
+      { "label": "Blog",              "href": "/fr/blog" },
+      { "label": "Tarifs",            "href": "/fr/pricing" },
+      { "label": "Docs",              "href": "/fr/docs" }
+    ],
+    "github": "Star on GitHub",
+    "cta": "Rejoindre la liste d'attente"
+  },
+  "hero": {
+    "pill": "Open source · Sans code · Équipes IA pour votre business",
+    "h1_line1": "Votre prochaine recrue,",
+    "h1_accent": "c'est une équipe IA.",
+    "h1_line2": "Finance. RH. Marketing. Ops.",
+    "subhead": "Composez des agents qui collaborent, délèguent et livrent — avec les structures d'autorité d'une vraie équipe. Vous restez aux commandes. Votre équipe IA fait le travail.",
+    "cta_primary": "Star on GitHub",
+    "cta_secondary": "Rejoindre la liste d'attente",
+    "micro": "Utilisé par des indépendants, des agences et des équipes en croissance — commencez gratuitement."
+  },
+  "stats": [
+    { "value": 15,  "fmt": "", "label": "Heures économisées par semaine en moyenne", "suffix": "+" },
+    { "raw": "0€",            "label": "Pour toujours, open source" },
+    { "value": 100, "fmt": "", "label": "% open source · sans lock-in", "suffix": "%" }
+  ],
+  "how": {
+    "eyebrow": "Comment ça marche",
+    "h2": "De l'idée à une équipe opérationnelle en",
+    "h2_accent": "trois étapes.",
+    "link": "Voir le tutoriel complet",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Définissez vos agents",
+        "body": "Dans Agent Studio, donnez à chaque agent un nom, un rôle, une personnalité et les outils dont il a besoin. Comme rédiger une fiche de poste — votre agent s'en souvient pour toujours."
+      },
+      {
+        "num": "02",
+        "title": "Composez votre équipe",
+        "body": "Dans Team Studio, glissez vos agents sur le canvas. Choisissez une topologie — Group Chat, Manager-Led, Hiérarchique. Structurez votre équipe comme un vrai organigramme."
+      },
+      {
+        "num": "03",
+        "title": "Lancez ou automatisez",
+        "body": "Lancez votre équipe pour une collaboration dynamique — ou construisez un workflow déterministe qui s'exécute à l'identique, à chaque fois. Vous choisissez le mode selon le besoin."
+      }
+    ]
+  },
+  "studios": {
+    "eyebrow": "Trois studios",
+    "h2": "Une plateforme,",
+    "h2_accent": "trois façons de construire.",
+    "sub": "Que vous définissiez un agent, organisiez une équipe ou automatisiez un processus — il y a un studio pour ça.",
+    "cards": [
+      {
+        "tag": "Agent Studio",
+        "title": "Définissez vos agents",
+        "body": "Nom, rôle, outils, instructions, personnalité. Configurez chaque agent une fois — puis réutilisez-le dans n'importe quelle équipe ou workflow.",
+        "badge": "Réutilisable · configurable"
+      },
+      {
+        "tag": "Team Studio",
+        "title": "Organisez votre équipe",
+        "body": "Glissez vos agents sur un canvas visuel. Connectez-les. Choisissez une topologie qui définit l'autorité, le style de collaboration et la délégation. Comme dessiner un organigramme — qui fonctionne vraiment.",
+        "badge": "Visuel · flexible · puissant"
+      },
+      {
+        "tag": "Workflow Studio",
+        "title": "Automatisez vos processus",
+        "body": "Construisez des workflows étape par étape qui s'exécutent exactement de la même façon, à chaque fois. Nœuds séquentiels, branches conditionnelles, exécutions planifiées. Déterministe par conception.",
+        "badge": "Déterministe · reproductible"
+      }
+    ]
+  },
+  "topologies": {
+    "eyebrow": "Topologies d'équipe",
+    "h2": "Construit comme de vraies",
+    "h2_accent": "équipes travaillent.",
+    "sub": "La plupart des outils passent des données d'une étape à l'autre. Agentivity donne à chaque agent un rôle, un niveau d'autorité et une vraie structure de collaboration. Vos agents ne reçoivent pas juste des instructions — ils savent leur place dans l'équipe, à qui ils rendent compte, et comment les décisions sont prises. Pas câblé. Organisé.",
+    "diff": "Pas du routage de tâches. De la vraie organisation d'équipe.",
+    "items": [
+      {
+        "name": "Group Chat",
+        "tag": "collaboratif",
+        "body": "Tout le monde contribue — librement, ouvertement, en construisant sur les idées des autres. Comme un brainstorm où c'est la meilleure réflexion qui gagne, pas la plus haute hiérarchie.",
+        "color": "cyan"
+      },
+      {
+        "name": "Manager-Led",
+        "tag": "coordonné",
+        "body": "Un agent dirige, coordonne et délègue. Les tâches descendent, les résultats remontent. Votre chef de projet virtuel — sans les points de statut.",
+        "color": "violet"
+      },
+      {
+        "name": "Hiérarchique",
+        "tag": "structuré",
+        "body": "Chaîne d'autorité claire. Chaque niveau approuve avant que le suivant commence. Conçu pour le contrôle qualité, la revue multi-étapes et les workflows sensibles à la conformité.",
+        "color": "red"
+      },
+      {
+        "name": "Séquentiel",
+        "tag": "prévisible",
+        "body": "L'un après l'autre. Fiable, auditable, toujours identique. La colonne vertébrale de vos processus business reproductibles et planifiés.",
+        "color": "mint"
+      }
+    ]
+  },
+  "workflow_studio": {
+    "eyebrow": "Workflow Studio",
+    "h2": "L'IA quand vous avez besoin de jugement.",
+    "h2_accent": "Les workflows quand vous avez vos propres règles.",
+    "sub": "Certaines tâches ne peuvent pas se permettre de variation. Un rapport hebdomadaire. Un livrable client. Un contrôle de conformité. Un pipeline de contenu. Dans Workflow Studio, vous définissez le processus exactement — chaque étape, chaque branche, chaque format de sortie. Vos agents le suivent à la lettre. Sans improvisation. Sans interprétation. Juste les résultats.",
+    "why": "Quand la cohérence n'est pas négociable.",
+    "points": [
+      {
+        "title": "Résultat garanti",
+        "body": "Vous définissez ce que vous recevrez. Vos agents livrent exactement ça — à chaque exécution, sans exception. Même structure, même format, même qualité."
+      },
+      {
+        "title": "Planifié ou déclenché",
+        "body": "Lancez chaque lundi à 6h, sur un dépôt de fichier, sur un webhook. Votre workflow démarre exactement quand vous en avez besoin — sans que vous leviez le petit doigt."
+      },
+      {
+        "title": "Entièrement auditable",
+        "body": "Chaque étape journalisée, chaque décision traçable. Sachez exactement ce qui a tourné, quand, et pourquoi — et prouvez-le quand ça compte."
+      }
+    ],
+    "screenshot_label": "Rédacteur d'articles SEO — 24 nœuds · s'exécute chaque lundi à 6h",
+    "link": "Lire la documentation",
+    "link_href": "/fr/docs",
+    "integrations_label": "Se connecte à tout ce que vous utilisez déjà",
+    "integrations": [
+      [
+        {"name":"Slack",      "color":"#611f69","light":"#E8D5F0"},
+        {"name":"Gmail",      "color":"#EA4335","light":"#FCE8E6"},
+        {"name":"Sheets",     "color":"#34A853","light":"#D6F5E0"},
+        {"name":"Notion",     "color":"#2F3437","light":"#E8E9EA"},
+        {"name":"HubSpot",    "color":"#FF7A59","light":"#FFF0EB"},
+        {"name":"Salesforce", "color":"#00A1E0","light":"#D6F2FC"},
+        {"name":"Airtable",   "color":"#FCB400","light":"#FFF5D6"},
+        {"name":"Trello",     "color":"#0052CC","light":"#D6E4FF"},
+        {"name":"Twilio",     "color":"#F22F46","light":"#FFE0E3"},
+        {"name":"Stripe",     "color":"#6772E5","light":"#ECEEFF"}
+      ],
+      [
+        {"name":"WordPress",  "color":"#21759B","light":"#D6EBF5"},
+        {"name":"Mailchimp",  "color":"#FFE01B","light":"#FFFBD6"},
+        {"name":"Shopify",    "color":"#5E8E3E","light":"#E5F0DC"},
+        {"name":"Monday",     "color":"#FF3D57","light":"#FFE0E3"},
+        {"name":"ClickUp",    "color":"#7B68EE","light":"#EDEBFF"},
+        {"name":"Asana",      "color":"#FC636B","light":"#FFE8E9"},
+        {"name":"Dropbox",    "color":"#0061FF","light":"#D6E8FF"},
+        {"name":"Drive",      "color":"#4285F4","light":"#E8F0FE"},
+        {"name":"LinkedIn",   "color":"#0077B5","light":"#D6EDF8"},
+        {"name":"GitHub",     "color":"#24292E","light":"#E8E9EA"}
+      ],
+      [
+        {"name":"X / Twitter","color":"#1DA1F2","light":"#D6F0FE"},
+        {"name":"Facebook",   "color":"#1877F2","light":"#D6E8FE"},
+        {"name":"Instagram",  "color":"#E4405F","light":"#FCE0E5"},
+        {"name":"WhatsApp",   "color":"#25D366","light":"#D6FAE6"},
+        {"name":"Telegram",   "color":"#26A5E4","light":"#D6F0FC"},
+        {"name":"Zoom",       "color":"#2D8CFF","light":"#D6EAFF"},
+        {"name":"Teams",      "color":"#6264A7","light":"#ECEEFF"},
+        {"name":"Webflow",    "color":"#4353FF","light":"#E3E5FF"},
+        {"name":"Zendesk",    "color":"#03363D","light":"#D6EDEE"},
+        {"name":"Jira",       "color":"#0052CC","light":"#D6E4FF"}
+      ]
+    ]
+  },
+  "canvas": {
+    "screenshot_label": "Team Studio — Équipe Produit",
+    "screenshot_alt": "Team Studio Agentivity — agents Product Strategist, Engineer et UX Designer comme hexagones connectés",
+    "badge_agents": "3 agents",
+    "badge_topo": "Topologie Group Chat"
+  },
+  "usecases": {
+    "eyebrow": "Cas d'usage",
+    "h2": "Que fera votre équipe ?",
+    "subhead": "Des équipes IA pour les PME — finance, RH, marketing et plus.",
+    "cta": "Voir tous les cas d'usage",
+    "cards": [
+      {
+        "idx": "01 — Équipe Finance",
+        "title": "Équipe Finance",
+        "agents": ["Agent Recherche", "Agent Analyse", "Rédacteur de rapports"],
+        "colors": ["#FFD9A0", "#C9C2FF", "#A8E6BC"],
+        "quote": "Chaque lundi, l'équipe de Sarah livre un briefing concurrentiel — sourcé, résumé, prêt à partager avec les clients. Zéro heure passée."
+      },
+      {
+        "idx": "02 — Équipe RH",
+        "title": "Équipe RH",
+        "agents": ["Description de poste", "Présélection", "Préparation entretien"],
+        "colors": ["#FFD9A0", "#C9C2FF", "#A8E6BC"],
+        "quote": "Marcus a posté une offre mardi. Mercredi matin, 3 candidats présélectionnés l'attendaient dans sa boîte mail. Il n'a lu aucun CV."
+      },
+      {
+        "idx": "03 — Assistant Personnel",
+        "title": "Assistant Personnel",
+        "agents": ["Recherche", "Résumeur", "Suivi des tâches"],
+        "colors": ["#FFD9A0", "#C9C2FF", "#A8E6BC"],
+        "quote": "Chaque matin à 7h, le brief est prêt. Ce qui s'est passé, ce qui vient, ce qui est fait. Avant le premier café."
+      }
+    ]
+  },
+  "profiles": {
+    "eyebrow": "Conçu pour deux rôles",
+    "h2": "Construisez une fois.",
+    "h2_accent": "Faites tourner indéfiniment.",
+    "sub": "Certains construisent l'équipe. D'autres reçoivent simplement les résultats. Les deux ont leur place dans Agentivity.",
+    "architect": {
+      "tag": "L'Architecte",
+      "label": "Vous concevez l'équipe",
+      "title": "Configurez. Lancez. Passez la main.",
+      "body": "Vous définissez les agents, choisissez la topologie, connectez les outils, cartographiez le processus. La mise en place prend des heures — pas des mois. Ensuite ça tourne sans vous.",
+      "points": [
+        "Canvas visuel drag-and-drop — sans code",
+        "3 studios pour chaque scénario",
+        "Templates Synergi pour démarrer en minutes",
+        "Contrôle total sur chaque étape et chaque sortie"
+      ]
+    },
+    "operator": {
+      "tag": "L'Opérateur",
+      "label": "Votre équipe livre les résultats",
+      "title": "Vérifiez simplement la sortie.",
+      "body": "Planifié, déclenché ou à la demande — votre équipe IA livre de façon cohérente et fiable, sans micromanagement. Le résultat est dans votre boîte mail avant de commencer votre journée.",
+      "points": [
+        "Résultats livrés automatiquement",
+        "Fonctionne selon votre planning",
+        "Aucune compétence technique requise",
+        "Escalade vers vous quand ça compte"
+      ]
+    }
+  },
+  "features": {
+    "eyebrow": "L'argumentaire business",
+    "h2": "Votre équipe travaille.",
+    "h2_accent": "Vous",
+    "h2_end": "décidez.",
+    "sub": "Agentivity gère le répétitif, le chronophage, l'épuisant. Vous vous concentrez sur le stratégique.",
+    "cells": [
+      {
+        "id": "time",
+        "type": "big",
+        "label": "Temps économisé",
+        "headline": "15+ heures récupérées chaque semaine",
+        "body_lines": [
+          { "icon": "⬦", "text": "Veille concurrentielle — rédigée et livrée" },
+          { "icon": "⬦", "text": "CV des candidats — présélectionnés avant votre arrivée" },
+          { "icon": "⬦", "text": "Rapports hebdomadaires — prêts dans votre boîte mail" },
+          { "icon": "⬦", "text": "Briefs de contenu — recherchés la nuit" },
+          { "icon": "⬦", "text": "Comptes rendus de réunion — résumés et envoyés" }
+        ]
+      },
+      {
+        "id": "integrations",
+        "type": "wide",
+        "label": "Intégrations",
+        "headline": "Se connecte à votre stack existante",
+        "body": "Vos agents travaillent dans les outils que vous utilisez déjà. Slack, Gmail, HubSpot, Notion, Google Sheets, WordPress — votre équipe se branche et se met au travail. Pas de remplacement, pas de migration."
+      },
+      {
+        "id": "control",
+        "type": "wide",
+        "label": "Vous êtes aux commandes",
+        "headline": "Vous décidez. Votre équipe exécute.",
+        "body": "Vous définissez le brief. Vos agents font le travail. À tout moment, vous pouvez intervenir, rediriger, ou approuver avant que quoi que ce soit ne parte. L'autonomie complète quand vous le souhaitez. Le contrôle total quand ça compte."
+      },
+      {
+        "id": "24-7",
+        "type": "sm",
+        "label": "Toujours disponible",
+        "headline": "Fonctionne 24/7 sans vous",
+        "body": "Planifiez votre équipe la nuit, le week-end, sur déclencheur. Le résultat vous attend à votre réveil."
+      },
+      {
+        "id": "nocode",
+        "type": "sm",
+        "label": "Sans code",
+        "headline": "Aucune compétence technique requise",
+        "body": "Si vous savez écrire une fiche de poste, vous savez briefer un agent. Démarrez depuis un template en quelques minutes."
+      },
+      {
+        "id": "whitelabel",
+        "type": "sm",
+        "label": "Pour les agences",
+        "headline": "Construisez et vendez sous votre marque",
+        "body": "Proposez Agentivity en marque blanche à vos clients. Livrez des solutions d'équipes IA sous votre propre marque. Open source, vôtre à étendre."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Premiers utilisateurs",
+    "h2": "Des résultats concrets.",
+    "h2_accent": "De vraies équipes.",
+    "items": [
+      {
+        "quote": "On passait 6 heures par semaine à construire des rapports clients à la main. Maintenant notre équipe Agentivity tourne la nuit et le deck est prêt avant la réunion. J'ai recruté pour la stratégie, pas pour les tableaux.",
+        "name": "Sophie L.",
+        "role": "Fondatrice, Agence Marketing Growth",
+        "initial": "S"
+      },
+      {
+        "quote": "J'étais sceptique. Puis j'ai configuré le pipeline de recrutement un jeudi. Le vendredi matin, j'avais 4 candidats présélectionnés avec des résumés dans ma boîte mail. Je n'ai plus lu un seul CV en entier depuis.",
+        "name": "Thomas R.",
+        "role": "Responsable RH, entreprise tech de 47 personnes",
+        "initial": "T"
+      },
+      {
+        "quote": "L'analyse concurrentielle me prenait une demi-journée chaque lundi. Maintenant je reçois un briefing structuré à 7h. Je suis la personne la mieux préparée dans chaque réunion client — et ça ne me coûte zéro temps.",
+        "name": "Elena M.",
+        "role": "Consultante en stratégie indépendante",
+        "initial": "E"
+      }
+    ]
+  },
+  "synergi": {
+    "eyebrow": "Synergi",
+    "h2": "Équipes pré-construites. Prêtes à déployer.",
+    "link": "Parcourir les templates",
+    "cards": [
+      { "badge": "Finance",   "title": "Veille Concurrentielle", "body": "Intelligence de marché hebdomadaire, sourcée et résumée. Prête chaque lundi.",       "meta": "3 agents · séquentielle" },
+      { "badge": "RH",        "title": "Pipeline de Recrutement","body": "De l'offre d'emploi aux candidats présélectionnés — sans lire un seul CV.",        "meta": "3 agents · manager-led" },
+      { "badge": "Marketing", "title": "Moteur de Contenu",      "body": "Recherchez, rédigez et publiez des articles SEO de bout en bout. La nuit.",          "meta": "5 agents · hiérarchique" },
+      { "badge": "Ops",       "title": "Assistant Messagerie",   "body": "Triez, résumez et rédigez des réponses. Dans votre boîte mail avant 7h du matin.",   "meta": "3 agents · concurrente" }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Tarifs",
+    "headline": "0€ pour commencer.",
+    "sub": "Tarification simple et transparente. Commencez gratuitement en open source — passez au cloud seulement quand vous êtes prêt.",
+    "link": "Voir les tarifs complets",
+    "tiers": [
+      { "name": "Gratuit",    "badge": "Open source",       "desc": "La plateforme complète, gratuite pour toujours. L'équipe dont vous avez besoin, sans le coût.", "cta": "Star on GitHub",             "cta_href": "https://github.com/agentivity-labs/agentivity", "featured": true },
+      { "name": "Personnel",  "badge": "Cloud",             "desc": "Hébergé pour vous. Sans installation — connectez-vous et construisez votre première équipe.",    "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
+      { "name": "Pro",        "badge": "Cloud",             "desc": "Plus d'agents, des exécutions plus longues, et une priorité d'exécution pour les builders sérieux.", "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
+      { "name": "Business",   "badge": "Teams",             "desc": "Espaces de travail partagés. Tout le monde construit, tout le monde en bénéficie.",             "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
+      { "name": "Entreprise", "badge": "SSO · White-label", "desc": "SSO, marque blanche, support dédié. Construisez sur Agentivity, vendez sous votre marque.",     "cta": "Nous contacter",             "cta_href": "mailto:hello@agentivity.io" }
+    ],
+    "whitelabel": "Marque blanche disponible. Construisez sur Agentivity, vendez sous votre marque.",
+    "whitelabel_cta": "Parlez-nous de la marque blanche"
+  },
+  "cta": {
+    "h2": "Votre équipe est prête à",
+    "h2_accent": "travailler.",
+    "sub": "Commencez gratuitement — ou rejoignez la liste d'attente et soyez parmi les premiers sur le cloud.",
+    "email_placeholder": "votre@email.com",
+    "submit": "Rejoindre la liste d'attente",
+    "cta_github": "Star on GitHub",
+    "cta_docs": "Lire la documentation",
+    "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
+  },
+  "footer": {
+    "tagline": "Construisez votre équipe IA. Open source, sans lock-in, vôtre à étendre.",
+    "cols": [
+      {
+        "title": "Produit",
+        "links": [
+          { "label": "Comment ça marche", "href": "/fr/how-it-works" },
+          { "label": "Cas d'usage",       "href": "/fr/use-cases" },
+          { "label": "Tarifs",            "href": "/fr/pricing" },
+          { "label": "Docs",              "href": "/fr/docs" },
+          { "label": "Synergi",           "href": "https://synergi.agentivity.io", "external": true },
+          { "label": "Labs",              "href": "https://labs.agentivity.io", "external": true }
+        ]
+      },
+      {
+        "title": "Entreprise",
+        "links": [
+          { "label": "GitHub",         "href": "https://github.com/agentivity-labs/agentivity", "external": true },
+          { "label": "Licence",        "href": "https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md", "external": true },
+          { "label": "Blog",           "href": "/fr/blog" },
+          { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
+          { "label": "Confidentialité", "href": "/fr/legal/privacy" },
+          { "label": "CGU",            "href": "/fr/legal/terms" },
+          { "label": "Disclaimer",     "href": "/fr/legal/disclaimer" },
+          { "label": "Brand Kit",      "href": "/fr/brand" }
+        ]
+      },
+      {
+        "title": "Comparer",
+        "links": [
+          { "label": "vs n8n",    "href": "/compare/agentivity-vs-n8n" },
+          { "label": "vs Dify",   "href": "/compare/agentivity-vs-dify" },
+          { "label": "vs Make",   "href": "/compare/agentivity-vs-make" }
+        ]
+      }
+    ],
+    "legal": "© 2026 Agentivity · agentivity.io",
+    "licence": "Open source sous la Licence d'Utilisation Durable Agentivity"
+  },
+  "ticker": ["Équipe Finance", "Équipe RH", "Équipe Contenu", "Assistant Personnel", "Pipeline Recrutement", "Boîte mail à 7h", "Briefing hebdomadaire", "Autonome 24/7", "Sans compétences tech", "Templates Synergi", "Marque blanche", "Travaille pendant votre sommeil"]
+}

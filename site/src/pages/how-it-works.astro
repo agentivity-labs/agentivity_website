@@ -1,0 +1,1352 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'en';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to build an AI agent team with Agentivity",
+  "description": "Place agents on a visual canvas, choose a team topology, and run. No code required.",
+  "step": [
+    { "@type": "HowToStep", "name": "Compose", "text": "Place agents on your canvas. Give each one a role, tools, and instructions." },
+    { "@type": "HowToStep", "name": "Structure", "text": "Choose your team topology — sequential, group chat, or concurrent." },
+    { "@type": "HowToStep", "name": "Run", "text": "Launch your team. They collaborate and deliver automatically." }
+  ]
+};
+---
+<Base
+  title="How Agentivity Works — Build AI Agent Teams Without Code"
+  description="Place agents on a visual canvas, choose a team topology, and run. No code required. See how Agentivity combines agentic and deterministic steps in one flow."
+  schema={schema}
+>
+  <Nav lang={lang} />
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO — full-bleed, oversized type, floating nodes
+  ══════════════════════════════════════════════════════ -->
+  <section class="hero-wrap">
+    <!-- Background floating nodes decoration -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="bg-node bg-node-1"></div>
+      <div class="bg-node bg-node-2"></div>
+      <div class="bg-node bg-node-3"></div>
+      <div class="bg-conn bg-conn-1"></div>
+      <div class="bg-conn bg-conn-2"></div>
+      <div class="bg-glow"></div>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-label">
+        <span class="eyebrow" style="color:var(--red)">How it works</span>
+      </div>
+      <h1 class="hero-h1">
+        You don't write code.<br />
+        <span class="grad-text">You build a team.</span>
+      </h1>
+      <p class="hero-sub">
+        Place agents on a canvas. Give them roles, tools, instructions.
+        Choose how they collaborate. Hit run.
+      </p>
+      <div class="hero-steps">
+        <div class="hs-item">
+          <span class="hs-n">01</span>
+          <span class="hs-t">Compose agents</span>
+        </div>
+        <svg width="40" height="2" aria-hidden="true"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+        <div class="hs-item">
+          <span class="hs-n">02</span>
+          <span class="hs-t">Structure the team</span>
+        </div>
+        <svg width="40" height="2" aria-hidden="true"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+        <div class="hs-item">
+          <span class="hs-n">03</span>
+          <span class="hs-t">Run &amp; deliver</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Big decorative step numbers -->
+    <div class="hero-deco" aria-hidden="true">Think of a finance team.</div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       METAPHOR — wide centered pull quote
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-pearl metaphor-section">
+    <div class="wrap">
+      <div class="metaphor-quote">
+        <div class="mq-line"></div>
+        <blockquote>
+          One agent finds the data, one analyses it, one writes the report.
+          They work in sequence, pass results along — and you receive the output, not the process.
+        </blockquote>
+        <p class="mq-attr">That's Agentivity. <strong style="color:var(--ink)">You compose the team. They handle the rest.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       STICKY SCROLL — Canvas · Agents · Teams
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-navy sticky-section">
+    <div class="wrap sticky-wrap">
+
+      <!-- Left: scrolling text steps -->
+      <div class="sticky-steps">
+
+        <div class="sticky-step" data-step="0">
+          <div class="ss-num">01</div>
+          <h2 class="h2" style="color:#fff">The Canvas</h2>
+          <p class="ss-body">
+            Your visual workspace. Place agents on it, choose how they're structured —
+            see the whole team at a glance. Who does what, in what order, what they produce.
+          </p>
+          <ul class="ss-list">
+            <li>Drag-and-drop agent placement</li>
+            <li>Visual topology selection</li>
+            <li>Real-time team overview</li>
+          </ul>
+        </div>
+
+        <div class="sticky-step" data-step="1">
+          <div class="ss-num">02</div>
+          <h2 class="h2" style="color:#fff">Agents</h2>
+          <p class="ss-body">
+            Each agent has a role, a set of tools, and instructions you define.
+            A Research Agent searches the web. An Analysis Agent reads the findings.
+            A Writer Agent drafts the report.
+          </p>
+          <div class="ss-callout">
+            <span class="ss-callout-label">Low-code, not no-code</span>
+            Configuring an agent takes care — a clear role, precise instructions,
+            the right tools. Builders love it.
+          </div>
+        </div>
+
+        <div class="sticky-step" data-step="2">
+          <div class="ss-num">03</div>
+          <h2 class="h2" style="color:#fff">Teams &amp; Topologies</h2>
+          <p class="ss-body">
+            Choose your team structure. Each topology defines how agents interact,
+            pass information, and produce results together.
+          </p>
+          <p class="ss-example">
+            <strong style="color:var(--cyan)">Finance team example —</strong>
+            <span style="color:rgba(255,255,255,.5)">Research Agent → Analysis Agent → Report Agent → your inbox.</span>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right: sticky mockup panel -->
+      <div class="sticky-media">
+        <div class="sm-frame">
+
+          <!-- Panel 0: Canvas -->
+          <div class="sm-panel sm-panel--canvas active" data-panel="0">
+            <div class="smp-header">
+              <span class="smp-dot" style="background:#FF5F57"></span>
+              <span class="smp-dot" style="background:#FEBC2E"></span>
+              <span class="smp-dot" style="background:#28C840"></span>
+              <span class="smp-title">Team Studio</span>
+            </div>
+            <div class="smp-canvas">
+              <div class="smc-node smc-n1">
+                <div class="smc-avatar" style="background:var(--cyan)">R</div>
+                <span>Research</span>
+              </div>
+              <svg class="smc-svg" viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="var(--cyan)" stop-opacity=".4"/>
+                    <stop offset="100%" stop-color="var(--violet)" stop-opacity=".4"/>
+                  </linearGradient>
+                  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="var(--violet)" stop-opacity=".4"/>
+                    <stop offset="100%" stop-color="var(--red)" stop-opacity=".4"/>
+                  </linearGradient>
+                </defs>
+                <path d="M60 40 Q130 40 130 90" stroke="url(#g1)" stroke-width="1.5" fill="none" stroke-dasharray="5 3"/>
+                <path d="M130 90 Q130 140 200 140" stroke="url(#g2)" stroke-width="1.5" fill="none" stroke-dasharray="5 3"/>
+              </svg>
+              <div class="smc-node smc-n2">
+                <div class="smc-avatar" style="background:var(--violet)">A</div>
+                <span>Analysis</span>
+              </div>
+              <div class="smc-node smc-n3">
+                <div class="smc-avatar" style="background:var(--red)">W</div>
+                <span>Writer</span>
+              </div>
+              <div class="smc-badge">Sequential</div>
+            </div>
+          </div>
+
+          <!-- Panel 1: Agent config -->
+          <div class="sm-panel sm-panel--agent" data-panel="1">
+            <div class="smp-header">
+              <span class="smp-dot" style="background:#FF5F57"></span>
+              <span class="smp-dot" style="background:#FEBC2E"></span>
+              <span class="smp-dot" style="background:#28C840"></span>
+              <span class="smp-title">Agent Studio — Research Agent</span>
+            </div>
+            <div class="smp-agent">
+              <div class="spa-top">
+                <div class="spa-icon">🔍</div>
+                <div>
+                  <div class="spa-name">Research Agent</div>
+                  <div class="spa-model">gpt-4o · web_search, summarise</div>
+                </div>
+              </div>
+              <div class="spa-field">
+                <div class="spa-label">Role</div>
+                <div class="spa-val">Find the top 5 competitor news items this week. Summarise each in 3 bullet points.</div>
+              </div>
+              <div class="spa-field">
+                <div class="spa-label">Tools</div>
+                <div class="spa-tags">
+                  <span class="spa-tag" style="color:var(--cyan);border-color:rgba(0,207,255,.3);background:rgba(0,207,255,.08)">Web search</span>
+                  <span class="spa-tag" style="color:var(--violet-l);border-color:rgba(109,0,245,.3);background:rgba(109,0,245,.08)">Summariser</span>
+                </div>
+              </div>
+              <div class="spa-field">
+                <div class="spa-label">Reports to</div>
+                <div class="spa-val" style="color:var(--violet-l)">Analysis Agent →</div>
+              </div>
+              <div class="spa-field">
+                <div class="spa-label">Model</div>
+                <div class="spa-val" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan)">gpt-4o</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Topologies -->
+          <div class="sm-panel sm-panel--topo" data-panel="2">
+            <div class="smp-header">
+              <span class="smp-dot" style="background:#FF5F57"></span>
+              <span class="smp-dot" style="background:#FEBC2E"></span>
+              <span class="smp-dot" style="background:#28C840"></span>
+              <span class="smp-title">Choose topology</span>
+            </div>
+            <div class="smp-topos">
+              <div class="spt-item spt-active">
+                <div class="spt-badge" style="color:var(--cyan)">Sequential</div>
+                <div class="spt-flow">
+                  <span class="spt-node">A</span>
+                  <span class="spt-arr">→</span>
+                  <span class="spt-node">B</span>
+                  <span class="spt-arr">→</span>
+                  <span class="spt-node">C</span>
+                </div>
+              </div>
+              <div class="spt-item">
+                <div class="spt-badge" style="color:var(--violet-l)">Group Chat</div>
+                <div class="spt-flow">
+                  <span class="spt-node spt-mgr">M</span>
+                  <span class="spt-arr">↔</span>
+                  <span class="spt-node">A</span>
+                  <span class="spt-arr">↔</span>
+                  <span class="spt-node">B</span>
+                </div>
+              </div>
+              <div class="spt-item">
+                <div class="spt-badge" style="color:var(--mint)">Concurrent</div>
+                <div class="spt-flow">
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <span class="spt-node">A</span>
+                    <span class="spt-node">B</span>
+                  </div>
+                  <span class="spt-arr">→</span>
+                  <span class="spt-node spt-merge">✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       BENTO GRID — Agentic + Deterministic
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-violet bento-section">
+    <div class="wrap">
+      <div class="bento-header">
+        <span class="eyebrow" style="color:var(--red)">Workflow Studio</span>
+        <h2 class="h2" style="color:#fff;margin-top:16px">
+          Agentic and deterministic —<br />in one flow.
+        </h2>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- Cell A — wide headline -->
+        <div class="bento-cell bento-a">
+          <p class="bc-body">
+            Some steps need <strong style="color:#fff">intelligence</strong> — research, analyse, decide.
+            Others need <strong style="color:#fff">precision</strong> — send, log, publish, trigger.
+            Agentivity handles both.
+          </p>
+          <p class="bc-caption">Most tools do one or the other.</p>
+          <div class="bc-badge">
+            <span style="color:var(--violet-l)">Agentic</span>
+            <span style="color:rgba(255,255,255,.2)">+</span>
+            <span style="color:var(--mint)">Deterministic</span>
+          </div>
+        </div>
+
+        <!-- Cell B — timeline flow -->
+        <div class="bento-cell bento-b">
+          <div class="timeline">
+            <div class="tl-line"></div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--trigger"></div>
+              <div class="tl-content">
+                <span class="tl-label">Trigger</span>
+                <span class="tl-name">New hire signed contract</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--agent"></div>
+              <div class="tl-content">
+                <span class="tl-label tl-label--agent">Agentic · Group Chat</span>
+                <span class="tl-name">HR Team</span>
+                <span class="tl-sub">Onboarding docs, welcome draft</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--deter"></div>
+              <div class="tl-content">
+                <span class="tl-label tl-label--deter">Deterministic</span>
+                <span class="tl-name">✉ Send welcome email</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--agent"></div>
+              <div class="tl-content">
+                <span class="tl-label tl-label--agent">Agentic · Sequential</span>
+                <span class="tl-name">Budget &amp; Procurement Team</span>
+                <span class="tl-sub">Equipment request, approval summary</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--deter"></div>
+              <div class="tl-content">
+                <span class="tl-label tl-label--deter">Deterministic</span>
+                <span class="tl-name">📋 Create PO in system</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--done"></div>
+              <div class="tl-content">
+                <span class="tl-name" style="color:var(--mint)">✓ Employee fully onboarded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cell C — stat -->
+        <div class="bento-cell bento-c">
+          <div class="bc-stat">
+            <span class="bc-stat-n grad-text">2</span>
+            <span class="bc-stat-l">modes,<br />one flow</span>
+          </div>
+        </div>
+
+        <!-- Cell D — legend -->
+        <div class="bento-cell bento-d">
+          <div class="bc-legend">
+            <div class="bcl-item">
+              <div class="bcl-dot" style="background:var(--violet)"></div>
+              <div>
+                <div class="bcl-name">Agentic</div>
+                <div class="bcl-desc">AI decides, adapts, judges</div>
+              </div>
+            </div>
+            <div class="bcl-item">
+              <div class="bcl-dot" style="background:var(--mint)"></div>
+              <div>
+                <div class="bcl-name">Deterministic</div>
+                <div class="bcl-desc">Exact steps, every time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       SYNERGI — two-panel within wrap
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-black synergi-section">
+    <div class="wrap synergi-wrap">
+    <div class="ss-left">
+      <span class="eyebrow" style="color:var(--mint)">Synergi</span>
+      <h2 class="h2" style="color:#fff;margin-top:20px">
+        Start faster.<br />Don't build<br />from scratch.
+      </h2>
+      <p class="ss-body-text">
+        Pre-built teams for finance, HR, marketing, and more.
+        Pick a template, customise the instructions, run.
+      </p>
+      <a href="https://synergi.agentivity.io" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:36px">
+        Browse Synergi →
+      </a>
+    </div>
+    <div class="ss-right">
+      <div class="synergi-grid">
+        <div class="sg-card sg-card--featured">
+          <span class="sg-emoji">💹</span>
+          <div>
+            <div class="sg-name">Finance Team</div>
+            <div class="sg-meta">3 agents · Sequential</div>
+          </div>
+          <span class="sg-new">Popular</span>
+        </div>
+        <div class="sg-card">
+          <span class="sg-emoji">👥</span>
+          <div>
+            <div class="sg-name">HR Team</div>
+            <div class="sg-meta">4 agents · Group Chat</div>
+          </div>
+        </div>
+        <div class="sg-card">
+          <span class="sg-emoji">📣</span>
+          <div>
+            <div class="sg-name">Marketing Team</div>
+            <div class="sg-meta">3 agents · Sequential</div>
+          </div>
+        </div>
+        <div class="sg-card">
+          <span class="sg-emoji">🔍</span>
+          <div>
+            <div class="sg-name">Research Assistant</div>
+            <div class="sg-meta">2 agents · Sequential</div>
+          </div>
+        </div>
+        <div class="sg-card">
+          <span class="sg-emoji">⚖️</span>
+          <div>
+            <div class="sg-name">Legal Review</div>
+            <div class="sg-meta">3 agents · Handoff</div>
+          </div>
+        </div>
+        <div class="sg-card">
+          <span class="sg-emoji">🛒</span>
+          <div>
+            <div class="sg-name">Sales Prospecting</div>
+            <div class="sg-meta">3 agents · Concurrent</div>
+          </div>
+        </div>
+        <div class="sg-card sg-card--more">
+          <span style="font-size:24px;opacity:.4">+</span>
+          <div class="sg-name" style="opacity:.5">More templates</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       BUILDER VS USER — asymmetric magazine layout
+  ══════════════════════════════════════════════════════ -->
+  <section class="s-navy mag-section">
+    <div class="wrap">
+      <h2 class="h2" style="color:#fff;margin-bottom:52px">Who does what?</h2>
+      <div class="mag-grid">
+
+        <!-- Large left card -->
+        <div class="mag-card mag-card--builder">
+          <div class="mag-deco-num">B</div>
+          <div class="role-badge" style="background:rgba(255,10,48,.12);color:var(--red);border-color:rgba(255,10,48,.25)">Builder</div>
+          <h3 class="h3" style="color:#fff;margin-top:20px;margin-bottom:12px">
+            Configures agents,<br />builds teams,<br />connects tools.
+          </h3>
+          <p class="mag-desc">
+            Needs clear thinking, not Python. It's low-code — you define roles,
+            write instructions, pick tools. Can I build AI agents without Python? Yes.
+          </p>
+          <ul class="mag-list">
+            <li>AI Specialists &amp; consultants</li>
+            <li>Ops leads &amp; technical founders</li>
+            <li>Anyone who can write a clear brief</li>
+          </ul>
+        </div>
+
+        <!-- Right column: smaller user card + quote -->
+        <div class="mag-right">
+          <div class="mag-card mag-card--user">
+            <div class="role-badge" style="background:rgba(109,0,245,.12);color:var(--violet-l);border-color:rgba(109,0,245,.25)">User</div>
+            <h3 class="h3" style="color:#fff;margin-top:16px;margin-bottom:10px">
+              Uses teams built by a Builder.
+            </h3>
+            <p class="mag-desc-sm">
+              Launch, interact, read results. Truly no-code.
+            </p>
+            <ul class="mag-list-sm">
+              <li>Managers &amp; executives</li>
+              <li>Solopreneurs</li>
+              <li>Anyone with a process to run</li>
+            </ul>
+          </div>
+          <div class="mag-quote-card">
+            <p class="mag-quote">"You're both? <strong style="color:#fff">Start as a Builder.</strong>"</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       CTA — full-bleed gradient banner
+  ══════════════════════════════════════════════════════ -->
+  <section class="cta-banner s-cta-violet" id="cta">
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="wrap cta-inner">
+      <h2 class="h2 cta-h2">
+        Ready to build your<br />
+        <span class="grad-text">first team?</span>
+      </h2>
+      <p class="cta-sub">
+        Open source &amp; free to self-host. Cloud coming soon.
+      </p>
+      <div class="cta-btns">
+        <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-ghost lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          Star on GitHub
+        </a>
+        <a href="/#cta" class="btn btn-primary lg">Join the waitlist</a>
+      </div>
+      <div style="margin-top:28px">
+        <a href="/use-cases" class="link-arrow" style="color:rgba(255,255,255,.4);font-size:14px">
+          See use cases
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Base>
+
+<!-- ══════════════════════════════════════════════════════
+     Sticky scroll JS — IntersectionObserver
+══════════════════════════════════════════════════════ -->
+<script>
+  const steps = document.querySelectorAll<HTMLElement>('.sticky-step');
+  const panels = document.querySelectorAll<HTMLElement>('.sm-panel');
+
+  if (steps.length && panels.length) {
+    const activate = (index: number) => {
+      panels.forEach((p, i) => p.classList.toggle('active', i === index));
+      steps.forEach((s, i) => s.classList.toggle('ss-active', i === index));
+    };
+
+    // Set first active immediately
+    activate(0);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const i = parseInt((e.target as HTMLElement).dataset.step || '0', 10);
+          activate(i);
+        }
+      });
+    }, { threshold: 0.55, rootMargin: '-10% 0px -10% 0px' });
+
+    steps.forEach(s => observer.observe(s));
+  }
+</script>
+
+<style>
+/* ─── Backgrounds ─── */
+.s-black  { background: var(--black); }
+.s-navy   { background: var(--navy); }
+.s-pearl  { background: var(--pearl); } /* override pour texte dark en local */
+.s-cta-violet .cta-bg {
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 110%, rgba(109,0,245,.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% -10%, rgba(0,207,255,.12) 0%, transparent 60%);
+}
+
+/* ════════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════════ */
+.hero-wrap {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 100px;
+  min-height: 76vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Floating bg nodes decoration */
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.bg-node {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.07);
+}
+.bg-node-1 { width:120px;height:120px; top:18%;left:62%; background:rgba(0,207,255,.06); box-shadow:0 0 60px 10px rgba(0,207,255,.08); animation: float1 6s ease-in-out infinite; }
+.bg-node-2 { width:80px;height:80px;  top:52%;left:76%; background:rgba(109,0,245,.08); box-shadow:0 0 40px 8px rgba(109,0,245,.1);  animation: float1 8s ease-in-out infinite reverse; }
+.bg-node-3 { width:60px;height:60px;  top:30%;left:85%; background:rgba(255,10,48,.06);  box-shadow:0 0 30px 6px rgba(255,10,48,.08);  animation: float1 7s ease-in-out infinite 1s; }
+.bg-conn {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+  transform-origin: left;
+}
+.bg-conn-1 { top:26%; left:62%; width:200px; transform: rotate(30deg); }
+.bg-conn-2 { top:54%; left:72%; width:120px; transform: rotate(-20deg); }
+.bg-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  top: -100px; right: -100px;
+  background: radial-gradient(circle, rgba(109,0,245,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@keyframes float1 {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-14px); }
+}
+
+.hero-inner { position: relative; z-index: 1; }
+.hero-label { margin-bottom: 28px; }
+
+.hero-h1 {
+  font-size: clamp(48px, 7.5vw, 108px);
+  font-weight: 900;
+  letter-spacing: -.055em;
+  line-height: .95;
+  color: #fff;
+  max-width: 14ch;
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+  margin-top: 28px;
+  max-width: 42ch;
+}
+
+.hero-steps {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 52px;
+  flex-wrap: wrap;
+}
+.hs-item { display: flex; flex-direction: column; gap: 3px; }
+.hs-n {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--red);
+}
+.hs-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.6);
+}
+
+/* Decorative text in hero background */
+.hero-deco {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-size: clamp(40px, 7vw, 88px);
+  font-weight: 900;
+  color: rgba(255,255,255,.025);
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ════════════════════════════════════════════════════
+   METAPHOR
+════════════════════════════════════════════════════ */
+.metaphor-section { padding: 80px 0; }
+.metaphor-quote {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 32px;
+  position: relative;
+}
+.mq-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--red), var(--violet));
+  border-radius: 2px;
+}
+.metaphor-quote blockquote {
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--ink-2);
+  line-height: 1.7;
+  font-style: italic;
+}
+.mq-attr {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--ink-3);
+}
+
+/* ════════════════════════════════════════════════════
+   STICKY SCROLL
+════════════════════════════════════════════════════ */
+.sticky-section { padding: 0; }
+.sticky-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .sticky-wrap { grid-template-columns: 1fr; }
+  .sticky-media { display: none; }
+}
+
+/* Left: scrolling steps */
+.sticky-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sticky-step {
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  opacity: .35;
+  transition: opacity .4s ease;
+}
+.sticky-step:last-child { border-bottom: none; }
+.sticky-step.ss-active { opacity: 1; }
+
+.ss-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: block;
+}
+.ss-body {
+  font-size: clamp(15px, 1.3vw, 17px);
+  color: rgba(255,255,255,.6);
+  line-height: 1.75;
+  margin-top: 16px;
+}
+.ss-list {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ss-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+}
+.ss-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+.ss-callout {
+  margin-top: 24px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid var(--red);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.65;
+}
+.ss-callout-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.ss-example {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Right: sticky panel */
+.sticky-media { position: sticky; top: 96px; }
+.sm-frame {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sm-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events: none;
+}
+.sm-panel.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Panel header (shared) */
+.smp-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.smp-dot { width: 10px; height: 10px; border-radius: 50%; opacity: .8; }
+.smp-title {
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,.35);
+  flex: 1;
+  text-align: center;
+}
+
+/* Canvas panel */
+.smp-canvas {
+  position: relative;
+  height: calc(100% - 45px);
+}
+.smc-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.smc-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.smc-node span {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,.55);
+}
+.smc-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800; color: #fff;
+  border: 2px solid rgba(255,255,255,.15);
+}
+.smc-n1 { top: 20%; left: 12%; }
+.smc-n2 { top: 48%; left: 50%; transform: translateX(-50%); }
+.smc-n3 { top: 72%; left: 72%; }
+.smc-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0,207,255,.1);
+  border: 1px solid rgba(0,207,255,.2);
+  padding: 4px 14px;
+  border-radius: 99px;
+}
+
+/* Agent panel */
+.smp-agent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(100% - 45px);
+  overflow: auto;
+}
+.spa-top { display: flex; align-items: center; gap: 14px; }
+.spa-icon {
+  font-size: 24px; width: 44px; height: 44px;
+  background: rgba(255,255,255,.06); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.spa-name { font-size: 15px; font-weight: 700; color: #fff; }
+.spa-model { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--cyan); margin-top: 3px; }
+.spa-field { display: flex; flex-direction: column; gap: 5px; }
+.spa-label { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); }
+.spa-val { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.5; }
+.spa-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.spa-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 6px; border: 1px solid; }
+
+/* Topology panel */
+.smp-topos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: calc(100% - 45px);
+}
+.spt-item {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color .2s, background .2s;
+}
+.spt-active {
+  background: rgba(0,207,255,.06);
+  border-color: rgba(0,207,255,.2);
+}
+.spt-badge { font-size: 11px; font-weight: 700; letter-spacing: .08em; min-width: 80px; }
+.spt-flow { display: flex; align-items: center; gap: 6px; }
+.spt-node {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: rgba(255,255,255,.6);
+}
+.spt-mgr { background: rgba(109,0,245,.2); border-color: rgba(109,0,245,.35); color: var(--violet-l); }
+.spt-merge { background: rgba(0,200,150,.15); border-color: rgba(0,200,150,.3); color: var(--mint); }
+.spt-arr { font-size: 14px; color: rgba(255,255,255,.25); }
+
+/* ════════════════════════════════════════════════════
+   BENTO GRID
+════════════════════════════════════════════════════ */
+.bento-section { padding: 96px 0; }
+.bento-header { margin-bottom: 52px; max-width: 600px; }
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+@media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } }
+
+.bento-cell {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cell A — top left wide */
+.bento-a {
+  grid-column: 1;
+  grid-row: 1;
+}
+.bc-body {
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: rgba(255,255,255,.6);
+  line-height: 1.7;
+}
+.bc-caption {
+  font-size: 13px;
+  color: rgba(255,255,255,.25);
+  font-style: italic;
+  margin-top: 16px;
+}
+.bc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 8px 16px;
+  border-radius: 99px;
+}
+
+/* Cell B — top right, timeline */
+.bento-b {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+.timeline { position: relative; padding-left: 24px; }
+.tl-line {
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--red), var(--violet), var(--mint));
+  border-radius: 2px;
+  opacity: .5;
+}
+.tl-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 22px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid var(--black);
+}
+.tl-dot--trigger { background: rgba(255,255,255,.25); }
+.tl-dot--agent   { background: var(--violet); box-shadow: 0 0 8px rgba(109,0,245,.6); }
+.tl-dot--deter   { background: var(--mint);   box-shadow: 0 0 8px rgba(0,200,150,.5); }
+.tl-dot--done    { background: var(--mint);   box-shadow: 0 0 12px rgba(0,200,150,.7); }
+.tl-content { display: flex; flex-direction: column; gap: 2px; }
+.tl-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.tl-label--agent { color: var(--violet-l); }
+.tl-label--deter { color: var(--mint); }
+.tl-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.8);
+}
+.tl-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  font-style: italic;
+}
+
+/* Cell C — bottom left, big stat */
+.bento-c {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+.bc-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.bc-stat-n {
+  font-size: clamp(72px, 10vw, 120px);
+  font-weight: 900;
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+.bc-stat-l {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,.4);
+  line-height: 1.4;
+}
+
+/* Cell D — bottom center, legend (hidden on small grids — merged into C) */
+@media (min-width: 769px) {
+  .bento-c { justify-content: flex-start; min-height: auto; }
+}
+.bento-d { display: none; }
+@media (min-width: 769px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr 0.7fr;
+    grid-template-rows: 1fr auto;
+  }
+  .bento-a { grid-column: 1 / 2; grid-row: 1; }
+  .bento-b { grid-column: 2 / 3; grid-row: 1 / 3; }
+  .bento-c { grid-column: 1 / 2; grid-row: 2; }
+  .bento-d { display: flex; flex-direction: column; justify-content: center; grid-column: 3; grid-row: 1 / 3; }
+}
+.bc-legend { display: flex; flex-direction: column; gap: 24px; }
+.bcl-item { display: flex; align-items: flex-start; gap: 14px; }
+.bcl-dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px;
+  box-shadow: 0 0 10px currentColor;
+}
+.bcl-name { font-size: 14px; font-weight: 700; color: rgba(255,255,255,.7); }
+.bcl-desc { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 3px; }
+
+/* ════════════════════════════════════════════════════
+   SYNERGI (two-panel, contained)
+════════════════════════════════════════════════════ */
+.synergi-section { padding: 100px 0; }
+.synergi-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  min-height: 480px;
+}
+@media (max-width: 768px) { .synergi-wrap { grid-template-columns: 1fr; } }
+
+.ss-left {
+  background: rgba(255,255,255,.03);
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ss-body-text {
+  font-size: clamp(15px, 1.3vw, 17px);
+  color: rgba(255,255,255,.55);
+  line-height: 1.75;
+  margin-top: 20px;
+  max-width: 36ch;
+}
+.ss-right {
+  background: rgba(13,27,53,.6);
+  border-left: 1px solid rgba(255,255,255,.07);
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+}
+.synergi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+.sg-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  transition: background .15s, border-color .15s;
+  cursor: default;
+}
+.sg-card:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); }
+.sg-card--featured {
+  grid-column: 1 / -1;
+  background: rgba(0,200,150,.07);
+  border-color: rgba(0,200,150,.2);
+}
+.sg-card--more {
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  opacity: .5;
+}
+.sg-emoji { font-size: 20px; flex-shrink: 0; }
+.sg-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); }
+.sg-meta { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 2px; }
+.sg-new {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mint);
+  background: rgba(0,200,150,.12);
+  border: 1px solid rgba(0,200,150,.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ════════════════════════════════════════════════════
+   MAGAZINE LAYOUT (Builder vs User)
+════════════════════════════════════════════════════ */
+.mag-section { padding: 96px 0; }
+.mag-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 768px) { .mag-grid { grid-template-columns: 1fr; } }
+
+.mag-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.mag-card--builder {
+  /* accent border top */
+  border-top: 2px solid var(--red);
+}
+.mag-deco-num {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 180px;
+  font-weight: 900;
+  color: rgba(255,255,255,.018);
+  letter-spacing: -.06em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.role-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.mag-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.mag-list {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mag-list li {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mag-list li::before {
+  content: "";
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+/* Right column of magazine */
+.mag-right { display: flex; flex-direction: column; gap: 20px; }
+.mag-card--user { border-top: 2px solid var(--violet); }
+.mag-desc-sm {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.65;
+  margin-top: 10px;
+}
+.mag-list-sm {
+  list-style: none;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mag-list-sm li {
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mag-list-sm li::before {
+  content: "";
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--violet);
+  flex-shrink: 0;
+}
+.mag-quote-card {
+  background: linear-gradient(135deg, rgba(255,10,48,.08), rgba(109,0,245,.08));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+.mag-quote {
+  font-size: 16px;
+  color: rgba(255,255,255,.5);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   CTA BANNER
+════════════════════════════════════════════════════ */
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: var(--black);
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(109,0,245,.18) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 80% -20%, rgba(255,10,48,.1) 0%, transparent 60%);
+}
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.cta-h2 {
+  font-size: clamp(38px, 6vw, 72px);
+  color: #fff;
+}
+.cta-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.45);
+  margin-top: 16px;
+}
+.cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+</style>

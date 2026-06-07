@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'fr';
+const docs = [
+  { tag: 'Conditions d\'utilisation', title: 'Conditions générales d\'utilisation', desc: 'Les règles régissant votre utilisation d\'Agentivity — accès à la plateforme, licences, activités interdites, responsabilité et résiliation.', href: '/fr/legal/terms' },
+  { tag: 'Politique de confidentialité', title: 'Politique de confidentialité', desc: 'Quelles données personnelles nous collectons, comment nous les utilisons, à qui nous les communiquons et vos droits en vertu du RGPD.', href: '/fr/legal/privacy' },
+  { tag: 'Disclaimer', title: 'Disclaimer de responsabilité', desc: 'Limitations de garanties, précision des sorties IA, absence de conseil professionnel et limitation de notre responsabilité.', href: '/fr/legal/disclaimer' },
+  { tag: 'IA & Automatisation', title: 'Politique IA & Automatisation', desc: 'Vos obligations en tant qu\'opérateur d\'agents — surveillance humaine, usages interdits, données transmises aux LLM, workflows autonomes.', href: '/fr/legal/ai-policy' },
+];
+---
+<Base title="Mentions légales — Agentivity" description="Documents légaux Agentivity — CGU, politique de confidentialité, disclaimer et politique IA & automatisation.">
+<Nav lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Documents légaux</p>
+    <nav class="legal-sidebar-links">
+      <a href="/fr/legal" class="active">Vue d'ensemble</a>
+      <a href="/fr/legal/terms">CGU</a>
+      <a href="/fr/legal/privacy">Confidentialité</a>
+      <a href="/fr/legal/disclaimer">Disclaimer</a>
+      <a href="/fr/legal/ai-policy">IA &amp; Automatisation</a>
+    </nav>
+    <div class="legal-sidebar-meta">En vigueur : juin 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Légal</span>
+      <h1>Mentions légales</h1>
+      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+    </header>
+    <div class="legal-section">
+      <p>Cette page regroupe l'ensemble des documents légaux d'Agentivity. Veuillez lire chaque document attentivement avant d'utiliser la plateforme. En accédant à Agentivity, vous acceptez d'être lié par l'ensemble des conditions et politiques applicables.</p>
+      <p>Pour toute question, contactez-nous à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. Nous nous engageons à répondre dans les 5 jours ouvrables.</p>
+      <div class="legal-index-grid">
+        {docs.map(d => (
+          <a class="legal-index-card" href={d.href}>
+            <span class="card-tag">{d.tag}</span>
+            <h3>{d.title}</h3>
+            <p>{d.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="legal-section">
+      <h2>Droit applicable</h2>
+      <p>Ces documents sont régis et interprétés conformément au droit belge. Tout litige découlant de votre utilisation d'Agentivity sera soumis à la compétence exclusive des tribunaux belges, sans préjudice des droits impératifs de protection des consommateurs applicables dans votre pays de résidence.</p>
+    </div>
+    <div class="legal-section">
+      <h2>Langue</h2>
+      <p>Ces documents légaux sont disponibles en anglais et en français. En cas de conflit entre les deux versions, la version anglaise prévaut, dans la mesure permise par le droit applicable.</p>
+      <p>La version anglaise est disponible sur <a href="/legal">/legal</a>.</p>
+    </div>
+  </main>
+</div>
+</div>
+<Footer lang={lang} />
+</Base>

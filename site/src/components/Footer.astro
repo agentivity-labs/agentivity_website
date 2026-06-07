@@ -1,0 +1,49 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="s-navy footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href={lang === 'fr' ? '/fr/' : '/'}>
+          <img class="logo" src="/agentivity-wordmark-white.svg" alt="Agentivity" />
+        </a>
+        <p class="lead">{t.footer.tagline}</p>
+        <div class="foot-soc">
+          <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M20 5.3A19 19 0 0 0 15.4 4l-.3.5a14 14 0 0 1 4 2 13 13 0 0 0-11.2 0 14 14 0 0 1 4-2L11.6 4A19 19 0 0 0 7 5.3 20 20 0 0 0 3.5 19a19 19 0 0 0 5.8 2.9l.4-.6c-1-.4-1.9-.8-2.7-1.4l.7-.4a13 13 0 0 0 11 0l.7.4c-.8.6-1.7 1-2.7 1.4l.4.6a19 19 0 0 0 5.8-2.9A20 20 0 0 0 20 5.3M9.5 15.5c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1m5 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {t.footer.cols.map(col => (
+        <div class="foot-col">
+          <h4>{col.title}</h4>
+          {col.links.map(link => (
+            link.external
+              ? <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+              : <a href={link.href}>{link.label}</a>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <div class="foot-bottom">
+      <span>{t.footer.legal}</span>
+      <span class="mono">{t.footer.licence}</span>
+    </div>
+  </div>
+</footer>
