@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentivity — Build your AI team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img class="logo" src="assets/agentivity-wordmark-white.svg" alt="Agentivity"></a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#synergi">Synergi</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#docs">Docs</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span class="hide-sm">Star on GitHub</span><span class="star-count" id="star-nav">1,284</span></a>
+      <a class="btn btn-primary" href="#cta">Join the waitlist</a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="s-black hero dots" id="top">
+  <div class="blob" style="width:560px;height:560px;background:rgba(109,0,245,.13);top:-160px;left:-120px"></div>
+  <div class="blob" style="width:420px;height:420px;background:rgba(255,10,48,.08);bottom:-200px;right:4%"></div>
+  <div class="wrap sec-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="pill dot reveal" style="color:var(--cyan)">Open source · BYOK · Docker-ready</span>
+        <h1 class="h1 reveal" data-d="1">Build your <span class="u-red">AI&nbsp;team.</span><br><span class="grad-text">A finance team. An HR team. A personal assistant.</span></h1>
+        <p class="sub reveal" data-d="2">Drag agents onto your canvas and connect them. They collaborate, delegate, and deliver — while you sleep.</p>
+        <div class="hero-cta reveal" data-d="3">
+          <a class="btn btn-primary lg" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>Star on GitHub</a>
+          <a class="btn btn-ghost lg" href="#cta">Join the waitlist</a>
+        </div>
+        <div class="hero-micro reveal" data-d="4">Cloud version coming soon — self-host today with <code>docker compose up</code></div>
+      </div>
+
+      <div class="hero-visual reveal" data-d="2">
+        <div class="app-win">
+          <div class="topbar">
+            <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+            <span class="t">Team Studio — Finance Team</span>
+            <span class="live">running</span>
+          </div>
+          <div class="team-stage" data-team-stage></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- stats band -->
+    <div class="stats reveal">
+      <div class="stat"><div class="n"><span data-count="1284" data-fmt="comma">0</span></div><div class="l">Stars on GitHub</div></div>
+      <div class="stat"><div class="n"><span data-count="5">0</span></div><div class="l">Built-in team topologies</div></div>
+      <div class="stat"><div class="n grad-text">0&euro;</div><div class="l">Forever, to self-host</div></div>
+      <div class="stat"><div class="n"><span data-count="100">0</span>%</div><div class="l">Open source · BYOK</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TICKER =================== -->
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+<!-- =================== HOW IT WORKS =================== -->
+<section class="s-navy dots pad-y" id="how">
+  <div class="wrap sec-inner">
+    <div class="how-head">
+      <div>
+        <span class="eyebrow reveal" style="color:var(--red)">How it works</span>
+        <h2 class="h2 reveal" data-d="1" style="margin-top:18px;max-width:15ch">From idea to a working team in <span class="u-red">three moves.</span></h2>
+      </div>
+      <a class="link-arrow reveal" data-d="2" href="#" style="padding-bottom:8px">See how it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal"><span class="accent"></span><div class="num">01</div><h3 class="h3">Compose</h3><p>Place agents on your canvas. Give each one a role, a set of tools, and instructions.</p></div>
+      <div class="step reveal" data-d="1"><span class="accent"></span><div class="num">02</div><h3 class="h3">Structure</h3><p>Choose how your team is organised — sequential, collaborative, or manager-led. Each agent knows what to do and when.</p></div>
+      <div class="step reveal" data-d="2"><span class="accent"></span><div class="num">03</div><h3 class="h3">Run</h3><p>Launch your team. They work, collaborate, and deliver — automatically.</p></div>
+    </div>
+
+    <!-- full-bleed deterministic workflow with text overlay -->
+    <div class="flow-wrap reveal">
+      <div class="flow-head">
+        <div>
+          <span class="eyebrow" style="color:var(--cyan)">Team Studio</span>
+          <h3 class="h3" style="margin-top:12px;font-size:clamp(24px,3vw,34px);max-width:18ch">Need precision? Compose deterministic workflows, step by step.</h3>
+        </div>
+        <a class="link-arrow" href="#" style="padding-bottom:6px">Open the studio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="flow-frame">
+        <div class="topbar"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><span class="t">SEO Article Writer — 24 nodes · deterministic pipeline</span></div>
+        <div class="scroller">
+          <div class="flow-veil"></div>
+          <div class="callout a1">Web Scraper<small>tool · resource</small></div>
+          <div class="callout a2">Generate images<small>loop · per item</small></div>
+          <div class="callout a3">Publish to WordPress<small>output</small></div>
+          <img src="assets/studio-canvas.png" alt="Agentivity Team Studio — a deterministic SEO content pipeline with connected nodes, grouped stages and branching">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CANVAS / PRIMITIVES =================== -->
+<section class="s-white pad-y" id="canvas">
+  <div class="wrap">
+    <div class="canvas-grid">
+      <div>
+        <span class="eyebrow reveal" style="color:var(--violet)">The building blocks</span>
+        <h2 class="h2 reveal" data-d="1" style="margin:18px 0 16px;max-width:13ch">Five primitives. <span class="hl">Endless</span> teams.</h2>
+        <p class="lead reveal" data-d="2" style="color:var(--ink-2);margin-bottom:30px">Everything in Agentivity is built from the same simple parts. Learn five, build anything.</p>
+        <div class="prim-list">
+          <div class="prim reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div><h3>Canvas <span class="tag">workspace</span></h3><p>Your visual workspace. The org chart of your AI team.</p></div><span class="idx">01</span></div>
+          <div class="prim reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01"/></svg></span><div><h3>Agent <span class="tag">collaborator</span></h3><p>An AI collaborator with a role, tools, and instructions you define.</p></div><span class="idx">02</span></div>
+          <div class="prim reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M15.5 20c0-1.8.6-3 2-3.6"/></svg></span><div><h3>Team <span class="tag">group</span></h3><p>Agents working together toward a shared goal.</p></div><span class="idx">03</span></div>
+          <div class="prim reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12 4 7.5M12 12l8-4.5M12 12v9"/></svg></span><div><h3>Team Studio <span class="tag">editor</span></h3><p>The editor where you compose and configure your teams.</p></div><span class="idx">04</span></div>
+          <div class="prim reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.4 6.4L21 9l-5 4.3L17.5 21 12 17l-5.5 4L8 13.3 3 9l6.6-.6z"/></svg></span><div><h3>Synergi <span class="tag">templates</span></h3><p>Pre-built team templates. Ready to deploy, yours to customise.</p></div><span class="idx">05</span></div>
+        </div>
+      </div>
+      <div class="canvas-shot reveal" data-d="2">
+        <div class="topbar"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><span class="t">Canvas — Product Team</span></div>
+        <img src="assets/team-canvas.png" alt="Agentivity canvas — Product Strategist, Engineer and UX Designer agents as connected hexagons on a dotted workspace">
+        <div class="ov"><span class="pill" style="background:#fff;color:var(--ink);border-color:var(--line);box-shadow:var(--sh-card)">3 agents</span><span class="pill" style="background:var(--violet);color:#fff;border-color:transparent;box-shadow:var(--sh-card)">Group Chat topology</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== USE CASES (flash) =================== -->
+<section class="s-red pad-y" id="usecases">
+  <div class="blob" style="width:480px;height:480px;background:rgba(204,10,38,.5);bottom:-160px;left:8%"></div>
+  <div class="wrap sec-inner">
+    <div class="sec-head">
+      <span class="eyebrow reveal" style="color:rgba(255,255,255,.65)">Use cases</span>
+      <h2 class="h2 reveal" data-d="1" style="color:#fff">What will your team do?</h2>
+      <p class="reveal" data-d="2" style="color:rgba(255,255,255,.85)">AI teams for small business — finance, HR, marketing and more.</p>
+    </div>
+    <div class="uc-grid">
+      <article class="uc-card big reveal">
+        <span class="idx">01 — Finance Team</span><h3>Finance Team</h3>
+        <div class="uc-agents"><span class="chip"><span class="d" style="background:#FFD9A0"></span>Research Agent</span><span class="chip"><span class="d" style="background:#C9C2FF"></span>Analysis Agent</span><span class="chip"><span class="d" style="background:#A8E6BC"></span>Report Writer</span></div>
+        <p class="uc-quote">Every Monday, Sarah's Finance team delivers a competitor briefing — sourced, summarised, ready to share with clients.</p>
+      </article>
+      <article class="uc-card reveal" data-d="1">
+        <span class="idx">02 — HR Team</span><h3>HR Team</h3>
+        <div class="uc-agents"><span class="chip"><span class="d" style="background:#FFD9A0"></span>Job Description</span><span class="chip"><span class="d" style="background:#C9C2FF"></span>Screening</span><span class="chip"><span class="d" style="background:#A8E6BC"></span>Interview Prep</span></div>
+        <p class="uc-quote">Marcus posted a role on Tuesday. By Wednesday morning, 3 shortlisted candidates were waiting in his inbox.</p>
+      </article>
+      <article class="uc-card reveal" data-d="2">
+        <span class="idx">03 — Personal Assistant</span><h3>Personal Assistant</h3>
+        <div class="uc-agents"><span class="chip"><span class="d" style="background:#FFD9A0"></span>Research</span><span class="chip"><span class="d" style="background:#C9C2FF"></span>Summariser</span><span class="chip"><span class="d" style="background:#A8E6BC"></span>Task Tracker</span></div>
+        <p class="uc-quote">Every morning at 7am, the brief is ready. What happened, what's next, what's done.</p>
+      </article>
+    </div>
+    <div class="uc-foot reveal"><a class="btn btn-white" href="#">See all use cases <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- =================== FEATURES (bento) =================== -->
+<section class="s-pearl pad-y" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--violet)">Built to ship</span>
+      <h2 class="h2">Everything you need. <span class="hl">Nothing</span> you don't.</h2>
+      <p>No vendor lock-in, no per-seat tax. Run it on your own infrastructure with your own keys.</p>
+    </div>
+    <div class="bento">
+      <div class="cell big reveal">
+        <span class="k">Orchestration</span>
+        <div class="giant grad-text" style="margin-top:18px"><span data-count="5">0</span> topologies</div>
+        <div class="topo-list" style="margin-top:22px">
+          <div class="topo"><span class="d" style="background:#FF0A30"></span>Sequential <span class="mono" style="color:var(--ink-3);font-weight:500;font-size:12px">— pass work down a line</span></div>
+          <div class="topo"><span class="d" style="background:#6D00F5"></span>Concurrent <span class="mono" style="color:var(--ink-3);font-weight:500;font-size:12px">— run in parallel</span></div>
+          <div class="topo"><span class="d" style="background:#00CFFF"></span>Group Chat <span class="mono" style="color:var(--ink-3);font-weight:500;font-size:12px">— agents debate</span></div>
+          <div class="topo"><span class="d" style="background:#00C896"></span>Manager-led <span class="mono" style="color:var(--ink-3);font-weight:500;font-size:12px">— one delegates</span></div>
+          <div class="topo"><span class="d" style="background:#8B2FF8"></span>Hierarchical <span class="mono" style="color:var(--ink-3);font-weight:500;font-size:12px">— teams of teams</span></div>
+        </div>
+      </div>
+      <div class="cell wide reveal" data-d="1">
+        <span class="k">BYOK</span>
+        <h3>Bring your own key</h3>
+        <p>OpenAI, Anthropic, Mistral, local models — plug in your provider. Your usage, your bill, your data.</p>
+      </div>
+      <div class="cell wide reveal" data-d="2">
+        <span class="k">Self-host</span>
+        <h3 style="margin-bottom:14px">Up in minutes</h3>
+        <div class="code-block"><span class="pr">$</span> git clone <span class="c2">agentivity-labs/agentivity</span><br><span class="pr">$</span> <span class="c1">docker compose up</span><br><span class="pr">›</span> studio ready on <span class="c2">localhost:3000</span></div>
+      </div>
+      <div class="cell sm reveal"><span class="k">Memory</span><h3>Persistent sessions</h3><p>Agents remember context across runs and hand off cleanly.</p></div>
+      <div class="cell sm reveal" data-d="1"><span class="k">Tools</span><h3>Tools &amp; MCP</h3><p>Web search, scrapers, databases, and any MCP server you connect.</p></div>
+      <div class="cell sm reveal" data-d="2"><span class="k">Control</span><h3>Human-in-the-loop</h3><p>Approve, edit, or redirect your team at any checkpoint.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SYNERGI (flash) =================== -->
+<section class="s-mint pad-y" id="synergi">
+  <div class="blob" style="width:460px;height:460px;background:rgba(255,255,255,.25);top:-140px;right:4%"></div>
+  <div class="wrap sec-inner">
+    <div class="syn-head">
+      <div>
+        <span class="eyebrow reveal" style="color:rgba(255,255,255,.7)">Synergi</span>
+        <h2 class="h2 reveal" data-d="1" style="color:#fff;margin-top:16px;max-width:16ch">Pre-built teams. Ready to deploy.</h2>
+      </div>
+      <a class="link-arrow reveal" data-d="2" href="#" style="color:#fff;padding-bottom:8px">Browse templates <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="syn-grid">
+      <article class="syn-card reveal"><span class="badge">Finance</span><h3>Competitor Briefing</h3><p>Weekly market intelligence, sourced and summarised.</p><span class="n"><span class="d" style="width:8px;height:8px;background:#fff;transform:rotate(45deg);border-radius:2px;display:inline-block"></span>3 agents · sequential</span></article>
+      <article class="syn-card reveal" data-d="1"><span class="badge">HR</span><h3>Hiring Pipeline</h3><p>From job post to a shortlist of candidates, automatically.</p><span class="n"><span class="d" style="width:8px;height:8px;background:#fff;transform:rotate(45deg);border-radius:2px;display:inline-block"></span>3 agents · manager-led</span></article>
+      <article class="syn-card reveal" data-d="2"><span class="badge">Marketing</span><h3>Content Engine</h3><p>Research, draft, and publish SEO articles end to end.</p><span class="n"><span class="d" style="width:8px;height:8px;background:#fff;transform:rotate(45deg);border-radius:2px;display:inline-block"></span>5 agents · hierarchical</span></article>
+      <article class="syn-card reveal" data-d="3"><span class="badge">Ops</span><h3>Inbox Assistant</h3><p>Triage, summarise, and draft replies before 7am.</p><span class="n"><span class="d" style="width:8px;height:8px;background:#fff;transform:rotate(45deg);border-radius:2px;display:inline-block"></span>3 agents · concurrent</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRICING (flash) =================== -->
+<section class="s-violet dots pad-y" id="pricing">
+  <div class="blob" style="width:520px;height:520px;background:rgba(139,47,248,.5);top:-160px;left:-60px"></div>
+  <div class="wrap sec-inner">
+    <div class="pr-top">
+      <div>
+        <span class="eyebrow reveal" style="color:rgba(255,255,255,.5)">Pricing</span>
+        <div class="pr-big reveal" data-d="1">
+          <span class="display"><span class="grad-text">0&euro;</span> to self-host.</span>
+          <small>Simple, transparent pricing. Start free and open source — scale to cloud only when you're ready.</small>
+        </div>
+      </div>
+      <a class="link-arrow reveal" data-d="2" href="#" style="color:#fff;padding-bottom:10px">See full pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="tiers">
+      <div class="tier feat reveal"><span class="pname">Free</span><span class="badge">Open source</span><p class="desc">Self-host via Docker. The full studio, no limits, yours forever.</p><span class="ta"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>Star on GitHub</span></div>
+      <div class="tier reveal" data-d="1"><span class="pname">Personal</span><span class="badge">Cloud</span><p class="desc">Hosted for you. No setup, no Docker — just sign in and build.</p><span class="ta">Join the waitlist →</span></div>
+      <div class="tier reveal" data-d="2"><span class="pname">Pro</span><span class="badge">Cloud</span><p class="desc">More power, longer runs, and higher limits for serious builders.</p><span class="ta">Join the waitlist →</span></div>
+      <div class="tier reveal" data-d="2"><span class="pname">Business</span><span class="badge">Teams</span><p class="desc">Shared workspaces and seats for teams that ship together.</p><span class="ta">Join the waitlist →</span></div>
+      <div class="tier reveal" data-d="3"><span class="pname">Enterprise</span><span class="badge">SSO · White-label</span><p class="desc">SSO, white-label, and dedicated support at scale.</p><span class="ta">Contact us →</span></div>
+    </div>
+    <div class="pr-foot reveal"><span class="wl"><strong style="color:#fff">White-label available.</strong> Build on Agentivity, sell as your own.</span><a class="btn btn-white-ghost" href="#">Talk to us about white-label</a></div>
+  </div>
+</section>
+
+<!-- =================== FINAL CTA =================== -->
+<section class="s-black cta" id="cta">
+  <div class="cta-blob"></div>
+  <div class="wrap sec-inner">
+    <h2 class="reveal">Your team is ready to <span class="u-red">build.</span></h2>
+    <p class="sub reveal" data-d="1">Start with the open source version — or join the waitlist for cloud.</p>
+    <div class="row reveal" data-d="2">
+      <a class="btn btn-primary lg" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>Star on GitHub</a>
+      <a class="btn btn-ghost lg" href="#">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="s-navy footer" id="docs">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img class="logo" src="assets/agentivity-wordmark-white.svg" alt="Agentivity"></a>
+        <p class="lead">Build your AI team. Open source, self-hosted, yours to extend.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+          <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 5.3A19 19 0 0 0 15.4 4l-.3.5a14 14 0 0 1 4 2 13 13 0 0 0-11.2 0 14 14 0 0 1 4-2L11.6 4A19 19 0 0 0 7 5.3 20 20 0 0 0 3.5 19a19 19 0 0 0 5.8 2.9l.4-.6c-1-.4-1.9-.8-2.7-1.4l.7-.4a13 13 0 0 0 11 0l.7.4c-.8.6-1.7 1-2.7 1.4l.4.6a19 19 0 0 0 5.8-2.9A20 20 0 0 0 20 5.3M9.5 15.5c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1m5 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="#how">How it works</a><a href="#usecases">Use Cases</a><a href="#pricing">Pricing</a><a href="#docs">Docs</a><a href="#synergi">Synergi</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="#">GitHub</a><a href="#">Licence</a><a href="#">Blog</a><a href="#">Contact</a></div>
+      <div class="foot-col"><h4>Compare</h4><a href="#">vs n8n</a><a href="#">vs Dify</a><a href="#">vs Make</a><a href="#">vs Flowise</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Agentivity · agentivity.io</span><span class="mono">Source-available under the Agentivity Sustainable Use Licence</span></div>
+  </div>
+</footer>
+
+<script src="team-hero.js"></script>
+<script>
+// ---- ticker ----
+(function(){
+  const items=[["Sequential","topology"],["Concurrent","topology"],["Group Chat","topology"],["Manager-led","topology"],["Hierarchical","topology"],["Canvas","concept"],["Agent","concept"],["Team","concept"],["Team Studio","concept"],["Synergi","templates"],["BYOK","byok"],["Docker-ready","self-host"]];
+  const track=document.getElementById('ticker');
+  const make=()=>items.map(([a,b])=>`<span class="it">${a} <span class="mono">${b}</span></span>`).join('');
+  track.innerHTML=make()+make();
+})();
+// ---- reveal + count-up ----
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  const counts=document.querySelectorAll('[data-count]');
+  function runCount(el){
+    const target=+el.dataset.count, fmt=el.dataset.fmt, dur=1100, t0=performance.now();
+    function tick(t){
+      const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3), v=Math.round(target*e);
+      el.textContent=fmt==='comma'?v.toLocaleString():v;
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));counts.forEach(runCount);return;}
+  const io=new IntersectionObserver((ents)=>{ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(c=>{if(!c.dataset.done){c.dataset.done=1;runCount(c);}});io.unobserve(e.target);}});},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+  // also observe standalone count nodes (stats wrapper is a single .reveal so handled above)
+  counts.forEach(c=>{if(!c.closest('.reveal')){const o=new IntersectionObserver((en)=>{en.forEach(x=>{if(x.isIntersecting&&!c.dataset.done){c.dataset.done=1;runCount(c);o.disconnect();}});},{threshold:.5});o.observe(c);}});
+})();
+// ---- nav star flourish ----
+(function(){const el=document.getElementById('star-nav');let n=1284;setInterval(()=>{if(Math.random()>.6){n++;el.textContent=n.toLocaleString();}},4200);})();
+// ---- nav scrolled state ----
+(function(){const nav=document.querySelector('.nav');const on=()=>nav.classList.toggle('scrolled',window.scrollY>40);on();addEventListener('scroll',on,{passive:true});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentivity — Build your AI team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mark-d"></span>Agentivity</a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#docs">Docs</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost-dark" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        <span class="hide-sm">Star on GitHub</span><span class="star-count" id="star-nav">1,284</span>
+      </a>
+      <a class="btn btn-primary" href="#cta">Join the waitlist</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="s-white hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="pill dot reveal">Open source · BYOK · Docker-ready</span>
+        <h1 class="h1 reveal" data-d="1">Build your <span class="mark">AI&nbsp;team.</span><br><span class="grad-text">A finance team, an HR team,<br>a personal assistant.</span></h1>
+        <p class="sub reveal" data-d="2">Drag agents onto your canvas, connect them. They collaborate, deliver — while you sleep.</p>
+        <div class="hero-cta reveal" data-d="3">
+          <a class="btn btn-primary" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            Star on GitHub
+          </a>
+          <a class="btn btn-outline-dark" href="#cta">Join the waitlist</a>
+          <span class="micro"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Cloud version coming soon</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-d="2">
+        <div class="canvas-card">
+          <div class="bar">
+            <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+            <span class="t">agentivity://studio/finance-team</span>
+          </div>
+          <img src="assets/agent-node.png" alt="Agentivity agent node — Financial Analyst connected to an LLM model, chat channel and agent session">
+        </div>
+        <div class="float-badge" style="top:-18px;right:-10px">
+          <span class="ic" style="background:var(--red-bg);color:var(--red)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span>Sequential<small>Topology</small></span>
+        </div>
+        <div class="float-badge" style="bottom:24px;left:-22px">
+          <span class="ic" style="background:#E7F6EC;color:var(--green)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span>Team running<small>3 agents · live</small></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- proof bar -->
+    <div class="proof reveal">
+      <span class="p star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>1,284 stars on GitHub</span>
+      <span class="p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Open source</span>
+      <span class="p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Free to self-host</span>
+      <span class="p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Docker-ready</span>
+      <span class="p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Up in minutes</span>
+      <span class="p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bring your own API key</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="s-navy dots pad-y" id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <div>
+        <span class="section-tag reveal" style="color:var(--red)">How it works</span>
+        <h2 class="h2 reveal" data-d="1" style="margin-top:18px;max-width:14ch">From idea to a working team in three moves.</h2>
+      </div>
+      <a class="link-arrow reveal" data-d="2" href="#" style="color:#fff;padding-bottom:8px">See how it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="accent"></span>
+        <div class="num">01</div>
+        <h3 class="h3">Compose</h3>
+        <p>Place agents on your canvas. Give each one a role, a set of tools, and instructions.</p>
+      </div>
+      <div class="step reveal" data-d="1">
+        <span class="accent"></span>
+        <div class="num">02</div>
+        <h3 class="h3">Structure</h3>
+        <p>Choose how your team is organised — sequential, collaborative, or manager-led. Each agent knows what to do and when.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <span class="accent"></span>
+        <div class="num">03</div>
+        <h3 class="h3">Run</h3>
+        <p>Launch your team. They work, collaborate, and deliver — automatically.</p>
+      </div>
+    </div>
+
+    <!-- full-bleed studio canvas -->
+    <div class="studio-bleed reveal">
+      <div class="studio-frame">
+        <div class="bar">
+          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+          <span class="t">Team Studio — SEO Article Writer · 24 agents connected</span>
+        </div>
+        <div class="scroller">
+          <img src="assets/studio-canvas.png" alt="Agentivity Team Studio — a full SEO content workflow with connected agents, grouped stages and live connections">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TICKER ============================ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- ============================ USE CASES ============================ -->
+<section class="s-red pad-y" id="usecases">
+  <div class="wrap">
+    <div class="uc-head">
+      <span class="section-tag reveal" style="color:#fff;opacity:.85">Use cases</span>
+      <h2 class="h2 reveal" data-d="1" style="margin-top:18px;color:#fff">What will your team do?</h2>
+      <p class="reveal" data-d="2" style="margin-top:16px;font-size:19px;color:rgba(255,255,255,.86);max-width:48ch">AI teams for small business — finance, HR, marketing and more.</p>
+    </div>
+
+    <div class="uc-grid">
+      <article class="uc-card big reveal">
+        <span class="num">01 / Finance Team</span>
+        <h3 class="h3" style="font-size:26px">Finance Team</h3>
+        <div class="uc-agents">
+          <span class="chip"><span class="d" style="background:#FFB3A0"></span>Research Agent</span>
+          <span class="chip"><span class="d" style="background:#C9C2FF"></span>Analysis Agent</span>
+          <span class="chip"><span class="d" style="background:#FFD9A0"></span>Report Writer Agent</span>
+        </div>
+        <p class="uc-quote">Every Monday, Sarah's Finance team delivers a competitor briefing — sourced, summarised, ready to share with clients.</p>
+      </article>
+
+      <article class="uc-card reveal" data-d="1">
+        <span class="num">02 / HR Team</span>
+        <h3 class="h3">HR Team</h3>
+        <div class="uc-agents">
+          <span class="chip"><span class="d" style="background:#FFB3A0"></span>Job Description</span>
+          <span class="chip"><span class="d" style="background:#C9C2FF"></span>Screening</span>
+          <span class="chip"><span class="d" style="background:#A8E6BC"></span>Interview Prep</span>
+        </div>
+        <p class="uc-quote">Marcus posted a role on Tuesday. By Wednesday morning, 3 shortlisted candidates were waiting in his inbox.</p>
+      </article>
+
+      <article class="uc-card reveal" data-d="2">
+        <span class="num">03 / Personal Assistant</span>
+        <h3 class="h3">Personal Assistant</h3>
+        <div class="uc-agents">
+          <span class="chip"><span class="d" style="background:#FFB3A0"></span>Research</span>
+          <span class="chip"><span class="d" style="background:#C9C2FF"></span>Summariser</span>
+          <span class="chip"><span class="d" style="background:#FFD9A0"></span>Task Tracker</span>
+        </div>
+        <p class="uc-quote">Every morning at 7am, the brief is ready. What happened, what's next, what's done.</p>
+      </article>
+    </div>
+
+    <div class="uc-foot reveal">
+      <a class="btn btn-light" href="#">See all use cases <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BUILDING BLOCKS ============================ -->
+<section class="s-white pad-y" id="blocks">
+  <div class="wrap">
+    <div class="bb-grid">
+      <div class="bb-copy">
+        <span class="section-tag reveal" style="color:var(--indigo)">The building blocks</span>
+        <h2 class="h2 reveal" data-d="1" style="margin:18px 0 14px;max-width:13ch">Five primitives. Endless teams.</h2>
+        <p class="lead reveal" data-d="2" style="margin-bottom:32px">Everything in Agentivity is built from the same simple parts. Learn five, build anything.</p>
+
+        <div class="bb-list">
+          <div class="bb-row reveal">
+            <span class="bb-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+            <div><h3>Canvas <span class="tag">workspace</span></h3><p>Your visual workspace. The org chart of your AI team.</p></div>
+          </div>
+          <div class="bb-row reveal">
+            <span class="bb-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01"/></svg></span>
+            <div><h3>Agent <span class="tag">collaborator</span></h3><p>An AI collaborator with a role, tools, and instructions you define.</p></div>
+          </div>
+          <div class="bb-row reveal">
+            <span class="bb-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M15.5 20c0-1.8.6-3 2-3.6"/></svg></span>
+            <div><h3>Team <span class="tag">group</span></h3><p>Agents working together toward a shared goal.</p></div>
+          </div>
+          <div class="bb-row reveal">
+            <span class="bb-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12 4 7.5M12 12l8-4.5M12 12v9"/></svg></span>
+            <div><h3>Team Studio <span class="tag">editor</span></h3><p>The editor where you compose and configure your teams.</p></div>
+          </div>
+          <div class="bb-row reveal">
+            <span class="bb-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.4 6.4L21 9l-5 4.3L17.5 21 12 17l-5.5 4L8 13.3 3 9l6.6-.6z"/></svg></span>
+            <div><h3>Synergi <span class="tag">templates</span></h3><p>Pre-built team templates. Ready to deploy, yours to customise.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-visual reveal" data-d="1">
+        <div class="bar">
+          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+          <span class="t">Canvas — Product Team</span>
+        </div>
+        <img src="assets/team-canvas.png" alt="Agentivity canvas — Product Strategist, Engineer and UX Designer agents as connected hexagons">
+        <div class="ov">
+          <span class="pill" style="background:#fff;box-shadow:var(--shadow-sm)">3 agents</span>
+          <span class="pill indigo" style="box-shadow:var(--shadow-sm)">Group Chat topology</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRICING ============================ -->
+<section class="s-indigo dots pad-y" id="pricing">
+  <div class="wrap">
+    <div class="pr-top">
+      <div>
+        <span class="section-tag reveal" style="color:#A5B4FC">Pricing</span>
+        <div class="pr-big reveal" data-d="1" style="margin-top:22px"><span class="grad-text">0&euro;</span> to self-host.
+          <small>Simple, transparent pricing. Start free and open source — scale to cloud when you're ready.</small>
+        </div>
+      </div>
+      <a class="link-arrow reveal" data-d="2" href="#" style="color:#fff;padding-bottom:10px">See full pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="tiers">
+      <div class="tier feat reveal">
+        <span class="pname">Free</span>
+        <span class="badge">Open source</span>
+        <p class="desc">Self-host via Docker. The full studio, no limits, yours forever.</p>
+        <span class="ta"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>Star on GitHub</span>
+      </div>
+      <div class="tier reveal" data-d="1">
+        <span class="pname">Personal</span>
+        <span class="badge">Cloud</span>
+        <p class="desc">Hosted for you. No setup, no Docker — just sign in and build.</p>
+        <span class="ta">Join the waitlist →</span>
+      </div>
+      <div class="tier reveal" data-d="2">
+        <span class="pname">Pro</span>
+        <span class="badge">Cloud</span>
+        <p class="desc">More power, longer runs, and higher limits for serious builders.</p>
+        <span class="ta">Join the waitlist →</span>
+      </div>
+      <div class="tier reveal" data-d="2">
+        <span class="pname">Business</span>
+        <span class="badge">Teams</span>
+        <p class="desc">Shared workspaces and seats for teams that ship together.</p>
+        <span class="ta">Join the waitlist →</span>
+      </div>
+      <div class="tier reveal" data-d="3">
+        <span class="pname">Enterprise</span>
+        <span class="badge">SSO · White-label</span>
+        <p class="desc">SSO, white-label, and dedicated support at scale.</p>
+        <span class="ta">Contact us →</span>
+      </div>
+    </div>
+
+    <div class="pr-foot reveal">
+      <span class="wl"><strong style="color:#fff">White-label available.</strong> Build on Agentivity, sell as your own.</span>
+      <a class="btn btn-outline-indigo" href="#" style="background:rgba(255,255,255,.1);color:#fff">Talk to us about white-label</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="s-slate cta-final" id="cta">
+  <div class="cta-glow"></div>
+  <div class="wrap" style="position:relative">
+    <h2 class="reveal">Your team is ready to <span class="grad-text">build.</span></h2>
+    <p class="sub reveal" data-d="1">Start with the open source version — or join the waitlist for cloud.</p>
+    <div class="row reveal" data-d="2">
+      <a class="btn btn-primary" href="#" style="padding:15px 24px">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Star on GitHub
+      </a>
+      <a class="btn btn-ghost-dark" href="#" style="padding:15px 24px">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="s-navy footer" id="docs">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="mark-d"></span>Agentivity</a>
+        <p class="lead">Build your AI team. Open source, self-hosted, yours to extend.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+          <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 5.3A19 19 0 0 0 15.4 4l-.3.5a14 14 0 0 1 4 2 13 13 0 0 0-11.2 0 14 14 0 0 1 4-2L11.6 4A19 19 0 0 0 7 5.3 20 20 0 0 0 3.5 19a19 19 0 0 0 5.8 2.9l.4-.6c-1-.4-1.9-.8-2.7-1.4l.7-.4a13 13 0 0 0 11 0l.7.4c-.8.6-1.7 1-2.7 1.4l.4.6a19 19 0 0 0 5.8-2.9A20 20 0 0 0 20 5.3M9.5 15.5c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1m5 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#how">How it works</a>
+        <a href="#usecases">Use Cases</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Docs</a>
+        <a href="#blocks">Synergi</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#">GitHub</a>
+        <a href="#">Licence</a>
+        <a href="#">vs n8n</a>
+        <a href="#">vs Dify</a>
+        <a href="#">vs Make</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Agentivity · agentivity.io</span>
+      <span class="mono">Source-available under the Agentivity Sustainable Use Licence</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---- animated ticker (topologies + concepts) ----
+(function(){
+  const items = [
+    ['Sequential','topology'],['Concurrent','topology'],['Group Chat','topology'],
+    ['Manager-led','topology'],['Hierarchical','topology'],['5 topologies','/run'],
+    ['Canvas','concept'],['Agent','concept'],['Team','concept'],
+    ['Team Studio','concept'],['Synergi','templates'],['BYOK','byok']
+  ];
+  const track = document.getElementById('ticker');
+  const make = () => items.map(([a,b])=>`<span class="it">${a} <span class="mono">${b}</span></span>`).join('');
+  track.innerHTML = make() + make(); // duplicate for seamless loop
+})();
+
+// ---- scroll reveal ----
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io = new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
+
+// ---- live-ish star counter flourish ----
+(function(){
+  const el = document.getElementById('star-nav');
+  let n = 1284;
+  setInterval(()=>{ if(Math.random()>.6){ n++; el.textContent = n.toLocaleString(); } }, 4200);
+})();
+</script>
+</body>
+</html>

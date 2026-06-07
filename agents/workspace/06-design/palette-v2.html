@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentivity — Palette V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #F8F9FC; color: #111; }
+
+h1 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #9CA3AF; padding: 32px 40px 20px; }
+h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #9CA3AF; padding: 32px 40px 16px; }
+
+/* ── SWATCHES ── */
+.swatches { display: flex; gap: 12px; padding: 0 40px; flex-wrap: wrap; }
+.swatch {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  width: 96px;
+}
+.swatch-chip {
+  width: 96px; height: 64px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.swatch-hex { font-size: 11px; font-weight: 600; color: #374151; font-family: monospace; }
+.swatch-name { font-size: 11px; color: #9CA3AF; text-align: center; }
+
+/* ── SECTION TABLE ── */
+.table-wrap { padding: 0 40px; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: left; padding: 10px 16px; background: #F3F4F6; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #6B7280; border-bottom: 2px solid #E5E7EB; }
+td { padding: 14px 16px; border-bottom: 1px solid #F3F4F6; vertical-align: middle; }
+tr:hover td { background: #FAFAFA; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; font-family: monospace;
+}
+.chip-dot { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; border: 1px solid rgba(0,0,0,.1); }
+.section-name { font-weight: 700; font-size: 13px; color: #111; }
+
+/* ── SECTION PREVIEWS ── */
+.previews { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+.preview-section {
+  padding: 48px 40px;
+  position: relative;
+}
+.preview-inner { max-width: 900px; }
+.preview-eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; opacity: .5; margin-bottom: 12px; }
+.preview-h2 { font-size: 40px; font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: 12px; }
+.preview-body { font-size: 15px; line-height: 1.65; opacity: .7; max-width: 520px; margin-bottom: 24px; }
+.preview-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.preview-btn {
+  font-size: 13px; font-weight: 700; padding: 10px 20px;
+  border-radius: 7px; cursor: default; font-family: 'Inter', sans-serif;
+  text-decoration: none;
+}
+.preview-cards { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+.preview-card {
+  border-radius: 10px; padding: 16px 20px;
+  font-size: 13px; font-weight: 600;
+  min-width: 160px;
+}
+.preview-label {
+  position: absolute; top: 16px; right: 16px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; opacity: .4;
+  font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<h1>Agentivity — Palette V2 · Exploration couleurs flash</h1>
+
+<!-- SWATCHES -->
+<div class="swatches">
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#0A1628"></div>
+    <div class="swatch-hex">#0A1628</div>
+    <div class="swatch-name">Noir minuit</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#0D1B35"></div>
+    <div class="swatch-hex">#0D1B35</div>
+    <div class="swatch-name">Navy</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#C41230"></div>
+    <div class="swatch-hex">#C41230</div>
+    <div class="swatch-name">Carmin</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#E8192C"></div>
+    <div class="swatch-hex">#E8192C</div>
+    <div class="swatch-name">Rouge vif</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#5B21B6"></div>
+    <div class="swatch-hex">#5B21B6</div>
+    <div class="swatch-name">Violet</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#7C3AED"></div>
+    <div class="swatch-hex">#7C3AED</div>
+    <div class="swatch-name">Violet flash</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#059669"></div>
+    <div class="swatch-hex">#059669</div>
+    <div class="swatch-name">Émeraude</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#00B37D"></div>
+    <div class="swatch-hex">#00B37D</div>
+    <div class="swatch-name">Vert flash</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#0284C7"></div>
+    <div class="swatch-hex">#0284C7</div>
+    <div class="swatch-name">Bleu ciel</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#00B4D8"></div>
+    <div class="swatch-hex">#00B4D8</div>
+    <div class="swatch-name">Cyan flash</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#FFFFFF; border: 1px solid #E5E7EB;"></div>
+    <div class="swatch-hex">#FFFFFF</div>
+    <div class="swatch-name">Blanc</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-chip" style="background:#F0F4FF; border: 1px solid #E5E7EB;"></div>
+    <div class="swatch-hex">#F0F4FF</div>
+    <div class="swatch-name">Perle bleue</div>
+  </div>
+</div>
+
+<!-- TABLE SYSTÈME -->
+<h2>Système — Par fond de section</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Background</th>
+      <th>Texte principal</th>
+      <th>Texte secondaire</th>
+      <th>Bordure card</th>
+      <th>CTA / Accent</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><span class="section-name">Noir minuit</span><br><span style="font-size:11px;color:#9CA3AF">Hero, CTA final</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#0A1628"></span>#0A1628</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.5);border:1px solid #ddd"></span>rgba(255,255,255,.5)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.1);border:1px solid #ddd"></span>rgba(255,255,255,.1)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#E8192C"></span>#E8192C</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Navy</span><br><span style="font-size:11px;color:#9CA3AF">Nav, How it works, Footer</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#0D1B35"></span>#0D1B35</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.55);border:1px solid #ddd"></span>rgba(255,255,255,.55)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.12);border:1px solid #ddd"></span>rgba(255,255,255,.12)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#E8192C"></span>#E8192C</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Rouge Carmin</span><br><span style="font-size:11px;color:#9CA3AF">Section chaude, Use Cases</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#C41230"></span>#C41230</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.75);border:1px solid #ddd"></span>rgba(255,255,255,.75)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.25);border:1px solid #ddd"></span>rgba(255,255,255,.25)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Rouge vif</span><br><span style="font-size:11px;color:#9CA3AF">Ticker, accents forts</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#E8192C"></span>#E8192C</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.8);border:1px solid #ddd"></span>rgba(255,255,255,.8)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.3);border:1px solid #ddd"></span>rgba(255,255,255,.3)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Violet profond</span><br><span style="font-size:11px;color:#9CA3AF">Pricing, sections premium</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#5B21B6"></span>#5B21B6</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.65);border:1px solid #ddd"></span>rgba(255,255,255,.65)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.2);border:1px solid #ddd"></span>rgba(255,255,255,.2)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#A78BFA"></span>#A78BFA</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Violet flash</span><br><span style="font-size:11px;color:#9CA3AF">Accent, badges tech</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#7C3AED"></span>#7C3AED</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.7);border:1px solid #ddd"></span>rgba(255,255,255,.7)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.25);border:1px solid #ddd"></span>rgba(255,255,255,.25)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#EDE9FE"></span>#EDE9FE</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Émeraude</span><br><span style="font-size:11px;color:#9CA3AF">Open source, features</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#059669"></span>#059669</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.75);border:1px solid #ddd"></span>rgba(255,255,255,.75)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.25);border:1px solid #ddd"></span>rgba(255,255,255,.25)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Cyan flash</span><br><span style="font-size:11px;color:#9CA3AF">Section tech, docs</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#00B4D8"></span>#00B4D8</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.8);border:1px solid #ddd"></span>rgba(255,255,255,.8)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:rgba(255,255,255,.3);border:1px solid #ddd"></span>rgba(255,255,255,.3)</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#0A1628"></span>#0A1628</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Blanc</span><br><span style="font-size:11px;color:#9CA3AF">Hero, sections neutres</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ddd"></span>#FFFFFF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#0D1B35"></span>#0D1B35</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#6B7280"></span>#6B7280</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#E5E7EB;border:1px solid #ddd"></span>#E5E7EB</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#C41230"></span>#C41230</span></td>
+    </tr>
+
+    <tr>
+      <td><span class="section-name">Perle bleue</span><br><span style="font-size:11px;color:#9CA3AF">Sections light alternées</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#F0F4FF;border:1px solid #ddd"></span>#F0F4FF</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#0D1B35"></span>#0D1B35</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#4B5563"></span>#4B5563</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#CBD5E1;border:1px solid #ddd"></span>#CBD5E1</span></td>
+      <td><span class="chip"><span class="chip-dot" style="background:#C41230"></span>#C41230</span></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<!-- SECTION PREVIEWS -->
+<h2>Aperçu — sections réelles</h2>
+
+<div class="previews">
+
+  <!-- Noir minuit -->
+  <div class="preview-section" style="background:#0A1628">
+    <div class="preview-label" style="color:#fff">#0A1628 — Noir minuit</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:#fff">Open source · Available now</div>
+      <div class="preview-h2" style="color:#fff">Build your <span style="color:#E8192C;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:3px">AI team.</span></div>
+      <div class="preview-body" style="color:rgba(255,255,255,.55)">Compose agents visually. They collaborate, deliver — while you sleep.</div>
+      <div class="preview-btns">
+        <a class="preview-btn" style="background:#E8192C;color:#fff">Join the waitlist</a>
+        <a class="preview-btn" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)">⭐ Star on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navy -->
+  <div class="preview-section" style="background:#0D1B35">
+    <div class="preview-label" style="color:#fff">#0D1B35 — Navy</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:rgba(255,255,255,.4)">How it works</div>
+      <div class="preview-h2" style="color:#fff">Three steps.<br/>One working team.</div>
+      <div class="preview-body" style="color:rgba(255,255,255,.55)">You don't write code. You build a team the same way you'd hire one.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff">01 — Compose</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff">02 — Structure</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff">03 — Run</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blanc -->
+  <div class="preview-section" style="background:#FFFFFF;border-top:1px solid #F3F4F6">
+    <div class="preview-label" style="color:#111">#FFFFFF — Blanc</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:#E8192C">The Canvas</div>
+      <div class="preview-h2" style="color:#0D1B35">Your visual <span style="background:#FEE2E2;padding:0 8px;border-radius:4px">workspace.</span></div>
+      <div class="preview-body" style="color:#4B5563">Place agents, define how they collaborate. See the whole team at a glance.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:#F9FAFB;border:1px solid #E5E7EB;color:#0D1B35">Canvas</div>
+        <div class="preview-card" style="background:#F9FAFB;border:1px solid #E5E7EB;color:#0D1B35">Agents</div>
+        <div class="preview-card" style="background:#F9FAFB;border:1px solid #E5E7EB;color:#0D1B35">Topologies</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rouge Carmin -->
+  <div class="preview-section" style="background:#C41230">
+    <div class="preview-label" style="color:#fff">#C41230 — Rouge Carmin</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:rgba(255,255,255,.6)">Use Cases</div>
+      <div class="preview-h2" style="color:#fff">What will your <em style="font-style:normal;text-decoration:underline;text-underline-offset:5px">team</em> do?</div>
+      <div class="preview-body" style="color:rgba(255,255,255,.75)">Finance teams, HR teams, marketing teams — built in minutes.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff">Finance Team</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff">HR Team</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff">Marketing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Violet profond -->
+  <div class="preview-section" style="background:#5B21B6">
+    <div class="preview-label" style="color:#fff">#5B21B6 — Violet profond</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:rgba(255,255,255,.5)">Pricing</div>
+      <div class="preview-h2" style="color:#fff">Simple, transparent pricing.</div>
+      <div class="preview-body" style="color:rgba(255,255,255,.65)">Open source at the core. Cloud when you need it.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff">Free — 0€</div>
+        <div class="preview-card" style="background:rgba(232,25,44,.2);border:1px solid rgba(232,25,44,.4);color:#fff">Cloud</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff">Enterprise</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Émeraude -->
+  <div class="preview-section" style="background:#059669">
+    <div class="preview-label" style="color:#fff">#059669 — Émeraude</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:rgba(255,255,255,.6)">Open source</div>
+      <div class="preview-h2" style="color:#fff">Self-host. <span style="text-decoration:underline;text-underline-offset:5px">Free.</span> Forever.</div>
+      <div class="preview-body" style="color:rgba(255,255,255,.75)">One Docker command. Your infrastructure, your data, your rules. 0€/month.</div>
+      <div class="preview-btns">
+        <a class="preview-btn" style="background:#FFFFFF;color:#059669">⭐ Star on GitHub</a>
+        <a class="preview-btn" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)">Read the docs →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cyan flash -->
+  <div class="preview-section" style="background:#00B4D8">
+    <div class="preview-label" style="color:#fff">#00B4D8 — Cyan flash</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:rgba(255,255,255,.7)">Synergi</div>
+      <div class="preview-h2" style="color:#fff">Pre-built teams.<br/>Ready to run.</div>
+      <div class="preview-body" style="color:rgba(255,255,255,.8)">Don't start from scratch. Pick a template, customise, deploy.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff">Finance Team</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff">HR Team</div>
+        <div class="preview-card" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff">Marketing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perle bleue -->
+  <div class="preview-section" style="background:#F0F4FF;border-top:1px solid #E2E8F0">
+    <div class="preview-label" style="color:#0D1B35">#F0F4FF — Perle bleue</div>
+    <div class="preview-inner">
+      <div class="preview-eyebrow" style="color:#5B21B6">The platform</div>
+      <div class="preview-h2" style="color:#0D1B35">Everything you need<br/>to build AI teams.</div>
+      <div class="preview-body" style="color:#4B5563">Canvas, agents, topologies, templates. All in one place.</div>
+      <div class="preview-cards">
+        <div class="preview-card" style="background:#fff;border:1px solid #CBD5E1;color:#0D1B35">Canvas</div>
+        <div class="preview-card" style="background:#fff;border:1px solid #CBD5E1;color:#0D1B35">Agents</div>
+        <div class="preview-card" style="background:#fff;border:1px solid #CBD5E1;color:#0D1B35">Synergi</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="padding:40px;text-align:center;color:#9CA3AF;font-size:12px">
+  Agentivity — Palette V2 · Choisir 4–5 sections parmi les options ci-dessus
+</div>
+
+</body>
+</html>
