@@ -728,8 +728,6 @@ if (document.readyState !== 'loading') {
   els.forEach(e => io.observe(e));
   counts.forEach(c=>{if(!c.closest('.reveal')){const o=new IntersectionObserver((en)=>{en.forEach(x=>{if(x.isIntersecting&&!c.dataset.done){c.dataset.done=1;runCount(c);o.disconnect();}});},{threshold:.5});o.observe(c);}});
 })();
-// ---- nav scrolled state ----
-(function(){const nav=document.querySelector('.nav');const on=()=>nav.classList.toggle('scrolled',window.scrollY>40);on();addEventListener('scroll',on,{passive:true});})();
 </script>
 
 <style>
