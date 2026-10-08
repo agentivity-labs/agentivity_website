@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import WaitlistForm from '../../components/WaitlistForm.astro';
 import { useTranslations } from '../../i18n/utils';
 
 const lang = 'fr';
@@ -129,14 +130,14 @@ const schema = {
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web, Cloud",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Plan open source gratuit" },
-      "url": "https://agentivity.io/fr/",
+      "url": "https://www.agentivity.io/fr/",
       "description": t.meta.description
     },
     {
       "@type": "Organization",
       "name": "Agentivity",
-      "url": "https://agentivity.io",
-      "logo": "https://agentivity.io/agentivity-wordmark-white.svg"
+      "url": "https://www.agentivity.io",
+      "logo": "https://www.agentivity.io/agentivity-wordmark-white.svg"
     }
   ]
 };
@@ -533,12 +534,9 @@ const schema = {
   <div class="wrap sec-inner">
     <h2 class="reveal">{t.cta.h2} <span class="u-red">{t.cta.h2_accent}</span></h2>
     <p class="sub reveal" data-d="1">{t.cta.sub}</p>
-    <form method="POST" action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_WAITLIST ?? 'YOUR_FORM_ID'}`} class="waitlist-form reveal" data-d="2">
-      <input type="hidden" name="_next" value="https://agentivity.io/fr/merci" />
-      <input type="hidden" name="_gotcha" style="display:none" />
-      <input type="email" name="email" placeholder={t.cta.email_placeholder} required autocomplete="email" />
-      <button type="submit" class="btn btn-primary lg">{t.cta.submit}</button>
-    </form>
+    <div class="waitlist-slot reveal" data-d="2">
+      <WaitlistForm lang={lang} />
+    </div>
     <div class="row reveal" data-d="3">
       <a class="btn btn-ghost" href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
@@ -566,10 +564,7 @@ const schema = {
 </script>
 
 <style>
-.waitlist-form {display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;max-width:520px;margin-inline:auto;}
-.waitlist-form input[type="email"] {flex:1;min-width:240px;padding:14px 18px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-family:"Inter",sans-serif;font-size:15px;outline:none;transition:border-color 150ms;}
-.waitlist-form input[type="email"]::placeholder {color:rgba(255,255,255,.35);}
-.waitlist-form input[type="email"]:focus {border-color:var(--red);box-shadow:0 0 0 3px rgba(255,10,48,.2);}
+.waitlist-slot {margin-bottom:20px;}
 </style>
 
 </Base>

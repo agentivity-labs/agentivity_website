@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 
 export default defineConfig({
-  site: 'https://agentivity.io',
+  site: 'https://www.agentivity.io',
 
   integrations: [
     sitemap({

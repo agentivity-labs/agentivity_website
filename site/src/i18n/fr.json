@@ -358,6 +358,33 @@
     "cta_docs": "Lire la documentation",
     "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
   },
+  "waitlist": {
+    "email_label": "Adresse e-mail",
+    "email_placeholder": "votre@email.com",
+    "submit": "Rejoindre la liste d'attente",
+    "submitting": "Envoi…",
+    "consent": "J'accepte de recevoir des e-mails d'Agentivity au sujet du lancement du cloud et des actualités du produit. J'ai lu la {privacy}.",
+    "privacy_link": "politique de confidentialité",
+    "success": "Vérifiez votre boîte mail pour confirmer",
+    "success_detail": "Nous venons de vous envoyer un e-mail. Cliquez sur le lien qu'il contient pour confirmer votre inscription.",
+    "already": "Vous êtes déjà sur la liste",
+    "already_detail": "Rien de plus à faire — nous vous écrirons à l'ouverture du cloud.",
+    "error_generic": "Une erreur est survenue. Veuillez réessayer dans un instant.",
+    "error_email": "Cette adresse e-mail ne semble pas valide.",
+    "error_consent": "Veuillez cocher la case pour accepter de recevoir des e-mails.",
+    "error_rate": "Trop de tentatives. Veuillez patienter quelques minutes puis réessayer."
+  },
+  "waitlist_informal": {
+    "email_placeholder": "ton@email.com",
+    "submit": "Rejoindre la liste",
+    "success": "Vérifie ta boîte mail pour confirmer",
+    "success_detail": "On vient de t'envoyer un e-mail. Clique sur le lien qu'il contient pour confirmer ton inscription.",
+    "already": "Tu es déjà sur la liste",
+    "already_detail": "Rien de plus à faire — on t'écrira à l'ouverture du cloud.",
+    "error_generic": "Une erreur est survenue. Réessaie dans un instant.",
+    "error_consent": "Coche la case pour accepter de recevoir des e-mails.",
+    "error_rate": "Trop de tentatives. Attends quelques minutes puis réessaie."
+  },
   "footer": {
     "tagline": "Construisez votre équipe IA. Open source, sans lock-in, vôtre à étendre.",
     "cols": [
