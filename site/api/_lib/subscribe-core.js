@@ -16,6 +16,7 @@ const ALLOWED_FIELDS = new Set(['email', 'source', 'language', 'consent', 'websi
 
 const MAX_EMAIL_LENGTH = 254;
 const MAX_LOCAL_PART_LENGTH = 64;
+const MAX_LOGGED_MESSAGE_LENGTH = 300;
 const EMAIL_PATTERN =
   /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/;
 
@@ -123,6 +124,17 @@ function validate(body) {
   return { value: { email, source: body.source, language } };
 }
 
+// Brevo's wording is only ever written to our own logs, never returned to the client.
+function redactForLog(text, secrets) {
+  let redacted = text;
+  for (const secret of secrets) {
+    if (secret) redacted = redacted.split(secret).join('[redacted]');
+  }
+  return redacted
+    .replace(/[^\s@<>"',;()]+@[^\s@<>"',;()]+/g, '[email]')
+    .slice(0, MAX_LOGGED_MESSAGE_LENGTH);
+}
+
 async function callBrevo({ fetchImpl, apiKey, email, source, language, today }) {
   const response = await fetchImpl(BREVO_URL, {
     method: 'POST',
@@ -146,7 +158,7 @@ async function callBrevo({ fetchImpl, apiKey, email, source, language, today }) 
   const detail = await response.json().catch(() => ({}));
   const code = typeof detail?.code === 'string' ? detail.code : undefined;
   const message = typeof detail?.message === 'string' ? detail.message : '';
-  const failure = { status: response.status, code };
+  const failure = { status: response.status, code, message: redactForLog(message, [email, apiKey]) };
 
   if (response.status === 400) {
     // Brevo does not document the "contact already exists" response of this endpoint,
@@ -238,7 +250,11 @@ export function createHandler({
       case 'invalid_email':
         return send(res, 400, { error: 'invalid_email' });
       default:
-        log('error', 'brevo_error', { brevoStatus: result.status, brevoCode: result.code });
+        log('error', 'brevo_error', {
+          brevoStatus: result.status,
+          brevoCode: result.code,
+          brevoMessage: result.message,
+        });
         return send(res, 502, { error: 'upstream_error' });
     }
   };
