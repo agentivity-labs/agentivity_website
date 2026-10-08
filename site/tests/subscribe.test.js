@@ -358,3 +358,22 @@ test('logs never contain the email address or the API key', async () => {
     }
   }
 });
+
+test('the Brevo error is logged with the email and key masked, and never sent to the client', async () => {
+  const brevoMessage = `Unauthorized for ${EMAIL} using ${API_KEY}: contact <${EMAIL}> unknown IP ${'x'.repeat(400)}`;
+  const { handler, logs } = setup({ brevo: () => brevoResponse(401, { code: 'unauthorized', message: brevoMessage }) });
+  const res = await call(handler);
+
+  assert.equal(res.statusCode, 502);
+  assert.deepEqual(res.payload, { error: 'upstream_error' });
+
+  const entry = JSON.parse(logs.find((line) => line.includes('brevo_error')));
+  assert.equal(entry.brevoStatus, 401);
+  assert.equal(entry.brevoCode, 'unauthorized');
+  assert.match(entry.brevoMessage, /^Unauthorized for \[email\] using \[redacted\]: contact <\[email\]> unknown IP/);
+  assert.ok(entry.brevoMessage.length <= 300);
+  for (const line of logs) {
+    assert.ok(!line.includes(API_KEY));
+    assert.ok(!line.toLowerCase().includes('jane.doe'));
+  }
+});
