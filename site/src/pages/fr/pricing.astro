@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import WaitlistForm from '../../components/WaitlistForm.astro';
 
 const lang = 'fr';
 
@@ -361,33 +362,14 @@ const schema = [
       </div>
 
       <div class="pr-form-wrap">
-        <form
-          method="POST"
-          action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_WAITLIST ?? 'YOUR_FORM_ID'}`}
-          class="pr-form"
-        >
-          <input type="hidden" name="_next" value="https://agentivity.io/fr/merci" />
-          <input type="hidden" name="_gotcha" style="display:none" />
-
-          <div class="pr-form-row">
-            <input
-              type="email"
-              name="email"
-              placeholder="ton@email.com"
-              required
-              class="pr-email-input"
-              autocomplete="email"
-            />
-            <button type="submit" class="btn btn-primary lg pr-submit">
-              Rejoindre la liste
-            </button>
-          </div>
+        <div class="pr-form">
+          <WaitlistForm lang={lang} informal />
 
           <p class="pr-form-note">
             <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12" style="opacity:.4"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0 1 10 0v2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2zm8-2v2H7V7a3 3 0 0 1 6 0z" clip-rule="evenodd"/></svg>
             Pas de spam. Juste les mises à jour importantes. Désabonnement à tout moment.
           </p>
-        </form>
+        </div>
 
         <div class="pr-social-proof">
           <div class="pr-sp-avatars">
@@ -836,27 +818,6 @@ details[open] .faq-q::after { content: '−'; }
 .pr-cta-note { font-size: 13px; color: rgba(255,255,255,.25); margin-top: 4px; }
 
 .pr-form { display: flex; flex-direction: column; gap: 12px; }
-.pr-form-row { display: flex; gap: 8px; }
-@media (max-width: 480px) { .pr-form-row { flex-direction: column; } }
-
-.pr-email-input {
-  flex: 1;
-  padding: 14px 20px;
-  border-radius: 8px;
-  border: 1.5px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.06);
-  color: #fff;
-  font-size: 15px;
-  font-family: inherit;
-  outline: none;
-  transition: border-color .15s, background .15s;
-}
-.pr-email-input::placeholder { color: rgba(255,255,255,.3); }
-.pr-email-input:focus {
-  border-color: rgba(255,255,255,.35);
-  background: rgba(255,255,255,.09);
-}
-.pr-submit { flex-shrink: 0; }
 .pr-form-note {
   display: flex;
   align-items: center;

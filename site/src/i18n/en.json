@@ -358,6 +358,22 @@
     "cta_docs": "Read the docs",
     "fine": "No spam. First access when the cloud launches."
   },
+  "waitlist": {
+    "email_label": "Email address",
+    "email_placeholder": "your@email.com",
+    "submit": "Join the waitlist",
+    "submitting": "Sending…",
+    "consent": "I agree to receive emails from Agentivity about the cloud launch and product news. I have read the {privacy}.",
+    "privacy_link": "privacy policy",
+    "success": "Check your inbox to confirm",
+    "success_detail": "We've just sent you an email. Click the link inside to confirm your subscription.",
+    "already": "You're already on the list",
+    "already_detail": "Nothing more to do — we'll write when the cloud launches.",
+    "error_generic": "Something went wrong. Please try again in a moment.",
+    "error_email": "That email address doesn't look valid.",
+    "error_consent": "Please tick the box to agree to receive emails.",
+    "error_rate": "Too many attempts. Please wait a few minutes and try again."
+  },
   "footer": {
     "tagline": "Build your AI team. Open source, no lock-in, yours to extend.",
     "cols": [

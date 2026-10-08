@@ -23,12 +23,12 @@ const lang = 'en';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Legal</span>
       <h1>Privacy Policy</h1>
-      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: June 2026</span></div>
+      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: October 2026</span></div>
     </header>
 
     <div class="legal-section">
       <h2>1. Data Controller</h2>
-      <p>Agentivity ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") is the data controller responsible for the personal data collected through our website (<a href="https://agentivity.io">agentivity.io</a>) and hosted cloud services.</p>
+      <p>Agentivity ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") is the data controller responsible for the personal data collected through our website (<a href="https://www.agentivity.io">agentivity.io</a>) and hosted cloud services.</p>
       <p>Contact for all data protection enquiries: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
       <p>This Privacy Policy applies to all personal data we collect in connection with the Agentivity website and cloud services. It does not apply to data processed within self-hosted deployments of the open-source software, which you operate as an independent data controller.</p>
     </div>
@@ -37,7 +37,8 @@ const lang = 'en';
       <h2>2. Data We Collect</h2>
       <h3>2.1 Data you provide directly</h3>
       <ul>
-        <li><strong>Email address</strong> — when you submit the waitlist form or create an account.</li>
+        <li><strong>Email address</strong> — when you join our mailing list (waitlist or newsletter, on the website or from within the community edition of the software) or create an account.</li>
+        <li><strong>Subscription details</strong> — the source of your subscription (website, newsletter or application), your language (English or French) and the date of your consent.</li>
         <li><strong>Account information</strong> — name, organisation name (if provided during registration).</li>
         <li><strong>Communications</strong> — content of emails or messages you send to us.</li>
         <li><strong>Payment information</strong> — when you subscribe to a paid plan, payment processing is handled by a third-party provider (e.g. Stripe). We do not store your full payment card details.</li>
@@ -56,7 +57,7 @@ const lang = 'en';
       <h2>3. Legal Bases for Processing (GDPR)</h2>
       <p>We process your personal data under the following legal bases as defined in Article 6 of the GDPR:</p>
       <ul>
-        <li><strong>Consent (Art. 6(1)(a)):</strong> When you submit the waitlist form, you consent to us contacting you with updates about the Agentivity cloud launch and product news. You may withdraw consent at any time.</li>
+        <li><strong>Consent (Art. 6(1)(a)):</strong> When you tick the consent box and confirm your subscription through the confirmation email (double opt-in), you consent to us contacting you with updates about the Agentivity cloud launch and product news. You may withdraw consent at any time. See section 14.</li>
         <li><strong>Contract performance (Art. 6(1)(b)):</strong> Processing necessary to provide you with the services you have requested, including account management and billing.</li>
         <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Processing necessary for our legitimate business interests, such as improving the Platform, preventing fraud, and ensuring security, where those interests are not overridden by your fundamental rights.</li>
         <li><strong>Legal obligation (Art. 6(1)(c)):</strong> Processing required to comply with applicable law, such as accounting and tax obligations.</li>
@@ -66,7 +67,7 @@ const lang = 'en';
     <div class="legal-section">
       <h2>4. How We Use Your Data</h2>
       <ul>
-        <li>To send you access confirmation and updates when the Agentivity cloud service launches (waitlist subscribers).</li>
+        <li>To send you access confirmation, updates when the Agentivity cloud service launches and product news (mailing-list subscribers).</li>
         <li>To manage your account and provide you with the services you have subscribed to.</li>
         <li>To process payments and issue invoices (paid subscribers).</li>
         <li>To respond to your enquiries and provide customer support.</li>
@@ -82,9 +83,9 @@ const lang = 'en';
       <p>We share your personal data only in the following circumstances:</p>
       <h3>5.1 Service providers (processors)</h3>
       <ul>
-        <li><strong>Netlify</strong> — website hosting and form processing. Netlify processes form submission data on our behalf.</li>
+        <li><strong>Vercel</strong> — website hosting and the serverless endpoint that receives mailing-list subscriptions and passes them on to Brevo.</li>
+        <li><strong>Brevo</strong> (a French company) — hosts our mailing list and sends our confirmation and marketing emails. See section 14.</li>
         <li><strong>Payment processors</strong> — for paid subscriptions (specific provider to be announced). Payment processing is conducted under PCI DSS compliance.</li>
-        <li><strong>Email service providers</strong> — for transactional and notification emails.</li>
         <li><strong>Cloud infrastructure providers</strong> — for hosting the cloud service.</li>
       </ul>
       <p>All service providers are contractually bound to process your data only on our instructions and in accordance with applicable data protection law.</p>
@@ -103,7 +104,7 @@ const lang = 'en';
     <div class="legal-section">
       <h2>7. Data Retention</h2>
       <ul>
-        <li><strong>Waitlist email addresses:</strong> Retained until you request deletion, or for 24 months from submission if no cloud service has launched, whichever comes first.</li>
+        <li><strong>Mailing-list email addresses (waitlist and newsletter):</strong> Retained until you unsubscribe or request deletion, or for 24 months from the date of your consent if no cloud service has launched, whichever comes first.</li>
         <li><strong>Account data:</strong> Retained for the duration of your account plus a reasonable period thereafter for legal compliance purposes (typically up to 3 years after account closure).</li>
         <li><strong>Transaction records:</strong> Retained for 7 years for accounting and tax compliance purposes.</li>
         <li><strong>Support communications:</strong> Retained for up to 3 years from the date of the last communication.</li>
@@ -165,7 +166,28 @@ const lang = 'en';
     </div>
 
     <div class="legal-section">
-      <h2>14. Contact</h2>
+      <h2>14. Mailing List and Waitlist</h2>
+      <p>This section explains how we handle the email address you give us to hear from Agentivity: the cloud launch waitlist, the newsletter and, if you choose to subscribe, the updates offered from within the community edition of the software.</p>
+      <h3>14.1 Purpose</h3>
+      <p>We use your email address only to send you information about the Agentivity cloud launch and product news. We do not use it for any other purpose, and we do not share it with third parties for their own marketing.</p>
+      <h3>14.2 Legal basis and double confirmation</h3>
+      <p>The legal basis is your consent (GDPR Art. 6(1)(a)). You give it by ticking the consent box next to the form; the box is never pre-ticked. We then use a <strong>double opt-in</strong>: we send you an email containing a confirmation link, and your address is added to the mailing list only once you click it. If you do not confirm, you are not added to the list and you receive no further marketing emails.</p>
+      <h3>14.3 Data we store</h3>
+      <ul>
+        <li>Your email address.</li>
+        <li>The source of your subscription (website waitlist, newsletter or application), your language (English or French) and the date of your consent, as proof of consent.</li>
+      </ul>
+      <p>Our subscription endpoint uses your IP address only transiently, in memory, to limit abuse. It is not stored in the mailing list.</p>
+      <h3>14.4 Processor</h3>
+      <p>The mailing list is hosted and the emails are sent by <strong>Brevo</strong>, a French company, acting as our data processor in accordance with its data processing agreement (<a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo privacy policy</a>). The website and the subscription endpoint are hosted by Vercel (see sections 5 and 6).</p>
+      <h3>14.5 Retention</h3>
+      <p>We keep your subscription until you unsubscribe or ask us to delete it or, if the cloud service has not launched, for 24 months from the date of your consent, whichever comes first.</p>
+      <h3>14.6 Withdrawing consent and deletion</h3>
+      <p>Every email we send contains an unsubscribe link, and you can withdraw your consent at any time with one click. You can also email <a href="mailto:hello@agentivity.io">hello@agentivity.io</a> to unsubscribe or to have your data deleted. Withdrawing consent does not affect the lawfulness of the processing carried out before. Your other rights are described in section 10.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>15. Contact</h2>
       <p>For any privacy-related questions, requests, or complaints:</p>
       <p><strong>Agentivity</strong><br/>Email: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Response time: within 30 days (GDPR requests), within 5 business days (general enquiries)</p>
     </div>

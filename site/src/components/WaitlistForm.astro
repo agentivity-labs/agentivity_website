@@ -1,62 +1,228 @@
 ---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
 interface Props {
-  dark?: boolean;
+  lang: Lang;
+  informal?: boolean;
 }
-const { dark = false } = Astro.props;
+
+const { lang, informal = false } = Astro.props;
+const t = useTranslations(lang);
+const text = { ...t.waitlist, ...(informal && 'waitlist_informal' in t ? t.waitlist_informal : {}) };
+
+const privacyHref = lang === 'fr' ? '/fr/legal/privacy' : '/legal/privacy';
+const [consentBefore, consentAfter] = text.consent.split('{privacy}');
+const messages = {
+  submit: text.submit,
+  submitting: text.submitting,
+  success: text.success,
+  successDetail: text.success_detail,
+  already: text.already,
+  alreadyDetail: text.already_detail,
+  errorGeneric: text.error_generic,
+  errorEmail: text.error_email,
+  errorConsent: text.error_consent,
+  errorRate: text.error_rate,
+};
 ---
-<form
-  name="waitlist"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  class={`waitlist-form ${dark ? 'waitlist-form--dark' : ''}`}
-  id="waitlist"
->
-  <input type="hidden" name="form-name" value="waitlist" />
-  <p style="display:none">
-    <label>Don't fill this out: <input name="bot-field" /></label>
-  </p>
-  <input
-    type="email"
-    name="email"
-    placeholder="your@email.com"
-    required
-    autocomplete="email"
-  />
-  <button type="submit" class="btn btn-primary">Join the waitlist</button>
+<form class="wl" data-waitlist data-lang={lang} data-messages={JSON.stringify(messages)}>
+  <div class="wl-fields">
+    <div class="wl-row">
+      <input
+        type="email"
+        name="email"
+        placeholder={text.email_placeholder}
+        aria-label={text.email_label}
+        maxlength="254"
+        required
+        autocomplete="email"
+      />
+      <button type="submit" class="btn btn-primary lg">{text.submit}</button>
+    </div>
+
+    <label class="wl-consent">
+      <input type="checkbox" name="consent" required />
+      <span>{consentBefore}<a href={privacyHref} target="_blank" rel="noopener">{text.privacy_link}</a>{consentAfter}</span>
+    </label>
+
+    <div class="wl-trap" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+  </div>
+
+  <p class="wl-status" role="status" aria-live="polite" hidden></p>
 </form>
 
+<script>
+  const ENDPOINT = '/api/subscribe';
+  const SOURCE = 'waitlist-site';
+
+  type Messages = Record<string, string>;
+
+  function show(status: HTMLElement, kind: 'success' | 'error', title: string, detail?: string) {
+    status.replaceChildren();
+    status.dataset.kind = kind;
+
+    const strong = document.createElement('strong');
+    strong.textContent = title;
+    status.append(strong);
+
+    if (detail) {
+      const span = document.createElement('span');
+      span.textContent = detail;
+      status.append(' ', span);
+    }
+    status.hidden = false;
+  }
+
+  document.querySelectorAll<HTMLFormElement>('form[data-waitlist]').forEach((form) => {
+    const messages: Messages = JSON.parse(form.dataset.messages ?? '{}');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const status = form.querySelector<HTMLElement>('.wl-status')!;
+
+    const setLoading = (loading: boolean) => {
+      button.disabled = loading;
+      button.textContent = loading ? messages.submitting : messages.submit;
+      form.setAttribute('aria-busy', String(loading));
+    };
+
+    const errorMessage = (code: unknown) => {
+      switch (code) {
+        case 'invalid_email':
+          return messages.errorEmail;
+        case 'consent_required':
+          return messages.errorConsent;
+        case 'rate_limited':
+          return messages.errorRate;
+        default:
+          return messages.errorGeneric;
+      }
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (button.disabled) return;
+
+      const data = new FormData(form);
+      status.hidden = true;
+      setLoading(true);
+
+      try {
+        const response = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: String(data.get('email') ?? '').trim(),
+            source: SOURCE,
+            language: form.dataset.lang,
+            consent: data.get('consent') === 'on',
+            website: String(data.get('website') ?? ''),
+          }),
+        });
+        const payload = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+          const already = payload.status === 'already_subscribed';
+          form.classList.add('is-done');
+          show(
+            status,
+            'success',
+            already ? messages.already : messages.success,
+            already ? messages.alreadyDetail : messages.successDetail,
+          );
+          return;
+        }
+
+        show(status, 'error', errorMessage(payload.error));
+      } catch {
+        show(status, 'error', messages.errorGeneric);
+      } finally {
+        setLoading(false);
+      }
+    });
+  });
+</script>
+
 <style>
-.waitlist-form {
+.wl {
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+}
+.wl-fields {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 14px;
+}
+.wl.is-done .wl-fields { display: none; }
+
+.wl-row {
+  display: flex;
+  gap: 10px;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
-.waitlist-form input[type="email"] {
+.wl-row input[type="email"] {
   flex: 1;
   min-width: 240px;
-  max-width: 320px;
-  padding: 11px 16px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  font-family: var(--font-ui);
-  font-size: 14px;
-  outline: none;
-  background: #fff;
-  color: var(--text-primary);
-}
-.waitlist-form input[type="email"]:focus {
-  border-color: var(--rouge);
-  box-shadow: 0 0 0 3px rgba(255,77,31,.15);
-}
-.waitlist-form--dark input[type="email"] {
-  background: rgba(255,255,255,.1);
-  border-color: rgba(255,255,255,.2);
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
   color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
 }
-.waitlist-form--dark input[type="email"]::placeholder {
-  color: rgba(255,255,255,.4);
+.wl-row input[type="email"]::placeholder { color: rgba(255,255,255,.35); }
+.wl-row input[type="email"]:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(255,10,48,.2);
 }
+.wl-row .btn:disabled { opacity: .6; cursor: progress; }
+
+.wl-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+}
+.wl-consent input {
+  flex: none;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--red);
+  cursor: pointer;
+}
+.wl-consent a {
+  color: rgba(255,255,255,.85);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.wl-consent a:hover { color: #fff; }
+
+.wl-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.wl-status {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.wl-status[data-kind="success"] { color: var(--mint); }
+.wl-status[data-kind="success"] span { color: rgba(255,255,255,.7); }
+.wl-status[data-kind="error"] { margin-top: 12px; color: #FF7A8C; }
+.wl.is-done .wl-status { font-size: 16px; }
 </style>

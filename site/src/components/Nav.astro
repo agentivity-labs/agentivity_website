@@ -95,6 +95,9 @@ const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 .lang-btn:hover { color: #fff; }
 .lang-btn.active { background: rgba(255,255,255,.18); color: #fff; }
 
+.nav-links { flex-shrink: 0; }
+.nav-links a { white-space: nowrap; }
+
 /* burger — hidden on desktop */
 .nav-burger {
   display: none;
@@ -145,10 +148,24 @@ const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 .nav-mobile-links a:hover { color: #fff; }
 .nav-mobile-lang { margin: 16px 0 0; justify-content: flex-start; width: max-content; }
 
-@media (max-width: 680px) {
+/* Between the full layout (about 1280px for the French labels) and the burger:
+   drop the GitHub label and tighten the gaps so the bar never overflows. */
+@media (max-width: 1280px) {
+  .nav-inner { gap: 20px; }
+  .nav-links { gap: 18px; }
+  .nav-cta { gap: 10px; }
+  .gh-btn .hide-sm { display: none; }
+}
+
+@media (max-width: 1080px) {
+  .nav-links { display: none; }
   .nav-burger { display: flex; }
   .nav-cta { gap: 8px; }
   .nav-cta .gh-btn,
   .nav-cta .lang-switch { display: none; }
+}
+
+@media (min-width: 1081px) {
+  .nav-mobile { display: none !important; }
 }
 </style>
