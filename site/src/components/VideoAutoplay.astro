@@ -1,0 +1,22 @@
+---
+// Starts every <video data-autoplay> when it comes on screen and pauses it when it leaves.
+---
+<script is:inline>
+// Clips play only while they are on screen. With reduced motion they stay on their poster, with controls.
+(function () {
+  const videos = document.querySelectorAll('video[data-autoplay]');
+  if (!videos.length) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    videos.forEach((video) => { video.controls = true; });
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting) video.play().catch(() => { video.controls = true; });
+      else video.pause();
+    });
+  }, { threshold: 0.35 });
+  videos.forEach((video) => observer.observe(video));
+})();
+</script>

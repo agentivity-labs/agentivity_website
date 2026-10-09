@@ -7,7 +7,7 @@
     "links": [
       { "label": "Comment ça marche", "href": "/fr/how-it-works" },
       { "label": "Cas d'usage",       "href": "/fr/use-cases" },
-      { "label": "Services",          "href": "/services" },
+      { "label": "Services",          "href": "/fr/services" },
       { "label": "Blog",              "href": "/fr/blog" },
       { "label": "Tarifs",            "href": "/fr/pricing" },
       { "label": "Docs",              "href": "/fr/docs" }
@@ -393,6 +393,7 @@
         "links": [
           { "label": "Comment ça marche", "href": "/fr/how-it-works" },
           { "label": "Cas d'usage",       "href": "/fr/use-cases" },
+          { "label": "Services",          "href": "/fr/services" },
           { "label": "Tarifs",            "href": "/fr/pricing" },
           { "label": "Docs",              "href": "/fr/docs" },
           { "label": "Synergi",           "href": "https://synergi.agentivity.io", "external": true },
@@ -405,6 +406,7 @@
           { "label": "GitHub",         "href": "https://github.com/agentivity-labs/agentivity", "external": true },
           { "label": "Licence",        "href": "https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md", "external": true },
           { "label": "Blog",           "href": "/fr/blog" },
+          { "label": "Services",       "href": "/fr/services" },
           { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
           { "label": "Confidentialité", "href": "/fr/legal/privacy" },
           { "label": "CGU",            "href": "/fr/legal/terms" },
@@ -423,6 +425,1399 @@
     ],
     "legal": "© 2026 Agentivity · agentivity.io",
     "licence": "Open source sous la Licence d'Utilisation Durable Agentivity"
+  },
+  "site": {
+    "vibeapp": [
+      "Fixez l'objectif. La VibeApp s'occupe du reste.",
+      "Vous expliquez, elle s'adapte : les bonnes compétences, au bon moment.",
+      "Votre besoin évolue, elle avance avec vous."
+    ],
+    "github": "Star on GitHub",
+    "github_href": "https://github.com/agentivity-labs/agentivity",
+    "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
+    "install": "Installer Community",
+    "install_href": "/fr/community",
+    "footer_tagline": "Construisez votre équipe IA. Gratuit pour démarrer, à vous de l'étendre."
+  },
+  "home": {
+    "meta": {
+      "title": "Construisez votre équipe IA — des spécialistes IA aux côtés de vos équipes | Agentivity",
+      "description": "Ajoutez une équipe d'IA à votre équipe. Créez sans code des équipes de spécialistes IA : elles prennent le travail répétitif, vous gardez les décisions. Édition Community gratuite."
+    },
+    "hero": {
+      "eyebrow": "Des équipes d'IA pour votre entreprise, sans code",
+      "h1": "Votre prochaine recrue,",
+      "h1_accent": "c'est une équipe IA.",
+      "sub": "Composez des agents qui collaborent, délèguent et livrent, avec la structure d'autorité d'une vraie équipe. Vous restez aux commandes. Votre équipe IA fait le travail.",
+      "cta_waitlist": "Rejoindre la liste d'attente",
+      "visual_label": "Une équipe marketing au travail sur le canevas Agentivity : un responsable et cinq spécialistes",
+      "teams": [
+        {
+          "name": "Équipe Finance",
+          "body": "Relance les factures en retard, prépare le rapport du mois"
+        },
+        {
+          "name": "Équipe RH",
+          "body": "Trie les CV, prépare les entretiens"
+        },
+        {
+          "name": "Équipe Marketing",
+          "body": "Cherche, rédige et planifie les contenus"
+        },
+        {
+          "name": "Équipe Ops",
+          "body": "Répond aux demandes, tient le planning"
+        }
+      ]
+    },
+    "values": [
+      {
+        "title": "15 h et plus rendues par semaine",
+        "body": "Le travail répétitif, délégué"
+      },
+      {
+        "title": "Sans code",
+        "body": "Vous briefez une équipe comme un collègue"
+      },
+      {
+        "title": "Vous gardez la main",
+        "body": "L'équipe demande avant tout envoi important"
+      },
+      {
+        "title": "Gratuit pour toujours",
+        "body": "L'édition Community ne coûte rien"
+      }
+    ],
+    "why": {
+      "eyebrow": "Pas un chatbot de plus",
+      "h2": "Un chatbot répond.",
+      "h2_accent": "Une équipe fait le travail.",
+      "chat": {
+        "title": "Avec un chatbot, c'est vous qui gérez",
+        "points": [
+          "Vous demandez, vérifiez, corrigez et redemandez",
+          "Un généraliste pour tous les métiers",
+          "Personne ne vérifie la réponse, sauf vous"
+        ]
+      },
+      "team": {
+        "title": "Avec une équipe, le travail arrive terminé",
+        "points": [
+          "Chaque spécialiste a un rôle et les outils qui vont avec",
+          "L'un vérifie le travail de l'autre",
+          "Vous validez ce qui compte"
+        ]
+      },
+      "organise": "Organisez-les comme une vraie équipe.",
+      "link": "Voir comment ça marche",
+      "capture": "Capture réelle du produit",
+      "loops": [
+        {
+          "title": "Menée par un responsable",
+          "body": "Un responsable confie chaque partie du travail au bon spécialiste. Ici, une agence de voyage : un responsable, douze spécialistes.",
+          "alt": "Un graphe d'équipe tiré du produit : un responsable de voyage au centre et ses spécialistes qui s'allument l'un après l'autre en se mettant au travail"
+        },
+        {
+          "title": "L'un après l'autre",
+          "body": "Chaque spécialiste termine une étape et passe le relais. Ici, ils sont neuf à comparer des produits et à rédiger le rapport.",
+          "alt": "Un graphe d'équipe tiré du produit : neuf spécialistes à la chaîne, chacun s'allume quand le précédent a terminé"
+        }
+      ]
+    },
+    "ladder": {
+      "eyebrow": "Pour une entreprise de 500 personnes. Ou une boulangerie.",
+      "h2": "Commencez par un assistant.",
+      "h2_accent": "Allez jusqu'à l'entreprise agentique.",
+      "sub": "Les équipes d'IA travaillent à côté de vos collaborateurs. Elles prennent le travail répétitif, vos équipes gardent la réflexion et les décisions.",
+      "example": "exemple",
+      "steps": [
+        {
+          "tag": "Indépendant",
+          "title": "Un assistant",
+          "body": "Sam tient une boulangerie. Un assistant lit les commandes reçues par e-mail, répond aux plus simples et tient la liste de ce qu'il faut préparer.",
+          "gain": "3 heures rendues par semaine"
+        },
+        {
+          "tag": "Petite entreprise",
+          "title": "Une équipe",
+          "body": "Marcus publie une offre d'emploi. Une équipe de trois rédige l'annonce, compare chaque CV au poste et prépare les entretiens. Il rencontre les candidats retenus.",
+          "gain": "6 heures rendues par recrutement"
+        },
+        {
+          "tag": "Entreprise",
+          "title": "Une équipe par département",
+          "body": "Finance, RH, Marketing et Ops ont chacun leur équipe d'IA à côté de leurs collaborateurs. L'équipe de Sarah prépare la veille concurrentielle. Elle la relit et l'envoie.",
+          "gain": "15 h et plus rendues par semaine"
+        },
+        {
+          "tag": "La suite",
+          "title": "Une entreprise agentique",
+          "body": "Des équipes qui se passent le travail d'un département à l'autre, avec une personne qui décide à chaque étape importante.",
+          "note": "Les équipes imbriquées fonctionnent déjà. L'exécution planifiée arrive avec les offres cloud."
+        }
+      ]
+    },
+    "hours": {
+      "eyebrow": "L'argument économique",
+      "big": "15+",
+      "h2": "heures rendues chaque semaine.",
+      "sub": "Votre équipe délègue le répétitif et le chronophage. Vos collaborateurs se concentrent sur ce qui a besoin d'eux.",
+      "table_label": "Exemple : une équipe de cinq personnes, une semaine",
+      "rows": [
+        {
+          "task": "CV des candidats, triés avant votre arrivée",
+          "hours": "4 h"
+        },
+        {
+          "task": "Veille concurrentielle, rédigée et livrée",
+          "hours": "3 h"
+        },
+        {
+          "task": "Rapports hebdomadaires, prêts à relire",
+          "hours": "3 h"
+        },
+        {
+          "task": "Briefs de contenu, documentés",
+          "hours": "3 h"
+        },
+        {
+          "task": "Comptes rendus de réunion, résumés et envoyés",
+          "hours": "2 h"
+        }
+      ],
+      "total": {
+        "task": "Rendues à vos collaborateurs",
+        "hours": "15 h"
+      },
+      "note": "Vos chiffres seront différents. Le Studio affiche le temps gagné par chacune de vos équipes."
+    },
+    "apps": {
+      "eyebrow": "VibeApps",
+      "h2": "Puis faites-en",
+      "h2_accent": "une VibeApp.",
+      "sub": "Une application menée par votre équipe, pour vos collègues ou vos clients.",
+      "play": "Lire le clip",
+      "clips": [
+        {
+          "label": "Trip Planner · capture réelle",
+          "title": "Une application conçue pour un métier",
+          "body": "Une phrase suffit. Des vols, un hôtel à choisir, un dîner à réserver : chaque écran arrive quand il sert.",
+          "alt": "L'application de démonstration Trip Planner : un voyageur décrit son voyage, l'équipe de spécialistes s'active, puis une fiche d'hôtel avec photo, une étape de paiement et un choix de dîner apparaissent dans la conversation"
+        },
+        {
+          "label": "Shopping Lab · capture réelle",
+          "title": "Ou un portail pour toutes vos équipes",
+          "body": "Publiez une équipe, elle apparaît dans le portail, à vos couleurs. Aucune application à développer.",
+          "alt": "La démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, neuf spécialistes travaillent tour à tour, puis un rapport avec des fiches produits et des photos apparaît"
+        }
+      ],
+      "points": [
+        {
+          "title": "Elle s'adapte à chaque personne",
+          "body": "Chacun décrit sa situation avec ses mots. Pas de formulaire en douze écrans."
+        },
+        {
+          "title": "Elle traite les cas compliqués",
+          "body": "Une équipe de spécialistes travaille derrière chaque demande, et pose la question quand une décision s'impose."
+        },
+        {
+          "title": "Elle s'intègre à l'existant",
+          "body": "Seule, ou dans les applications que vous utilisez déjà. Les agences la livrent sous leur propre marque."
+        }
+      ]
+    },
+    "control": {
+      "eyebrow": "Vous gardez la main",
+      "h2": "L'IA quand il faut du jugement.",
+      "h2_accent": "Des workflows quand il faut vos règles.",
+      "points": [
+        {
+          "title": "Vous décidez. Votre équipe exécute.",
+          "body": "À tout moment, vous pouvez intervenir, réorienter ou valider avant que quoi que ce soit ne parte."
+        },
+        {
+          "title": "Elle épaule vos collaborateurs. Elle ne les remplace pas.",
+          "body": "L'équipe d'IA prend le travail répétitif. Le jugement reste à ceux qui connaissent le métier."
+        },
+        {
+          "title": "Chaque étape est enregistrée",
+          "body": "Vous savez ce qui a tourné, quand et pourquoi."
+        }
+      ],
+      "caption": "Un vrai workflow dans le Studio.",
+      "alt": "Un vrai workflow Agentivity sur le canevas : des étapes d'analyse, de rédaction et de publication reliées de gauche à droite"
+    },
+    "nocode": {
+      "eyebrow": "Comment vous la construisez",
+      "h2": "Sans code.",
+      "h2_accent": "Briefez-la comme un collègue.",
+      "steps": [
+        {
+          "title": "Décrivez le rôle",
+          "body": "Donnez à chaque agent un nom, une mission et les outils dont il a besoin. Comme une fiche de poste."
+        },
+        {
+          "title": "Composez l'équipe",
+          "body": "Glissez vos agents sur le canevas et choisissez qui dirige."
+        },
+        {
+          "title": "Confiez le travail",
+          "body": "Demandez avec vos mots. L'équipe fait le travail et revient vers vous pour les décisions."
+        }
+      ],
+      "link": "Voir comment ça marche",
+      "caption": "Le canevas d'équipe dans le Studio.",
+      "alt": "Trois agents sur le canevas d'équipe : un stratège produit, un ingénieur et un designer UX"
+    },
+    "ready": {
+      "eyebrow": "Bientôt",
+      "h2": "Des équipes prêtes à l'emploi.",
+      "h2_accent": "Démarrez en quelques minutes.",
+      "link": "Me prévenir à la sortie",
+      "soon": "Bientôt",
+      "cards": [
+        {
+          "title": "Pipeline de recrutement",
+          "body": "De l'offre d'emploi aux candidats retenus.",
+          "meta": "RH · équipe de 3"
+        },
+        {
+          "title": "Moteur de contenu",
+          "body": "Recherche, rédaction et préparation des articles, de bout en bout.",
+          "meta": "Marketing · équipe de 5"
+        },
+        {
+          "title": "Veille concurrentielle",
+          "body": "Une veille de marché sourcée et résumée.",
+          "meta": "Finance · équipe de 3"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "Tarifs",
+      "price": "0€",
+      "rest": "pour commencer.",
+      "sub": "Commencez gratuitement sur votre propre serveur. Passez au cloud quand vous êtes prêt.",
+      "link": "Voir tous les tarifs",
+      "tiers": [
+        {
+          "name": "Community",
+          "badge": "Gratuit pour toujours",
+          "desc": "Agents, équipes et Studio, sur votre propre serveur.",
+          "cta": "L'installer",
+          "href": "/fr/community",
+          "featured": true
+        },
+        {
+          "name": "Personal",
+          "badge": "Cloud",
+          "desc": "Hébergé pour vous. Aucune installation : connectez-vous et créez votre première équipe.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#cta"
+        },
+        {
+          "name": "Pro",
+          "badge": "Cloud",
+          "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#cta"
+        },
+        {
+          "name": "Business",
+          "badge": "Équipes",
+          "desc": "Espaces de travail partagés. Tout le monde construit, tout le monde en profite.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#cta"
+        },
+        {
+          "name": "Enterprise",
+          "badge": "SSO · Marque blanche",
+          "desc": "SSO, marque blanche et support dédié.",
+          "cta": "Nous contacter",
+          "href": "mailto:hello@agentivity.io"
+        }
+      ],
+      "whitelabel": "Marque blanche disponible. Construisez sur Agentivity, livrez sous votre marque.",
+      "whitelabel_cta": "Parlons marque blanche"
+    },
+    "cta": {
+      "h2": "Votre équipe est prête",
+      "h2_accent": "à travailler.",
+      "sub": "Commencez gratuitement, ou rejoignez la liste d'attente pour être parmi les premiers sur le cloud.",
+      "fine": "Pas de spam. Premier accès à l'ouverture du cloud.",
+      "github_line": "Vous hébergez vous-même ? L'édition Community est gratuite."
+    }
+  },
+  "how_page": {
+    "meta": {
+      "title": "Comment fonctionne Agentivity — créer un agent, une équipe ou un workflow sans code",
+      "description": "Le Studio Agentivity en action : créer un agent, en réunir plusieurs en équipe, dessiner un workflow, et voir ce qu'obtiennent vos utilisateurs. Sans code."
+    },
+    "hero": {
+      "eyebrow": "Comment ça marche",
+      "h1": "Vous n'écrivez pas de code.",
+      "h1_accent": "Vous construisez une équipe.",
+      "sub": "Tout se passe dans le Studio, dans votre navigateur. Trois courts clips montrent comment vous construisez, un quatrième ce qu'obtiennent vos utilisateurs.",
+      "alt": "Le Studio Agentivity : une équipe sur le canevas, un responsable au-dessus de trois spécialistes, et la liste des agents disponibles à droite",
+      "caption": "Le Studio : une équipe en cours de composition, un responsable et trois spécialistes."
+    },
+    "recorded": "Enregistré dans le Studio, accéléré.",
+    "steps": [
+      {
+        "title": "Créez un agent",
+        "lead": "Un agent est un spécialiste IA. Donnez-lui un nom, puis décrivez son rôle avec vos mots, comme pour un nouveau collègue.",
+        "points": [
+          "Un nom et un rôle",
+          "Les outils qu'il peut utiliser",
+          "Le modèle d'IA que vous choisissez"
+        ],
+        "alt": "Un enregistrement du Studio : la fenêtre Nouvel agent s'ouvre, un nom est saisi, l'agent apparaît sur le canevas et son rôle est rédigé dans un panneau latéral"
+      },
+      {
+        "title": "Réunissez-en plusieurs en équipe",
+        "lead": "Nommez l'équipe, choisissez comment ses membres travaillent ensemble, puis glissez-y les spécialistes dont vous avez besoin.",
+        "ways_title": "Cinq façons de travailler ensemble",
+        "ways": [
+          {
+            "name": "Sequential",
+            "body": "l'un après l'autre"
+          },
+          {
+            "name": "Concurrent",
+            "body": "tous en même temps"
+          },
+          {
+            "name": "Handoff",
+            "body": "chacun passe le dossier au bon collègue"
+          },
+          {
+            "name": "Group chat",
+            "body": "ils échangent à tour de rôle"
+          },
+          {
+            "name": "Manager-led",
+            "body": "un responsable planifie et répartit le travail"
+          }
+        ],
+        "alt": "Un enregistrement du Studio : une équipe est nommée, le mode mené par un responsable est choisi parmi cinq, puis un responsable et trois spécialistes sont glissés sur le canevas"
+      },
+      {
+        "title": "Ou dessinez un workflow",
+        "lead": "Quand les étapes doivent être les mêmes à chaque fois, dessinez-les : les questions à poser, les règles à appliquer, les validations à attendre. L'IA n'intervient que dans les étapes que vous choisissez.",
+        "points": [
+          "Conditions, boucles et formulaires",
+          "Des étapes où une personne valide",
+          "Une équipe peut utiliser un workflow, un workflow peut appeler une équipe"
+        ],
+        "caption": "Trois étapes pour commencer : un formulaire, une équipe, une personne qui valide. Puis un vrai workflow : le tri de CV.",
+        "alt": "Un enregistrement du Studio : un workflow est nommé, trois étapes sont glissées sur le canevas et reliées (un formulaire, une équipe, une personne qui valide), puis un vrai workflow de tri de CV est montré, de près puis en entier"
+      }
+    ],
+    "result": {
+      "title": "Ce qu'obtiennent vos utilisateurs : une VibeApp",
+      "lead": "Ils demandent avec leurs mots, et l'équipe s'arrête quand une décision leur revient. Choisissez un moment pour y aller.",
+      "decision": "Leur décision",
+      "caption": "Trip Planner, une VibeApp construite avec Agentivity. Enregistré depuis le produit, accéléré.",
+      "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un responsable confie le travail à des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
+      "chapters": [
+        {
+          "t": 0.4,
+          "title": "La demande",
+          "body": "Une phrase : Lisbonne à deux, les dates, le budget."
+        },
+        {
+          "t": 2.8,
+          "title": "Le responsable la prend",
+          "body": "Il confie chaque partie au bon spécialiste."
+        },
+        {
+          "t": 3.8,
+          "title": "Les vols",
+          "body": "Le spécialiste propose. Le voyageur accepte ou ajuste.",
+          "decision": true
+        },
+        {
+          "t": 7.4,
+          "title": "L'hôtel",
+          "body": "Le spécialiste montre les options. Le voyageur choisit.",
+          "decision": true
+        },
+        {
+          "t": 15.5,
+          "title": "Les transferts",
+          "body": "Trois façons d'y aller, un seul choix.",
+          "decision": true
+        },
+        {
+          "t": 21.5,
+          "title": "Le dîner",
+          "body": "Deux tables dans ce qui reste du budget.",
+          "decision": true
+        }
+      ]
+    },
+    "start": {
+      "eyebrow": "À vous",
+      "h2": "Deux façons",
+      "h2_accent": "de démarrer.",
+      "community": {
+        "name": "L'installer vous-même",
+        "badge": "Gratuit pour toujours",
+        "body": "L'édition Community tourne sur votre propre serveur avec Docker. Pour ceux qui sont à l'aise avec une ligne de commande.",
+        "install": "Installer Community",
+        "github": "Star on GitHub"
+      },
+      "cloud": {
+        "name": "Attendre le cloud",
+        "badge": "Bientôt",
+        "body": "Rien à installer : connectez-vous et créez votre première équipe.",
+        "link": "Rejoindre la liste d'attente"
+      }
+    },
+    "faq": {
+      "eyebrow": "Les questions qu'on se pose",
+      "h2": "Avant",
+      "h2_accent": "de démarrer.",
+      "items": [
+        {
+          "q": "Faut-il savoir coder ?",
+          "a": "Non. Vous construisez tout dans le Studio, avec des noms, des descriptions écrites avec vos mots et du glisser-déposer. Deux choses demandent un collègue technique : installer l'édition Community sur un serveur, et développer votre propre VibeApp."
+        },
+        {
+          "q": "Quel modèle d'IA utilise-t-il ?",
+          "a": "Celui que vous choisissez : OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock. Vous pouvez en changer plus tard."
+        },
+        {
+          "q": "Où vont mes données ?",
+          "a": "Avec l'édition Community, rien ne quitte votre serveur tant que vous ne connectez pas un service. Quand une étape d'IA s'exécute, ce que vous envoyez dans cette étape part chez le fournisseur du modèle que vous avez choisi, selon ses conditions."
+        },
+        {
+          "q": "Est-ce que ça remplace mon équipe ?",
+          "a": "Non. Il prend le travail répétitif et revient vers vos collaborateurs pour les décisions. Le jugement reste à ceux qui connaissent le métier."
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Prêt à construire",
+      "h2_accent": "votre première équipe ?",
+      "sub": "Rejoignez la liste d'attente pour être parmi les premiers sur le cloud.",
+      "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
+    }
+  },
+  "community_page": {
+    "meta": {
+      "title": "Installer l'édition Community d'Agentivity — gratuite, sur votre serveur",
+      "description": "L'édition Community d'Agentivity, gratuite, tourne sur votre machine ou votre serveur avec Docker. Une commande pour démarrer, le Studio inclus."
+    },
+    "hero": {
+      "eyebrow": "Édition Community",
+      "h1": "Gratuite pour toujours.",
+      "h1_accent": "Sur votre propre serveur.",
+      "sub": "L'édition Community s'adresse à ceux qui sont à l'aise avec Docker. Une commande lance Agentivity sur votre machine ou votre serveur, Studio inclus.",
+      "github": "Star on GitHub",
+      "hub": "Voir l'image sur Docker Hub",
+      "not_technical": "Pas technicien ? La version cloud ne demande aucune installation.",
+      "waitlist": "Rejoindre la liste d'attente"
+    },
+    "install": {
+      "eyebrow": "Installation",
+      "h2": "En service",
+      "h2_accent": "en quatre étapes.",
+      "copy": "Copier",
+      "copied": "Copié",
+      "steps": [
+        {
+          "title": "Installez Docker",
+          "body": "Docker Desktop sous Windows ou macOS, Docker Engine sous Linux.",
+          "link": "Installer Docker",
+          "href": "https://docs.docker.com/get-started/get-docker/"
+        },
+        {
+          "title": "Lancez Agentivity",
+          "body": "Une seule commande. Vos données sont gardées dans un volume Docker : elles survivent à un redémarrage ou à une mise à jour.",
+          "command": "docker run -d --name agentivity -p 5005:5005 -v agentivity-data:/app/_data agentivitylabs/agentivity"
+        },
+        {
+          "title": "Ouvrez le Studio",
+          "body": "Dans votre navigateur, sur la machine où il tourne :",
+          "address": "http://localhost:5005"
+        },
+        {
+          "title": "Connectez un modèle d'IA",
+          "body": "Ajoutez la clé du fournisseur que vous utilisez : OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock. Puis créez votre premier agent et lancez-le."
+        }
+      ]
+    },
+    "know": {
+      "eyebrow": "Bon à savoir",
+      "h2": "Avant de",
+      "h2_accent": "compter dessus.",
+      "items": [
+        {
+          "title": "Il n'y a pas encore de connexion par compte",
+          "body": "Toute personne qui peut joindre le serveur peut l'utiliser. Gardez-le sur un réseau de confiance, ou derrière votre propre contrôle d'accès. Ne l'exposez jamais directement à Internet."
+        },
+        {
+          "title": "Vos données restent chez vous",
+          "body": "Agents, équipes, workflows, tables et réglages sont stockés dans le volume agentivity-data. Sauvegardez-le comme n'importe quelle donnée. Ce que vous envoyez dans une étape d'IA part chez le fournisseur du modèle que vous avez choisi."
+        },
+        {
+          "title": "Mettre à jour",
+          "body": "Téléchargez la nouvelle image, supprimez le conteneur et relancez-le avec la même commande. Le volume garde vos données.",
+          "command": "docker pull agentivitylabs/agentivity && docker rm -f agentivity"
+        },
+        {
+          "title": "Ce qui est inclus",
+          "body": "Les agents, les équipes, les workflows et le Studio visuel. Utilisation gratuite pour votre propre activité, sur votre propre serveur."
+        }
+      ]
+    },
+    "help": {
+      "h2": "Le projet vous plaît ?",
+      "h2_accent": "Offrez-lui une étoile.",
+      "sub": "Une étoile sur GitHub est la façon la plus simple d'aider Agentivity à se faire connaître. Les questions et les signalements de bugs s'y font aussi.",
+      "github": "Star on GitHub",
+      "docs": "Lire la documentation"
+    }
+  },
+  "services_page": {
+    "meta": {
+      "title": "Agentivity Services — stratégie IA, transformation et exécution",
+      "description": "De la stratégie IA aux systèmes en production : Agentivity Services aide les grandes organisations à décider où l'IA a sa place, à repenser le travail autour d'elle et à la livrer."
+    },
+    "hero": {
+      "eyebrow": "Agentivity Services",
+      "h1": "De la stratégie",
+      "h1_accent": "à l'exécution.",
+      "sub": "Agentivity Services accompagne les grandes organisations pour définir leur ambition en matière d'IA, transformer leur fonctionnement et livrer les systèmes qui la concrétisent.",
+      "cta": "Nous contacter"
+    },
+    "experience": {
+      "label": "Notre expérience inclut",
+      "names": [
+        "AMD",
+        "Siemens",
+        "Maxon",
+        "Linedata",
+        "Deloitte",
+        "Rosneft",
+        "BNP Paribas",
+        "Nobel Biocare (Medicim)"
+      ]
+    },
+    "gap": {
+      "eyebrow": "Notre conviction",
+      "statement": "L'IA crée de la valeur quand la stratégie, l'organisation et la technologie avancent ensemble.",
+      "body": "Beaucoup de programmes produisent une feuille de route jamais livrée, ou une technologie que l'organisation n'adopte pas. Nous intervenons sur les trois, avec une seule ligne de responsabilité, de la première décision au système en production."
+    },
+    "practices": {
+      "eyebrow": "Nos services",
+      "h2": "Trois métiers,",
+      "h2_accent": "une seule ligne de responsabilité.",
+      "get": "Ce que vous obtenez",
+      "items": [
+        {
+          "id": "strategy",
+          "name": "Stratégie",
+          "title": "Décider où l'IA a sa place.",
+          "body": "Nous aidons les équipes dirigeantes à déterminer où l'IA change l'activité, ce que cela représente, ce que cela exige et comment le gouverner.",
+          "points": [
+            "Évaluation des opportunités dans vos fonctions",
+            "Dossier de décision et priorités",
+            "Modèle opérationnel cible, humains et IA",
+            "Cadre de gouvernance, de risque et de conformité",
+            "Une feuille de route sur laquelle la direction peut s'engager"
+          ]
+        },
+        {
+          "id": "transformation",
+          "name": "Transformation",
+          "title": "Repenser le travail, pas seulement les outils.",
+          "body": "L'IA change qui fait quoi. Nous repensons les processus, les rôles et les contrôles autour d'équipes mêlant humains et IA, et nous préparons l'organisation à les opérer.",
+          "points": [
+            "Refonte des processus, fonction par fonction",
+            "Rôles, responsabilités et droits de décision",
+            "Préparation des données et de l'architecture",
+            "Conduite du changement et communication",
+            "Formation des dirigeants, des concepteurs et des utilisateurs"
+          ]
+        },
+        {
+          "id": "execution",
+          "name": "Exécution",
+          "title": "Mettre en production.",
+          "body": "Nous construisons, intégrons et déployons, et nous restons engagés jusqu'à ce que vos équipes opèrent le résultat elles-mêmes, avec la technologie adaptée à votre contexte.",
+          "points": [
+            "Équipes d'IA et workflows conçus pour vos processus",
+            "Intégration à vos systèmes et à vos données",
+            "Déploiement sur votre infrastructure ou votre cloud privé",
+            "Modèles spécialisés quand un modèle généraliste ne suffit pas",
+            "Exploiter, mesurer, améliorer, transmettre"
+          ]
+        }
+      ],
+      "platform_note": "Agentivity Services développe également sa propre plateforme d'IA, Agentivity.",
+      "platform_link": "En savoir plus sur la plateforme"
+    },
+    "industries": {
+      "eyebrow": "Secteurs",
+      "h2": "Une expérience de secteurs",
+      "h2_accent": "complexes et réglementés.",
+      "items": [
+        "Services financiers",
+        "Industrie manufacturière",
+        "Technologie et logiciel",
+        "Énergie",
+        "Sciences de la vie et technologies médicales",
+        "Services professionnels"
+      ]
+    },
+    "stages": {
+      "eyebrow": "Notre approche",
+      "h2": "Une approche structurée,",
+      "h2_accent": "du cadrage à la transmission.",
+      "items": [
+        {
+          "name": "Cadrer",
+          "body": "Nous convenons de la question, du périmètre et de la façon de mesurer la réussite."
+        },
+        {
+          "name": "Prouver",
+          "body": "Un processus, en conditions réelles, avec un résultat que la direction peut juger."
+        },
+        {
+          "name": "Étendre",
+          "body": "Fonction par fonction, avec la gouvernance qui garde le tout sous contrôle."
+        },
+        {
+          "name": "Transmettre",
+          "body": "Vos équipes prennent le relais : documentation, formation et passation propre."
+        }
+      ]
+    },
+    "commitments": {
+      "eyebrow": "Nos engagements",
+      "h2": "Nos engagements",
+      "h2_accent": "envers chaque client.",
+      "items": [
+        {
+          "title": "Souveraineté des données",
+          "body": "Nous déployons là où vous le décidez : sur vos serveurs ou dans votre cloud privé. Vos données restent sous votre contrôle."
+        },
+        {
+          "title": "Supervision humaine",
+          "body": "Chaque système que nous livrons s'arrête pour une validation humaine là où l'enjeu l'exige, et garde la trace de ce qui a été décidé."
+        },
+        {
+          "title": "Transfert de compétences",
+          "body": "Documentation, formation et transfert complet de ce que nous construisons. Vos équipes peuvent poursuivre en toute autonomie."
+        },
+        {
+          "title": "Résultats mesurables",
+          "body": "Les indicateurs sont convenus avant le début des travaux, et nous en rendons compte tout au long de la mission."
+        }
+      ]
+    },
+    "formats": {
+      "eyebrow": "Modèles d'engagement",
+      "h2": "Trois modèles,",
+      "h2_accent": "adaptés à vos besoins.",
+      "items": [
+        {
+          "name": "Mission",
+          "tag": "Périmètre fixe",
+          "body": "Une question ou un livrable défini, à prix fixe : une stratégie, une évaluation, un pilote.",
+          "points": [
+            "Périmètre convenu d'avance",
+            "Paiement par jalon",
+            "Transfert complet du travail livré"
+          ]
+        },
+        {
+          "name": "Programme",
+          "tag": "Sur plusieurs mois",
+          "body": "Une équipe dédiée aux côtés des vôtres tout au long d'une transformation, avec une capacité réservée chaque mois.",
+          "points": [
+            "Capacité dédiée",
+            "Réponse prioritaire",
+            "Revue et planification mensuelles"
+          ],
+          "featured": true
+        },
+        {
+          "name": "Atelier",
+          "tag": "D'une demi-journée à deux jours",
+          "body": "Pour un comité de direction qui prépare une décision, ou une équipe qui prépare une livraison.",
+          "points": [
+            "Sur site ou à distance",
+            "Conçu pour votre contexte",
+            "Travail sur vos propres cas"
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "h2": "Commençons par",
+      "h2_accent": "un échange.",
+      "sub": "Présentez-nous vos objectifs. Nous vous répondons sous 48 heures avec une première analyse et une proposition pour la suite.",
+      "reassure": [
+        "Sans engagement",
+        "Une réponse sous 48 heures",
+        "Accord de confidentialité sur demande"
+      ],
+      "email_line": "Ou contactez-nous directement :",
+      "form": {
+        "name": "Nom",
+        "name_ph": "Votre nom",
+        "email": "E-mail professionnel",
+        "email_ph": "vous@entreprise.com",
+        "topic": "De quoi s'agit-il ?",
+        "topic_ph": "Choisissez un sujet…",
+        "topics": [
+          {
+            "value": "strategy",
+            "label": "Stratégie"
+          },
+          {
+            "value": "transformation",
+            "label": "Transformation"
+          },
+          {
+            "value": "execution",
+            "label": "Exécution"
+          },
+          {
+            "value": "agent-teams",
+            "label": "Équipes d'IA et automatisation"
+          },
+          {
+            "value": "workshops",
+            "label": "Atelier ou formation"
+          },
+          {
+            "value": "other",
+            "label": "Pas encore sûr"
+          }
+        ],
+        "message": "Votre contexte",
+        "message_ph": "Votre organisation, ce que vous voulez accomplir, et les contraintes à connaître : calendrier, infrastructure, réglementation.",
+        "submit": "Envoyer",
+        "note": "Vos informations restent confidentielles et ne sont jamais partagées.",
+        "next": "https://www.agentivity.io/fr/merci"
+      }
+    }
+  },
+  "pricing_page": {
+    "meta": {
+      "title": "Tarifs Agentivity — édition Community gratuite, offres cloud et Enterprise",
+      "description": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Les offres hébergées arrivent : Personal, Pro et Business. Enterprise sur demande."
+    },
+    "hero": {
+      "eyebrow": "Tarifs",
+      "price": "0 €",
+      "rest": "pour commencer.",
+      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Les offres hébergées arrivent, pour ceux qui préfèrent ne rien installer.",
+      "primary": "Rejoindre la liste d'attente",
+      "secondary": "Installer Community"
+    },
+    "editions": {
+      "eyebrow": "Éditions",
+      "h2": "Cinq éditions,",
+      "h2_accent": "un seul produit.",
+      "sub": "Chaque édition comprend le Studio, les agents, les équipes et les workflows. Ce qui change : l'endroit où elle tourne et le nombre de personnes qui la partagent.",
+      "for_label": "Pour",
+      "cloud_note": "À venir avec les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
+      "community": {
+        "name": "Community",
+        "status": "Disponible",
+        "price": "0 €",
+        "price_note": "pour toujours",
+        "for": "ceux qui sont à l'aise avec un serveur",
+        "desc": "Toute la façon de travailler, sur une machine que vous contrôlez : créer des agents, les réunir en équipes, dessiner des workflows.",
+        "points": [
+          "Tourne sur votre machine ou votre serveur, avec Docker",
+          "Vos données restent chez vous",
+          "Sans limite de durée, sans carte bancaire",
+          "L'aide de la communauté sur GitHub"
+        ],
+        "cta": "L'installer",
+        "github": "Mettre une étoile sur GitHub"
+      },
+      "plans": [
+        {
+          "name": "Personal",
+          "status": "Bientôt",
+          "price": "Prix au lancement",
+          "for": "une personne : un indépendant, un commerçant, un freelance",
+          "desc": "Hébergé pour vous. Rien à installer : connectez-vous et créez votre première équipe.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Pro",
+          "status": "Bientôt",
+          "price": "Prix au lancement",
+          "for": "un professionnel qui s'en sert tous les jours",
+          "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Business",
+          "status": "Bientôt",
+          "price": "Prix au lancement",
+          "for": "une équipe ou un service",
+          "desc": "Des espaces de travail partagés : une personne construit, tout le monde en profite.",
+          "cta": "Rejoindre la liste d'attente",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Enterprise",
+          "status": "Sur demande",
+          "price": "Sur devis",
+          "for": "une organisation avec plusieurs équipes et services",
+          "desc": "Authentification unique, marque blanche et support dédié, sur votre infrastructure ou la nôtre.",
+          "cta": "Nous contacter",
+          "href": "mailto:hello@agentivity.io"
+        }
+      ]
+    },
+    "costs": {
+      "eyebrow": "Sans surprise",
+      "h2": "Ce que vous",
+      "h2_accent": "payez vraiment.",
+      "items": [
+        {
+          "title": "Le logiciel",
+          "body": "Community coûte 0 €, sans limite de durée. Les prix des offres hébergées seront annoncés à leur ouverture."
+        },
+        {
+          "title": "Les modèles d'IA",
+          "body": "Agentivity ne revend pas d'IA. Vous connectez le fournisseur de votre choix (OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock) et vous le payez directement, sans marge de notre part."
+        },
+        {
+          "title": "La machine",
+          "body": "Avec Community, c'est la vôtre : votre ordinateur pour essayer, un serveur pour la partager avec des collègues. Avec les offres hébergées, nous nous en occupons."
+        }
+      ]
+    },
+    "hours": {
+      "big": "15+",
+      "h2": "heures rendues chaque semaine.",
+      "sub": "C'est le chiffre auquel comparer un prix. Le Studio compte le temps gagné par vos équipes et l'affiche sur son écran d'accueil.",
+      "link": "Voir l'exemple, tâche par tâche"
+    },
+    "licence": {
+      "eyebrow": "Licence",
+      "h2": "Vous pouvez lire",
+      "h2_accent": "le code source.",
+      "body": "Le cœur d'Agentivity est publié sous Elastic License 2.0. Vous pouvez l'utiliser, le modifier et le faire tourner pour vous ou pour votre entreprise, gratuitement. La seule chose interdite : le proposer à d'autres sous forme de service hébergé.",
+      "link": "Lire la licence",
+      "href": "https://www.elastic.co/licensing/elastic-license"
+    },
+    "faq": {
+      "eyebrow": "Les questions que vous vous posez",
+      "h2": "Avant",
+      "h2_accent": "de choisir.",
+      "items": [
+        {
+          "q": "L'édition Community est-elle vraiment gratuite ?",
+          "a": "Oui. Sans limite de durée, sans carte bancaire, sans période d'essai. Il vous faut une machine qui fait tourner Docker et un compte chez un fournisseur d'IA."
+        },
+        {
+          "q": "Puis-je l'utiliser pour mon entreprise ?",
+          "a": "Oui. La licence autorise l'usage personnel et professionnel. Ce qu'elle interdit : revendre Agentivity à d'autres sous forme de service hébergé."
+        },
+        {
+          "q": "Je ne suis pas technicien. Quelle édition est faite pour moi ?",
+          "a": "Une offre hébergée : il n'y a rien à installer. Elles ne sont pas encore ouvertes ; inscrivez-vous sur la liste d'attente et vous serez prévenu en premier."
+        },
+        {
+          "q": "Quand les offres hébergées ouvrent-elles, et à quel prix ?",
+          "a": "Les dates et les prix ne sont pas encore annoncés. Les inscrits à la liste d'attente seront les premiers informés."
+        },
+        {
+          "q": "Est-ce que je paie les modèles d'IA à part ?",
+          "a": "Oui. Vous connectez votre propre compte chez le fournisseur de votre choix et vous le payez directement. Nous ne prenons aucune marge."
+        },
+        {
+          "q": "Puis-je proposer Agentivity sous ma propre marque ?",
+          "a": "Oui, avec l'édition Enterprise. Écrivez à hello@agentivity.io et parlez-nous de votre projet."
+        },
+        {
+          "q": "Pouvez-vous nous aider à le déployer dans notre organisation ?",
+          "a": "Oui. Agentivity Services accompagne les organisations, de la stratégie au déploiement.",
+          "link": "Découvrir nos services",
+          "href": "/fr/services"
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Commencez gratuitement,",
+      "h2_accent": "ou soyez les premiers sur le cloud.",
+      "sub": "Laissez votre e-mail, nous vous écrirons à l'ouverture des offres hébergées.",
+      "fine": "Pas de spam. Un message quand cela compte.",
+      "github_line": "À l'aise avec Docker ? Community est prête dès aujourd'hui."
+    }
+  },
+  "docs_page": {
+    "meta": {
+      "title": "Documentation Agentivity — bientôt disponible",
+      "description": "La documentation d'Agentivity est en cours de rédaction. En attendant : voyez comment ça marche, installez l'édition Community ou posez-nous votre question."
+    },
+    "hero": {
+      "eyebrow": "Documentation",
+      "h1": "La documentation",
+      "h1_accent": "arrive.",
+      "sub": "Nous l'écrivons en ce moment. En attendant, ces pages répondent à la plupart des premières questions."
+    },
+    "links": [
+      {
+        "title": "Comment ça marche",
+        "body": "Créer un agent, une équipe et un workflow dans le Studio, en trois courts clips.",
+        "href": "/fr/how-it-works"
+      },
+      {
+        "title": "Installer l'édition Community",
+        "body": "Les étapes pour faire tourner Agentivity sur votre propre machine, avec Docker.",
+        "href": "/fr/community"
+      },
+      {
+        "title": "Tarifs et éditions",
+        "body": "À qui chaque édition est destinée, et ce que vous payez vraiment.",
+        "href": "/fr/pricing"
+      },
+      {
+        "title": "GitHub",
+        "body": "Le code source du cœur, et le lieu où signaler un problème.",
+        "github": true
+      }
+    ],
+    "notify": {
+      "text": "Envie de savoir quand la documentation sera publiée ?",
+      "link": "Rejoindre la liste d'attente",
+      "href": "/fr/pricing#waitlist"
+    },
+    "contact": "Une question en attendant ? Écrivez à"
+  },
+  "use_cases_page": {
+    "meta": {
+      "title": "Cas d'usage Agentivity — des exemples réels d'équipes d'IA au travail",
+      "description": "Des exemples réels, construits avec Agentivity et filmés dans le produit : un organisateur de voyage, un comparateur d'achats, un tri de CV. Avec une application, avec le portail, ou sans application du tout."
+    },
+    "labels": {
+      "for": "Pour",
+      "see": "Voir comment ça marche",
+      "soon": "Bientôt",
+      "back": "Tous les cas d'usage",
+      "recorded": "Filmé dans le produit, en accéléré.",
+      "facts": {
+        "for": "Pour",
+        "use": "Comment on l'utilise",
+        "behind": "Derrière"
+      },
+      "steps": "Ce qui se passe",
+      "decisions": "Là où quelqu'un décide",
+      "note": "Bon à savoir",
+      "get": "L'obtenir",
+      "others": "D'autres cas d'usage"
+    },
+    "hero": {
+      "eyebrow": "Cas d'usage",
+      "h1": "Ce qu'une équipe",
+      "h1_accent": "peut faire pour vous.",
+      "sub": "Des exemples réels, construits avec Agentivity et filmés dans le produit. D'autres arrivent."
+    },
+    "ways": {
+      "eyebrow": "Bon à savoir",
+      "h2": "La plupart du temps,",
+      "h2_accent": "pas besoin d'application.",
+      "sub": "Une équipe fait son travail sur le serveur. La façon de lui parler, vous la choisissez.",
+      "items": [
+        {
+          "tag": "Sans application",
+          "title": "Directement depuis le Studio",
+          "body": "Vous lancez l'équipe en un clic. Elle lit, vérifie et rédige, et ne revient vers vous que lorsqu'une décision vous appartient : par e-mail, sur Slack ou dans un formulaire."
+        },
+        {
+          "tag": "Portail",
+          "title": "Le portail prêt à l’emploi",
+          "body": "Une page web où vos collègues lancent les équipes que vous avez publiées, à vos couleurs. Rien à développer."
+        },
+        {
+          "tag": "VibeApp",
+          "title": "Une VibeApp",
+          "body": "Votre propre application, avec une ou plusieurs de vos équipes derrière. La plupart des VibeApps mêlent écrans classiques et équipes."
+        }
+      ]
+    },
+    "showcases": {
+      "eyebrow": "Démonstrations",
+      "h2": "Construites, filmées,",
+      "h2_accent": "expliquées.",
+      "sub": "Chacune a sa page : ce qui se passe, qui décide, et l'équipe derrière."
+    },
+    "vibeapp": {
+      "eyebrow": "Un nouveau type d'application",
+      "h2": "Voici la",
+      "h2_accent": "VibeApp.",
+      "example_label": "Dans Trip Planner",
+      "examples": [
+        "Une phrase : Lisbonne à deux, les dates, le budget.",
+        "Le responsable fait appel aux spécialistes dont ce voyage a besoin : vols, hôtel, transferts, dîner.",
+        "Ce que le voyageur choisit change la suite : le dîner tient dans ce qui reste du budget."
+      ],
+      "link": "Voir Trip Planner",
+      "href": "/fr/use-cases/trip-planner"
+    },
+    "soon": {
+      "eyebrow": "Bientôt",
+      "h2": "Les prochaines.",
+      "h2_accent": "Deux d'entre elles se passent d'application.",
+      "sub": "Elles tournent sur le serveur et vous joignent là où vous travaillez déjà.",
+      "items": [
+        {
+          "tag": "Sans application",
+          "title": "Factures fournisseurs",
+          "for": "un service comptable",
+          "body": "L'équipe lit la boîte e-mail des factures, vérifie chaque montant, repère les doublons et les relances, et demande au comptable de valider les cas douteux par e-mail ou sur Slack."
+        },
+        {
+          "tag": "Sans application",
+          "title": "Demandes de devis",
+          "for": "un indépendant ou une petite entreprise",
+          "body": "Un client remplit un formulaire. L'équipe prépare le devis, le patron le valide ou le corrige depuis sa boîte e-mail, et la réponse part."
+        },
+        {
+          "tag": "VibeApp",
+          "title": "Coach sport et nutrition",
+          "for": "une personne",
+          "body": "Une application personnelle : entraînements et repas organisés autour de vos objectifs, et ajustés semaine après semaine."
+        }
+      ],
+      "link": "Me prévenir à leur sortie"
+    },
+    "cases": [
+      {
+        "slug": "trip-planner",
+        "media": "trip-planner",
+        "width": 1024,
+        "height": 768,
+        "tag": "VibeApp",
+        "size": "Équipe de 13",
+        "title": "Trip Planner",
+        "for": "une agence de voyages",
+        "summary": "Une phrase suffit. Un responsable et douze spécialistes organisent le voyage, et le voyageur choisit les vols, l'hôtel et le dîner.",
+        "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un séjour à Lisbonne, un responsable répartit le travail entre des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
+        "h1": "Tout un voyage,",
+        "h1_accent": "à partir d'une phrase.",
+        "lead": "Le voyageur écrit ce qu'il veut. Un responsable confie chaque partie au bon spécialiste, et l'application affiche un choix chaque fois qu'une décision revient au voyageur.",
+        "facts": {
+          "for": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties",
+          "use": "Une VibeApp, faite pour ce seul métier",
+          "behind": "Un responsable et douze spécialistes"
+        },
+        "steps": [
+          {
+            "title": "La demande",
+            "body": "Une phrase : Lisbonne à deux, les dates, le budget."
+          },
+          {
+            "title": "Le responsable prend la main",
+            "body": "Il découpe le voyage et confie chaque partie au bon spécialiste."
+          },
+          {
+            "title": "Les spécialistes proposent",
+            "body": "Vols, hôtel, transferts, dîner : chacun revient avec des options qui tiennent dans le budget."
+          },
+          {
+            "title": "Le voyageur choisit",
+            "body": "L'application affiche une carte pour chaque choix, avec photos et prix."
+          },
+          {
+            "title": "Paiement, puis réservations",
+            "body": "Une fois le paiement autorisé, un membre confirme chaque réservation."
+          }
+        ],
+        "decisions": [
+          "Accepter ou ajuster les vols",
+          "Choisir l'hôtel",
+          "Choisir comment s'y rendre",
+          "Choisir la table du dîner"
+        ],
+        "team": {
+          "title": "L'équipe",
+          "lead": "Treize membres. Seul le responsable parle à tous les autres.",
+          "members": [
+            {
+              "name": "Trip Manager",
+              "role": "Coordonne les spécialistes et garde la cohérence du voyage."
+            },
+            {
+              "name": "Flight Specialist",
+              "role": "Propose les vols."
+            },
+            {
+              "name": "Hotel Specialist",
+              "role": "Propose l'hôtel le mieux adapté."
+            },
+            {
+              "name": "Ground Transport Specialist",
+              "role": "Propose les transferts depuis l'aéroport et les transports sur place."
+            },
+            {
+              "name": "Car Rental Specialist",
+              "role": "Propose une voiture de location quand c'est utile."
+            },
+            {
+              "name": "Restaurant & Dining Specialist",
+              "role": "Recommande des restaurants."
+            },
+            {
+              "name": "Activity Planner",
+              "role": "Construit un programme jour par jour selon les centres d'intérêt du voyageur."
+            },
+            {
+              "name": "Travel Insurance Specialist",
+              "role": "Propose une assurance."
+            },
+            {
+              "name": "Visa & Documents Specialist",
+              "role": "Vérifie les exigences de visa, de passeport et de vaccination."
+            },
+            {
+              "name": "Currency & Budget Advisor",
+              "role": "Conseille sur le change et contrôle le budget entre les spécialistes."
+            },
+            {
+              "name": "Payment Agent",
+              "role": "Traite le paiement et indique s'il a été autorisé."
+            },
+            {
+              "name": "Reservation Agent",
+              "role": "Confirme chaque réservation une fois le paiement autorisé."
+            },
+            {
+              "name": "On-Trip Assistant",
+              "role": "Gère les changements une fois le voyage confirmé."
+            }
+          ]
+        },
+        "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés : rien n'est réellement réservé ni débité.",
+        "get": {
+          "body": "Le code de l'application est public. Il lui faut les équipes d'IA de l'édition Community.",
+          "link": "Le code sur GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
+          "external": true
+        }
+      },
+      {
+        "slug": "shopping-lab",
+        "media": "shopping-lab",
+        "width": 1024,
+        "height": 768,
+        "tag": "Portail",
+        "size": "Équipe de 9",
+        "title": "Shopping Lab",
+        "for": "un magasin, un acheteur, un service de comparaison",
+        "summary": "Un acheteur décrit son besoin. Neuf spécialistes lisent les pages des magasins, comparent, notent et rédigent un rapport illustré.",
+        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, neuf spécialistes travaillent tour à tour, puis un rapport avec des fiches produits et des photos apparaît",
+        "h1": "Un conseil d'achat",
+        "h1_accent": "que vous pouvez vérifier.",
+        "lead": "L'acheteur décrit son besoin avec ses mots. L'équipe lit ce que les magasins publient réellement, compare ce qui est comparable, et remet un rapport avec ses sources.",
+        "facts": {
+          "for": "Un magasin, un service achats, un service de comparaison",
+          "use": "Le portail prêt à l’emploi, sans application à développer",
+          "behind": "Neuf spécialistes qui travaillent tour à tour"
+        },
+        "steps": [
+          {
+            "title": "Le besoin",
+            "body": "Une envie floue devient un cahier des charges précis : produit, budget, critères indispensables, priorités."
+          },
+          {
+            "title": "Les magasins",
+            "body": "Un éclaireur par magasin lit ses pages : prix réels, notes, avis, photos et caractéristiques."
+          },
+          {
+            "title": "La comparaison",
+            "body": "Le même produit est regroupé entre magasins, et les caractéristiques sont mises dans les mêmes unités."
+          },
+          {
+            "title": "La note",
+            "body": "Chaque produit est noté par un calcul fixe, jamais par estimation."
+          },
+          {
+            "title": "Le rapport",
+            "body": "Un verdict, les meilleurs choix avec photos, des graphiques, les points de vigilance et les sources."
+          }
+        ],
+        "decisions": [
+          "Confirmer le cahier des charges avant la recherche",
+          "Lire le rapport et décider quoi acheter"
+        ],
+        "team": {
+          "title": "L'équipe",
+          "lead": "Neuf membres. Un seul parle à l'acheteur.",
+          "members": [
+            {
+              "name": "Needs Analyst",
+              "role": "Transforme une envie floue en cahier des charges précis et confirmé. Le seul membre qui parle à l'acheteur."
+            },
+            {
+              "name": "Query Planner",
+              "role": "Prépare la recherche pour chaque magasin à partir du cahier des charges."
+            },
+            {
+              "name": "Store Scouts (2)",
+              "role": "Chacun lit les pages d'un magasin et rapporte prix, notes, avis, photos et caractéristiques."
+            },
+            {
+              "name": "Product Matcher",
+              "role": "Regroupe le même produit entre magasins et garde la meilleure offre de chacun."
+            },
+            {
+              "name": "Spec Normalizer",
+              "role": "Construit une comparaison côte à côte. Ne comble jamais un manque par une supposition."
+            },
+            {
+              "name": "Scoring Analyst",
+              "role": "Note chaque produit avec un calcul fixe."
+            },
+            {
+              "name": "Customer Reviews Analyst",
+              "role": "Dit ce que les clients pensent vraiment, et où rester prudent."
+            },
+            {
+              "name": "Report Writer",
+              "role": "Rédige le rapport final illustré."
+            }
+          ]
+        },
+        "note": "La démonstration lit deux magasins en ligne. Ajoutez un éclaireur, et l'équipe en couvre un de plus.",
+        "get": {
+          "body": "Le code du portail est public. Il lui faut les équipes d'IA de l'édition Community.",
+          "link": "Le portail sur GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+          "external": true
+        }
+      },
+      {
+        "slug": "cv-screening",
+        "media": "cv-screening",
+        "width": 1418,
+        "height": 770,
+        "tag": "Portail",
+        "size": "Workflow",
+        "title": "CV Screening",
+        "for": "un recruteur, une équipe RH",
+        "summary": "Un CV et une offre en entrée. Une note, les raisons, et une orientation : présélection, refus, ou relecture par un recruteur.",
+        "alt": "Un enregistrement du Studio montrant le workflow CV Screening : des boîtes pour lire le fichier, lire la page, évaluer l'adéquation et interroger une personne, reliées de gauche à droite",
+        "h1": "Chaque CV lu,",
+        "h1_accent": "chaque doute relu.",
+        "lead": "Le recruteur fournit un CV et une offre. Le workflow lit les deux, note l'adéquation, explique pourquoi, et envoie les cas douteux à une personne.",
+        "facts": {
+          "for": "Un recruteur ou une équipe RH",
+          "use": "Un formulaire pour déposer le CV, et le résultat à l'écran",
+          "behind": "Un workflow de 34 étapes, dessiné dans le Studio"
+        },
+        "steps": [
+          {
+            "title": "Les documents",
+            "body": "Le CV et l'offre, chacun sous forme de fichier, de lien ou de texte."
+          },
+          {
+            "title": "La lecture",
+            "body": "Le workflow extrait le texte du fichier ou lit la page web. S'il n'y arrive pas, il demande à une personne."
+          },
+          {
+            "title": "L'évaluation",
+            "body": "Il note l'adéquation et fait ressortir le niveau d'expérience et les signaux de carrière."
+          },
+          {
+            "title": "L'orientation",
+            "body": "Présélection, refus, ou relecture par un recruteur."
+          }
+        ],
+        "decisions": [
+          "Aider quand un document n'a pas pu être lu",
+          "Relire les cas dont le workflow n'est pas sûr"
+        ],
+        "team": {
+          "title": "Les briques",
+          "lead": "Un workflow se dessine boîte par boîte. Voici les types de boîtes utilisés ici.",
+          "members": [
+            {
+              "name": "Formulaire",
+              "role": "Là où le recruteur dépose le CV et l'offre."
+            },
+            {
+              "name": "Lire le fichier",
+              "role": "Extrait le texte d'un document."
+            },
+            {
+              "name": "Lire la page",
+              "role": "Lit une offre publiée sur le web."
+            },
+            {
+              "name": "Étapes d'IA",
+              "role": "Évaluent l'adéquation et rédigent les raisons."
+            },
+            {
+              "name": "Conditions",
+              "role": "Envoient chaque cas vers la bonne orientation."
+            },
+            {
+              "name": "Étapes humaines",
+              "role": "S'arrêtent et attendent une personne quand il en faut une."
+            }
+          ]
+        },
+        "note": "Un workflow suit le chemin que vous avez dessiné, de la même façon à chaque fois. Une équipe décide elle-même de son chemin. Vous pouvez mélanger les deux.",
+        "get": {
+          "body": "Il est fourni avec les exemples prêts à l'emploi de l'édition Community.",
+          "link": "Installer Community",
+          "href": "/fr/community"
+        }
+      }
+    ],
+    "cta": {
+      "h2": "Un cas en tête ?",
+      "h2_accent": "Construisez-le.",
+      "sub": "Voyez comment une équipe se monte dans le Studio, ou soyez prévenu à l'ouverture du cloud.",
+      "primary": "Voir comment ça marche",
+      "primary_href": "/fr/how-it-works",
+      "secondary": "Rejoindre la liste d'attente",
+      "secondary_href": "/fr/pricing#waitlist",
+      "services": "Un projet plus large dans votre organisation ?",
+      "services_link": "Découvrir nos services",
+      "services_href": "/fr/services"
+    }
+  },
+  "blog_page": {
+    "meta": {
+      "title": "Blog Agentivity — les équipes d'IA expliquées simplement",
+      "description": "Des guides et des explications pour construire des équipes de spécialistes IA : comment elles travaillent ensemble, où l'humain garde la main, et les points de vigilance."
+    },
+    "hero": {
+      "eyebrow": "Blog",
+      "h1": "Les équipes d'IA,",
+      "h1_accent": "expliquées simplement.",
+      "sub": "Des guides et des explications pour ceux qui veulent mettre des spécialistes IA au travail, sans jargon."
+    },
+    "lang_note": "Les articles sont en anglais pour le moment. Les versions françaises arrivent.",
+    "empty": "Aucun article pour l'instant. Revenez bientôt.",
+    "read": "Lire l'article",
+    "back": "Tous les articles",
+    "faq_title": "Les questions que vous vous posez",
+    "keep_reading": "À lire aussi",
+    "aside": {
+      "label": "À propos d'Agentivity",
+      "body": "Une plateforme sans code pour construire des équipes de spécialistes IA qui travaillent avec vos équipes.",
+      "how": "Voir comment ça marche",
+      "how_href": "/fr/how-it-works"
+    }
   },
   "ticker": ["Équipe Finance", "Équipe RH", "Équipe Contenu", "Assistant Personnel", "Pipeline Recrutement", "Boîte mail à 7h", "Briefing hebdomadaire", "Autonome 24/7", "Sans compétences tech", "Templates Synergi", "Marque blanche", "Travaille pendant votre sommeil"]
 }

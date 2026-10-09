@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const lang = 'en';
 const docs = [
@@ -11,8 +11,8 @@ const docs = [
   { tag: 'AI & Automation', title: 'AI & Automation Policy', desc: 'Specific rules for building and operating AI agents — human oversight, prohibited uses, LLM data, autonomous workflows.', href: '/legal/ai-policy' },
 ];
 ---
-<Base title="Legal — Agentivity" description="Agentivity legal documents — Terms of Use, Privacy Policy, Disclaimer and AI & Automation Policy.">
-<Nav lang={lang} />
+<Base look="editorial" title="Legal — Agentivity" description="Agentivity legal documents — Terms of Use, Privacy Policy, Disclaimer and AI & Automation Policy.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
   <div class="legal-layout">
     <aside class="legal-sidebar">
@@ -63,5 +63,5 @@ const docs = [
     </main>
   </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

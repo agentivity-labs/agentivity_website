@@ -1,0 +1,71 @@
+---
+// Documentation placeholder, shared by /docs and /fr/docs, until the real documentation is written.
+// Texts come from the "docs_page" block of the translation files.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.docs_page;
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="ed-page">
+
+  <section class="ed-wrap dc-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="dc-hero-sub">{p.hero.sub}</p>
+  </section>
+
+  <section class="ed-wrap dc-body">
+    <ul class="dc-links">
+      {p.links.map((link: any) => (
+        <li>
+          {link.github
+            ? <a href={t.site.github_href} target="_blank" rel="noopener noreferrer"><strong>{link.title}</strong><span>{link.body}</span></a>
+            : <a href={link.href}><strong>{link.title}</strong><span>{link.body}</span></a>}
+        </li>
+      ))}
+    </ul>
+    <p class="dc-note">{p.notify.text} <a href={p.notify.href}>{p.notify.link}</a></p>
+    <p class="dc-note">{p.contact} <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+<style>
+.dc-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(40px, 5vw, 64px); }
+.dc-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.dc-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 32em; }
+
+.dc-body { display: flex; flex-direction: column; align-items: center; gap: 14px; padding-bottom: clamp(72px, 9vw, 120px); }
+.dc-links { width: min(860px, 100%); border-top: 2px solid var(--ed-ink); margin-bottom: 26px; }
+.dc-links li { border-bottom: 1px solid var(--ed-line-2); }
+.dc-links a { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto; align-items: center; gap: 8px 32px; padding-block: 24px; color: var(--ed-ink-2); }
+.dc-links a::after { content: "→"; font-size: 22px; color: var(--ed-ink); transition: transform .18s ease; }
+.dc-links a:hover::after { transform: translateX(6px); }
+.dc-links strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.08; color: var(--ed-ink); }
+.dc-links span { font-size: 17px; }
+.dc-note { font-size: 16.5px; color: var(--ed-ink-3); text-align: center; }
+.dc-note a { font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; white-space: nowrap; }
+
+@media (max-width: 720px) {
+  .dc-links a { grid-template-columns: minmax(0, 1fr) auto; }
+  .dc-links span { grid-column: 1; grid-row: 2; }
+  .dc-links a::after { grid-column: 2; grid-row: 1 / span 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dc-links a::after { transition: none; }
+}
+</style>

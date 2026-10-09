@@ -1,11 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 const lang = 'en';
 ---
-<Base title="Privacy Policy — Agentivity" description="How Agentivity collects, uses, and protects your personal data. GDPR compliant.">
-<Nav lang={lang} />
+<Base look="editorial" title="Privacy Policy — Agentivity" description="How Agentivity collects, uses, and protects your personal data. GDPR compliant.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -30,7 +30,7 @@ const lang = 'en';
       <h2>1. Data Controller</h2>
       <p>Agentivity ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") is the data controller responsible for the personal data collected through our website (<a href="https://www.agentivity.io">agentivity.io</a>) and hosted cloud services.</p>
       <p>Contact for all data protection enquiries: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
-      <p>This Privacy Policy applies to all personal data we collect in connection with the Agentivity website and cloud services. It does not apply to data processed within self-hosted deployments of the open-source software, which you operate as an independent data controller.</p>
+      <p>This Privacy Policy applies to all personal data we collect in connection with the Agentivity website and cloud services. It does not apply to data processed within self-hosted deployments of the software, which you operate as an independent data controller.</p>
     </div>
 
     <div class="legal-section">
@@ -194,5 +194,5 @@ const lang = 'en';
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

@@ -1,11 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 const lang = 'en';
 ---
-<Base title="Terms of Use — Agentivity" description="Agentivity Terms of Use — governing your access to and use of the platform.">
-<Nav lang={lang} />
+<Base look="editorial" title="Terms of Use — Agentivity" description="Agentivity Terms of Use — governing your access to and use of the platform.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -23,12 +23,13 @@ const lang = 'en';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Legal</span>
       <h1>Terms of Use</h1>
-      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: June 2026</span></div>
+      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: October 2026</span></div>
     </header>
 
     <div class="legal-section">
       <h2>1. Acceptance of Terms</h2>
-      <p>By accessing or using the Agentivity website, open-source software, or hosted cloud service (collectively, the "<strong>Platform</strong>"), you confirm that you have read, understood, and agree to be bound by these Terms of Use ("<strong>Terms</strong>") and all documents referenced herein, including our <a href="/legal/privacy">Privacy Policy</a>, <a href="/legal/disclaimer">Disclaimer</a>, and <a href="/legal/ai-policy">AI &amp; Automation Policy</a>.</p>
+      <p>These Terms are an agreement between you and SMART PIXEL BV, a company registered in Belgium under enterprise number BE 0731.739.690, referred to in these Terms as "<strong>Agentivity</strong>", "we" or "us".</p>
+      <p>By accessing or using the Agentivity website, self-hosted software, or hosted cloud service (collectively, the "<strong>Platform</strong>"), you confirm that you have read, understood, and agree to be bound by these Terms of Use ("<strong>Terms</strong>") and all documents referenced herein, including our <a href="/legal/privacy">Privacy Policy</a>, <a href="/legal/disclaimer">Disclaimer</a>, and <a href="/legal/ai-policy">AI &amp; Automation Policy</a>.</p>
       <p>If you are using the Platform on behalf of an organisation, you represent that you have the authority to bind that organisation to these Terms. In that case, "you" refers to both you individually and the organisation.</p>
       <p>If you do not agree to these Terms, you must immediately cease all use of the Platform.</p>
     </div>
@@ -57,7 +58,7 @@ const lang = 'en';
       </ul>
       <p>The Platform is available as:</p>
       <ul>
-        <li><strong>Open-source software</strong> — self-hosted under the Agentivity Sustainable Use Licence, available on GitHub.</li>
+        <li><strong>Self-hosted software</strong> — source-available under the Elastic License 2.0, available on GitHub.</li>
         <li><strong>Hosted cloud service</strong> — managed infrastructure provided by Agentivity (when commercially available).</li>
       </ul>
       <p>We reserve the right to modify, discontinue, or restrict access to any feature of the Platform at any time, with or without notice.</p>
@@ -66,8 +67,8 @@ const lang = 'en';
     <div class="legal-section">
       <h2>5. Licence to Use</h2>
       <p>Subject to your compliance with these Terms, Agentivity grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable licence to access and use the Platform for your internal business or personal purposes.</p>
-      <p>This licence does not include the right to: resell or commercially exploit the Platform in violation of the Agentivity Sustainable Use Licence; copy, modify, or distribute the source code in ways not permitted by the applicable open-source licence; or use the Platform to develop a competing product or service.</p>
-      <p>The open-source version is governed by the <a href="https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md" target="_blank" rel="noopener noreferrer">Agentivity Sustainable Use Licence</a>. Commercial use beyond the scope of that licence requires a separate written agreement with Agentivity.</p>
+      <p>This licence does not include the right to: resell or commercially exploit the Platform in violation of the Elastic License 2.0; copy, modify, or distribute the source code in ways not permitted by the applicable licence; or use the Platform to develop a competing product or service.</p>
+      <p>The self-hosted version is governed by the <a href="https://www.elastic.co/licensing/elastic-license" target="_blank" rel="noopener noreferrer">Elastic License 2.0</a>. Commercial use beyond the scope of that licence requires a separate written agreement with Agentivity.</p>
     </div>
 
     <div class="legal-section">
@@ -125,7 +126,7 @@ const lang = 'en';
     <div class="legal-section">
       <h2>10. LLM Providers, API Keys and Model Responsibility</h2>
       <div class="legal-alert violet"><p><strong>Agentivity is an orchestration platform only.</strong> We do not provide, host, or operate any AI model. All AI inference is performed by LLM providers you independently select, using your own API credentials.</p></div>
-      <p>Agentivity provides the tooling to build agent workflows and connect them to AI models of your choice. When you configure agents to use a large language model — such as those provided by OpenAI, Anthropic, Google, Mistral, or others — you must independently obtain and provide your own API credentials. The following applies:</p>
+      <p>Agentivity provides the tooling to build agent workflows and connect them to AI models of your choice. When you configure agents to use a large language model — such as those provided by OpenAI, Anthropic, Google, or others — you must independently obtain and provide your own API credentials. The following applies:</p>
       <ul>
         <li>All LLM usage occurs on the provider's infrastructure, entirely outside Agentivity's systems.</li>
         <li>Agentivity has no access to, visibility into, or control over the data you send to or receive from any LLM provider.</li>
@@ -145,7 +146,7 @@ const lang = 'en';
 
     <div class="legal-section">
       <h2>12. Fees and Payment</h2>
-      <p>The open-source, self-hosted version of Agentivity is free of charge and subject to the Agentivity Sustainable Use Licence.</p>
+      <p>The self-hosted version of Agentivity is free of charge and subject to the Elastic License 2.0.</p>
       <p>The hosted cloud service (when commercially available) will be offered under paid subscription plans. Pricing, billing cycles, and feature inclusions will be published on our website. All fees are exclusive of applicable taxes unless stated otherwise.</p>
       <p>Fees are non-refundable except as required by applicable consumer protection law. We reserve the right to change pricing at any time, with at least 30 days' notice for existing subscribers.</p>
       <p>Failure to pay applicable fees may result in suspension or termination of your access to the hosted service.</p>
@@ -224,10 +225,10 @@ const lang = 'en';
     <div class="legal-section">
       <h2>21. Contact</h2>
       <p>For any questions, concerns, or notices relating to these Terms:</p>
-      <p><strong>Agentivity</strong><br/>Email: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+      <p><strong>SMART PIXEL BV</strong> (Agentivity)<br/>Enterprise number: BE 0731.739.690<br/>Registered office: Wasseiges, Belgium<br/>Email: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
     </div>
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

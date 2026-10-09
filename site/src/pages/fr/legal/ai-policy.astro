@@ -1,11 +1,11 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import Nav from '../../../components/Nav.astro';
-import Footer from '../../../components/Footer.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 const lang = 'fr';
 ---
-<Base title="Politique IA & Automatisation — Agentivity" description="Vos obligations en tant qu'opérateur d'agents Agentivity — surveillance humaine, usages interdits et données transmises aux LLM.">
-<Nav lang={lang} />
+<Base look="editorial" title="Politique IA & Automatisation — Agentivity" description="Vos obligations en tant qu'opérateur d'agents Agentivity — surveillance humaine, usages interdits et données transmises aux LLM.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -34,7 +34,7 @@ const lang = 'fr';
       <h2>1. Objet et champ d'application</h2>
       <div class="legal-alert violet"><p><strong>Agentivity est une plateforme d'orchestration uniquement.</strong> Nous ne développons, n'hébergeons ni n'exploitons aucun modèle d'IA ou grand modèle de langage (LLM). Toutes les capacités d'IA de vos agents sont fournies par des fournisseurs de LLM tiers que vous sélectionnez et connectez de manière indépendante via vos propres clés API. Agentivity n'a aucun contrôle et n'assume aucune responsabilité pour les résultats, le comportement ou les pratiques de données de tout LLM.</p></div>
       <p>Cette Politique IA &amp; Automatisation ("<strong>Politique</strong>") définit les obligations spécifiques, responsabilités et restrictions applicables lorsque vous créez, configurez et exploitez des agents IA et des workflows automatisés via Agentivity. Elle complète nos <a href="/fr/legal/terms">CGU</a> et notre <a href="/fr/legal/disclaimer">Disclaimer</a>.</p>
-      <p>Cette Politique s'applique à tous les utilisateurs de la Plateforme — que vous utilisiez la version open source auto-hébergée ou le service cloud hébergé.</p>
+      <p>Cette Politique s'applique à tous les utilisateurs de la Plateforme — que vous utilisiez la version auto-hébergée ou le service cloud hébergé.</p>
       <p>Agentivity prend en charge deux modes de fonctionnement fondamentaux :</p>
       <ul>
         <li><strong>Mode agentique</strong> — Des équipes d'agents IA qui collaborent de manière autonome, exercent leur jugement et s'adaptent à des situations dynamiques.</li>
@@ -148,8 +148,8 @@ const lang = 'fr';
     </div>
 
     <div class="legal-section">
-      <h2>11. Déploiements auto-hébergés open source</h2>
-      <p>Si vous déployez le logiciel open source Agentivity sur votre propre infrastructure, vous êtes seul responsable de la sécurité, de la confidentialité et de la conformité légale de ce déploiement. La <a href="https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md" target="_blank" rel="noopener noreferrer">Licence Sustainable Use d'Agentivity</a> régit les droits et restrictions applicables à l'usage auto-hébergé.</p>
+      <h2>11. Déploiements auto-hébergés</h2>
+      <p>Si vous déployez le logiciel Agentivity sur votre propre infrastructure, vous êtes seul responsable de la sécurité, de la confidentialité et de la conformité légale de ce déploiement. L'<a href="https://www.elastic.co/licensing/elastic-license" target="_blank" rel="noopener noreferrer">Elastic License 2.0</a> régit les droits et restrictions applicables à l'usage auto-hébergé.</p>
     </div>
 
     <div class="legal-section">
@@ -170,5 +170,5 @@ const lang = 'fr';
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

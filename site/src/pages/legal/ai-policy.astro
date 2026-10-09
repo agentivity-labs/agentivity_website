@@ -1,11 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 const lang = 'en';
 ---
-<Base title="AI & Automation Policy — Agentivity" description="Agentivity AI & Automation Policy — your obligations as an agent operator, prohibited uses, and oversight requirements.">
-<Nav lang={lang} />
+<Base look="editorial" title="AI & Automation Policy — Agentivity" description="Agentivity AI & Automation Policy — your obligations as an agent operator, prohibited uses, and oversight requirements.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -30,7 +30,7 @@ const lang = 'en';
       <h2>1. Purpose and Scope</h2>
       <div class="legal-alert violet"><p><strong>Agentivity is an orchestration platform only.</strong> We do not develop, host, or operate any AI model or large language model (LLM). All AI capabilities within your agents are provided by third-party LLM providers that you independently select and connect using your own API credentials. Agentivity has no control over and bears no responsibility for any LLM output, behaviour, or data practice.</p></div>
       <p>This AI &amp; Automation Policy ("<strong>Policy</strong>") sets out the specific obligations, responsibilities, and restrictions that apply when you build, configure, and operate AI agents and automated workflows using Agentivity. It supplements our <a href="/legal/terms">Terms of Use</a> and <a href="/legal/disclaimer">Disclaimer</a>.</p>
-      <p>This Policy applies to all users of the Platform — whether using the open-source self-hosted version or the hosted cloud service.</p>
+      <p>This Policy applies to all users of the Platform — whether using the self-hosted version or the hosted cloud service.</p>
       <p>Agentivity supports two fundamental operating modes:</p>
       <ul>
         <li><strong>Agentic mode</strong> — AI agent teams that collaborate autonomously, exercise judgment, and adapt to dynamic inputs and situations.</li>
@@ -162,9 +162,9 @@ const lang = 'en';
     </div>
 
     <div class="legal-section">
-      <h2>11. Open-Source Self-Hosted Deployments</h2>
-      <p>If you deploy the Agentivity open-source software on your own infrastructure, you are solely responsible for the security, privacy, and legal compliance of that deployment. Agentivity provides no security guarantees, support obligations, or compliance assistance for self-hosted deployments.</p>
-      <p>The <a href="https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md" target="_blank" rel="noopener noreferrer">Agentivity Sustainable Use Licence</a> governs the rights and restrictions applicable to self-hosted use. Commercial use beyond the scope of that licence requires a separate written agreement.</p>
+      <h2>11. Self-Hosted Deployments</h2>
+      <p>If you deploy the Agentivity software on your own infrastructure, you are solely responsible for the security, privacy, and legal compliance of that deployment. Agentivity provides no security guarantees, support obligations, or compliance assistance for self-hosted deployments.</p>
+      <p>The <a href="https://www.elastic.co/licensing/elastic-license" target="_blank" rel="noopener noreferrer">Elastic License 2.0</a> governs the rights and restrictions applicable to self-hosted use. Commercial use beyond the scope of that licence requires a separate written agreement.</p>
     </div>
 
     <div class="legal-section">
@@ -196,5 +196,5 @@ const lang = 'en';
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

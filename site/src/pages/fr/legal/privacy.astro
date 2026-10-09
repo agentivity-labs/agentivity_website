@@ -1,11 +1,11 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import Nav from '../../../components/Nav.astro';
-import Footer from '../../../components/Footer.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 const lang = 'fr';
 ---
-<Base title="Politique de confidentialité — Agentivity" description="Comment Agentivity collecte, utilise et protège vos données personnelles. Conforme au RGPD.">
-<Nav lang={lang} />
+<Base look="editorial" title="Politique de confidentialité — Agentivity" description="Comment Agentivity collecte, utilise et protège vos données personnelles. Conforme au RGPD.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -33,7 +33,7 @@ const lang = 'fr';
     <div class="legal-section">
       <h2>1. Responsable du traitement</h2>
       <p>Agentivity ("<strong>nous</strong>") est le responsable du traitement des données personnelles collectées via notre site web (<a href="https://www.agentivity.io">agentivity.io</a>) et nos services cloud hébergés. Contact pour toutes questions relatives à la protection des données : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
-      <p>Cette Politique de confidentialité s'applique aux données personnelles que nous collectons dans le cadre du site web et du service cloud Agentivity. Elle ne s'applique pas aux données traitées dans des déploiements auto-hébergés du logiciel open source, que vous exploitez en tant que responsable de traitement indépendant.</p>
+      <p>Cette Politique de confidentialité s'applique aux données personnelles que nous collectons dans le cadre du site web et du service cloud Agentivity. Elle ne s'applique pas aux données traitées dans des déploiements auto-hébergés du logiciel, que vous exploitez en tant que responsable de traitement indépendant.</p>
     </div>
 
     <div class="legal-section">
@@ -178,5 +178,5 @@ const lang = 'fr';
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

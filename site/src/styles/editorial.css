@@ -1,0 +1,116 @@
+/* ============================================================
+   AGENTIVITY — editorial look (navy, yellow, serif display)
+   Applies only under <body class="ed">, so pages still on the
+   first design (main.css) are not affected.
+   ============================================================ */
+body.ed {
+  --ed-navy: #152844;
+  --ed-navy-2: #1B3357;
+  --ed-navy-line: #3A5078;
+  --ed-ink: #101A2E;
+  --ed-ink-2: #36415C;
+  --ed-ink-3: #4E5A75;
+  --ed-on-navy: #D5DCEC;
+  --ed-on-navy-2: #C9D2E6;
+  --ed-line: #E2E6EE;
+  --ed-line-2: #D5DAE5;
+  --ed-mist: #F1F3F8;
+  --ed-yellow: #FFC83D;
+  --ed-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --ed-sans: 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ed-wrap: 1240px;
+  --ed-pad: clamp(20px, 5vw, 56px);
+
+  background: #fff;
+  color: var(--ed-ink);
+  font-family: var(--ed-sans);
+  font-size: 17px;
+  line-height: 1.55;
+}
+body.ed ::selection { background: var(--ed-yellow); color: var(--ed-ink); }
+/* Zero-specificity scope: these must beat the element rules of main.css (loaded first) and yield to every class below. */
+:where(body.ed) h1, :where(body.ed) h2, :where(body.ed) h3, :where(body.ed) h4 { font-weight: 400; letter-spacing: normal; line-height: 1.1; }
+body.ed :focus-visible { outline: 2px solid var(--ed-navy); outline-offset: 3px; border-radius: 4px; }
+
+.ed-wrap { max-width: var(--ed-wrap); margin: 0 auto; padding-inline: var(--ed-pad); }
+
+.ed-eyebrow {
+  font-size: 14.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink-2);
+}
+.ed-h2 {
+  font-family: var(--ed-serif); font-size: clamp(40px, 5vw, 72px); line-height: 1; letter-spacing: -.015em; text-wrap: balance;
+}
+.ed-h2--md { font-size: clamp(36px, 4.4vw, 62px); line-height: 1.02; }
+.ed-h2 em, .ed-h2--md em { font-style: italic; }
+.ed-mark { background-image: linear-gradient(transparent 64%, var(--ed-yellow) 64%, var(--ed-yellow) 92%, transparent 92%); }
+
+/* buttons and links */
+.ed-btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 30px; border-radius: 999px;
+  border: 1.5px solid transparent; font-family: inherit; font-size: 17.5px; font-weight: 600; cursor: pointer; white-space: nowrap;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.ed-btn:hover { transform: translateY(-1px); }
+.ed-btn svg { flex: none; margin-right: 10px; }
+.ed-btn--sm { min-height: 44px; padding: 0 22px; font-size: 15.5px; }
+.ed-btn--navy { background: var(--ed-navy); color: #fff; }
+.ed-btn--navy:hover { background: #0E1D33; }
+.ed-btn--yellow { background: var(--ed-yellow); color: var(--ed-ink); font-weight: 700; }
+.ed-btn--yellow:hover { background: #FFD666; }
+.ed-btn--line { background: transparent; color: var(--ed-ink); border-color: var(--ed-ink); }
+.ed-btn--line:hover { background: var(--ed-ink); color: #fff; }
+.ed-link {
+  display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; font-weight: 600;
+  border-bottom: 1.5px solid currentColor; transition: opacity .15s ease;
+}
+.ed-link:hover { opacity: .7; }
+
+/* cookie banner, restyled for the light pages */
+body.ed .cookie-banner { background: var(--ed-navy); border-color: var(--ed-navy-line); }
+body.ed .cookie-text { color: var(--ed-on-navy); }
+body.ed .cookie-link { color: #fff; }
+body.ed .cookie-btn--primary { background: var(--ed-yellow); color: var(--ed-ink); }
+body.ed .cookie-btn--ghost { color: var(--ed-on-navy); }
+
+/* ---------- page layout shared by the editorial pages ---------- */
+.ed-page { overflow: hidden; }
+.ed-page ul, .ed-page ol { list-style: none; }
+.ed-page em { font-style: italic; }
+.ed-page figure { margin: 0; }
+/* The second half of a section title starts on its own line instead of breaking mid-sentence. */
+.ed-page .ed-h2 em { display: block; }
+
+.ed-sec { padding-block: clamp(72px, 9vw, 120px); }
+.ed-sec--tight-bottom { padding-bottom: 0; }
+.ed-sec-head { display: flex; flex-direction: column; gap: 14px; max-width: 900px; margin-bottom: clamp(36px, 4.5vw, 56px); }
+.ed-sec-head--row { max-width: none; flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; }
+.ed-sec-head--row > div { display: flex; flex-direction: column; gap: 14px; max-width: 820px; }
+.ed-sec-sub { font-size: 20px; line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+.ed-band--mist { background: var(--ed-mist); }
+.ed-band--navy { background: var(--ed-navy); color: #fff; }
+.ed-band--yellow { background: var(--ed-yellow); color: var(--ed-ink); }
+.ed-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(36px, 5vw, 56px); }
+.ed-split--center { align-items: center; }
+.ed-split > * { min-width: 0; }
+.ed-split .ed-eyebrow { margin-bottom: 18px; }
+.ed-rows { display: flex; flex-direction: column; margin-top: 22px; }
+.ed-rows li { display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-2); }
+.ed-rows li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.ed-rows strong { font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+.ed-rows--num { margin-bottom: 22px; }
+.ed-rows--num li { flex-direction: row; gap: 18px; }
+.ed-rows--num li > div { display: flex; flex-direction: column; gap: 4px; }
+.ed-rows-n { flex: none; width: 36px; font-family: var(--ed-serif); font-size: 34px; line-height: 1; color: var(--ed-ink); }
+.ed-shot { display: flex; flex-direction: column; gap: 12px; }
+.ed-shot-frame { background: #fff; border: 1px solid var(--ed-line-2); border-radius: 18px; overflow: hidden; }
+.ed-shot-frame--lift { box-shadow: 0 30px 50px -30px rgba(16, 26, 46, .5); }
+.ed-shot figcaption { font-size: 14.5px; color: var(--ed-ink-3); }
+.ed-final { padding-block: clamp(72px, 8vw, 104px); display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+.ed-final h2 { font-family: var(--ed-serif); font-size: clamp(46px, 6.4vw, 96px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.ed-final-sub { font-size: 20px; max-width: 34em; }
+.ed-final-form { width: min(560px, 100%); }
+.ed-final-fine { font-size: 15px; }
+
+@media (max-width: 760px) {
+  .ed-sec-sub, .ed-final-sub { font-size: 18px; }
+}

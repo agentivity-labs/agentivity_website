@@ -1,11 +1,11 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import Nav from '../../../components/Nav.astro';
-import Footer from '../../../components/Footer.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 const lang = 'fr';
 ---
-<Base title="Disclaimer de responsabilité — Agentivity" description="Disclaimer Agentivity — résultats IA, absence de conseil professionnel, exclusion de garanties et limitation de responsabilité.">
-<Nav lang={lang} />
+<Base look="editorial" title="Disclaimer de responsabilité — Agentivity" description="Disclaimer Agentivity — résultats IA, absence de conseil professionnel, exclusion de garanties et limitation de responsabilité.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -23,7 +23,7 @@ const lang = 'fr';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Légal</span>
       <h1>Disclaimer de responsabilité</h1>
-      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : juin 2026</span></div>
+      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : octobre 2026</span></div>
     </header>
 
     <div class="legal-section">
@@ -34,9 +34,10 @@ const lang = 'fr';
     <div class="legal-section">
       <h2>1. Nature de ce disclaimer</h2>
       <div class="legal-alert violet">
-        <p><strong>Agentivity est une plateforme d'orchestration uniquement.</strong> Nous ne développons pas, n'hébergeons pas, n'exploitons pas et ne fournissons pas l'accès à des grands modèles de langage (LLM) ou à des modèles d'IA. Toute inférence IA est réalisée exclusivement par des fournisseurs de LLM tiers (tels qu'OpenAI, Anthropic, Google, Mistral, etc.) que vous sélectionnez, configurez et connectez de manière indépendante à la Plateforme via vos propres clés API et à vos propres frais. Agentivity n'a aucune visibilité, aucun contrôle et aucune responsabilité concernant les résultats, le comportement, la sécurité, la disponibilité, les tarifs ou les pratiques de données de tout fournisseur de LLM.</p>
+        <p><strong>Agentivity est une plateforme d'orchestration uniquement.</strong> Nous ne développons pas, n'hébergeons pas, n'exploitons pas et ne fournissons pas l'accès à des grands modèles de langage (LLM) ou à des modèles d'IA. Toute inférence IA est réalisée exclusivement par des fournisseurs de LLM tiers (tels qu'OpenAI, Anthropic, Google, etc.) que vous sélectionnez, configurez et connectez de manière indépendante à la Plateforme via vos propres clés API et à vos propres frais. Agentivity n'a aucune visibilité, aucun contrôle et aucune responsabilité concernant les résultats, le comportement, la sécurité, la disponibilité, les tarifs ou les pratiques de données de tout fournisseur de LLM.</p>
       </div>
       <p>Ce Disclaimer de responsabilité ("<strong>Disclaimer</strong>") complète nos <a href="/fr/legal/terms">CGU</a> et décrit les limitations spécifiques de la responsabilité d'Agentivity concernant les résultats générés par l'IA, les actions automatisées, les conseils professionnels et la disponibilité du service.</p>
+      <p>Dans ce Disclaimer, "Agentivity" et "nous" désignent SMART PIXEL BV, société enregistrée en Belgique sous le numéro d'entreprise BE 0731.739.690, qui fournit la Plateforme.</p>
       <p>Agentivity est une plateforme technologique fournissant des outils d'orchestration de workflows. Ce n'est pas un cabinet de conseil. Rien de ce qui est généré via la Plateforme — y compris les résultats des fournisseurs de LLM que vous avez connectés — ne doit être interprété comme un conseil professionnel de quelque nature que ce soit.</p>
     </div>
 
@@ -151,5 +152,5 @@ const lang = 'fr';
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

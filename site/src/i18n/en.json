@@ -415,5 +415,1398 @@
     "legal": "© 2026 Agentivity · agentivity.io",
     "licence": "Open source under the Agentivity Sustainable Use Licence"
   },
+  "site": {
+    "vibeapp": [
+      "Set the goal. The VibeApp handles the rest.",
+      "You explain, it adapts: the right skills, at the right moment.",
+      "Your need evolves, it moves forward with you."
+    ],
+    "github": "Star on GitHub",
+    "github_href": "https://github.com/agentivity-labs/agentivity",
+    "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
+    "install": "Install Community",
+    "install_href": "/community",
+    "footer_tagline": "Build your AI team. Free to start, yours to extend."
+  },
+  "home": {
+    "meta": {
+      "title": "Build Your AI Team — AI Specialists That Work Alongside Your People | Agentivity",
+      "description": "Add an AI team to your team. Build teams of AI specialists without code: they take on the repetitive work, you keep the decisions. Free Community edition."
+    },
+    "hero": {
+      "eyebrow": "AI teams for your business, no code",
+      "h1": "Your next hire is",
+      "h1_accent": "an AI team.",
+      "sub": "Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.",
+      "cta_waitlist": "Join the waitlist",
+      "visual_label": "A marketing team at work on the Agentivity canvas: a manager and five specialists",
+      "teams": [
+        {
+          "name": "Finance team",
+          "body": "Chases late invoices, prepares the monthly report"
+        },
+        {
+          "name": "HR team",
+          "body": "Screens the CVs, prepares the interviews"
+        },
+        {
+          "name": "Marketing team",
+          "body": "Researches, writes and plans the content"
+        },
+        {
+          "name": "Ops team",
+          "body": "Answers the requests, keeps the planning"
+        }
+      ]
+    },
+    "values": [
+      {
+        "title": "15+ hours back a week",
+        "body": "The repetitive work, handed over"
+      },
+      {
+        "title": "No code",
+        "body": "You brief a team like you brief a colleague"
+      },
+      {
+        "title": "You stay in charge",
+        "body": "The team asks before anything important goes out"
+      },
+      {
+        "title": "Free forever",
+        "body": "The Community edition costs nothing"
+      }
+    ],
+    "why": {
+      "eyebrow": "Not another chatbot",
+      "h2": "A chatbot answers.",
+      "h2_accent": "A team gets the work done.",
+      "chat": {
+        "title": "With a chatbot, you do the managing",
+        "points": [
+          "You ask, check, correct and ask again",
+          "One generalist for every job",
+          "Nobody verifies the answer but you"
+        ]
+      },
+      "team": {
+        "title": "With a team, the work arrives finished",
+        "points": [
+          "Each specialist has a role and the tools for it",
+          "One checks the other's work",
+          "You approve what matters"
+        ]
+      },
+      "organise": "Organise them like a real team.",
+      "link": "See how it works",
+      "capture": "Real capture from the product",
+      "loops": [
+        {
+          "title": "Led by a manager",
+          "body": "A manager hands each part of the job to the right specialist. Here, a travel agency: one manager, twelve specialists.",
+          "alt": "A team graph from the product: a trip manager in the centre and its specialists lighting up one after another as they start working"
+        },
+        {
+          "title": "One after another",
+          "body": "Each specialist finishes a step and passes it on. Here, nine of them compare products and write the report.",
+          "alt": "A team graph from the product: nine specialists in a chain, each one lighting up as the previous one finishes"
+        }
+      ]
+    },
+    "ladder": {
+      "eyebrow": "For a company of 500. Or a bakery of one.",
+      "h2": "Start with one helper.",
+      "h2_accent": "Grow to an AI company.",
+      "sub": "AI teams work next to your people. They take the repetitive work, your people keep the thinking and the decisions.",
+      "example": "example",
+      "steps": [
+        {
+          "tag": "On your own",
+          "title": "One helper",
+          "body": "Sam runs a bakery. A helper reads the order emails, answers the simple ones and keeps the list of what to bake.",
+          "gain": "3 hours back a week"
+        },
+        {
+          "tag": "Small business",
+          "title": "One team",
+          "body": "Marcus posts a job. A team of three writes the ad, compares each CV with the role and prepares the interviews. He meets the shortlist.",
+          "gain": "6 hours back per hire"
+        },
+        {
+          "tag": "Company",
+          "title": "A team in every department",
+          "body": "Finance, HR, Marketing and Ops each get an AI team next to their people. Sarah's team prepares the competitor briefing. She reviews it and sends it.",
+          "gain": "15+ hours back a week"
+        },
+        {
+          "tag": "Where this goes",
+          "title": "An AI company",
+          "body": "Teams that hand work to each other across departments, with a person deciding at every step that matters.",
+          "note": "Teams inside teams work today. Running on a schedule comes with the cloud plans."
+        }
+      ]
+    },
+    "hours": {
+      "eyebrow": "The business case",
+      "big": "15+",
+      "h2": "hours back every week.",
+      "sub": "Your team hands over the repetitive and the time-consuming. Your people focus on what needs them.",
+      "table_label": "Example: a five-person team, one week",
+      "rows": [
+        {
+          "task": "Candidate CVs, screened before you arrive",
+          "hours": "4 h"
+        },
+        {
+          "task": "Competitor research, written and delivered",
+          "hours": "3 h"
+        },
+        {
+          "task": "Weekly reports, ready to review",
+          "hours": "3 h"
+        },
+        {
+          "task": "Content briefs, researched",
+          "hours": "3 h"
+        },
+        {
+          "task": "Meeting recaps, summarised and sent",
+          "hours": "2 h"
+        }
+      ],
+      "total": {
+        "task": "Back to your people",
+        "hours": "15 h"
+      },
+      "note": "Your own numbers will differ. The Studio shows the time each of your teams saves."
+    },
+    "apps": {
+      "eyebrow": "VibeApps",
+      "h2": "Then turn it into",
+      "h2_accent": "a VibeApp.",
+      "sub": "An app run by your team, for your colleagues or your customers.",
+      "play": "Play the clip",
+      "clips": [
+        {
+          "label": "Trip Planner · real capture",
+          "title": "An app built for one job",
+          "body": "One sentence in. Flights, a hotel to choose, a dinner to book: each screen arrives when it is needed.",
+          "alt": "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then a hotel card with a photo, a payment step and a dinner choice appear in the conversation"
+        },
+        {
+          "label": "Shopping Lab · real capture",
+          "title": "Or one portal for all your teams",
+          "body": "Publish a team and it appears in the portal, under your brand. No app to build.",
+          "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears"
+        }
+      ],
+      "points": [
+        {
+          "title": "It adapts to each person",
+          "body": "People describe their situation in their own words. No twelve-screen form to fill in."
+        },
+        {
+          "title": "It handles the complicated cases",
+          "body": "A team of specialists works behind every request, and asks when a decision is needed."
+        },
+        {
+          "title": "It fits what you already have",
+          "body": "On its own, or inside the apps you already use. Agencies deliver it under their own brand."
+        }
+      ]
+    },
+    "control": {
+      "eyebrow": "You stay in charge",
+      "h2": "AI when you need judgment.",
+      "h2_accent": "Workflows when you need your own rules.",
+      "points": [
+        {
+          "title": "You decide. Your team executes.",
+          "body": "At any point you can step in, redirect, or approve before anything goes out."
+        },
+        {
+          "title": "It backs your people. It does not replace them.",
+          "body": "The AI team takes the repetitive work. The judgment stays with the people who know the job."
+        },
+        {
+          "title": "Every step is recorded",
+          "body": "Know what ran, when and why."
+        }
+      ],
+      "caption": "A real workflow in the Studio.",
+      "alt": "A real Agentivity workflow on the canvas: analysis, writing and publishing steps connected left to right"
+    },
+    "nocode": {
+      "eyebrow": "How you build it",
+      "h2": "No code.",
+      "h2_accent": "Brief it like a colleague.",
+      "steps": [
+        {
+          "title": "Describe the role",
+          "body": "Give each agent a name, a job and the tools it needs. Like writing a job description."
+        },
+        {
+          "title": "Build the team",
+          "body": "Drag your agents onto the canvas and choose who leads."
+        },
+        {
+          "title": "Hand over the work",
+          "body": "Ask in plain words. The team does the work and comes back to you for the decisions."
+        }
+      ],
+      "link": "See how it works",
+      "caption": "The team canvas in the Studio.",
+      "alt": "Three agents on the team canvas: a Product Strategist, an Engineer and a UX Designer"
+    },
+    "ready": {
+      "eyebrow": "Coming soon",
+      "h2": "Ready-made teams.",
+      "h2_accent": "Start in minutes.",
+      "link": "Tell me when they are out",
+      "soon": "Coming soon",
+      "cards": [
+        {
+          "title": "Hiring Pipeline",
+          "body": "From job post to shortlisted candidates.",
+          "meta": "HR · team of 3"
+        },
+        {
+          "title": "Content Engine",
+          "body": "Research, draft and prepare articles end to end.",
+          "meta": "Marketing · team of 5"
+        },
+        {
+          "title": "Competitor Briefing",
+          "body": "Market intelligence, sourced and summarised.",
+          "meta": "Finance · team of 3"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "price": "0€",
+      "rest": "to start.",
+      "sub": "Start free on your own server. Move to the cloud when you are ready.",
+      "link": "See full pricing",
+      "tiers": [
+        {
+          "name": "Community",
+          "badge": "Free forever",
+          "desc": "Agents, teams and the Studio, on your own server.",
+          "cta": "Install it",
+          "href": "/community",
+          "featured": true
+        },
+        {
+          "name": "Personal",
+          "badge": "Cloud",
+          "desc": "Hosted for you. No setup: sign in and build your first team.",
+          "cta": "Join the waitlist",
+          "href": "#cta"
+        },
+        {
+          "name": "Pro",
+          "badge": "Cloud",
+          "desc": "More agents, longer runs and priority execution.",
+          "cta": "Join the waitlist",
+          "href": "#cta"
+        },
+        {
+          "name": "Business",
+          "badge": "Teams",
+          "desc": "Shared workspaces. Everyone builds, everyone benefits.",
+          "cta": "Join the waitlist",
+          "href": "#cta"
+        },
+        {
+          "name": "Enterprise",
+          "badge": "SSO · White-label",
+          "desc": "SSO, white-label and dedicated support.",
+          "cta": "Contact us",
+          "href": "mailto:hello@agentivity.io"
+        }
+      ],
+      "whitelabel": "White-label available. Build on Agentivity, deliver as your own.",
+      "whitelabel_cta": "Talk to us about white-label"
+    },
+    "cta": {
+      "h2": "Your team is ready",
+      "h2_accent": "to work.",
+      "sub": "Start free, or join the waitlist and be first on the cloud.",
+      "fine": "No spam. First access when the cloud launches.",
+      "github_line": "Self-hosting? The Community edition is free."
+    }
+  },
+  "how_page": {
+    "meta": {
+      "title": "How Agentivity Works — Build an Agent, a Team or a Workflow Without Code",
+      "description": "See the Agentivity Studio at work: create an agent, put several in a team, draw a workflow, and watch what your users get. No code."
+    },
+    "hero": {
+      "eyebrow": "How it works",
+      "h1": "You don't write code.",
+      "h1_accent": "You build a team.",
+      "sub": "Everything happens in the Studio, in your browser. Three short clips show how you build, a fourth shows what your users get.",
+      "alt": "The Agentivity Studio: a team on the canvas, a manager above three specialists, and the list of available agents on the right",
+      "caption": "The Studio: a team being put together, one manager and three specialists."
+    },
+    "recorded": "Recorded in the Studio, played faster.",
+    "steps": [
+      {
+        "title": "Create an agent",
+        "lead": "An agent is one AI specialist. Give it a name, then describe its role in plain words, as you would for a new colleague.",
+        "points": [
+          "A name and a role",
+          "The tools it may use",
+          "The AI model you choose"
+        ],
+        "alt": "A recording of the Studio: the New agent window opens, a name is typed, the agent appears on the canvas and its role is written in a side panel"
+      },
+      {
+        "title": "Put several in a team",
+        "lead": "Name the team, choose how its members work together, then drag in the specialists you need.",
+        "ways_title": "Five ways to work together",
+        "ways": [
+          {
+            "name": "Sequential",
+            "body": "one after another"
+          },
+          {
+            "name": "Concurrent",
+            "body": "all at the same time"
+          },
+          {
+            "name": "Handoff",
+            "body": "each passes the case to the right colleague"
+          },
+          {
+            "name": "Group chat",
+            "body": "they discuss in turns"
+          },
+          {
+            "name": "Manager-led",
+            "body": "a manager plans and hands out the work"
+          }
+        ],
+        "alt": "A recording of the Studio: a team is named, the manager-led way of working is chosen among five, then a manager and three specialists are dragged onto the canvas"
+      },
+      {
+        "title": "Or draw a workflow",
+        "lead": "When the steps must be the same every time, draw them: questions to ask, rules to apply, approvals to wait for. AI works only in the steps you choose.",
+        "points": [
+          "Conditions, loops and forms",
+          "Steps where a person approves",
+          "A team can use a workflow, a workflow can call a team"
+        ],
+        "caption": "Three steps to start: a form, a team, a person who approves. Then a real one: CV screening.",
+        "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, a team, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole"
+      }
+    ],
+    "result": {
+      "title": "What your users get: a VibeApp",
+      "lead": "They ask in their own words, and the team stops when a decision is theirs. Pick a moment to jump to it.",
+      "decision": "Their decision",
+      "caption": "Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster.",
+      "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+      "chapters": [
+        {
+          "t": 0.4,
+          "title": "The request",
+          "body": "One sentence: Lisbon for two, the dates, the budget."
+        },
+        {
+          "t": 2.8,
+          "title": "The manager takes it",
+          "body": "It hands each part to the right specialist."
+        },
+        {
+          "t": 3.8,
+          "title": "Flights",
+          "body": "The specialist proposes. The traveller accepts or adjusts.",
+          "decision": true
+        },
+        {
+          "t": 7.4,
+          "title": "Hotel",
+          "body": "The specialist shows the options. The traveller chooses.",
+          "decision": true
+        },
+        {
+          "t": 15.5,
+          "title": "Transfers",
+          "body": "Three ways to get there, one choice.",
+          "decision": true
+        },
+        {
+          "t": 21.5,
+          "title": "Dinner",
+          "body": "Two tables within what is left of the budget.",
+          "decision": true
+        }
+      ]
+    },
+    "start": {
+      "eyebrow": "Your turn",
+      "h2": "Two ways",
+      "h2_accent": "to start.",
+      "community": {
+        "name": "Install it yourself",
+        "badge": "Free forever",
+        "body": "The Community edition runs on your own server with Docker. For people comfortable with a command line.",
+        "install": "Install Community",
+        "github": "Star on GitHub"
+      },
+      "cloud": {
+        "name": "Wait for the cloud",
+        "badge": "Coming soon",
+        "body": "Nothing to install: sign in and build your first team.",
+        "link": "Join the waitlist"
+      }
+    },
+    "faq": {
+      "eyebrow": "Questions people ask",
+      "h2": "Before",
+      "h2_accent": "you start.",
+      "items": [
+        {
+          "q": "Do I need to know how to code?",
+          "a": "No. You build everything in the Studio, with names, plain-word descriptions and drag and drop. Two things do need a technical colleague: installing the Community edition on a server, and building a VibeApp of your own."
+        },
+        {
+          "q": "Which AI model does it use?",
+          "a": "The one you choose: OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock. You can change it later."
+        },
+        {
+          "q": "Where does my data go?",
+          "a": "With the Community edition, nothing leaves your server unless you connect a service. When an AI step runs, what you send in that step goes to the model provider you chose, under its terms."
+        },
+        {
+          "q": "Does it replace my team?",
+          "a": "No. It takes the repetitive work and comes back to your people for the decisions. The judgment stays with those who know the job."
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Ready to build",
+      "h2_accent": "your first team?",
+      "sub": "Join the waitlist and be first on the cloud.",
+      "fine": "No spam. First access when the cloud launches."
+    }
+  },
+  "community_page": {
+    "meta": {
+      "title": "Install the Agentivity Community Edition — Free, On Your Own Server",
+      "description": "The free Community edition of Agentivity runs on your own machine or server with Docker. One command to start, the Studio included."
+    },
+    "hero": {
+      "eyebrow": "Community edition",
+      "h1": "Free forever.",
+      "h1_accent": "On your own server.",
+      "sub": "The Community edition is for people who are comfortable with Docker. One command starts Agentivity on your machine or your server, with the Studio included.",
+      "github": "Star on GitHub",
+      "hub": "See the image on Docker Hub",
+      "not_technical": "Not technical? The cloud version needs no installation.",
+      "waitlist": "Join the waitlist"
+    },
+    "install": {
+      "eyebrow": "Install",
+      "h2": "Up and running",
+      "h2_accent": "in four steps.",
+      "copy": "Copy",
+      "copied": "Copied",
+      "steps": [
+        {
+          "title": "Get Docker",
+          "body": "Docker Desktop on Windows or macOS, Docker Engine on Linux.",
+          "link": "Install Docker",
+          "href": "https://docs.docker.com/get-started/get-docker/"
+        },
+        {
+          "title": "Start Agentivity",
+          "body": "One command. Your data is kept in a Docker volume, so it survives a restart or an update.",
+          "command": "docker run -d --name agentivity -p 5005:5005 -v agentivity-data:/app/_data agentivitylabs/agentivity"
+        },
+        {
+          "title": "Open the Studio",
+          "body": "In your browser, on the machine where it runs:",
+          "address": "http://localhost:5005"
+        },
+        {
+          "title": "Connect an AI model",
+          "body": "Add the key of the provider you use: OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock. Then create your first agent and run it."
+        }
+      ]
+    },
+    "know": {
+      "eyebrow": "Good to know",
+      "h2": "Before you",
+      "h2_accent": "rely on it.",
+      "items": [
+        {
+          "title": "There is no login yet",
+          "body": "Anyone who can reach the server can use it. Keep it on a network you trust, or behind your own access control. Never expose it directly to the internet."
+        },
+        {
+          "title": "Your data stays with you",
+          "body": "Agents, teams, workflows, tables and settings are stored in the agentivity-data volume. Back it up like any other data. What you send in an AI step goes to the model provider you chose."
+        },
+        {
+          "title": "Updating",
+          "body": "Pull the new image, remove the container and start it again with the same command. The volume keeps your data.",
+          "command": "docker pull agentivitylabs/agentivity && docker rm -f agentivity"
+        },
+        {
+          "title": "What is included",
+          "body": "Agents, teams, workflows and the visual Studio. Free to use for your own business, on your own server."
+        }
+      ]
+    },
+    "help": {
+      "h2": "Like the project?",
+      "h2_accent": "Give it a star.",
+      "sub": "A star on GitHub is the simplest way to help Agentivity get known. Questions and bug reports go there too.",
+      "github": "Star on GitHub",
+      "docs": "Read the docs"
+    }
+  },
+  "services_page": {
+    "meta": {
+      "title": "Agentivity Services — AI Strategy, Transformation and Execution",
+      "description": "From AI strategy to systems running in production: Agentivity Services helps large organisations decide where AI belongs, redesign the work around it and deliver it."
+    },
+    "hero": {
+      "eyebrow": "Agentivity Services",
+      "h1": "From strategy",
+      "h1_accent": "to execution.",
+      "sub": "Agentivity Services helps large organisations define their AI ambition, transform the way they operate and deliver the systems that make it real.",
+      "cta": "Contact us"
+    },
+    "experience": {
+      "label": "Our experience includes",
+      "names": [
+        "AMD",
+        "Siemens",
+        "Maxon",
+        "Linedata",
+        "Deloitte",
+        "Rosneft",
+        "BNP Paribas",
+        "Nobel Biocare (Medicim)"
+      ]
+    },
+    "gap": {
+      "eyebrow": "Our perspective",
+      "statement": "AI creates value when strategy, organisation and technology move together.",
+      "body": "Many programmes produce a roadmap that is never delivered, or technology the organisation never adopts. We work across all three, with a single line of accountability from the first decision to the system in production."
+    },
+    "practices": {
+      "eyebrow": "Our services",
+      "h2": "Three practices,",
+      "h2_accent": "one line of accountability.",
+      "get": "What you get",
+      "items": [
+        {
+          "id": "strategy",
+          "name": "Strategy",
+          "title": "Decide where AI belongs.",
+          "body": "We help leadership teams determine where AI changes the business, what it is worth, what it requires and how it is governed.",
+          "points": [
+            "Opportunity assessment across your functions",
+            "Business case and priorities",
+            "Target operating model for people and AI",
+            "Governance, risk and compliance framework",
+            "A roadmap leadership can commit to"
+          ]
+        },
+        {
+          "id": "transformation",
+          "name": "Transformation",
+          "title": "Redesign the work, not only the tools.",
+          "body": "AI changes who does what. We redesign processes, roles and controls around teams of people and AI, and prepare the organisation to operate them.",
+          "points": [
+            "Process redesign, function by function",
+            "Roles, responsibilities and decision rights",
+            "Data and architecture readiness",
+            "Change management and communication",
+            "Training for leaders, builders and users"
+          ]
+        },
+        {
+          "id": "execution",
+          "name": "Execution",
+          "title": "Put it into production.",
+          "body": "We build, integrate and deploy, and remain engaged until your teams operate the result themselves, with the technology that fits your context.",
+          "points": [
+            "AI teams and workflows built for your processes",
+            "Integration with your systems and data",
+            "Deployment on your infrastructure or private cloud",
+            "Specialised models when a general one is not enough",
+            "Run, measure, improve, hand over"
+          ]
+        }
+      ],
+      "platform_note": "Agentivity Services also develops its own AI platform, Agentivity.",
+      "platform_link": "About the platform"
+    },
+    "industries": {
+      "eyebrow": "Industries",
+      "h2": "Experience across",
+      "h2_accent": "complex and regulated sectors.",
+      "items": [
+        "Financial services",
+        "Industrial manufacturing",
+        "Technology and software",
+        "Energy",
+        "Life sciences and medical technology",
+        "Professional services"
+      ]
+    },
+    "stages": {
+      "eyebrow": "Our approach",
+      "h2": "A structured approach,",
+      "h2_accent": "from framing to transfer.",
+      "items": [
+        {
+          "name": "Frame",
+          "body": "We agree on the question, the scope and how success will be measured."
+        },
+        {
+          "name": "Prove",
+          "body": "One process, in real conditions, with a result leadership can judge."
+        },
+        {
+          "name": "Scale",
+          "body": "Function by function, with the governance to keep it under control."
+        },
+        {
+          "name": "Transfer",
+          "body": "Your teams take over: documentation, training and a clean hand-over."
+        }
+      ]
+    },
+    "commitments": {
+      "eyebrow": "Our commitments",
+      "h2": "Our commitments",
+      "h2_accent": "to every client.",
+      "items": [
+        {
+          "title": "Data sovereignty",
+          "body": "We deploy where you decide: on your servers or in your private cloud. Your data remains under your control."
+        },
+        {
+          "title": "Human oversight",
+          "body": "Every system we deliver stops for human approval where the stakes require it, and records what was decided."
+        },
+        {
+          "title": "Knowledge transfer",
+          "body": "Documentation, training and full transfer of what we build. Your teams are able to continue independently."
+        },
+        {
+          "title": "Measurable outcomes",
+          "body": "Measures are agreed before the work begins, and we report against them throughout."
+        }
+      ]
+    },
+    "formats": {
+      "eyebrow": "Engagement models",
+      "h2": "Three models,",
+      "h2_accent": "adapted to your needs.",
+      "items": [
+        {
+          "name": "Mandate",
+          "tag": "Fixed scope",
+          "body": "A defined question or deliverable at a fixed price: a strategy, an assessment, a pilot.",
+          "points": [
+            "Scope agreed upfront",
+            "Payment by milestone",
+            "Full transfer of the work delivered"
+          ]
+        },
+        {
+          "name": "Programme",
+          "tag": "Over several months",
+          "body": "A dedicated team alongside yours throughout a transformation, with capacity reserved each month.",
+          "points": [
+            "Dedicated capacity",
+            "Priority response",
+            "Monthly review and planning"
+          ],
+          "featured": true
+        },
+        {
+          "name": "Workshop",
+          "tag": "Half a day to two days",
+          "body": "For an executive committee preparing a decision, or a team preparing a delivery.",
+          "points": [
+            "On site or remote",
+            "Built for your context",
+            "Hands-on with your own cases"
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "h2": "Start with",
+      "h2_accent": "a conversation.",
+      "sub": "Tell us about your objectives. We will respond within 48 hours with an initial view and a proposal for next steps.",
+      "reassure": [
+        "No obligation",
+        "A response within 48 hours",
+        "Non-disclosure agreement on request"
+      ],
+      "email_line": "Or contact us directly:",
+      "form": {
+        "name": "Name",
+        "name_ph": "Your name",
+        "email": "Work email",
+        "email_ph": "you@company.com",
+        "topic": "What is it about?",
+        "topic_ph": "Choose a subject…",
+        "topics": [
+          {
+            "value": "strategy",
+            "label": "Strategy"
+          },
+          {
+            "value": "transformation",
+            "label": "Transformation"
+          },
+          {
+            "value": "execution",
+            "label": "Execution"
+          },
+          {
+            "value": "agent-teams",
+            "label": "AI teams and automation"
+          },
+          {
+            "value": "workshops",
+            "label": "Workshop or training"
+          },
+          {
+            "value": "other",
+            "label": "Not sure yet"
+          }
+        ],
+        "message": "Your context",
+        "message_ph": "Your organisation, what you want to achieve, and any constraint we should know: timing, infrastructure, regulation.",
+        "submit": "Send",
+        "note": "Your information stays confidential and is never shared.",
+        "next": "https://www.agentivity.io/thank-you"
+      }
+    }
+  },
+  "pricing_page": {
+    "meta": {
+      "title": "Agentivity Pricing — Free Community Edition, Cloud Plans and Enterprise",
+      "description": "The Community edition is free forever on your own server. Hosted plans are coming: Personal, Pro and Business. Enterprise on request."
+    },
+    "hero": {
+      "eyebrow": "Pricing",
+      "price": "0€",
+      "rest": "to start.",
+      "sub": "The Community edition is free forever, on your own server. Hosted plans are on the way, for those who would rather install nothing.",
+      "primary": "Join the waitlist",
+      "secondary": "Install Community"
+    },
+    "editions": {
+      "eyebrow": "Editions",
+      "h2": "Five editions,",
+      "h2_accent": "one product.",
+      "sub": "Every edition has the Studio, agents, teams and workflows. What changes is where it runs and how many people share it.",
+      "for_label": "For",
+      "cloud_note": "Coming with the hosted plans: automatic scheduling. Your teams start on their own, every morning or every Monday.",
+      "community": {
+        "name": "Community",
+        "status": "Available now",
+        "price": "0€",
+        "price_note": "forever",
+        "for": "people at ease with a server",
+        "desc": "The whole way of working, on a machine you control: build agents, put them in teams, draw workflows.",
+        "points": [
+          "Runs on your own machine or server, with Docker",
+          "Your data stays with you",
+          "No time limit, no card",
+          "Help from the community on GitHub"
+        ],
+        "cta": "Install it",
+        "github": "Star on GitHub"
+      },
+      "plans": [
+        {
+          "name": "Personal",
+          "status": "Coming soon",
+          "price": "Price at launch",
+          "for": "one person: an independent, a shop owner, a freelancer",
+          "desc": "Hosted for you. Nothing to install: sign in and build your first team.",
+          "cta": "Join the waitlist",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Pro",
+          "status": "Coming soon",
+          "price": "Price at launch",
+          "for": "a professional who relies on it every day",
+          "desc": "More agents, longer runs and priority execution.",
+          "cta": "Join the waitlist",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Business",
+          "status": "Coming soon",
+          "price": "Price at launch",
+          "for": "a team or a department",
+          "desc": "Shared workspaces: one person builds, everyone benefits.",
+          "cta": "Join the waitlist",
+          "href": "#waitlist"
+        },
+        {
+          "name": "Enterprise",
+          "status": "On request",
+          "price": "On quote",
+          "for": "an organisation with several teams and departments",
+          "desc": "Single sign-on, white-label and dedicated support, on your infrastructure or ours.",
+          "cta": "Contact us",
+          "href": "mailto:hello@agentivity.io"
+        }
+      ]
+    },
+    "costs": {
+      "eyebrow": "No surprises",
+      "h2": "What you",
+      "h2_accent": "actually pay.",
+      "items": [
+        {
+          "title": "The software",
+          "body": "Community costs 0€, with no time limit. Prices of the hosted plans will be announced when they open."
+        },
+        {
+          "title": "The AI models",
+          "body": "Agentivity does not resell AI. You connect the provider you choose (OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock) and pay them directly, with no margin from us."
+        },
+        {
+          "title": "The machine",
+          "body": "With Community, it is yours: your own computer to try, a server to share it with colleagues. With the hosted plans, we run it for you."
+        }
+      ]
+    },
+    "hours": {
+      "big": "15+",
+      "h2": "hours back every week.",
+      "sub": "That is the figure to compare a price with. The Studio counts the time your teams save and shows it on its home screen.",
+      "link": "See the example, task by task"
+    },
+    "licence": {
+      "eyebrow": "Licence",
+      "h2": "You can read",
+      "h2_accent": "the source.",
+      "body": "The core of Agentivity is published under the Elastic License 2.0. You may use it, modify it and run it for yourself or your company, free of charge. The one thing you may not do is offer it to others as a hosted service.",
+      "link": "Read the licence",
+      "href": "https://www.elastic.co/licensing/elastic-license"
+    },
+    "faq": {
+      "eyebrow": "Questions people ask",
+      "h2": "Before",
+      "h2_accent": "you choose.",
+      "items": [
+        {
+          "q": "Is the Community edition really free?",
+          "a": "Yes. No time limit, no card, no trial period. You need a machine that runs Docker and an account with an AI provider."
+        },
+        {
+          "q": "Can I use it for my business?",
+          "a": "Yes. The licence allows personal and business use. What it forbids is reselling Agentivity to others as a hosted service."
+        },
+        {
+          "q": "I am not technical. Which edition is for me?",
+          "a": "A hosted plan: there is nothing to install. They are not open yet, so join the waitlist and you will be told first."
+        },
+        {
+          "q": "When do the hosted plans open, and at what price?",
+          "a": "Dates and prices are not announced yet. People on the waitlist will be the first to know."
+        },
+        {
+          "q": "Do I pay for the AI models separately?",
+          "a": "Yes. You connect your own account with the provider you choose and pay them directly. We add no margin."
+        },
+        {
+          "q": "Can I deliver Agentivity under my own brand?",
+          "a": "Yes, with the Enterprise edition. Write to hello@agentivity.io and tell us about your project."
+        },
+        {
+          "q": "Can you help us deploy it in our organisation?",
+          "a": "Yes. Agentivity Services supports organisations from strategy to deployment.",
+          "link": "About our services",
+          "href": "/services"
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Start free,",
+      "h2_accent": "or be first on the cloud.",
+      "sub": "Leave your email and we will write when the hosted plans open.",
+      "fine": "No spam. One message when it matters.",
+      "github_line": "Comfortable with Docker? Community is ready today."
+    }
+  },
+  "docs_page": {
+    "meta": {
+      "title": "Agentivity Documentation — Coming Soon",
+      "description": "The Agentivity documentation is being written. In the meantime: see how it works, install the Community edition, or ask us a question."
+    },
+    "hero": {
+      "eyebrow": "Documentation",
+      "h1": "The documentation",
+      "h1_accent": "is on its way.",
+      "sub": "We are writing it now. Until it is here, these pages answer most first questions."
+    },
+    "links": [
+      {
+        "title": "How it works",
+        "body": "Build an agent, a team and a workflow in the Studio, in three short clips.",
+        "href": "/how-it-works"
+      },
+      {
+        "title": "Install the Community edition",
+        "body": "The steps to run Agentivity on your own machine, with Docker.",
+        "href": "/community"
+      },
+      {
+        "title": "Pricing and editions",
+        "body": "What each edition is for, and what you actually pay.",
+        "href": "/pricing"
+      },
+      {
+        "title": "GitHub",
+        "body": "The source of the core, and the place to report a problem.",
+        "github": true
+      }
+    ],
+    "notify": {
+      "text": "Want to know when the documentation is published?",
+      "link": "Join the waitlist",
+      "href": "/pricing#waitlist"
+    },
+    "contact": "A question in the meantime? Write to"
+  },
+  "use_cases_page": {
+    "meta": {
+      "title": "Agentivity Use Cases — Real Examples of AI Teams at Work",
+      "description": "Real examples built with Agentivity and recorded from the product: a trip planner, a shopping comparison, a CV screening. With an app, with the portal, or with no app at all."
+    },
+    "labels": {
+      "for": "For",
+      "see": "See how it works",
+      "soon": "Coming soon",
+      "back": "All use cases",
+      "recorded": "Recorded from the product, played faster.",
+      "facts": {
+        "for": "For",
+        "use": "How people use it",
+        "behind": "Behind it"
+      },
+      "steps": "What happens",
+      "decisions": "Where a person decides",
+      "note": "Good to know",
+      "get": "Get it",
+      "others": "Other use cases"
+    },
+    "hero": {
+      "eyebrow": "Use cases",
+      "h1": "What a team",
+      "h1_accent": "can do for you.",
+      "sub": "Real examples, built with Agentivity and recorded from the product. More are on the way."
+    },
+    "ways": {
+      "eyebrow": "Good to know",
+      "h2": "Most of the time,",
+      "h2_accent": "you need no app.",
+      "sub": "A team does its work on the server. How people talk to it is your choice.",
+      "items": [
+        {
+          "tag": "No app",
+          "title": "Straight from the Studio",
+          "body": "You start the team with one click. It reads, checks and writes, and comes back to you only when a decision is yours: by email, on Slack or in a form."
+        },
+        {
+          "tag": "Portal",
+          "title": "The ready-made portal",
+          "body": "One web page where your colleagues start the teams you have published, under your brand. Nothing to develop."
+        },
+        {
+          "tag": "VibeApp",
+          "title": "A VibeApp",
+          "body": "An app of your own, with one or several of your teams behind it. Most VibeApps mix classic screens and teams."
+        }
+      ]
+    },
+    "showcases": {
+      "eyebrow": "Showcases",
+      "h2": "Built, recorded,",
+      "h2_accent": "explained.",
+      "sub": "Each one has its page: what happens, who decides, and the team behind it."
+    },
+    "vibeapp": {
+      "eyebrow": "A new kind of app",
+      "h2": "Meet the",
+      "h2_accent": "VibeApp.",
+      "example_label": "In Trip Planner",
+      "examples": [
+        "One sentence: Lisbon for two, the dates, the budget.",
+        "The manager calls in the specialists this trip needs: flights, hotel, transfers, dinner.",
+        "What the traveller chooses changes what comes next: dinner fits what is left of the budget."
+      ],
+      "link": "Watch Trip Planner",
+      "href": "/use-cases/trip-planner"
+    },
+    "soon": {
+      "eyebrow": "Coming soon",
+      "h2": "Next on the list.",
+      "h2_accent": "Two of them need no app.",
+      "sub": "They run on the server and reach you where you already work.",
+      "items": [
+        {
+          "tag": "No app",
+          "title": "Supplier invoices",
+          "for": "an accounting team",
+          "body": "The team reads the invoice mailbox, checks every figure, spots duplicates and reminders, and asks the accountant to validate the doubtful ones by email or Slack."
+        },
+        {
+          "tag": "No app",
+          "title": "Quote requests",
+          "for": "an independent or a small business",
+          "body": "A customer fills in a form. The team prepares the quote, the owner approves or corrects it from their inbox, and the answer goes out."
+        },
+        {
+          "tag": "VibeApp",
+          "title": "Sport and nutrition coach",
+          "for": "one person",
+          "body": "A personal app: training and meals planned around your goals, and adjusted week after week."
+        }
+      ],
+      "link": "Tell me when they are out"
+    },
+    "cases": [
+      {
+        "slug": "trip-planner",
+        "media": "trip-planner",
+        "width": 1024,
+        "height": 768,
+        "tag": "VibeApp",
+        "size": "Team of 13",
+        "title": "Trip Planner",
+        "for": "a travel agency",
+        "summary": "One sentence in. A manager and twelve specialists plan the trip, and the traveller chooses the flights, the hotel and the dinner.",
+        "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+        "h1": "A whole trip,",
+        "h1_accent": "from one sentence.",
+        "lead": "The traveller writes what they want. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
+        "facts": {
+          "for": "A travel agency, or anyone who sells something with many parts",
+          "use": "A VibeApp, made for this one job",
+          "behind": "A manager and twelve specialists"
+        },
+        "steps": [
+          {
+            "title": "The request",
+            "body": "One sentence: Lisbon for two, the dates, the budget."
+          },
+          {
+            "title": "The manager takes it",
+            "body": "It splits the trip and hands each part to the right specialist."
+          },
+          {
+            "title": "The specialists propose",
+            "body": "Flights, hotel, transfers, dinner: each one comes back with options that fit the budget."
+          },
+          {
+            "title": "The traveller chooses",
+            "body": "The app shows a card for each choice, with photos and prices."
+          },
+          {
+            "title": "Payment, then reservations",
+            "body": "Once the payment is authorised, one member confirms every reservation."
+          }
+        ],
+        "decisions": [
+          "Accept or adjust the flights",
+          "Choose the hotel",
+          "Choose how to get there",
+          "Choose the table for dinner"
+        ],
+        "team": {
+          "title": "The team",
+          "lead": "Thirteen members. Only the manager talks to all the others.",
+          "members": [
+            {
+              "name": "Trip Manager",
+              "role": "Coordinates the specialists and keeps the trip coherent."
+            },
+            {
+              "name": "Flight Specialist",
+              "role": "Proposes the flights."
+            },
+            {
+              "name": "Hotel Specialist",
+              "role": "Proposes the hotel that fits best."
+            },
+            {
+              "name": "Ground Transport Specialist",
+              "role": "Proposes airport transfers and local transport."
+            },
+            {
+              "name": "Car Rental Specialist",
+              "role": "Proposes a rental car when it makes sense."
+            },
+            {
+              "name": "Restaurant & Dining Specialist",
+              "role": "Recommends restaurants."
+            },
+            {
+              "name": "Activity Planner",
+              "role": "Builds a day-by-day programme around the traveller’s interests."
+            },
+            {
+              "name": "Travel Insurance Specialist",
+              "role": "Proposes an insurance policy."
+            },
+            {
+              "name": "Visa & Documents Specialist",
+              "role": "Checks visa, passport and vaccination requirements."
+            },
+            {
+              "name": "Currency & Budget Advisor",
+              "role": "Advises on currency and checks the budget across the specialists."
+            },
+            {
+              "name": "Payment Agent",
+              "role": "Handles the payment and reports whether it was authorised."
+            },
+            {
+              "name": "Reservation Agent",
+              "role": "Confirms every reservation once the payment is authorised."
+            },
+            {
+              "name": "On-Trip Assistant",
+              "role": "Handles changes once the trip is confirmed."
+            }
+          ]
+        },
+        "note": "This is a demonstration. Flights, hotels and payment are simulated: nothing is really booked or charged.",
+        "get": {
+          "body": "The code of the app is public. It needs the AI teams of the Community edition.",
+          "link": "The code on GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
+          "external": true
+        }
+      },
+      {
+        "slug": "shopping-lab",
+        "media": "shopping-lab",
+        "width": 1024,
+        "height": 768,
+        "tag": "Portal",
+        "size": "Team of 9",
+        "title": "Shopping Lab",
+        "for": "a shop, a buyer, a comparison service",
+        "summary": "A shopper describes what they need. Nine specialists read the stores’ own pages, compare, score and write an illustrated report.",
+        "alt": "A recording of the Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears",
+        "h1": "A buying advice",
+        "h1_accent": "you can check.",
+        "lead": "The shopper describes a need in their own words. The team reads what the stores really publish, compares like with like, and hands back a report with its sources.",
+        "facts": {
+          "for": "A shop, a purchasing department, a comparison service",
+          "use": "The ready-made portal, with no app to build",
+          "behind": "Nine specialists working in turn"
+        },
+        "steps": [
+          {
+            "title": "The need",
+            "body": "A vague wish becomes a precise brief: product, budget, must-haves, priorities."
+          },
+          {
+            "title": "The stores",
+            "body": "One scout per store reads its pages: real prices, ratings, reviews, photos and specifications."
+          },
+          {
+            "title": "The comparison",
+            "body": "The same product is merged across stores, and the specifications are put in common units."
+          },
+          {
+            "title": "The score",
+            "body": "Each product is scored by a fixed calculation, never by estimation."
+          },
+          {
+            "title": "The report",
+            "body": "A verdict, the top picks with photos, charts, the points to watch and the sources."
+          }
+        ],
+        "decisions": [
+          "Confirm the brief before the search starts",
+          "Read the report and decide what to buy"
+        ],
+        "team": {
+          "title": "The team",
+          "lead": "Nine members. Only one of them talks to the shopper.",
+          "members": [
+            {
+              "name": "Needs Analyst",
+              "role": "Turns a vague wish into a precise, confirmed brief. The only member who talks to the shopper."
+            },
+            {
+              "name": "Query Planner",
+              "role": "Prepares the search for each store from the confirmed brief."
+            },
+            {
+              "name": "Store Scouts (2)",
+              "role": "Each one reads one store’s own pages and reports prices, ratings, reviews, photos and specifications."
+            },
+            {
+              "name": "Product Matcher",
+              "role": "Merges the same product across stores and keeps the best offer of each."
+            },
+            {
+              "name": "Spec Normalizer",
+              "role": "Builds a clean side-by-side comparison. Never fills a gap with a guess."
+            },
+            {
+              "name": "Scoring Analyst",
+              "role": "Scores every product with a fixed calculation."
+            },
+            {
+              "name": "Customer Reviews Analyst",
+              "role": "Says what customers really think, and where to be careful."
+            },
+            {
+              "name": "Report Writer",
+              "role": "Writes the final illustrated report."
+            }
+          ]
+        },
+        "note": "The demonstration reads two online stores. Add a scout, and the team covers another one.",
+        "get": {
+          "body": "The code of the portal is public. It needs the AI teams of the Community edition.",
+          "link": "The portal on GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+          "external": true
+        }
+      },
+      {
+        "slug": "cv-screening",
+        "media": "cv-screening",
+        "width": 1418,
+        "height": 770,
+        "tag": "Portal",
+        "size": "Workflow",
+        "title": "CV Screening",
+        "for": "a recruiter, an HR team",
+        "summary": "A CV and a job description in. A score, the reasons, and a route: shortlist, rejection, or review by a recruiter.",
+        "alt": "A recording of the Studio showing the CV Screening workflow: boxes for reading the file, reading the page, assessing the fit and asking a person, linked from left to right",
+        "h1": "Every CV read,",
+        "h1_accent": "every doubt reviewed.",
+        "lead": "The recruiter gives a CV and a job description. The workflow reads both, scores the fit, explains why, and sends the doubtful cases to a person.",
+        "facts": {
+          "for": "A recruiter or an HR team",
+          "use": "A form to drop the CV, and the result on screen",
+          "behind": "A workflow of 34 steps, drawn in the Studio"
+        },
+        "steps": [
+          {
+            "title": "The documents",
+            "body": "The CV and the job description, each as a file, a link or plain text."
+          },
+          {
+            "title": "The reading",
+            "body": "The workflow extracts the text of the file or reads the web page. If it cannot, it asks a person."
+          },
+          {
+            "title": "The assessment",
+            "body": "It scores the fit and brings out seniority and career signals."
+          },
+          {
+            "title": "The route",
+            "body": "Shortlist, rejection, or review by a recruiter."
+          }
+        ],
+        "decisions": [
+          "Help when a document cannot be read",
+          "Review the cases the workflow is not sure about"
+        ],
+        "team": {
+          "title": "The building blocks",
+          "lead": "A workflow is drawn box by box. These are the kinds of boxes this one uses.",
+          "members": [
+            {
+              "name": "Form",
+              "role": "Where the recruiter drops the CV and the job description."
+            },
+            {
+              "name": "Read the file",
+              "role": "Extracts the text of a document."
+            },
+            {
+              "name": "Read the page",
+              "role": "Reads a job description published on the web."
+            },
+            {
+              "name": "AI steps",
+              "role": "Assess the fit and write the reasons."
+            },
+            {
+              "name": "Conditions",
+              "role": "Send each case down the right route."
+            },
+            {
+              "name": "Human steps",
+              "role": "Stop and wait for a person when one is needed."
+            }
+          ]
+        },
+        "note": "A workflow follows the path you drew, the same way every time. A team decides its own path. You can mix both.",
+        "get": {
+          "body": "It comes with the ready-made examples of the Community edition.",
+          "link": "Install Community",
+          "href": "/community"
+        }
+      }
+    ],
+    "cta": {
+      "h2": "A case in mind?",
+      "h2_accent": "Build it.",
+      "sub": "See how a team is put together in the Studio, or be told when the cloud opens.",
+      "primary": "See how it works",
+      "primary_href": "/how-it-works",
+      "secondary": "Join the waitlist",
+      "secondary_href": "/pricing#waitlist",
+      "services": "A larger project in your organisation?",
+      "services_link": "About our services",
+      "services_href": "/services"
+    }
+  },
+  "blog_page": {
+    "meta": {
+      "title": "Agentivity Blog — AI Teams, Explained in Plain Words",
+      "description": "Guides and explanations on building teams of AI specialists: how they work together, where a person stays in charge, and what to watch out for."
+    },
+    "hero": {
+      "eyebrow": "Blog",
+      "h1": "AI teams,",
+      "h1_accent": "in plain words.",
+      "sub": "Guides and explanations for people who want to put AI specialists to work, without the jargon."
+    },
+    "lang_note": "",
+    "empty": "No articles yet. Come back soon.",
+    "read": "Read the article",
+    "back": "All articles",
+    "faq_title": "Questions people ask",
+    "keep_reading": "Keep reading",
+    "aside": {
+      "label": "About Agentivity",
+      "body": "A no-code platform to build teams of AI specialists that work alongside your people.",
+      "how": "See how it works",
+      "how_href": "/how-it-works"
+    }
+  },
   "ticker": ["Finance team", "HR team", "Content team", "Personal assistant", "Hiring pipeline", "Inbox at 7am", "Weekly briefing", "24/7 autonomous", "No code needed", "Synergi templates", "White-label ready", "Works while you sleep"]
 }

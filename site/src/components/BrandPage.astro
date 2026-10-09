@@ -1,0 +1,327 @@
+---
+// Brand kit, shared by /brand and /fr/brand. It documents the current identity: navy, yellow, Instrument Serif and Hanken Grotesk.
+// The logo rules, the tone of voice and the downloads keep the wording of the first brand kit.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { Lang } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'Brand Kit — Agentivity',
+    description: 'Agentivity brand guidelines — logos, colours, typography and usage rules.',
+    eyebrow: 'Brand Kit',
+    h1: 'Build with Agentivity.',
+    h1_accent: 'Look the part.',
+    sub: 'Guidelines for using the Agentivity brand — logos, colours, typography and the rules that keep everything consistent.',
+    logo: {
+      h2: 'Logo',
+      sub: 'Use the wordmark on its own. Never distort, recolour, or add effects. Maintain clear space equal to the height of the "A" on all sides.',
+      swatches: ['Navy — on light backgrounds', 'White — on dark backgrounds', 'Navy — on brand colour'],
+      alts: ['Agentivity wordmark navy', 'Agentivity wordmark white', 'Agentivity wordmark on yellow'],
+      do_title: 'Do',
+      do: ['Use the official SVG files', 'Maintain proportions — never stretch', 'Use on solid, contrasting backgrounds', 'Allow generous clear space'],
+      dont_title: "Don't",
+      dont: ['Recolour the logo', 'Add drop shadows, outlines or gradients', 'Place on busy or low-contrast backgrounds', 'Use at sizes below 120px wide'],
+    },
+    colours: {
+      h2: 'Colour System',
+      sub: 'Our palette is calm and intentional. Each colour has a defined role — do not swap them arbitrarily.',
+      items: [
+        { name: 'Navy', hex: '#152844', dark: true, label: 'Primary · Buttons · Dark sections' },
+        { name: 'Yellow', hex: '#FFC83D', dark: false, label: 'Accent · Highlights · Closing band' },
+        { name: 'Ink', hex: '#101A2E', dark: true, label: 'Headings · Body text' },
+        { name: 'Mist', hex: '#F1F3F8', dark: false, label: 'Light section backgrounds' },
+        { name: 'White', hex: '#FFFFFF', dark: false, label: 'Base background' },
+      ],
+      accent_title: 'The yellow highlight',
+      accent_sample: 'Build your AI team.',
+      accent_body: 'Yellow marks what matters: a highlight under a few words, a key button, the closing band of a page. Never behind long text.',
+    },
+    type: {
+      h2: 'Typography',
+      sub: 'Two typefaces only. Instrument Serif for headlines. Hanken Grotesk for everything else.',
+      serif: 'Headlines and large figures. Regular weight only, with italics for the words that carry the idea.',
+      sans: 'Body copy, buttons, labels and navigation. Weights used: 400 (text), 600 (links and buttons), 700 (labels and emphasis).',
+    },
+    voice: {
+      h2: 'Tone of Voice',
+      sub: 'How Agentivity sounds — confident, human, direct. No jargon. No hype.',
+      cards: [
+        { title: 'Direct', body: 'Say exactly what you mean. No padding, no weasel words. Short sentences win.', good: '"Your agents work while you sleep."', bad: '"Leverage the power of AI-driven autonomous agent orchestration."' },
+        { title: 'Human', body: 'Write like a smart colleague, not a press release. Use "you", not "the user".', good: '"You set the rules. Your team delivers."', bad: '"Users can configure agent parameters to optimise workflow outputs."' },
+        { title: 'Confident', body: 'We believe in this product. No hedging. State what Agentivity does, not what it "might" do.', good: '"15+ hours saved per week."', bad: '"Potentially saving you significant amounts of time."' },
+        { title: 'Unpretentious', body: 'No hype, no buzzwords. Business people are busy — respect their time.', good: '"Build your AI team. No code."', bad: '"Revolutionising the paradigm of next-generation agentic intelligence."' },
+      ],
+    },
+    downloads: {
+      h2: 'Downloads',
+      sub: 'Official assets for press, partnerships and integrations. All files are provided in SVG format.',
+      items: [
+        { title: 'Wordmark — Navy', note: 'SVG · For light backgrounds', file: '/agentivity-wordmark-navy.svg', dark: false },
+        { title: 'Wordmark — White', note: 'SVG · For dark backgrounds', file: '/agentivity-wordmark-white.svg', dark: true },
+      ],
+      button: 'Download SVG',
+      contact: 'For press enquiries or partnership assets, contact',
+    },
+  },
+  fr: {
+    title: 'Brand Kit — Agentivity',
+    description: "Charte graphique Agentivity — logos, couleurs, typographie et règles d'utilisation.",
+    eyebrow: 'Brand Kit',
+    h1: 'Construire avec Agentivity.',
+    h1_accent: 'Rester cohérent.',
+    sub: "Les règles d'utilisation de la marque Agentivity — logos, couleurs, typographie et directives pour garder une identité cohérente.",
+    logo: {
+      h2: 'Logo',
+      sub: "Utilisez uniquement le wordmark officiel. Ne le déformez pas, ne le recolorisez pas, n'y ajoutez pas d'effets. Conservez un espace libre égal à la hauteur du « A » sur tous les côtés.",
+      swatches: ['Bleu marine — sur fonds clairs', 'Blanc — sur fonds sombres', 'Bleu marine — sur couleur de marque'],
+      alts: ['Wordmark Agentivity bleu marine', 'Wordmark Agentivity blanc', 'Wordmark Agentivity sur jaune'],
+      do_title: 'À faire',
+      do: ['Utiliser les fichiers SVG officiels', 'Respecter les proportions — ne jamais étirer', 'Utiliser sur des fonds solides et contrastés', 'Conserver un espace libre généreux'],
+      dont_title: 'À ne pas faire',
+      dont: ['Recoloriser le logo', 'Ajouter ombres, contours ou dégradés', 'Placer sur des fonds chargés ou peu contrastés', 'Utiliser à moins de 120px de large'],
+    },
+    colours: {
+      h2: 'Système de couleurs',
+      sub: 'Notre palette est sobre et intentionnelle. Chaque couleur a un rôle défini — ne les interchangez pas arbitrairement.',
+      items: [
+        { name: 'Bleu marine', hex: '#152844', dark: true, label: 'Primaire · Boutons · Sections sombres' },
+        { name: 'Jaune', hex: '#FFC83D', dark: false, label: 'Accent · Surlignages · Bandeau final' },
+        { name: 'Encre', hex: '#101A2E', dark: true, label: 'Titres · Corps de texte' },
+        { name: 'Brume', hex: '#F1F3F8', dark: false, label: 'Fonds de section claire' },
+        { name: 'Blanc', hex: '#FFFFFF', dark: false, label: 'Fond de base' },
+      ],
+      accent_title: 'Le surlignage jaune',
+      accent_sample: 'Créez votre équipe IA.',
+      accent_body: "Le jaune marque ce qui compte : un surlignage sous quelques mots, un bouton clé, le bandeau final d'une page. Jamais derrière un long texte.",
+    },
+    type: {
+      h2: 'Typographie',
+      sub: 'Deux polices uniquement. Instrument Serif pour les titres. Hanken Grotesk pour tout le reste.',
+      serif: "Titres et grands chiffres. Graisse normale uniquement, avec l'italique pour les mots qui portent l'idée.",
+      sans: 'Corps de texte, boutons, labels et navigation. Graisses utilisées : 400 (texte), 600 (liens et boutons), 700 (labels et emphase).',
+    },
+    voice: {
+      h2: 'Ton éditorial',
+      sub: "Comment parle Agentivity — confiant, humain, direct. Pas de jargon. Pas d'emphase.",
+      cards: [
+        { title: 'Direct', body: 'Dites exactement ce que vous voulez dire. Pas de rembourrage, pas de formules creuses. Les phrases courtes gagnent.', good: '"Vos agents travaillent pendant que vous dormez."', bad: '"Exploitez la puissance de l\'orchestration d\'agents autonomes pilotés par l\'IA."' },
+        { title: 'Humain', body: 'Écrivez comme un collègue intelligent, pas comme un communiqué de presse. Utilisez "vous", pas "l\'utilisateur".', good: '"Vous posez les règles. Votre équipe livre."', bad: '"Les utilisateurs peuvent configurer les paramètres des agents pour optimiser les sorties."' },
+        { title: 'Confiant', body: 'Nous croyons en ce produit. Pas de formules atténuées. Dites ce qu\'Agentivity fait, pas ce qu\'il "pourrait" faire.', good: '"15+ heures économisées par semaine."', bad: '"Susceptible de vous faire potentiellement gagner un temps considérable."' },
+        { title: 'Sans prétention', body: 'Pas de buzz, pas de jargon. Les professionnels sont occupés — respectez leur temps.', good: '"Créez votre équipe IA. Sans code."', bad: '"Révolutionnez le paradigme de l\'intelligence agentique de nouvelle génération."' },
+      ],
+    },
+    downloads: {
+      h2: 'Téléchargements',
+      sub: 'Assets officiels pour la presse, les partenariats et les intégrations. Tous les fichiers sont fournis au format SVG.',
+      items: [
+        { title: 'Wordmark — Bleu marine', note: 'SVG · Pour fonds clairs', file: '/agentivity-wordmark-navy.svg', dark: false },
+        { title: 'Wordmark — Blanc', note: 'SVG · Pour fonds sombres', file: '/agentivity-wordmark-white.svg', dark: true },
+      ],
+      button: 'Télécharger SVG',
+      contact: 'Pour les demandes presse ou assets partenariats, contactez',
+    },
+  },
+};
+const p = copy[lang];
+const logos = ['/agentivity-wordmark-navy.svg', '/agentivity-wordmark-white.svg', '/agentivity-wordmark-navy.svg'];
+const logoBacks = ['light', 'navy', 'yellow'];
+---
+<Base title={p.title} description={p.description} lang={lang} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="ed-page">
+
+  <section class="ed-wrap bk-hero">
+    <p class="ed-eyebrow">{p.eyebrow}</p>
+    <h1>{p.h1} <em class="ed-mark">{p.h1_accent}</em></h1>
+    <p class="bk-hero-sub">{p.sub}</p>
+  </section>
+
+  <section class="ed-band--mist" id="logo">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.logo.h2}</h2>
+        <p class="ed-sec-sub">{p.logo.sub}</p>
+      </header>
+      <ul class="bk-logos">
+        {logos.map((src, i) => (
+          <li>
+            <div class={'bk-logo bk-logo--' + logoBacks[i]}><img src={src} alt={p.logo.alts[i]} width="220" height="48" /></div>
+            <span>{p.logo.swatches[i]}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="bk-rules">
+        <div class="bk-rule">
+          <strong>{p.logo.do_title}</strong>
+          <ul>{p.logo.do.map((line) => <li>{line}</li>)}</ul>
+        </div>
+        <div class="bk-rule bk-rule--dont">
+          <strong>{p.logo.dont_title}</strong>
+          <ul>{p.logo.dont.map((line) => <li>{line}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ed-wrap ed-sec" id="colours">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{p.colours.h2}</h2>
+      <p class="ed-sec-sub">{p.colours.sub}</p>
+    </header>
+    <ul class="bk-colours">
+      {p.colours.items.map((colour) => (
+        <li class:list={['bk-colour', { 'bk-colour--dark': colour.dark }]} style={'background:' + colour.hex}>
+          <strong>{colour.name}</strong>
+          <code>{colour.hex}</code>
+          <span>{colour.label}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="bk-accent">
+      <p class="bk-accent-sample"><span class="ed-mark">{p.colours.accent_sample}</span></p>
+      <div>
+        <strong>{p.colours.accent_title}</strong>
+        <p>{p.colours.accent_body}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ed-band--mist" id="typography">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.type.h2}</h2>
+        <p class="ed-sec-sub">{p.type.sub}</p>
+      </header>
+      <div class="bk-types">
+        <article class="bk-type">
+          <p class="bk-type-sample bk-type-sample--serif">Instrument <em>Serif</em></p>
+          <strong>Instrument Serif</strong>
+          <p>{p.type.serif}</p>
+          <a class="ed-link" href="https://fonts.google.com/specimen/Instrument+Serif" target="_blank" rel="noopener noreferrer">Google Fonts</a>
+        </article>
+        <article class="bk-type">
+          <p class="bk-type-sample bk-type-sample--sans">Hanken Grotesk</p>
+          <strong>Hanken Grotesk</strong>
+          <p>{p.type.sans}</p>
+          <a class="ed-link" href="https://fonts.google.com/specimen/Hanken+Grotesk" target="_blank" rel="noopener noreferrer">Google Fonts</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ed-band--navy" id="voice">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.voice.h2}</h2>
+        <p class="ed-sec-sub bk-on-navy">{p.voice.sub}</p>
+      </header>
+      <ul class="bk-voice">
+        {p.voice.cards.map((card) => (
+          <li>
+            <strong>{card.title}</strong>
+            <p>{card.body}</p>
+            <p class="bk-voice-good">{card.good}</p>
+            <p class="bk-voice-bad">{card.bad}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="ed-wrap ed-sec" id="downloads">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{p.downloads.h2}</h2>
+      <p class="ed-sec-sub">{p.downloads.sub}</p>
+    </header>
+    <ul class="bk-downloads">
+      {p.downloads.items.map((item) => (
+        <li>
+          <div class={'bk-logo ' + (item.dark ? 'bk-logo--navy' : 'bk-logo--light')}><img src={item.file} alt="" width="220" height="48" /></div>
+          <div class="bk-download-info">
+            <strong>{item.title}</strong>
+            <span>{item.note}</span>
+            <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.file} download>{p.downloads.button}</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+    <p class="bk-contact">{p.downloads.contact} <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+<style>
+.bk-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(48px, 6vw, 80px); }
+.bk-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.bk-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+
+/* ---------- logo ---------- */
+.bk-logos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.bk-logos li { display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 600; color: var(--ed-ink-2); }
+.bk-logo { display: grid; place-items: center; min-height: 180px; padding: 32px; border-radius: 22px; }
+.bk-logo img { width: min(220px, 100%); height: auto; }
+.bk-logo--light { background: #fff; box-shadow: inset 0 0 0 1px var(--ed-line-2); }
+.bk-logo--navy { background: var(--ed-navy); }
+.bk-logo--yellow { background: var(--ed-yellow); }
+.bk-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.bk-rule { display: flex; flex-direction: column; gap: 6px; background: #fff; border-radius: 22px; padding: 26px 24px; border-top: 4px solid var(--ed-navy); }
+.bk-rule--dont { border-top-color: #B3261E; }
+.bk-rule strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+.bk-rule li { padding-block: 11px; border-top: 1px solid var(--ed-line-2); font-size: 16.5px; color: var(--ed-ink-2); }
+.bk-rule li:first-child { border-top: 0; }
+
+/* ---------- colours ---------- */
+.bk-colours { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.bk-colour { display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; min-height: 200px; padding: 20px 18px; border-radius: 22px; color: var(--ed-ink); box-shadow: inset 0 0 0 1px var(--ed-line-2); font-size: 14.5px; }
+.bk-colour--dark { color: #fff; box-shadow: none; }
+.bk-colour strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.05; }
+.bk-colour code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; font-weight: 600; }
+.bk-accent { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: 16px; padding: clamp(24px, 3vw, 36px); border-radius: 22px; background: var(--ed-mist); color: var(--ed-ink-2); }
+.bk-accent-sample { font-family: var(--ed-serif); font-size: clamp(34px, 4vw, 56px); line-height: 1.05; color: var(--ed-ink); }
+.bk-accent strong { display: block; margin-bottom: 6px; font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+
+/* ---------- typography ---------- */
+.bk-types { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.bk-type { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; background: #fff; border-radius: 24px; padding: clamp(26px, 3vw, 38px); color: var(--ed-ink-2); }
+.bk-type-sample { padding-bottom: 16px; color: var(--ed-ink); line-height: 1; }
+.bk-type-sample--serif { font-family: var(--ed-serif); font-size: clamp(44px, 5.6vw, 76px); letter-spacing: -.02em; }
+.bk-type-sample--sans { font-family: var(--ed-sans); font-size: clamp(34px, 4.2vw, 56px); font-weight: 700; letter-spacing: -.02em; }
+.bk-type strong { font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+
+/* ---------- voice ---------- */
+.bk-on-navy { color: var(--ed-on-navy); }
+.bk-voice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.bk-voice li { display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--ed-navy-line); border-radius: 24px; padding: 26px 24px; color: var(--ed-on-navy); }
+.bk-voice strong { font-family: var(--ed-serif); font-weight: 400; font-size: 32px; line-height: 1.05; color: #fff; }
+.bk-voice-good, .bk-voice-bad { padding: 12px 16px; border-radius: 12px; font-size: 16px; }
+.bk-voice-good { background: rgba(255, 200, 61, .16); border-left: 3px solid var(--ed-yellow); color: #fff; }
+.bk-voice-good::before { content: "✓ "; font-weight: 700; }
+.bk-voice-bad { background: rgba(255, 255, 255, .06); border-left: 3px solid var(--ed-navy-line); color: var(--ed-on-navy-2); text-decoration: line-through; text-decoration-color: var(--ed-navy-line); }
+.bk-voice-bad::before { content: "✗ "; display: inline-block; text-decoration: none; }
+
+/* ---------- downloads ---------- */
+.bk-downloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.bk-downloads li { display: flex; flex-direction: column; gap: 16px; }
+.bk-download-info { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; color: var(--ed-ink-2); font-size: 15.5px; }
+.bk-download-info strong { font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+.bk-download-info .ed-btn { margin-top: 8px; }
+.bk-contact { margin-top: 32px; font-size: 16px; color: var(--ed-ink-3); }
+.bk-contact a { font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+
+@media (max-width: 900px) {
+  .bk-logos, .bk-rules, .bk-types, .bk-voice, .bk-downloads, .bk-accent { grid-template-columns: minmax(0, 1fr); }
+  .bk-colours { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bk-colour { min-height: 150px; }
+}
+</style>

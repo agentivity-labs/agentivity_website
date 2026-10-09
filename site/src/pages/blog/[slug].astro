@@ -1,12 +1,16 @@
 ---
+// One blog article. The articles are Markdown files in src/content/blog; the texts around them come from the "blog_page" block.
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import GitHubIcon from '../../components/GitHubIcon.astro';
+import type { Lang } from '../../i18n/utils';
+import { useTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map(post => ({
+  return posts.map((post) => ({
     params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
     props: { post },
   }));
@@ -14,164 +18,163 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const slug = post.id.replace(/\.(md|mdx)$/, '');
+const slug = (id: string) => id.replace(/\.(md|mdx)$/, '');
 
-const lang = post.data.lang ?? 'en';
+const lang = (post.data.lang ?? 'en') as Lang;
+const t = useTranslations(lang);
+const p = t.blog_page;
+const formatDate = (date: Date) => date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-function formatDate(d: Date) {
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-}
-
-const allPosts = (await getCollection('blog')).filter(p => p.data.lang !== 'fr' && !p.data.draft);
-const related = allPosts
-  .filter(p => p.id !== post.id && p.data.tags.some(t => post.data.tags.includes(t)))
+const related = (await getCollection('blog'))
+  .filter((other) => other.data.lang !== 'fr' && !other.data.draft)
+  .filter((other) => other.id !== post.id && other.data.tags.some((tag) => post.data.tags.includes(tag)))
   .slice(0, 3);
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.data.title,
-  "description": post.data.description,
-  "datePublished": post.data.pubDate.toISOString(),
-  "author": { "@type": "Organization", "name": post.data.author },
-  "publisher": { "@type": "Organization", "name": "Agentivity", "url": "https://www.agentivity.io" },
-  "url": `https://www.agentivity.io/blog/${slug}`,
+const posting = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: { '@type': 'Organization', name: 'Agentivity', url: 'https://www.agentivity.io' },
+  url: 'https://www.agentivity.io/blog/' + slug(post.id),
 };
+const faq = post.data.faq;
+const schema = faq.length === 0 ? posting : [posting, {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })),
+}];
 ---
-<Base
-  title={`${post.data.title} | Agentivity Blog`}
-  description={post.data.description}
-  schema={schema}
-  lang={lang}
->
-  <Nav lang={lang as 'en' | 'fr'} />
+<Base title={post.data.title + ' | Agentivity'} description={post.data.description} schema={schema} lang={lang} look="editorial">
 
-  <!-- HERO -->
-  <section class="s-black post-hero">
-    <div class="post-hero-bg" aria-hidden="true"></div>
-    <div class="wrap post-hero-inner">
-      <a href="/blog" class="post-back">← Blog</a>
+<SiteHeader lang={lang} />
 
-      <div class="post-meta">
-        <time datetime={post.data.pubDate.toISOString()} class="post-date">
-          {formatDate(post.data.pubDate)}
-        </time>
-        {post.data.tags.map(tag => (
-          <span class="post-tag">{tag}</span>
-        ))}
-      </div>
+<main class="ed-page">
 
-      <h1 class="h1 post-title">{post.data.title}</h1>
-      <p class="post-desc">{post.data.description}</p>
+  <header class="ed-wrap bp-hero">
+    <a class="bp-back" href="/blog">{p.back}</a>
+    <p class="bp-meta">
+      <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+      {post.data.tags.map((tag) => <span class="bp-tag">{tag}</span>)}
+    </p>
+    <h1>{post.data.title}</h1>
+    <p class="bp-desc">{post.data.description}</p>
+    <p class="bp-author">{post.data.author}</p>
+  </header>
 
-      <div class="post-byline">
-        <div class="post-avatar" aria-hidden="true">A</div>
-        <span class="post-author">{post.data.author}</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTENT -->
-  <section class="s-black post-content-section">
-    <div class="wrap post-wrap">
-      <article class="post-body prose">
-        <Content />
-      </article>
-
-      <aside class="post-sidebar">
-        <div class="post-sidebar-card">
-          <p class="post-sidebar-label">Built with Agentivity</p>
-          <p class="post-sidebar-body">The open-source platform for building multi-agent AI teams. Free, self-hosted, no lock-in.</p>
-          <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:12px;width:100%;justify-content:center">Star on GitHub</a>
-          <a href="/how-it-works" class="btn btn-ghost" style="margin-top:8px;width:100%;justify-content:center">How it works →</a>
-        </div>
-        {post.data.tags.length > 0 && (
-          <div class="post-sidebar-tags">
-            <p class="post-sidebar-label">Tags</p>
-            <div class="post-tag-list">
-              {post.data.tags.map(tag => <span class="post-tag">{tag}</span>)}
-            </div>
-          </div>
-        )}
-      </aside>
-    </div>
-  </section>
-
-  <!-- RELATED -->
-  {related.length > 0 && (
-    <section class="s-navy related-section">
-      <div class="wrap">
-        <h2 class="related-title">Keep reading</h2>
-        <div class="related-grid">
-          {related.map(p => (
-            <a href={`/blog/${p.id.replace(/\.(md|mdx)$/, '')}`} class="related-card">
-              <time datetime={p.data.pubDate.toISOString()} class="blog-date">
-                {formatDate(p.data.pubDate)}
-              </time>
-              <h3 class="related-card-title">{p.data.title}</h3>
-              <span class="related-read">Read →</span>
-            </a>
+  <div class="ed-wrap bp-layout">
+    <article class="bp-prose">
+      <Content />
+      {faq.length > 0 && (
+        <section class="bp-faq">
+          <h2>{p.faq_title}</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
           ))}
-        </div>
+        </section>
+      )}
+    </article>
+    <aside class="bp-aside">
+      <p class="bp-aside-label">{p.aside.label}</p>
+      <p>{p.aside.body}</p>
+      <a class="ed-btn ed-btn--sm ed-btn--navy" href={p.aside.how_href}>{p.aside.how}</a>
+      <a class="bp-aside-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
+    </aside>
+  </div>
+
+  {related.length > 0 && (
+    <section class="ed-band--mist">
+      <div class="ed-wrap ed-sec">
+        <h2 class="ed-h2 ed-h2--md bp-related-title">{p.keep_reading}</h2>
+        <ul class="bp-related">
+          {related.map((other) => (
+            <li>
+              <a href={'/blog/' + slug(other.id)}>
+                <time datetime={other.data.pubDate.toISOString()}>{formatDate(other.data.pubDate)}</time>
+                <strong>{other.data.title}</strong>
+                <span>{p.read}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )}
 
-  <Footer lang={lang as 'en' | 'fr'} />
+</main>
+
+<SiteFooter lang={lang} />
+
 </Base>
 
 <style>
-.post-hero { padding: 100px 0 60px; position: relative; overflow: hidden; }
-.post-hero-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 50% 55% at 60% 10%, rgba(109,0,245,.08) 0%, transparent 60%); }
-.post-hero-inner { position: relative; z-index: 1; max-width: 760px; }
-.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.35); text-decoration: none; margin-bottom: 32px; transition: color .15s; }
-.post-back:hover { color: rgba(255,255,255,.7); }
-.post-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-.post-date { font-size: 12px; color: rgba(255,255,255,.3); font-family: 'JetBrains Mono', monospace; }
-.post-tag { font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(109,0,245,.15); color: rgba(139,47,248,.9); border: 1px solid rgba(109,0,245,.25); }
-.post-title { font-size: clamp(28px, 4vw, 52px); margin-bottom: 20px; letter-spacing: -.04em; line-height: 1.15; }
-.post-desc { font-size: clamp(15px, 1.3vw, 17px); color: rgba(255,255,255,.45); line-height: 1.75; margin-bottom: 32px; }
-.post-byline { display: flex; align-items: center; gap: 12px; }
-.post-avatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(109,0,245,.25); color: var(--violet-l); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(109,0,245,.3); flex-shrink: 0; }
-.post-author { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); }
+/* ---------- header ---------- */
+.bp-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-block: clamp(40px, 5vw, 72px) clamp(32px, 4vw, 48px); }
+.bp-back { font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.bp-back::before { content: "← "; }
+.bp-back:hover { color: var(--ed-ink); }
+.bp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 14.5px; font-weight: 600; color: var(--ed-ink-3); }
+.bp-tag { padding: 3px 10px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.bp-hero h1 { font-family: var(--ed-serif); font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -.015em; text-wrap: balance; max-width: 18em; }
+.bp-desc { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.bp-author { font-size: 15px; font-weight: 600; color: var(--ed-ink-3); }
 
-.post-content-section { padding: 60px 0 80px; }
-.post-wrap { display: grid; grid-template-columns: 1fr 280px; gap: 64px; align-items: start; }
-@media (max-width: 860px) { .post-wrap { grid-template-columns: 1fr; } }
+/* ---------- article and aside ---------- */
+.bp-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(32px, 5vw, 80px); align-items: start; padding-bottom: clamp(64px, 8vw, 112px); }
+.bp-prose { max-width: 44em; padding-top: clamp(28px, 3vw, 40px); border-top: 2px solid var(--ed-ink); font-size: 19px; line-height: 1.7; color: var(--ed-ink-2); }
+.bp-prose :global(h2) { margin: 56px 0 16px; font-family: var(--ed-serif); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.08; color: var(--ed-ink); }
+.bp-prose :global(h3) { margin: 36px 0 10px; font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--ed-ink); }
+.bp-prose :global(p) { margin-bottom: 20px; }
+.bp-prose :global(strong) { font-weight: 700; color: var(--ed-ink); }
+.bp-prose :global(a) { font-weight: 600; color: var(--ed-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.bp-prose :global(a:hover) { opacity: .7; }
+.bp-prose :global(ul), .bp-prose :global(ol) { margin: 0 0 20px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; }
+.bp-prose :global(ul) { list-style: disc; }
+.bp-prose :global(ol) { list-style: decimal; }
+.bp-prose :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--ed-mist); border-radius: 6px; padding: 2px 6px; color: var(--ed-ink); }
+.bp-prose :global(pre) { margin: 24px 0; padding: 20px 24px; border-radius: 16px; background: var(--ed-navy); color: #fff; overflow-x: auto; font-size: 14.5px; line-height: 1.65; }
+.bp-prose :global(pre code) { background: none; padding: 0; color: inherit; font-size: inherit; }
+.bp-prose :global(blockquote) { margin: 28px 0; padding-left: 20px; border-left: 3px solid var(--ed-yellow); font-family: var(--ed-serif); font-style: italic; font-size: 24px; line-height: 1.35; color: var(--ed-ink); }
+.bp-prose :global(hr) { margin: 48px 0; border: 0; border-top: 1px solid var(--ed-line-2); }
+.bp-prose :global(table) { width: 100%; margin: 24px 0; border-collapse: collapse; font-size: 16px; }
+.bp-prose :global(th) { text-align: left; padding: 10px 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); border-bottom: 2px solid var(--ed-ink); }
+.bp-prose :global(td) { padding: 12px 14px; border-bottom: 1px solid var(--ed-line-2); vertical-align: top; }
+.bp-prose :global(img) { max-width: 100%; height: auto; border-radius: 16px; }
+.bp-prose :global(figure) { margin: 32px 0; }
+.bp-prose :global(video) { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--ed-line-2); background: var(--ed-mist); }
+.bp-prose :global(figcaption) { margin-top: 10px; font-size: 14.5px; line-height: 1.5; color: var(--ed-ink-3); }
 
-.prose { font-size: clamp(15px, 1.2vw, 16px); line-height: 1.85; color: rgba(255,255,255,.65); max-width: 70ch; }
-.prose :global(h2) { font-size: clamp(20px, 2vw, 26px); font-weight: 800; color: #fff; letter-spacing: -.03em; margin: 48px 0 16px; line-height: 1.2; }
-.prose :global(h3) { font-size: clamp(16px, 1.5vw, 19px); font-weight: 700; color: rgba(255,255,255,.85); letter-spacing: -.02em; margin: 32px 0 12px; }
-.prose :global(p) { margin-bottom: 20px; }
-.prose :global(strong) { color: rgba(255,255,255,.85); font-weight: 600; }
-.prose :global(em) { color: rgba(255,255,255,.6); }
-.prose :global(a) { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
-.prose :global(a:hover) { color: #fff; }
-.prose :global(ul), .prose :global(ol) { padding-left: 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
-.prose :global(li) { color: rgba(255,255,255,.6); }
-.prose :global(code) { font-family: 'JetBrains Mono', monospace; font-size: .88em; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 4px; padding: 2px 6px; color: var(--cyan); }
-.prose :global(pre) { background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r-lg); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.75); }
-.prose :global(pre code) { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
-.prose :global(blockquote) { border-left: 3px solid var(--violet); padding-left: 20px; margin: 24px 0; color: rgba(255,255,255,.45); font-style: italic; }
-.prose :global(hr) { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 48px 0; }
-.prose :global(table) { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px; }
-.prose :global(th) { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.3); border-bottom: 1px solid rgba(255,255,255,.1); }
-.prose :global(td) { padding: 10px 14px; color: rgba(255,255,255,.55); border-bottom: 1px solid rgba(255,255,255,.05); }
+.bp-faq { margin-top: 56px; }
+.bp-faq h2 { margin: 0 0 16px; font-family: var(--ed-serif); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.08; color: var(--ed-ink); }
+.bp-faq details { border-bottom: 1px solid var(--ed-line-2); }
+.bp-faq details:first-of-type { border-top: 2px solid var(--ed-ink); }
+.bp-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 18px; font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+.bp-faq summary::-webkit-details-marker { display: none; }
+.bp-faq summary::after { content: "+"; flex: none; font-family: var(--ed-serif); font-size: 32px; line-height: 1; font-weight: 400; }
+.bp-faq details[open] summary::after { content: "–"; }
+.bp-faq details p { margin: 0; padding-bottom: 20px; }
 
-.post-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
-.post-sidebar-card { padding: 24px; border-radius: var(--r-xl); border: 1px solid rgba(109,0,245,.2); background: rgba(109,0,245,.06); display: flex; flex-direction: column; }
-.post-sidebar-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 8px; }
-.post-sidebar-body { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.65; }
-.post-sidebar-tags { display: flex; flex-direction: column; gap: 10px; }
-.post-tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
+.bp-aside { position: sticky; top: 104px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px; border-radius: 22px; background: var(--ed-mist); font-size: 16.5px; color: var(--ed-ink-2); }
+.bp-aside-label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.bp-aside-github { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+.bp-aside-github :global(svg) { width: 18px; height: 18px; }
 
-.related-section { padding: 64px 0 80px; }
-.related-title { font-size: clamp(20px, 2vw, 26px); font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: 28px; }
-.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 720px) { .related-grid { grid-template-columns: 1fr; } }
-.related-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: var(--r-xl); border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.02); text-decoration: none; transition: background .15s, border-color .15s; }
-.related-card:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
-.blog-date { font-size: 11px; color: rgba(255,255,255,.25); font-family: 'JetBrains Mono', monospace; }
-.related-card-title { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; flex: 1; }
-.related-read { font-size: 12px; font-weight: 600; color: var(--violet-l); }
+/* ---------- keep reading ---------- */
+.bp-related-title { margin-bottom: clamp(24px, 3vw, 36px); }
+.bp-related { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 16px; }
+.bp-related a { display: flex; flex-direction: column; gap: 12px; height: 100%; background: #fff; border-radius: 22px; padding: 24px; color: var(--ed-ink-2); font-size: 15px; }
+.bp-related time { font-size: 14px; font-weight: 600; color: var(--ed-ink-3); }
+.bp-related strong { flex: 1; font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.12; color: var(--ed-ink); }
+.bp-related span { align-self: flex-start; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+
+@media (max-width: 900px) {
+  .bp-layout { grid-template-columns: minmax(0, 1fr); }
+  .bp-aside { position: static; }
+  .bp-prose { font-size: 18px; }
+}
 </style>

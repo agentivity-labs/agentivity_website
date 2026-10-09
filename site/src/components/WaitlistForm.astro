@@ -5,9 +5,11 @@ import { useTranslations } from '../i18n/utils';
 interface Props {
   lang: Lang;
   informal?: boolean;
+  /** 'light' when the form sits on a light or yellow background (editorial pages). */
+  tone?: 'dark' | 'light';
 }
 
-const { lang, informal = false } = Astro.props;
+const { lang, informal = false, tone = 'dark' } = Astro.props;
 const t = useTranslations(lang);
 const text = { ...t.waitlist, ...(informal && 'waitlist_informal' in t ? t.waitlist_informal : {}) };
 
@@ -26,7 +28,7 @@ const messages = {
   errorRate: text.error_rate,
 };
 ---
-<form class="wl" data-waitlist data-lang={lang} data-messages={JSON.stringify(messages)}>
+<form class:list={['wl', { 'wl--light': tone === 'light' }]} data-waitlist data-lang={lang} data-messages={JSON.stringify(messages)}>
   <div class="wl-fields">
     <div class="wl-row">
       <input
@@ -225,4 +227,41 @@ const messages = {
 .wl-status[data-kind="success"] span { color: rgba(255,255,255,.7); }
 .wl-status[data-kind="error"] { margin-top: 12px; color: #FF7A8C; }
 .wl.is-done .wl-status { font-size: 16px; }
+
+/* light tone: navy on a light or yellow background */
+.wl--light .wl-row input[type="email"] {
+  min-height: 54px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1.5px solid #101A2E;
+  background: #fff;
+  color: #101A2E;
+  font-family: inherit;
+  font-size: 17px;
+}
+.wl--light .wl-row input[type="email"]::placeholder { color: #4E5A75; }
+.wl--light .wl-row input[type="email"]:focus {
+  border-color: #152844;
+  box-shadow: 0 0 0 3px rgba(21,40,68,.25);
+}
+.wl--light .wl-row button[type="submit"] {
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #152844;
+  color: #fff;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+.wl--light .wl-row button[type="submit"]:hover { background: #0E1D33; box-shadow: none; }
+.wl--light .wl-consent { font-size: 14px; color: #101A2E; }
+.wl--light .wl-consent input { accent-color: #152844; }
+.wl--light .wl-consent a { color: #101A2E; }
+.wl--light .wl-consent a:hover { color: #101A2E; opacity: .7; }
+.wl--light .wl-status[data-kind="success"] { color: #101A2E; }
+.wl--light .wl-status[data-kind="success"] span { color: #101A2E; }
+.wl--light .wl-status[data-kind="error"] { color: #8C1D18; font-weight: 600; }
 </style>

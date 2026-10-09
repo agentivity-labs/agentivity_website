@@ -1,0 +1,576 @@
+---
+// The home page, shared by / and /fr/. Texts come from the "home" block of the translation files.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import GitHubIcon from './GitHubIcon.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+const siteUrl = lang === 'fr' ? 'https://www.agentivity.io/fr/' : 'https://www.agentivity.io';
+
+const loops = [
+  { ...h.why.loops[0], video: '/media/team-manager.mp4', poster: '/media/team-manager.jpg', width: 546, height: 680 },
+  { ...h.why.loops[1], video: '/media/team-chain.mp4', poster: '/media/team-chain.jpg', width: 456, height: 560 },
+];
+const clips = [
+  { ...h.apps.clips[0], video: '/media/trip-planner.mp4', poster: '/media/trip-planner.jpg', back: '#F3F1EC' },
+  { ...h.apps.clips[1], video: '/media/shopping-lab.mp4', poster: '/media/shopping-lab.jpg', back: '#F3F4F6' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Agentivity',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, Cloud',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: h.pricing.tiers[0].name + ' — ' + h.pricing.tiers[0].badge },
+      url: siteUrl,
+      description: h.meta.description,
+    },
+    {
+      '@type': 'Organization',
+      name: 'Agentivity',
+      url: 'https://www.agentivity.io',
+      logo: 'https://www.agentivity.io/agentivity-wordmark-navy.svg',
+    },
+  ],
+};
+---
+<Base title={h.meta.title} description={h.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="hp ed-page">
+
+  <!-- 1. Hero -->
+  <section class="ed-wrap hp-hero" id="top">
+    <div class="hp-hero-copy">
+      <p class="ed-eyebrow hp-hero-eyebrow">
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="currentColor" aria-hidden="true"><circle cx="9" cy="3" r="3"></circle><circle cx="3.5" cy="12.5" r="3"></circle><circle cx="14.5" cy="12.5" r="3"></circle></svg>
+        {h.hero.eyebrow}
+      </p>
+      <h1>{h.hero.h1} <em class="ed-mark">{h.hero.h1_accent}</em></h1>
+      <p class="hp-hero-sub">{h.hero.sub}</p>
+      <div class="hp-hero-cta">
+        <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
+        <a class="ed-btn ed-btn--line" href="#cta">{h.hero.cta_waitlist}</a>
+      </div>
+    </div>
+
+    <div class="hp-hero-stage" id="hero-stage" role="img" aria-label={h.hero.visual_label}>
+      <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <ul class="hp-hero-teams">
+      {h.hero.teams.map((team, i) => (
+        <li>
+          <span class="hp-hero-team-icon" aria-hidden="true">
+            {i === 0 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>}
+            {i === 1 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.300 2.700-5.500 6-5.500s6 2.200 6 5.500"></path><circle cx="17.500" cy="9.500" r="2.400"></circle><path d="M17 14.600c2.400.200 4 1.900 4 4.400"></path></svg>}
+            {i === 2 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h3l8 4V5L8 9H5a1 1 0 0 0-1 1z"></path><path d="M19 9.500a3.500 3.500 0 0 1 0 5"></path><path d="M8 15v3.500a1.500 1.500 0 0 0 3 0V16.500"></path></svg>}
+            {i === 3 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.500V3h6v1.500"></path><path d="M9 11l1.800 1.800L14.500 9"></path><path d="M9 16.500h6"></path></svg>}
+          </span>
+          <span class="hp-hero-team-text">
+            <strong>{team.name}</strong>
+            <span>{team.body}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- 2. What it brings -->
+    <ul class="hp-values">
+      {h.values.map((value) => (
+        <li>
+          <strong>{value.title}</strong>
+          <span>{value.body}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- 3. Why a team -->
+  <section class="ed-wrap ed-sec" id="why">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{h.why.eyebrow}</p>
+      <h2 class="ed-h2">{h.why.h2} <em>{h.why.h2_accent}</em></h2>
+    </header>
+
+    <div class="hp-versus">
+      <article class="hp-versus-card">
+        <span class="hp-versus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg>
+        </span>
+        <h3>{h.why.chat.title}</h3>
+        <ul>{h.why.chat.points.map((point) => <li>{point}</li>)}</ul>
+      </article>
+      <article class="hp-versus-card hp-versus-card--team">
+        <span class="hp-versus-icon" aria-hidden="true">
+          <svg viewBox="0 0 18 16" fill="currentColor"><circle cx="9" cy="3" r="3"></circle><circle cx="3.500" cy="12.500" r="3"></circle><circle cx="14.500" cy="12.500" r="3"></circle></svg>
+        </span>
+        <h3>{h.why.team.title}</h3>
+        <ul>{h.why.team.points.map((point) => <li>{point}</li>)}</ul>
+      </article>
+    </div>
+
+    <div class="hp-organise" id="team">
+      <div class="hp-organise-head">
+        <h3 class="hp-organise-title">{h.why.organise}</h3>
+        <a class="ed-link" href={local('/how-it-works')}>{h.why.link}</a>
+      </div>
+      <div class="hp-loops">
+        {loops.map((loop) => (
+          <figure class="hp-loop">
+            <div class="hp-loop-media">
+              <video muted loop playsinline preload="none" poster={loop.poster} width={loop.width} height={loop.height} aria-label={loop.alt} data-autoplay>
+                <source src={loop.video} type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              <span class="hp-loop-label">{h.why.capture}</span>
+              <strong>{loop.title}</strong>
+              <span>{loop.body}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. From one helper to an AI company -->
+  <section class="ed-band--mist" id="start">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{h.ladder.eyebrow}</p>
+        <h2 class="ed-h2">{h.ladder.h2} <em>{h.ladder.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{h.ladder.sub}</p>
+      </header>
+      <ol class="hp-ladder">
+        {h.ladder.steps.map((step: any, i: number) => (
+          <li class:list={['hp-rung', { 'hp-rung--next': Boolean(step.note) }]}>
+            <div class="hp-rung-top">
+              <span class="hp-rung-num">{i + 1}</span>
+              <span class="hp-rung-tag">{step.tag}</span>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+            {step.gain && <p class="hp-rung-foot"><strong>{step.gain}</strong> <span>· {h.ladder.example}</span></p>}
+            {step.note && <p class="hp-rung-foot hp-rung-foot--note">{step.note}</p>}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. The hours -->
+  <section class="ed-wrap ed-sec ed-split" id="hours">
+    <div class="hp-hours-copy">
+      <p class="ed-eyebrow">{h.hours.eyebrow}</p>
+      <h2 class="hp-hours-title">
+        <span class="hp-hours-big"><span class="ed-mark">{h.hours.big}</span></span>
+        <em>{h.hours.h2}</em>
+      </h2>
+      <p class="ed-sec-sub">{h.hours.sub}</p>
+    </div>
+    <div class="hp-hours-table">
+      <p class="hp-hours-label">{h.hours.table_label}</p>
+      <ul>
+        {h.hours.rows.map((row) => (
+          <li><span>{row.task}</span><span class="hp-hours-n">{row.hours}</span></li>
+        ))}
+        <li class="hp-hours-total"><span>{h.hours.total.task}</span><span class="hp-hours-n">{h.hours.total.hours}</span></li>
+      </ul>
+      <p class="hp-hours-note">{h.hours.note}</p>
+    </div>
+  </section>
+
+  <!-- 6. Agentic apps -->
+  <section class="ed-band--navy" id="apps">
+    <div class="ed-wrap ed-sec hp-apps">
+      <header class="hp-apps-head">
+        <div>
+          <p class="ed-eyebrow hp-apps-eyebrow">{h.apps.eyebrow}</p>
+          <h2 class="ed-h2">{h.apps.h2} <em>{h.apps.h2_accent}</em></h2>
+        </div>
+        <p class="hp-apps-sub"><strong>{t.site.vibeapp[0]}</strong> {h.apps.sub}</p>
+      </header>
+
+      <div class="hp-clips">
+        {clips.map((clip) => (
+          <figure class="hp-clip">
+            <div class="hp-clip-media" style={'background:' + clip.back}>
+              <video muted loop playsinline preload="none" poster={clip.poster} width="1024" height="768" aria-label={clip.alt} data-autoplay>
+                <source src={clip.video} type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              <span class="hp-clip-label">{clip.label}</span>
+              <strong>{clip.title}</strong>
+              <span>{clip.body}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <ul class="hp-apps-points">
+        {h.apps.points.map((point) => (
+          <li>
+            <strong>{point.title}</strong>
+            <span>{point.body}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. You stay in charge -->
+  <section class="ed-wrap ed-sec ed-split ed-split--center" id="control">
+    <div>
+      <p class="ed-eyebrow">{h.control.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{h.control.h2} <em>{h.control.h2_accent}</em></h2>
+      <ul class="ed-rows">
+        {h.control.points.map((point) => (
+          <li>
+            <strong>{point.title}</strong>
+            <span>{point.body}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <figure class="ed-shot">
+      <div class="ed-shot-frame ed-shot-frame--lift">
+        <img src="/media/studio-workflow.webp" alt={h.control.alt} width="1862" height="712" loading="lazy" class="hp-shot-workflow" />
+      </div>
+      <figcaption>{h.control.caption}</figcaption>
+    </figure>
+  </section>
+
+  <!-- 8. No code -->
+  <section class="ed-band--mist" id="build">
+    <div class="ed-wrap ed-sec ed-split ed-split--center">
+      <figure class="ed-shot">
+        <div class="ed-shot-frame">
+          <img src="/media/team-canvas.webp" alt={h.nocode.alt} width="730" height="598" loading="lazy" class="hp-shot-canvas" />
+        </div>
+        <figcaption>{h.nocode.caption}</figcaption>
+      </figure>
+      <div>
+        <p class="ed-eyebrow">{h.nocode.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{h.nocode.h2} <em>{h.nocode.h2_accent}</em></h2>
+        <ol class="ed-rows ed-rows--num">
+          {h.nocode.steps.map((step, i) => (
+            <li>
+              <span class="ed-rows-n" aria-hidden="true">{i + 1}</span>
+              <div>
+                <strong>{step.title}</strong>
+                <span>{step.body}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <a class="ed-link" href={local('/how-it-works')}>{h.nocode.link}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Ready-made teams -->
+  <section class="ed-wrap ed-sec ed-sec--tight-bottom" id="ready">
+    <header class="ed-sec-head ed-sec-head--row">
+      <div>
+        <p class="ed-eyebrow">{h.ready.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{h.ready.h2} <em>{h.ready.h2_accent}</em></h2>
+      </div>
+      <a class="ed-link" href="#cta">{h.ready.link}</a>
+    </header>
+    <ul class="hp-ready">
+      {h.ready.cards.map((card) => (
+        <li>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+          <div class="hp-ready-tags">
+            <span>{card.meta}</span>
+            <span class="hp-ready-soon">{h.ready.soon}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- 10. Pricing -->
+  <section class="ed-wrap ed-sec" id="pricing">
+    <header class="ed-sec-head ed-sec-head--row">
+      <div>
+        <p class="ed-eyebrow">{h.pricing.eyebrow}</p>
+        <h2 class="hp-price-title"><span class="ed-mark">{h.pricing.price}</span> <em>{h.pricing.rest}</em></h2>
+        <p class="ed-sec-sub">{h.pricing.sub}</p>
+      </div>
+      <a class="ed-link" href={local('/pricing')}>{h.pricing.link}</a>
+    </header>
+    <ul class="hp-tiers">
+      {h.pricing.tiers.map((tier: any) => (
+        <li class:list={['hp-tier', { 'hp-tier--featured': tier.featured }]}>
+          <h3>{tier.name}</h3>
+          <span class="hp-tier-badge">{tier.badge}</span>
+          <p>{tier.desc}</p>
+          {tier.external
+            ? <a class="hp-tier-cta" href={tier.href} target="_blank" rel="noopener noreferrer">{tier.cta}</a>
+            : <a class="hp-tier-cta" href={tier.href}>{tier.cta}</a>}
+        </li>
+      ))}
+    </ul>
+    <div class="hp-whitelabel">
+      <strong>{h.pricing.whitelabel}</strong>
+      <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io">{h.pricing.whitelabel_cta}</a>
+    </div>
+  </section>
+
+  <!-- 11. Final call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{h.cta.h2} <em>{h.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{h.cta.sub}</p>
+      <div class="ed-final-form">
+        <WaitlistForm lang={lang} tone="light" />
+      </div>
+      <p class="ed-final-fine">{h.cta.fine}</p>
+      <p class="hp-final-github">
+        <span>{h.cta.github_line}</span>
+        <a class="ed-link" href={t.site.install_href}>{t.site.install}</a>
+        <a class="ed-link" href={t.site.github_href} target="_blank" rel="noopener noreferrer">{t.site.github}</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+<script type="module" is:inline>
+// Hero: a team from the product, drawn live by the same canvas renderer as the Studio.
+import { AgentivityTeamCanvas, LIGHT_THEME } from '/agentivity-canvas-team.js';
+
+const member = (slotId, displayName) => ({ slotId, displayName, memberType: 'agent', memberEntityId: 'home-' + slotId });
+const TEAM = {
+  id: 'home-marketing-team',
+  name: 'Campaign Planning',
+  orchestratorId: 'manager-led',
+  entryPointMemberId: 'cmo',
+  managerAgentId: 'cmo',
+  connections: [],
+  version: 1,
+  members: [
+    member('cmo', 'CMO'),
+    member('copywriter', 'Copywriter'),
+    member('seo', 'SEO Specialist'),
+    member('social_media', 'Social Media Manager'),
+    member('brand_designer', 'Brand Designer'),
+    member('campaign_analyst', 'Campaign Analyst'),
+  ],
+};
+const asData = (team) => ({ id: team.id, kind: 'team', entryJson: JSON.stringify(team) });
+const FULL_TEAM = asData(TEAM);
+// On a narrow screen six nodes are too small to read: the manager and three specialists.
+const SMALL_TEAM = asData({ ...TEAM, members: TEAM.members.slice(0, 4) });
+
+function initHeroCanvas() {
+  const stage = document.getElementById('hero-stage');
+  const canvas = document.getElementById('hero-canvas');
+  if (!stage || !canvas) return;
+
+  const theme = { ...LIGHT_THEME, canvasBg: '#F1F3F8', gridColor: 'rgba(21,40,68,0.10)', accent: '#152844', text: '#101A2E', textDim: '#4E5A75' };
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let renderer = null;
+
+  function fit() {
+    const w = stage.clientWidth;
+    const h = stage.clientHeight;
+    // The renderer stops for good if it draws on an empty canvas, so it only starts once the stage has a size.
+    if (!w || !h) return;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    if (!renderer) {
+      renderer = new AgentivityTeamCanvas(canvas, { theme });
+      renderer.simulate = !still;
+    }
+    renderer.loadData(w > 760 ? FULL_TEAM : SMALL_TEAM);
+    // The default fit keeps an 80-pixel margin, which leaves the team tiny on a phone: keep about 20 CSS pixels instead.
+    // On wide screens the team cards overlap the bottom of the stage, so the graph is lifted a little.
+    const vp = renderer.viewport;
+    const cw = canvas.width, ch = canvas.height;
+    const margin = 20 * dpr;
+    const closer = Math.min((cw - 2 * margin) / Math.max(cw - 160, 1), (ch - 2 * margin) / Math.max(ch - 160, 1));
+    const zoom = vp.zoom * Math.max(1, Math.min(closer, 2.4));
+    const cx = (cw / 2 - vp.x) / vp.zoom, cy = (ch / 2 - vp.y) / vp.zoom;
+    const lift = w > 760 ? ch * 0.06 : 0;
+    renderer.setViewport(cw / 2 - cx * zoom, ch / 2 - cy * zoom - lift, zoom);
+  }
+
+  let pending = 0;
+  new ResizeObserver(() => { clearTimeout(pending); pending = setTimeout(fit, renderer ? 120 : 0); }).observe(stage);
+}
+
+if (document.readyState !== 'loading') initHeroCanvas();
+else document.addEventListener('DOMContentLoaded', initHeroCanvas);
+</script>
+
+<VideoAutoplay />
+
+</Base>
+
+<style>
+
+/* ---------- 1..hp-hero ---------- */
+.hp-hero { padding-top: clamp(48px, 7vw, 84px); }
+.hp-hero-copy { display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; padding-bottom: clamp(40px, 5vw, 56px); }
+.hp-hero-eyebrow { display: flex; align-items: center; gap: 10px; }
+.hp-hero-eyebrow svg { color: var(--ed-navy); flex: none; }
+.hp-hero h1 { font-family: var(--ed-serif); font-size: clamp(50px, 8.2vw, 124px); line-height: .96; letter-spacing: -.02em; text-wrap: balance; }
+.hp-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 33em; }
+.hp-hero-cta { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: center; }
+.hp-final-github { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 22px; margin-top: 10px; font-size: 16px; }
+.hp-final-github .ed-link { font-size: 16px; }
+
+.hp-hero-stage { position: relative; aspect-ratio: 21 / 9; border-radius: 24px; overflow: hidden; background: var(--ed-mist); border: 1px solid var(--ed-line); }
+.hp-hero-stage canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+
+.hp-hero-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 18px; margin-top: -54px; padding-inline: clamp(0px, 3vw, 40px); position: relative; }
+.hp-hero-teams li { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--ed-line); border-radius: 18px; padding: 16px; box-shadow: 0 20px 36px -24px rgba(16, 26, 46, .5); }
+.hp-hero-team-icon { flex: none; width: 56px; height: 56px; border-radius: 14px; background: var(--ed-navy); color: var(--ed-yellow); display: grid; place-items: center; }
+.hp-hero-team-icon svg { width: 26px; height: 26px; }
+.hp-hero-team-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hp-hero-team-text strong { font-weight: 700; font-size: 17px; }
+.hp-hero-team-text span { font-size: 14.5px; line-height: 1.4; color: var(--ed-ink-3); }
+
+/* ---------- 2..hp-values ---------- */
+.hp-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px 32px; padding-top: 64px; }
+.hp-values li { display: flex; flex-direction: column; gap: 4px; border-top: 2px solid var(--ed-ink); padding-top: 14px; }
+.hp-values strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.1; }
+.hp-values span { font-size: 15px; color: var(--ed-ink-3); }
+
+/* ---------- 3. why a team ---------- */
+.hp-versus { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 28px; }
+.hp-versus-card { display: flex; flex-direction: column; gap: 18px; border-radius: 24px; padding: clamp(24px, 3vw, 36px); background: var(--ed-mist); color: var(--ed-ink-2); }
+.hp-versus-icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: #fff; color: var(--ed-ink-3); }
+.hp-versus-icon svg { width: 24px; height: 24px; }
+.hp-versus-card h3 { font-family: var(--ed-sans); font-size: 22px; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; color: var(--ed-ink); }
+.hp-versus-card ul { display: flex; flex-direction: column; }
+.hp-versus-card li { padding-block: 13px; border-top: 1px solid var(--ed-line-2); }
+.hp-versus-card--team { background: var(--ed-navy); color: var(--ed-on-navy); }
+.hp-versus-card--team .hp-versus-icon { background: var(--ed-yellow); color: var(--ed-ink); }
+.hp-versus-card--team h3 { color: #fff; }
+.hp-versus-card--team li { border-top-color: var(--ed-navy-line); }
+
+.hp-organise { margin-top: clamp(56px, 7vw, 88px); display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 100px; }
+.hp-organise-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; }
+.hp-organise-title { font-family: var(--ed-serif); font-size: clamp(30px, 3.4vw, 46px); line-height: 1.05; }
+.hp-loops { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 28px; }
+.hp-loop { display: flex; flex-direction: column; border: 1px solid var(--ed-line); border-radius: 24px; overflow: hidden; background: #fff; }
+.hp-loop-media { padding: 20px; border-bottom: 1px solid var(--ed-line); display: flex; justify-content: center; }
+.hp-loop-media video { display: block; width: 100%; height: clamp(300px, 34vw, 440px); object-fit: contain; background: #fff; }
+.hp-loop figcaption { display: flex; flex-direction: column; gap: 6px; padding: 22px 24px 26px; color: var(--ed-ink-2); }
+.hp-loop figcaption strong { font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: var(--ed-ink); }
+.hp-loop-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+
+/* ---------- 4..hp-ladder ---------- */
+.hp-ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; align-items: stretch; }
+.hp-rung { display: flex; flex-direction: column; gap: 14px; background: #fff; border-radius: 24px; padding: 26px 24px 28px; color: var(--ed-ink-2); }
+.hp-rung-top { display: flex; align-items: center; gap: 12px; }
+.hp-rung-num { flex: none; width: 40px; height: 40px; border-radius: 999px; background: var(--ed-navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
+.hp-rung-tag { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.hp-rung h3 { font-family: var(--ed-serif); font-size: 34px; line-height: 1.05; color: var(--ed-ink); }
+.hp-rung-foot { margin-top: auto; border-top: 1px solid var(--ed-line); padding-top: 12px; }
+.hp-rung-foot strong { font-weight: 700; color: var(--ed-ink); }
+.hp-rung-foot span { color: var(--ed-ink-3); }
+.hp-rung--next { background: var(--ed-navy); color: var(--ed-on-navy); }
+.hp-rung--next .hp-rung-num { background: var(--ed-yellow); color: var(--ed-ink); }
+.hp-rung--next .hp-rung-tag { color: var(--ed-yellow); }
+.hp-rung--next h3 { color: #fff; }
+.hp-rung-foot--note { border-top-color: var(--ed-navy-line); font-size: 15.5px; }
+
+/* ---------- 5. hours ---------- */
+#hours { align-items: center; }
+.hp-hours-title { display: flex; flex-direction: column; gap: 10px; font-family: var(--ed-serif); letter-spacing: -.02em; margin-bottom: 18px; }
+.hp-hours-big { font-size: clamp(110px, 15vw, 210px); line-height: .92; }
+.hp-hours-big .ed-mark { background-image: linear-gradient(transparent 62%, var(--ed-yellow) 62%, var(--ed-yellow) 90%, transparent 90%); }
+.hp-hours-title em { font-size: clamp(36px, 4.4vw, 62px); line-height: 1.02; }
+.hp-hours-label { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink-3); padding-bottom: 12px; }
+.hp-hours-table li { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-block: 16px; border-top: 1px solid var(--ed-line); font-size: 19px; font-weight: 600; }
+.hp-hours-table li:first-child { border-top: 2px solid var(--ed-ink); }
+.hp-hours-n { flex: none; font-family: var(--ed-serif); font-weight: 400; font-size: 28px; white-space: nowrap; }
+.hp-hours-table .hp-hours-total { border-block: 2px solid var(--ed-ink); font-weight: 700; }
+.hp-hours-total .hp-hours-n { font-size: 34px; }
+.hp-hours-note { font-size: 15px; color: var(--ed-ink-3); padding-top: 14px; }
+
+/* ---------- 6. agentic.hp-apps ---------- */
+.hp-apps { display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px); }
+.hp-apps-head { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 24px 56px; align-items: end; }
+.hp-apps-head > div { display: flex; flex-direction: column; gap: 18px; }
+.hp-apps-eyebrow { color: var(--ed-yellow); }
+.hp-apps .ed-h2 em { color: var(--ed-yellow); }
+.hp-apps-sub { font-size: 20px; line-height: 1.5; color: var(--ed-on-navy); max-width: 30em; }
+.hp-apps-sub strong { display: block; margin-bottom: 6px; font-weight: 700; color: #fff; }
+.hp-clips { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 32px; }
+.hp-clip { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.hp-clip-media { border-radius: 20px; overflow: hidden; border: 1px solid var(--ed-navy-line); }
+/* The recordings carry a margin around the app: a slightly taller frame crops it. */
+.hp-clip-media video { display: block; width: 100%; height: auto; aspect-ratio: 15 / 14; object-fit: cover; }
+.hp-clip figcaption { display: flex; flex-direction: column; gap: 4px; color: var(--ed-on-navy-2); }
+.hp-clip figcaption strong { font-size: 21px; font-weight: 700; color: #fff; }
+.hp-clip-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-yellow); }
+.hp-apps-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px 40px; }
+.hp-apps-points li { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--ed-navy-line); padding-top: 18px; color: var(--ed-on-navy-2); }
+.hp-apps-points strong { font-size: 19px; font-weight: 700; color: #fff; }
+
+/* ---------- 7 and 8. product captures ---------- */
+
+.hp-shot-workflow { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 38% 50%; }
+.hp-shot-canvas { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+
+/* ---------- 9. ready-made teams ---------- */
+.hp-ready { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.hp-ready li { display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--ed-line); border-radius: 20px; padding: 24px; color: var(--ed-ink-2); }
+.hp-ready h3 { font-family: var(--ed-serif); font-size: 28px; line-height: 1.1; color: var(--ed-ink); }
+.hp-ready-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
+.hp-ready-tags span { padding: 5px 12px; border-radius: 999px; background: var(--ed-mist); font-size: 14px; font-weight: 600; color: var(--ed-ink); }
+.hp-ready-tags .hp-ready-soon { background: var(--ed-yellow); }
+
+/* ---------- 10. pricing ---------- */
+.hp-price-title { font-family: var(--ed-serif); font-size: clamp(72px, 11vw, 168px); line-height: .92; letter-spacing: -.02em; }
+.hp-price-title .ed-mark { background-image: linear-gradient(transparent 62%, var(--ed-yellow) 62%, var(--ed-yellow) 90%, transparent 90%); }
+.hp-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px; align-items: stretch; }
+.hp-tier { display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--ed-line-2); border-radius: 20px; padding: 24px 22px; }
+.hp-tier h3 { font-family: var(--ed-serif); font-size: 32px; line-height: 1.05; }
+.hp-tier-badge { align-self: flex-start; padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.hp-tier p { font-size: 16px; color: var(--ed-ink-2); }
+.hp-tier-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 600; border-bottom: 1.5px solid currentColor; }
+.hp-tier-cta:hover { opacity: .7; }
+.hp-tier--featured { background: var(--ed-navy); border-color: var(--ed-navy); color: #fff; }
+.hp-tier--featured .hp-tier-badge { background: var(--ed-yellow); color: var(--ed-ink); }
+.hp-tier--featured p { color: var(--ed-on-navy); }
+.hp-tier--featured .hp-tier-cta { color: var(--ed-yellow); font-weight: 700; }
+.hp-whitelabel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--ed-line); }
+.hp-whitelabel strong { font-size: 18px; font-weight: 700; }
+
+/* ---------- 11. final call ---------- */
+#cta { scroll-margin-top: 78px; }
+
+@media (max-width: 760px) {
+  .hp-hero-stage { aspect-ratio: 4 / 3; }
+  .hp-hero-teams { margin-top: 18px; padding-inline: 0; }
+  .hp-hero-teams li { box-shadow: none; }
+  .hp-values { padding-top: 40px; }
+  .hp-hours-table li { font-size: 17px; }
+  .hp-apps-sub { font-size: 18px; }
+}
+</style>

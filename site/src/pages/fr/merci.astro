@@ -1,16 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const lang = 'fr';
 ---
-<Base
+<Base look="editorial"
   title="Tu es sur la liste — Agentivity"
   description="Merci d'avoir rejoint la liste d'attente Agentivity. On t'écrira au lancement du cloud."
   lang="fr"
 >
-  <Nav lang={lang} />
+  <SiteHeader lang={lang} />
+<main class="ed-page ty-page">
 
   <section class="s-black ty-section">
     <div class="ty-glow" aria-hidden="true"></div>
@@ -77,134 +78,7 @@ const lang = 'fr';
     </div>
   </section>
 
-  <Footer lang={lang} />
+  </main>
+<SiteFooter lang={lang} />
 
 </Base>
-
-<style>
-.ty-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 0 100px;
-  position: relative;
-  overflow: hidden;
-}
-.ty-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 55% 55% at 50% 10%, rgba(0,200,150,.1) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(109,0,245,.08) 0%, transparent 60%);
-  pointer-events: none;
-}
-.ty-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Animated icon */
-.ty-icon {
-  margin-bottom: 28px;
-}
-.ty-ring-fill {
-  animation: ring-fill .9s cubic-bezier(.4,0,.2,1) .2s forwards;
-}
-.ty-check {
-  stroke-dasharray: 40;
-  stroke-dashoffset: 40;
-  animation: check-draw .4s ease .9s forwards;
-}
-@keyframes ring-fill {
-  to { stroke-dashoffset: 0; }
-}
-@keyframes check-draw {
-  to { stroke-dashoffset: 0; }
-}
-
-.ty-h1 {
-  font-size: clamp(40px, 7vw, 88px);
-  margin: 12px 0 20px;
-  color: #fff;
-}
-.ty-sub {
-  font-size: clamp(16px, 1.4vw, 18px);
-  color: rgba(255,255,255,.45);
-  line-height: 1.7;
-  max-width: 48ch;
-  margin-bottom: 36px;
-}
-.br-md { display: none; }
-@media (min-width: 640px) { .br-md { display: initial; } }
-
-.ty-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 56px;
-}
-
-.ty-divider {
-  width: 60px;
-  height: 1px;
-  background: rgba(255,255,255,.08);
-  margin-bottom: 40px;
-}
-
-.ty-while-wait {
-  max-width: 560px;
-  width: 100%;
-  text-align: left;
-}
-.ty-while-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.25);
-  margin-bottom: 16px;
-}
-.ty-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.ty-link {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  border-radius: var(--r-lg);
-  border: 1px solid rgba(255,255,255,.05);
-  background: rgba(255,255,255,.02);
-  text-decoration: none;
-  transition: background .15s, border-color .15s;
-}
-.ty-link:hover {
-  background: rgba(255,255,255,.05);
-  border-color: rgba(255,255,255,.1);
-}
-.ty-link-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-  width: 36px;
-  text-align: center;
-}
-.ty-link strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 2px;
-}
-.ty-link span span {
-  display: block;
-  font-size: 12px;
-  color: rgba(255,255,255,.35);
-}
-</style>

@@ -1,0 +1,315 @@
+---
+// The "How it works" page, shared by /how-it-works and /fr/how-it-works. Texts come from the "how_page" block of the translation files.
+// The page follows the order in which someone builds: an agent, a team, a workflow, then what the users get.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import GitHubIcon from './GitHubIcon.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.how_page;
+
+const clock = (seconds: number) => '0:' + String(Math.floor(seconds)).padStart(2, '0');
+const clips = ['studio-agent', 'studio-team', 'studio-workflow'];
+const steps = (p.steps as any[]).map((step, i) => ({ ...step, clip: clips[i] }));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: p.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} waitlistHref="#cta" />
+
+<main class="ed-page">
+
+  <!-- Hero: the sentence, then the Studio itself -->
+  <section class="ed-wrap hw-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="hw-hero-sub">{p.hero.sub}</p>
+    <div class="hw-hero-cta">
+      <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
+      <a class="ed-btn ed-btn--line" href="#cta">{t.nav.cta}</a>
+    </div>
+    <figure class="ed-shot hw-hero-shot">
+      <div class="ed-shot-frame ed-shot-frame--lift">
+        <img src="/media/studio-team-canvas.webp" alt={p.hero.alt} width="1800" height="977" />
+      </div>
+      <figcaption>{p.hero.caption}</figcaption>
+    </figure>
+  </section>
+
+  <!-- Steps 1 to 3: building, each with a recording of the Studio -->
+  {steps.map((step, i) => (
+    <section class:list={[{ 'ed-band--mist': i % 2 === 0 }]} id={'step-' + (i + 1)}>
+      <div class="ed-wrap ed-sec hw-step">
+        <header class="hw-step-head">
+          <span class="hw-step-n" aria-hidden="true">{i + 1}</span>
+          <div class="hw-step-intro">
+            <h2 class="ed-h2 ed-h2--md">{step.title}</h2>
+            <p class="ed-sec-sub">{step.lead}</p>
+          </div>
+          {step.points && (
+            <ul class="hw-points">
+              {step.points.map((point: string) => <li>{point}</li>)}
+            </ul>
+          )}
+          {step.ways && (
+            <div class="hw-ways">
+              <p class="hw-ways-title">{step.ways_title}</p>
+              <dl>
+                {step.ways.map((way: any) => (
+                  <div>
+                    <dt>{way.name}</dt>
+                    <dd>{way.body}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
+        </header>
+        <figure class="ed-shot">
+          <div class="ed-shot-frame ed-shot-frame--lift">
+            <video muted loop playsinline controls preload="none" poster={'/media/' + step.clip + '.jpg'} width="1418" height="770" aria-label={step.alt} data-autoplay>
+              <source src={'/media/' + step.clip + '.mp4'} type="video/mp4" />
+            </video>
+          </div>
+          <figcaption>{step.caption ? step.caption + ' ' + p.recorded : p.recorded}</figcaption>
+        </figure>
+      </div>
+    </section>
+  ))}
+
+  <!-- Step 4: the result, replayed -->
+  <section class="ed-band--navy" id="step-4">
+    <div class="ed-wrap ed-sec hw-step">
+      <header class="hw-step-head hw-step-head--result">
+        <span class="hw-step-n hw-step-n--yellow" aria-hidden="true">4</span>
+        <div class="hw-step-intro">
+          <h2 class="ed-h2 ed-h2--md">{p.result.title}</h2>
+          <p class="ed-sec-sub hw-on-navy"><strong class="hw-vibe">{t.site.vibeapp[1]}</strong> {p.result.lead}</p>
+        </div>
+      </header>
+      <div class="hw-replay">
+        <figure class="hw-replay-screen">
+          <div class="hw-replay-media">
+            <video id="hw-replay-video" muted loop playsinline controls preload="none" poster="/media/trip-planner.jpg" width="1024" height="768" aria-label={p.result.alt} data-autoplay>
+              <source src="/media/trip-planner.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption>{p.result.caption}</figcaption>
+        </figure>
+        <ol class="hw-chapters">
+          {p.result.chapters.map((chapter: any) => (
+            <li>
+              <button type="button" class:list={['hw-chapter', { 'hw-chapter--decision': chapter.decision }]} data-t={chapter.t}>
+                <span class="hw-chapter-time">{clock(chapter.t)}</span>
+                <span class="hw-chapter-text">
+                  <strong>{chapter.title}</strong>
+                  <span>{chapter.body}</span>
+                </span>
+                {chapter.decision && <span class="hw-chapter-badge">{p.result.decision}</span>}
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two ways to start -->
+  <section class="ed-wrap ed-sec" id="start">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.start.eyebrow}</p>
+      <h2 class="ed-h2">{p.start.h2} <em>{p.start.h2_accent}</em></h2>
+    </header>
+    <div class="hw-start">
+      <article class="hw-path hw-path--community">
+        <div class="hw-path-head">
+          <h3>{p.start.community.name}</h3>
+          <span class="hw-path-badge">{p.start.community.badge}</span>
+        </div>
+        <p>{p.start.community.body}</p>
+        <div class="hw-path-actions">
+          <a class="ed-btn ed-btn--sm ed-btn--yellow" href={t.site.install_href}>{p.start.community.install}</a>
+          <a class="hw-path-link" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} />{p.start.community.github}</a>
+        </div>
+      </article>
+      <article class="hw-path">
+        <div class="hw-path-head">
+          <h3>{p.start.cloud.name}</h3>
+          <span class="hw-path-badge">{p.start.cloud.badge}</span>
+        </div>
+        <p>{p.start.cloud.body}</p>
+        <div class="hw-path-actions">
+          <a class="ed-btn ed-btn--sm ed-btn--navy" href="#cta">{p.start.cloud.link}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="ed-band--mist" id="faq">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.faq.eyebrow}</p>
+        <h2 class="ed-h2">{p.faq.h2} <em>{p.faq.h2_accent}</em></h2>
+      </header>
+      <div class="hw-faq">
+        {p.faq.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <div class="ed-final-form">
+        <WaitlistForm lang={lang} tone="light" />
+      </div>
+      <p class="ed-final-fine">{p.cta.fine}</p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+<VideoAutoplay />
+
+<script is:inline>
+// Replay: a chapter jumps the recording to its moment, and the chapter being played is highlighted.
+(function () {
+  const video = document.getElementById('hw-replay-video');
+  const chapters = [...document.querySelectorAll('.hw-chapter')];
+  if (!video || !chapters.length) return;
+  const times = chapters.map((chapter) => Number(chapter.dataset.t));
+
+  function mark() {
+    let current = 0;
+    times.forEach((time, i) => { if (video.currentTime >= time - 0.05) current = i; });
+    chapters.forEach((chapter, i) => chapter.classList.toggle('is-current', i === current));
+  }
+
+  chapters.forEach((chapter, i) => {
+    chapter.addEventListener('click', () => {
+      const jump = () => { video.currentTime = times[i]; video.play().catch(() => {}); mark(); };
+      if (video.readyState >= 1) jump();
+      else { video.addEventListener('loadedmetadata', jump, { once: true }); video.load(); }
+    });
+  });
+  video.addEventListener('timeupdate', mark);
+  mark();
+})();
+</script>
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.hw-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 96px) clamp(56px, 7vw, 96px); }
+.hw-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.hw-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+.hw-hero-cta { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.hw-hero-shot { width: 100%; margin-top: 22px; text-align: left; }
+.hw-hero-shot img { display: block; width: 100%; height: auto; }
+
+/* ---------- the building steps ---------- */
+.hw-step { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); }
+.hw-step-head { display: grid; grid-template-columns: auto minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px clamp(20px, 3vw, 40px); align-items: start; }
+.hw-step-head--result { grid-template-columns: auto minmax(0, 1fr); }
+.hw-step-n { width: clamp(52px, 5vw, 72px); height: clamp(52px, 5vw, 72px); border-radius: 999px; background: var(--ed-navy); color: #fff; display: grid; place-items: center; font-family: var(--ed-serif); font-size: clamp(30px, 3vw, 42px); line-height: 1; }
+.hw-step-n--yellow { background: var(--ed-yellow); color: var(--ed-ink); }
+.hw-step-intro { display: flex; flex-direction: column; gap: 14px; }
+.hw-on-navy { color: var(--ed-on-navy); }
+.hw-vibe { display: block; margin-bottom: 6px; font-weight: 700; color: #fff; }
+
+.hw-points { display: flex; flex-direction: column; }
+.hw-points li { padding-block: 12px; border-top: 1px solid var(--ed-line-2); font-weight: 600; }
+.hw-points li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.hw-ways-title { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink-3); padding-bottom: 10px; }
+.hw-ways dl { display: flex; flex-direction: column; }
+.hw-ways dl > div { display: flex; flex-wrap: wrap; gap: 2px 10px; padding-block: 9px; border-top: 1px solid var(--ed-line-2); }
+.hw-ways dl > div:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.hw-ways dt { font-weight: 700; }
+.hw-ways dd { margin: 0; color: var(--ed-ink-2); }
+
+.hw-step video { display: block; width: 100%; height: auto; aspect-ratio: 1418 / 770; background: #F4F4F4; }
+
+/* ---------- step 4: the replay ---------- */
+.hw-replay { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 48px); align-items: start; }
+.hw-replay-screen { display: flex; flex-direction: column; gap: 12px; }
+.hw-replay-media { border-radius: 20px; overflow: hidden; background: #F3F1EC; border: 1px solid var(--ed-navy-line); }
+.hw-replay-media video { display: block; width: 100%; height: auto; aspect-ratio: 15 / 14; object-fit: cover; }
+.hw-replay-screen figcaption { font-size: 14.5px; color: var(--ed-on-navy-2); }
+.hw-chapters { display: flex; flex-direction: column; gap: 10px; }
+.hw-chapter {
+  width: 100%; display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; align-items: start; text-align: left;
+  padding: 15px 18px; border-radius: 16px; border: 1px solid var(--ed-navy-line); background: var(--ed-navy-2); color: var(--ed-on-navy-2);
+  font: inherit; cursor: pointer; transition: border-color .15s ease, background .15s ease;
+}
+.hw-chapter:hover { border-color: #fff; }
+.hw-chapter-time { font-family: var(--ed-serif); font-size: 24px; line-height: 1.15; color: #fff; min-width: 2.4em; }
+.hw-chapter-text { display: flex; flex-direction: column; gap: 2px; }
+.hw-chapter-text strong { font-size: 18px; font-weight: 700; color: #fff; }
+.hw-chapter-text span { font-size: 16px; }
+.hw-chapter-badge { grid-column: 2; justify-self: start; margin-top: 6px; padding: 3px 10px; border-radius: 999px; background: var(--ed-yellow); color: var(--ed-ink); font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.hw-chapter--decision { border-left: 5px solid var(--ed-yellow); }
+.hw-chapter.is-current { background: #fff; border-color: #fff; color: var(--ed-ink-2); }
+.hw-chapter.is-current .hw-chapter-time, .hw-chapter.is-current strong { color: var(--ed-ink); }
+.hw-chapter--decision.is-current { border-left-color: var(--ed-yellow); }
+
+/* ---------- two ways to start ---------- */
+.hw-start { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px; align-items: stretch; }
+.hw-path { display: flex; flex-direction: column; gap: 16px; border: 1px solid var(--ed-line-2); border-radius: 28px; padding: clamp(24px, 3.2vw, 40px); color: var(--ed-ink-2); min-width: 0; }
+.hw-path-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.hw-path h3 { font-family: var(--ed-serif); font-size: clamp(34px, 3.4vw, 46px); line-height: 1; color: var(--ed-ink); }
+.hw-path-badge { padding: 4px 12px; border-radius: 999px; background: var(--ed-mist); color: var(--ed-ink); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.hw-path-actions { margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.hw-path-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.hw-path-link:hover { opacity: .7; }
+.hw-path--community { background: var(--ed-navy); border-color: var(--ed-navy); color: var(--ed-on-navy); }
+.hw-path--community h3 { color: #fff; }
+.hw-path--community .hw-path-badge { background: var(--ed-yellow); }
+.hw-path--community .hw-path-link { color: #fff; }
+
+/* ---------- questions ---------- */
+.hw-faq { max-width: 900px; border-top: 2px solid var(--ed-ink); }
+.hw-faq details { border-bottom: 1px solid var(--ed-line-2); }
+.hw-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+.hw-faq summary::-webkit-details-marker { display: none; }
+.hw-faq summary::after { content: "+"; flex: none; font-family: var(--ed-serif); font-size: 34px; line-height: 1; font-weight: 400; }
+.hw-faq details[open] summary::after { content: "–"; }
+.hw-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
+
+#cta, #start, #step-1, #step-2, #step-3, #step-4 { scroll-margin-top: 78px; }
+
+@media (max-width: 900px) {
+  .hw-step-head { grid-template-columns: auto minmax(0, 1fr); }
+  .hw-points, .hw-ways { grid-column: 1 / -1; }
+  .hw-replay { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .hw-faq summary { font-size: 19px; }
+}
+</style>
