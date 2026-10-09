@@ -1,5 +1,7 @@
 ---
 import '../styles/main.css';
+import '../styles/editorial.css';
+import '../styles/legacy-pages.css';
 
 export interface Props {
   title: string;
@@ -8,6 +10,8 @@ export interface Props {
   ogImage?: string;
   schema?: object | object[];
   noindex?: boolean;
+  /** 'editorial' = navy, yellow and serif display (new pages); 'classic' = the first design. */
+  look?: 'classic' | 'editorial';
 }
 
 const {
@@ -17,7 +21,12 @@ const {
   ogImage = '/og-default.png',
   schema,
   noindex = false,
+  look = 'classic',
 } = Astro.props;
+
+const fontsHref = look === 'editorial'
+  ? 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap'
+  : 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap';
 
 const canonicalURL  = new URL(Astro.url.pathname, Astro.site);
 const schemaJson    = schema ? JSON.stringify(schema) : null;
@@ -77,9 +86,9 @@ const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
   <!-- Fonts — preconnect first, then stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
+  <link rel="preload" as="style" href={fontsHref} />
+  <link rel="stylesheet" href={fontsHref} media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href={fontsHref} /></noscript>
 
   <!-- Schema.org -->
   {schemaJson && <Fragment set:html={"<script type='application/ld+json'>" + schemaJson + "</script>"} />}
@@ -96,7 +105,7 @@ window.__gtmId='${GTM_ID}';
 </script>`} />
   )}
 </head>
-<body>
+<body class={look === 'editorial' ? 'ed' : undefined}>
 
   <!-- GTM noscript fallback -->
   {GTM_ID && (

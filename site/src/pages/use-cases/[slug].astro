@@ -1,0 +1,10 @@
+---
+import UseCasePage from '../../components/UseCasePage.astro';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return useTranslations('en').use_cases_page.cases.map((item) => ({ params: { slug: item.slug } }));
+}
+const { slug } = Astro.params;
+---
+<UseCasePage lang="en" slug={slug} />

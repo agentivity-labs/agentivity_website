@@ -1,11 +1,11 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import Nav from '../../../components/Nav.astro';
-import Footer from '../../../components/Footer.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 const lang = 'fr';
 ---
-<Base title="Conditions générales d'utilisation — Agentivity" description="Conditions générales d'utilisation d'Agentivity — vos droits et obligations en tant qu'utilisateur de la plateforme.">
-<Nav lang={lang} />
+<Base look="editorial" title="Conditions générales d'utilisation — Agentivity" description="Conditions générales d'utilisation d'Agentivity — vos droits et obligations en tant qu'utilisateur de la plateforme.">
+<SiteHeader lang={lang} />
 <div class="legal-page">
 <div class="legal-layout">
   <aside class="legal-sidebar">
@@ -23,7 +23,7 @@ const lang = 'fr';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Légal</span>
       <h1>Conditions générales d'utilisation</h1>
-      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : juin 2026</span></div>
+      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : octobre 2026</span></div>
     </header>
 
     <div class="legal-section">
@@ -32,7 +32,8 @@ const lang = 'fr';
 
     <div class="legal-section">
       <h2>1. Acceptation des conditions</h2>
-      <p>En accédant ou en utilisant le site web, le logiciel open source ou le service cloud hébergé d'Agentivity (collectivement, la "<strong>Plateforme</strong>"), vous confirmez avoir lu, compris et accepté d'être lié par ces Conditions générales d'utilisation ("<strong>CGU</strong>") et par tous les documents qui y sont référencés, y compris notre <a href="/fr/legal/privacy">Politique de confidentialité</a>, notre <a href="/fr/legal/disclaimer">Disclaimer</a> et notre <a href="/fr/legal/ai-policy">Politique IA &amp; Automatisation</a>.</p>
+      <p>Ces CGU constituent un accord entre vous et SMART PIXEL BV, société enregistrée en Belgique sous le numéro d'entreprise BE 0731.739.690, désignée dans ces CGU par "<strong>Agentivity</strong>" ou "nous".</p>
+      <p>En accédant ou en utilisant le site web, le logiciel auto-hébergé ou le service cloud hébergé d'Agentivity (collectivement, la "<strong>Plateforme</strong>"), vous confirmez avoir lu, compris et accepté d'être lié par ces Conditions générales d'utilisation ("<strong>CGU</strong>") et par tous les documents qui y sont référencés, y compris notre <a href="/fr/legal/privacy">Politique de confidentialité</a>, notre <a href="/fr/legal/disclaimer">Disclaimer</a> et notre <a href="/fr/legal/ai-policy">Politique IA &amp; Automatisation</a>.</p>
       <p>Si vous utilisez la Plateforme au nom d'une organisation, vous déclarez avoir l'autorité pour engager cette organisation envers ces CGU. Dans ce cas, "vous" désigne à la fois vous personnellement et l'organisation.</p>
       <p>Si vous n'acceptez pas ces CGU, vous devez immédiatement cesser toute utilisation de la Plateforme.</p>
     </div>
@@ -57,13 +58,13 @@ const lang = 'fr';
         <li><strong>Team Studio</strong> — un canvas visuel pour composer des équipes d'agents et définir des topologies de collaboration.</li>
         <li><strong>Workflow Studio</strong> — pour construire des workflows déterministes, séquentiels et automatisés.</li>
       </ul>
-      <p>La Plateforme est disponible en version <strong>open source auto-hébergée</strong> (sous licence Agentivity Sustainable Use) et en version <strong>cloud hébergée</strong> (service géré par Agentivity, disponible prochainement).</p>
+      <p>La Plateforme est disponible en version <strong>auto-hébergée</strong> (code source disponible sous Elastic License 2.0) et en version <strong>cloud hébergée</strong> (service géré par Agentivity, disponible prochainement).</p>
     </div>
 
     <div class="legal-section">
       <h2>5. Licence d'utilisation</h2>
       <p>Sous réserve du respect de ces CGU, Agentivity vous accorde une licence limitée, non exclusive, non transférable et révocable pour accéder à la Plateforme et l'utiliser à des fins personnelles ou professionnelles internes.</p>
-      <p>La version open source est régie par la <a href="https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md" target="_blank" rel="noopener noreferrer">Licence Sustainable Use d'Agentivity</a>. Toute utilisation commerciale au-delà du périmètre de cette licence nécessite un accord écrit séparé avec Agentivity.</p>
+      <p>La version auto-hébergée est régie par l'<a href="https://www.elastic.co/licensing/elastic-license" target="_blank" rel="noopener noreferrer">Elastic License 2.0</a>. Toute utilisation commerciale au-delà du périmètre de cette licence nécessite un accord écrit séparé avec Agentivity.</p>
     </div>
 
     <div class="legal-section">
@@ -123,7 +124,7 @@ const lang = 'fr';
 
     <div class="legal-section">
       <h2>12. Tarification et paiement</h2>
-      <p>La version open source auto-hébergée est gratuite, sous réserve des termes de la Licence Sustainable Use. Le service cloud hébergé (lorsqu'il sera disponible commercialement) sera proposé sous forme d'abonnements payants. Les frais sont non remboursables sauf obligation légale contraire. Nous nous réservons le droit de modifier les tarifs avec un préavis d'au moins 30 jours pour les abonnés existants.</p>
+      <p>La version auto-hébergée est gratuite, sous réserve des termes de l'Elastic License 2.0. Le service cloud hébergé (lorsqu'il sera disponible commercialement) sera proposé sous forme d'abonnements payants. Les frais sont non remboursables sauf obligation légale contraire. Nous nous réservons le droit de modifier les tarifs avec un préavis d'au moins 30 jours pour les abonnés existants.</p>
     </div>
 
     <div class="legal-section">
@@ -169,10 +170,10 @@ const lang = 'fr';
 
     <div class="legal-section">
       <h2>21. Contact</h2>
-      <p>Pour toute question relative à ces CGU :<br/><strong>Agentivity</strong><br/>E-mail : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+      <p>Pour toute question relative à ces CGU :<br/><strong>SMART PIXEL BV</strong> (Agentivity)<br/>Numéro d'entreprise : BE 0731.739.690<br/>Siège social : Wasseiges, Belgique<br/>E-mail : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
     </div>
   </main>
 </div>
 </div>
-<Footer lang={lang} />
+<SiteFooter lang={lang} />
 </Base>

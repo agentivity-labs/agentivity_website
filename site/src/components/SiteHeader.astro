@@ -1,0 +1,148 @@
+---
+// Header of the pages in the editorial look. Pages still on the first design use Nav.astro.
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import GitHubIcon from './GitHubIcon.astro';
+
+interface Props {
+  lang: Lang;
+  /** Where the waitlist button goes. Defaults to the form at the bottom of the home page. */
+  waitlistHref?: string;
+  /** Replaces the label of that button, for a page whose main action is not the waitlist. */
+  ctaLabel?: string;
+}
+const { lang, waitlistHref, ctaLabel } = Astro.props;
+const t = useTranslations(lang);
+const home = lang === 'fr' ? '/fr/' : '/';
+const cta = waitlistHref ?? home + '#cta';
+const ctaText = ctaLabel ?? t.nav.cta;
+const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
+const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
+---
+
+<header class="sh">
+  <div class="ed-wrap sh-inner">
+    <a class="sh-brand" href={home} aria-label="Agentivity">
+      <img src="/agentivity-wordmark-navy.svg" alt="Agentivity" width="108" height="30" />
+    </a>
+
+    <nav class="sh-links" aria-label={navLabel}>
+      {t.nav.links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <div class="sh-actions">
+      <a class="sh-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} />{t.site.github}</a>
+      <a class="ed-btn ed-btn--sm ed-btn--navy" href={cta}>{ctaText}</a>
+      <div class="sh-lang" role="group" aria-label="Language">
+        <a href="/" class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+        <a href="/fr/" class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+      </div>
+      <button class="sh-burger" type="button" aria-label={menuLabel} aria-expanded="false" aria-controls="sh-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="sh-menu" id="sh-menu">
+    <nav aria-label={navLabel}>
+      {t.nav.links.map((link) => <a href={link.href}>{link.label}</a>)}
+      <a href={t.site.install_href}>{t.site.install}</a>
+      <a href={t.site.github_href} target="_blank" rel="noopener noreferrer">{t.site.github}</a>
+    </nav>
+    <a class="ed-btn ed-btn--navy sh-menu-cta" href={cta}>{ctaText}</a>
+    <div class="sh-lang" role="group" aria-label="Language">
+      <a href="/" class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+      <a href="/fr/" class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('.sh') as HTMLElement | null;
+  const burger = header?.querySelector('.sh-burger') as HTMLButtonElement | null;
+
+  if (header && burger) {
+    const close = () => { header.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); };
+    burger.addEventListener('click', () => {
+      const open = header.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    header.querySelectorAll('.sh-menu a').forEach((a) => a.addEventListener('click', close));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+</script>
+
+<style>
+.sh {
+  position: sticky; top: 0; z-index: 80;
+  background: rgba(255, 255, 255, .92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ed-line);
+}
+.sh-inner { display: flex; align-items: center; gap: 36px; min-height: 78px; }
+.sh-brand { display: flex; align-items: center; flex: none; }
+.sh-brand img { height: 30px; width: auto; display: block; }
+
+.sh-links { display: flex; gap: 28px; font-size: 15.5px; font-weight: 500; color: var(--ed-ink-2); }
+.sh-links a { white-space: nowrap; transition: color .15s ease; }
+.sh-links a:hover { color: var(--ed-ink); }
+
+.sh-actions { display: flex; align-items: center; gap: 20px; margin-left: auto; }
+.sh-github {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px;
+  border: 1.5px solid var(--ed-line-2); font-size: 15.5px; font-weight: 600; white-space: nowrap;
+  transition: border-color .15s ease;
+}
+.sh-github:hover { border-color: var(--ed-ink); }
+
+.sh-lang { display: flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--ed-mist); flex: none; }
+.sh-lang a {
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--ed-ink-3);
+  padding: 5px 9px; border-radius: 6px;
+}
+.sh-lang a:hover { color: var(--ed-ink); }
+.sh-lang a.active { background: #fff; color: var(--ed-ink); box-shadow: 0 1px 2px rgba(16, 26, 46, .14); }
+
+.sh-burger {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 44px; height: 44px; padding: 0 11px; margin-right: -11px;
+  background: none; border: 0; cursor: pointer; flex: none;
+}
+.sh-burger span { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--ed-ink); transition: transform .2s, opacity .2s; }
+.sh.is-open .sh-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.sh.is-open .sh-burger span:nth-child(2) { opacity: 0; }
+.sh.is-open .sh-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.sh-menu {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  background: #fff; border-bottom: 1px solid var(--ed-line);
+  padding: 6px var(--ed-pad) 22px; box-shadow: 0 24px 40px -28px rgba(16, 26, 46, .45);
+}
+.sh.is-open .sh-menu { display: block; }
+.sh-menu nav a {
+  display: block; padding: 14px 0; font-size: 17px; font-weight: 500; color: var(--ed-ink);
+  border-bottom: 1px solid var(--ed-line);
+}
+.sh-menu-cta { display: none; margin-top: 20px; width: 100%; }
+.sh-menu .sh-lang { margin-top: 18px; width: max-content; }
+
+/* The French labels are longer: tighten first, then fold the links into the menu. */
+@media (max-width: 1280px) {
+  .sh-inner { gap: 22px; }
+  .sh-links { gap: 18px; }
+  .sh-actions { gap: 14px; }
+}
+@media (max-width: 1260px) {
+  .sh-links, .sh-github, .sh-actions > .sh-lang { display: none; }
+  .sh-burger { display: flex; }
+}
+@media (min-width: 1261px) {
+  .sh-menu { display: none !important; }
+}
+/* On a phone the waitlist button moves into the menu: the French label does not fit beside the logo. */
+@media (max-width: 560px) {
+  .sh-inner { min-height: 68px; }
+  .sh-brand img { height: 26px; }
+  .sh-actions > .ed-btn { display: none; }
+  .sh-menu-cta { display: inline-flex; }
+}
+</style>

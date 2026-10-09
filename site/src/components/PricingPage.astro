@@ -1,0 +1,263 @@
+---
+// Pricing, shared by /pricing and /fr/pricing. Texts come from the "pricing_page" block of the translation files.
+// No price is shown for the hosted plans: they are not decided yet.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import GitHubIcon from './GitHubIcon.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.pricing_page;
+const home = lang === 'fr' ? '/fr/' : '/';
+const community = p.editions.community;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: 'Agentivity ' + community.name,
+    price: '0',
+    priceCurrency: 'EUR',
+    description: community.desc,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: p.faq.items.map((item: any) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  },
+];
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} waitlistHref="#waitlist" />
+
+<main class="ed-page">
+
+  <section class="ed-wrap pr-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1><span class="ed-mark">{p.hero.price}</span> <em>{p.hero.rest}</em></h1>
+    <p class="pr-hero-sub">{p.hero.sub}</p>
+    <div class="pr-actions">
+      <a class="ed-btn ed-btn--navy" href="#waitlist">{p.hero.primary}</a>
+      <a class="ed-btn ed-btn--line" href={t.site.install_href}>{p.hero.secondary}</a>
+    </div>
+  </section>
+
+  <!-- Editions: the one you can have today first, then the ones to come -->
+  <section class="ed-band--mist" id="editions">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.editions.eyebrow}</p>
+        <h2 class="ed-h2">{p.editions.h2} <em>{p.editions.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{p.editions.sub}</p>
+      </header>
+
+      <article class="pr-community">
+        <div class="pr-community-main">
+          <span class="pr-status pr-status--live">{community.status}</span>
+          <h3>{community.name}</h3>
+          <p class="pr-price"><strong>{community.price}</strong> <span>{community.price_note}</span></p>
+          <p class="pr-for"><span>{p.editions.for_label}</span> {community.for}</p>
+          <p class="pr-desc">{community.desc}</p>
+          <div class="pr-actions pr-actions--start">
+            <a class="ed-btn ed-btn--yellow" href={t.site.install_href}>{community.cta}</a>
+            <a class="pr-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{community.github}</a>
+          </div>
+        </div>
+        <ul class="pr-community-points">
+          {community.points.map((point: string) => <li>{point}</li>)}
+        </ul>
+      </article>
+
+      <ul class="pr-plans">
+        {p.editions.plans.map((plan: any) => (
+          <li class="pr-plan">
+            <span class="pr-status">{plan.status}</span>
+            <h3>{plan.name}</h3>
+            <p class="pr-plan-price">{plan.price}</p>
+            <p class="pr-for"><span>{p.editions.for_label}</span> {plan.for}</p>
+            <p class="pr-desc">{plan.desc}</p>
+            <a class="pr-plan-cta" href={plan.href}>{plan.cta}</a>
+          </li>
+        ))}
+      </ul>
+      <p class="pr-cloud-note">{p.editions.cloud_note}</p>
+    </div>
+  </section>
+
+  <!-- What you actually pay -->
+  <section class="ed-wrap ed-sec" id="costs">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.costs.eyebrow}</p>
+      <h2 class="ed-h2">{p.costs.h2} <em>{p.costs.h2_accent}</em></h2>
+    </header>
+    <ol class="pr-costs">
+      {p.costs.items.map((item: any, i: number) => (
+        <li>
+          <span class="pr-costs-n" aria-hidden="true">{i + 1}</span>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- The figure a price is compared with -->
+  <section class="ed-band--navy" id="hours">
+    <div class="ed-wrap ed-sec pr-hours">
+      <h2><span class="pr-hours-big">{p.hours.big}</span> <em>{p.hours.h2}</em></h2>
+      <div class="pr-hours-side">
+        <p>{p.hours.sub}</p>
+        <a class="pr-hours-link" href={home + '#hours'}>{p.hours.link}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Licence -->
+  <section class="ed-wrap ed-sec pr-licence" id="licence">
+    <div class="pr-licence-head">
+      <p class="ed-eyebrow">{p.licence.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{p.licence.h2} <em>{p.licence.h2_accent}</em></h2>
+    </div>
+    <div class="pr-licence-body">
+      <p>{p.licence.body}</p>
+      <a class="ed-link" href={p.licence.href} target="_blank" rel="noopener noreferrer">{p.licence.link}</a>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="ed-band--mist" id="faq">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.faq.eyebrow}</p>
+        <h2 class="ed-h2">{p.faq.h2} <em>{p.faq.h2_accent}</em></h2>
+      </header>
+      <div class="pr-faq">
+        {p.faq.items.map((item: any) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a} {item.link && <a href={item.href}>{item.link}</a>}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="ed-band--yellow" id="waitlist">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <div class="ed-final-form">
+        <WaitlistForm lang={lang} tone="light" />
+      </div>
+      <p class="ed-final-fine">{p.cta.fine}</p>
+      <p class="pr-final-github">
+        <span>{p.cta.github_line}</span>
+        <a class="ed-link" href={t.site.install_href}>{t.site.install}</a>
+        <a class="ed-link" href={t.site.github_href} target="_blank" rel="noopener noreferrer">{t.site.github}</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.pr-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(56px, 7vw, 88px); }
+.pr-hero h1 { font-family: var(--ed-serif); font-size: clamp(84px, 14vw, 208px); line-height: .92; letter-spacing: -.02em; }
+.pr-hero h1 .ed-mark { background-image: linear-gradient(transparent 62%, var(--ed-yellow) 62%, var(--ed-yellow) 90%, transparent 90%); }
+.pr-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+.pr-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.pr-actions--start { justify-content: flex-start; margin-top: 8px; }
+
+/* ---------- editions ---------- */
+.pr-status { align-self: flex-start; padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.pr-status--live { background: var(--ed-yellow); }
+.pr-for { font-size: 16px; font-weight: 600; }
+.pr-for span { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; margin-right: 4px; }
+.pr-desc { font-size: 16.5px; }
+
+.pr-community { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; background: var(--ed-navy); color: #fff; border-radius: 28px; padding: clamp(28px, 4vw, 52px); }
+.pr-community-main { display: flex; flex-direction: column; gap: 14px; }
+.pr-community h3 { font-family: var(--ed-serif); font-size: clamp(44px, 5vw, 68px); line-height: 1; }
+.pr-price { display: flex; align-items: baseline; gap: 12px; }
+.pr-price strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(56px, 6.4vw, 88px); line-height: .95; color: var(--ed-yellow); }
+.pr-price span { font-size: 18px; color: var(--ed-on-navy); }
+.pr-community .pr-for span { color: var(--ed-yellow); }
+.pr-community .pr-desc { font-size: 18px; color: var(--ed-on-navy); max-width: 30em; }
+.pr-github { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #fff; border-bottom: 1.5px solid currentColor; }
+.pr-github :global(svg) { width: 18px; height: 18px; }
+.pr-github:hover { opacity: .75; }
+.pr-community-points li { padding-block: 16px; border-top: 1px solid var(--ed-navy-line); font-size: 17px; font-weight: 600; }
+.pr-community-points li:last-child { border-bottom: 1px solid var(--ed-navy-line); }
+
+.pr-plans { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.pr-plan { display: flex; flex-direction: column; gap: 12px; background: #fff; border-radius: 24px; padding: 26px 24px; color: var(--ed-ink-2); }
+.pr-plan h3 { font-family: var(--ed-serif); font-size: 36px; line-height: 1.05; color: var(--ed-ink); }
+.pr-plan-price { font-family: var(--ed-serif); font-style: italic; font-size: 22px; line-height: 1.1; color: var(--ed-ink); padding-bottom: 12px; border-bottom: 1px solid var(--ed-line-2); }
+.pr-plan .pr-for { color: var(--ed-ink); }
+.pr-plan .pr-for span { color: var(--ed-ink-3); }
+.pr-plan-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+.pr-plan-cta:hover { opacity: .7; }
+.pr-cloud-note { margin-top: 20px; padding: 18px 22px; border-radius: 16px; background: #fff; font-size: 17px; font-weight: 600; color: var(--ed-ink); }
+
+/* ---------- what you pay ---------- */
+.pr-costs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3.5vw, 48px); }
+.pr-costs li { display: flex; flex-direction: column; gap: 12px; padding-top: 20px; border-top: 2px solid var(--ed-ink); color: var(--ed-ink-2); font-size: 17.5px; }
+.pr-costs-n { font-family: var(--ed-serif); font-size: 44px; line-height: 1; color: var(--ed-ink); }
+.pr-costs h3 { font-family: var(--ed-serif); font-size: clamp(28px, 2.8vw, 36px); line-height: 1.05; color: var(--ed-ink); }
+
+/* ---------- hours ---------- */
+.pr-hours { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.pr-hours h2 { display: flex; flex-direction: column; gap: 8px; font-family: var(--ed-serif); letter-spacing: -.02em; }
+.pr-hours-big { font-size: clamp(110px, 15vw, 210px); line-height: .9; color: var(--ed-yellow); }
+.pr-hours h2 em { font-size: clamp(34px, 4.2vw, 58px); line-height: 1.02; }
+.pr-hours-side { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-on-navy); }
+.pr-hours-link { font-size: 17px; font-weight: 700; color: var(--ed-yellow); border-bottom: 1.5px solid currentColor; }
+.pr-hours-link:hover { opacity: .8; }
+
+/* ---------- licence ---------- */
+.pr-licence { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.pr-licence-head { display: flex; flex-direction: column; gap: 18px; }
+.pr-licence-body { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 20px; border-top: 2px solid var(--ed-ink); font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); }
+
+/* ---------- questions ---------- */
+.pr-faq { max-width: 900px; border-top: 2px solid var(--ed-ink); }
+.pr-faq details { border-bottom: 1px solid var(--ed-line-2); }
+.pr-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+.pr-faq summary::-webkit-details-marker { display: none; }
+.pr-faq summary::after { content: "+"; flex: none; font-family: var(--ed-serif); font-size: 34px; line-height: 1; font-weight: 400; }
+.pr-faq details[open] summary::after { content: "–"; }
+.pr-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
+.pr-faq details a { font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; white-space: nowrap; }
+
+/* ---------- final call ---------- */
+.pr-final-github { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 22px; margin-top: 10px; font-size: 16px; }
+.pr-final-github .ed-link { font-size: 16px; }
+
+@media (max-width: 1080px) {
+  .pr-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .pr-community, .pr-hours, .pr-licence { grid-template-columns: minmax(0, 1fr); }
+  .pr-costs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .pr-plans { grid-template-columns: minmax(0, 1fr); }
+  .pr-faq summary { font-size: 19px; }
+}
+</style>

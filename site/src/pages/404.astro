@@ -1,86 +1,48 @@
 ---
+// Page not found. A static site has one 404 page for both languages, so it stays in English.
 import Base from '../layouts/Base.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const lang = 'en';
+const links = [
+  { label: 'Use cases', href: '/use-cases' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Services', href: '/services' },
+];
 ---
-<Base
-  title="404 — Page not found | Agentivity"
-  description="This page doesn't exist. Maybe it moved, maybe it never existed."
-  noindex={true}
->
-  <Nav lang={lang} />
+<Base title="Page not found | Agentivity" description="This page does not exist, or it has moved." lang={lang} noindex={true} look="editorial">
 
-  <section class="s-black e404-section">
-    <div class="e404-bg" aria-hidden="true"></div>
-    <div class="wrap e404-inner">
+<SiteHeader lang={lang} />
 
-      <div class="e404-code" aria-hidden="true">404</div>
-      <span class="eyebrow" style="color:var(--red)">Page not found</span>
-      <h1 class="h1 e404-h1">This agent<br />got lost.</h1>
-      <p class="e404-sub">
-        The page you're looking for doesn't exist — or it moved.<br class="br-md" />
-        Let's get you back on track.
-      </p>
-
-      <div class="e404-links">
-        <a href="/" class="btn btn-primary lg">Back to home</a>
-        <a href="/how-it-works" class="btn btn-ghost">How it works →</a>
-      </div>
-
-      <div class="e404-nav">
-        <a href="/use-cases" class="e404-link">Use cases</a>
-        <span class="e404-dot" aria-hidden="true">·</span>
-        <a href="/pricing" class="e404-link">Pricing</a>
-        <span class="e404-dot" aria-hidden="true">·</span>
-        <a href="/services" class="e404-link">Services</a>
-        <span class="e404-dot" aria-hidden="true">·</span>
-        <a href="/docs" class="e404-link">Docs</a>
-      </div>
-
+<main class="ed-page">
+  <section class="ed-wrap nf">
+    <p class="nf-code" aria-hidden="true">404</p>
+    <p class="ed-eyebrow">Page not found</p>
+    <h1>This page <em class="ed-mark">got lost.</em></h1>
+    <p class="nf-sub">It does not exist, or it has moved. Here is the way back.</p>
+    <div class="nf-actions">
+      <a class="ed-btn ed-btn--navy" href="/">Back to home</a>
+      <a class="ed-btn ed-btn--line" href="/how-it-works">See how it works</a>
     </div>
+    <ul class="nf-links">
+      {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+    </ul>
   </section>
+</main>
 
-  <Footer lang={lang} />
+<SiteFooter lang={lang} />
+
 </Base>
 
 <style>
-.e404-section {
-  min-height: 100vh; display: flex; align-items: center;
-  padding: 80px 0 100px; position: relative; overflow: hidden;
-}
-.e404-bg {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 55% 55% at 50% 40%, rgba(255,10,48,.07) 0%, transparent 65%);
-}
-.e404-inner {
-  position: relative; z-index: 1;
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-}
-.e404-code {
-  font-size: clamp(120px, 20vw, 220px);
-  font-weight: 900;
-  letter-spacing: -.08em;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,10,48,.15);
-  margin-bottom: -20px;
-  user-select: none;
-}
-.e404-h1 { font-size: clamp(40px, 7vw, 80px); margin: 16px 0 20px; color: #fff; }
-.e404-sub {
-  font-size: clamp(15px, 1.3vw, 17px);
-  color: rgba(255,255,255,.4);
-  line-height: 1.75;
-  max-width: 44ch;
-  margin-bottom: 40px;
-}
-.br-md { display: none; }
-@media (min-width: 640px) { .br-md { display: initial; } }
-.e404-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
-.e404-nav { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
-.e404-link { font-size: 13px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; transition: color .15s; }
-.e404-link:hover { color: rgba(255,255,255,.6); }
-.e404-dot { color: rgba(255,255,255,.15); }
+.nf { display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; padding-block: clamp(56px, 8vw, 112px) clamp(72px, 9vw, 128px); }
+.nf-code { font-family: var(--ed-serif); font-size: clamp(120px, 20vw, 260px); line-height: .85; color: var(--ed-mist); -webkit-text-stroke: 2px var(--ed-ink); }
+.nf h1 { font-family: var(--ed-serif); font-size: clamp(42px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; }
+.nf-sub { font-size: clamp(18px, 1.6vw, 21px); color: var(--ed-ink-2); }
+.nf-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; justify-content: center; margin-top: 6px; }
+.nf-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; margin-top: 14px; }
+.nf-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 16.5px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+.nf-links a:hover { opacity: .7; }
 </style>

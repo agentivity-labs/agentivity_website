@@ -1,0 +1,177 @@
+---
+// One use case explained, shared by /use-cases/<slug> and /fr/use-cases/<slug>.
+// The cases are the "cases" list of the "use_cases_page" block: adding one there adds a card on the main page and a page here.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; slug: string; }
+const { lang, slug } = Astro.props;
+const t = useTranslations(lang);
+const p = t.use_cases_page;
+const l = p.labels;
+const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+const item: any = p.cases.find((entry: any) => entry.slug === slug);
+const others = p.cases.filter((entry: any) => entry.slug !== slug);
+---
+<Base title={item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} lang={lang} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="ed-page">
+
+  <section class="ed-wrap ux-hero">
+    <a class="ux-back" href={local('/use-cases')}>{l.back}</a>
+    <p class="ux-tags"><span class="ux-tag ux-tag--mode">{item.tag}</span><span class="ux-tag">{item.size}</span><span class="ux-name">{item.title}</span></p>
+    <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
+    <p class="ux-lead">{item.lead}</p>
+    {item.tag === 'VibeApp' && <p class="ux-vibe">{t.site.vibeapp[2]}</p>}
+  </section>
+
+  <section class="ed-wrap ux-clip">
+    <figure class="ed-shot">
+      <div class="ed-shot-frame ed-shot-frame--lift">
+        <video muted loop playsinline controls preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
+          <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
+        </video>
+      </div>
+      <figcaption>{l.recorded}</figcaption>
+    </figure>
+    <dl class="ux-facts">
+      <div><dt>{l.facts.for}</dt><dd>{item.facts.for}</dd></div>
+      <div><dt>{l.facts.use}</dt><dd>{item.facts.use}</dd></div>
+      <div><dt>{l.facts.behind}</dt><dd>{item.facts.behind}</dd></div>
+    </dl>
+  </section>
+
+  <!-- What happens, and where a person decides -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec ux-flow">
+      <div>
+        <h2 class="ed-h2 ed-h2--md">{l.steps}</h2>
+        <ol class="ed-rows ed-rows--num">
+          {item.steps.map((step: any, i: number) => (
+            <li>
+              <span class="ed-rows-n" aria-hidden="true">{i + 1}</span>
+              <div><strong>{step.title}</strong><span>{step.body}</span></div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <aside class="ux-decisions">
+        <h2>{l.decisions}</h2>
+        <ul>
+          {item.decisions.map((decision: string) => <li>{decision}</li>)}
+        </ul>
+        <p class="ux-note"><strong>{l.note}</strong> {item.note}</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- The team, or the building blocks of a workflow -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{item.team.title}</h2>
+      <p class="ed-sec-sub">{item.team.lead}</p>
+    </header>
+    <ul class="ux-members">
+      {item.team.members.map((member: any) => (
+        <li><strong>{member.name}</strong><span>{member.role}</span></li>
+      ))}
+    </ul>
+    <div class="ux-get">
+      <p><strong>{l.get}</strong> {item.get.body}</p>
+      {item.get.external
+        ? <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href} target="_blank" rel="noopener noreferrer">{item.get.link}</a>
+        : <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href}>{item.get.link}</a>}
+    </div>
+  </section>
+
+  <!-- Other use cases -->
+  <section class="ed-band--yellow">
+    <div class="ed-wrap ed-sec">
+      <h2 class="ed-h2 ed-h2--md ux-others-title">{l.others}</h2>
+      <ul class="ux-others">
+        {others.map((other: any) => (
+          <li>
+            <a href={local('/use-cases/' + other.slug)}>
+              <img src={'/media/' + other.media + '.jpg'} alt="" width={other.width} height={other.height} loading="lazy" />
+              <span class="ux-others-text">
+                <strong>{other.title}</strong>
+                <span>{other.summary}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="ed-link" href={local('/use-cases')}>{l.back}</a>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+<VideoAutoplay />
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.ux-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding-block: clamp(40px, 5vw, 72px) clamp(32px, 4vw, 48px); }
+.ux-back { font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.ux-back::before { content: "← "; }
+.ux-back:hover { color: var(--ed-ink); }
+.ux-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ux-tag { padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.ux-tag--mode { background: var(--ed-navy); color: #fff; }
+.ux-name { margin-left: 6px; font-size: 14.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.ux-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.ux-lead { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+
+.ux-vibe { padding-left: 16px; border-left: 3px solid var(--ed-yellow); font-family: var(--ed-serif); font-style: italic; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.2; color: var(--ed-ink); }
+
+/* ---------- clip and facts ---------- */
+.ux-clip { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; padding-bottom: clamp(56px, 7vw, 96px); }
+.ux-clip video { display: block; width: 100%; height: auto; }
+.ux-facts { display: flex; flex-direction: column; border-top: 2px solid var(--ed-ink); }
+.ux-facts div { display: flex; flex-direction: column; gap: 6px; padding-block: 20px; border-bottom: 1px solid var(--ed-line-2); }
+.ux-facts dt { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.ux-facts dd { font-family: var(--ed-serif); font-size: clamp(22px, 2.1vw, 27px); line-height: 1.15; color: var(--ed-ink); }
+
+/* ---------- what happens ---------- */
+.ux-flow { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.ux-decisions { display: flex; flex-direction: column; gap: 18px; background: var(--ed-navy); color: #fff; border-radius: 28px; padding: clamp(26px, 3.4vw, 40px); }
+.ux-decisions h2 { font-family: var(--ed-serif); font-size: clamp(30px, 3vw, 40px); line-height: 1.05; }
+.ux-decisions li { display: flex; gap: 12px; padding-block: 14px; border-top: 1px solid var(--ed-navy-line); font-size: 17.5px; font-weight: 600; }
+.ux-decisions li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 8px; border-radius: 999px; background: var(--ed-yellow); }
+.ux-decisions li:last-child { border-bottom: 1px solid var(--ed-navy-line); }
+.ux-note { font-size: 15.5px; color: var(--ed-on-navy); }
+.ux-note strong { display: block; margin-bottom: 4px; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-yellow); }
+
+/* ---------- the team ---------- */
+.ux-members { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 0 clamp(20px, 3vw, 40px); border-top: 2px solid var(--ed-ink); }
+.ux-members li { display: flex; flex-direction: column; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); font-size: 16.5px; }
+.ux-members strong { font-size: 18px; font-weight: 700; color: var(--ed-ink); }
+.ux-get { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: clamp(32px, 4vw, 48px); padding: 22px 26px; border-radius: 20px; background: var(--ed-mist); font-size: 17px; color: var(--ed-ink-2); }
+.ux-get strong { display: block; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); margin-bottom: 4px; }
+
+/* ---------- other use cases ---------- */
+.ux-others-title { margin-bottom: clamp(24px, 3vw, 36px); }
+.ux-others { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
+.ux-others a { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: center; height: 100%; background: #fff; border-radius: 22px; padding: 16px; color: var(--ed-ink-2); font-size: 16px; }
+.ux-others a:hover { box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
+.ux-others img { width: 150px; height: 112px; object-fit: cover; object-position: top left; border-radius: 12px; border: 1px solid var(--ed-line-2); }
+.ux-others-text { display: flex; flex-direction: column; gap: 6px; }
+.ux-others strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+
+@media (max-width: 900px) {
+  .ux-clip, .ux-flow, .ux-others { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .ux-others a { grid-template-columns: minmax(0, 1fr); }
+  .ux-others img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+}
+</style>

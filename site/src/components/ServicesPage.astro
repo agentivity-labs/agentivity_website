@@ -1,0 +1,349 @@
+---
+// The Services page, shared by /services and /fr/services. Texts come from the "services_page" block of the translation files.
+// It presents a services firm (strategy, transformation, execution) for large organisations; the platform is one of its tools.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.services_page;
+const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+const numerals = ['I', 'II', 'III'];
+
+// A former client shows as its logo when public/media/logos/<slug>.svg exists, and as its name in plain type otherwise.
+const slug = (name: string) => name.toLowerCase().split('(')[0].trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const clients = (p.experience.names as string[]).map((name) => {
+  const file = slug(name) + '.svg';
+  return { name, logo: existsSync(join(process.cwd(), 'public', 'media', 'logos', file)) ? '/media/logos/' + file : null };
+});
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agentivity Services',
+  provider: { '@type': 'Organization', name: 'Agentivity' },
+  description: p.meta.description,
+  serviceType: p.practices.items.map((item) => item.name),
+};
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} waitlistHref="#contact" ctaLabel={p.hero.cta} />
+
+<main class="ed-page">
+
+  <!-- Hero -->
+  <section class="ed-band--navy sv-hero">
+    <div class="ed-wrap sv-hero-inner">
+      <p class="ed-eyebrow sv-yellow">{p.hero.eyebrow}</p>
+      <h1>{p.hero.h1} <em>{p.hero.h1_accent}</em></h1>
+      <p class="sv-hero-sub">{p.hero.sub}</p>
+      <a class="ed-btn ed-btn--yellow" href="#contact">{p.hero.cta}</a>
+      <ol class="sv-hero-line">
+        {p.practices.items.map((item, i) => (
+          <li>
+            <a href={'#' + item.id}>
+              <span class="sv-hero-numeral">{numerals[i]}</span>
+              <span>{item.name}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Former clients of the founder, shown in one colour -->
+  <section class="ed-wrap sv-experience" aria-label={p.experience.label}>
+    <p class="sv-experience-label">{p.experience.label}</p>
+    <ul>
+      {clients.map((client) => (
+        <li>{client.logo ? <img src={client.logo} alt={client.name} loading="lazy" /> : client.name}</li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Why one partner -->
+  <section class="ed-wrap ed-sec sv-gap">
+    <div>
+      <p class="ed-eyebrow">{p.gap.eyebrow}</p>
+      <p class="sv-statement">{p.gap.statement}</p>
+    </div>
+    <p class="sv-gap-body">{p.gap.body}</p>
+  </section>
+
+  <!-- Three practices -->
+  <section class="ed-band--mist" id="practices">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.practices.eyebrow}</p>
+        <h2 class="ed-h2">{p.practices.h2} <em>{p.practices.h2_accent}</em></h2>
+      </header>
+      <div class="sv-practices">
+        {p.practices.items.map((item, i) => (
+          <article class="sv-practice" id={item.id}>
+            <div class="sv-practice-mark">
+              <span class="sv-practice-numeral" aria-hidden="true">{numerals[i]}</span>
+              <span class="sv-practice-name">{item.name}</span>
+            </div>
+            <div class="sv-practice-text">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+            <div class="sv-practice-list">
+              <p class="sv-list-title">{p.practices.get}</p>
+              <ul>
+                {item.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+      <!-- The platform is a one-line mention, on purpose: this page presents the firm. -->
+      <p class="sv-platform-note">{p.practices.platform_note} <a href={local('/how-it-works')}>{p.practices.platform_link}</a></p>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="ed-wrap ed-sec sv-industries" id="industries">
+    <header class="sv-industries-head">
+      <p class="ed-eyebrow">{p.industries.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{p.industries.h2} <em>{p.industries.h2_accent}</em></h2>
+    </header>
+    <ul class="sv-industries-list">
+      {p.industries.items.map((industry) => <li>{industry}</li>)}
+    </ul>
+  </section>
+
+  <!-- How an engagement runs -->
+  <section class="ed-band--mist" id="stages">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.stages.eyebrow}</p>
+        <h2 class="ed-h2">{p.stages.h2} <em>{p.stages.h2_accent}</em></h2>
+      </header>
+      <ol class="sv-stages">
+        {p.stages.items.map((stage, i) => (
+          <li>
+            <span class="sv-stage-n" aria-hidden="true">{i + 1}</span>
+            <h3>{stage.name}</h3>
+            <p>{stage.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Commitments -->
+  <section class="ed-band--navy" id="commitments">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow sv-yellow">{p.commitments.eyebrow}</p>
+        <h2 class="ed-h2 sv-on-navy">{p.commitments.h2} <em>{p.commitments.h2_accent}</em></h2>
+      </header>
+      <ul class="sv-commitments">
+        {p.commitments.items.map((item) => (
+          <li>
+            <strong>{item.title}</strong>
+            <span>{item.body}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="ed-wrap ed-sec" id="formats">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.formats.eyebrow}</p>
+      <h2 class="ed-h2">{p.formats.h2} <em>{p.formats.h2_accent}</em></h2>
+    </header>
+    <ul class="sv-formats">
+      {p.formats.items.map((format: any) => (
+        <li class:list={['sv-format', { 'sv-format--featured': format.featured }]}>
+          <span class="sv-format-tag">{format.tag}</span>
+          <h3>{format.name}</h3>
+          <p>{format.body}</p>
+          <ul>
+            {format.points.map((point: string) => <li>{point}</li>)}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Contact. The form posts to Formspree exactly as before: same address, same field names. -->
+  <section class="ed-band--mist" id="contact">
+    <div class="ed-wrap ed-sec sv-contact">
+      <div class="sv-contact-text">
+        <p class="ed-eyebrow">{p.contact.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{p.contact.h2} <em>{p.contact.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{p.contact.sub}</p>
+        <ul class="sv-reassure">
+          {p.contact.reassure.map((line) => <li>{line}</li>)}
+        </ul>
+        <p class="sv-email">{p.contact.email_line} <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+      </div>
+
+      <form
+        method="POST"
+        action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_SERVICES ?? 'YOUR_FORM_ID'}`}
+        class="sv-form"
+      >
+        <input type="hidden" name="_next" value={p.contact.form.next} />
+        <input type="hidden" name="_gotcha" style="display:none" />
+
+        <div class="sv-form-row">
+          <div class="sv-field">
+            <label for="svc-name">{p.contact.form.name}</label>
+            <input type="text" id="svc-name" name="name" placeholder={p.contact.form.name_ph} required autocomplete="name" />
+          </div>
+          <div class="sv-field">
+            <label for="svc-email">{p.contact.form.email}</label>
+            <input type="email" id="svc-email" name="email" placeholder={p.contact.form.email_ph} required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="sv-field">
+          <label for="svc-service">{p.contact.form.topic}</label>
+          <select id="svc-service" name="service">
+            <option value="" disabled selected>{p.contact.form.topic_ph}</option>
+            {p.contact.form.topics.map((topic) => <option value={topic.value}>{topic.label}</option>)}
+          </select>
+        </div>
+
+        <div class="sv-field">
+          <label for="svc-message">{p.contact.form.message}</label>
+          <textarea id="svc-message" name="message" placeholder={p.contact.form.message_ph} rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="ed-btn ed-btn--navy sv-submit">{p.contact.form.submit}</button>
+        <p class="sv-form-note">{p.contact.form.note}</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+<style>
+.sv-yellow { color: var(--ed-yellow); }
+.sv-on-navy em { color: var(--ed-yellow); }
+
+/* ---------- hero ---------- */
+.sv-hero-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; padding-block: clamp(72px, 10vw, 136px) clamp(48px, 6vw, 72px); }
+.sv-hero h1 { font-family: var(--ed-serif); font-size: clamp(56px, 10vw, 156px); line-height: .92; letter-spacing: -.025em; color: #fff; }
+.sv-hero h1 em { display: block; color: var(--ed-yellow); }
+.sv-hero-sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.45; color: var(--ed-on-navy); max-width: 30em; }
+.sv-hero-line { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(28px, 5vw, 64px); border-top: 1px solid var(--ed-navy-line); }
+.sv-hero-line li + li { border-left: 1px solid var(--ed-navy-line); }
+.sv-hero-line a { display: flex; align-items: baseline; gap: 14px; padding: 22px clamp(12px, 2vw, 28px) 4px; font-size: clamp(17px, 1.8vw, 24px); font-weight: 600; color: #fff; transition: color .15s ease; }
+.sv-hero-line li:first-child a { padding-left: 0; }
+.sv-hero-line a:hover { color: var(--ed-yellow); }
+.sv-hero-numeral { font-family: var(--ed-serif); font-weight: 400; font-style: italic; color: var(--ed-yellow); min-width: 1.4em; }
+
+/* ---------- experience ---------- */
+.sv-experience { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px clamp(24px, 4vw, 56px); align-items: baseline; padding-block: clamp(28px, 3.6vw, 44px); border-bottom: 1px solid var(--ed-line); }
+.sv-experience-label { font-size: 13.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+.sv-experience ul { display: flex; flex-wrap: wrap; align-items: center; gap: 18px clamp(26px, 3.4vw, 52px); }
+/* Every logo in one colour, whatever its own colours are. */
+.sv-experience img { display: block; height: clamp(22px, 2.2vw, 30px); width: auto; max-width: 150px; filter: grayscale(1) contrast(1.15); opacity: .72; transition: opacity .15s ease; }
+.sv-experience img:hover { opacity: 1; }
+.sv-experience li { font-family: var(--ed-serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; color: var(--ed-ink-2); white-space: nowrap; }
+
+/* ---------- why one partner ---------- */
+.sv-gap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
+.sv-gap .ed-eyebrow { margin-bottom: 20px; }
+.sv-statement { font-family: var(--ed-serif); font-size: clamp(34px, 4.6vw, 66px); line-height: 1.04; letter-spacing: -.015em; text-wrap: balance; }
+.sv-gap-body { font-size: 19px; line-height: 1.6; color: var(--ed-ink-2); border-top: 2px solid var(--ed-ink); padding-top: 20px; }
+
+/* ---------- three practices ---------- */
+.sv-practices { display: flex; flex-direction: column; gap: 20px; }
+.sv-practice { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.2fr) minmax(0, 1.1fr); gap: clamp(20px, 3.5vw, 56px); background: #fff; border-radius: 28px; padding: clamp(26px, 3.6vw, 48px); scroll-margin-top: 96px; }
+.sv-practice-mark { display: flex; flex-direction: column; gap: 6px; }
+.sv-practice-numeral { font-family: var(--ed-serif); font-style: italic; font-size: clamp(64px, 7vw, 104px); line-height: .9; color: var(--ed-navy); }
+.sv-practice-name { font-size: 14.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.sv-practice-text { display: flex; flex-direction: column; gap: 14px; color: var(--ed-ink-2); font-size: 18px; }
+.sv-practice-text h3 { font-family: var(--ed-serif); font-size: clamp(30px, 3.2vw, 44px); line-height: 1.05; color: var(--ed-ink); text-wrap: balance; }
+.sv-list-title { font-size: 13.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); padding-bottom: 10px; }
+.sv-practice-list li { padding-block: 11px; border-top: 1px solid var(--ed-line-2); font-weight: 600; }
+.sv-practice-list li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+
+/* ---------- industries ---------- */
+.sv-industries { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.sv-industries-head { display: flex; flex-direction: column; gap: 18px; }
+.sv-industries-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 40px); border-top: 2px solid var(--ed-ink); }
+.sv-industries-list li { padding-block: 20px; border-bottom: 1px solid var(--ed-line-2); font-family: var(--ed-serif); font-size: clamp(22px, 2.1vw, 28px); line-height: 1.15; color: var(--ed-ink); }
+
+.sv-platform-note { margin-top: 28px; font-size: 15.5px; color: var(--ed-ink-3); }
+.sv-platform-note a { font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; white-space: nowrap; }
+
+/* ---------- stages ---------- */
+.sv-stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 0 clamp(20px, 3vw, 40px); }
+.sv-stages li { display: flex; flex-direction: column; gap: 10px; border-top: 2px solid var(--ed-ink); padding-block: 20px 28px; color: var(--ed-ink-2); }
+.sv-stage-n { font-family: var(--ed-serif); font-size: 48px; line-height: 1; color: var(--ed-ink); }
+.sv-stages h3 { font-family: var(--ed-sans); font-size: 22px; font-weight: 700; color: var(--ed-ink); }
+
+/* ---------- commitments ---------- */
+.sv-commitments { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 0 clamp(28px, 5vw, 72px); }
+.sv-commitments li { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--ed-navy-line); padding-block: 24px 30px; color: var(--ed-on-navy-2); font-size: 18px; }
+.sv-commitments strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.05; color: #fff; }
+
+/* ---------- formats ---------- */
+.sv-formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; align-items: stretch; }
+.sv-format { display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--ed-line-2); border-radius: 24px; padding: 30px 28px; color: var(--ed-ink-2); }
+.sv-format-tag { align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: var(--ed-mist); color: var(--ed-ink); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.sv-format h3 { font-family: var(--ed-serif); font-size: 40px; line-height: 1; color: var(--ed-ink); }
+.sv-format ul { margin-top: auto; padding-top: 6px; }
+.sv-format ul li { padding-block: 10px; border-top: 1px solid var(--ed-line-2); font-weight: 600; color: var(--ed-ink); }
+.sv-format--featured { background: var(--ed-navy); border-color: var(--ed-navy); color: var(--ed-on-navy); }
+.sv-format--featured h3 { color: #fff; }
+.sv-format--featured .sv-format-tag { background: var(--ed-yellow); }
+.sv-format--featured ul li { border-top-color: var(--ed-navy-line); color: #fff; }
+
+/* ---------- contact ---------- */
+#contact { scroll-margin-top: 78px; }
+.sv-contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.sv-contact-text { display: flex; flex-direction: column; gap: 20px; }
+.sv-reassure { display: flex; flex-direction: column; }
+.sv-reassure li { padding-block: 12px; border-top: 1px solid var(--ed-line-2); font-weight: 600; }
+.sv-reassure li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.sv-email { color: var(--ed-ink-2); }
+.sv-email a { font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+
+.sv-form { display: flex; flex-direction: column; gap: 18px; background: #fff; border-radius: 28px; padding: clamp(24px, 3.4vw, 44px); }
+.sv-form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 18px; }
+.sv-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.sv-field label { font-size: 15px; font-weight: 600; }
+.sv-field input, .sv-field select, .sv-field textarea {
+  width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 16px; border-radius: 12px;
+  border: 1.5px solid var(--ed-line-2); background: #fff; color: var(--ed-ink); font: inherit; font-size: 17px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.sv-field textarea { resize: vertical; line-height: 1.5; }
+.sv-field input::placeholder, .sv-field textarea::placeholder { color: var(--ed-ink-3); }
+.sv-field input:focus, .sv-field select:focus, .sv-field textarea:focus { outline: none; border-color: var(--ed-navy); box-shadow: 0 0 0 3px rgba(21, 40, 68, .18); }
+.sv-submit { align-self: flex-start; border: 0; }
+.sv-form-note { font-size: 14.5px; color: var(--ed-ink-3); }
+
+@media (max-width: 900px) {
+  .sv-experience { grid-template-columns: minmax(0, 1fr); }
+  .sv-gap, .sv-contact, .sv-industries { grid-template-columns: minmax(0, 1fr); }
+  .sv-practice { grid-template-columns: minmax(0, 1fr); }
+  .sv-practice-mark { flex-direction: row; align-items: baseline; gap: 16px; }
+}
+@media (max-width: 560px) {
+  .sv-industries-list { grid-template-columns: minmax(0, 1fr); }
+  .sv-hero-line { grid-template-columns: minmax(0, 1fr); }
+  .sv-hero-line li + li { border-left: 0; border-top: 1px solid var(--ed-navy-line); }
+  .sv-hero-line a { padding: 16px 0 14px; }
+}
+</style>

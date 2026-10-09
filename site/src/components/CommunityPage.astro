@@ -1,0 +1,145 @@
+---
+// Installing the Community edition, shared by /community and /fr/community. Texts come from the "community_page" block of the translation files.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import GitHubIcon from './GitHubIcon.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.community_page;
+const home = lang === 'fr' ? '/fr/' : '/';
+const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="ed-page">
+
+  <section class="ed-wrap cm-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="cm-hero-sub">{p.hero.sub}</p>
+    <div class="cm-hero-cta">
+      <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{p.hero.github}</a>
+      <a class="ed-btn ed-btn--line" href={t.site.docker_hub_href} target="_blank" rel="noopener noreferrer">{p.hero.hub}</a>
+    </div>
+    <p class="cm-hero-aside">{p.hero.not_technical} <a href={home + '#cta'}>{p.hero.waitlist}</a></p>
+  </section>
+
+  <section class="ed-band--mist" id="install">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.install.eyebrow}</p>
+        <h2 class="ed-h2">{p.install.h2} <em>{p.install.h2_accent}</em></h2>
+      </header>
+      <ol class="cm-steps">
+        {p.install.steps.map((step: any, i: number) => (
+          <li>
+            <span class="cm-steps-n" aria-hidden="true">{i + 1}</span>
+            <div class="cm-steps-body">
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+              {step.command && (
+                <div class="cm-command">
+                  <code id={'cm-command-' + i}>{step.command}</code>
+                  <button type="button" class="cm-copy" data-copy={'cm-command-' + i} data-done={p.install.copied}>{p.install.copy}</button>
+                </div>
+              )}
+              {step.address && <p><a class="cm-address" href={step.address}>{step.address}</a></p>}
+              {step.link && <a class="ed-link" href={step.href} target="_blank" rel="noopener noreferrer">{step.link}</a>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="ed-wrap ed-sec" id="know">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.know.eyebrow}</p>
+      <h2 class="ed-h2">{p.know.h2} <em>{p.know.h2_accent}</em></h2>
+    </header>
+    <ul class="cm-know">
+      {p.know.items.map((item: any, i: number) => (
+        <li>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+          {item.command && (
+            <div class="cm-command">
+              <code id={'cm-know-' + i}>{item.command}</code>
+              <button type="button" class="cm-copy" data-copy={'cm-know-' + i} data-done={p.install.copied}>{p.install.copy}</button>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="ed-band--yellow" id="star">
+    <div class="ed-wrap ed-final">
+      <h2>{p.help.h2} <em>{p.help.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.help.sub}</p>
+      <div class="cm-hero-cta">
+        <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{p.help.github}</a>
+        <a class="ed-btn ed-btn--line" href={local('/docs')}>{p.help.docs}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+<script is:inline>
+(function () {
+  document.querySelectorAll('.cm-copy').forEach((button) => {
+    const label = button.textContent;
+    button.addEventListener('click', () => {
+      const source = document.getElementById(button.dataset.copy);
+      if (!source || !navigator.clipboard) return;
+      navigator.clipboard.writeText(source.textContent.trim()).then(() => {
+        button.textContent = button.dataset.done;
+        setTimeout(() => { button.textContent = label; }, 1800);
+      });
+    });
+  });
+})();
+</script>
+
+</Base>
+
+<style>
+.cm-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(56px, 7vw, 88px); }
+.cm-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.cm-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+.cm-hero-cta { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.cm-hero-aside { font-size: 16px; color: var(--ed-ink-3); }
+.cm-hero-aside a { font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+
+.cm-steps { display: flex; flex-direction: column; gap: 16px; max-width: 920px; }
+.cm-steps > li { display: flex; gap: clamp(16px, 2.4vw, 28px); background: #fff; border-radius: 24px; padding: clamp(22px, 2.8vw, 32px); }
+.cm-steps-n { flex: none; width: 44px; height: 44px; border-radius: 999px; background: var(--ed-navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
+.cm-steps-body { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; flex: 1; color: var(--ed-ink-2); }
+.cm-steps-body h3 { font-family: var(--ed-serif); font-size: 32px; line-height: 1.05; color: var(--ed-ink); }
+.cm-address { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 16px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
+
+.cm-command { align-self: stretch; display: flex; align-items: center; gap: 12px; background: var(--ed-navy); border-radius: 12px; padding: 10px 10px 10px 16px; }
+.cm-command code { flex: 1; min-width: 0; overflow-wrap: anywhere; line-height: 1.5; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14.5px; color: #fff; padding-block: 6px; }
+.cm-copy { flex: none; min-height: 40px; padding: 0 16px; border-radius: 8px; border: 0; background: var(--ed-yellow); color: var(--ed-ink); font: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.cm-copy:hover { background: #FFD666; }
+
+.cm-know { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 20px; }
+.cm-know li { display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--ed-line-2); border-radius: 24px; padding: 28px 26px; color: var(--ed-ink-2); min-width: 0; }
+.cm-know h3 { font-family: var(--ed-serif); font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+
+@media (max-width: 560px) {
+  .cm-steps > li { flex-direction: column; }
+  .cm-command { flex-direction: column; align-items: stretch; padding: 12px; }
+  .cm-copy { min-height: 44px; }
+}
+</style>

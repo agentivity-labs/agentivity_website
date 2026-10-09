@@ -1,0 +1,143 @@
+/* ============================================================
+   Pages carried over from the first design: legal documents,
+   comparisons and the thank-you pages. Their text and markup
+   are unchanged; this file dresses their old class names in
+   the editorial look. Loaded after main.css and editorial.css.
+   ============================================================ */
+
+/* ---------- shared: old building blocks seen through the new look ---------- */
+body.ed :is(.cmp-page, .ty-page) :is(.s-black, .s-navy, .s-white, .s-pearl) { background: transparent; color: var(--ed-ink); }
+body.ed :is(.cmp-page, .ty-page) .wrap { max-width: var(--ed-wrap); margin: 0 auto; padding-inline: var(--ed-pad); }
+body.ed :is(.cmp-page, .ty-page, .legal-page) .eyebrow { font-family: var(--ed-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2) !important; }
+body.ed :is(.cmp-page, .ty-page, .legal-page) .eyebrow::before { display: none; }
+body.ed :is(.cmp-page, .ty-page) :is(.h1, .h2) { font-family: var(--ed-serif); font-weight: 400; letter-spacing: -.02em; color: var(--ed-ink) !important; }
+body.ed :is(.cmp-page, .ty-page) .h1 { font-size: clamp(46px, 7.4vw, 112px); line-height: .98; }
+body.ed :is(.cmp-page, .ty-page) .h2 { font-size: clamp(36px, 4.4vw, 62px); line-height: 1.02; }
+body.ed :is(.cmp-page, .ty-page) .grad-text { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: inherit; font-style: italic; }
+body.ed :is(.cmp-page, .ty-page) .btn { min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid transparent; font-family: var(--ed-sans); font-size: 17px; font-weight: 600; letter-spacing: 0; box-shadow: none; }
+body.ed :is(.cmp-page, .ty-page) .btn svg { width: 18px; height: 18px; }
+body.ed :is(.cmp-page, .ty-page) .btn-primary { background: var(--ed-navy); color: #fff; }
+body.ed :is(.cmp-page, .ty-page) .btn-primary:hover { background: #0E1D33; box-shadow: none; }
+body.ed :is(.cmp-page, .ty-page) .btn-ghost { background: transparent; color: var(--ed-ink); border-color: var(--ed-ink); }
+body.ed :is(.cmp-page, .ty-page) .btn-ghost:hover { background: var(--ed-ink); color: #fff; }
+
+/* ---------- legal documents ---------- */
+body.ed .legal-page { background: #fff; color: var(--ed-ink); }
+body.ed .legal-layout { max-width: var(--ed-wrap); padding-inline: var(--ed-pad); gap: clamp(32px, 5vw, 80px); }
+body.ed .legal-sidebar-label { font-family: var(--ed-sans); font-size: 12.5px; letter-spacing: .08em; color: var(--ed-ink-3); }
+body.ed .legal-sidebar-links a { font-size: 16px; color: var(--ed-ink-2); min-height: 40px; display: flex; align-items: center; }
+body.ed .legal-sidebar-links a:hover { color: var(--ed-ink); border-color: var(--ed-ink); background: var(--ed-mist); }
+body.ed .legal-sidebar-links a.active { color: var(--ed-ink); border-color: var(--ed-navy); background: var(--ed-mist); font-weight: 700; }
+body.ed .legal-sidebar-meta { font-size: 14.5px; color: var(--ed-ink-3); border-top-color: var(--ed-line-2); }
+body.ed .legal-sidebar-meta a, body.ed .legal-meta-bar a { color: var(--ed-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+body.ed .legal-hero { border-bottom: 2px solid var(--ed-ink); }
+body.ed .legal-hero h1 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(42px, 5.6vw, 76px); letter-spacing: -.02em; line-height: 1; color: var(--ed-ink); }
+body.ed .legal-meta-bar span, body.ed .legal-meta-bar a { font-family: var(--ed-sans); font-size: 15px; color: var(--ed-ink-3); }
+body.ed .legal-section { border-bottom-color: var(--ed-line-2); }
+body.ed .legal-section h2 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 3vw, 38px); letter-spacing: -.01em; line-height: 1.1; color: var(--ed-ink); }
+body.ed .legal-section h3 { font-size: 19px; font-weight: 700; color: var(--ed-ink); }
+body.ed .legal-section p, body.ed .legal-section li { font-size: 17px; line-height: 1.7; color: var(--ed-ink-2); }
+body.ed .legal-section ul { list-style: disc; }
+body.ed .legal-section ol { list-style: decimal; }
+body.ed .legal-section a { color: var(--ed-ink); font-weight: 600; }
+body.ed .legal-section strong { color: var(--ed-ink); }
+body.ed .legal-section table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 16px; }
+body.ed .legal-section th { text-align: left; padding: 10px 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); border-bottom: 2px solid var(--ed-ink); }
+body.ed .legal-section td { padding: 12px 14px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); vertical-align: top; }
+body.ed .legal-alert { border-radius: 16px; padding: 18px 22px; background: var(--ed-mist); border: 0; border-left: 4px solid var(--ed-navy); }
+body.ed .legal-alert.red { border-left-color: #B3261E; }
+body.ed .legal-alert.amber { border-left-color: var(--ed-yellow); }
+body.ed .legal-alert p { font-size: 16.5px; color: var(--ed-ink); }
+body.ed .legal-index-card { border-color: var(--ed-line-2); border-radius: 22px; }
+body.ed .legal-index-card:hover { border-color: var(--ed-ink); box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
+body.ed .legal-index-card .card-tag { font-family: var(--ed-sans); font-size: 12.5px; letter-spacing: .06em; color: var(--ed-ink-3); }
+body.ed .legal-index-card h3 { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; letter-spacing: 0; color: var(--ed-ink); }
+body.ed .legal-index-card p { font-size: 16px; color: var(--ed-ink-2); }
+
+/* ---------- comparisons ---------- */
+.cmp-page .cmp-hero-bg { display: none; }
+.cmp-page .cmp-hero { padding-block: clamp(56px, 8vw, 104px) clamp(40px, 5vw, 64px); }
+.cmp-page .cmp-hero-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.cmp-page .cmp-h1 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .28em; }
+.cmp-page .cmp-h1 br { display: none; }
+.cmp-page .cmp-vs-word { font-style: italic; color: var(--ed-ink-3); }
+.cmp-page .cmp-vs-name { background-image: linear-gradient(transparent 64%, var(--ed-yellow) 64%, var(--ed-yellow) 92%, transparent 92%); }
+.cmp-page .cmp-sub { max-width: 44em; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); }
+.cmp-page .cmp-sub strong { font-weight: 700; color: var(--ed-ink); }
+.cmp-page .cmp-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.cmp-page .cmp-pill { padding: 6px 14px; border-radius: 999px; background: var(--ed-mist); font-size: 14.5px; font-weight: 600; color: var(--ed-ink); }
+
+.cmp-page :is(.cmp-verdict-section, .cmp-table-section, .cmp-deep-section, .cmp-caveat-section) { padding-block: clamp(48px, 6vw, 88px); }
+.cmp-page :is(.cmp-verdict-section, .cmp-deep-section) { background: var(--ed-mist) !important; }
+.cmp-page .cmp-section-title { margin-bottom: clamp(24px, 3vw, 40px); font-family: var(--ed-serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 62px); letter-spacing: -.02em; line-height: 1.02; color: var(--ed-ink) !important; }
+
+.cmp-page .cmp-verdict-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cmp-page .cmp-verdict-card { position: relative; display: flex; flex-direction: column; gap: 16px; background: #fff; border-radius: 28px; padding: clamp(26px, 3.2vw, 40px); }
+.cmp-page .cmp-verdict-card--us { background: var(--ed-navy); color: #fff; }
+.cmp-page .cmp-verdict-badge { align-self: flex-start; padding: 4px 11px; border-radius: 999px; background: var(--ed-yellow); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.cmp-page .cmp-verdict-name { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.8vw, 36px); line-height: 1.08; }
+.cmp-page .cmp-verdict-list { display: flex; flex-direction: column; }
+.cmp-page .cmp-verdict-list li { padding-block: 13px; border-top: 1px solid var(--ed-line-2); font-size: 17px; color: var(--ed-ink-2); }
+.cmp-page .cmp-verdict-card--us .cmp-verdict-list li { border-top-color: var(--ed-navy-line); color: var(--ed-on-navy); }
+
+.cmp-page .cmp-table-wrap { overflow-x: auto; }
+.cmp-page .cmp-table { width: 100%; min-width: 560px; border-collapse: collapse; }
+.cmp-page .cmp-table th { padding: 12px 16px; text-align: left; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); border-bottom: 2px solid var(--ed-ink); }
+.cmp-page .cmp-table :is(.cmp-th-ag, .cmp-th-them, .cmp-td-ag, .cmp-td-them) { width: 150px; text-align: center; }
+.cmp-page .cmp-table td { padding: 14px 16px; border-bottom: 1px solid var(--ed-line-2); vertical-align: middle; }
+.cmp-page .cmp-td-feature { display: flex; flex-direction: column; gap: 3px; }
+.cmp-page .cmp-feat-name { font-size: 17px; font-weight: 600; color: var(--ed-ink); }
+.cmp-page .cmp-td-note { font-size: 14.5px; color: var(--ed-ink-3); }
+.cmp-page .cmp-td-ag { background: var(--ed-mist); }
+.cmp-page .cmp-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 4px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 700; }
+.cmp-page .cmp-badge--yes { background: var(--ed-navy); color: #fff; }
+.cmp-page .cmp-badge--partial { background: var(--ed-yellow); color: var(--ed-ink); }
+.cmp-page .cmp-badge--no { background: transparent; color: var(--ed-ink-3); box-shadow: inset 0 0 0 1.5px var(--ed-line-2); }
+.cmp-page .cmp-table-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 18px; font-size: 14.5px; color: var(--ed-ink-3); }
+
+.cmp-page .cmp-deep-intro { max-width: 44em; margin-bottom: clamp(24px, 3vw, 40px); font-size: 19px; color: var(--ed-ink-2); }
+.cmp-page .cmp-studios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cmp-page .cmp-studio-card { display: flex; flex-direction: column; gap: 12px; background: #fff; border-radius: 24px; padding: 26px 24px; }
+.cmp-page .cmp-studio-card--them { background: transparent; box-shadow: inset 0 0 0 1px var(--ed-line-2); }
+.cmp-page .cmp-studio-header { display: flex; align-items: center; gap: 10px; }
+.cmp-page .cmp-studio-dot { flex: none; width: 10px; height: 10px; border-radius: 999px; background: var(--ed-navy); }
+.cmp-page .cmp-studio-name { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+.cmp-page .cmp-studio-body { font-size: 17px; color: var(--ed-ink-2); }
+.cmp-page .cmp-studio-body strong { font-weight: 700; color: var(--ed-ink); }
+.cmp-page :is(.cmp-honest-box, .cmp-caveat-wrap) { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; padding: 22px 26px; border-radius: 20px; background: #fff; border-left: 4px solid var(--ed-yellow); }
+.cmp-page .cmp-caveat-wrap { background: var(--ed-mist); }
+.cmp-page .cmp-honest-label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.cmp-page .cmp-honest-text { font-size: 17px; color: var(--ed-ink-2); }
+
+body.ed .cmp-page .cmp-cta { background: var(--ed-yellow); color: var(--ed-ink); }
+.cmp-page .cmp-cta-inner { display: flex; flex-direction: column; align-items: center; gap: 22px; padding-block: clamp(72px, 8vw, 104px); text-align: center; }
+.cmp-page .cmp-cta-sub { font-size: 20px; }
+.cmp-page .cmp-cta-btns { display: flex; flex-wrap: wrap; gap: 14px 16px; justify-content: center; }
+
+/* ---------- thank-you pages ---------- */
+.ty-page .ty-glow { display: none; }
+.ty-page .ty-section { padding-block: clamp(56px, 8vw, 104px) clamp(72px, 9vw, 120px); }
+.ty-page .ty-inner { display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+.ty-page .ty-icon circle { stroke: var(--ed-line-2); }
+.ty-page .ty-icon .ty-ring-fill { stroke: var(--ed-navy); stroke-dashoffset: 0; }
+.ty-page .ty-check { stroke: var(--ed-navy); }
+.ty-page .ty-h1 { font-size: clamp(46px, 7vw, 100px); }
+.ty-page .ty-sub { max-width: 34em; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); }
+.ty-page .ty-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; justify-content: center; }
+.ty-page .ty-divider { width: min(860px, 100%); height: 2px; margin-top: 18px; background: var(--ed-ink); }
+.ty-page .ty-while-wait { width: min(860px, 100%); display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.ty-page .ty-while-label { padding-block: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.ty-page .ty-links { display: flex; flex-direction: column; }
+.ty-page .ty-link { display: flex; align-items: center; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); }
+.ty-page .ty-link:first-child { border-top: 1px solid var(--ed-line-2); }
+.ty-page .ty-link-icon { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 999px; background: var(--ed-mist); font-size: 20px; }
+.ty-page .ty-link > span:last-child { display: flex; flex-direction: column; gap: 2px; font-size: 16.5px; }
+.ty-page .ty-link strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.1; color: var(--ed-ink); }
+.ty-page .ty-link:hover strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+
+@media (max-width: 800px) {
+  .cmp-page :is(.cmp-verdict-grid, .cmp-studios) { grid-template-columns: minmax(0, 1fr); }
+  .cmp-page .cmp-table { min-width: 0; }
+  .cmp-page .cmp-table :is(.cmp-th-ag, .cmp-th-them, .cmp-td-ag, .cmp-td-them) { width: 84px; padding-inline: 6px; }
+  .cmp-page .cmp-badge { min-width: 56px; padding-inline: 8px; }
+}

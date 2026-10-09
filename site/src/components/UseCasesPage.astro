@@ -1,0 +1,205 @@
+---
+// Use cases, shared by /use-cases and /fr/use-cases. Texts come from the "use_cases_page" block of the translation files.
+// Only real showcases get a card with a clip and a page of their own; the ones not built yet are marked "coming soon".
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.use_cases_page;
+const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
+
+<SiteHeader lang={lang} />
+
+<main class="ed-page">
+
+  <section class="ed-wrap uc-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="uc-hero-sub">{p.hero.sub}</p>
+  </section>
+
+  <!-- Showcases: the real ones, each with its clip and its page -->
+  <section class="ed-band--mist" id="showcases">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.showcases.eyebrow}</p>
+        <h2 class="ed-h2">{p.showcases.h2} <em>{p.showcases.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{p.showcases.sub}</p>
+      </header>
+      <ul class="uc-cases">
+        {p.cases.map((item: any) => (
+          <li>
+            <a class="uc-case" href={local('/use-cases/' + item.slug)}>
+              <div class="uc-case-media">
+                <video muted loop playsinline preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
+                  <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
+                </video>
+              </div>
+              <div class="uc-case-text">
+                <p class="uc-tags"><span class="uc-tag uc-tag--mode">{item.tag}</span><span class="uc-tag">{item.size}</span></p>
+                <h3>{item.title}</h3>
+                <p class="uc-for"><span>{p.labels.for}</span> {item.for}</p>
+                <p>{item.summary}</p>
+                <span class="uc-case-more">{p.labels.see}</span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- App or no app: the three ways people reach a team -->
+  <section class="ed-wrap ed-sec" id="ways">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.ways.eyebrow}</p>
+      <h2 class="ed-h2">{p.ways.h2} <em>{p.ways.h2_accent}</em></h2>
+      <p class="ed-sec-sub">{p.ways.sub}</p>
+    </header>
+    <ol class="uc-ways">
+      {p.ways.items.map((item: any, i: number) => (
+        <li>
+          <span class="uc-ways-n" aria-hidden="true">{i + 1}</span>
+          <span class="uc-tag uc-tag--mode">{item.tag}</span>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- The VibeApp, explained with its three one-liners (shared texts) and one real example each -->
+  <section class="ed-band--mist" id="vibeapp">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.vibeapp.eyebrow}</p>
+        <h2 class="ed-h2">{p.vibeapp.h2} <em><span class="ed-mark">{p.vibeapp.h2_accent}</span></em></h2>
+      </header>
+      <ol class="uc-vibe">
+        {t.site.vibeapp.map((line: string, i: number) => (
+          <li>
+            <p class="uc-vibe-line">{line}</p>
+            <p class="uc-vibe-example"><span>{p.vibeapp.example_label}</span> {p.vibeapp.examples[i]}</p>
+          </li>
+        ))}
+      </ol>
+      <a class="ed-btn ed-btn--navy" href={p.vibeapp.href}>{p.vibeapp.link}</a>
+    </div>
+  </section>
+
+  <!-- Not built yet -->
+  <section class="ed-band--navy" id="soon">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow uc-soon-eyebrow">{p.soon.eyebrow}</p>
+        <h2 class="ed-h2">{p.soon.h2} <em>{p.soon.h2_accent}</em></h2>
+        <p class="ed-sec-sub uc-soon-sub">{p.soon.sub}</p>
+      </header>
+      <ul class="uc-soon">
+        {p.soon.items.map((item: any) => (
+          <li>
+            <p class="uc-tags"><span class="uc-tag uc-tag--soon">{p.labels.soon}</span><span class="uc-tag uc-tag--onnavy">{item.tag}</span></p>
+            <h3>{item.title}</h3>
+            <p class="uc-for"><span>{p.labels.for}</span> {item.for}</p>
+            <p>{item.body}</p>
+          </li>
+        ))}
+      </ul>
+      <a class="uc-soon-link" href={p.cta.secondary_href}>{p.soon.link}</a>
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <div class="uc-actions">
+        <a class="ed-btn ed-btn--navy" href={p.cta.primary_href}>{p.cta.primary}</a>
+        <a class="ed-btn ed-btn--line" href={p.cta.secondary_href}>{p.cta.secondary}</a>
+      </div>
+      <p class="uc-services">{p.cta.services} <a class="ed-link" href={p.cta.services_href}>{p.cta.services_link}</a></p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+<VideoAutoplay />
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.uc-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(48px, 6vw, 80px); }
+.uc-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.uc-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 32em; }
+
+/* ---------- tags ---------- */
+.uc-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.uc-tag { padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.uc-tag--mode { background: var(--ed-navy); color: #fff; }
+.uc-tag--soon { background: var(--ed-yellow); color: var(--ed-ink); }
+.uc-tag--onnavy { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--ed-navy-line); }
+.uc-for { font-weight: 600; color: var(--ed-ink); }
+.uc-for span { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); margin-right: 4px; }
+
+/* ---------- showcases ---------- */
+.uc-cases { display: flex; flex-direction: column; gap: 20px; }
+.uc-case { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; background: #fff; border-radius: 28px; padding: clamp(18px, 2.4vw, 28px); color: var(--ed-ink-2); transition: box-shadow .2s ease, transform .2s ease; }
+.uc-case:hover { box-shadow: 0 30px 50px -34px rgba(16, 26, 46, .45); transform: translateY(-2px); }
+.uc-cases li:nth-child(even) .uc-case-media { order: 2; }
+.uc-case-media { border-radius: 18px; overflow: hidden; border: 1px solid var(--ed-line-2); background: var(--ed-mist); }
+.uc-case-media video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top left; }
+.uc-case-text { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: clamp(4px, 1vw, 16px); font-size: 18px; }
+.uc-case-text h3 { font-family: var(--ed-serif); font-size: clamp(38px, 4.2vw, 58px); line-height: 1; color: var(--ed-ink); }
+.uc-case-more { margin-top: 6px; font-size: 16.5px; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.uc-case-more::after { content: " →"; }
+
+/* ---------- three ways ---------- */
+.uc-ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3.5vw, 48px); }
+.uc-ways li { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 20px; border-top: 2px solid var(--ed-ink); color: var(--ed-ink-2); font-size: 17.5px; }
+.uc-ways-n { font-family: var(--ed-serif); font-size: 44px; line-height: 1; color: var(--ed-ink); }
+.uc-ways h3 { font-family: var(--ed-serif); font-size: clamp(28px, 2.8vw, 36px); line-height: 1.05; color: var(--ed-ink); }
+
+/* ---------- VibeApp ---------- */
+.uc-vibe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: clamp(28px, 3.5vw, 40px); }
+.uc-vibe li { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; background: #fff; border-radius: 24px; padding: clamp(24px, 2.8vw, 34px); }
+.uc-vibe-line { font-family: var(--ed-serif); font-size: clamp(28px, 2.9vw, 38px); line-height: 1.1; color: var(--ed-ink); text-wrap: balance; }
+.uc-vibe-example { padding-top: 16px; border-top: 1px solid var(--ed-line-2); font-size: 16.5px; color: var(--ed-ink-2); }
+.uc-vibe-example span { display: block; margin-bottom: 4px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+
+/* ---------- coming soon ---------- */
+.uc-soon-eyebrow { color: var(--ed-yellow); }
+.uc-soon-sub { color: var(--ed-on-navy); }
+.uc-soon { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.uc-soon li { display: flex; flex-direction: column; gap: 14px; border: 1px dashed var(--ed-navy-line); border-radius: 24px; padding: 26px 24px; color: var(--ed-on-navy); font-size: 17px; }
+.uc-soon h3 { font-family: var(--ed-serif); font-size: clamp(30px, 3vw, 40px); line-height: 1.05; color: #fff; }
+.uc-soon .uc-for { color: #fff; }
+.uc-soon .uc-for span { color: var(--ed-yellow); }
+.uc-soon-link { display: inline-flex; margin-top: 28px; font-size: 17px; font-weight: 700; color: var(--ed-yellow); border-bottom: 1.5px solid currentColor; }
+.uc-soon-link:hover { opacity: .8; }
+
+/* ---------- final call ---------- */
+.uc-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.uc-services { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 14px; margin-top: 10px; font-size: 16px; }
+.uc-services .ed-link { font-size: 16px; }
+
+@media (max-width: 900px) {
+  .uc-case { grid-template-columns: minmax(0, 1fr); }
+  .uc-cases li:nth-child(even) .uc-case-media { order: 0; }
+  .uc-ways, .uc-soon, .uc-vibe { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uc-case { transition: none; }
+  .uc-case:hover { transform: none; }
+}
+</style>
