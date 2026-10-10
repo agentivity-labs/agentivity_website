@@ -96,21 +96,15 @@ const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
   <!-- Google Tag Manager — loads only after cookie consent -->
   {GTM_ID && (
     <Fragment set:html={`<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-/* GTM loads after consent — see cookie banner */
-window.__gtmId='${GTM_ID}';
-})(window,document,'script','dataLayer','${GTM_ID}');
+/* Only remembers the container id. Nothing is requested from Google until the visitor accepts: see the cookie banner. */
+window.dataLayer = window.dataLayer || [];
+window.__gtmId = '${GTM_ID}';
 </script>`} />
   )}
 </head>
 <body class={look === 'editorial' ? 'ed' : undefined}>
 
-  <!-- GTM noscript fallback -->
-  {GTM_ID && (
-    <Fragment set:html={`<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`} />
-  )}
+  <!-- No <noscript> fallback of Tag Manager on purpose: it would load Google without any consent. -->
 
   <slot />
 
@@ -130,12 +124,16 @@ window.__gtmId='${GTM_ID}';
     // Cookie consent + GTM gate
     const CONSENT_KEY = 'ag_cookie_consent';
 
+    // Called only after the visitor has accepted, and at most once per page.
     function loadGTM() {
-      const id = (window as any).__gtmId;
-      if (!id || (window as any).dataLayer?.find((e: any) => e.event === 'gtm.js')) return;
+      const w = window as any;
+      if (!w.__gtmId || w.__gtmLoaded) return;
+      w.__gtmLoaded = true;
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       const s = document.createElement('script');
       s.async = true;
-      s.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
+      s.src = `https://www.googletagmanager.com/gtm.js?id=${w.__gtmId}`;
       document.head.appendChild(s);
     }
 
