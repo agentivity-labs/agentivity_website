@@ -47,6 +47,7 @@ const lang = 'en';
       <ul>
         <li><strong>Technical data</strong> — IP address, browser type and version, operating system, referring URL, and timestamps of access.</li>
         <li><strong>Usage data</strong> — pages visited, features used, actions taken within the Platform (for the hosted cloud service only). This data is collected in anonymised or pseudonymised form where possible.</li>
+        <li><strong>Audience data</strong> — only if you accept the cookie banner: pages visited, referring site, approximate location, device and browser type (see section 9).</li>
       </ul>
       <h3>2.3 Data processed through your agents</h3>
       <p>When you use Agentivity to build AI agents, you may process personal data of third parties (your customers, employees, contacts) through your agent workflows. You are the independent data controller for such data. We process it as your data processor, subject to any Data Processing Agreement in place.</p>
@@ -57,7 +58,7 @@ const lang = 'en';
       <h2>3. Legal Bases for Processing (GDPR)</h2>
       <p>We process your personal data under the following legal bases as defined in Article 6 of the GDPR:</p>
       <ul>
-        <li><strong>Consent (Art. 6(1)(a)):</strong> When you tick the consent box and confirm your subscription through the confirmation email (double opt-in), you consent to us contacting you with updates about the Agentivity cloud launch and product news. You may withdraw consent at any time. See section 14.</li>
+        <li><strong>Consent (Art. 6(1)(a)):</strong> When you tick the consent box and confirm your subscription through the confirmation email (double opt-in), you consent to us contacting you with updates about the Agentivity cloud launch and product news. When you accept the cookie banner, you also consent to the audience measurement described in section 9. You may withdraw consent at any time. See sections 9 and 14.</li>
         <li><strong>Contract performance (Art. 6(1)(b)):</strong> Processing necessary to provide you with the services you have requested, including account management and billing.</li>
         <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Processing necessary for our legitimate business interests, such as improving the Platform, preventing fraud, and ensuring security, where those interests are not overridden by your fundamental rights.</li>
         <li><strong>Legal obligation (Art. 6(1)(c)):</strong> Processing required to comply with applicable law, such as accounting and tax obligations.</li>
@@ -85,6 +86,7 @@ const lang = 'en';
       <ul>
         <li><strong>Vercel</strong> — website hosting and the serverless endpoint that receives mailing-list subscriptions and passes them on to Brevo.</li>
         <li><strong>Brevo</strong> (a French company) — hosts our mailing list and sends our confirmation and marketing emails. See section 14.</li>
+        <li><strong>Google</strong> (Google Ireland Limited) — Google Tag Manager and Google Analytics 4, for audience measurement, only if you accept the cookie banner. See section 9.</li>
         <li><strong>Payment processors</strong> — for paid subscriptions (specific provider to be announced). Payment processing is conducted under PCI DSS compliance.</li>
         <li><strong>Cloud infrastructure providers</strong> — for hosting the cloud service.</li>
       </ul>
@@ -109,6 +111,7 @@ const lang = 'en';
         <li><strong>Transaction records:</strong> Retained for 7 years for accounting and tax compliance purposes.</li>
         <li><strong>Support communications:</strong> Retained for up to 3 years from the date of the last communication.</li>
         <li><strong>Usage logs:</strong> Retained in anonymised form for up to 13 months.</li>
+        <li><strong>Audience data (Google Analytics):</strong> Retained for 14 months, then deleted automatically.</li>
       </ul>
       <p>We will delete or anonymise your data promptly once it is no longer required for the purpose for which it was collected.</p>
     </div>
@@ -128,9 +131,15 @@ const lang = 'en';
 
     <div class="legal-section">
       <h2>9. Cookies and Tracking Technologies</h2>
-      <p>The Agentivity website uses <strong>no third-party analytics or advertising cookies</strong>. We do not use Google Analytics, Meta Pixel, LinkedIn Insight Tag, or any behavioural tracking or retargeting technology.</p>
-      <p>We may use strictly necessary cookies to maintain session state for logged-in users of the hosted cloud service. These cookies are essential for the service to function and do not require consent under the ePrivacy Directive.</p>
-      <p>If we introduce any non-essential cookies in the future, we will update this policy and obtain your consent in advance.</p>
+      <h3>9.1 Strictly necessary storage</h3>
+      <p>The website remembers your cookie choice in your browser (a small entry named <code>ag_cookie_consent</code>, kept locally and never sent to us). We may also use strictly necessary cookies to maintain session state for logged-in users of the hosted cloud service. These are essential for the service to function and do not require consent under the ePrivacy Directive.</p>
+      <h3>9.2 Audience measurement (only with your consent)</h3>
+      <p>If you click "Accept" on the cookie banner, we load Google Tag Manager, which runs Google Analytics 4 on our behalf. It tells us, in aggregate, which pages are visited and how visitors arrive, so that we can improve the website. It sets cookies in your browser (<code>_ga</code> and <code>_ga_</code> followed by an identifier, lasting up to two years) and sends data to Google: pages visited, referring site, approximate location, device and browser type, and a pseudonymous identifier. Google also receives your IP address, as any website you visit does.</p>
+      <p>If you click "Decline", or if you make no choice, none of this is loaded: your browser sends nothing to Google and no analytics cookie is set.</p>
+      <p>We do not use advertising cookies, Meta Pixel, LinkedIn Insight Tag, or any retargeting technology.</p>
+      <h3>9.3 Changing your choice</h3>
+      <p>Use the "Cookie settings" link at the bottom of every page to see the banner again and choose differently. Declining removes the analytics cookies from your browser. You can also delete this website's data in your browser settings at any time.</p>
+      <p>The legal basis is your consent (GDPR Art. 6(1)(a) and ePrivacy Directive Art. 5(3)).</p>
     </div>
 
     <div class="legal-section">
