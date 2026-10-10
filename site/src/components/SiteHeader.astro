@@ -20,7 +20,7 @@ const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
 ---
 
-<header class="sh">
+<header class:list={['sh', { 'sh--long': lang === 'fr' }]}>
   <div class="ed-wrap sh-inner">
     <a class="sh-brand" href={home} aria-label="Agentivity">
       <img src="/agentivity-wordmark-navy.svg" alt="Agentivity" width="108" height="30" />
@@ -31,7 +31,7 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
     </nav>
 
     <div class="sh-actions">
-      <a class="sh-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} />{t.site.github}</a>
+      <a class="sh-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} /><span class="sh-github-text">{t.site.github}</span></a>
       <a class="ed-btn ed-btn--sm ed-btn--navy" href={cta}>{ctaText}</a>
       <div class="sh-lang" role="group" aria-label="Language">
         <a href="/" class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
@@ -78,11 +78,11 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
   background: rgba(255, 255, 255, .92); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--ed-line);
 }
-.sh-inner { display: flex; align-items: center; gap: 36px; min-height: 78px; }
+.sh-inner { display: flex; align-items: center; gap: 28px; min-height: 78px; }
 .sh-brand { display: flex; align-items: center; flex: none; }
 .sh-brand img { height: 30px; width: auto; display: block; }
 
-.sh-links { display: flex; gap: 28px; font-size: 15.5px; font-weight: 500; color: var(--ed-ink-2); }
+.sh-links { display: flex; gap: 24px; font-size: 15.5px; font-weight: 500; color: var(--ed-ink-2); }
 .sh-links a { white-space: nowrap; transition: color .15s ease; }
 .sh-links a:hover { color: var(--ed-ink); }
 
@@ -93,6 +93,10 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
   transition: border-color .15s ease;
 }
 .sh-github:hover { border-color: var(--ed-ink); }
+/* The French labels are longer: with seven links the GitHub button keeps its icon only (its name stays readable by screen readers). */
+.sh--long .sh-links { gap: 21px; }
+.sh--long .sh-github { width: 44px; padding: 0; justify-content: center; }
+.sh--long .sh-github-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 .sh-lang { display: flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--ed-mist); flex: none; }
 .sh-lang a {

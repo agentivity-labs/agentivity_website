@@ -7,6 +7,7 @@
     "links": [
       { "label": "How it works", "href": "/how-it-works" },
       { "label": "Use Cases",    "href": "/use-cases" },
+      { "label": "Synergi",      "href": "https://synergi.agentivity.io" },
       { "label": "Services",     "href": "/services" },
       { "label": "Blog",         "href": "/blog" },
       { "label": "Pricing",      "href": "/pricing" },
