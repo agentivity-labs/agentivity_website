@@ -36,6 +36,12 @@ const pathWithoutLang = Astro.url.pathname.replace(/^\/fr/, '') || '/';
 const hrefEN = new URL(pathWithoutLang, Astro.site).href;
 const hrefFR = new URL('/fr' + pathWithoutLang.replace(/\/$/, '') , Astro.site).href;
 
+// The language of the page: from the address first (some French pages do not pass `lang`).
+const pageLang = Astro.url.pathname === '/fr' || Astro.url.pathname.startsWith('/fr/') ? 'fr' : lang;
+const cookieCopy = pageLang === 'fr'
+  ? { label: 'Consentement aux cookies', text: "Nous utilisons des cookies pour comprendre comment vous utilisez Agentivity et améliorer l'expérience.", link: 'Politique de confidentialité', href: '/fr/legal/privacy', decline: 'Refuser', accept: 'Accepter' }
+  : { label: 'Cookie consent', text: 'We use cookies to understand how you use Agentivity and improve the experience.', link: 'Privacy policy', href: '/legal/privacy', decline: 'Decline', accept: 'Accept' };
+
 // GTM — set GTM_ID env var at build time (e.g. GTM-XXXXXXX)
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
 
@@ -43,7 +49,7 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
 const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
 ---
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={pageLang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,14 +115,14 @@ window.__gtmId = '${GTM_ID}';
   <slot />
 
   <!-- Cookie consent banner -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label={cookieCopy.label} aria-live="polite" hidden>
     <p class="cookie-text">
-      We use cookies to understand how you use Agentivity and improve the experience.
-      <a href="/legal/privacy" class="cookie-link">Privacy policy</a>
+      {cookieCopy.text}
+      <a href={cookieCopy.href} class="cookie-link">{cookieCopy.link}</a>
     </p>
     <div class="cookie-actions">
-      <button id="cookie-decline" class="cookie-btn cookie-btn--ghost">Decline</button>
-      <button id="cookie-accept"  class="cookie-btn cookie-btn--primary">Accept</button>
+      <button id="cookie-decline" type="button" class="cookie-btn cookie-btn--ghost">{cookieCopy.decline}</button>
+      <button id="cookie-accept" type="button" class="cookie-btn cookie-btn--primary">{cookieCopy.accept}</button>
     </div>
   </div>
 
@@ -137,24 +143,54 @@ window.__gtmId = '${GTM_ID}';
       document.head.appendChild(s);
     }
 
+    // Removes the cookies set by Google Analytics (_ga, _ga_<id>), whichever domain they were set on.
+    function deleteAnalyticsCookies() {
+      const host = location.hostname;
+      const labels = host.split('.');
+      const domains = ['', host, '.' + host];
+      if (labels.length > 2) domains.push('.' + labels.slice(-2).join('.'));
+      document.cookie.split(';').map((c) => c.split('=')[0].trim()).filter((name) => name === '_ga' || name.startsWith('_ga_')).forEach((name) => {
+        domains.forEach((domain) => {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;' + (domain ? ' domain=' + domain + ';' : '');
+        });
+      });
+    }
+
+    function readChoice(): string | null {
+      try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
+    }
+    function saveChoice(value: string) {
+      try { localStorage.setItem(CONSENT_KEY, value); } catch { /* private mode: the choice lasts for this page only */ }
+    }
+
     function initConsent() {
       const banner = document.getElementById('cookie-banner');
-      const stored = localStorage.getItem(CONSENT_KEY);
+      const show = () => { banner?.removeAttribute('hidden'); };
+      const hide = () => { banner?.setAttribute('hidden', ''); };
 
-      if (stored === 'accepted') { loadGTM(); return; }
-      if (stored === 'declined') return;
-
-      // Show banner after short delay
-      setTimeout(() => { banner?.removeAttribute('hidden'); }, 800);
+      const stored = readChoice();
+      if (stored === 'accepted') loadGTM();
+      else if (stored !== 'declined') setTimeout(show, 800); // no choice yet: ask, after a short delay
 
       document.getElementById('cookie-accept')?.addEventListener('click', () => {
-        localStorage.setItem(CONSENT_KEY, 'accepted');
-        banner?.setAttribute('hidden', '');
+        saveChoice('accepted');
+        hide();
         loadGTM();
       });
       document.getElementById('cookie-decline')?.addEventListener('click', () => {
-        localStorage.setItem(CONSENT_KEY, 'declined');
-        banner?.setAttribute('hidden', '');
+        saveChoice('declined');
+        hide();
+        deleteAnalyticsCookies();
+        // Tag Manager was already running on this page: reload so that it stops.
+        if ((window as any).__gtmLoaded) location.reload();
+      });
+
+      // "Cookie settings" in the footer: ask again, whatever was chosen before.
+      document.querySelectorAll('[data-cookie-settings]').forEach((link) => {
+        link.addEventListener('click', () => {
+          show();
+          (document.getElementById('cookie-accept') as HTMLButtonElement | null)?.focus();
+        });
       });
     }
 

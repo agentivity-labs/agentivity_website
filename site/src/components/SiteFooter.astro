@@ -30,7 +30,10 @@ const t = useTranslations(lang);
       ))}
     </div>
 
-    <div class="sf-bottom">{t.footer.legal}</div>
+    <div class="sf-bottom">
+      <span>{t.footer.legal}</span>
+      <button type="button" class="sf-cookie" data-cookie-settings>{t.footer.cookies}</button>
+    </div>
   </div>
 </footer>
 
@@ -45,7 +48,9 @@ const t = useTranslations(lang);
 }
 .sf-col a { display: block; font-size: 15px; padding: 6px 0; transition: color .15s ease; }
 .sf-col a:hover { color: var(--ed-ink); }
-.sf-bottom { margin-top: clamp(36px, 5vw, 56px); padding-top: 22px; border-top: 1px solid var(--ed-line); font-size: 14px; }
+.sf-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 24px; margin-top: clamp(36px, 5vw, 56px); padding-top: 22px; border-top: 1px solid var(--ed-line); font-size: 14px; }
+.sf-cookie { min-height: 44px; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; transition: color .15s ease; }
+.sf-cookie:hover { color: var(--ed-ink); }
 
 @media (max-width: 1080px) { .sf-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
 @media (max-width: 560px) { .sf-grid { grid-template-columns: 1fr; } }
