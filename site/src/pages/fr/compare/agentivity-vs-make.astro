@@ -12,18 +12,18 @@ const rows: Row[] = [
   { feature: "Éditeur de workflow",             ag: "yes",     make: "yes",     },
   { feature: "Support des agents IA",           ag: "yes",     make: "partial", note: "Make a des modules IA (OpenAI, Claude) — un seul appel LLM par module" },
   { feature: "Équipes multi-agents",            ag: "yes",     make: "no",      },
-  { feature: "Topologies d'équipe",             ag: "yes",     make: "no",      note: "Séquentiel · Group Chat · Concurrent" },
+  { feature: "Topologies d'équipe",             ag: "yes",     make: "no",      note: "Séquentiel · Concurrent · Handoff · Group Chat · Manager-led" },
   { feature: "Agent Studio",                    ag: "yes",     make: "no",      },
   { feature: "Team Studio",                     ag: "yes",     make: "no",      },
   { feature: "Prompt Studio",                   ag: "yes",     make: "no",      },
   { feature: "Bibliothèque Synergi",            ag: "yes",     make: "partial", note: "Make a 1 500+ templates de scénarios — pas de templates d'équipes d'agents" },
-  { feature: "Auto-hébergeable",                ag: "yes",     make: "no",      note: "Make est cloud uniquement — tes données vivent sur leurs serveurs" },
-  { feature: "Open source",                     ag: "yes",     make: "no",      },
+  { feature: "Auto-hébergeable",                ag: "yes",     make: "no",      note: "Make est cloud uniquement — vos données vivent sur leurs serveurs" },
+  { feature: "Code source disponible",          ag: "yes",     make: "no",      note: "Agentivity : Elastic License 2.0, gratuite à utiliser et à héberger soi-même. Make est un service cloud fermé" },
   { feature: "Offre gratuite (illimitée)",       ag: "yes",     make: "partial", note: "Make gratuit = 1 000 ops/mois · Agentivity gratuit = illimité, auto-hébergé" },
-  { feature: "Apporte ta propre clé API",       ag: "yes",     make: "partial", note: "Make nécessite leur module HTTP — pas de BYOK natif" },
+  { feature: "Apportez votre propre clé API",       ag: "yes",     make: "partial", note: "Make nécessite leur module HTTP — pas de BYOK natif" },
   { feature: "1 500+ intégrations SaaS",        ag: "no",      make: "yes",     note: "Le principal atout de Make" },
   { feature: "Facturation à l'opération",       ag: "no",      make: "yes",     note: "Make facture par opération — les coûts augmentent avec l'usage" },
-  { feature: "Données sur ton infra",           ag: "yes",     make: "no",      },
+  { feature: "Données sur votre infra",           ag: "yes",     make: "no",      },
   { feature: "Low-code",                        ag: "yes",     make: "yes",     },
 ];
 ---
@@ -45,8 +45,8 @@ const rows: Row[] = [
         <span class="cmp-vs-name">Make</span>
       </h1>
       <p class="cmp-sub">
-        Make connecte tes outils SaaS en scénarios visuels — 1 500+ intégrations, facturation à l'opération, cloud uniquement.
-        Agentivity te donne un <strong>éditeur de workflow</strong>, un <strong>Agent Studio</strong>, un <strong>Team Studio</strong>
+        Make connecte vos outils SaaS en scénarios visuels — 1 500+ intégrations, facturation à l'opération, cloud uniquement.
+        Agentivity vous donne un <strong>éditeur de workflow</strong>, un <strong>Agent Studio</strong>, un <strong>Team Studio</strong>
         et un <strong>Prompt Studio</strong> — auto-hébergé, gratuit, sans compteur d'opérations.
       </p>
       <div class="cmp-hero-pills">
@@ -64,8 +64,8 @@ const rows: Row[] = [
         <div class="cmp-verdict-card cmp-verdict-card--them">
           <h3 class="cmp-verdict-name">Make est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu as besoin de 1 500+ intégrations natives SaaS clé en main</li>
-            <li>Ton workflow connecte Slack, Notion, HubSpot, Google Sheets, etc.</li>
+            <li>Vous avez besoin de 1 500+ intégrations natives SaaS clé en main</li>
+            <li>Votre workflow connecte Slack, Notion, HubSpot, Google Sheets, etc.</li>
             <li>L'hébergement cloud est ok — la confidentialité des données n'est pas une exigence</li>
             <li>L'IA est un petit module dans une automatisation plus large, pas le cœur</li>
           </ul>
@@ -74,9 +74,9 @@ const rows: Row[] = [
           <div class="cmp-verdict-badge">Agentivity</div>
           <h3 class="cmp-verdict-name">Agentivity est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu veux des agents IA avec rôles, outils et mémoire — pas des appels LLM génériques</li>
-            <li>La confidentialité des données est importante — rien ne sort de ton serveur</li>
-            <li>Tu veux une échelle illimitée sans facturation à l'opération</li>
+            <li>Vous voulez des agents IA avec rôles, outils et mémoire — pas des appels LLM génériques</li>
+            <li>La confidentialité des données est importante — rien ne sort de votre serveur</li>
+            <li>Vous voulez une échelle illimitée sans facturation à l'opération</li>
             <li>L'orchestration IA — pas la connexion SaaS — est le produit</li>
           </ul>
         </div>
@@ -133,32 +133,32 @@ const rows: Row[] = [
       <div class="cmp-studios">
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--mint)"></div><h3 class="cmp-studio-name">Agent Studio</h3></div>
-          <p class="cmp-studio-body">Conçois chaque agent individuellement : nom, rôle, prompt système, outils (recherche web, exécution de code, APIs) et portée mémoire. Dans Make, un module IA est un seul appel LLM sans concept d'identité, de rôle ou de spécialisation.</p>
+          <p class="cmp-studio-body">Concevez chaque agent individuellement : nom, rôle, prompt système, outils (recherche web, exécution de code, APIs) et portée mémoire. Dans Make, un module IA est un seul appel LLM sans concept d'identité, de rôle ou de spécialisation.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--cyan)"></div><h3 class="cmp-studio-name">Team Studio &amp; Topologies</h3></div>
-          <p class="cmp-studio-body">Compose des agents en équipes et choisis une topologie de collaboration : <strong>Séquentiel</strong> (passage de relais), <strong>Group Chat</strong> (raisonnement collectif), ou <strong>Concurrent</strong> (exécution parallèle + synthèse). Make n'a pas d'équivalent.</p>
+          <p class="cmp-studio-body">Composez des agents en équipes et choisissez comment ils collaborent : <strong>Séquentiel</strong> (l'un après l'autre), <strong>Concurrent</strong> (tous en même temps), <strong>Handoff</strong> (chacun passe le dossier au bon collègue), <strong>Group Chat</strong> (raisonnement collectif) ou <strong>Manager-led</strong> (un responsable planifie et répartit le travail). Make n'a pas d'équivalent.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--violet-l)"></div><h3 class="cmp-studio-name">Prompt Studio</h3></div>
-          <p class="cmp-studio-body">Un environnement dédié pour écrire, versionner et itérer sur les prompts système — par agent. Compare les sorties entre versions de prompts, affine le comportement des agents. Make n'a pas de couche de gestion des prompts.</p>
+          <p class="cmp-studio-body">Un environnement dédié pour écrire, versionner et itérer sur les prompts système — par agent. Comparez les sorties entre versions de prompts, affinez le comportement des agents. Make n'a pas de couche de gestion des prompts.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--red)"></div><h3 class="cmp-studio-name">Auto-hébergé &amp; gratuit, pour toujours</h3></div>
-          <p class="cmp-studio-body">Make est cloud uniquement et facture par opération. Agentivity tourne sur ton infrastructure — Docker, ton serveur, tes règles. Pas de compteur d'opérations, pas de facture mensuelle, pas de données qui quittent ton réseau. Ton seul coût est les tokens LLM payés directement à ton fournisseur.</p>
+          <p class="cmp-studio-body">Make est cloud uniquement et facture par opération. Agentivity tourne sur votre infrastructure — Docker, votre serveur, vos règles. Pas de compteur d'opérations, pas de facture mensuelle, pas de données qui quittent votre réseau. Votre seul coût est celui des tokens LLM, payés directement à votre fournisseur.</p>
         </div>
       </div>
       <div class="cmp-honest-box">
         <span class="cmp-honest-label">Mise en garde honnête</span>
-        <p class="cmp-honest-text">Si tu as besoin d'intégrations SaaS profondes — Slack, HubSpot, Google Workspace, Notion — les 1 500+ connecteurs de Make sont difficiles à battre sans développement custom. Agentivity fournit les outils dont les agents ont besoin (recherche web, exécution de code, APIs), pas un connecteur SaaS universel. Beaucoup d'équipes utilisent les deux : Make pour déclencher et acheminer les données, Agentivity pour le raisonnement.</p>
+        <p class="cmp-honest-text">Si vous avez besoin d'intégrations SaaS profondes — Slack, HubSpot, Google Workspace, Notion — les 1 500+ connecteurs de Make sont difficiles à battre sans développement custom. Agentivity fournit les outils dont les agents ont besoin (recherche web, exécution de code, APIs), pas un connecteur SaaS universel. Beaucoup d'équipes utilisent les deux : Make pour déclencher et acheminer les données, Agentivity pour le raisonnement.</p>
       </div>
     </div>
   </section>
 
   <section class="s-violet cmp-cta">
     <div class="wrap cmp-cta-inner">
-      <h2 class="h2 cmp-cta-h2">Une IA qui raisonne.<br /><span class="grad-text">Gratuite. Sur ton infra.</span></h2>
-      <p class="cmp-cta-sub">Low-code. Auto-hébergé. Open source. Sans compteur d'opérations.</p>
+      <h2 class="h2 cmp-cta-h2">Une IA qui raisonne.<br /><span class="grad-text">Gratuite. Sur votre infra.</span></h2>
+      <p class="cmp-cta-sub">Sans code. Auto-hébergé. Code source disponible. Sans compteur d'opérations.</p>
       <div class="cmp-cta-btns">
         <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Étoiler sur GitHub</a>
         <a href="/fr/how-it-works" class="btn btn-ghost">Comment ça marche →</a>

@@ -19,13 +19,13 @@ const rows: Row[] = [
   { feature: "Workflow editor",              ag: "yes",     make: "yes",     },
   { feature: "AI agent support",             ag: "yes",     make: "partial", note: "Make has AI modules (OpenAI, Claude) — single LLM call per module" },
   { feature: "Multi-agent teams",            ag: "yes",     make: "no",      },
-  { feature: "Team topologies",              ag: "yes",     make: "no",      note: "Sequential · Group Chat · Concurrent" },
+  { feature: "Team topologies",              ag: "yes",     make: "no",      note: "Sequential · Concurrent · Handoff · Group Chat · Manager-led" },
   { feature: "Agent Studio",                 ag: "yes",     make: "no",      },
   { feature: "Team Studio",                  ag: "yes",     make: "no",      },
   { feature: "Prompt Studio",                ag: "yes",     make: "no",      },
   { feature: "Synergi template library",     ag: "yes",     make: "partial", note: "Make has 1,500+ scenario templates — not agent/team templates" },
   { feature: "Self-hostable",                ag: "yes",     make: "no",      note: "Make is cloud-only — your data lives on their servers" },
-  { feature: "Open source",                  ag: "yes",     make: "no",      },
+  { feature: "Source code available",        ag: "yes",     make: "no",      note: "Agentivity: Elastic License 2.0, free to use and self-host. Make is a closed, cloud-only service" },
   { feature: "Free tier (unlimited)",        ag: "yes",     make: "partial", note: "Make free = 1,000 ops/month · Agentivity free = unlimited, self-hosted" },
   { feature: "Bring your own API key",       ag: "yes",     make: "partial", note: "Make requires their HTTP module — not native BYOK" },
   { feature: "1,500+ SaaS integrations",    ag: "no",      make: "yes",     note: "Make's main strength" },
@@ -161,9 +161,11 @@ const rows: Row[] = [
           </div>
           <p class="cmp-studio-body">
             Compose agents into teams and choose a collaboration topology:
-            <strong>Sequential</strong> (hand-off chain),
-            <strong>Group Chat</strong> (agents reason together),
-            or <strong>Concurrent</strong> (parallel execution + synthesis).
+            <strong>Sequential</strong> (one after the other),
+            <strong>Concurrent</strong> (all at the same time),
+            <strong>Handoff</strong> (each passes the file on),
+            <strong>Group Chat</strong> (agents reason together)
+            or <strong>Manager-led</strong> (a manager plans and distributes the work).
             Make has no equivalent — its modules run in order, independently.
           </p>
         </div>
@@ -208,7 +210,7 @@ const rows: Row[] = [
   <section class="s-violet cmp-cta">
     <div class="wrap cmp-cta-inner">
       <h2 class="h2 cmp-cta-h2">AI that reasons.<br /><span class="grad-text">Free. On your infra.</span></h2>
-      <p class="cmp-cta-sub">Low-code. Self-hosted. Open source. No operation counter.</p>
+      <p class="cmp-cta-sub">No code. Self-hosted. Source available. No operation counter.</p>
       <div class="cmp-cta-btns">
         <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Star on GitHub</a>
         <a href="/how-it-works" class="btn btn-ghost">See how it works →</a>

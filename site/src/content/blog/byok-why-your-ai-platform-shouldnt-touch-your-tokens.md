@@ -3,7 +3,7 @@ title: "BYOK: why your AI platform shouldn't touch your tokens"
 description: "Most AI platforms sit between you and your LLM provider, marking up your usage and logging your prompts. Here's why that matters, and what BYOK actually means in practice."
 pubDate: 2026-06-05
 author: "Agentivity Team"
-tags: ["BYOK", "privacy", "architecture", "open source"]
+tags: ["BYOK", "privacy", "architecture", "self-hosted"]
 lang: en
 ---
 

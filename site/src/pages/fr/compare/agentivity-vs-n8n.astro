@@ -12,14 +12,14 @@ const rows: Row[] = [
   { feature: "Éditeur de workflow",             ag: "yes",     n8n: "yes",     },
   { feature: "Support des agents IA",           ag: "yes",     n8n: "partial", note: "n8n a des nœuds IA (LangChain) — un seul agent par workflow" },
   { feature: "Équipes multi-agents",            ag: "yes",     n8n: "no",      },
-  { feature: "Topologies d'équipe",             ag: "yes",     n8n: "no",      note: "Séquentiel · Group Chat · Concurrent" },
+  { feature: "Topologies d'équipe",             ag: "yes",     n8n: "no",      note: "Séquentiel · Concurrent · Handoff · Group Chat · Manager-led" },
   { feature: "Agent Studio",                    ag: "yes",     n8n: "no",      note: "Interface dédiée pour configurer le rôle, les outils et le prompt de chaque agent" },
   { feature: "Team Studio",                     ag: "yes",     n8n: "no",      },
   { feature: "Prompt Studio",                   ag: "yes",     n8n: "no",      },
-  { feature: "Bibliothèque Synergi",            ag: "yes",     n8n: "partial", note: "n8n a des templates de workflow — pas de templates d'équipes d'agents" },
-  { feature: "Apporte ta propre clé API",       ag: "yes",     n8n: "yes",     },
+  { feature: "Bibliothèque Synergi",            ag: "yes",     n8n: "yes",     note: "n8n a une grande bibliothèque de templates de workflow. Une Solution Synergi est un cas d'usage complet en un fichier : ses agents, équipes et workflows" },
+  { feature: "Apportez votre propre clé API",       ag: "yes",     n8n: "yes",     },
   { feature: "Auto-hébergeable",                ag: "yes",     n8n: "yes",     },
-  { feature: "Open source",                     ag: "yes",     n8n: "yes",     },
+  { feature: "Code source disponible",          ag: "yes",     n8n: "yes",     note: "Agentivity : Elastic License 2.0, gratuite à utiliser et à héberger soi-même. n8n : Sustainable Use License" },
   { feature: "Low-code",                        ag: "yes",     n8n: "yes",     },
   { feature: "1 000+ intégrations SaaS",        ag: "no",      n8n: "yes",     note: "Le point fort de n8n — 400+ nœuds natifs" },
   { feature: "Exécution parallèle des agents",  ag: "yes",     n8n: "no",      },
@@ -50,7 +50,7 @@ const rows: Row[] = [
       </p>
       <div class="cmp-hero-pills">
         <span class="cmp-pill" style="--c:var(--mint)">Tous deux ont des éditeurs de workflow</span>
-        <span class="cmp-pill" style="--c:var(--mint)">Tous deux open source &amp; auto-hébergeables</span>
+        <span class="cmp-pill" style="--c:var(--mint)">Tous deux à code source disponible &amp; auto-hébergeables</span>
         <span class="cmp-pill" style="--c:var(--cyan)">Agentivity ajoute les équipes multi-agents</span>
       </div>
     </div>
@@ -63,19 +63,19 @@ const rows: Row[] = [
         <div class="cmp-verdict-card cmp-verdict-card--them">
           <h3 class="cmp-verdict-name">n8n est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu as besoin de 400+ intégrations SaaS natives sans configuration</li>
-            <li>Ton workflow connecte des APIs, webhooks et bases de données</li>
+            <li>Vous avez besoin de 400+ intégrations SaaS natives sans configuration</li>
+            <li>Votre workflow connecte des APIs, webhooks et bases de données</li>
             <li>L'IA est une seule étape dans une automatisation plus large — pas le cœur</li>
-            <li>Tu as déjà des workflows n8n et tu veux ajouter un nœud IA</li>
+            <li>Vous avez déjà des workflows n8n et vous voulez ajouter un nœud IA</li>
           </ul>
         </div>
         <div class="cmp-verdict-card cmp-verdict-card--us">
           <div class="cmp-verdict-badge">Agentivity</div>
           <h3 class="cmp-verdict-name">Agentivity est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu veux plusieurs agents avec des rôles différents qui travaillent en équipe</li>
-            <li>Tu as besoin d'un studio dédié pour créer les prompts et les outils de chaque agent</li>
-            <li>Tu veux des topologies Group Chat ou Concurrent — pas juste des étapes séquentielles</li>
+            <li>Vous voulez plusieurs agents avec des rôles différents qui travaillent en équipe</li>
+            <li>Vous avez besoin d'un studio dédié pour créer les prompts et les outils de chaque agent</li>
+            <li>Vous voulez des topologies Group Chat ou Concurrent — pas juste des étapes séquentielles</li>
             <li>L'orchestration IA est le produit, pas un module dans autre chose</li>
           </ul>
         </div>
@@ -132,32 +132,32 @@ const rows: Row[] = [
       <div class="cmp-studios">
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--mint)"></div><h3 class="cmp-studio-name">Agent Studio</h3></div>
-          <p class="cmp-studio-body">Conçois chaque agent individuellement : nom, rôle, système de prompt, outils (recherche web, exécution de code, APIs). Dans n8n, un nœud IA est un appel LLM générique. Dans Agentivity, c'est un spécialiste avec un titre de poste.</p>
+          <p class="cmp-studio-body">Concevez chaque agent individuellement : nom, rôle, système de prompt, outils (recherche web, exécution de code, APIs). Dans n8n, un nœud IA est un appel LLM générique. Dans Agentivity, c'est un spécialiste avec un titre de poste.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--cyan)"></div><h3 class="cmp-studio-name">Team Studio &amp; Topologies</h3></div>
-          <p class="cmp-studio-body">Compose des agents en équipes et choisis comment ils collaborent : <strong>Séquentiel</strong> (passage de relais), <strong>Group Chat</strong> (raisonnement collectif), ou <strong>Concurrent</strong> (exécution parallèle + synthèse). n8n n'a pas de concept d'équipe d'agents.</p>
+          <p class="cmp-studio-body">Composez des agents en équipes et choisissez comment ils collaborent : <strong>Séquentiel</strong> (l'un après l'autre), <strong>Concurrent</strong> (tous en même temps), <strong>Handoff</strong> (chacun passe le dossier au bon collègue), <strong>Group Chat</strong> (raisonnement collectif) ou <strong>Manager-led</strong> (un responsable planifie et répartit le travail). n8n n'a pas de concept d'équipe d'agents.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--violet-l)"></div><h3 class="cmp-studio-name">Prompt Studio</h3></div>
-          <p class="cmp-studio-body">Un environnement dédié pour écrire, tester et itérer sur les prompts système — par agent. Versionne tes prompts, compare les sorties, affine le comportement. n8n n'a pas de couche de gestion des prompts.</p>
+          <p class="cmp-studio-body">Un environnement dédié pour écrire, tester et itérer sur les prompts système — par agent. Versionnez vos prompts, comparez les sorties, affinez le comportement. n8n n'a pas de couche de gestion des prompts.</p>
         </div>
         <div class="cmp-studio-card">
-          <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--red)"></div><h3 class="cmp-studio-name">Bibliothèque Synergi</h3></div>
-          <p class="cmp-studio-body">Des agents, équipes et workflows préconstruits déployables en un clic — équipe Analyste Finance, équipe Screening RH, équipe Rédaction. n8n a des templates de workflow. Agentivity a des templates d'équipes avec les agents déjà configurés.</p>
+          <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--red)"></div><h3 class="cmp-studio-name">Solutions Synergi</h3></div>
+          <p class="cmp-studio-body">Des Solutions prêtes à l'emploi, à parcourir et à importer dans votre propre Studio : un cas d'usage complet, avec ses agents, ses équipes et ses workflows, en un seul fichier. n8n a des templates de workflow ; une Solution Synergi embarque aussi les agents et l'équipe.</p>
         </div>
       </div>
       <div class="cmp-honest-box">
         <span class="cmp-honest-label">Mise en garde honnête</span>
-        <p class="cmp-honest-text">Si tu as besoin d'intégrations SaaS profondes (Slack, HubSpot, Notion, 400+ autres) clé en main, n8n l'emporte. Agentivity est IA-first — ses intégrations sont les outils dont les agents ont besoin, pas un connecteur API universel. Beaucoup d'équipes utilisent les deux.</p>
+        <p class="cmp-honest-text">Si vous avez besoin d'intégrations SaaS profondes (Slack, HubSpot, Notion, 400+ autres) clé en main, n8n l'emporte. Agentivity est IA-first — ses intégrations sont les outils dont les agents ont besoin, pas un connecteur API universel. Beaucoup d'équipes utilisent les deux.</p>
       </div>
     </div>
   </section>
 
   <section class="s-violet cmp-cta">
     <div class="wrap cmp-cta-inner">
-      <h2 class="h2 cmp-cta-h2">Construis ta première<br /><span class="grad-text">équipe d'agents.</span></h2>
-      <p class="cmp-cta-sub">Low-code. Auto-hébergé. Open source. Opérationnel en quelques minutes.</p>
+      <h2 class="h2 cmp-cta-h2">Construisez votre première<br /><span class="grad-text">équipe d'agents.</span></h2>
+      <p class="cmp-cta-sub">Sans code. Auto-hébergé. Code source disponible. Opérationnel en quelques minutes.</p>
       <div class="cmp-cta-btns">
         <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Étoiler sur GitHub</a>
         <a href="/fr/how-it-works" class="btn btn-ghost">Comment ça marche →</a>

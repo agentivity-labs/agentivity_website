@@ -382,6 +382,7 @@
         "title": "Product",
         "links": [
           { "label": "How it works",   "href": "/how-it-works" },
+          { "label": "Assistant", "href": "/assistant" },
           { "label": "Use Cases",      "href": "/use-cases" },
           { "label": "Services",       "href": "/services" },
           { "label": "Pricing",        "href": "/pricing" },
@@ -741,16 +742,16 @@
   },
   "how_page": {
     "meta": {
-      "title": "How Agentivity Works — Build an Agent, a Team or a Workflow Without Code",
-      "description": "See the Agentivity Studio at work: create an agent, put several in a team, draw a workflow, and watch what your users get. No code."
+      "title": "How Agentivity Works — Describe a Team to the Assistant, or Build It by Hand",
+      "description": "Tell the Assistant what you need and watch it build a team, a workflow or an agent. Or build it by hand in the Studio, with full control. No code."
     },
     "hero": {
       "eyebrow": "How it works",
       "h1": "You don't write code.",
-      "h1_accent": "You build a team.",
-      "sub": "Everything happens in the Studio, in your browser. Three short clips show how you build, a fourth shows what your users get.",
-      "alt": "The Agentivity Studio: a team on the canvas, a manager above three specialists, and the list of available agents on the right",
-      "caption": "The Studio: a team being put together, one manager and three specialists."
+      "h1_accent": "You describe what you need.",
+      "sub": "Tell the Assistant, in your own words. It shows a plan, builds a draft, and you check, change and save it. Or build by hand in the Studio, when you want full control. Everything happens in your browser.",
+      "alt": "The Assistant in the Agentivity Studio: a conversation in the middle, and on the right the team it has just built, a researcher, a writer, a reviewer and a translator",
+      "caption": "The Assistant, in the Studio: a team built from one sentence."
     },
     "recorded": "Recorded in the Studio, played faster.",
     "steps": [
@@ -849,8 +850,8 @@
     },
     "start": {
       "eyebrow": "Your turn",
-      "h2": "Two ways",
-      "h2_accent": "to start.",
+      "h2": "Choose where it",
+      "h2_accent": "runs.",
       "community": {
         "name": "Install it yourself",
         "badge": "Free forever",
@@ -871,8 +872,12 @@
       "h2_accent": "you start.",
       "items": [
         {
+          "q": "What is the Assistant?",
+          "a": "It is the part of the Studio where you describe what you need and it builds a team, an agent or a workflow for you. It asks questions, shows a plan, and builds a draft you review and save. You can still build everything by hand."
+        },
+        {
           "q": "Do I need to know how to code?",
-          "a": "No. You build everything in the Studio, with names, plain-word descriptions and drag and drop. Two things do need a technical colleague: installing the Community edition on a server, and building a VibeApp of your own."
+          "a": "No. You describe what you need to the Assistant, or you build in the Studio with names, plain-word descriptions and drag and drop. Two things do need a technical colleague: installing the Community edition on a server, and building a VibeApp of your own."
         },
         {
           "q": "Which AI model does it use?",
@@ -893,6 +898,41 @@
       "h2_accent": "your first team?",
       "sub": "Join the waitlist and be first on the cloud.",
       "fine": "No spam. First access when the cloud launches."
+    },
+    "assistant": {
+      "eyebrow": "The fast way",
+      "h2": "Tell the Assistant",
+      "h2_accent": "what you need.",
+      "lead": "Describe it the way you would to a colleague. The Assistant asks what it needs to know, shows you a plan, then builds a draft you can look at, change and save. It is part of the Studio, in the Community edition.",
+      "clip": "assistant-create",
+      "alt": "A recording of the Assistant: a sentence is typed, a question with choices is answered, a plan is approved, and a team of three appears on the right",
+      "caption": "One sentence, one question, one plan, then the team. Recorded from the product, played faster.",
+      "asks_title": "Three things you can ask",
+      "asks": [
+        {
+          "title": "Create",
+          "say": "A team of three that prepares a weekly note on what our competitors published.",
+          "body": "From a sentence to a team, an agent or a workflow."
+        },
+        {
+          "title": "Modify",
+          "say": "Add a translator at the end, who produces the French version of the approved note.",
+          "body": "Ask for a change. The draft updates."
+        },
+        {
+          "title": "Challenge",
+          "say": "Challenge this team: what could go wrong, and what would you change?",
+          "body": "Ask what is weak, before anything runs."
+        }
+      ],
+      "stay": "Nothing is saved until you say so. And what it builds is an ordinary team you can open and adjust by hand.",
+      "link": "See the Assistant in detail"
+    },
+    "by_hand": {
+      "eyebrow": "Full control",
+      "h2": "Or build it",
+      "h2_accent": "by hand.",
+      "lead": "The Studio gives you everything the Assistant uses, and nothing the Assistant builds is hidden: it is an ordinary agent, team or workflow. Build from nothing, or open what it made and change it. These three steps are the same either way."
     }
   },
   "community_page": {
@@ -1808,6 +1848,171 @@
       "body": "A no-code platform to build teams of AI specialists that work alongside your people.",
       "how": "See how it works",
       "how_href": "/how-it-works"
+    }
+  },
+  "assistant_page": {
+    "meta": {
+      "title": "Agentivity Assistant — Describe an AI Team and Have It Built",
+      "description": "Tell the Assistant what you need, in plain words. It asks, shows a plan, then builds a draft you can change and save. Included in the free Community edition."
+    },
+    "hero": {
+      "eyebrow": "The Assistant",
+      "h1": "Describe it.",
+      "h1_accent": "The Assistant builds it.",
+      "sub": "You say what you need, in your own words. The Assistant asks what it needs to know, shows a plan, then builds a draft you can look at, change and save. No technical knowledge needed.",
+      "cta": "Install the Community edition",
+      "cta_secondary": "See how it works",
+      "note": "Included in the Community edition, free forever.",
+      "alt": "The Assistant in the Agentivity Studio: a conversation in the middle, and on the right the team it has just built, a researcher, a writer, a reviewer and a translator",
+      "caption": "A team built by the Assistant, drawn on the right as it is built."
+    },
+    "asks": {
+      "eyebrow": "What you can ask",
+      "h2": "Create it. Change it.",
+      "h2_accent": "Challenge it.",
+      "sub": "Three things, in the same conversation. Each clip below is the Studio itself, played faster.",
+      "recorded": "Recorded from the product, played faster.",
+      "you_say": "You say",
+      "items": [
+        {
+          "title": "Create",
+          "say": "A team of three that prepares, every week, a one-page note on what our competitors published: a researcher, a writer and a reviewer.",
+          "lead": "One sentence is enough to start. The Assistant asks only what it needs to know, and shows its plan before it builds anything.",
+          "beats": [
+            "You describe what you need",
+            "It asks a question, with choices to pick from",
+            "It shows a plan in plain words: go ahead, or change something",
+            "It builds a draft and draws it as it goes"
+          ],
+          "clip": "assistant-create",
+          "alt": "A recording of the Assistant: a sentence is typed, a question with choices is answered, a plan is approved, and a team of three appears on the right"
+        },
+        {
+          "title": "Modify",
+          "say": "Add a translator at the end, who produces the French version of the approved note.",
+          "lead": "Ask for a change in the same words, from the main sidebar or from the editor of what you built. The Assistant adds the member, connects it, checks the result and tells you what changed.",
+          "beats": [
+            "Add a member to a team",
+            "Make the instructions clearer and more precise",
+            "Add something to what you already have"
+          ],
+          "clip": "assistant-change",
+          "alt": "A recording of the Assistant: a sentence asks for a translator, the Assistant creates it and a fourth member appears at the end of the team"
+        },
+        {
+          "title": "Challenge",
+          "say": "Challenge this team: what could go wrong, and what would you change?",
+          "lead": "Ask for a second opinion. You get what could go wrong, and what it would change, before anything runs.",
+          "beats": [
+            "What could go wrong, point by point",
+            "What it would change for each one",
+            "Your choice: rebuild with some of it, all of it, or none"
+          ],
+          "clip": "assistant-challenge",
+          "alt": "A recording of the Assistant: it answers with five things that could go wrong in the team and four changes it would make, then asks which matter most"
+        }
+      ]
+    },
+    "hand": {
+      "eyebrow": "Not instead of the Studio",
+      "h2": "Then take it",
+      "h2_accent": "by hand.",
+      "lead": "What the Assistant builds is an ordinary team, agent or workflow in your workspace. Open it in the Studio and adjust it the way you always could. Or skip the Assistant and build from nothing: both stay available.",
+      "steps": [
+        "You save: you see what is added, and choose where it goes",
+        "It lands in your workspace like anything you built yourself",
+        "Open it in the editor to change it, publish it, run it"
+      ],
+      "clip": "assistant-hand",
+      "alt": "A recording of the Studio: what the Assistant drafted is saved to the workspace, then the team opens in the editor, with its four members on the canvas",
+      "caption": "Saving what the Assistant drafted, then opening it in the editor. The sparkle button opens the Assistant on this team.",
+      "link": "See how to build by hand"
+    },
+    "control": {
+      "eyebrow": "Your call",
+      "h2": "It proposes.",
+      "h2_accent": "You decide.",
+      "points": [
+        {
+          "title": "A plan before anything is built",
+          "body": "It shows what it intends to build, in plain words, and waits for your go-ahead."
+        },
+        {
+          "title": "A draft, not a change",
+          "body": "Nothing is saved until you save. Until then, nothing in your workspace moves."
+        },
+        {
+          "title": "Checked before you save",
+          "body": "It checks what it built. An error stops the save; a warning is for you to weigh."
+        },
+        {
+          "title": "Your keys stay yours",
+          "body": "It sees the name of your model connection, never its secrets."
+        }
+      ]
+    },
+    "know": {
+      "eyebrow": "Worth knowing",
+      "h2": "What to expect,",
+      "h2_accent": "honestly.",
+      "items": [
+        {
+          "title": "It drafts, you review.",
+          "body": "A first version is rarely the last. Read the plan, look at the result and try it on a real case, as you would with a new colleague's work."
+        },
+        {
+          "title": "It tells you what is missing.",
+          "body": "In the example above it reminded us to provide the competitors' website addresses. That part is yours."
+        },
+        {
+          "title": "It corrects itself, in the open.",
+          "body": "When it gets a step wrong, you see it, and you see the fix."
+        },
+        {
+          "title": "It uses your AI model.",
+          "body": "It works through the model connection you set up, so what you write goes to that provider, under its terms, and its usage is billed to you by that provider."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions people ask",
+      "h2": "Before",
+      "h2_accent": "you try it.",
+      "items": [
+        {
+          "q": "Is the Assistant part of the Community edition?",
+          "a": "Yes. It is in the Studio, in the free Community edition. It needs a connection to an AI model, which you set up once."
+        },
+        {
+          "q": "Do I need to know how to code, or what a workflow is?",
+          "a": "No. You describe what you need in your own words, and the Assistant answers in the words of your work, not technical ones."
+        },
+        {
+          "q": "Can I use it on something I already built?",
+          "a": "Yes. The Assistant is in the main sidebar and in the agent, team and workflow editors: open one of yours and launch the Assistant to improve it, or start from the Assistant and pick the one to work on. It opens in a new conversation, and nothing changes until you save."
+        },
+        {
+          "q": "Does it replace building by hand?",
+          "a": "No. The Studio is unchanged. The Assistant is the fast way to a first version, to a change, or to a second opinion. Anyone who prefers to draw it themselves still can."
+        },
+        {
+          "q": "Which AI model does it use?",
+          "a": "The connection you choose: OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock. You also choose which model the agents it builds will run on, and you can change it later."
+        },
+        {
+          "q": "Is what I write sent to Agentivity?",
+          "a": "No. With the Community edition everything runs on your server. What you write goes only to the AI model provider you connected."
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Try it on your",
+      "h2_accent": "own server.",
+      "sub": "The Community edition is free forever, and the Assistant is part of it.",
+      "primary": "Install the Community edition",
+      "secondary": "See the use cases",
+      "cloud": "Rather not install anything?",
+      "cloud_link": "Join the waitlist for the cloud"
     }
   },
   "ticker": ["Finance team", "HR team", "Content team", "Personal assistant", "Hiring pipeline", "Inbox at 7am", "Weekly briefing", "24/7 autonomous", "No code needed", "Synergi templates", "White-label ready", "Works while you sleep"]

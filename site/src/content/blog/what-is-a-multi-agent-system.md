@@ -9,7 +9,7 @@ lang: en
 
 Most conversations about AI focus on a single model answering a single question. Ask it something, get a response. Useful — but limited.
 
-Multi-agent systems change the model entirely. Instead of one AI trying to do everything, you have a team of specialised agents, each with a defined role, collaborating to complete complex work. Like a real team — but running 24/7, without email threads.
+Multi-agent systems change the model entirely. Instead of one AI trying to do everything, you have a team of specialised agents, each with a defined role, collaborating to complete complex work. Like a real team — but ready whenever you need it, without email threads.
 
 ## What is an AI agent?
 
@@ -90,4 +90,4 @@ That's the loop. And once you see the first team deliver its first output — ex
 
 ---
 
-*Agentivity is an open-source platform for building and running multi-agent teams. [Star us on GitHub](https://github.com/agentivity-labs/agentivity) or [explore the use cases](/use-cases).*
+*Agentivity is a source-available platform for building and running multi-agent teams. [Star us on GitHub](https://github.com/agentivity-labs/agentivity) or [explore the use cases](/use-cases).*

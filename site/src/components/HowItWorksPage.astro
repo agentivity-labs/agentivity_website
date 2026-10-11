@@ -1,6 +1,6 @@
 ---
 // The "How it works" page, shared by /how-it-works and /fr/how-it-works. Texts come from the "how_page" block of the translation files.
-// The page follows the order in which someone builds: an agent, a team, a workflow, then what the users get.
+// The page follows the order in which someone builds: with the Assistant first, then by hand (an agent, a team, a workflow), then what the users get.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
@@ -14,6 +14,7 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = t.how_page;
+const prefix = lang === 'fr' ? '/fr' : '';
 
 const clock = (seconds: number) => '0:' + String(Math.floor(seconds)).padStart(2, '0');
 const clips = ['studio-agent', 'studio-team', 'studio-workflow'];
@@ -46,10 +47,56 @@ const schema = {
     </div>
     <figure class="ed-shot hw-hero-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
-        <img src="/media/studio-team-canvas.webp" alt={p.hero.alt} width="1800" height="977" />
+        <img src="/media/assistant-change.jpg" alt={p.hero.alt} width="1418" height="770" />
       </div>
       <figcaption>{p.hero.caption}</figcaption>
     </figure>
+  </section>
+
+  <!-- The fast way: the Assistant -->
+  <section class="ed-band--mist" id="assistant">
+    <div class="ed-wrap ed-sec hw-step">
+      <header class="hw-step-head hw-step-head--assistant">
+        <div class="hw-step-intro">
+          <p class="ed-eyebrow">{p.assistant.eyebrow}</p>
+          <h2 class="ed-h2 ed-h2--md">{p.assistant.h2} <em>{p.assistant.h2_accent}</em></h2>
+          <p class="ed-sec-sub">{p.assistant.lead}</p>
+          <a class="hw-link" href={prefix + '/assistant'}>{p.assistant.link} →</a>
+        </div>
+        <div class="hw-ways">
+          <p class="hw-ways-title">{p.assistant.asks_title}</p>
+          <dl class="hw-asks">
+            {p.assistant.asks.map((ask: any) => (
+              <div>
+                <dt>{ask.title}</dt>
+                <dd>
+                  <span class="hw-ask-say" lang="en">{ask.say}</span>
+                  <span>{ask.body}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </header>
+      <figure class="ed-shot">
+        <div class="ed-shot-frame ed-shot-frame--lift">
+          <video muted loop playsinline controls preload="none" poster={'/media/' + p.assistant.clip + '.jpg'} width="1418" height="770" aria-label={p.assistant.alt} data-autoplay>
+            <source src={'/media/' + p.assistant.clip + '.mp4'} type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>{p.assistant.caption}</figcaption>
+      </figure>
+      <p class="hw-stay">{p.assistant.stay}</p>
+    </div>
+  </section>
+
+  <!-- Full control: by hand -->
+  <section class="ed-wrap hw-hand-head" id="by-hand">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.by_hand.eyebrow}</p>
+      <h2 class="ed-h2">{p.by_hand.h2} <em>{p.by_hand.h2_accent}</em></h2>
+      <p class="ed-sec-sub">{p.by_hand.lead}</p>
+    </header>
   </section>
 
   <!-- Steps 1 to 3: building, each with a recording of the Studio -->
@@ -93,11 +140,10 @@ const schema = {
     </section>
   ))}
 
-  <!-- Step 4: the result, replayed -->
-  <section class="ed-band--navy" id="step-4">
+  <!-- The result, replayed -->
+  <section class="ed-band--navy" id="result">
     <div class="ed-wrap ed-sec hw-step">
       <header class="hw-step-head hw-step-head--result">
-        <span class="hw-step-n hw-step-n--yellow" aria-hidden="true">4</span>
         <div class="hw-step-intro">
           <h2 class="ed-h2 ed-h2--md">{p.result.title}</h2>
           <p class="ed-sec-sub hw-on-navy"><strong class="hw-vibe">{t.site.vibeapp[1]}</strong> {p.result.lead}</p>
@@ -234,10 +280,20 @@ const schema = {
 .hw-hero-shot { width: 100%; margin-top: 22px; text-align: left; }
 .hw-hero-shot img { display: block; width: 100%; height: auto; }
 
+/* ---------- the Assistant way ---------- */
+.hw-step-intro .ed-eyebrow { margin-bottom: -4px; }
+.hw-asks dd { margin: 0; display: flex; flex-direction: column; gap: 4px; flex-basis: 100%; color: var(--ed-ink-2); }
+.hw-ask-say { font-weight: 600; color: var(--ed-ink); }
+.hw-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; border-bottom: 1.5px solid currentColor; align-self: flex-start; }
+.hw-link:hover { opacity: .7; }
+.hw-stay { max-width: 46em; font-size: 18px; line-height: 1.5; color: var(--ed-ink-2); border-left: 5px solid var(--ed-yellow); padding-left: 18px; }
+.hw-hand-head { padding-block: clamp(56px, 7vw, 96px) clamp(16px, 2vw, 24px); }
+
 /* ---------- the building steps ---------- */
 .hw-step { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); }
 .hw-step-head { display: grid; grid-template-columns: auto minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px clamp(20px, 3vw, 40px); align-items: start; }
-.hw-step-head--result { grid-template-columns: auto minmax(0, 1fr); }
+.hw-step-head--result { grid-template-columns: minmax(0, 1fr); }
+.hw-step-head--assistant { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
 .hw-step-n { width: clamp(52px, 5vw, 72px); height: clamp(52px, 5vw, 72px); border-radius: 999px; background: var(--ed-navy); color: #fff; display: grid; place-items: center; font-family: var(--ed-serif); font-size: clamp(30px, 3vw, 42px); line-height: 1; }
 .hw-step-n--yellow { background: var(--ed-yellow); color: var(--ed-ink); }
 .hw-step-intro { display: flex; flex-direction: column; gap: 14px; }
@@ -256,7 +312,7 @@ const schema = {
 
 .hw-step video { display: block; width: 100%; height: auto; aspect-ratio: 1418 / 770; background: #F4F4F4; }
 
-/* ---------- step 4: the replay ---------- */
+/* ---------- the result: the replay ---------- */
 .hw-replay { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 48px); align-items: start; }
 .hw-replay-screen { display: flex; flex-direction: column; gap: 12px; }
 .hw-replay-media { border-radius: 20px; overflow: hidden; background: #F3F1EC; border: 1px solid var(--ed-navy-line); }
@@ -302,11 +358,12 @@ const schema = {
 .hw-faq details[open] summary::after { content: "–"; }
 .hw-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
 
-#cta, #start, #step-1, #step-2, #step-3, #step-4 { scroll-margin-top: 78px; }
+#cta, #start, #assistant, #by-hand, #step-1, #step-2, #step-3, #result { scroll-margin-top: 78px; }
 
 @media (max-width: 900px) {
   .hw-step-head { grid-template-columns: auto minmax(0, 1fr); }
   .hw-points, .hw-ways { grid-column: 1 / -1; }
+  .hw-step-head--assistant { grid-template-columns: minmax(0, 1fr); }
   .hw-replay { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {

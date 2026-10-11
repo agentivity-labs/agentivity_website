@@ -1,0 +1,7 @@
+# Everything the recording scripts produce stays local; only the scripts and the README are kept.
+# The final clips live in site/public/media (assistant-*.mp4 and .jpg) and are committed from there.
+.profile/
+rec-*/
+*.mp4
+*.jpg
+*.log

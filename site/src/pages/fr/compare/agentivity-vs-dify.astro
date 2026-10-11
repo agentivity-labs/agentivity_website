@@ -12,16 +12,16 @@ const rows: Row[] = [
   { feature: "Éditeur de workflow",             ag: "yes",     dify: "yes",     },
   { feature: "Support des agents IA",           ag: "yes",     dify: "yes",     },
   { feature: "Équipes multi-agents",            ag: "yes",     dify: "partial", note: "Dify supporte des nœuds agents dans les workflows — pas de topologies d'équipe complètes" },
-  { feature: "Topologies d'équipe",             ag: "yes",     dify: "no",      note: "Séquentiel · Group Chat · Concurrent" },
+  { feature: "Topologies d'équipe",             ag: "yes",     dify: "no",      note: "Séquentiel · Concurrent · Handoff · Group Chat · Manager-led" },
   { feature: "Agent Studio",                    ag: "yes",     dify: "partial", note: "Dify a une config agent — Agentivity ajoute rôle, hiérarchie et mémoire" },
   { feature: "Team Studio",                     ag: "yes",     dify: "no",      },
   { feature: "Prompt Studio",                   ag: "yes",     dify: "yes",     },
   { feature: "Bibliothèque Synergi",            ag: "yes",     dify: "yes",     },
   { feature: "RAG / Base de connaissances",     ag: "partial", dify: "yes",     note: "Le point fort de Dify — store vectoriel natif & ingestion de documents" },
   { feature: "Publication d'app (API/embed)",   ag: "no",      dify: "yes",     note: "Dify permet de déployer des chatbots intégrables" },
-  { feature: "Apporte ta propre clé API",       ag: "yes",     dify: "yes",     },
+  { feature: "Apportez votre propre clé API",       ag: "yes",     dify: "yes",     },
   { feature: "Auto-hébergeable",                ag: "yes",     dify: "yes",     },
-  { feature: "Open source",                     ag: "yes",     dify: "yes",     },
+  { feature: "Code source disponible",          ag: "yes",     dify: "yes",     note: "Agentivity : Elastic License 2.0, gratuite à utiliser et à héberger soi-même. Dify : sa propre licence, fondée sur Apache 2.0" },
   { feature: "Low-code",                        ag: "yes",     dify: "yes",     },
   { feature: "Exécution parallèle des agents",  ag: "yes",     dify: "no",      },
   { feature: "Mémoire & hiérarchie d'agents",   ag: "yes",     dify: "no",      },
@@ -51,7 +51,7 @@ const rows: Row[] = [
       </p>
       <div class="cmp-hero-pills">
         <span class="cmp-pill" style="--c:var(--mint)">Tous deux ont agents &amp; workflows</span>
-        <span class="cmp-pill" style="--c:var(--mint)">Tous deux open source &amp; auto-hébergeables</span>
+        <span class="cmp-pill" style="--c:var(--mint)">Tous deux à code source disponible &amp; auto-hébergeables</span>
         <span class="cmp-pill" style="--c:var(--cyan)">Agentivity = topologies d'équipe</span>
       </div>
     </div>
@@ -64,20 +64,20 @@ const rows: Row[] = [
         <div class="cmp-verdict-card cmp-verdict-card--them">
           <h3 class="cmp-verdict-name">Dify est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu as besoin de RAG natif — recherche vectorielle, ingestion de documents, bases de connaissances</li>
-            <li>Tu veux publier un agent IA comme chatbot intégrable ou API</li>
-            <li>Un seul agent par tâche suffit pour ton workflow</li>
-            <li>Tu construis des produits IA orientés client</li>
+            <li>Vous avez besoin de RAG natif — recherche vectorielle, ingestion de documents, bases de connaissances</li>
+            <li>Vous voulez publier un agent IA comme chatbot intégrable ou API</li>
+            <li>Un seul agent par tâche suffit pour votre workflow</li>
+            <li>Vous construisez des produits IA orientés client</li>
           </ul>
         </div>
         <div class="cmp-verdict-card cmp-verdict-card--us">
           <div class="cmp-verdict-badge">Agentivity</div>
           <h3 class="cmp-verdict-name">Agentivity est plus adapté si…</h3>
           <ul class="cmp-verdict-list">
-            <li>Tu veux plusieurs agents travaillant en équipe — avec rôles et hiérarchie</li>
-            <li>Tu as besoin de topologies Group Chat (raisonnement collectif) ou Concurrent (parallèle)</li>
+            <li>Vous voulez plusieurs agents travaillant en équipe — avec rôles et hiérarchie</li>
+            <li>Vous avez besoin de topologies Group Chat (raisonnement collectif) ou Concurrent (parallèle)</li>
             <li>Chaque agent doit avoir ses propres outils, sa mémoire et sa spécialisation</li>
-            <li>L'orchestration d'agents — pas la publication d'apps — est ton objectif</li>
+            <li>L'orchestration d'agents — pas la publication d'apps — est votre objectif</li>
           </ul>
         </div>
       </div>
@@ -133,7 +133,7 @@ const rows: Row[] = [
       <div class="cmp-studios">
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--mint)"></div><h3 class="cmp-studio-name">Team Studio &amp; Topologies</h3></div>
-          <p class="cmp-studio-body">La couche unique d'Agentivity : compose des agents en équipes et choisis comment ils collaborent. <strong>Séquentiel</strong> — passage de relais classique. <strong>Group Chat</strong> — les agents raisonnent et débattent ensemble. <strong>Concurrent</strong> — exécution parallèle, un synthétiseur fusionne les résultats. Dify n'a pas d'équivalent.</p>
+          <p class="cmp-studio-body">La couche unique d'Agentivity : composez des agents en équipes et choisissez comment ils collaborent. <strong>Séquentiel</strong> — l'un après l'autre. <strong>Concurrent</strong> — tous en même temps. <strong>Handoff</strong> — chacun passe le dossier au bon collègue. <strong>Group Chat</strong> — les agents raisonnent et débattent ensemble. <strong>Manager-led</strong> — un responsable planifie et répartit le travail. Dify n'a pas d'équivalent.</p>
         </div>
         <div class="cmp-studio-card">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--cyan)"></div><h3 class="cmp-studio-name">Hiérarchie &amp; mémoire des agents</h3></div>
@@ -141,16 +141,16 @@ const rows: Row[] = [
         </div>
         <div class="cmp-studio-card cmp-studio-card--them">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--violet-l)"></div><h3 class="cmp-studio-name">RAG &amp; Base de connaissances — Dify gagne</h3></div>
-          <p class="cmp-studio-body">La base de connaissances native de Dify est excellente — upload de documents, chunking, embedding, recherche hybride. Agentivity peut appeler des outils de récupération externes mais ne fournit pas de store vectoriel natif. Si le RAG est central à ton produit, Dify est le meilleur choix.</p>
+          <p class="cmp-studio-body">La base de connaissances native de Dify est excellente — upload de documents, chunking, embedding, recherche hybride. Agentivity peut appeler des outils de récupération externes mais ne fournit pas de store vectoriel natif. Si le RAG est central à votre produit, Dify est le meilleur choix.</p>
         </div>
         <div class="cmp-studio-card cmp-studio-card--them">
           <div class="cmp-studio-header"><div class="cmp-studio-dot" style="--c:var(--red)"></div><h3 class="cmp-studio-name">Publication d'apps — Dify gagne</h3></div>
-          <p class="cmp-studio-body">Dify te permet de déployer ton agent comme widget chatbot intégrable, API REST ou lien partageable. Agentivity est conçu pour faire tourner des équipes en interne — pas pour publier des apps grand public. Si tu construis un produit orienté client, Dify a de l'avance.</p>
+          <p class="cmp-studio-body">Dify vous permet de déployer votre agent comme widget chatbot intégrable, API REST ou lien partageable. Agentivity est conçu pour faire tourner des équipes en interne — pas pour publier des apps grand public. Si vous construisez un produit orienté client, Dify a de l'avance.</p>
         </div>
       </div>
       <div class="cmp-honest-box">
         <span class="cmp-honest-label">Bilan honnête</span>
-        <p class="cmp-honest-text">Ces outils sont plus complémentaires que concurrents. Certaines équipes utilisent Dify pour construire la couche RAG et Agentivity pour orchestrer les agents qui l'interrogent. Le bon choix dépend de si ton besoin principal est la <em>publication d'apps</em> (Dify) ou <em>l'orchestration d'équipes d'agents</em> (Agentivity).</p>
+        <p class="cmp-honest-text">Ces outils sont plus complémentaires que concurrents. Certaines équipes utilisent Dify pour construire la couche RAG et Agentivity pour orchestrer les agents qui l'interrogent. Le bon choix dépend de si votre besoin principal est la <em>publication d'apps</em> (Dify) ou <em>l'orchestration d'équipes d'agents</em> (Agentivity).</p>
       </div>
     </div>
   </section>
@@ -158,7 +158,7 @@ const rows: Row[] = [
   <section class="s-violet cmp-cta">
     <div class="wrap cmp-cta-inner">
       <h2 class="h2 cmp-cta-h2">Équipes d'agents.<br /><span class="grad-text">Pas des agents isolés.</span></h2>
-      <p class="cmp-cta-sub">Low-code. Auto-hébergé. Open source. Opérationnel en quelques minutes.</p>
+      <p class="cmp-cta-sub">Sans code. Auto-hébergé. Code source disponible. Opérationnel en quelques minutes.</p>
       <div class="cmp-cta-btns">
         <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Étoiler sur GitHub</a>
         <a href="/fr/how-it-works" class="btn btn-ghost">Comment ça marche →</a>

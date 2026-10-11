@@ -19,14 +19,14 @@ const rows: Row[] = [
   { feature: "Workflow editor",              ag: "yes",     n8n: "yes",     },
   { feature: "AI agent support",             ag: "yes",     n8n: "partial", note: "n8n has AI nodes (LangChain-based) — single agent per flow" },
   { feature: "Multi-agent teams",            ag: "yes",     n8n: "no",      },
-  { feature: "Team topologies",              ag: "yes",     n8n: "no",      note: "Sequential · Group Chat · Concurrent" },
+  { feature: "Team topologies",              ag: "yes",     n8n: "no",      note: "Sequential · Concurrent · Handoff · Group Chat · Manager-led" },
   { feature: "Agent Studio",                 ag: "yes",     n8n: "no",      note: "Dedicated UI to craft each agent's role, tools & prompt" },
   { feature: "Team Studio",                  ag: "yes",     n8n: "no",      },
   { feature: "Prompt Studio",                ag: "yes",     n8n: "no",      },
-  { feature: "Synergi template library",     ag: "yes",     n8n: "partial", note: "n8n has workflow templates — not agent/team templates" },
+  { feature: "Synergi template library",     ag: "yes",     n8n: "yes",     note: "n8n has a large library of workflow templates. A Synergi Solution is a whole use case in one file: its agents, teams and workflows" },
   { feature: "Bring your own API key",       ag: "yes",     n8n: "yes",     },
   { feature: "Self-hostable",                ag: "yes",     n8n: "yes",     },
-  { feature: "Open source",                  ag: "yes",     n8n: "yes",     },
+  { feature: "Source code available",        ag: "yes",     n8n: "yes",     note: "Agentivity: Elastic License 2.0, free to use and self-host. n8n: Sustainable Use License" },
   { feature: "Low-code",                     ag: "yes",     n8n: "yes",     },
   { feature: "1,000+ SaaS integrations",     ag: "no",      n8n: "yes",     note: "n8n's strength — 400+ native nodes" },
   { feature: "Parallel agent execution",     ag: "yes",     n8n: "no",      },
@@ -58,7 +58,7 @@ const rows: Row[] = [
       </p>
       <div class="cmp-hero-pills">
         <span class="cmp-pill" style="--c:var(--mint)">Both have workflow editors</span>
-        <span class="cmp-pill" style="--c:var(--mint)">Both open source &amp; self-hostable</span>
+        <span class="cmp-pill" style="--c:var(--mint)">Both source-available &amp; self-hostable</span>
         <span class="cmp-pill" style="--c:var(--cyan)">Agentivity adds multi-agent teams</span>
       </div>
     </div>
@@ -160,9 +160,11 @@ const rows: Row[] = [
           </div>
           <p class="cmp-studio-body">
             Compose agents into teams and choose how they collaborate:
-            <strong>Sequential</strong> (each hands off to the next),
-            <strong>Group Chat</strong> (agents reason together),
-            or <strong>Concurrent</strong> (parallel execution with synthesis).
+            <strong>Sequential</strong> (one after the other),
+            <strong>Concurrent</strong> (all at the same time),
+            <strong>Handoff</strong> (each passes the file to the right colleague),
+            <strong>Group Chat</strong> (agents reason together)
+            or <strong>Manager-led</strong> (a manager plans and distributes the work).
             n8n has no concept of agent teams.
           </p>
         </div>
@@ -180,10 +182,10 @@ const rows: Row[] = [
         <div class="cmp-studio-card">
           <div class="cmp-studio-header">
             <div class="cmp-studio-dot" style="--c:var(--red)"></div>
-            <h3 class="cmp-studio-name">Synergi Library</h3>
+            <h3 class="cmp-studio-name">Synergi Solutions</h3>
           </div>
           <p class="cmp-studio-body">
-            Pre-built agents, teams, and workflows you can deploy in one click — Finance Analyst team, CV Screener team, Campaign Writer team. n8n has workflow templates. Agentivity has team templates with agents already configured.
+            Ready-made Solutions you can browse and import into your own Studio: a whole use case, with its agents, teams and workflows, in one file. n8n has workflow templates; a Synergi Solution carries the agents and the team as well.
           </p>
         </div>
 
@@ -202,7 +204,7 @@ const rows: Row[] = [
   <section class="s-violet cmp-cta">
     <div class="wrap cmp-cta-inner">
       <h2 class="h2 cmp-cta-h2">Build your first<br /><span class="grad-text">agent team.</span></h2>
-      <p class="cmp-cta-sub">Low-code. Self-hosted. Open source. Running in minutes.</p>
+      <p class="cmp-cta-sub">No code. Self-hosted. Source available. Running in minutes.</p>
       <div class="cmp-cta-btns">
         <a href="https://github.com/agentivity-labs/agentivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg">Star on GitHub</a>
         <a href="/how-it-works" class="btn btn-ghost">See how it works →</a>

@@ -393,6 +393,7 @@
         "title": "Produit",
         "links": [
           { "label": "Comment ça marche", "href": "/fr/how-it-works" },
+          { "label": "Assistant", "href": "/fr/assistant" },
           { "label": "Cas d'usage",       "href": "/fr/use-cases" },
           { "label": "Services",          "href": "/fr/services" },
           { "label": "Tarifs",            "href": "/fr/pricing" },
@@ -752,16 +753,16 @@
   },
   "how_page": {
     "meta": {
-      "title": "Comment fonctionne Agentivity — créer un agent, une équipe ou un workflow sans code",
-      "description": "Le Studio Agentivity en action : créer un agent, en réunir plusieurs en équipe, dessiner un workflow, et voir ce qu'obtiennent vos utilisateurs. Sans code."
+      "title": "Comment fonctionne Agentivity — décrivez une équipe à l'Assistant, ou construisez-la à la main",
+      "description": "Dites à l'Assistant ce dont vous avez besoin et regardez-le construire une équipe, un workflow ou un agent. Ou construisez à la main dans le Studio, avec un contrôle total. Sans code."
     },
     "hero": {
       "eyebrow": "Comment ça marche",
       "h1": "Vous n'écrivez pas de code.",
-      "h1_accent": "Vous construisez une équipe.",
-      "sub": "Tout se passe dans le Studio, dans votre navigateur. Trois courts clips montrent comment vous construisez, un quatrième ce qu'obtiennent vos utilisateurs.",
-      "alt": "Le Studio Agentivity : une équipe sur le canevas, un responsable au-dessus de trois spécialistes, et la liste des agents disponibles à droite",
-      "caption": "Le Studio : une équipe en cours de composition, un responsable et trois spécialistes."
+      "h1_accent": "Vous décrivez ce qu'il vous faut.",
+      "sub": "Dites-le à l'Assistant, avec vos mots. Il présente un plan, construit un brouillon, et vous le vérifiez, le modifiez et l'enregistrez. Ou construisez à la main dans le Studio, quand vous voulez le contrôle total. Tout se passe dans votre navigateur.",
+      "alt": "L'Assistant dans le Studio Agentivity : une conversation au milieu, et à droite l'équipe qu'il vient de construire, un chercheur, un rédacteur, un relecteur et un traducteur",
+      "caption": "L'Assistant, dans le Studio : une équipe construite à partir d'une phrase."
     },
     "recorded": "Enregistré dans le Studio, accéléré.",
     "steps": [
@@ -860,8 +861,8 @@
     },
     "start": {
       "eyebrow": "À vous",
-      "h2": "Deux façons",
-      "h2_accent": "de démarrer.",
+      "h2": "Choisissez où",
+      "h2_accent": "il tourne.",
       "community": {
         "name": "L'installer vous-même",
         "badge": "Gratuit pour toujours",
@@ -882,8 +883,12 @@
       "h2_accent": "de démarrer.",
       "items": [
         {
+          "q": "Qu'est-ce que l'Assistant ?",
+          "a": "C'est la partie du Studio où vous décrivez ce dont vous avez besoin, et où il construit pour vous une équipe, un agent ou un workflow. Il pose des questions, présente un plan, et construit un brouillon que vous relisez et enregistrez. Vous pouvez toujours tout construire à la main."
+        },
+        {
           "q": "Faut-il savoir coder ?",
-          "a": "Non. Vous construisez tout dans le Studio, avec des noms, des descriptions écrites avec vos mots et du glisser-déposer. Deux choses demandent un collègue technique : installer l'édition Community sur un serveur, et développer votre propre VibeApp."
+          "a": "Non. Vous décrivez ce qu'il vous faut à l'Assistant, ou vous construisez dans le Studio avec des noms, des descriptions écrites avec vos mots et du glisser-déposer. Deux choses demandent un collègue technique : installer l'édition Community sur un serveur, et développer votre propre VibeApp."
         },
         {
           "q": "Quel modèle d'IA utilise-t-il ?",
@@ -904,6 +909,41 @@
       "h2_accent": "votre première équipe ?",
       "sub": "Rejoignez la liste d'attente pour être parmi les premiers sur le cloud.",
       "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
+    },
+    "assistant": {
+      "eyebrow": "La voie rapide",
+      "h2": "Dites à l'Assistant",
+      "h2_accent": "ce qu'il vous faut.",
+      "lead": "Décrivez-le comme vous le feriez à un collègue. L'Assistant demande ce qu'il doit savoir, vous présente un plan, puis construit un brouillon que vous regardez, modifiez et enregistrez. Il fait partie du Studio, dans l'édition Community.",
+      "clip": "assistant-create",
+      "alt": "Un enregistrement de l'Assistant : une phrase est saisie, une question à choix est traitée, un plan est validé, et une équipe de trois apparaît à droite",
+      "caption": "Une phrase, une question, un plan, puis l'équipe. Enregistré depuis le produit, accéléré.",
+      "asks_title": "Trois choses que vous pouvez demander",
+      "asks": [
+        {
+          "title": "Créer",
+          "say": "A team of three that prepares a weekly note on what our competitors published.",
+          "body": "D'une phrase à une équipe, un agent ou un workflow."
+        },
+        {
+          "title": "Modifier",
+          "say": "Add a translator at the end, who produces the French version of the approved note.",
+          "body": "Demandez un changement. Le brouillon se met à jour."
+        },
+        {
+          "title": "Challenger",
+          "say": "Challenge this team: what could go wrong, and what would you change?",
+          "body": "Demandez ce qui est fragile, avant que quoi que ce soit ne tourne."
+        }
+      ],
+      "stay": "Rien n'est enregistré tant que vous ne le dites pas. Et ce qu'il construit est une équipe ordinaire, que vous pouvez ouvrir et ajuster à la main.",
+      "link": "Voir l'Assistant en détail"
+    },
+    "by_hand": {
+      "eyebrow": "Le contrôle total",
+      "h2": "Ou construisez-la",
+      "h2_accent": "à la main.",
+      "lead": "Le Studio vous donne tout ce que l'Assistant utilise, et rien de ce qu'il construit n'est caché : c'est un agent, une équipe ou un workflow ordinaire. Construisez à partir de rien, ou ouvrez ce qu'il a fait et modifiez-le. Ces trois étapes sont les mêmes dans les deux cas."
     }
   },
   "community_page": {
@@ -1819,6 +1859,172 @@
       "body": "Une plateforme sans code pour construire des équipes de spécialistes IA qui travaillent avec vos équipes.",
       "how": "Voir comment ça marche",
       "how_href": "/fr/how-it-works"
+    }
+  },
+  "assistant_page": {
+    "meta": {
+      "title": "Assistant Agentivity — décrivez une équipe d'IA et faites-la construire",
+      "description": "Dites à l'Assistant ce dont vous avez besoin, avec vos mots. Il pose ses questions, présente un plan, puis construit un brouillon que vous modifiez et enregistrez. Inclus dans l'édition Community gratuite."
+    },
+    "hero": {
+      "eyebrow": "L'Assistant",
+      "h1": "Décrivez-le.",
+      "h1_accent": "L'Assistant le construit.",
+      "sub": "Vous dites ce dont vous avez besoin, avec vos mots. L'Assistant demande ce qu'il doit savoir, présente un plan, puis construit un brouillon que vous regardez, modifiez et enregistrez. Aucune connaissance technique n'est nécessaire.",
+      "cta": "Installer l'édition Community",
+      "cta_secondary": "Comment ça marche",
+      "note": "Inclus dans l'édition Community, gratuite pour toujours.",
+      "alt": "L'Assistant dans le Studio Agentivity : une conversation au milieu, et à droite l'équipe qu'il vient de construire, un chercheur, un rédacteur, un relecteur et un traducteur",
+      "caption": "Une équipe construite par l'Assistant, dessinée à droite au fur et à mesure."
+    },
+    "asks": {
+      "eyebrow": "Ce que vous pouvez demander",
+      "h2": "Créez-le. Modifiez-le.",
+      "h2_accent": "Challengez-le.",
+      "sub": "Trois choses, dans la même conversation. Chaque clip ci-dessous est le Studio lui-même, accéléré.",
+      "recorded": "Enregistré depuis le produit, accéléré.",
+      "you_say": "Vous dites",
+      "items": [
+        {
+          "title": "Créer",
+          "say": "A team of three that prepares, every week, a one-page note on what our competitors published: a researcher, a writer and a reviewer.",
+          "lead": "Une phrase suffit pour commencer. L'Assistant ne demande que ce qu'il doit savoir, et présente son plan avant de construire quoi que ce soit.",
+          "beats": [
+            "Vous décrivez ce dont vous avez besoin",
+            "Il pose une question, avec des choix à sélectionner",
+            "Il présente un plan en mots simples : vous validez, ou vous changez quelque chose",
+            "Il construit un brouillon et le dessine au fur et à mesure"
+          ],
+          "clip": "assistant-create",
+          "alt": "Un enregistrement de l'Assistant : une phrase est saisie, une question à choix est traitée, un plan est validé, et une équipe de trois apparaît à droite"
+        },
+        {
+          "title": "Modifier",
+          "say": "Add a translator at the end, who produces the French version of the approved note.",
+          "lead": "Demandez un changement avec les mêmes mots, depuis la barre latérale principale ou depuis l'éditeur de ce que vous avez construit. L'Assistant ajoute le membre, le relie, vérifie le résultat et vous dit ce qui a changé.",
+          "beats": [
+            "Ajouter un membre à une équipe",
+            "Rendre les instructions plus claires et plus précises",
+            "Ajouter quelque chose à ce que vous avez déjà"
+          ],
+          "clip": "assistant-change",
+          "alt": "Un enregistrement de l'Assistant : une phrase demande un traducteur, l'Assistant le crée et un quatrième membre apparaît à la fin de l'équipe"
+        },
+        {
+          "title": "Challenger",
+          "say": "Challenge this team: what could go wrong, and what would you change?",
+          "lead": "Demandez un deuxième avis. Vous obtenez ce qui pourrait mal tourner, et ce qu'il changerait, avant que quoi que ce soit ne tourne.",
+          "beats": [
+            "Ce qui pourrait mal tourner, point par point",
+            "Ce qu'il changerait pour chacun",
+            "À vous de choisir : tout reconstruire, une partie, ou rien"
+          ],
+          "clip": "assistant-challenge",
+          "alt": "Un enregistrement de l'Assistant : il répond avec cinq choses qui pourraient mal tourner dans l'équipe et quatre changements qu'il ferait, puis demande lesquels comptent le plus"
+        }
+      ],
+      "says_note": "Le Studio est en anglais, comme les phrases du clip."
+    },
+    "hand": {
+      "eyebrow": "Pas à la place du Studio",
+      "h2": "Puis reprenez-le",
+      "h2_accent": "à la main.",
+      "lead": "Ce que construit l'Assistant est une équipe, un agent ou un workflow ordinaire de votre espace de travail. Ouvrez-le dans le Studio et ajustez-le comme vous l'avez toujours fait. Ou passez-vous de l'Assistant et construisez à partir de rien : les deux restent possibles.",
+      "steps": [
+        "Vous enregistrez : vous voyez ce qui est ajouté, et vous choisissez où cela va",
+        "Cela arrive dans votre espace comme tout ce que vous avez construit vous-même",
+        "Ouvrez-le dans l'éditeur pour le modifier, le publier, le lancer"
+      ],
+      "clip": "assistant-hand",
+      "alt": "Un enregistrement du Studio : ce que l'Assistant a préparé est enregistré dans l'espace de travail, puis l'équipe s'ouvre dans l'éditeur, avec ses quatre membres sur le canvas",
+      "caption": "Enregistrer ce que l'Assistant a préparé, puis l'ouvrir dans l'éditeur. Le bouton étincelle ouvre l'Assistant sur cette équipe.",
+      "link": "Voir comment construire à la main"
+    },
+    "control": {
+      "eyebrow": "À vous de décider",
+      "h2": "Il propose.",
+      "h2_accent": "Vous décidez.",
+      "points": [
+        {
+          "title": "Un plan avant de construire",
+          "body": "Il montre ce qu'il compte construire, en mots simples, et attend votre feu vert."
+        },
+        {
+          "title": "Un brouillon, pas un changement",
+          "body": "Rien n'est enregistré tant que vous n'enregistrez pas. D'ici là, rien ne bouge dans votre espace de travail."
+        },
+        {
+          "title": "Vérifié avant d'enregistrer",
+          "body": "Il vérifie ce qu'il a construit. Une erreur bloque l'enregistrement ; un avertissement est à vous de peser."
+        },
+        {
+          "title": "Vos clés restent les vôtres",
+          "body": "Il voit le nom de votre connexion au modèle, jamais ses secrets."
+        }
+      ]
+    },
+    "know": {
+      "eyebrow": "Bon à savoir",
+      "h2": "À quoi s'attendre,",
+      "h2_accent": "honnêtement.",
+      "items": [
+        {
+          "title": "Il prépare, vous relisez.",
+          "body": "Une première version est rarement la dernière. Lisez le plan, regardez le résultat et essayez-le sur un cas réel, comme pour le travail d'un nouveau collègue."
+        },
+        {
+          "title": "Il dit ce qui manque.",
+          "body": "Dans l'exemple ci-dessus, il nous a rappelé de fournir les adresses des sites des concurrents. Cette partie vous revient."
+        },
+        {
+          "title": "Il se corrige, à la vue de tous.",
+          "body": "Quand il se trompe sur une étape, vous le voyez, et vous voyez la correction."
+        },
+        {
+          "title": "Il utilise votre modèle d'IA.",
+          "body": "Il passe par la connexion au modèle que vous avez configurée : ce que vous écrivez va chez ce fournisseur, selon ses conditions, et son usage vous est facturé par lui."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Les questions que vous vous posez",
+      "h2": "Avant",
+      "h2_accent": "de l'essayer.",
+      "items": [
+        {
+          "q": "L'Assistant fait-il partie de l'édition Community ?",
+          "a": "Oui. Il est dans le Studio, dans l'édition Community gratuite. Il lui faut une connexion à un modèle d'IA, que vous configurez une fois."
+        },
+        {
+          "q": "Faut-il savoir coder, ou savoir ce qu'est un workflow ?",
+          "a": "Non. Vous décrivez ce dont vous avez besoin avec vos mots, et l'Assistant répond avec les mots de votre métier, pas des mots techniques."
+        },
+        {
+          "q": "Puis-je l'utiliser sur quelque chose que j'ai déjà construit ?",
+          "a": "Oui. L'Assistant est dans la barre latérale principale et dans les éditeurs d'agent, d'équipe et de workflow : ouvrez l'un des vôtres et lancez l'Assistant pour l'améliorer, ou partez de l'Assistant et choisissez ce sur quoi travailler. Cela s'ouvre dans une nouvelle conversation, et rien ne change tant que vous n'enregistrez pas."
+        },
+        {
+          "q": "Remplace-t-il la construction à la main ?",
+          "a": "Non. Le Studio est inchangé. L'Assistant est la voie rapide vers une première version, un changement ou un deuxième avis. Qui préfère le dessiner soi-même le peut toujours."
+        },
+        {
+          "q": "Quel modèle d'IA utilise-t-il ?",
+          "a": "La connexion que vous choisissez : OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock. Vous choisissez aussi le modèle sur lequel tourneront les agents qu'il construit, et vous pouvez le changer ensuite."
+        },
+        {
+          "q": "Ce que j'écris est-il envoyé à Agentivity ?",
+          "a": "Non. Avec l'édition Community, tout tourne sur votre serveur. Ce que vous écrivez ne va qu'au fournisseur de modèle d'IA que vous avez connecté."
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Essayez-le sur votre",
+      "h2_accent": "propre serveur.",
+      "sub": "L'édition Community est gratuite pour toujours, et l'Assistant en fait partie.",
+      "primary": "Installer l'édition Community",
+      "secondary": "Voir les cas d'usage",
+      "cloud": "Vous préférez ne rien installer ?",
+      "cloud_link": "Rejoindre la liste d'attente du cloud"
     }
   },
   "ticker": ["Équipe Finance", "Équipe RH", "Équipe Contenu", "Assistant Personnel", "Pipeline Recrutement", "Boîte mail à 7h", "Briefing hebdomadaire", "Autonome 24/7", "Sans compétences tech", "Templates Synergi", "Marque blanche", "Travaille pendant votre sommeil"]
