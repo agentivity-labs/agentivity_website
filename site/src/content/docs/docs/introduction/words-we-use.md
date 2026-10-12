@@ -66,7 +66,7 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | **Template** | One file that holds a solution and everything it needs. You import a Template to get a solution, and you create one to share your work. |
 | **Showcase** | A ready-made solution, offered as a Template, that shows how something is built. |
 | **Synergi** | The Agentivity marketplace, where the Templates are. The Studio calls it "the marketplace". |
-| **VibeApp** | An application with one or several of your teams behind it. People ask in their own words, and the screens arrive when they are needed. |
+| **VibeApp** | An application that adapts to the person who uses it, with a team of AI specialists behind it. The person sets the goal, and the screens arrive when they are needed. Written in one word, with a capital V and a capital A. |
 
 ## Next step
 

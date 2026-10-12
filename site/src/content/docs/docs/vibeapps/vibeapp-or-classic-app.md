@@ -9,14 +9,14 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/vibeapps/vibeapp-or-classic-app.md. Do not edit here: edit the source and publish again. -->
 
-A classic application is made of screens that were decided in advance. A VibeApp starts from what the person asks. This page compares the two, so you can choose.
+In a classic application, the person adapts to the application. A VibeApp adapts to the person. This page compares the two on the same request, so you can choose.
 
 ## The difference in one example
 
 A customer wants to organise a trip.
 
 - **In a classic application**, the customer goes through screens in a fixed order: destination, dates, number of travellers, flight, hotel, options. Every customer sees the same screens, even those they do not need.
-- **In a VibeApp**, the customer writes what they want. A team works out what this trip needs. The application shows a choice of flights, then a choice of hotels, then asks about dinner only if it makes sense for this trip.
+- **In a VibeApp**, the customer writes what they want. A team of AI specialists works out what this trip needs. The application shows a choice of flights, then a choice of hotels within what is left of the budget, then asks about dinner only if it makes sense for this trip.
 
 ## What changes
 
@@ -24,8 +24,8 @@ A customer wants to organise a trip.
 |---|---|---|
 | **How a request starts** | The person finds the right screen and fills in fields. | The person describes the need in their own words. |
 | **The path** | The same for everyone, decided in advance. | It depends on the request and on what the person chooses. |
-| **Unusual cases** | Each one needs a new screen or a new rule. | The team handles it, and asks when it does not know. |
-| **Who does the work between two screens** | Code written by developers. | A team of agents that you built in the Studio. |
+| **Unusual cases** | Each one needs a new screen or a new rule. | The team handles it, and asks when a decision belongs to the person. |
+| **Who does the work between two screens** | Code written by developers. | A team of AI specialists that you built in the Studio. |
 | **Changing how the work is done** | A developer changes the application. | You change the team in the Studio. The application stays the same. |
 | **The same request, twice** | Always the same result. | The result can vary, because an AI model works on it. |
 
@@ -37,12 +37,16 @@ A customer wants to organise a trip.
 
 ## When a classic application is the better choice
 
+A classic application is right when everyone needs the same thing.
+
 - **The path never changes** and has few cases. A form does the job, faster and at no cost per request.
 - **The result must be exactly the same every time**, for example a calculation.
 - **Each request must cost nothing to run.** In a VibeApp, each request uses the AI model, and your provider bills you for it.
 - **You must know who did what.** Agentivity has no login today. If your application needs accounts and rights, it has to provide them itself.
 
 ## When a VibeApp is the better choice
+
+A VibeApp is better where each request is a little different, where the cases are complicated, or where people give up in a form.
 
 - People do not know which screen or which form they need. They know what they want.
 - The cases are many and different, and you cannot draw a screen for each.

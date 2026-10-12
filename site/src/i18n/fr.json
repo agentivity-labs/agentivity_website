@@ -596,15 +596,15 @@
     },
     "apps": {
       "eyebrow": "VibeApps",
-      "h2": "Puis faites-en",
-      "h2_accent": "une VibeApp.",
-      "sub": "Une application menée par votre équipe, pour vos collègues ou vos clients.",
+      "h2": "Une application qui s'adapte",
+      "h2_accent": "à chaque personne.",
+      "sub": "Chacun dit ce dont il a besoin avec ses mots. Une équipe de spécialistes travaille derrière l'application, qui ne s'arrête pour poser une question que lorsqu'un choix revient à la personne.",
       "play": "Lire le clip",
       "clips": [
         {
           "label": "Trip Planner · capture réelle",
           "title": "Une application conçue pour un métier",
-          "body": "Une phrase suffit. Des vols, un hôtel à choisir, un dîner à réserver : chaque écran arrive quand il sert.",
+          "body": "Une phrase suffit. Des vols, un hôtel à choisir, un dîner qui tient dans ce qui reste du budget : chaque écran arrive quand il sert.",
           "alt": "L'application de démonstration Trip Planner : un voyageur décrit son voyage, l'équipe de spécialistes s'active, puis une fiche d'hôtel avec photo, une étape de paiement et un choix de dîner apparaissent dans la conversation"
         },
         {
@@ -616,18 +616,35 @@
       ],
       "points": [
         {
-          "title": "Elle s'adapte à chaque personne",
-          "body": "Chacun décrit sa situation avec ses mots. Pas de formulaire en douze écrans."
+          "title": "Pas de formulaire à traverser",
+          "body": "Chacun décrit son besoin avec ses mots et fait un choix à chaque étape, au lieu de remplir un long formulaire."
         },
         {
-          "title": "Elle traite les cas compliqués",
-          "body": "Une équipe de spécialistes travaille derrière chaque demande, et pose la question quand une décision s'impose."
+          "title": "Le cas imprévu est traité",
+          "body": "Une équipe de spécialistes travaille sur chaque demande. Quand le cas sort de l'ordinaire, l'équipe s'en occupe et ne sollicite la personne que lorsqu'une décision lui revient."
+        },
+        {
+          "title": "Vous la changez sans cycle de développement",
+          "body": "Le travail est fait par une équipe que vous construisez et modifiez dans le Studio, avec des mots simples. L'application elle-même ne change pas."
         },
         {
           "title": "Elle s'intègre à l'existant",
           "body": "Seule, ou dans les applications que vous utilisez déjà. Les agences la livrent sous leur propre marque."
         }
-      ]
+      ],
+      "contrast": {
+        "classic": {
+          "label": "Une application classique",
+          "body": "Les mêmes écrans pour tout le monde, dans le même ordre. Une impasse pour le cas que personne n'avait prévu. Un cycle de développement à chaque changement de règle."
+        },
+        "vibe": {
+          "label": "Une VibeApp",
+          "body": "Une phrase suffit. Les bons spécialistes pour cette demande. Le cas imprévu est traité, et vous changez le fonctionnement dans le Studio, avec des mots simples."
+        }
+      },
+      "cta": "Voir ce qu'une VibeApp change",
+      "cta_href": "/fr/use-cases#vibeapp",
+      "note": "Vols, hôtels et paiement sont simulés dans cette démonstration."
     },
     "control": {
       "eyebrow": "Vous gardez la main",
@@ -818,7 +835,7 @@
     ],
     "result": {
       "title": "Ce qu'obtiennent vos utilisateurs : une VibeApp",
-      "lead": "Ils demandent avec leurs mots, et l'équipe s'arrête quand une décision leur revient. Choisissez un moment pour y aller.",
+      "lead": "Vos utilisateurs disent ce dont ils ont besoin avec leurs mots. L'équipe fait le travail et s'arrête quand une décision leur revient : pas de formulaire à traverser, pas d'impasse. Choisissez un moment pour y aller.",
       "decision": "Leur décision",
       "caption": "Trip Planner, une VibeApp construite avec Agentivity. Enregistré depuis le produit, accéléré.",
       "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un responsable confie le travail à des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
@@ -1490,7 +1507,7 @@
         {
           "tag": "VibeApp",
           "title": "Une VibeApp",
-          "body": "Votre propre application, avec une ou plusieurs de vos équipes derrière. La plupart des VibeApps mêlent écrans classiques et équipes."
+          "body": "Votre propre application, où chacun dit ce dont il a besoin et où l'équipe fait le travail. Un développeur la relie à votre équipe. La plupart des VibeApps mêlent écrans classiques et équipes."
         }
       ]
     },
@@ -1504,14 +1521,59 @@
       "eyebrow": "Un nouveau type d'application",
       "h2": "Voici la",
       "h2_accent": "VibeApp.",
+      "sub": "Une application avec une équipe de spécialistes IA derrière elle. Elle part de ce que la personne demande, pas d'un menu.",
+      "scene": {
+        "label": "Le même besoin, de deux façons",
+        "need": "Un client veut organiser un voyage.",
+        "classic": {
+          "label": "Dans une application classique",
+          "steps": [
+            "Destination, dates, nombre de voyageurs : des écrans de champs à remplir.",
+            "Une liste de vols à trier.",
+            "Puis on recommence pour l'hôtel, et encore pour le transfert.",
+            "Un cas inhabituel ? Il n'y a pas d'écran pour lui : un appel à l'agence."
+          ]
+        },
+        "vibe": {
+          "label": "Dans une VibeApp",
+          "steps": [
+            "Une phrase : Lisbonne à deux, en mai, avec un budget.",
+            "Un responsable confie chaque partie à un spécialiste. Les vols reviennent sous forme de choix.",
+            "Un hôtel présenté avec sa photo et son prix. Chaque choix oriente la suite.",
+            "Le cas inhabituel est résolu par l'équipe, qui interroge le client quand une décision lui revient."
+          ]
+        }
+      },
+      "gains": [
+        "Chacun va au bout de ce qu'il venait faire. Il n'a pas à trouver le bon écran d'abord.",
+        "Le cas inhabituel est traité, pas abandonné. Seuls les spécialistes dont cette demande a besoin sont appelés.",
+        "Chaque choix oriente la suite, donc rien ne repart de zéro. Et vous changez le fonctionnement dans le Studio, sans cycle de développement."
+      ],
       "example_label": "Dans Trip Planner",
       "examples": [
         "Une phrase : Lisbonne à deux, les dates, le budget.",
         "Le responsable fait appel aux spécialistes dont ce voyage a besoin : vols, hôtel, transferts, dîner.",
         "Ce que le voyageur choisit change la suite : le dîner tient dans ce qui reste du budget."
       ],
+      "notes": [
+        {
+          "label": "La personne décide",
+          "body": "L'équipe propose. L'application s'arrête et demande chaque fois qu'un choix revient à la personne : quel hôtel, faut-il payer."
+        },
+        {
+          "label": "Quand une application classique est le bon choix",
+          "body": "Quand tout le monde a besoin de la même chose, une application classique est plus simple et plus rapide. La VibeApp est pour les demandes qui sont chacune un peu différente."
+        },
+        {
+          "label": "Ce que cela demande",
+          "body": "Le portail prêt à l'emploi ne demande aucun développement. Une application à vous est reliée à votre équipe par un développeur. La plupart des VibeApps mêlent écrans classiques et équipes."
+        }
+      ],
+      "note": "Vols, hôtels et paiement sont simulés dans cette démonstration.",
       "link": "Voir Trip Planner",
-      "href": "/fr/use-cases/trip-planner"
+      "href": "/fr/use-cases/trip-planner",
+      "ways_link": "Comment en obtenir une",
+      "ways_href": "#ways"
     },
     "soon": {
       "eyebrow": "Bientôt",

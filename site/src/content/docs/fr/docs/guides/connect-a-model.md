@@ -3,7 +3,6 @@ title: "Connecter un modèle d'IA à Agentivity"
 description: "Ajoutez la clé API d'OpenAI, Anthropic, Google Gemini, xAI ou DeepSeek pour que vos agents et équipes puissent tourner. Votre clé reste sur votre serveur."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

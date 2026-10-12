@@ -42,9 +42,9 @@ Once a solution works, other people can use it. There are three ways, from the s
 |---|---|---|
 | **From the Studio** | You open the solution and start it. It works, and it comes back to you when a decision is yours. | Nothing more. |
 | **A portal** | One web page where people start the solutions you made available. | A web application to put next to Agentivity. |
-| **A VibeApp** | An application of your own, with one or several of your teams behind it. | A developer, and the Agentivity SDK. |
+| **A VibeApp** | An application that adapts to the person who uses it, with your team of AI specialists behind it. | For an application of your own: a developer, and the Agentivity SDK. |
 
-A VibeApp is an application where people ask in their own words, and where the screens arrive when they are needed, instead of a fixed set of forms. Trip Planner, one of the showcases, is a VibeApp.
+In a VibeApp, the person sets the goal in their own words, and the application handles the rest: the right specialists work on each part, and the screens arrive when a choice is theirs. Trip Planner, one of the showcases, is a VibeApp. In that demo, the bookings and the payment are simulated.
 
 An application does not build anything. It lists what exists, starts a run, shows what happens and sends the answers of the person. Building stays in the Studio.
 

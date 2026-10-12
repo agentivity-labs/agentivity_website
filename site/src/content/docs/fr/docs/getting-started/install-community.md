@@ -3,7 +3,6 @@ title: "Installer Agentivity avec Docker"
 description: "Lancez l'édition Community gratuite d'Agentivity sur votre machine ou votre serveur avec une commande Docker, puis ouvrez le Studio dans votre navigateur."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

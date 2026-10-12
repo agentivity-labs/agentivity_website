@@ -205,6 +205,17 @@ const schema = {
         <p class="hp-apps-sub"><strong>{t.site.vibeapp[0]}</strong> {h.apps.sub}</p>
       </header>
 
+      <div class="hp-contrast">
+        <div class="hp-contrast-col">
+          <p class="hp-contrast-label">{h.apps.contrast.classic.label}</p>
+          <p>{h.apps.contrast.classic.body}</p>
+        </div>
+        <div class="hp-contrast-col hp-contrast-col--vibe">
+          <p class="hp-contrast-label">{h.apps.contrast.vibe.label}</p>
+          <p>{h.apps.contrast.vibe.body}</p>
+        </div>
+      </div>
+
       <div class="hp-clips">
         {clips.map((clip) => (
           <figure class="hp-clip">
@@ -222,6 +233,8 @@ const schema = {
         ))}
       </div>
 
+      <p class="hp-apps-note">{h.apps.note}</p>
+
       <ul class="hp-apps-points">
         {h.apps.points.map((point) => (
           <li>
@@ -230,6 +243,8 @@ const schema = {
           </li>
         ))}
       </ul>
+
+      <a class="ed-btn ed-btn--yellow hp-apps-cta" href={h.apps.cta_href}>{h.apps.cta}</a>
     </div>
   </section>
 
@@ -528,7 +543,14 @@ else document.addEventListener('DOMContentLoaded', initHeroCanvas);
 .hp-clip figcaption { display: flex; flex-direction: column; gap: 4px; color: var(--ed-on-navy-2); }
 .hp-clip figcaption strong { font-size: 21px; font-weight: 700; color: #fff; }
 .hp-clip-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-yellow); }
-.hp-apps-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px 40px; }
+.hp-contrast { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 16px; }
+.hp-contrast-col { display: flex; flex-direction: column; gap: 8px; padding: 22px 26px 24px; border-radius: 20px; border: 1px dashed var(--ed-navy-line); color: var(--ed-on-navy); font-size: 18px; line-height: 1.5; }
+.hp-contrast-col--vibe { border: 1px solid var(--ed-yellow); background: var(--ed-navy-2); color: #fff; }
+.hp-contrast-label { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-on-navy-2); }
+.hp-contrast-col--vibe .hp-contrast-label { color: var(--ed-yellow); }
+.hp-apps-note { margin-top: -16px; font-size: 14.5px; color: var(--ed-on-navy-2); }
+.hp-apps-cta { align-self: flex-start; }
+.hp-apps-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 24px 40px; }
 .hp-apps-points li { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--ed-navy-line); padding-top: 18px; color: var(--ed-on-navy-2); }
 .hp-apps-points strong { font-size: 19px; font-weight: 700; color: #fff; }
 

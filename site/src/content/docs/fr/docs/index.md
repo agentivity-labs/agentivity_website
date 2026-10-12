@@ -3,7 +3,6 @@ title: "Documentation Agentivity"
 description: "Installez Agentivity, connectez un modèle d'IA et construisez votre premier agent, équipe ou workflow, avec des étapes simples pour les non-développeurs."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---
