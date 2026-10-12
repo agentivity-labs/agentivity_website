@@ -1616,7 +1616,7 @@
         "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un séjour à Lisbonne, un responsable répartit le travail entre des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
         "h1": "Tout un voyage,",
         "h1_accent": "à partir d'une phrase.",
-        "lead": "Le voyageur écrit ce qu'il veut. Un responsable confie chaque partie au bon spécialiste, et l'application affiche un choix chaque fois qu'une décision revient au voyageur.",
+        "lead": "Une phrase remplace une série de formulaires de recherche. Un responsable confie chaque partie au bon spécialiste, et l'application affiche un choix chaque fois qu'une décision revient au voyageur.",
         "facts": {
           "for": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties",
           "use": "Une VibeApp, faite pour ce seul métier",
@@ -1714,6 +1714,24 @@
           "link": "Le code sur GitHub",
           "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
           "external": true
+        },
+        "change": {
+          "title": "Ce que cela change",
+          "lead": "Par rapport à une application de réservation classique.",
+          "items": [
+            {
+              "label": "Pour le voyageur",
+              "body": "Une phrase au lieu d'une série de formulaires. Chaque choix ne montre que ce qui sert ce voyage, et le suivant s'appuie dessus."
+            },
+            {
+              "label": "Pour le voyage inhabituel",
+              "body": "Un visa à vérifier, une voiture de location qui n'a de sens que parfois : on appelle les bons spécialistes, pas les autres."
+            },
+            {
+              "label": "Pour l'agence",
+              "body": "Vous changez la façon de préparer un voyage dans le Studio, avec des mots simples : ajouter un spécialiste, ajuster un rôle. L'application elle-même ne change pas."
+            }
+          ]
         }
       },
       {

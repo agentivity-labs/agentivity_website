@@ -1605,7 +1605,7 @@
         "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
         "h1": "A whole trip,",
         "h1_accent": "from one sentence.",
-        "lead": "The traveller writes what they want. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
+        "lead": "One sentence replaces a series of search forms. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
         "facts": {
           "for": "A travel agency, or anyone who sells something with many parts",
           "use": "A VibeApp, made for this one job",
@@ -1703,6 +1703,24 @@
           "link": "The code on GitHub",
           "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
           "external": true
+        },
+        "change": {
+          "title": "What it changes",
+          "lead": "Compared with a classic booking app.",
+          "items": [
+            {
+              "label": "For the traveller",
+              "body": "One sentence instead of a series of forms. Each choice shows only what serves this trip, and the next one builds on it."
+            },
+            {
+              "label": "For the unusual trip",
+              "body": "A visa to check, a rental car that only sometimes makes sense: the right specialists are called in, the others are not."
+            },
+            {
+              "label": "For the agency",
+              "body": "You change how a trip is planned in the Studio, in plain words: add a specialist, adjust a role. The app itself stays the same."
+            }
+          ]
         }
       },
       {
