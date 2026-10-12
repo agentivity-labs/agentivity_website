@@ -76,7 +76,7 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
     </ol>
   </section>
 
-  <!-- The VibeApp: the same need in a classic app and in a VibeApp, what it brings (three one-liners, shared texts), when not to use it -->
+  <!-- The VibeApp, explained with its three one-liners (shared texts) and one real example each -->
   <section class="ed-band--mist" id="vibeapp">
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
@@ -84,49 +84,15 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
         <h2 class="ed-h2">{p.vibeapp.h2} <em><span class="ed-mark">{p.vibeapp.h2_accent}</span></em></h2>
         <p class="ed-sec-sub">{p.vibeapp.sub}</p>
       </header>
-
-      <div class="uc-scene">
-        <p class="uc-scene-need"><span>{p.vibeapp.scene.label}</span> {p.vibeapp.scene.need}</p>
-        <div class="uc-scene-cols">
-          <div class="uc-scene-col">
-            <h3>{p.vibeapp.scene.classic.label}</h3>
-            <ol>
-              {p.vibeapp.scene.classic.steps.map((step: string) => <li>{step}</li>)}
-            </ol>
-          </div>
-          <div class="uc-scene-col uc-scene-col--vibe">
-            <h3>{p.vibeapp.scene.vibe.label}</h3>
-            <ol>
-              {p.vibeapp.scene.vibe.steps.map((step: string) => <li>{step}</li>)}
-            </ol>
-          </div>
-        </div>
-      </div>
-
       <ol class="uc-vibe">
         {t.site.vibeapp.map((line: string, i: number) => (
           <li>
             <p class="uc-vibe-line">{line}</p>
-            <p class="uc-vibe-gain">{p.vibeapp.gains[i]}</p>
             <p class="uc-vibe-example"><span>{p.vibeapp.example_label}</span> {p.vibeapp.examples[i]}</p>
           </li>
         ))}
       </ol>
-
-      <dl class="uc-vibe-notes">
-        {p.vibeapp.notes.map((note: any) => (
-          <div>
-            <dt>{note.label}</dt>
-            <dd>{note.body}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <div class="uc-vibe-actions">
-        <a class="ed-btn ed-btn--navy" href={p.vibeapp.href}>{p.vibeapp.link}</a>
-        <a class="ed-btn ed-btn--line" href={p.vibeapp.ways_href}>{p.vibeapp.ways_link}</a>
-      </div>
-      <p class="uc-vibe-fine">{p.vibeapp.note}</p>
+      <a class="ed-btn ed-btn--navy" href={p.vibeapp.href}>{p.vibeapp.link}</a>
     </div>
   </section>
 
@@ -207,28 +173,9 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 
 /* ---------- VibeApp ---------- */
 .uc-vibe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: clamp(28px, 3.5vw, 40px); }
-.uc-vibe li { display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; background: #fff; border-radius: 24px; padding: clamp(24px, 2.8vw, 34px); }
+.uc-vibe li { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; background: #fff; border-radius: 24px; padding: clamp(24px, 2.8vw, 34px); }
 .uc-vibe-line { font-family: var(--ed-serif); font-size: clamp(28px, 2.9vw, 38px); line-height: 1.1; color: var(--ed-ink); text-wrap: balance; }
-.uc-scene { display: flex; flex-direction: column; gap: 18px; margin-bottom: clamp(24px, 3vw, 36px); }
-.uc-scene-need { font-family: var(--ed-serif); font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; color: var(--ed-ink); }
-.uc-scene-need span { display: block; margin-bottom: 4px; font-family: var(--ed-sans); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
-.uc-scene-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.uc-scene-col { background: #fff; border: 1px dashed var(--ed-line-2); border-radius: 24px; padding: clamp(22px, 2.6vw, 32px); color: var(--ed-ink-2); }
-.uc-scene-col h3 { font-family: var(--ed-serif); font-size: clamp(26px, 2.6vw, 34px); line-height: 1.05; color: var(--ed-ink); padding-bottom: 12px; }
-.uc-scene-col ol { counter-reset: step; display: flex; flex-direction: column; gap: 12px; }
-.uc-scene-col li { counter-increment: step; display: flex; gap: 12px; font-size: 17px; line-height: 1.45; }
-.uc-scene-col li::before { content: counter(step); flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--ed-mist); font-size: 13.5px; font-weight: 700; color: var(--ed-ink); }
-.uc-scene-col--vibe { background: var(--ed-navy); border: 1px solid var(--ed-navy); color: var(--ed-on-navy); }
-.uc-scene-col--vibe h3 { color: #fff; }
-.uc-scene-col--vibe li::before { background: var(--ed-yellow); color: var(--ed-ink); }
-.uc-vibe-gain { font-size: 17.5px; line-height: 1.5; color: var(--ed-ink); font-weight: 500; }
-.uc-vibe-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px clamp(24px, 3.5vw, 48px); margin-bottom: clamp(24px, 3vw, 34px); }
-.uc-vibe-notes > div { padding-top: 16px; border-top: 2px solid var(--ed-ink); }
-.uc-vibe-notes dt { font-weight: 700; color: var(--ed-ink); padding-bottom: 6px; }
-.uc-vibe-notes dd { margin: 0; color: var(--ed-ink-2); font-size: 16.5px; }
-.uc-vibe-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; }
-.uc-vibe-fine { margin-top: 18px; font-size: 14.5px; color: var(--ed-ink-3); }
-.uc-vibe-example { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--ed-line-2); font-size: 16.5px; color: var(--ed-ink-2); }
+.uc-vibe-example { padding-top: 16px; border-top: 1px solid var(--ed-line-2); font-size: 16.5px; color: var(--ed-ink-2); }
 .uc-vibe-example span { display: block; margin-bottom: 4px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
 
 /* ---------- coming soon ---------- */
@@ -250,7 +197,7 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 @media (max-width: 900px) {
   .uc-case { grid-template-columns: minmax(0, 1fr); }
   .uc-cases li:nth-child(even) .uc-case-media { order: 0; }
-  .uc-ways, .uc-soon, .uc-vibe, .uc-scene-cols, .uc-vibe-notes { grid-template-columns: minmax(0, 1fr); }
+  .uc-ways, .uc-soon, .uc-vibe { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .uc-case { transition: none; }

@@ -71,24 +71,6 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
     </div>
   </section>
 
-  <!-- What it changes, for the cases that have it (the VibeApp) -->
-  {item.change && (
-    <section class="ed-wrap ed-sec ux-change">
-      <header class="ed-sec-head">
-        <h2 class="ed-h2 ed-h2--md">{item.change.title}</h2>
-        <p class="ed-sec-sub">{item.change.lead}</p>
-      </header>
-      <dl>
-        {item.change.items.map((entry: any) => (
-          <div>
-            <dt>{entry.label}</dt>
-            <dd>{entry.body}</dd>
-          </div>
-        ))}
-      </dl>
-    </section>
-  )}
-
   <!-- The team, or the building blocks of a workflow -->
   <section class="ed-wrap ed-sec">
     <header class="ed-sec-head">
@@ -169,12 +151,6 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
 .ux-note { font-size: 15.5px; color: var(--ed-on-navy); }
 .ux-note strong { display: block; margin-bottom: 4px; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-yellow); }
 
-/* ---------- what it changes ---------- */
-.ux-change dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px clamp(24px, 3.5vw, 48px); }
-.ux-change dl > div { padding-top: 18px; border-top: 2px solid var(--ed-ink); }
-.ux-change dt { font-family: var(--ed-serif); font-size: clamp(26px, 2.5vw, 32px); line-height: 1.1; color: var(--ed-ink); padding-bottom: 8px; }
-.ux-change dd { margin: 0; font-size: 17px; color: var(--ed-ink-2); max-width: 28em; }
-
 /* ---------- the team ---------- */
 .ux-members { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 0 clamp(20px, 3vw, 40px); border-top: 2px solid var(--ed-ink); }
 .ux-members li { display: flex; flex-direction: column; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); font-size: 16.5px; }
@@ -192,7 +168,7 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
 .ux-others strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
 
 @media (max-width: 900px) {
-  .ux-clip, .ux-flow, .ux-others, .ux-change dl { grid-template-columns: minmax(0, 1fr); }
+  .ux-clip, .ux-flow, .ux-others { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
   .ux-others a { grid-template-columns: minmax(0, 1fr); }

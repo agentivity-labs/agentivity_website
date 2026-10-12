@@ -442,6 +442,7 @@
       "h1_accent": "an AI team.",
       "sub": "Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.",
       "cta_waitlist": "Join the waitlist",
+      "film_alt": "A short film: from one helper to a team, then a team in every department and an AI company, with the hours each step gives back. It shows the Assistant building a team, a workflow, and an app where a traveller is asked to choose a hotel.",
       "visual_label": "A marketing team at work on the Agentivity canvas: a manager and five specialists",
       "teams": [
         {
@@ -585,15 +586,15 @@
     },
     "apps": {
       "eyebrow": "VibeApps",
-      "h2": "An app that adapts",
-      "h2_accent": "to each person.",
-      "sub": "People say what they need in their own words. A team of specialists works behind the app, and it stops to ask only when a choice is theirs.",
+      "h2": "Not fifty thousand screens.",
+      "h2_accent": "An app that adapts.",
+      "sub": "An app run by your team, for your colleagues or your customers.",
       "play": "Play the clip",
       "clips": [
         {
           "label": "Trip Planner · real capture",
           "title": "An app built for one job",
-          "body": "One sentence in. Flights, a hotel to choose, a dinner that fits what is left of the budget: each screen arrives when it is needed.",
+          "body": "One sentence in. Flights, a hotel to choose, a dinner to book: each screen arrives when it is needed.",
           "alt": "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then a hotel card with a photo, a payment step and a dinner choice appear in the conversation"
         },
         {
@@ -605,35 +606,22 @@
       ],
       "points": [
         {
-          "title": "No form to get through",
-          "body": "People describe what they need in their own words and make a choice at each step, instead of crossing a long form."
+          "title": "Dynamic",
+          "body": "It adapts to the context. A classic app is static: everything is predefined."
         },
         {
-          "title": "The unplanned case is handled",
-          "body": "A team of specialists works on every request. When the case is unusual, the team deals with it and asks the person only when a decision is theirs."
+          "title": "To the essential",
+          "body": "Not fifty thousand screens or settings."
         },
         {
-          "title": "Change it without a development cycle",
-          "body": "The work is done by a team you build and change in the Studio, in plain words. The application itself stays the same."
+          "title": "Human",
+          "body": "Much closer to a human interaction."
         },
         {
           "title": "It fits what you already have",
           "body": "On its own, or inside the apps you already use. Agencies deliver it under their own brand."
         }
-      ],
-      "contrast": {
-        "classic": {
-          "label": "A classic app",
-          "body": "The same screens for everyone, in the same order. A dead end for the case nobody planned. A development cycle every time the rules change."
-        },
-        "vibe": {
-          "label": "A VibeApp",
-          "body": "One sentence in. The right specialists for this request. The unplanned case is handled, and you change how it works in the Studio, in plain words."
-        }
-      },
-      "cta": "See what a VibeApp changes",
-      "cta_href": "/use-cases#vibeapp",
-      "note": "Flights, hotels and payment are simulated in this demonstration."
+      ]
     },
     "control": {
       "eyebrow": "You stay in charge",
@@ -824,7 +812,7 @@
     ],
     "result": {
       "title": "What your users get: a VibeApp",
-      "lead": "Your users say what they need in their own words. The team does the work and stops when a decision is theirs: no form to get through, no dead end. Pick a moment to jump to it.",
+      "lead": "They ask in their own words, and the team stops when a decision is theirs. Pick a moment to jump to it.",
       "decision": "Their decision",
       "caption": "Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster.",
       "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
@@ -1496,7 +1484,7 @@
         {
           "tag": "VibeApp",
           "title": "A VibeApp",
-          "body": "An app of your own where people say what they need and the team does the work. A developer connects it to your team. Most VibeApps mix classic screens and teams."
+          "body": "An app of your own, with one or several of your teams behind it. Most VibeApps mix classic screens and teams."
         }
       ]
     },
@@ -1510,59 +1498,15 @@
       "eyebrow": "A new kind of app",
       "h2": "Meet the",
       "h2_accent": "VibeApp.",
-      "sub": "An application with a team of AI specialists behind it. It starts from what the person asks, not from a menu.",
-      "scene": {
-        "label": "The same need, two ways",
-        "need": "A customer wants to organise a trip.",
-        "classic": {
-          "label": "In a classic app",
-          "steps": [
-            "Destination, dates, number of travellers: screens of fields to fill in.",
-            "A list of flights to sort through.",
-            "Then start again for the hotel, and again for the transfer.",
-            "Something unusual? There is no screen for it: a phone call to the agency."
-          ]
-        },
-        "vibe": {
-          "label": "In a VibeApp",
-          "steps": [
-            "One sentence: Lisbon for two, in May, with a budget.",
-            "A manager hands each part to a specialist. The flights come back as a choice.",
-            "A hotel shown with its photo and its price. Each choice shapes what comes next.",
-            "The unusual case is worked out by the team, which asks the customer when a decision is theirs."
-          ]
-        }
-      },
-      "gains": [
-        "People finish what they came to do. They do not have to find the right screen first.",
-        "The unusual case is handled, not dropped. Only the specialists this request needs are called in.",
-        "Each choice shapes what follows, so nothing starts over. And you change how the work is done in the Studio, with no development cycle."
-      ],
+      "sub": "A classic app is static: everything is predefined. A VibeApp is dynamic: it adapts to the context and goes to the essential, not fifty thousand screens or settings. Much closer to a human interaction.",
       "example_label": "In Trip Planner",
       "examples": [
         "One sentence: Lisbon for two, the dates, the budget.",
         "The manager calls in the specialists this trip needs: flights, hotel, transfers, dinner.",
         "What the traveller chooses changes what comes next: dinner fits what is left of the budget."
       ],
-      "notes": [
-        {
-          "label": "The person decides",
-          "body": "The team proposes. The app stops and asks each time a choice is the person's: which hotel, whether to pay."
-        },
-        {
-          "label": "When a classic app is the right choice",
-          "body": "When everyone needs the same thing, a classic app is simpler and faster. A VibeApp is for the requests that are each a little different."
-        },
-        {
-          "label": "What it takes",
-          "body": "The ready-made portal needs no development. An app of your own is connected to your team by a developer. Most VibeApps mix classic screens and teams."
-        }
-      ],
-      "note": "Flights, hotels and payment are simulated in this demonstration.",
       "link": "Watch Trip Planner",
-      "href": "/use-cases/trip-planner",
-      "ways_link": "How to get one",
-      "ways_href": "#ways"
+      "href": "/use-cases/trip-planner"
     },
     "soon": {
       "eyebrow": "Coming soon",
@@ -1605,7 +1549,7 @@
         "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
         "h1": "A whole trip,",
         "h1_accent": "from one sentence.",
-        "lead": "One sentence replaces a series of search forms. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
+        "lead": "The traveller writes what they want. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
         "facts": {
           "for": "A travel agency, or anyone who sells something with many parts",
           "use": "A VibeApp, made for this one job",
@@ -1703,24 +1647,6 @@
           "link": "The code on GitHub",
           "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
           "external": true
-        },
-        "change": {
-          "title": "What it changes",
-          "lead": "Compared with a classic booking app.",
-          "items": [
-            {
-              "label": "For the traveller",
-              "body": "One sentence instead of a series of forms. Each choice shows only what serves this trip, and the next one builds on it."
-            },
-            {
-              "label": "For the unusual trip",
-              "body": "A visa to check, a rental car that only sometimes makes sense: the right specialists are called in, the others are not."
-            },
-            {
-              "label": "For the agency",
-              "body": "You change how a trip is planned in the Studio, in plain words: add a specialist, adjust a role. The app itself stays the same."
-            }
-          ]
         }
       },
       {

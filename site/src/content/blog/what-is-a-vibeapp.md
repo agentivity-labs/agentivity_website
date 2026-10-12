@@ -62,14 +62,6 @@ Yes. In Trip Planner the hotel card, its photo, the "Choose" button and the paym
 
 This is worth stressing because it is often misunderstood. A VibeApp is not a chat window that replaces your interface. Most real VibeApps are a mix: classic screens where a screen is the clearest way to show something, and one or several teams where the work depends on the situation.
 
-## What does a VibeApp change for you?
-
-Three things, in plain terms.
-
-- **People finish what they came to do.** They do not have to find the right screen first, and they are not left on a form that does not fit their case.
-- **The unusual case is handled.** The usual request is routine; the unusual one is where time is lost. A team works it out, calls in only the specialists this request needs, and asks the person when a decision is theirs.
-- **You change the work, not the application.** The work is done by a team that you build and change in the Studio, in plain words: add a specialist, adjust a role. The application itself stays the same, so there is no development cycle each time a rule changes.
-
 ## What is behind a VibeApp?
 
 A team. Not one large AI model trying to do everything, but several AI specialists, each with a role, working together the way colleagues do.
@@ -96,7 +88,7 @@ It fits situations where requests differ from one person to the next and where s
 - **Advising a choice.** In the [Shopping Lab example](/use-cases/shopping-lab), a shopper describes a need, and nine specialists read what the stores publish, compare like with like and hand back an illustrated report with its sources.
 - **Handling requests with exceptions.** Hiring, customer requests, internal services: the usual case is routine, and the unusual one is where time is lost.
 
-It is also fair to say when you do not need one. When everyone needs the same thing, in the same order, a classic app is simpler and faster: a VibeApp is for the requests that are each a little different. And much of the time a team needs no app at all: you start it, it does its work, and it reaches you by email, on Slack or in a form when a decision is yours. The [use cases page](/use-cases#ways) describes the three ways people talk to a team.
+It is also fair to say when you do not need one. Much of the time a team needs no app at all: you start it, it does its work, and it reaches you by email, on Slack or in a form when a decision is yours. The [use cases page](/use-cases#ways) describes the three ways people talk to a team.
 
 ## How do you build a VibeApp?
 

@@ -1,2 +1,4 @@
 out/
 .chrome-profile/
+# The tool that composes the hero film: kept in the private agentivity_media repo, not in this public one.
+hero-film/
