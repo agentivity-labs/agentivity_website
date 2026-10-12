@@ -2,6 +2,7 @@
 import '../styles/main.css';
 import '../styles/editorial.css';
 import '../styles/legacy-pages.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 export interface Props {
   title: string;
@@ -38,9 +39,6 @@ const hrefFR = new URL('/fr' + pathWithoutLang.replace(/\/$/, '') , Astro.site).
 
 // The language of the page: from the address first (some French pages do not pass `lang`).
 const pageLang = Astro.url.pathname === '/fr' || Astro.url.pathname.startsWith('/fr/') ? 'fr' : lang;
-const cookieCopy = pageLang === 'fr'
-  ? { label: 'Consentement aux cookies', text: "Nous utilisons des cookies pour comprendre comment vous utilisez Agentivity et améliorer l'expérience.", link: 'Politique de confidentialité', href: '/fr/legal/privacy', decline: 'Refuser', accept: 'Accepter' }
-  : { label: 'Cookie consent', text: 'We use cookies to understand how you use Agentivity and improve the experience.', link: 'Privacy policy', href: '/legal/privacy', decline: 'Decline', accept: 'Accept' };
 
 // GTM — set GTM_ID env var at build time (e.g. GTM-XXXXXXX)
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
@@ -114,153 +112,8 @@ window.__gtmId = '${GTM_ID}';
 
   <slot />
 
-  <!-- Cookie consent banner -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label={cookieCopy.label} aria-live="polite" hidden>
-    <p class="cookie-text">
-      {cookieCopy.text}
-      <a href={cookieCopy.href} class="cookie-link">{cookieCopy.link}</a>
-    </p>
-    <div class="cookie-actions">
-      <button id="cookie-decline" type="button" class="cookie-btn cookie-btn--ghost">{cookieCopy.decline}</button>
-      <button id="cookie-accept" type="button" class="cookie-btn cookie-btn--primary">{cookieCopy.accept}</button>
-    </div>
-  </div>
-
-  <script>
-    // Cookie consent + GTM gate
-    const CONSENT_KEY = 'ag_cookie_consent';
-
-    // Called only after the visitor has accepted, and at most once per page.
-    function loadGTM() {
-      const w = window as any;
-      if (!w.__gtmId || w.__gtmLoaded) return;
-      w.__gtmLoaded = true;
-      w.dataLayer = w.dataLayer || [];
-      w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = `https://www.googletagmanager.com/gtm.js?id=${w.__gtmId}`;
-      document.head.appendChild(s);
-    }
-
-    // Removes the cookies set by Google Analytics (_ga, _ga_<id>), whichever domain they were set on.
-    function deleteAnalyticsCookies() {
-      const host = location.hostname;
-      const labels = host.split('.');
-      const domains = ['', host, '.' + host];
-      if (labels.length > 2) domains.push('.' + labels.slice(-2).join('.'));
-      document.cookie.split(';').map((c) => c.split('=')[0].trim()).filter((name) => name === '_ga' || name.startsWith('_ga_')).forEach((name) => {
-        domains.forEach((domain) => {
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;' + (domain ? ' domain=' + domain + ';' : '');
-        });
-      });
-    }
-
-    function readChoice(): string | null {
-      try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
-    }
-    function saveChoice(value: string) {
-      try { localStorage.setItem(CONSENT_KEY, value); } catch { /* private mode: the choice lasts for this page only */ }
-    }
-
-    function initConsent() {
-      const banner = document.getElementById('cookie-banner');
-      const show = () => { banner?.removeAttribute('hidden'); };
-      const hide = () => { banner?.setAttribute('hidden', ''); };
-
-      const stored = readChoice();
-      if (stored === 'accepted') loadGTM();
-      else if (stored !== 'declined') setTimeout(show, 800); // no choice yet: ask, after a short delay
-
-      document.getElementById('cookie-accept')?.addEventListener('click', () => {
-        saveChoice('accepted');
-        hide();
-        loadGTM();
-      });
-      document.getElementById('cookie-decline')?.addEventListener('click', () => {
-        saveChoice('declined');
-        hide();
-        deleteAnalyticsCookies();
-        // Tag Manager was already running on this page: reload so that it stops.
-        if ((window as any).__gtmLoaded) location.reload();
-      });
-
-      // "Cookie settings" in the footer: ask again, whatever was chosen before.
-      document.querySelectorAll('[data-cookie-settings]').forEach((link) => {
-        link.addEventListener('click', () => {
-          show();
-          (document.getElementById('cookie-accept') as HTMLButtonElement | null)?.focus();
-        });
-      });
-    }
-
-    initConsent();
-  </script>
+  <ConsentBanner lang={pageLang} />
 
 </body>
 </html>
 
-<style is:global>
-/* ── Cookie banner ── */
-.cookie-banner {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(560px, calc(100vw - 32px));
-  background: rgba(13, 27, 53, 0.97);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 14px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  z-index: 9999;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 40px rgba(0,0,0,.45);
-  animation: cookie-in .3s ease;
-}
-.cookie-banner[hidden] { display: none; }
-@keyframes cookie-in {
-  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-@media (max-width: 560px) {
-  .cookie-banner { flex-direction: column; gap: 12px; align-items: flex-start; }
-}
-.cookie-text {
-  font-size: 13px;
-  color: rgba(255,255,255,.55);
-  line-height: 1.55;
-  flex: 1;
-  margin: 0;
-}
-.cookie-link {
-  color: var(--cyan);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
-.cookie-btn {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  white-space: nowrap;
-  transition: opacity .15s;
-}
-.cookie-btn:hover { opacity: .85; }
-.cookie-btn--ghost {
-  background: rgba(255,255,255,.07);
-  color: rgba(255,255,255,.5);
-  border: 1px solid rgba(255,255,255,.1);
-}
-.cookie-btn--primary {
-  background: var(--violet);
-  color: #fff;
-}
-</style>

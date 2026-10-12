@@ -1,0 +1,15 @@
+---
+// Header of the documentation pages: the same header as the rest of the website, with the search of the documentation added.
+import Search from 'virtual:starlight/components/Search';
+import SiteHeader from '../SiteHeader.astro';
+
+const lang = Astro.locals.starlightRoute.locale === 'fr' ? 'fr' : 'en';
+const path = Astro.url.pathname;
+// The two versions of a page are at the same path, with or without the /fr prefix.
+const hrefEn = path.replace(/^\/fr(?=\/|$)/, '') || '/';
+const hrefFr = lang === 'fr' ? path : '/fr' + path;
+---
+
+<SiteHeader lang={lang} hrefEn={hrefEn} hrefFr={hrefFr}>
+  <div class="docs-search"><Search /></div>
+</SiteHeader>

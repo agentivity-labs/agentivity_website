@@ -10,8 +10,11 @@ interface Props {
   waitlistHref?: string;
   /** Replaces the label of that button, for a page whose main action is not the waitlist. */
   ctaLabel?: string;
+  /** Where the language switch goes, for a page whose two versions are not at / and /fr/ (the documentation). */
+  hrefEn?: string;
+  hrefFr?: string;
 }
-const { lang, waitlistHref, ctaLabel } = Astro.props;
+const { lang, waitlistHref, ctaLabel, hrefEn = '/', hrefFr = '/fr/' } = Astro.props;
 const t = useTranslations(lang);
 const home = lang === 'fr' ? '/fr/' : '/';
 const cta = waitlistHref ?? home + '#cta';
@@ -31,11 +34,12 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
     </nav>
 
     <div class="sh-actions">
+      <slot />
       <a class="sh-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} /><span class="sh-github-text">{t.site.github}</span></a>
       <a class="ed-btn ed-btn--sm ed-btn--navy" href={cta}>{ctaText}</a>
       <div class="sh-lang" role="group" aria-label="Language">
-        <a href="/" class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
-        <a href="/fr/" class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+        <a href={hrefEn} class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+        <a href={hrefFr} class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
       </div>
       <button class="sh-burger" type="button" aria-label={menuLabel} aria-expanded="false" aria-controls="sh-menu">
         <span></span><span></span><span></span>
@@ -51,8 +55,8 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
     </nav>
     <a class="ed-btn ed-btn--navy sh-menu-cta" href={cta}>{ctaText}</a>
     <div class="sh-lang" role="group" aria-label="Language">
-      <a href="/" class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
-      <a href="/fr/" class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+      <a href={hrefEn} class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+      <a href={hrefFr} class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
     </div>
   </div>
 </header>

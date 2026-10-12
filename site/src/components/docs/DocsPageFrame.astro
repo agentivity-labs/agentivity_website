@@ -1,0 +1,21 @@
+---
+// Frame of the documentation pages: the Starlight frame, then the footer of the website and the cookie banner.
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+import SiteFooter from '../SiteFooter.astro';
+import ConsentBanner from '../ConsentBanner.astro';
+import '../../styles/editorial.css';
+
+const lang = Astro.locals.starlightRoute.locale === 'fr' ? 'fr' : 'en';
+---
+
+{/* The tokens of the editorial look (colours, fonts) are defined under body.ed. */}
+<script is:inline>document.body.classList.add('ed');</script>
+
+<Default>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+  <slot />
+</Default>
+
+<div class="docs-site-footer"><SiteFooter lang={lang} /></div>
+<ConsentBanner lang={lang} />

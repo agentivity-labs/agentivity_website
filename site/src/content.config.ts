@@ -1,5 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
@@ -17,4 +19,7 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// The documentation: generated from the agentivity_docs project (see agentivity_docs/tools/docs.mjs), never edited here.
+const docs = defineCollection({ loader: docsLoader(), schema: docsSchema() });
+
+export const collections = { blog, docs };

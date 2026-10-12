@@ -1,0 +1,19 @@
+---
+// Head of the documentation pages: the Starlight head, the fonts of the website, and the id of Tag Manager.
+// Nothing is requested from Google here: the loading happens only after the visitor accepts (see ConsentBanner).
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
+const fontsHref = 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap';
+---
+
+<Default />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href={fontsHref} />
+{GTM_ID && (
+  <Fragment set:html={`<script>
+window.dataLayer = window.dataLayer || [];
+window.__gtmId = '${GTM_ID}';
+</script>`} />
+)}

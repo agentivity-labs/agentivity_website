@@ -1,0 +1,128 @@
+{
+  "home": {
+    "label": {
+      "en": "Overview",
+      "fr": "Vue d'ensemble"
+    },
+    "published": true
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "label": {
+        "en": "Introduction",
+        "fr": "Introduction"
+      },
+      "total": 7,
+      "published": 7
+    },
+    {
+      "id": "getting-started",
+      "label": {
+        "en": "Getting started",
+        "fr": "Démarrer"
+      },
+      "total": 4,
+      "published": 4
+    },
+    {
+      "id": "agents",
+      "label": {
+        "en": "Agents",
+        "fr": "Agents"
+      },
+      "total": 8,
+      "published": 8
+    },
+    {
+      "id": "teams",
+      "label": {
+        "en": "Teams",
+        "fr": "Équipes"
+      },
+      "total": 5,
+      "published": 5
+    },
+    {
+      "id": "workflows",
+      "label": {
+        "en": "Workflows",
+        "fr": "Workflows"
+      },
+      "total": 9,
+      "published": 9
+    },
+    {
+      "id": "data-tables",
+      "label": {
+        "en": "Data Tables",
+        "fr": "Data Tables"
+      },
+      "total": 5,
+      "published": 5
+    },
+    {
+      "id": "prompts",
+      "label": {
+        "en": "Prompts",
+        "fr": "Prompts"
+      },
+      "total": 3,
+      "published": 3
+    },
+    {
+      "id": "vibeapps",
+      "label": {
+        "en": "VibeApps",
+        "fr": "VibeApps"
+      },
+      "total": 13,
+      "published": 13
+    },
+    {
+      "id": "showcases",
+      "label": {
+        "en": "Showcases",
+        "fr": "Exemples"
+      },
+      "total": 5,
+      "published": 5
+    },
+    {
+      "id": "studio",
+      "label": {
+        "en": "The Studio, screen by screen",
+        "fr": "Le Studio, écran par écran"
+      },
+      "total": 9,
+      "published": 9
+    },
+    {
+      "id": "guides",
+      "label": {
+        "en": "Workspace",
+        "fr": "Espace de travail"
+      },
+      "total": 8,
+      "published": 8
+    },
+    {
+      "id": "reference",
+      "label": {
+        "en": "Reference",
+        "fr": "Référence"
+      },
+      "total": 9,
+      "published": 9
+    },
+    {
+      "id": "faq",
+      "label": {
+        "en": "FAQ",
+        "fr": "Questions fréquentes"
+      },
+      "total": 3,
+      "published": 3
+    }
+  ]
+}
