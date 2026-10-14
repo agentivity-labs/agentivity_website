@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-people-messages-and-storage.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that ask a person, send and read messages, store values, and work with outside applications.
 

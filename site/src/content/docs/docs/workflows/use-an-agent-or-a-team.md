@@ -1,6 +1,6 @@
 ---
 title: "Use an agent or a team as a step"
-description: "Reuse an agent, a team or another workflow inside a workflow with the Composable step. What to fill in, and the limits to know today."
+description: "Call an agent, a team or another workflow of your library from a workflow, with the steps Agent, Team and Workflow. What to fill in, and what they refuse."
 sidebar:
   order: 4
 editUrl: false
@@ -11,86 +11,110 @@ lastUpdated: false
 
 You have built an agent or a team, and it works. To use it inside a workflow, you do not rebuild it: you add one step that calls it. The example calls the agent `Reminder Writer` from a workflow.
 
-## AI Agent step, or Composable step
+## Three steps, one for each kind
 
-| | **AI Agent** step | **Composable** step |
+| Step | What it calls | Where it is in the **Node Catalog** |
+|---|---|---|
+| **Agent** | An agent of your library. | **AI** > **Agents** |
+| **Team** | A team of your library. | **AI** > **Agents** |
+| **Workflow** | Another workflow of your library. | **Core** > **Workflow** |
+
+The three work the same way. You choose what the step calls, you write the message it sends, and the next steps use the answer.
+
+## AI Agent step, or Agent step
+
+| | **AI Agent** step | **Agent** step |
 |---|---|---|
 | Where the agent is defined | In the workflow. You write its instructions and plug its model there. | In **Studio** > **Agents**. The workflow only calls it. |
-| Use it when | The agent serves this workflow only. | The agent or the team exists already, or serves several workflows. |
-| What it can call | One agent. | An agent, a team or another workflow. |
+| Use it when | The agent serves this workflow only. | The agent exists already, or serves several workflows. |
 
-See [Add an AI step to a workflow](/docs/workflows/add-an-ai-step/) for the first one. This page is about the second.
+See [Add an AI step to a workflow](/docs/workflows/add-an-ai-step/) for the first one. This page is about the steps that call your library.
 
 ## What you need
 
 - A workflow open in the editor. See [Create a workflow](/docs/workflows/create-a-workflow/).
-- An agent or a team that works on its own. Try it first: see [Run an agent](/docs/agents/run-an-agent/) or [Run a team](/docs/teams/run-a-team/).
-
-## Find the ID of the agent or the team
-
-The step asks for the ID of what it calls. An ID is a long code of letters, digits and dashes. Today the Studio does not show it, so you read it from the server:
-
-1. Open a new tab in your browser.
-2. Go to the address of your Studio, followed by `/api/v1/entities`. With the default install: `http://localhost:5005/api/v1/entities`.
-3. The page lists every agent, team and workflow. Find the one you want by its `displayName`, and copy the value of `id` next to it.
+- An agent, a team or a workflow that works on its own. Try it first: see [Run an agent](/docs/agents/run-an-agent/), [Run a team](/docs/teams/run-a-team/) or [Run a workflow](/docs/workflows/run-a-workflow/).
 
 ## Add the step
 
-1. Open the **Node Catalog** and search for `Composable`. It is in **AI** > **Agents**.
-2. Drag **Composable** onto the canvas.
+1. Open the **Node Catalog** and search for `Agent`, `Team` or `Workflow`.
+2. Drag the step onto the canvas.
 3. Link the step before it to its left dot.
 4. Right-click the step and select **Edit**.
 
-![The window Composable: the field Entity ID filled with an ID, the field Entity kind filled with agent, the goal written with three references, and on the right the panel Outputs with the outputs of the step For Each](images/composable-window.jpg)
+## Choose what it calls
 
-5. Fill in the three fields:
+1. Select **Choose an agent…** (or **Choose a team…**, **Choose a workflow…**).
+2. A window opens on your library, with its folders and a search field. It shows only what this step can call: the agents for **Agent**, the teams for **Team**, the workflows for **Workflow**.
+3. Select the one you want. Its name now shows in the window of the step.
 
-| Field | What to enter |
-|---|---|
-| **Entity ID** | The ID you copied. |
-| **Entity kind** | `agent`, `team` or `workflow`. You can leave it empty: Agentivity finds the kind from the ID. |
-| **Goal / prompt sent to the composable** | The task, as you would type it in the chat of the agent. |
+The step keeps the identifier of what you chose, not its name. You can rename the agent later: the step still calls it.
 
-6. To put a value from an earlier step in the task, select **Expression** above the field and write the reference of the output. The panel **Outputs**, on the right, lists the names you can use.
-7. Select **Apply**, then **Publish**.
+## Write the message
+
+In **Message**, write what to ask, as you would type it in the chat of the agent. For example:
+
+```text
+Write a payment reminder for Northgate Bakery, invoice INV-2041, 1,250 euros.
+```
+
+To put a value from an earlier step in the message, write the reference of its output: the node name of the step, a dot, the name of the output, between two pairs of curly braces. The panel **Outputs**, on the right, lists the names you can use.
+
+The step sends only this message. Put in it everything the agent, the team or the workflow needs to know.
+
+Then select **Apply**, and **Publish**.
 
 ## Use the answer
 
-The step has one output, named `output`: the final answer of the agent or the team. Use it in the next step with its reference: the name of the step, a dot, then `output`.
+| Output | What it holds |
+|---|---|
+| `output` | The answer. For an agent or a team: its final answer. For a workflow: see below. |
+| Named outputs | If what you call declares outputs of its own, they come next to `output`, under their own names. |
 
-The step has two exits on its right side: **Out**, and **Error**.
+Use the answer in a later step with its reference: the node name of the step, a dot, then `output`.
+
+The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**.
+
+### What a workflow gives back
+
+A called workflow gives back the text of its last step that produced one. The engine looks, from the last step that ran back to the first, for an output named `output`, `result`, `response` or `content`.
+
+So make the last useful step of the called workflow produce one of these names. An **AI Agent** step does: its answer is named `response`. A **Console** step does not: its output is named `value`.
+
+## When what you call waits
+
+What you call may stop to wait: an agent that asks a person a question, a workflow with an approval step. Your workflow then waits with it. When the answer comes, what you called goes on from where it stopped, and your workflow goes on when it has finished.
+
+This is not possible inside a loop. If a step of a **For Each** loop calls something that waits, the run fails, and the message says that a loop cannot wait. See [Repeat steps for each item of a list](/docs/workflows/repeat-steps/).
+
+## What the step refuses
+
+- **Something of another kind.** Each step calls only its own kind. Given a team, the step **Agent** stops the run, with a message that names the chosen item and says that it is a team. Use the step **Team** for a team.
+- **Nothing chosen.** A step with nothing chosen stops the run, with a message that says no agent (or team, or workflow) is chosen.
+
+## If Agent and Team are not in the catalogue
+
+The library of agents and teams can be turned off on a server, with the setting `Features__AgenticLibrary__Enabled`. It is on by default. When it is off, the steps **Agent** and **Team** are not offered, and only **Workflow** is. The **AI Agent** step keeps working.
 
 ## How to know it worked
 
 Run the workflow. In the tab **Execution**, the step turns to completed, and the next step receives the answer. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
 
-This page was checked in the Studio and through runs that call a workflow. A run that calls an agent or a team could not be done on the test machine.
+## If it does not work
 
-## Limits to know today
+- **The run fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
+- **The answer is empty, and the step called a workflow.** No step of that workflow produced an output named `output`, `result`, `response` or `content`. See "What a workflow gives back".
+- **The run fails at this step, and the rest of the workflow is not done.** Today, a failure of the step stops the run.
+- **The agent answers beside the point.** The step sends only the message. Put the facts the agent needs in it.
 
-- **A wrong ID stops the run.** The run fails with a message that says the ID could not be found as an agent, a team or a workflow. In our test, the exit **Error** was not followed.
-- **A workflow called as a step cannot ask a person.** In our test, the question was skipped without a message, and the step ended at once. Keep the questions in the main workflow. This was tested with a workflow as the target, not with an agent or a team.
-- **A workflow called as a step gives no `output`.** In our test, `output` was empty when the target was a workflow.
-- **Each call costs.** The agent or the team uses the AI model each time the step runs. A team uses it many times.
+## Good to know
 
-## Two other steps do the same
-
-The catalogue holds two more steps next to **Composable**. They work the same way.
-
-| Step | What it calls | Name of the answer |
-|---|---|---|
-| **Team** | A team only. | `output` |
-| **Library Agent** | An agent or a team. | `response` |
+- **Each call costs.** An agent or a team uses the AI model each time the step runs. A team uses it many times.
+- **A workflow is called by its identifier.** Renaming the called workflow does not break the step.
 
 ## Reference
 
-[Composable, Team and Library Agent in the node reference](/docs/reference/nodes-ai-agents-and-models/).
-
-## If it does not work
-
-- **The run fails at this step.** Check the ID: copy it again, with no space before or after.
-- **The answer is empty.** Check that the next step uses the right name: `output` for **Composable** and **Team**, `response` for **Library Agent**.
-- **The agent answers beside the point.** The step sends only the text of the goal. Put in it everything the agent needs to know.
+[Agent and Team](/docs/reference/nodes-ai-agents-and-models/), and [Workflow](/docs/reference/nodes-core/), in the node reference.
 
 ## Next step
 

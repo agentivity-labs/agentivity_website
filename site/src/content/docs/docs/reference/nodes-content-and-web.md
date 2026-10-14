@@ -9,11 +9,11 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-content-and-web.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that read the web and documents, and the steps that build content.
 
-This page lists 20 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 25 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## Content
 
@@ -45,6 +45,155 @@ Generates structured DSL content from diverse sources with LLM-powered content g
 |---|---|---|
 | `dsl_content` | Text | Generated content in DSL format (PageNode JSON) |
 | `metadata` | Text | Content metadata: topics, keywords, estimated reading time |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **LLM Model** | yes | `llm.model.*` | 1 |
+
+## Content > Articles
+
+Article-focused content nodes.
+
+### Article Reviewer
+
+Step · in the catalogue: Content > Articles · type `content.articles.article_reviewer`
+
+Validates and scores article content quality, providing improvement suggestions.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `article_sections` | Text | yes |  | Article sections to validate (JSON). |
+| `audience` | Text | no | `beginner` | Target audience level. |
+| `missing_info` | Text | no | `None` | Missing information if any. |
+| `simulation` | Boolean | no | `false` | Skip deep validation. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `validation_result` | Text | Validation result payload (JSON) |
+| `is_article_valid` | Boolean | Whether the article is valid |
+| `overall_score` | Number | Overall validation score |
+| `validated_sections` | Text | Sections with validation data (JSON) |
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **LLM Model** | yes | `llm.model.*` | 1 |
+
+### Article Writer
+
+Step · in the catalogue: Content > Articles · type `content.articles.article_writer`
+
+Generates structured article content with SEO optimization, outline generation, and humanized writing.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `simulation` | Boolean | no | `false` | Create a fake article. |
+| `draft_mode` | Boolean | no | `false` | Basic writing without content improvement (faster). |
+| `article_title` | Text | yes |  | Article title. |
+| `topic` | Text | yes |  | Main article topic. |
+| `brief` | Text | no |  | Detailed content brief with editorial direction (optional). |
+| `audience` | Text | no |  | Target audience. |
+| `meta_description` | Text | yes |  | Meta description. |
+| `meta_tags` | TextList | yes |  | Meta tags. |
+| `word_count` | Number | no | `1800` | Target word count for the article. |
+| `seo_strategy` | Text | yes |  | SEO instructions object. |
+| `suggested_links` | Text | no |  | Suggested internal links JSON array (from InternalLinkSuggesterNode). |
+| `tone` | Text | no |  | Writing tone override (e.g. educational, expert, accessible). Leave empty to use SEO strategy tone. |
+| `article_type` | Text | no |  | Article type override (how_to, guide, explainer, listicle, comparison, case_study, reference). Leave empty to use SEO strategy recommendation. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `article_sections` | Text | Structured article sections or layout |
+| `meta_description` | Text | Article meta description |
+| `article_summary` | Text | Short article summary |
+| `image_prompts` | Text | Flattened collection of image prompts for the article |
+| `featured_image_prompt` | Text | Featured image prompt as JSON |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **LLM Model** | yes | `llm.model.*` | 1 |
+| **Tools** | yes | `content.tool.*` | several |
+
+### Layout Designer
+
+Step · in the catalogue: Content > Articles · type `content.articles.article_layout_designer`
+
+Designs article layout structure with sections, images, and visual elements.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `title` | Text | yes |  | Article title. |
+| `article_sections` | Text | yes |  | Article sections collection. |
+| `toc` | Boolean | no | `false` | Include table of contents. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `layout_data` | Text | DSL layout structure |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### SEO Advisor
+
+Step · in the catalogue: Content > Articles · type `content.articles.article_seo_advisor`
+
+Generates SEO metadata: optimized title, meta description, primary keyword, slug.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `topic` | Text | yes |  | Main article topic. |
+| `brief` | Text | no |  | Detailed content brief with editorial direction (optional). |
+| `audience` | Text | no | `beginners` | Target audience. |
+| `seo_goals` | Text | no |  | Optional SEO goals override. |
+| `seo_constraints` | Text | no |  | Optional SEO constraints override. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `seo_strategy` | Text | Full SEO strategy as JSON |
+| `article_title` | Text | SEO optimized article title |
+| `meta_description` | Text | SEO meta description |
+| `meta_tags` | Text | Primary keyword as JSON array |
+| `slug` | Text | SEO-friendly slug |
+| `search_intent` | Text | Search intent classification |
+| `title_variants` | Text | All title variants with scores as JSON |
+| `title_selection_reason` | Text | Justification for selected title |
+| `title_metrics` | Text | Detailed scores of selected title as JSON |
 
 **Entries.** **In** (Entry point)
 
@@ -243,6 +392,27 @@ Converts DSL content to Markdown format
 |---|---|---|
 | `markdown` | Text | Generated Markdown content |
 | `metadata` | Text | Content metadata (heading count, word count, etc.) |
+
+## No named category: content.tool
+
+### Advanced Humanizer (LLM + T5 Model)
+
+Resource · in the catalogue: no named category · type `content.tool.humanizer`
+
+Full anti-detection pipeline: LLM rewrite + local T5 paraphrase (T5-Base (220M, ~350 MB)) + final reader-first polish + deterministic cleanup.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | LLM credentials for the rewrite pass. Connection of type `llm`. |
+| `tone` | Text | no | `professional` | Default writing tone. |
+| `preserve_length` | Boolean | no | `false` | Avoid inflating or reducing content length. |
+| `enable_paraphrase` | Boolean | no | `false` | Enable ONNX paraphrase pass (main anti-detection mechanism). |
+
+**Plugs into** a place that accepts `content.tool.*`.
 
 ## Web
 

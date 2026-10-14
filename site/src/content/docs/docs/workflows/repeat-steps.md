@@ -18,7 +18,7 @@ You have three unpaid invoices, and you want one reminder for each. You do not d
 
 ## How a loop is drawn
 
-![The workflow Reminder Batch: a step For Each with two exits. The upper one goes to a Composable step, then to a Console. The lower one goes to another Console](images/loop-workflow.jpg)
+In the example workflow `Reminder Batch`, the upper exit of **For Each** goes to an **Agent** step that calls `Reminder Writer`, then to a **Console** step. The lower exit goes to another **Console** step.
 
 A **For Each** step has two exits on its right side:
 
@@ -69,7 +69,7 @@ Inside the loop, the step **For Each** gives these outputs. Their names start wi
 
 You use one in a field by writing its reference, between two pairs of curly braces. The panel **Outputs** of each step in the loop lists them.
 
-In the example, the task given to the agent is written with three references: the customer, the invoice number and the amount of the current item. See the picture in [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
+In the example, the message sent to the agent by the **Agent** step is written with three references: the customer, the invoice number and the amount of the current item. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
 
 ## After the loop
 
@@ -90,7 +90,7 @@ We ran this with the list above. The steps in the loop received each customer in
 
 ## Limits to know today
 
-- **No question to a person inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, the run fails, and the message says so. Ask before the loop or after it.
+- **Nothing that waits inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, or calls an agent, a team or a workflow that stops to wait, the run fails, and the message says so. Ask before the loop or after it.
 - **The Studio shows the last item only.** After a run, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
 - **The loop does not collect what its steps produce.** The output `results` holds the items of the list, not the answers of the steps. In our test, it could not be written in a text field.
 - **One failure fails the run.** If a step of the loop fails on one item, the whole run fails.
@@ -101,7 +101,7 @@ We ran this with the list above. The steps in the loop received each customer in
 
 - **The loop runs once, with the whole list as one item.** The list is not valid JSON. Check the square brackets, the commas and the quotation marks.
 - **A field of the item is empty.** Check the spelling of the field, and the node name of the **For Each** step in the reference.
-- **The run fails with a message about a loop that cannot wait.** A step in the loop asks a person. Move it out of the loop.
+- **The run fails with a message about a loop that cannot wait.** A step in the loop asks a person, or calls something that asks one. Move it out of the loop.
 
 ## Reference
 

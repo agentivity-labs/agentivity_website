@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-tools.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The tools an agent can call. Each one is a resource that you plug into the place for tools of an AI Agent.
 

@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-core.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The building blocks of a workflow that use no AI: conditions, loops, data, variables, files, display and code.
 
@@ -387,24 +387,29 @@ One output per field configured in the node, named after the field.
 
 Sub-workflow orchestration.
 
-### Run Workflow
+### Workflow
 
-Step · in the catalogue: Core > Workflow · type `workflow.run`
+Step · in the catalogue: Core > Workflow · type `workflow_node`
 
-Executes a nested workflow with input parameters.
+Calls another workflow of your library with a message, and gives what it produced.
 
-**Effects.** runs other things.
+**Effects.** costs, runs other things.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `workflow` | Text | yes |  | Nested workflow name. |
-| `input` | Text | no |  | Nested workflow input payload. |
-| `resultKey` | Text | no |  | Key under which to store nested workflow state. |
+| `entity_id` | Text | yes |  | The workflow of your library to call. |
+| `input` | Text | yes |  | Message sent to the workflow. |
 
 **Outputs**
 
 | Name | Type | What it holds |
 |---|---|---|
-| `state` | Text | Nested workflow resulting state (direct or under resultKey) |
+| `output` | Text | The final answer of the workflow. |
+
+Any named output that the workflow itself declares is added next to this one, under its own name.
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The answer of the workflow), **Error** (Execution error if any)

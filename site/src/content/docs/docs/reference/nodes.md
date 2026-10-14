@@ -1,6 +1,6 @@
 ---
 title: "Node reference: every step and resource"
-description: "The list of the 109 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
+description: "The list of the 113 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
 sidebar:
   order: 1
 editUrl: false
@@ -9,9 +9,9 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
-The Node Catalog of the Studio holds 109 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
+The Node Catalog of the Studio holds 113 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
 
 ## How to read a node
 
@@ -44,10 +44,10 @@ In this reference, a reference inside a description or a default value is printe
 | Page | Nodes |
 |---|---|
 | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) | 16 |
-| [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) | 24 |
+| [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) | 23 |
 | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) | 15 |
 | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) | 21 |
-| [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) | 20 |
+| [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) | 25 |
 | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) | 13 |
 
 ## Every node, by name
@@ -55,6 +55,8 @@ In this reference, a reference inside a description or a default value is printe
 | Node | Kind | Type | Page |
 |---|---|---|---|
 | Add Block | Step | `layout.add_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Advanced Humanizer (LLM + T5 Model) | Resource | `content.tool.humanizer` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Agent | Step | `agentic_node` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent | Step | `ai.node` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent Calculator Tool | Resource | `ai.tools.utils.calculator` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Data Table Tool | Resource | `ai.tools.data.datatable` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
@@ -89,12 +91,13 @@ In this reference, a reference inside a description or a default value is printe
 | AI Tool - Web Search - Tavily | Resource | `ai.tools.web.search.tavily` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | ai.policies.layer | Resource | `ai.policies.layer` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Anthropic Model | Resource | `ai.llm.model.anthropic` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| Article Reviewer | Step | `content.articles.article_reviewer` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Article Writer | Step | `content.articles.article_writer` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Audio Player | Display step | `core.display.audio` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | AWS Bedrock Model | Resource | `ai.llm.model.bedrock` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Chat Channel | Resource | `ai.interactions.chat` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Cohere Rerank | Step | `ai.rerank.cohere` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Collect | Step | `core.collect` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
-| Composable | Step | `composable_node` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Console | Display step | `core.display.console` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Content Generator | Step | `content.content_generator` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Data Table | Resource | `workspace.datatable` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
@@ -124,7 +127,7 @@ In this reference, a reference inside a description or a default value is printe
 | Internal Link Suggester | Step | `seo.links.suggest` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | JavaScript | Step | `core.code.javascript` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Jina Reader Scraper | Resource | `web.scraper.jina` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
-| Library Agent | Step | `agentic_node` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| Layout Designer | Step | `content.articles.article_layout_designer` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | LLM Prompt | Step | `ai.llm.prompt` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Local Embeddings | Resource | `ai.embeddings.local` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | MCP Server | Resource | `ai.tools.mcp.server` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
@@ -141,9 +144,9 @@ In this reference, a reference inside a description or a default value is printe
 | Read Emails | Step | `communication.email.read` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Remove Block | Step | `layout.remove_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Replace Block | Step | `layout.replace_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
-| Run Workflow | Step | `workflow.run` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Scrape Web Page | Step | `web.scrape` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Send Email | Step | `communication.email.send` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
+| SEO Advisor | Step | `content.articles.article_seo_advisor` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Set Variables | Step | `core.set` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Simple LLM Memory | Resource | `ai.memory.simple` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Sitemap Analyzer | Step | `seo.sitemap.analyze` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
@@ -162,4 +165,5 @@ In this reference, a reference inside a description or a default value is printe
 | Web Search - SearXNG | Resource | `web.search.searxng` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Web Search - SerpApi | Resource | `web.search.serpapi` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Web Search - Tavily | Resource | `web.search.tavily` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Workflow | Step | `workflow_node` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | xAI / Grok Model | Resource | `ai.llm.model.xai` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |

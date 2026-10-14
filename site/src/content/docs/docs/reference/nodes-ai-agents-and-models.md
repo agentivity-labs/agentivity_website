@@ -9,15 +9,42 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-agents-and-models.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-12 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
-This page lists 24 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 23 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## AI > Agents
 
 Agent orchestration and execution.
+
+### Agent
+
+Step · in the catalogue: AI > Agents · type `agentic_node`
+
+Calls an agent of your library with a message, and gives its answer.
+
+**Effects.** costs, runs other things.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `entity_id` | Text | yes |  | The agent of your library to call. |
+| `input` | Text | yes |  | Message sent to the agent. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `output` | Text | The final answer of the agent. |
+
+Any named output that the agent itself declares is added next to this one, under its own name.
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The answer of the agent), **Error** (Execution error if any)
 
 ### AI Agent
 
@@ -31,7 +58,7 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `agent_mode` | Choice | no | `tools` | Agent execution mode. Choices: `tools`, `conversational`, `react`. |
+| `agent_mode` | Choice | no | `tools` | Agent execution mode. Choices: `tools`, `conversational`, `react`, `plan_and_execute`. |
 | `system_prompt` | Text | no |  | System instructions (optional). |
 | `prompt` | Text | yes | `input` (a reference) | User prompt (required). |
 | `images` | ImageRef | no |  | Optional image to attach to the initial prompt — only used by vision-capable models (GPT-4o, Claude, Gemini). Ignored by text-only models. |
@@ -80,67 +107,11 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 | **AI Agent Policies** | no | `ai.node.policy.*` | several |
 | **AI Agent Guardrails** | no | `ai.node.guardrail.*` | several |
 
-### Composable
-
-Step · in the catalogue: AI > Agents · type `composable_node`
-
-Executes an agent, a team, or a workflow from the library. Select an entity by ID — the engine is resolved automatically at runtime.
-
-**Effects.** costs, runs other things.
-
-**Fields**
-
-| Name | Type | Required | Default | What it is |
-|---|---|---|---|---|
-| `entity_id` | Text | yes |  | Entity ID — agent, team, or workflow from the library. |
-| `entity_kind` | Text | no |  | Entity kind: agent \| team \| workflow (optional — auto-detected when omitted). |
-| `input` | Text | yes |  | Goal / prompt sent to the composable. |
-
-**Outputs**
-
-| Name | Type | What it holds |
-|---|---|---|
-| `output` | Text | The final answer of the entity. |
-
-Any named output that the entity itself declares is added next to this one, under its own name.
-
-**Entries.** **In** (Entry point)
-
-**Exits.** **Out** (Composable response), **Error** (Execution error if any)
-
-### Library Agent
-
-Step · in the catalogue: AI > Agents · type `agentic_node`
-
-Executes an agent or team from the agentic library. Select an entity by ID — the engine and configuration are resolved at runtime.
-
-**Effects.** costs, runs other things.
-
-**Fields**
-
-| Name | Type | Required | Default | What it is |
-|---|---|---|---|---|
-| `agent_id` | Text | yes |  | Agent or Team ID — select an entity from the library. |
-| `input` | Text | yes |  | User input / goal sent to the entity. |
-
-**Outputs**
-
-| Name | Type | What it holds |
-|---|---|---|
-| `response` | Text | The final answer of the agent or team. |
-| `finish_reason` | Text | Why the run ended. |
-
-Any named output that the agent or team itself declares is added next to these, under its own name.
-
-**Entries.** **In** (Entry point)
-
-**Exits.** **Out** (Entity response), **Error** (Execution error if any)
-
 ### Team
 
 Step · in the catalogue: AI > Agents · type `team_node`
 
-Executes a team of agents defined in the library. The team is resolved by ID and run through the Team Engine.
+Calls a team of your library with a message, and gives its answer.
 
 **Effects.** costs, runs other things.
 
@@ -148,21 +119,20 @@ Executes a team of agents defined in the library. The team is resolved by ID and
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `entity_id` | Text | yes |  | Team ID from the agentic library. |
-| `entity_kind` | Text | no |  | Entity kind: agent \| team \| workflow (optional — auto-detected when omitted). |
-| `input` | Text | yes |  | Goal / prompt sent to the composable. |
+| `entity_id` | Text | yes |  | The team of your library to call. |
+| `input` | Text | yes |  | Message sent to the team. |
 
 **Outputs**
 
 | Name | Type | What it holds |
 |---|---|---|
-| `output` | Text | The final answer of the entity. |
+| `output` | Text | The final answer of the team. |
 
-Any named output that the entity itself declares is added next to this one, under its own name.
+Any named output that the team itself declares is added next to this one, under its own name.
 
 **Entries.** **In** (Entry point)
 
-**Exits.** **Out** (Composable response), **Error** (Execution error if any)
+**Exits.** **Out** (The answer of the team), **Error** (Execution error if any)
 
 ## AI > LLM
 
