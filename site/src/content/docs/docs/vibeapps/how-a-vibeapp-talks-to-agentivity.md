@@ -1,6 +1,6 @@
 ---
 title: "How a VibeApp talks to Agentivity"
-description: "For developers. What an application can ask the Agentivity server, how a run is followed, and why the app must be on the same address."
+description: "For developers. What an application can ask the Agentivity server, how a run is followed, and which web pages may call the server."
 sidebar:
   order: 5
 editUrl: false
@@ -40,17 +40,17 @@ A team does not only send text. It can ask the application to show something: a 
 
 This is what makes a VibeApp different from a chat window. The application does not decide in advance which screen comes next: the run does.
 
-## The application and the server must share one address
+## Which pages may call the server
 
-The Agentivity server accepts browser calls only from pages of its own address. The Studio works because the server delivers it itself.
+By default, the server accepts calls from any web page. An application served from another port, another machine or another domain works with no setting. Calls that do not come from a browser (a script, a mobile application, another server) have always been accepted.
 
-An application delivered from another address, for example another port or another domain, is blocked by the browser. So an application must be reached through the same address as the server. The usual way is a reverse proxy: one address in front of both, which sends the paths that start with `/api/` to Agentivity and everything else to your application.
+This is made to be easy while you build. It is not secure, because there is no login. For a real production, limit the pages that may call the server to the address of your application, with the setting `Cors__AllowedOrigins`. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).
 
-During development, your tool can do this for you: most development servers have a proxy setting.
+The Studio is not concerned: the server delivers it itself.
 
 ## There is no login
 
-The server does not ask who is calling. Every call is accepted. See [Before you put a VibeApp online](/docs/vibeapps/before-you-put-it-online/).
+The server does not ask who is calling. Every call is accepted, from a browser or not. Limiting the pages that may call it does not replace a sign-in: a script is not a page. See [Before you put a VibeApp online](/docs/vibeapps/before-you-put-it-online/).
 
 ## The SDKs
 

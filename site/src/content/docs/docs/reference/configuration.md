@@ -74,6 +74,23 @@ To reach it from your machine only, see [Keep your server private](/docs/guides/
 
 You rarely need to change the port inside the container. The setting is `Kestrel__Endpoints__Http__Url`, with the default `http://0.0.0.0:5005`.
 
+## Which web pages may call the server
+
+By default, a web page served from any address may call the server. Calls that do not come from a browser are always accepted.
+
+| Setting | Default | What it is |
+|---|---|---|
+| `Cors__AllowedOrigins__0`, `__1`, `__2`… | none: any page | The addresses of the pages that may call the server, one setting for each. With no setting, or with `*` among them, any page may. |
+
+```bash
+docker run -d --name agentivity -p 5005:5005 \
+  -v agentivity-data:/app/_data \
+  -e Cors__AllowedOrigins__0=https://app.mydomain.com \
+  agentivitylabs/agentivity
+```
+
+An address is written as the page shows it: the scheme, the name and the port if there is one, with nothing after. This is not a sign-in: there is none. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).
+
 ## Files that people upload
 
 | Setting | Default | What it is |
@@ -139,7 +156,6 @@ The engine slows itself down when the machine is under load.
 ## What is not a setting
 
 - **A login.** The server has none. See [Keep your server private](/docs/guides/keep-your-server-private/).
-- **Calls from another address.** A browser application must share the address of the server. See [How a VibeApp talks to Agentivity](/docs/vibeapps/how-a-vibeapp-talks-to-agentivity/).
 - **The edition.** It is fixed in the image.
 
 ## If it does not work

@@ -32,11 +32,13 @@ An application does not limit this by itself. The portal lists only tagged solut
 - lets through only the calls your application needs: listing solutions, starting a run, following it, answering it, and the rows of the tables it uses;
 - blocks everything else, including the Studio, for people who are not builders.
 
-**3. Keep the Studio for the builders.** Reach it from the private network only.
+**3. Limit the pages that may call the server.** By default, the server accepts calls from any web page. Start it with the address of your application only, with the setting `Cors__AllowedOrigins__0=https://app.mydomain.com`. Without it, any website opened by a visitor who can reach your server can call it in the background. This helps against other sites. It does not replace the access control of the step above: a script is not a web page, and it is not stopped. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).
 
-**4. Limit the cost.** Each request uses your AI model. Limit how many requests one person can send, in your proxy or in your application. Set a spending limit with your model provider if it offers one.
+**4. Keep the Studio for the builders.** Reach it from the private network only.
 
-**5. Be careful with what agents can do.** A solution open to other people should not have tools that send messages or change data without an approval. See [Give tools to an agent](/docs/agents/give-tools-to-an-agent/).
+**5. Limit the cost.** Each request uses your AI model. Limit how many requests one person can send, in your proxy or in your application. Set a spending limit with your model provider if it offers one.
+
+**6. Be careful with what agents can do.** A solution open to other people should not have tools that send messages or change data without an approval. See [Give tools to an agent](/docs/agents/give-tools-to-an-agent/).
 
 ## What Agentivity does not record
 

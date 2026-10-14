@@ -47,6 +47,18 @@ When several people must reach the Studio:
 - **Or put your own access control in front**: a reverse proxy that asks people to sign in before it lets them through. Ask the person who manages your network.
 - **Use a firewall** to allow only the machines that need it.
 
+## Limit the web pages that may call it
+
+By default, the server accepts calls from any web page. That is made to be easy while you build. It means that any website opened by a person who can reach your server could call it in the background.
+
+If other people reach your server, start it with the addresses of your own applications only:
+
+```text
+-e Cors__AllowedOrigins__0=https://app.mydomain.com
+```
+
+Add `__1`, `__2` for more addresses. This does not replace the protections above: it stops other websites, not scripts. The Studio is not concerned, since the server delivers it itself. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).
+
 ## Do not
 
 - Do not open port 5005 on a router or on a cloud firewall "just to test".

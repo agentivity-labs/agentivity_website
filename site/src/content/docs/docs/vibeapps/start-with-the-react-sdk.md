@@ -44,13 +44,9 @@ In the folder `agentivity_sdk_showcase_solutions`, create a file named `.env.loc
 VITE_AGENTIVITY_BASE_URL=http://localhost:5005
 ```
 
-Read the next section before you choose this address.
+The portal runs on its own port, and the server accepts calls from any page by default. So you can give the address of Agentivity directly, with nothing else to set.
 
-## One address for the portal and the server
-
-The Agentivity server accepts browser calls only from pages of its own address. The portal's development server runs on another port, so the browser blocks its calls if you give it the address of Agentivity directly.
-
-Put one address in front of both: a reverse proxy that sends the paths starting with `/api/` to Agentivity and everything else to the portal. Then give that address in `VITE_AGENTIVITY_BASE_URL`. See [How a VibeApp talks to Agentivity](/docs/vibeapps/how-a-vibeapp-talks-to-agentivity/).
+This is for developing, on your machine or on a network you trust. Before you put an application online, limit the pages that may call the server. See [Before you put a VibeApp online](/docs/vibeapps/before-you-put-it-online/).
 
 ## Start the portal
 
@@ -102,7 +98,7 @@ The SDK needs React 18 or later.
 ## If it does not work
 
 - **The welcome screen is empty.** No entity carries the tag the portal looks for. Check `solutionTags` and the tags in the Studio.
-- **The browser console shows blocked calls.** The portal and the server are not behind the same address.
+- **The browser console shows blocked calls.** The server was started with the setting `Cors__AllowedOrigins`, and the address of the portal is not in its list. Add it, or remove the setting while you develop. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).
 - **`npm install` fails in the portal.** The folder `agentivity_sdk_react` is not next to it, or it was not built.
 
 ## Next step

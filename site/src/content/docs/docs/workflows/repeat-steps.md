@@ -73,11 +73,13 @@ In the example, the message sent to the agent by the **Agent** step is written w
 
 ## After the loop
 
-The steps linked to the lower dot run when the list is finished. One more output is useful there:
+The steps linked to the lower dot run when the list is finished. The loop gives one output there:
 
 | Output | What it holds |
 |---|---|
-| `each.count` | The number of items done. |
+| `each.count` | The number of items done. It is 0 for an empty list. |
+
+The loop does not give back what each item produced. Handle that inside the loop, item by item: for example, write each result in a Data Table. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
 
 ## How to know it worked
 
@@ -92,9 +94,9 @@ We ran this with the list above. The steps in the loop received each customer in
 
 - **Nothing that waits inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, or calls an agent, a team or a workflow that stops to wait, the run fails, and the message says so. Ask before the loop or after it.
 - **The Studio shows the last item only.** After a run, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
-- **The loop does not collect what its steps produce.** The output `results` holds the items of the list, not the answers of the steps. In our test, it could not be written in a text field.
+- **The loop does not collect what its steps produce.** After the loop, only `count` is available. What each item produces is handled inside the loop.
 - **One failure fails the run.** If a step of the loop fails on one item, the whole run fails.
-- **An empty list is not an error.** The steps of the loop are skipped, and the workflow continues from the lower dot.
+- **An empty list is not an error.** The steps of the loop are skipped, `count` is 0, and the workflow continues from the lower dot.
 - **An AI step in a loop costs once per item.** A list of one hundred items uses the AI model at least one hundred times. Try with two or three items first.
 
 ## If it does not work
