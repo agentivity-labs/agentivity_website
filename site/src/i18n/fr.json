@@ -1,7 +1,6 @@
 {
   "meta": {
-    "title": "Construisez votre équipe IA — Agents autonomes et workflows structurés | Agentivity",
-    "description": "Composez des équipes d'agents IA visuellement. Sans code. Collaboration autonome ou workflows déterministes — finance, RH, marketing en quelques minutes. Open source."
+    "title": "Construisez votre équipe IA — Agents autonomes et workflows structurés | Agentivity"
   },
   "nav": {
     "links": [
@@ -17,7 +16,6 @@
     "cta": "Rejoindre la liste d'attente"
   },
   "hero": {
-    "pill": "Open source · Sans code · Équipes IA pour votre business",
     "h1_line1": "Votre prochaine recrue,",
     "h1_accent": "c'est une équipe IA.",
     "h1_line2": "Finance. RH. Marketing. Ops.",
@@ -28,8 +26,8 @@
   },
   "stats": [
     { "value": 15,  "fmt": "", "label": "Heures économisées par semaine en moyenne", "suffix": "+" },
-    { "raw": "0€",            "label": "Pour toujours, open source" },
-    { "value": 100, "fmt": "", "label": "% open source · sans lock-in", "suffix": "%" }
+    { "raw": "0€" },
+    { "value": 100, "fmt": "", "suffix": "%" }
   ],
   "how": {
     "eyebrow": "Comment ça marche",
@@ -293,8 +291,7 @@
         "id": "whitelabel",
         "type": "sm",
         "label": "Pour les agences",
-        "headline": "Construisez et vendez sous votre marque",
-        "body": "Proposez Agentivity en marque blanche à vos clients. Livrez des solutions d'équipes IA sous votre propre marque. Open source, vôtre à étendre."
+        "headline": "Construisez et vendez sous votre marque"
       }
     ]
   },
@@ -337,10 +334,9 @@
   "pricing": {
     "eyebrow": "Tarifs",
     "headline": "0€ pour commencer.",
-    "sub": "Tarification simple et transparente. Commencez gratuitement en open source — passez au cloud seulement quand vous êtes prêt.",
     "link": "Voir les tarifs complets",
     "tiers": [
-      { "name": "Gratuit",    "badge": "Open source",       "desc": "La plateforme complète, gratuite pour toujours. L'équipe dont vous avez besoin, sans le coût.", "cta": "Star on GitHub",             "cta_href": "https://github.com/agentivity-labs/agentivity", "featured": true },
+      { "name": "Gratuit",    "desc": "La plateforme complète, gratuite pour toujours. L'équipe dont vous avez besoin, sans le coût.", "cta": "Star on GitHub",             "cta_href": "https://github.com/agentivity-labs/agentivity", "featured": true },
       { "name": "Personnel",  "badge": "Cloud",             "desc": "Hébergé pour vous. Sans installation — connectez-vous et construisez votre première équipe.",    "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
       { "name": "Pro",        "badge": "Cloud",             "desc": "Plus d'agents, des exécutions plus longues, et une priorité d'exécution pour les builders sérieux.", "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
       { "name": "Business",   "badge": "Teams",             "desc": "Espaces de travail partagés. Tout le monde construit, tout le monde en bénéficie.",             "cta": "Rejoindre la liste d'attente","cta_href": "#cta" },
@@ -387,7 +383,6 @@
     "error_rate": "Trop de tentatives. Attends quelques minutes puis réessaie."
   },
   "footer": {
-    "tagline": "Construisez votre équipe IA. Open source, sans lock-in, vôtre à étendre.",
     "cols": [
       {
         "title": "Produit",
@@ -426,8 +421,7 @@
       }
     ],
     "legal": "© 2026 Agentivity · agentivity.io",
-    "cookies": "Paramètres des cookies",
-    "licence": "Open source sous la Licence d'Utilisation Durable Agentivity"
+    "cookies": "Paramètres des cookies"
   },
   "site": {
     "vibeapp": [

@@ -1,7 +1,6 @@
 {
   "meta": {
-    "title": "Build Your AI Team — Autonomous Agents & Structured Workflows | Agentivity",
-    "description": "Compose AI agent teams visually. No code. Autonomous collaboration or deterministic workflows — finance, HR, marketing teams built in minutes. Open source."
+    "title": "Build Your AI Team — Autonomous Agents & Structured Workflows | Agentivity"
   },
   "nav": {
     "links": [
@@ -17,7 +16,6 @@
     "cta": "Join the waitlist"
   },
   "hero": {
-    "pill": "Open source · No-code · AI teams for your business",
     "h1_line1": "Your next hire is",
     "h1_accent": "an AI team.",
     "h1_line2": "Finance. HR. Marketing. Ops.",
@@ -28,8 +26,8 @@
   },
   "stats": [
     { "value": 15,  "fmt": "", "label": "Hours saved per week, on average", "suffix": "+" },
-    { "raw": "0€",            "label": "Forever, open source" },
-    { "value": 100, "fmt": "", "label": "% open source · no lock-in", "suffix": "%" }
+    { "raw": "0€" },
+    { "value": 100, "fmt": "", "suffix": "%" }
   ],
   "how": {
     "eyebrow": "How it works",
@@ -293,8 +291,7 @@
         "id": "whitelabel",
         "type": "sm",
         "label": "For agencies",
-        "headline": "Build and sell as your own",
-        "body": "White-label Agentivity for your clients. Deliver AI team solutions under your brand. Open source, yours to extend."
+        "headline": "Build and sell as your own"
       }
     ]
   },
@@ -337,10 +334,9 @@
   "pricing": {
     "eyebrow": "Pricing",
     "headline": "0€ to start.",
-    "sub": "Simple, transparent pricing. Start free and open source — scale to cloud only when you're ready.",
     "link": "See full pricing",
     "tiers": [
-      { "name": "Free",       "badge": "Open source",       "desc": "The full platform, free forever. The team you need, without the cost.",             "cta": "Star on GitHub",    "cta_href": "https://github.com/agentivity-labs/agentivity", "featured": true },
+      { "name": "Free",       "desc": "The full platform, free forever. The team you need, without the cost.",             "cta": "Star on GitHub",    "cta_href": "https://github.com/agentivity-labs/agentivity", "featured": true },
       { "name": "Personal",   "badge": "Cloud",             "desc": "Hosted for you. No setup — just sign in and build your first team today.",          "cta": "Join the waitlist", "cta_href": "#cta" },
       { "name": "Pro",        "badge": "Cloud",             "desc": "More agents, longer runs, and priority execution for serious builders.",             "cta": "Join the waitlist", "cta_href": "#cta" },
       { "name": "Business",   "badge": "Teams",             "desc": "Shared workspaces for teams. Everyone builds, everyone benefits.",                   "cta": "Join the waitlist", "cta_href": "#cta" },
@@ -376,7 +372,6 @@
     "error_rate": "Too many attempts. Please wait a few minutes and try again."
   },
   "footer": {
-    "tagline": "Build your AI team. Open source, no lock-in, yours to extend.",
     "cols": [
       {
         "title": "Product",
@@ -415,8 +410,7 @@
       }
     ],
     "legal": "© 2026 Agentivity · agentivity.io",
-    "cookies": "Cookie settings",
-    "licence": "Open source under the Agentivity Sustainable Use Licence"
+    "cookies": "Cookie settings"
   },
   "site": {
     "vibeapp": [
