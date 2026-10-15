@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/api.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Studio, the SDKs and your own applications talk to an Agentivity server through these routes. Each path starts after the address of your server, for example `http://localhost:5005`.
 
@@ -164,6 +164,7 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | GET | `/api/v1/executions/{executionId}/status` | Get live node/connection statuses for an execution |
 | GET | `/api/v1/executions/{executionId}/threads` | List all interaction threads across all runs in an execution (session) |
 | GET | `/api/v1/executions/{executionId}/threads/{threadId}/messages` | List messages in a thread, validated to belong to the execution |
+| POST | `/api/v1/executions/{executionId}/threads/{threadId}/messages` | Write a message in a conversation of an execution |
 | POST | `/api/v1/executions/{executionId}/unpause` | Unpause the active run of an execution |
 
 ## Features
@@ -252,14 +253,10 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | GET | `/api/v1/runs/{runId}/entities/{entityId}/trace` | Get the trace for a specific step/entity in a run |
 | GET | `/api/v1/runs/{runId}/entities/traces` | Get all step/entity traces for a run |
 | GET | `/api/v1/runs/{runId}/inspector` | Debug/inspection snapshot for a run (workflow, agent, team) |
-| POST | `/api/v1/runs/{runId}/interactions` | Send a message or respond to a HIL for a run (in-app, channel-agnostic) |
 | POST | `/api/v1/runs/{runId}/pause` | Pause a run for any entity kind |
 | POST | `/api/v1/runs/{runId}/recover` | Re-enter an interrupted run from its last checkpoint |
-| POST | `/api/v1/runs/{runId}/resume` | Respond to a HIL interrupt and resume a run (AG-UI resume endpoint) |
 | GET | `/api/v1/runs/{runId}/status` | Get live node/connection statuses for any entity kind (agent, team, workflow) |
-| GET | `/api/v1/runs/{runId}/threads` | List conversation threads for a run |
-| GET | `/api/v1/runs/{runId}/threads/{threadId}/messages` | List messages in a run thread |
-| POST | `/api/v1/runs/{runId}/unpause` | Unpause a paused run for any entity kind (/resume is reserved for HIL) |
+| POST | `/api/v1/runs/{runId}/unpause` | Unpause a paused run for any entity kind |
 | GET | `/api/v1/runs/metrics/summary` | Aggregate ROI (time-saved) metrics for the home page |
 
 ## Settings
@@ -274,7 +271,6 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | Method | Path | What it does |
 |---|---|---|
 | GET | `/api/v1/streams/{streamId}/events` | Primary SSE channel for an execution — full AG-UI content, one channel per execution chain |
-| POST | `/api/v1/streams/{streamId}/interactions` | Respond to a HIL gate using streamId + requestId (no runId needed) |
 | GET | `/api/v1/streams/runs/{runId}/events` | Unified SSE stream for a specific run (workflow, team, agent) — supports replay via Last-Event-ID |
 | GET | `/api/v1/streams/runs/events` | Global SSE stream across all runs — supports replay via Last-Event-ID |
 

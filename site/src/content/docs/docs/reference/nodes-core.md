@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-core.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The building blocks of a workflow that use no AI: conditions, loops, data, variables, files, display and code.
 
@@ -90,7 +90,6 @@ Iterates over a collection, executing connected nodes for each item.
 | `total_count` | Number | Total number of items in collection |
 | `is_first` | Boolean | True if this is the first item |
 | `is_last` | Boolean | True if this is the last item |
-| `results` | Text | All iteration results (after completion) |
 | `count` | Number | Number of completed iterations |
 
 **Entries.** **In** (Entry point to start iteration)

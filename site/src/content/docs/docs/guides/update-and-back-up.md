@@ -110,7 +110,7 @@ If the volume already holds data, the files of the backup replace the files that
 ## Good to know
 
 - Removing the container does not remove your data. Removing the volume does.
-- What is not in the volume is not kept across an update: the run history of the screen **Executions**, the conversations of past runs, the files people uploaded, and the logs. To keep the history, add a second volume: see [Configuration reference of the server](/docs/reference/configuration/).
+- What is not in the volume is not kept across an update: the log files. The run history, the conversations of past runs and the uploaded files are in the volume. See [Configuration reference of the server](/docs/reference/configuration/).
 
 ## Next step
 

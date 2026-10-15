@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/configuration.md. Do not edit here: edit the source and publish again. -->
 
-An Agentivity server works without any setting. This page is for the day you need to change one: keep the history across updates, send no telemetry, accept larger files.
+An Agentivity server works without any setting. This page is for the day you need to change one: limit who can call it, send telemetry to your own collector, accept larger files.
 
 Connections to AI models and other services are not here. You manage them in the Studio: see [Add, change or remove credentials](/docs/guides/manage-credentials/).
 
@@ -18,10 +18,7 @@ Connections to AI models and other services are not here. You manage them in the
 A setting is given when the container is created, with `-e`. Its name is the group, two underscores, then the setting.
 
 ```bash
-docker run -d --name agentivity -p 5005:5005 \
-  -v agentivity-data:/app/_data \
-  -e UploadCache__MaxFileSizeMb=25 \
-  agentivitylabs/agentivity
+docker run -d --name agentivity -p 5005:5005 \n  -v agentivity-data:/app/_data \n  -e UploadCache__MaxFileSizeMb=25 \n  agentivitylabs/agentivity
 ```
 
 To change a setting on a server that already runs, remove the container and create it again with the new `-e`. Your data stays in the volume. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
@@ -31,40 +28,24 @@ To change a setting on a server that already runs, remove the container and crea
 | Folder in the container | What it holds | On the volume of the install page |
 |---|---|---|
 | `/app/_data` | What you build: agents, teams, workflows, prompts, Data Tables and their rows, credentials, settings, the drafts of the Assistant. | Yes |
-| `/app/_cache` | What the runs leave: the run history, the runs that wait for a person, the conversations with agents and teams, the uploaded files, pictures and sounds. | No |
+| `/app/_data/_cache` | What the runs leave: the run history, the runs that wait for a person, the conversations with agents and teams, the uploaded files, pictures and sounds. | Yes, it is inside `/app/_data` |
 | `/app/_logs` | The log files of the server. | No |
 
-A folder that is not on a volume survives a stop and a start. It is lost when the container is removed, and an update removes the container.
+The run history is in the volume. An update that replaces the container keeps it: the screen **Executions** and the runs that wait for a person are still there. We tested it on the image of 2026-10-15.
 
-## Keep the run history across updates
-
-With the command of the install page, an update empties the screen **Executions**: we tested it. The runs that wait for a person are kept in the same folder.
-
-To keep them, add a second volume on `/app/_cache`:
-
-```bash
-docker run -d --name agentivity -p 5005:5005 \
-  -v agentivity-data:/app/_data \
-  -v agentivity-cache:/app/_cache \
-  agentivitylabs/agentivity
-```
-
-We tested this too: the run was still listed after the container was replaced.
+Only the log files are lost when the container is removed. To keep them, add a volume on `/app/_logs`, or read them with `docker logs agentivity`.
 
 ## Telemetry
 
-The image is delivered with a telemetry address set. When it is set, the server sends its logs, its traces and its measures to that address, which is outside your machine. The logs of a server can contain parts of what your runs handle.
+The image sends nothing to a telemetry service. The settings of the image hold no telemetry address.
 
-To send nothing, start the container with an empty address:
+To send the logs, the traces and the measures of the server to your own collector, give its address:
 
 ```bash
-docker run -d --name agentivity -p 5005:5005 \
-  -v agentivity-data:/app/_data \
-  -e OpenTelemetry__Endpoint= \
-  agentivitylabs/agentivity
+docker run -d --name agentivity -p 5005:5005   -v agentivity-data:/app/_data   -e OpenTelemetry__Endpoint=https://collector.mycompany.com   agentivitylabs/agentivity
 ```
 
-To send to your own collector instead, give its address in `OpenTelemetry__Endpoint`. It must accept the OpenTelemetry protocol (OTLP). `OpenTelemetry__Protocol` is `HttpProtobuf` by default; the other value is `Grpc`.
+The collector must accept the OpenTelemetry protocol (OTLP). If it asks for a key, add it as `OpenTelemetry__Headers__Authorization`. `OpenTelemetry__Protocol` is `HttpProtobuf` by default; the other value is `Grpc`. The logs of a server can contain parts of what your runs handle: send them only to a place you control.
 
 ## The port and the address
 
@@ -83,10 +64,7 @@ By default, a web page served from any address may call the server. Calls that d
 | `Cors__AllowedOrigins__0`, `__1`, `__2`… | none: any page | The addresses of the pages that may call the server, one setting for each. With no setting, or with `*` among them, any page may. |
 
 ```bash
-docker run -d --name agentivity -p 5005:5005 \
-  -v agentivity-data:/app/_data \
-  -e Cors__AllowedOrigins__0=https://app.mydomain.com \
-  agentivitylabs/agentivity
+docker run -d --name agentivity -p 5005:5005 \n  -v agentivity-data:/app/_data \n  -e Cors__AllowedOrigins__0=https://app.mydomain.com \n  agentivitylabs/agentivity
 ```
 
 An address is written as the page shows it: the scheme, the name and the port if there is one, with nothing after. This is not a sign-in: there is none. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).

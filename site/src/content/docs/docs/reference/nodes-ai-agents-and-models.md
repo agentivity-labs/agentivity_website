@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-agents-and-models.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
@@ -58,7 +58,7 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `agent_mode` | Choice | no | `tools` | Agent execution mode. Choices: `tools`, `conversational`, `react`, `plan_and_execute`. |
+| `agent_mode` | Choice | no | `tools` | Agent execution mode. Choices: `tools`, `conversational`, `react`. |
 | `system_prompt` | Text | no |  | System instructions (optional). |
 | `prompt` | Text | yes | `input` (a reference) | User prompt (required). |
 | `images` | ImageRef | no |  | Optional image to attach to the initial prompt — only used by vision-capable models (GPT-4o, Claude, Gemini). Ignored by text-only models. |

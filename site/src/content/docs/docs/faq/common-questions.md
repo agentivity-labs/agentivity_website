@@ -75,9 +75,7 @@ On the machine where you installed Agentivity, in one Docker volume. See [Update
 
 ### Is what I write sent to Agentivity?
 
-What you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity.
-
-One thing does leave it by default. The image is delivered with a telemetry address, and the server sends its technical logs, traces and measures there. You can turn this off with one setting when you start the container. See [Telemetry](/docs/reference/configuration/).
+No. With the Community edition, everything you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity. The image sends no telemetry, unless you give it the address of a collector of your own. See [Telemetry](/docs/reference/configuration/).
 
 ### What goes to the AI model provider?
 

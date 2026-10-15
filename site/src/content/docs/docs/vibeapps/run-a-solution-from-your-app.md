@@ -91,7 +91,7 @@ What each part does:
 | `input` | The request of the person. |
 | `executionId` | Give the one you received to continue the same conversation. Leave it empty to start a new one. |
 | `enableHil` | Lets the run stop and ask the person. HIL stands for "human in the loop". |
-| `onHilResponse` | Called when the person answers a question of the run. `submitHilResponse` sends the answer, and the run continues. |
+| `onHilResponse` | Called when the person answers a question of the run. `submitHilResponse` sends the answer, and the run continues. The answer names its question with `requestId`, so several questions can wait at the same time, and the answer is kept in the conversation. |
 
 ## The screens sent by the team
 
