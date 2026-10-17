@@ -78,7 +78,7 @@ Publish before you leave the editor. The team editor does not ask you to save wh
 - **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with the Assistant.
 - **Publish cannot be selected.** There is nothing new to save.
 - **The menu entry Agents does nothing.** You are in an editor of that section. Select **Home** first, then **Studio** > **Agents**.
-- **A Manager-led team refuses to run**, with the message "A manager-led team needs a manager: none of its members is named as the manager." In a Manager-led team, the member at the top position is the manager. In the version these pages were checked against, a Manager-led team built by hand was saved without its manager. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
+- **A Manager-led team refuses to run.** It needs a member at the top position, which is the manager, and at least one worker below. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
 
 ## Go further
 

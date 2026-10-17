@@ -59,11 +59,12 @@ In a team, each place on the canvas is a position, and the pattern gives each po
 - To put a member at a position, drag it from the list **Members** onto the canvas. In a **Manager-led** team, the first member you add takes the top position.
 - To exchange two members, drag one onto the other: they swap places.
 
-## A problem with Manager-led teams built by hand
+## What a Manager-led team needs
 
-In the version these pages were checked against, a **Manager-led** team built by hand was saved without its manager, even with a member at the top position. Such a team refuses to run, with the message "A manager-led team needs a manager: none of its members is named as the manager."
+- **A manager.** It is always the member at the top position, the first one. Nothing else names it: there is no setting for the manager.
+- **At least one worker**, at a position below.
 
-Until this is corrected, ask the [Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/) to build a Manager-led team, or start from the **Trip Manager Team** showcase.
+A team that has only a manager, or no member at the top, is refused when you run it.
 
 ## Good to know
 

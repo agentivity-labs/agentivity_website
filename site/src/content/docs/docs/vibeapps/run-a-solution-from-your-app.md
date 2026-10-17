@@ -106,6 +106,20 @@ const rows = await client.dataTables.listRows(tableId);
 await client.dataTables.insertRow(tableId, { customer: 'Northgate Bakery', invoice: 'INV-2041' });
 ```
 
+To search a large table, read one page of it with `listRowsPage`. It takes conditions, a sort order, a page size and a starting point, and it says how many rows the search found in all.
+
+```tsx
+const page = await client.dataTables.listRowsPage(tableId, {
+  where: [{ column: 'amount', op: '>=', value: 1000 }],
+  orderBy: 'amount desc',
+  limit: 20,
+  offset: 0,
+});
+// page.rows, page.total (all the rows found), page.hasMore
+```
+
+The operators are `=`, `!=`, `contains`, `starts_with`, `>`, `>=`, `<`, `<=`, `between` (the value is a pair, low then high), `is_empty` and `is_not_empty` (these two take no value).
+
 The columns of a table are set in the Studio, not from an application.
 
 ## How to know it worked

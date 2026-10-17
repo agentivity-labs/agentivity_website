@@ -17,7 +17,7 @@ By itself, an agent can only read and write text. A tool lets it do something mo
 
 ## The tools that need nothing more
 
-These tools work without an account at another service. They are in the **Node Catalog**, under **AI** > **Tools**.
+These tools work without an account at another service. They are in the **Node Catalog**, under **AI** > **Tools**, grouped in sub-categories such as **Data**, **Documents** and **Search**.
 
 | Tool | What the agent can do with it |
 |---|---|

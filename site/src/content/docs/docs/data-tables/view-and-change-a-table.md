@@ -75,6 +75,10 @@ At the top right, next to **Add column**:
 - **the pencil** renames the table;
 - **the bin** deletes it. The Studio warns you: "This will permanently delete the Data Table and its rows."
 
+## When the server refuses an action
+
+When you add a row or a column, change a cell or delete something, and the server refuses, the Studio shows the message of the server. A column that was refused is not shown as added. Read the message: it says what to correct, for example a value that does not fit the type of the column.
+
 ## Good to know
 
 - An agent or a workflow that uses a column by its name stops working if you rename or delete that column. Check what uses a table before you change its columns.

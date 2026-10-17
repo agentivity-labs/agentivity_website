@@ -102,7 +102,7 @@ The server removes old runs by itself.
 
 | Setting | Default | What it is |
 |---|---|---|
-| `Logs__Path` | `_logs/flows-agency-.log` | Where the log files are written. The date is added to the name. |
+| `Logs__Path` | `_logs/log-.log` | Where the log files are written. The date is added to the name: `log-` then the day as year, month and day, then `.log`. |
 | `Logs__RollingInterval` | `Day` | A new file each day. |
 | `Logs__RetainedFileCountLimit` | `15` | The number of log files kept. |
 | `Logs__FileSizeLimitBytes` | `52428800` | The largest size of one file: 50 megabytes. |

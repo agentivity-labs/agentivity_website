@@ -26,7 +26,6 @@ Each line is a workflow, with its **Name**, its **Type** and its **Description**
 | The folder button | Creates a folder. |
 | The refresh button | Loads the list again. |
 | **Name (A-Z)** | Changes the order of the list. |
-| **Active** and **All** | Choose which workflows the list shows. |
 
 ## The menu of a line
 
