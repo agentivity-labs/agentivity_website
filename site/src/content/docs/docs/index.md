@@ -104,6 +104,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Update Agentivity and back up your data](/docs/guides/update-and-back-up/)
 - [Keep your Agentivity server private](/docs/guides/keep-your-server-private/)
 - [Fix a failed installation](/docs/guides/if-the-install-fails/)
+- [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/)
 
 ## Questions
 

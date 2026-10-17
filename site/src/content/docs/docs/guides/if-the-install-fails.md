@@ -80,6 +80,29 @@ Agentivity runs, but it cannot make a secure connection to your AI model provide
 
 This happens when a security program or a company proxy inspects the internet traffic of the machine. Ask the person who manages the machine or the network to let the Docker containers reach the internet without this inspection.
 
+Other signs of the same cause:
+
+- The **Test** button of a model connection says "The provider could not be reached", although the internet works in your browser.
+- The logs show "The remote certificate is invalid because of errors in the certificate chain: PartialChain".
+- Just after the start, the logs say "Failed to download ONNX model. Local embeddings will not be available."
+
+### If an antivirus inspects the traffic
+
+To keep the antivirus on and make the container trust its certificate, see [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/). The quick way, for a test, is below.
+
+Many antivirus programs (Avast, AVG, Kaspersky, ESET, Bitdefender…) read the secure connections of the machine, with a certificate of their own. Your browser trusts that certificate, because the antivirus added it to Windows or macOS. The Agentivity container does not know it, so it refuses the connection.
+
+If the machine is yours:
+
+1. Open the antivirus settings and find the option that scans secure connections. It is called "HTTPS scanning", "SSL/TLS scanning" or "Encrypted connections scanning". In Avast and AVG, it is in **Protection**, **Core Shields**, **Web Shield**.
+2. Turn this option off, or add an exception for Docker if the antivirus allows one.
+3. Restart Agentivity: `docker restart agentivity`.
+4. In the Studio, open your model connection and press **Test** again.
+
+Pausing the whole antivirus also works, for a test. Turn it back on afterwards.
+
+On a company machine, do not change the antivirus yourself: ask the person who manages it.
+
 ## The bar at the bottom says Realtime reconnecting
 
 The Studio works, but its screens do not update by themselves, and the chat of a run stays empty. The live connection between your browser and Agentivity is blocked. The cause is often the same as above: a security program or a proxy that holds back the connection. See [The status bar, the theme and the guide button](/docs/studio/status-bar-and-theme/).

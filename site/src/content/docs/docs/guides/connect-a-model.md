@@ -1,6 +1,6 @@
 ---
 title: "Connect an AI model to Agentivity"
-description: "Add the API key of OpenAI, Anthropic, Google Gemini, xAI or DeepSeek so your agents and teams can run. Your key stays on your server."
+description: "Add the API key and choose the model of OpenAI, Anthropic, Google Gemini, xAI or DeepSeek so your agents can run. Your key stays on your server."
 sidebar:
   order: 1
 editUrl: false
@@ -28,16 +28,17 @@ Agents need an AI model to think with. Agentivity does not provide one: you brin
 
 ## Connect your model the first time
 
-![Step 1 of the welcome guide, Connect your AI model: five providers, a field for the API key, and the button Check and save](images/guide-step1.jpg)
+![Step 1 of the welcome guide, Connect your AI model: five providers and a field for the API key. This picture shows the step before the change: there was one button, Check and save, and no choice of model](images/guide-step1.jpg)
 
 1. Open the Studio. In the welcome guide, choose **Get started**, then the step **Connect your AI model**.
 2. Choose your provider.
-3. Paste your API key.
-4. Select **Check and save**.
+3. Paste your API key, then select **Check the key**. Agentivity asks the provider whether the key works. This costs nothing, and nothing is saved yet. A key that the provider refuses shows the message of the provider.
+4. Choose the **model**. It is required. The list holds the models that your key can use, and you can type in it to filter it. If the list could not be loaded (a network problem, or a limit of your provider), type the ID of the model yourself.
+5. Select **Save**. The connection is saved with its key and its model.
 
-Agentivity checks the key with the provider right away, at no cost. When it works you see a green message, for example "Connected to Claude", with the number of models available.
+**How to know it worked:** the connection is saved, and the guide lets you continue.
 
-**How to know it worked:** the step shows the green "Connected" message, and the guide lets you continue.
+You can change the model later, in **Settings** > **Credentials**.
 
 ## Add another connection later
 
@@ -48,11 +49,24 @@ You can add or change a connection at any time:
 1. In the Studio, open **Settings**, then **Credentials**.
 2. Select **New credentials**. The window **New connection** asks "What do you want to connect to?"
 3. Select **AI models**, then your provider.
-4. Fill in the fields and save.
+4. Fill in the form and save. The form is the same everywhere: here, when you copy a connection, and when the Assistant asks you for one.
 
 You can keep several connections, for example one per provider, and choose which one your agents run on.
 
 This list has more providers than the welcome guide. For example, it also offers **AWS Bedrock** and **Cohere**.
+
+## The fields of an AI model connection
+
+| Field | What to enter |
+|---|---|
+| **Name** | A name that you will recognise. |
+| **API key** | The key of your provider. It is a secret. |
+| **Model** | **Required.** The exact ID of the model, as your provider names it, for example `claude-opus-4-5-20251101`. There is no default value. |
+| **Base URL** | The address of the API of the provider. Each kind of connection has an address already filled in, and you can change it. |
+
+**Model** is required for Anthropic, OpenAI, Google Gemini, xAI, DeepSeek and AWS Bedrock. For AWS Bedrock, type the ID as text. For the others, as soon as you have typed the key, the Studio asks the provider for the models that the key can use, and shows them in a list. This call is free and saves nothing. If you try to save without a model, the Studio refuses, and the message names the missing field.
+
+**Base URL** is used as it is. Agentivity only adds the path of the call at the end. For Anthropic, the address is `https://api.anthropic.com`, without a path. Because of this, you can also give the address of your own proxy. A connection with no address is reported at once, without any call to the provider.
 
 ## Your key
 
@@ -62,10 +76,11 @@ This list has more providers than the welcome guide. For example, it also offers
 ## If it does not work
 
 - **"Paste your API key first."** The key field is empty.
-- **"This key was refused by" your provider.** The provider did not accept the key. Check that you copied all of it, that the key is still active, and that your account has credit.
-- **"Key saved, but" your provider "could not confirm it right now".** The key is saved, but the provider could not be reached at that moment. Try again a little later.
+- **The provider refuses the key.** The Studio shows the message of the provider. Check that you copied all of it, that the key is still active, and that your account has credit.
+- **The list of models is empty or does not load.** The provider could not be reached at that moment, or a limit was reached. Type the ID of the model yourself, as your provider names it. If you do not know it, look for the list of models in the documentation of your provider.
+- **The Studio refuses to save and names the field "Model".** The model is required: choose it in the list, or type its ID.
 
-- **"The model did not answer"**, with a message about an SSL connection, when an agent or the Assistant runs. The machine where Agentivity runs cannot make a secure connection to the provider. This happens when a security program or a company proxy inspects the internet traffic of that machine. Ask the person who manages the machine or the network.
+- **"The model did not answer"**, with a message about an SSL connection, when an agent or the Assistant runs. The machine where Agentivity runs cannot make a secure connection to the provider. This happens when an antivirus or a company proxy inspects the internet traffic of that machine. See [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/).
 
 ## Next step
 

@@ -31,13 +31,14 @@ If you prefer to look around first, select **Not now** or **Skip the guide**. Se
 
 Your agents need an AI model to think with.
 
-![Step 1 of the welcome guide, Connect your AI model: five providers to choose from, a field for the API key, and the buttons Check and save and Skip for now](images/guide-step1.jpg)
+![Step 1 of the welcome guide, Connect your AI model: five providers to choose from, a field for the API key, and the button Skip for now. This picture shows the step before the change: there was one button, Check and save, and no choice of model](images/guide-step1.jpg)
 
 1. Choose your provider: **Claude**, **GPT**, **Gemini**, **Grok** or **DeepSeek**.
-2. Paste your API key in the field.
-3. Select **Check and save**.
+2. Paste your API key in the field, then select **Check the key**. Agentivity asks the provider whether the key works. Nothing is saved yet. A key that the provider refuses shows the message of the provider.
+3. Choose the model. It is required. The list holds the models that your key can use. If the list is not available, type the ID of the model.
+4. Select **Save**. The connection is saved with its key and its model. You can change the model later, in **Credentials**.
 
-Agentivity checks the key with the provider right away. The key is stored on your server and is never shown again.
+The key is stored on your server and is never shown again.
 
 To do this later, select **Skip for now**. The page [Connect an AI model](/docs/guides/connect-a-model/) explains this step in detail.
 
@@ -76,6 +77,7 @@ What you skipped is not lost. In the Studio, select **Getting started**, at the 
 ## If it does not work
 
 - **"Paste your API key first."** The key field is empty.
+- **The key is refused.** The Studio shows the message of your provider.
 - **"The marketplace could not be reached."** The machine where Agentivity runs has no access to the catalogue of Templates. Check its internet connection, or skip the step and import a Template later from a file.
 
 ## Next step

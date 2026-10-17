@@ -43,13 +43,13 @@ An agent has one model only.
 
 ## Choose a precise model
 
-A connection has a default model. To use another model of the same provider for this agent:
+A connection has a model, which you chose when you created it. To use another model of the same provider for this agent:
 
 1. Right-click the model node and select **Edit**.
 2. Under **Defaults**, type the name of the model in **Model override**. Use the exact name given by your provider.
 3. Select **Apply**, then **Publish**.
 
-Leave **Model override** empty to use the default model of the connection.
+Leave **Model override** empty to use the model of the connection.
 
 ## Change the provider
 

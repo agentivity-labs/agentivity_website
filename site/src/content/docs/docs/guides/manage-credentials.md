@@ -44,13 +44,22 @@ The connections are sorted by what they are for. Each line shows the name, the s
 
 3. Select the service. The window **New credentials** opens.
 
-   ![The window New credentials for Anthropic: Name, Description, API Key marked as secret and required, Base URL and Default Model](images/new-credentials.jpg)
+   ![The window New credentials for Anthropic: Name, Description, API Key marked as secret and required, Base URL and Default Model. This picture shows the form before the change: the field Model is now required, with no default](images/new-credentials.jpg)
 
 4. Give the connection a **Name** that you will recognise, for example `Claude for reminders`.
 5. Fill in the fields. Each one says whether it is **Required** or **Optional**, and whether it is a **SECRET**. The button with an eye shows what you typed in a secret field.
 6. Select **Create credentials**.
 
 Leave the optional fields as they are unless you know you need another value.
+
+For a connection to an AI model, two fields need your attention:
+
+- **Model** is required, and has no default value. Choose it in the list, or type the exact ID that your provider gives. The list shows the models that your key can use: the Studio asks the provider for it as soon as you have typed the key, at no cost, and nothing is saved by this call.
+- **Base URL** is already filled in with the usual address of the provider. You can change it, for example to the address of your own proxy. Agentivity adds only the path of the call.
+
+Without a model, the Studio refuses to save, and names the missing field. See [Connect an AI model](/docs/guides/connect-a-model/) for the details.
+
+The Assistant opens this same form when it needs a connection. It no longer creates an empty connection to fill in later.
 
 ## Change a connection or replace a key
 
@@ -62,7 +71,7 @@ Everything that uses this connection uses the new values at its next run. You do
 
 ## Copy a connection
 
-On the line of the connection, select the button with two sheets. Use a copy to keep two settings of the same service, for example two default models.
+On the line of the connection, select the button with two sheets. Use a copy to keep two settings of the same service, for example two models. The copy opens in the same form.
 
 ## Delete a connection
 
