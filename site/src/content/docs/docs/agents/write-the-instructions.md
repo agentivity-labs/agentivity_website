@@ -75,6 +75,8 @@ Write as you would for a new colleague. Short sentences work better than long on
 
 **Creativity (0-2)** says how much the answer may vary from one run to the next. The value at the start is 0.2: the agent stays close to the same answer. Keep it low for work that must be regular, such as a reminder.
 
+From Claude 4.7 on, the models of Anthropic no longer use the creativity setting (the temperature): the value of this setting is ignored, with no error. Agentivity adapts its requests to each generation of Claude model, and there is nothing to set.
+
 ## Ask the Assistant to improve the instructions
 
 1. Right-click the box **AI Agent**.

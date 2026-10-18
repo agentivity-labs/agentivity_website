@@ -76,6 +76,8 @@ See [Write the role and the instructions of an agent](/docs/agents/write-the-ins
 
 Right-click **AI Agent**, select **Edit**, and look at **Agent execution mode**. With **Conversational**, the agent never uses a tool. Use **Tools**, the default, or **ReAct**.
 
+A step can require the model to call a tool. The models Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1 and Claude Mythos 5.1 no longer accept a forced choice of tool. Agentivity asks them for a required tool call in another way, and there is nothing to set.
+
 ## How to know it worked
 
 Run the agent with a request that needs the tool. The answer must contain what only the tool could give: here, the number of days the invoice is late. In the tab **Execution**, the **Inspector** shows the steps of the run. See [Run an agent and read its answer](/docs/agents/run-an-agent/).

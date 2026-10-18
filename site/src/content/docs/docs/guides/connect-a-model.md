@@ -62,11 +62,17 @@ This list has more providers than the welcome guide. For example, it also offers
 | **Name** | A name that you will recognise. |
 | **API key** | The key of your provider. It is a secret. |
 | **Model** | **Required.** The exact ID of the model, as your provider names it, for example `claude-opus-4-5-20251101`. There is no default value. |
-| **Base URL** | The address of the API of the provider. Each kind of connection has an address already filled in, and you can change it. |
+| **Base URL** | **Required** for Anthropic, OpenAI, Google Gemini, xAI and DeepSeek. The address of the API of the provider. It is already filled in with the official address. |
 
 **Model** is required for Anthropic, OpenAI, Google Gemini, xAI, DeepSeek and AWS Bedrock. For AWS Bedrock, type the ID as text. For the others, as soon as you have typed the key, the Studio asks the provider for the models that the key can use, and shows them in a list. This call is free and saves nothing. If you try to save without a model, the Studio refuses, and the message names the missing field.
 
-**Base URL** is used as it is. Agentivity only adds the path of the call at the end. For Anthropic, the address is `https://api.anthropic.com`, without a path. Because of this, you can also give the address of your own proxy. A connection with no address is reported at once, without any call to the provider.
+**Base URL** is already filled in with the official address of the provider, for example `https://api.anthropic.com` for Anthropic, without a path. Change it only to go through a proxy, or if the provider moves its API. The address is used as it is: Agentivity only adds the path of the call at the end. A connection with no address is reported at once, without any call to the provider.
+
+Each field is checked while you type, and the problem is shown under the field:
+
+- an address must start with `https://` or `http://`;
+- a numeric field must hold a number;
+- a required field must not be empty.
 
 ## Your key
 
@@ -79,6 +85,7 @@ This list has more providers than the welcome guide. For example, it also offers
 - **The provider refuses the key.** The Studio shows the message of the provider. Check that you copied all of it, that the key is still active, and that your account has credit.
 - **The list of models is empty or does not load.** The provider could not be reached at that moment, or a limit was reached. Type the ID of the model yourself, as your provider names it. If you do not know it, look for the list of models in the documentation of your provider.
 - **The Studio refuses to save and names the field "Model".** The model is required: choose it in the list, or type its ID.
+- **A message under a field.** The value is not valid: an address must start with `https://` or `http://`, and a numeric field must hold a number. Correct the field, and the message goes away.
 
 - **"The model did not answer"**, with a message about an SSL connection, when an agent or the Assistant runs. The machine where Agentivity runs cannot make a secure connection to the provider. This happens when an antivirus or a company proxy inspects the internet traffic of that machine. See [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/).
 

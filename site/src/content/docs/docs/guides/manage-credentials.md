@@ -55,9 +55,9 @@ Leave the optional fields as they are unless you know you need another value.
 For a connection to an AI model, two fields need your attention:
 
 - **Model** is required, and has no default value. Choose it in the list, or type the exact ID that your provider gives. The list shows the models that your key can use: the Studio asks the provider for it as soon as you have typed the key, at no cost, and nothing is saved by this call.
-- **Base URL** is already filled in with the usual address of the provider. You can change it, for example to the address of your own proxy. Agentivity adds only the path of the call.
+- **Base URL** is required for Anthropic, OpenAI, Google Gemini, xAI and DeepSeek. It is already filled in with the official address of the provider. Change it only to go through your own proxy, or if the provider moves its API. Agentivity adds only the path of the call.
 
-Without a model, the Studio refuses to save, and names the missing field. See [Connect an AI model](/docs/guides/connect-a-model/) for the details.
+Each field is checked while you type, and the problem is shown under the field: an address must start with `https://` or `http://`, and a numeric field must hold a number. Without a model, the Studio refuses to save, and names the missing field. See [Connect an AI model](/docs/guides/connect-a-model/) for the details.
 
 The Assistant opens this same form when it needs a connection. It no longer creates an empty connection to fill in later.
 
@@ -80,6 +80,10 @@ On the line of the connection, select the button with two sheets. Use a copy to 
 3. Select **Delete**, or **Cancel** to keep it.
 
 Before you delete a connection, give another one to the agents and steps that use it. See [Choose or change the model of an agent](/docs/agents/choose-the-model/).
+
+## For developers: the errors of the API
+
+Creating or changing a connection through the API can answer two errors. `credentials_field_required` says that a required field is empty, and names it. `credentials_field_invalid` says that a value does not have the right format.
 
 ## Good to know
 

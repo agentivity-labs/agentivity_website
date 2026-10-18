@@ -61,7 +61,7 @@ Put an approval step in a workflow: the workflow stops there every time. An agen
 
 ### My agent gives a different answer each time. Is that normal?
 
-Yes, an AI model can vary. Clear instructions reduce it, and so does a low value of the creativity setting. For a rule that must always give the same result, use a fixed step in a workflow. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
+Yes, an AI model can vary. Clear instructions reduce it, and so does a low value of the creativity setting. Recent Claude models (from 4.7) ignore this setting: only the instructions then reduce the variation. For a rule that must always give the same result, use a fixed step in a workflow. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 
 ## Running
 
