@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-knowledge-and-memory.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The resources that give an agent something to read: knowledge sources, and the memory that ranks them.
 
@@ -24,6 +24,8 @@ Connectable knowledge corpus resources.
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.search.searxng`
 
 Builds a knowledge corpus from a SearXNG search and scrapes the returned URLs.
+
+**When to use it.** To give an AI Agent the pages found by a search on your SearXNG instance, for a query you set, read in full. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory; to let the agent search by itself, use a web search tool instead.
 
 **Effects.** reads outside, costs.
 
@@ -56,6 +58,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.search.serpap
 
 Builds a knowledge corpus from SerpApi search results and scrapes the returned URLs.
 
+**When to use it.** To give an AI Agent the pages found by a SerpApi search, for a query you set, read in full. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory; to let the agent search by itself, use a web search tool instead.
+
 **Effects.** reads outside, costs.
 
 **Fields**
@@ -86,6 +90,8 @@ Builds a knowledge corpus from SerpApi search results and scrapes the returned U
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.search.tavily`
 
 Builds a knowledge corpus from Tavily search results and scrapes the returned URLs.
+
+**When to use it.** To give an AI Agent the pages found by a Tavily search, for a query you set, read in full. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory; to let the agent search by itself, use a web search tool instead.
 
 **Effects.** reads outside, costs.
 
@@ -118,6 +124,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.api`
 
 Loads a knowledge corpus from an HTTP endpoint with explicit text or JSON mapping modes.
 
+**When to use it.** To give an AI Agent reference content read from a web address that returns text or JSON, such as one of your own services. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
+
 **Effects.** reads outside.
 
 **Fields**
@@ -139,6 +147,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.file`
 
 Loads a knowledge corpus from a file or a directory pattern and exposes normalized documents for AI consumers.
 
+**When to use it.** To give an AI Agent reference content from text files on the server (plain text, Markdown, HTML, JSON): one file or a whole folder. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -157,6 +167,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.inline`
 
 Provides an inline knowledge corpus as normalized documents for AI consumers.
 
+**When to use it.** To give an AI Agent a few reference texts typed directly in the step, as a JSON list such as [{"text": "...", "metadata": {"source": "..."}}]. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -170,6 +182,8 @@ Provides an inline knowledge corpus as normalized documents for AI consumers.
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.postgres`
 
 Loads a knowledge corpus from PostgreSQL-compatible databases by executing an explicit query and mapping rows to normalized documents.
+
+**When to use it.** To give an AI Agent reference content stored in a PostgreSQL database: an SQL query returns one row per document, with its text in one column. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
 
 **Effects.** reads outside.
 
@@ -189,6 +203,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.rss`
 
 Loads a knowledge corpus from an RSS or Atom feed and maps entries to normalized documents.
 
+**When to use it.** To give an AI Agent the latest entries of a news feed or a blog (RSS or Atom). Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
+
 **Effects.** reads outside.
 
 **Fields**
@@ -207,6 +223,8 @@ Loads a knowledge corpus from an RSS or Atom feed and maps entries to normalized
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.sitemap`
 
 Loads a knowledge corpus from a sitemap and scrapes the listed pages into normalized documents.
+
+**When to use it.** To give an AI Agent the content of a whole website, page by page, from the address of its sitemap. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory; for a few pages only, use AI Knowledge (Web).
 
 **Effects.** reads outside.
 
@@ -236,6 +254,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.sqlite`
 
 Loads a knowledge corpus from a SQLite file by executing an explicit query and mapping rows to normalized documents.
 
+**When to use it.** To give an AI Agent reference content stored in a SQLite database file: an SQL query returns one row per document, with its text in one column. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -251,6 +271,8 @@ Loads a knowledge corpus from a SQLite file by executing an explicit query and m
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.storage`
 
 Loads a knowledge corpus from an existing storage resource and exposes normalized documents for AI consumers.
+
+**When to use it.** To give an AI Agent documents already kept in a storage plugged into this step, chosen by a name pattern. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory.
 
 **Effects.** reads outside.
 
@@ -273,6 +295,8 @@ Loads a knowledge corpus from an existing storage resource and exposes normalize
 Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.web`
 
 Loads a knowledge corpus from one or more URLs and exposes normalized documents for AI consumers.
+
+**When to use it.** To give an AI Agent the content of a few web pages you list, one address per line. Plug it into the Knowledge Sources of an AI Agent or LLM Prompt that also has a memory; for a whole website, use AI Knowledge (Sitemap).
 
 **Effects.** reads outside.
 
@@ -300,6 +324,8 @@ Resource · in the catalogue: AI > Knowledge · type `ai.knowledge.splitter`
 
 Splits an upstream knowledge source's documents into smaller chunks, sized for embedding/vector-store use.
 
+**When to use it.** To cut the long documents of a knowledge source into smaller passages, so that a memory finds the precise part that answers. Put it between the knowledge source and the AI Agent or LLM Prompt.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -325,6 +351,8 @@ Embedding and retrieval resources.
 Resource · in the catalogue: AI > Memory · type `ai.memory.openai`
 
 RAG with dedicated OpenAI credentials for embeddings and vector storage.
+
+**When to use it.** To let an AI Agent or LLM Prompt find the relevant passages of its knowledge sources, with an OpenAI model comparing texts by meaning. The documents are compared again at each run: for large or lasting collections, use Qdrant, Pinecone or pgvector Memory.
 
 **Effects.** writes in the workspace, costs.
 
@@ -352,6 +380,8 @@ Resource · in the catalogue: AI > Memory · type `ai.memory.pgvector`
 
 RAG backed by PostgreSQL's pgvector extension — persists embeddings once and queries a real ANN-ready index instead of re-ranking locally on every run.
 
+**When to use it.** To let an AI Agent or LLM Prompt search large knowledge sources stored once in your PostgreSQL database (with the pgvector extension) and reused across runs. Needs a PostgreSQL connection string; the table is created on first use.
+
 **Effects.** reads outside, changes something outside, costs.
 
 **Fields**
@@ -376,6 +406,8 @@ RAG backed by PostgreSQL's pgvector extension — persists embeddings once and q
 Resource · in the catalogue: AI > Memory · type `ai.memory.pinecone`
 
 RAG backed by a real Pinecone index — persists embeddings once and queries a real ANN index instead of re-ranking locally on every run.
+
+**When to use it.** To let an AI Agent or LLM Prompt search large knowledge sources stored once in a Pinecone index and reused across runs. Needs your Pinecone connection; for a free option without any account, use Simple LLM Memory.
 
 **Effects.** reads outside, changes something outside, costs.
 
@@ -402,6 +434,8 @@ Resource · in the catalogue: AI > Memory · type `ai.memory.qdrant`
 
 RAG backed by a real Qdrant vector database — persists embeddings once and queries a real ANN index instead of re-ranking locally on every run.
 
+**When to use it.** To let an AI Agent or LLM Prompt search large knowledge sources stored once in a Qdrant database and reused across runs. Needs your Qdrant connection; the collection is created on first use.
+
 **Effects.** reads outside, changes something outside, costs.
 
 **Fields**
@@ -426,6 +460,8 @@ RAG backed by a real Qdrant vector database — persists embeddings once and que
 Resource · in the catalogue: AI > Memory · type `ai.memory.simple`
 
 Enables RAG and vector clustering using a local ONNX model (no credentials needed).
+
+**When to use it.** To let an AI Agent or LLM Prompt find, in its knowledge sources, the passages relevant to each request, for free and without any account. The documents are compared again at each run: for large or lasting collections, use Qdrant, Pinecone or pgvector Memory.
 
 **Effects.** writes in the workspace.
 
@@ -454,6 +490,8 @@ Resource · in the catalogue: AI > Embeddings · type `ai.embeddings.local`
 
 Free, offline embeddings (all-MiniLM-L6-v2) — no credentials, no external API calls.
 
+**When to use it.** To make visible, or share between several memories, the free offline model that compares texts by meaning. Plug it into the Embeddings of a memory; memories already use this model when nothing else is set.
+
 **Plugs into** a place that accepts `ai.embeddings.*`.
 
 ### OpenAI Embeddings
@@ -461,6 +499,8 @@ Free, offline embeddings (all-MiniLM-L6-v2) — no credentials, no external API 
 Resource · in the catalogue: AI > Embeddings · type `ai.embeddings.openai`
 
 Embeddings via the OpenAI API — usable standalone or plugged into any vector store's "embeddings" input.
+
+**When to use it.** To have a memory compare texts by meaning with an OpenAI model instead of the free local one, or to share the same OpenAI settings between several memories. Plug it into the Embeddings of a memory.
 
 **Effects.** costs.
 
@@ -482,6 +522,8 @@ Re-order retrieved documents by true relevance after a vector store's initial re
 Step · in the catalogue: AI > Rerank · type `ai.rerank.cohere`
 
 Re-ranks documents against a query using Cohere's Rerank API — reorders a vector store's candidate results by true relevance.
+
+**When to use it.** To put a list of texts in order of relevance to a question and keep only the best, for example the results of a search. Give the texts as a JSON list of strings, such as ["first text", "second text"]; needs a Cohere account.
 
 **Effects.** costs.
 

@@ -79,7 +79,20 @@ The steps linked to the lower dot run when the list is finished. The loop gives 
 |---|---|
 | `each.count` | The number of items done. It is 0 for an empty list. |
 
-The loop does not give back what each item produced. Handle that inside the loop, item by item: for example, write each result in a Data Table. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
+The loop itself does not give back what each item produced. Two ways to keep it: gather it into a list with a **Collect** step (see the next section), or handle each item inside the loop, for example by writing each result in a Data Table. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
+
+## Gather what each item produces
+
+Put a **Collect** step in the loop, after the steps that work on the item. Each time it runs, it adds one item to a list.
+
+1. In the **Node Catalog**, search for `Collect`. It is in **Core** > **Data**.
+2. Link the **Loop** exit of **For Each** to it, or to the last step of the loop and then to **Collect**.
+3. In its field **item**, write what to keep for this turn: a reference to an output, or a text built from the current item.
+4. After the loop, from the lower dot of **For Each**, use the outputs of **Collect**: `items` is the whole list, written as JSON, and `count` is the number of items.
+
+In our test, with three customers and the node name `collect`, the item was a text with the customer and the amount. After the loop, `collect.items` held the three texts as a JSON list, and `collect.count` was 3.
+
+The option **reset** of **Collect** clears the list before adding. Leave it off inside a loop, or the list holds only the last item.
 
 ## How to know it worked
 
@@ -94,7 +107,7 @@ We ran this with the list above. The steps in the loop received each customer in
 
 - **Nothing that waits inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, or calls an agent, a team or a workflow that stops to wait, the run fails, and the message says so. Ask before the loop or after it.
 - **The Studio shows the last item only.** After a run, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
-- **The loop does not collect what its steps produce.** After the loop, only `count` is available. What each item produces is handled inside the loop.
+- **The loop does not collect what its steps produce by itself.** After the loop, `each.count` is the only output of **For Each**. Add a **Collect** step in the loop to keep what each item produces.
 - **One failure fails the run.** If a step of the loop fails on one item, the whole run fails.
 - **An empty list is not an error.** The steps of the loop are skipped, `count` is 0, and the workflow continues from the lower dot.
 - **An AI step in a loop costs once per item.** A list of one hundred items uses the AI model at least one hundred times. Try with two or three items first.

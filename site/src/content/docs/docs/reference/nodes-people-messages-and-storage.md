@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-people-messages-and-storage.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-14 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that ask a person, send and read messages, store values, and work with outside applications.
 
@@ -24,6 +24,8 @@ Human-in-the-loop workflow nodes and approvals.
 Step · in the catalogue: Interactions · type `interaction.form`
 
 Collects structured form input through the connected channel
+
+**When to use it.** To ask a person to fill in a few fields, described as a JSON list of fields, and wait for the answer before going on, for example an approval with a comment. For a free-text message, use Human Interaction instead.
 
 **Effects.** sends a message.
 
@@ -54,6 +56,8 @@ Collects structured form input through the connected channel
 Step · in the catalogue: Interactions · type `interaction.human`
 
 Performs a generic human interaction through the connected channel
+
+**When to use it.** To send a message to a person through the connected channel and, if needed, wait for the reply; it can also update, delete or search messages there. To collect precise answers in fields, use Form Interaction instead.
 
 **Effects.** sends a message.
 
@@ -259,15 +263,17 @@ Key-value storage operations.
 
 Resource · in the catalogue: Storage · type `storage.file`
 
-Provides access to file-based key-value storage using a single JSON file.
+Provides a key-value store kept in the workspace, named by file_path.
 
-**Effects.** writes in the workspace, changes something outside.
+**When to use it.** To keep values from one run to the next inside the workspace, with nothing to set up. Connect it to Storage Read, Storage Write or Storage Delete; for rows with columns, use a Data Table instead.
+
+**Effects.** writes in the workspace.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `file_path` | Text | no | `_data/storage/data.json` | Path to storage JSON file. |
+| `file_path` | Text | no | `data` | Name of the store, kept in the workspace (a path names the store by its file name: _data/storage/data.json is the store data). |
 
 **Plugs into** a place that accepts `storage.file.*`.
 
@@ -276,6 +282,8 @@ Provides access to file-based key-value storage using a single JSON file.
 Step · in the catalogue: Storage · type `storage.delete`
 
 Deletes a value from any storage provider
+
+**When to use it.** To remove a value saved under a name (a key), for example so that it is made again on the next run. Connect the same File Storage or Supabase Storage step used to save it.
 
 **Effects.** writes in the workspace, changes something outside.
 
@@ -303,6 +311,8 @@ Deletes a value from any storage provider
 Step · in the catalogue: Storage · type `storage.read`
 
 Reads a value from any storage provider (file, database, etc.)
+
+**When to use it.** To get back a value saved earlier under a name (a key), for example a result kept from a previous run, and take another path when nothing is saved under that name. Connect a File Storage or Supabase Storage step to say where to read.
 
 **Effects.** reads outside.
 
@@ -333,6 +343,8 @@ Reads a value from any storage provider (file, database, etc.)
 Step · in the catalogue: Storage · type `storage.write`
 
 Writes a value to any storage provider (file, database, etc.)
+
+**When to use it.** To save a value under a name (a key) so a later step or a later run can read it back with Storage Read, for good or for a number of minutes. Connect a File Storage or Supabase Storage step to say where to save it.
 
 **Effects.** writes in the workspace, changes something outside.
 
@@ -365,6 +377,8 @@ Resource · in the catalogue: Storage · type `storage.database.supabase`
 
 Provides access to Supabase database key-value storage.
 
+**When to use it.** To keep values in your own Supabase project, where other tools can read them too. It needs Supabase credentials (project URL and API key) and a table made for it; connect it to Storage Read, Storage Write or Storage Delete.
+
 **Effects.** reads outside, changes something outside.
 
 **Fields**
@@ -385,6 +399,8 @@ WordPress publishing.
 Step · in the catalogue: Applications > CMS > WordPress · type `app.cms.wordpress.publish_media`
 
 Uploads media files to WordPress media library.
+
+**When to use it.** To upload an image made or received by the workflow to the media library of a WordPress site, for example before Publish to WordPress uses it as the featured image. It needs WordPress site credentials.
 
 **Effects.** changes something outside.
 
@@ -416,6 +432,8 @@ Uploads media files to WordPress media library.
 Step · in the catalogue: Applications > CMS > WordPress · type `wordpress.publish`
 
 Publishes content as a WordPress post with optional Elementor layout.
+
+**When to use it.** To put an article on a WordPress site, as a draft unless you set another status, from HTML or from an Elementor layout made by DSL to Elementor. It needs WordPress site credentials.
 
 **Effects.** changes something outside.
 

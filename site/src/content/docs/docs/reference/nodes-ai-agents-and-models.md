@@ -1,6 +1,6 @@
 ---
 title: "AI nodes: agents, models, sessions and channels"
-description: "Reference of the AI nodes for agents: AI Agent, Composable, Team, LLM Prompt, models, sessions, channels, policies, guardrails, media."
+description: "Reference of the AI nodes for agents: AI Agent, Agent, Team, LLM Prompt, models, sessions, channels, policies, guardrails, media."
 sidebar:
   order: 3
 editUrl: false
@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-agents-and-models.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
@@ -24,6 +24,8 @@ Agent orchestration and execution.
 Step · in the catalogue: AI > Agents · type `agentic_node`
 
 Calls an agent of your library with a message, and gives its answer.
+
+**When to use it.** To reuse an agent saved in your library: send it a message and get its answer back. Not for an agent built only for this workflow: use AI Agent instead.
 
 **Effects.** costs, runs other things.
 
@@ -52,6 +54,8 @@ Step · in the catalogue: AI > Agents · type `ai.node`
 
 Runs a multi-step LLM agent with native tool calling, optional retrieval via llm_memory, and connectable knowledge sources.
 
+**When to use it.** To have an AI work through a task step by step in this workflow, with the model, tools, knowledge and people you plug into it. Not for a single question and answer: use LLM Prompt instead; to reuse an agent saved in your library, use Agent.
+
 **Effects.** costs, runs other things.
 
 **Fields**
@@ -63,10 +67,10 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 | `prompt` | Text | yes | `input` (a reference) | User prompt (required). |
 | `images` | ImageRef | no |  | Optional image to attach to the initial prompt — only used by vision-capable models (GPT-4o, Claude, Gemini). Ignored by text-only models. |
 | `temperature` | Number | no | `0.2` | Creativity (0-2). |
-| `max_iterations` | Number | no |  | Maximum LLM/tool iterations (leave empty for no limit). |
+| `max_iterations` | Number | no |  | Maximum number of rounds — one call to the model, then the tools it asked for (leave empty for no limit). |
 | `response_quality_threshold` | Number | no | `0` | Minimum response quality score before finalization (0 disables the quality pass). |
 | `tool_choice_mode` | Choice | no | `auto` | Tool usage strategy. Choices: `auto`, `required`, `none`. |
-| `allow_parallel_tool_calls` | Boolean | no | `false` | Allow the model to request multiple tools in one iteration. |
+| `allow_parallel_tool_calls` | Boolean | no | `false` | Allow the model to ask for several tools in the same round. |
 | `response_schema` | Text | no |  | JSON Schema for the final response (optional). |
 | `allows_human_questions` | Boolean | no | `true` | Allow this agent to ask the user a question and wait for a reply. Turn off to guarantee it always delivers its final answer directly instead of pausing the run. |
 | `memory_top_k` | Number | no | `3` | Number of knowledge snippets to retrieve when llm_memory and knowledge sources are connected. |
@@ -81,7 +85,7 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 |---|---|---|
 | `response` | Text | Final agent response |
 | `finish_reason` | Text | Final LLM finish reason |
-| `iterations` | Number | Number of iterations executed |
+| `iterations` | Number | Number of rounds the agent took |
 | `tool_calls` | Text | Executed tool calls as JSON |
 | `memory_context_used` | Text | config retrieved from memory (if used) |
 | `guardrail_warnings` | Text | JSON array of non-blocking guardrail matches (guardrail_id, stage, message) — branch on this with an If/Switch to decide what to do (empty array when nothing matched) |
@@ -113,6 +117,8 @@ Step · in the catalogue: AI > Agents · type `team_node`
 
 Calls a team of your library with a message, and gives its answer.
 
+**When to use it.** To hand a task to a team of agents saved in your library and get its answer back. For a single agent, use Agent instead.
+
 **Effects.** costs, runs other things.
 
 **Fields**
@@ -143,6 +149,8 @@ Text generation and prompting nodes.
 Step · in the catalogue: AI > LLM · type `ai.llm.prompt`
 
 Executes a prompt using an LLM with optional structured output, retrieval via llm_memory, and connectable knowledge sources.
+
+**When to use it.** To get a single answer from a model for one prompt (summarize, classify, extract, write), as text, or as JSON when you give a JSON Schema. Not for work that needs tools or several steps: use AI Agent instead.
 
 **Effects.** costs.
 
@@ -183,6 +191,8 @@ Resource · in the catalogue: AI > Models · type `ai.llm.model.anthropic`
 
 Anthropic Claude models (claude-opus-4, claude-sonnet-4, etc.).
 
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a Claude model, with a key from your Anthropic account. If your company reaches Claude through AWS, use AWS Bedrock Model instead.
+
 **Effects.** costs.
 
 **Fields**
@@ -205,6 +215,8 @@ Resource · in the catalogue: AI > Models · type `ai.llm.model.bedrock`
 
 Anthropic Claude models via AWS Bedrock — SigV4-signed requests through the official AWS SDK, no bearer token.
 
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a Claude model through your company's AWS account, with AWS access keys. With a key from an Anthropic account, use Anthropic Model instead.
+
 **Effects.** costs.
 
 **Fields**
@@ -223,6 +235,8 @@ Anthropic Claude models via AWS Bedrock — SigV4-signed requests through the of
 Resource · in the catalogue: AI > Models · type `ai.llm.model.deepseek`
 
 DeepSeek AI models (deepseek-chat, deepseek-reasoner, etc.).
+
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a DeepSeek model, with a key from your DeepSeek account.
 
 **Effects.** costs.
 
@@ -246,6 +260,8 @@ Resource · in the catalogue: AI > Models · type `ai.llm.model.gemini`
 
 Google Gemini models via AI Studio (gemini-2.0-flash, gemini-2.5-pro, etc.).
 
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a Google Gemini model, with an API key from Google AI Studio.
+
 **Effects.** costs.
 
 **Fields**
@@ -268,6 +284,8 @@ Resource · in the catalogue: AI > Models · type `imagegen.model`
 
 Exposes an image generation provider credential and model configuration.
 
+**When to use it.** To choose the image provider, model, quality and style used by the AI Image Generator. Plug it into the AI Image Generator.
+
 **Effects.** costs.
 
 **Fields**
@@ -286,6 +304,8 @@ Exposes an image generation provider credential and model configuration.
 Resource · in the catalogue: AI > Models · type `ai.llm.model.openai`
 
 OpenAI GPT models (and compatible: LM Studio, Ollama, Groq, Azure OpenAI…).
+
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a GPT model to work with. Also for services that follow the OpenAI API, such as Azure OpenAI, Groq, or a model on your own machine with LM Studio or Ollama.
 
 **Effects.** costs.
 
@@ -308,6 +328,8 @@ OpenAI GPT models (and compatible: LM Studio, Ollama, Groq, Azure OpenAI…).
 Resource · in the catalogue: AI > Models · type `ai.llm.model.xai`
 
 xAI Grok models (grok-3, grok-3-mini, etc.).
+
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a Grok model, with a key from your xAI account.
 
 **Effects.** costs.
 
@@ -335,6 +357,8 @@ Resource · in the catalogue: AI > Sessions · type `ai.sessions.file`
 
 Stores AI agent conversation sessions as JSON files so they survive application restarts.
 
+**When to use it.** To let an AI Agent remember the conversation from one run to the next, kept on disk so it survives a restart of the application. Plug it into the Agent Session of an AI Agent; give the same session ID to continue a conversation.
+
 **Effects.** writes in the workspace.
 
 **Fields**
@@ -355,6 +379,8 @@ Stores AI agent conversation sessions as JSON files so they survive application 
 Resource · in the catalogue: AI > Sessions · type `ai.sessions.memory`
 
 Stores AI agent conversation sessions in memory for the current application lifetime.
+
+**When to use it.** To let an AI Agent remember the conversation from one run to the next, until the application restarts. Plug it into the Agent Session of an AI Agent; to keep conversations after a restart, use AI Agent Session (File).
 
 **Fields**
 
@@ -379,6 +405,8 @@ Resource · in the catalogue: AI > Interactions · type `ai.interactions.chat`
 
 Internal local chat channel for workflow conversations, human-in-the-loop responses, and AG-UI rich widgets.
 
+**When to use it.** To let an AI Agent talk with the user in the app's chat: send messages, ask a question and wait for the reply, show rich cards. Plug it into the Human Loop Channel of an AI Agent, or use it with an interaction step.
+
 **Effects.** writes in the workspace.
 
 **Fields**
@@ -400,6 +428,8 @@ Resource · in the catalogue: AI > Interactions · type `ai.interactions.email`
 
 Email-based interaction channel for delivering requests and collecting responses.
 
+**When to use it.** To tell someone by e-mail that a workflow needs their answer: the e-mail only notifies, the answer is still given in the app. An AI Agent cannot ask questions through it: use the Chat, Forms or Slack channel for that.
+
 **Effects.** sends a message.
 
 **Fields**
@@ -419,6 +449,8 @@ Resource · in the catalogue: AI > Interactions · type `ai.interactions.forms`
 
 Web form-based interaction channel for collecting user input.
 
+**When to use it.** To collect answers from a person through a form shown in the app, with only the fields needed. Plug it into an AI Agent so it can ask for missing information as a form and wait for it.
+
 **Effects.** sends a message.
 
 **Fields**
@@ -435,6 +467,8 @@ Web form-based interaction channel for collecting user input.
 Resource · in the catalogue: AI > Interactions · type `ai.interactions.slack`
 
 Slack workspace channel for delivering interaction requests and collecting responses.
+
+**When to use it.** To ask people in Slack and take their reply from there, for an AI Agent or an interaction step. Needs a Slack bot token and the ID of the Slack channel, copied from Slack.
 
 **Effects.** sends a message.
 
@@ -455,9 +489,13 @@ Slack workspace channel for delivering interaction requests and collecting respo
 
 Composable AI agent policy resources.
 
-### ai.policies.layer
+### AI Agent Policy
 
 Resource · in the catalogue: AI > Policies · type `ai.policies.layer`
+
+A layer of rules and preferences an AI agent follows, with its scope and its priority. Plug it into the Policies of an AI Agent.
+
+**When to use it.** To give an AI Agent rules and preferences to follow, kept apart from its instructions so they can be reused. Plug it into the Policies of an AI Agent; when several layers apply, their scope and priority decide which comes first.
 
 **Fields**
 
@@ -480,6 +518,8 @@ Resource · in the catalogue: AI > Guardrails · type `ai.guardrails.keyword`
 
 Produces a simple keyword-based guardrail that can warn, rewrite, or block selected AI-agent runtime surfaces.
 
+**When to use it.** To catch an exact word or phrase in what an AI Agent reads or writes, then warn, replace that text, or block. Plug it into the Guardrails of an AI Agent; to judge the meaning rather than exact words, use AI Semantic Guardrail.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -500,6 +540,8 @@ Produces a simple keyword-based guardrail that can warn, rewrite, or block selec
 Resource · in the catalogue: AI > Guardrails · type `ai.guardrails.moderation`
 
 Moderation (OpenAI, free) or LLM-judge (reuses the agent's own model) content check — makes a real call per evaluation, unlike the keyword guardrail.
+
+**When to use it.** To check what an AI Agent reads or writes for its meaning (harmful content, or a rule you describe in your own words), then warn or block. Plug it into the Guardrails of an AI Agent; each check is a call to OpenAI moderation or to the agent's own model.
 
 **Effects.** costs.
 
@@ -527,6 +569,8 @@ Image and media generation nodes.
 Step · in the catalogue: AI > Media · type `ai.media.ai_image_gen`
 
 Generates images using AI based on prompts and config.
+
+**When to use it.** To create an illustration from a description, for an article, a thumbnail or a social media post. Plug an Image Gen Model into it to choose the image provider.
 
 **Effects.** costs.
 
@@ -562,6 +606,8 @@ Step · in the catalogue: AI > Media · type `ai.media.speech_to_text`
 
 Transcribes an audio file to text using OpenAI Whisper.
 
+**When to use it.** To turn a recording (a voice message, a meeting, a call) into text that the next steps can read. Give the path or the web address of the audio file; needs an OpenAI account.
+
 **Effects.** costs.
 
 **Fields**
@@ -590,6 +636,8 @@ Transcribes an audio file to text using OpenAI Whisper.
 Step · in the catalogue: AI > Media · type `ai.media.text_to_speech`
 
 Synthesizes speech audio from text using the OpenAI TTS API.
+
+**When to use it.** To turn a text into a spoken audio file, for example to read a summary aloud or produce a voice message. Not for transcribing a recording: use Speech to Text instead.
 
 **Effects.** costs.
 

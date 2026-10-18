@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Node Catalog of the Studio holds 108 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
 
@@ -63,6 +63,7 @@ In this reference, a reference inside a description or a default value is printe
 | AI Agent Email Tool | Resource | `ai.tools.communication.email` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Guardrail | Resource | `ai.guardrails.keyword` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent JavaScript Tool | Resource | `ai.tools.code_javascript` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Policy | Resource | `ai.policies.layer` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent Read Document Tool | Resource | `ai.tools.documents.read` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Session (File) | Resource | `ai.sessions.file` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent Session (Memory) | Resource | `ai.sessions.memory` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
@@ -88,7 +89,6 @@ In this reference, a reference inside a description or a default value is printe
 | AI Tool - Web Search - SearXNG | Resource | `ai.tools.web.search.searxng` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Tool - Web Search - SerpApi | Resource | `ai.tools.web.search.serpapi` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Tool - Web Search - Tavily | Resource | `ai.tools.web.search.tavily` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| ai.policies.layer | Resource | `ai.policies.layer` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Anthropic Model | Resource | `ai.llm.model.anthropic` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Audio Player | Display step | `core.display.audio` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | AWS Bedrock Model | Resource | `ai.llm.model.bedrock` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |

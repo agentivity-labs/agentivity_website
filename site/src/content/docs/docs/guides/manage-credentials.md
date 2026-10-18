@@ -83,7 +83,9 @@ Before you delete a connection, give another one to the agents and steps that us
 
 ## For developers: the errors of the API
 
-Creating or changing a connection through the API can answer two errors. `credentials_field_required` says that a required field is empty, and names it. `credentials_field_invalid` says that a value does not have the right format.
+Creating or changing a connection through the API can answer two errors. `credentials_field_required` says that a required field is empty, and names it, for example "Fill in 'Model'". `credentials_field_invalid` says that a value does not have the right format, for example an address that does not start with `https://` or `http://`. Both come with the status 400.
+
+To ask which models a key can use, call `POST /api/v1/credentials/models` with `templateId` and `fields` (a list of `key` and `value`), and `id` for a connection that is already saved. The answer has a `status`, a `message` and the list `models`. With a refused key, the status is `invalid_key` and the message says so. An `id` that does not exist gives 404. Nothing is saved by this call.
 
 ## Good to know
 

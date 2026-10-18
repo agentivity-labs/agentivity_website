@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/api.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Studio, the SDKs and your own applications talk to an Agentivity server through these routes. Each path starts after the address of your server, for example `http://localhost:5005`.
 
@@ -59,89 +59,90 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/ai-assistant/chat` |  |
-| POST | `/api/v1/ai-assistant/chat-stream` |  |
-| POST | `/api/v1/ai-assistant/configure-node` |  |
-| GET | `/api/v1/ai-assistant/health` |  |
-| POST | `/api/v1/ai-assistant/suggest-nodes` |  |
+| POST | `/api/v1/ai-assistant/chat` | Chat with the AI assistant |
+| POST | `/api/v1/ai-assistant/chat-stream` | Stream an AI assistant reply as events |
+| POST | `/api/v1/ai-assistant/configure-node` | Configure a node from a stated intent |
+| GET | `/api/v1/ai-assistant/health` | Check that the AI assistant is up |
+| POST | `/api/v1/ai-assistant/suggest-nodes` | Suggest nodes for a task description |
 
 ## Assistant
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/assistant/catalog` |  |
-| GET | `/api/v1/assistant/changesets` |  |
-| POST | `/api/v1/assistant/changesets` |  |
-| DELETE | `/api/v1/assistant/changesets/{id}` |  |
-| GET | `/api/v1/assistant/changesets/{id}` |  |
-| PUT | `/api/v1/assistant/changesets/{id}/agent-model` |  |
-| POST | `/api/v1/assistant/changesets/{id}/build` |  |
-| GET | `/api/v1/assistant/changesets/{id}/conversation` |  |
-| GET | `/api/v1/assistant/changesets/{id}/entities/{entityId}` |  |
-| POST | `/api/v1/assistant/changesets/{id}/messages` |  |
-| POST | `/api/v1/assistant/changesets/{id}/operations` |  |
-| POST | `/api/v1/assistant/changesets/{id}/revert` |  |
-| POST | `/api/v1/assistant/changesets/{id}/save` |  |
-| POST | `/api/v1/assistant/changesets/{id}/validate` |  |
-| POST | `/api/v1/assistant/changesets/open` |  |
-| GET | `/api/v1/assistant/connections` |  |
-| POST | `/api/v1/assistant/messages` |  |
-| GET | `/api/v1/assistant/model` |  |
-| GET | `/api/v1/assistant/operations` |  |
-| GET | `/api/v1/assistant/workspace` |  |
+| GET | `/api/v1/assistant/catalog` | Read the catalog text the assistant is given |
+| GET | `/api/v1/assistant/changesets` | List the assistant changesets |
+| POST | `/api/v1/assistant/changesets` | Start a new assistant changeset |
+| DELETE | `/api/v1/assistant/changesets/{id}` | Discard a changeset |
+| GET | `/api/v1/assistant/changesets/{id}` | Get the summary of a changeset |
+| PUT | `/api/v1/assistant/changesets/{id}/agent-model` | Set the model connection of the built agents |
+| POST | `/api/v1/assistant/changesets/{id}/build` | Build a changeset from a light description |
+| GET | `/api/v1/assistant/changesets/{id}/conversation` | Read back the conversation of a changeset |
+| GET | `/api/v1/assistant/changesets/{id}/entities/{entityId}` | Get the draft of one entity in a changeset |
+| POST | `/api/v1/assistant/changesets/{id}/messages` | Continue the assistant conversation of a changeset |
+| POST | `/api/v1/assistant/changesets/{id}/operations` | Apply edit operations to a changeset |
+| POST | `/api/v1/assistant/changesets/{id}/revert` | Revert a changeset to an earlier revision |
+| POST | `/api/v1/assistant/changesets/{id}/save` | Save a changeset to the workspace |
+| POST | `/api/v1/assistant/changesets/{id}/validate` | Validate the drafts of a changeset |
+| POST | `/api/v1/assistant/changesets/open` | Open a saved agent, team or workflow in a changeset |
+| GET | `/api/v1/assistant/connections` | List the model connections for built agents |
+| POST | `/api/v1/assistant/messages` | Start a conversation with the assistant |
+| GET | `/api/v1/assistant/model` | Get the model connection the assistant uses |
+| GET | `/api/v1/assistant/operations` | List the operations the assistant builder accepts |
+| GET | `/api/v1/assistant/workspace` | Count and fingerprint the saved workspace |
 
 ## Capabilities
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/capabilities` |  |
-| GET | `/api/v1/capabilities/{kind}` |  |
-| GET | `/api/v1/capabilities/{kind}/{id}` |  |
-| GET | `/api/v1/capabilities/search` |  |
+| GET | `/api/v1/capabilities` | Get an overview of the platform capabilities |
+| GET | `/api/v1/capabilities/{kind}` | List the capabilities of one kind |
+| GET | `/api/v1/capabilities/{kind}/{id}` | Get the details of one capability |
+| GET | `/api/v1/capabilities/search` | Search the platform capabilities |
 
 ## Configs
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/configs` |  |
-| GET | `/api/v1/configs/{path}` |  |
-| PUT | `/api/v1/configs/{path}` |  |
+| GET | `/api/v1/configs` | List the configuration files |
+| GET | `/api/v1/configs/{path}` | Read a configuration file |
+| PUT | `/api/v1/configs/{path}` | Save a configuration file |
 
 ## Credentials
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/credentials` |  |
-| POST | `/api/v1/credentials` |  |
-| DELETE | `/api/v1/credentials/{id}` |  |
-| GET | `/api/v1/credentials/{id}` |  |
-| PUT | `/api/v1/credentials/{id}` |  |
-| POST | `/api/v1/credentials/{id}/test` |  |
-| GET | `/api/v1/credentials/templates` |  |
+| GET | `/api/v1/credentials` | List the saved credentials |
+| POST | `/api/v1/credentials` | Create a credential |
+| DELETE | `/api/v1/credentials/{id}` | Delete a credential |
+| GET | `/api/v1/credentials/{id}` | Get one credential with its secrets masked |
+| PUT | `/api/v1/credentials/{id}` | Update a credential |
+| POST | `/api/v1/credentials/{id}/test` | Test a model credential against its provider |
+| POST | `/api/v1/credentials/models` | List the models a connection being typed can use |
+| GET | `/api/v1/credentials/templates` | List the available credential templates |
 
 ## Datatables
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/datatables` |  |
-| DELETE | `/api/v1/datatables/{id}` |  |
-| GET | `/api/v1/datatables/{id}` |  |
-| PUT | `/api/v1/datatables/{id}` |  |
-| POST | `/api/v1/datatables/{id}/move` |  |
-| GET | `/api/v1/datatables/{id}/rows` |  |
-| POST | `/api/v1/datatables/{id}/rows` |  |
-| DELETE | `/api/v1/datatables/{id}/rows/{rowId}` |  |
-| PUT | `/api/v1/datatables/{id}/rows/{rowId}` |  |
-| GET | `/api/v1/datatables/{id}/versions` |  |
-| POST | `/api/v1/datatables/{id}/versions` |  |
-| GET | `/api/v1/datatables/{id}/versions/{versionId}` |  |
-| POST | `/api/v1/datatables/{id}/versions/{versionId}/restore` |  |
-| GET | `/api/v1/datatables/browse` |  |
-| GET | `/api/v1/datatables/folders` |  |
-| POST | `/api/v1/datatables/folders` |  |
-| DELETE | `/api/v1/datatables/folders/{folderId}` |  |
-| PUT | `/api/v1/datatables/folders/{folderId}` |  |
-| POST | `/api/v1/datatables/folders/{folderId}/move` |  |
+| GET | `/api/v1/datatables` | List the Data Tables of a folder |
+| DELETE | `/api/v1/datatables/{id}` | Delete a Data Table and its rows |
+| GET | `/api/v1/datatables/{id}` | Get the definition of a Data Table |
+| PUT | `/api/v1/datatables/{id}` | Create or update the columns of a Data Table |
+| POST | `/api/v1/datatables/{id}/move` | Move a Data Table to another folder |
+| GET | `/api/v1/datatables/{id}/rows` | Search the rows of a Data Table |
+| POST | `/api/v1/datatables/{id}/rows` | Add a row to a Data Table |
+| DELETE | `/api/v1/datatables/{id}/rows/{rowId}` | Delete a row of a Data Table |
+| PUT | `/api/v1/datatables/{id}/rows/{rowId}` | Update a row of a Data Table |
+| GET | `/api/v1/datatables/{id}/versions` | List the saved versions of a Data Table |
+| POST | `/api/v1/datatables/{id}/versions` | Save a new version of a Data Table |
+| GET | `/api/v1/datatables/{id}/versions/{versionId}` | Get one saved version of a Data Table |
+| POST | `/api/v1/datatables/{id}/versions/{versionId}/restore` | Restore an earlier version of a Data Table |
+| GET | `/api/v1/datatables/browse` | Browse the Data Table folders and tables |
+| GET | `/api/v1/datatables/folders` | List the Data Table folders |
+| POST | `/api/v1/datatables/folders` | Create a Data Table folder |
+| DELETE | `/api/v1/datatables/folders/{folderId}` | Delete a Data Table folder |
+| PUT | `/api/v1/datatables/folders/{folderId}` | Rename a Data Table folder |
+| POST | `/api/v1/datatables/folders/{folderId}/move` | Move a Data Table folder |
 
 ## Entities
 
@@ -171,7 +172,7 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/features` |  |
+| GET | `/api/v1/features` | List the features available on this server |
 
 ## Icons
 
@@ -183,64 +184,64 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/interactions/slack/events` |  |
+| POST | `/api/v1/interactions/slack/events` | Receive a Slack reply and resume the waiting run |
 
 ## Llm-connections
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/llm-connections/default` |  |
-| POST | `/api/v1/llm-connections/replace` |  |
+| GET | `/api/v1/llm-connections/default` | Get the default model credential |
+| POST | `/api/v1/llm-connections/replace` | Point model connections at another credential |
 
 ## Metadata
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/metadata/categories` |  |
-| GET | `/api/v1/metadata/nodes` |  |
-| GET | `/api/v1/metadata/nodes/{nodeType}/icon.svg` |  |
+| GET | `/api/v1/metadata/categories` | List the node categories |
+| GET | `/api/v1/metadata/nodes` | List the available node types with their ports |
+| GET | `/api/v1/metadata/nodes/{nodeType}/icon.svg` | Get the SVG icon of a node type |
 
 ## Nodes
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/nodes/reconfigure` |  |
+| POST | `/api/v1/nodes/reconfigure` | Refresh the inputs of a workflow node |
 
 ## Prompt Engine
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/prompts` |  |
-| POST | `/api/v1/prompts` |  |
-| DELETE | `/api/v1/prompts/{id}` |  |
-| GET | `/api/v1/prompts/{id}` |  |
-| PUT | `/api/v1/prompts/{id}` |  |
-| POST | `/api/v1/prompts/{id}/analyze` |  |
-| GET | `/api/v1/prompts/{id}/versions` |  |
-| POST | `/api/v1/prompts/{id}/versions` |  |
-| GET | `/api/v1/prompts/{id}/versions/{versionId}` |  |
-| POST | `/api/v1/prompts/{promptId}/optimizations` |  |
-| POST | `/api/v1/prompts/{promptId}/playground/execute` |  |
-| GET | `/api/v1/prompts/{promptId}/playground/executions` |  |
-| GET | `/api/v1/prompts/{promptId}/testcases` |  |
-| POST | `/api/v1/prompts/{promptId}/testcases` |  |
-| POST | `/api/v1/prompts/{promptId}/testcases/execute-all` |  |
-| GET | `/api/v1/prompts/{promptId}/testcases/executions` |  |
-| GET | `/api/v1/prompts/browse` |  |
-| GET | `/api/v1/prompts/optimizations/{id}` |  |
-| POST | `/api/v1/prompts/optimizations/{id}/cancel` |  |
-| GET | `/api/v1/prompts/playground/executions/{id}` |  |
-| DELETE | `/api/v1/prompts/testcases/{id}` |  |
-| GET | `/api/v1/prompts/testcases/{id}` |  |
-| PUT | `/api/v1/prompts/testcases/{id}` |  |
-| POST | `/api/v1/prompts/testcases/{id}/execute` |  |
-| GET | `/api/v1/prompts/testcases/executions/{id}` |  |
+| GET | `/api/v1/prompts` | List the prompts |
+| POST | `/api/v1/prompts` | Create a prompt |
+| DELETE | `/api/v1/prompts/{id}` | Delete a prompt |
+| GET | `/api/v1/prompts/{id}` | Get a prompt |
+| PUT | `/api/v1/prompts/{id}` | Update a prompt |
+| POST | `/api/v1/prompts/{id}/analyze` | Analyze the quality of a prompt |
+| GET | `/api/v1/prompts/{id}/versions` | List the saved versions of a prompt |
+| POST | `/api/v1/prompts/{id}/versions` | Save a named version of a prompt |
+| GET | `/api/v1/prompts/{id}/versions/{versionId}` | Get one saved version of a prompt |
+| POST | `/api/v1/prompts/{promptId}/optimizations` | Start an optimization run for a prompt |
+| POST | `/api/v1/prompts/{promptId}/playground/execute` | Try a prompt in the playground |
+| GET | `/api/v1/prompts/{promptId}/playground/executions` | List the playground executions of a prompt |
+| GET | `/api/v1/prompts/{promptId}/testcases` | List the test cases of a prompt |
+| POST | `/api/v1/prompts/{promptId}/testcases` | Add a test case to a prompt |
+| POST | `/api/v1/prompts/{promptId}/testcases/execute-all` | Run all the test cases of a prompt |
+| GET | `/api/v1/prompts/{promptId}/testcases/executions` | List the test case executions of a prompt |
+| GET | `/api/v1/prompts/browse` | Browse the prompt folders and prompts |
+| GET | `/api/v1/prompts/optimizations/{id}` | Get the status of a prompt optimization run |
+| POST | `/api/v1/prompts/optimizations/{id}/cancel` | Cancel a prompt optimization run |
+| GET | `/api/v1/prompts/playground/executions/{id}` | Get one playground execution |
+| DELETE | `/api/v1/prompts/testcases/{id}` | Delete a test case |
+| GET | `/api/v1/prompts/testcases/{id}` | Get a test case |
+| PUT | `/api/v1/prompts/testcases/{id}` | Update a test case |
+| POST | `/api/v1/prompts/testcases/{id}/execute` | Run one test case against its prompt |
+| GET | `/api/v1/prompts/testcases/executions/{id}` | Get one test case execution |
 
 ## Resources
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/resources/{id}` |  |
+| GET | `/api/v1/resources/{id}` | Download a generated image or audio file |
 
 ## Runs
 
@@ -263,8 +264,8 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/settings` |  |
-| PUT | `/api/v1/settings` |  |
+| GET | `/api/v1/settings` | Read the application settings |
+| PUT | `/api/v1/settings` | Save the application settings |
 
 ## Streams
 
@@ -295,51 +296,51 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/templates/cover` |  |
-| POST | `/api/v1/templates/export` |  |
-| POST | `/api/v1/templates/import` |  |
+| POST | `/api/v1/templates/cover` | Generate a cover picture for a Template |
+| POST | `/api/v1/templates/export` | Export an agent, team or workflow as a Template |
+| POST | `/api/v1/templates/import` | Import a Template file |
 
 ## Uploads
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/uploads` |  |
+| POST | `/api/v1/uploads` | Upload a file for a run to read |
 
 ## Voice
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/voice/status` |  |
-| POST | `/api/v1/voice/transcribe` |  |
+| GET | `/api/v1/voice/status` | Check whether voice dictation is available |
+| POST | `/api/v1/voice/transcribe` | Transcribe a recorded audio clip to text |
 
 ## Workflow-node-sessions
 
 | Method | Path | What it does |
 |---|---|---|
-| POST | `/api/v1/workflow-node-sessions/delete` |  |
-| POST | `/api/v1/workflow-node-sessions/list` |  |
-| POST | `/api/v1/workflow-node-sessions/open` |  |
-| POST | `/api/v1/workflow-node-sessions/purge-expired` |  |
+| POST | `/api/v1/workflow-node-sessions/delete` | Delete one stored agent session |
+| POST | `/api/v1/workflow-node-sessions/list` | List the agent sessions of a session node |
+| POST | `/api/v1/workflow-node-sessions/open` | Open one stored agent session |
+| POST | `/api/v1/workflow-node-sessions/purge-expired` | Purge the expired sessions of a session node |
 
 ## Workflows
 
 | Method | Path | What it does |
 |---|---|---|
-| GET | `/api/v1/workflows` |  |
-| DELETE | `/api/v1/workflows/{id}` |  |
-| GET | `/api/v1/workflows/{id}` |  |
-| PUT | `/api/v1/workflows/{id}` |  |
-| GET | `/api/v1/workflows/{id}/stale-inputs` |  |
-| GET | `/api/v1/workflows/{id}/version` |  |
-| POST | `/api/v1/workflows/{workflowId}/move` |  |
-| GET | `/api/v1/workflows/{workflowId}/versions` |  |
-| POST | `/api/v1/workflows/{workflowId}/versions` |  |
-| GET | `/api/v1/workflows/{workflowId}/versions/{versionId}` |  |
-| POST | `/api/v1/workflows/{workflowId}/versions/{versionId}/restore` |  |
-| GET | `/api/v1/workflows/browse` |  |
-| GET | `/api/v1/workflows/folders` |  |
-| POST | `/api/v1/workflows/folders` |  |
-| DELETE | `/api/v1/workflows/folders/{folderId}` |  |
-| PUT | `/api/v1/workflows/folders/{folderId}` |  |
-| POST | `/api/v1/workflows/folders/{folderId}/move` |  |
-| POST | `/api/v1/workflows/validate` |  |
+| GET | `/api/v1/workflows` | List all workflows |
+| DELETE | `/api/v1/workflows/{id}` | Delete a workflow |
+| GET | `/api/v1/workflows/{id}` | Get a workflow definition |
+| PUT | `/api/v1/workflows/{id}` | Create or update a workflow |
+| GET | `/api/v1/workflows/{id}/stale-inputs` | List the obsolete inputs of each workflow node |
+| GET | `/api/v1/workflows/{id}/version` | Get when a workflow was last updated |
+| POST | `/api/v1/workflows/{workflowId}/move` | Move a workflow to another folder |
+| GET | `/api/v1/workflows/{workflowId}/versions` | List the saved versions of a workflow |
+| POST | `/api/v1/workflows/{workflowId}/versions` | Save a new version of a workflow |
+| GET | `/api/v1/workflows/{workflowId}/versions/{versionId}` | Get one saved version of a workflow |
+| POST | `/api/v1/workflows/{workflowId}/versions/{versionId}/restore` | Restore an earlier version of a workflow |
+| GET | `/api/v1/workflows/browse` | Browse the workflow folders and workflows |
+| GET | `/api/v1/workflows/folders` | List the workflow folders |
+| POST | `/api/v1/workflows/folders` | Create a workflow folder |
+| DELETE | `/api/v1/workflows/folders/{folderId}` | Delete a workflow folder |
+| PUT | `/api/v1/workflows/folders/{folderId}` | Rename a workflow folder |
+| POST | `/api/v1/workflows/folders/{folderId}/move` | Move a workflow folder |
+| POST | `/api/v1/workflows/validate` | Validate a workflow without saving it |

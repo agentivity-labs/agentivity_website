@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-content-and-web.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-15 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that read the web and documents, and the steps that build content.
 
@@ -24,6 +24,8 @@ Content creation.
 Step · in the catalogue: Content · type `content.content_generator`
 
 Generates structured DSL content from diverse sources with LLM-powered content generation and deterministic layout.
+
+**When to use it.** To have an AI write a structured page, such as an article or a landing page, from a description, with an optional brief, SEO data and links that must all appear in the text. It needs an LLM model connected; its page layout in DSL format then goes to DSL to HTML, DSL to Markdown or DSL to Elementor.
 
 **Effects.** costs.
 
@@ -43,7 +45,7 @@ Generates structured DSL content from diverse sources with LLM-powered content g
 
 | Name | Type | What it holds |
 |---|---|---|
-| `dsl_content` | Text | Generated content in DSL format (PageNode JSON) |
+| `dsl_content` | Text | Generated content, as a page layout in DSL format (JSON) |
 | `metadata` | Text | Content metadata: topics, keywords, estimated reading time |
 
 **Entries.** **In** (Entry point)
@@ -65,6 +67,8 @@ Layout manipulation.
 Step · in the catalogue: Content > Layout · type `layout.add_block`
 
 Adds one or more blocks to the layout at a specified position. Supports single block object or array of blocks.
+
+**When to use it.** To add one or more blocks, such as a call to action or an extra section, to a page layout in DSL format, at a place named by its path (such as main). Give the block as JSON, or a JSON list of blocks.
 
 **Fields**
 
@@ -91,6 +95,8 @@ Step · in the catalogue: Content > Layout · type `layout.move_block`
 
 Moves a block from source to target position in the layout.
 
+**When to use it.** To move one block of a page layout in DSL format to another place, both named by their path (such as main.block[1] and main).
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -112,6 +118,8 @@ Step · in the catalogue: Content > Layout · type `layout.remove_block`
 
 Removes a block from the layout at the specified path.
 
+**When to use it.** To take one block out of a page layout in DSL format, named by its path (such as root.main.section[2]).
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
@@ -130,6 +138,8 @@ Removes a block from the layout at the specified path.
 Step · in the catalogue: Content > Layout · type `layout.replace_block`
 
 Replaces a block at the specified path with one or more new blocks.
+
+**When to use it.** To swap one block of a page layout in DSL format, named by its path, for one or more new blocks given as JSON. To keep the block and add next to it, use Add Block instead.
 
 **Fields**
 
@@ -155,11 +165,13 @@ Step · in the catalogue: Content > Layout Adapters · type `content.layoutadapt
 
 Converts DSL content to Elementor-compatible format for WordPress
 
+**When to use it.** To turn a page layout in DSL format, such as the one Content Generator gives, into an Elementor page for Publish to WordPress. To show images already uploaded, give a JSON list linking each image to its WordPress media ID.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `dsl_content` | Text | yes |  | PageNode JSON in DSL format. |
+| `dsl_content` | Text | yes |  | Page layout in DSL format (JSON), as Content Generator gives it. |
 | `title` | Text | no |  | Optional page/post title. |
 | `image_mappings` | Text | no |  | JSON array mapping image IDs to WordPress media IDs: [{image_id, media_id, media_url}]. |
 
@@ -180,11 +192,13 @@ Step · in the catalogue: Content > Layout Adapters · type `content.layoutadapt
 
 Converts DSL content to email-compatible HTML with table layout and inline styles
 
+**When to use it.** To turn a page layout in DSL format into the HTML of an e-mail, such as a newsletter, that displays well in mail apps, in your brand colors. For a web page, use DSL to HTML instead.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `dsl_content` | Text | yes |  | PageNode JSON in DSL format. |
+| `dsl_content` | Text | yes |  | Page layout in DSL format (JSON), as Content Generator gives it. |
 | `email_width` | Number | no | `600` | Email width in pixels (default: 600). |
 | `brand_color` | Text | no | `#2563EB` | Primary brand color in hex (default: #2563EB). |
 | `background_color` | Text | no | `#F3F4F6` | Background color in hex (default: #F3F4F6). |
@@ -206,11 +220,13 @@ Step · in the catalogue: Content > Layout Adapters · type `content.layoutadapt
 
 Converts DSL content to semantic HTML with optional CSS framework support
 
+**When to use it.** To turn a page layout in DSL format into HTML for a web page, plain or styled for Tailwind or Bootstrap. For an e-mail, use DSL to Email HTML instead.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `dsl_content` | Text | yes |  | PageNode JSON in DSL format. |
+| `dsl_content` | Text | yes |  | Page layout in DSL format (JSON), as Content Generator gives it. |
 | `css_framework` | Text | no | `none` | CSS framework: 'tailwind', 'bootstrap', or 'none' (default: 'none'). |
 | `include_inline_styles` | Boolean | no | `false` | Include basic inline styles for spacing (default: false). |
 | `wrapper_class` | Text | no |  | CSS class for the root wrapper div. |
@@ -229,11 +245,13 @@ Step · in the catalogue: Content > Layout Adapters · type `content.layoutadapt
 
 Converts DSL content to Markdown format
 
+**When to use it.** To turn a page layout in DSL format into Markdown, for a documentation page, a README or any tool that takes Markdown. For a web page, use DSL to HTML instead.
+
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `dsl_content` | Text | yes |  | PageNode JSON in DSL format. |
+| `dsl_content` | Text | yes |  | Page layout in DSL format (JSON), as Content Generator gives it. |
 | `generate_toc_anchors` | Boolean | no | `true` | Generate anchor links for TOC (default: true). |
 | `heading_prefix` | Text | no |  | Optional prefix for all headings (e.g., project name). |
 
@@ -253,6 +271,8 @@ Web scraping and content extraction.
 Step · in the catalogue: Web · type `web.scrape`
 
 Reads a web page as Markdown, ready for an LLM prompt. Uses the connected web scraper, or the free Direct scraper when none is connected.
+
+**When to use it.** To read the content of one web page from its link, for example a link a person gave, so an AI step can work on it. Not for finding pages on a subject: use a web search instead.
 
 **Effects.** reads outside.
 
@@ -297,6 +317,8 @@ Resource · in the catalogue: Web > Scrappers · type `web.scraper.direct`
 
 Scrape web pages using direct HTTP requests (free, simple, limited features).
 
+**When to use it.** To read web pages for free, with no account, from a step that reads pages such as Scrape Web Page. For pages that only show their content once scripts run in the browser, use Firecrawl Scraper instead.
+
 **Effects.** reads outside.
 
 **Plugs into** a place that accepts `web.scraper.*`.
@@ -306,6 +328,8 @@ Scrape web pages using direct HTTP requests (free, simple, limited features).
 Resource · in the catalogue: Web > Scrappers · type `web.scraper.firecrawl`
 
 Scrape web pages using Firecrawl API (premium, JS rendering, clean markdown).
+
+**When to use it.** To read pages the free scrapers cannot, such as pages built by scripts in the browser, with your own Firecrawl account (an API key). Connect it to a step that reads pages, such as Scrape Web Page.
 
 **Effects.** reads outside.
 
@@ -323,6 +347,8 @@ Resource · in the catalogue: Web > Scrappers · type `web.scraper.jina`
 
 Scrape web pages using Jina AI Reader (free, clean markdown output).
 
+**When to use it.** To read web pages as clean text for free through Jina AI Reader, with no account, from a step that reads pages such as Scrape Web Page. Useful when the Direct Scraper keeps too much clutter.
+
 **Effects.** reads outside.
 
 **Plugs into** a place that accepts `web.scraper.*`.
@@ -336,6 +362,8 @@ Web search nodes backed by external search providers.
 Resource · in the catalogue: Web > Search · type `web.search.searxng`
 
 Searches the web through a SearXNG instance and returns normalized organic results.
+
+**When to use it.** To set up a web search through a SearXNG server you run or trust, given by its address, with no paid account. To give search results to an AI step, use AI Knowledge - SearXNG instead.
 
 **Effects.** reads outside, costs.
 
@@ -369,6 +397,8 @@ Resource · in the catalogue: Web > Search · type `web.search.serpapi`
 
 Searches the web through SerpApi and returns normalized organic results.
 
+**When to use it.** To set up a web search through your own SerpApi account (an API key). To give search results to an AI step, use AI Knowledge - SerpApi instead.
+
 **Effects.** reads outside, costs.
 
 **Fields**
@@ -400,6 +430,8 @@ Searches the web through SerpApi and returns normalized organic results.
 Resource · in the catalogue: Web > Search · type `web.search.tavily`
 
 Searches the web through Tavily and returns normalized organic results.
+
+**When to use it.** To set up a web search through your own Tavily account (an API key). To give search results to an AI step, use AI Knowledge - Tavily instead.
 
 **Effects.** reads outside, costs.
 
@@ -437,6 +469,8 @@ Step · in the catalogue: SEO · type `seo.links.suggest`
 
 Suggests relevant internal links using structure-first selection with semantic scoring.
 
+**When to use it.** To choose which pages of your own site a new article should link to, with link texts written by an AI, from the site structure Sitemap Structure gives. Not for links to other sites: it only suggests pages of your site.
+
 **Effects.** costs.
 
 **Fields**
@@ -445,7 +479,7 @@ Suggests relevant internal links using structure-first selection with semantic s
 |---|---|---|---|---|
 | `article_topic` | Text | yes |  | Article topic or title. |
 | `article_summary` | Text | no |  | Brief article summary/outline (optional). |
-| `site_structure` | Text | yes |  | Site structure JSON (from SitemapStructureNode). |
+| `site_structure` | Text | yes |  | Site structure (JSON), as the Sitemap Structure step gives it. |
 | `max_links` | Number | no | `10` | Maximum links to suggest. |
 | `parent_pillar_url` | Text | no |  | Parent pillar URL (required for best results). |
 | `quota_parent_pillar` | Number | no | `1` | Links to parent pillar. |
@@ -478,6 +512,8 @@ Step · in the catalogue: SEO · type `seo.sitemap.analyze`
 
 Parses XML sitemap and extracts page information for SEO analysis.
 
+**When to use it.** To list the pages of a website from its XML sitemap (such as https://example.com/sitemap.xml), optionally with each page's title and description, as the start of an SEO workflow. Give its pages to Sitemap Structure.
+
 **Effects.** reads outside.
 
 **Fields**
@@ -501,13 +537,15 @@ Step · in the catalogue: SEO · type `seo.sitemap.structure`
 
 Analyzes sitemap pages using LLM to create hierarchical content structure (pillars & clusters).
 
+**When to use it.** To group a site's pages into main topics (pillars) and topic clusters with an AI, from the page list Sitemap Analyzer gives. Its result feeds Internal Link Suggester.
+
 **Effects.** reads outside, costs.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `pages` | Text | yes |  | Sitemap pages JSON array (from SitemapAnalyzerNode). |
+| `pages` | Text | yes |  | Sitemap pages (JSON array), as the Sitemap Analyzer step gives it. |
 | `site_name` | Text | no | `Website` | Website name/brand. |
 | `max_pillars` | Number | no | `10` | Maximum content pillars to identify. |
 | `scrape_pages` | Boolean | no | `true` | Scrape pages to analyze content and internal links (slower but more accurate). |
@@ -536,13 +574,17 @@ Analyzes sitemap pages using LLM to create hierarchical content structure (pilla
 | **RAG/Memory** | no | `llm.memory.*` | 1 |
 | **Scraper** | no | `web.scraper.*` | 1 |
 
-## No named category: documents
+## Documents
+
+Read the text of documents (PDF, Word, text).
 
 ### Extract Document Text
 
-Step · in the catalogue: no named category · type `document.extract_text`
+Step · in the catalogue: Documents · type `document.extract_text`
 
 Reads a PDF, Word (.docx), or plain-text/Markdown file — an uploaded file (file_id) or raw bytes (file_base64) — and returns its content as Markdown, ready for an LLM prompt.
+
+**When to use it.** To get the text of a PDF, Word (.docx), text or Markdown file a person uploaded, so an AI step can read it. Not for web pages: use Scrape Web Page instead.
 
 **Fields**
 

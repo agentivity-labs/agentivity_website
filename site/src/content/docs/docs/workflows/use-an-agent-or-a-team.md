@@ -73,17 +73,19 @@ Then select **Apply**, and **Publish**.
 
 Use the answer in a later step with its reference: the node name of the step, a dot, then `output`.
 
-The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**.
+The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**. If the call fails, for example because the identifier is unknown, the workflow goes on from **Error**, and the output `error` holds the message. Link **Error** to a step that handles it. Without a step on **Error**, nothing follows a failed call.
 
 ### What a workflow gives back
 
 A called workflow gives back the text of its last step that produced one. The engine looks, from the last step that ran back to the first, for an output named `output`, `result`, `response` or `content`.
 
-So make the last useful step of the called workflow produce one of these names. An **AI Agent** step does: its answer is named `response`. A **Console** step does not: its output is named `value`.
+So make the last useful step of the called workflow produce one of these names. An **AI Agent** step does: its answer is named `response`. A **Console** step does not: its output is named `value`, and the calling step gets an empty `output`. We saw both cases. The outputs of the steps of the called workflow are also given, named by the step and the output, for example `line.value`.
 
 ## When what you call waits
 
-What you call may stop to wait: an agent that asks a person a question, a workflow with an approval step. Your workflow then waits with it. When the answer comes, what you called goes on from where it stopped, and your workflow goes on when it has finished.
+What you call may stop to wait: an agent that asks a person a question, a workflow with an approval step. Your workflow then waits with it, and goes on when what you called has finished.
+
+What we saw with a workflow that asks a person: the calling step showed the state "waiting for input", and the run stayed in that state. We did not see the question in the list of pending questions of the calling execution (`/executions/{executionId}/hil/pending`), so we could not answer it through the API. We did not try to answer it in the Studio. Until this is checked, test a call that waits in the Studio before you rely on it.
 
 This is not possible inside a loop. If a step of a **For Each** loop calls something that waits, the run fails, and the message says that a loop cannot wait. See [Repeat steps for each item of a list](/docs/workflows/repeat-steps/).
 
@@ -104,7 +106,7 @@ Run the workflow. In the tab **Execution**, the step turns to completed, and the
 
 - **The run fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
 - **The answer is empty, and the step called a workflow.** No step of that workflow produced an output named `output`, `result`, `response` or `content`. See "What a workflow gives back".
-- **The run fails at this step, and the rest of the workflow is not done.** Today, a failure of the step stops the run.
+- **A failed call does nothing more.** The step has an exit **Error**, and nothing is linked to it. Link a step to it.
 - **The agent answers beside the point.** The step sends only the message. Put the facts the agent needs in it.
 
 ## Good to know
