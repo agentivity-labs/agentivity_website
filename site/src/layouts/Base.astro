@@ -13,6 +13,8 @@ export interface Props {
   noindex?: boolean;
   /** 'editorial' = navy, yellow and serif display (new pages); 'classic' = the first design. */
   look?: 'classic' | 'editorial';
+  /** false for a page that exists in one language only (a landing page): no hreflang to a page that does not exist. */
+  alternates?: boolean;
 }
 
 const {
@@ -23,6 +25,7 @@ const {
   schema,
   noindex = false,
   look = 'classic',
+  alternates = true,
 } = Astro.props;
 
 const fontsHref = look === 'editorial'
@@ -54,9 +57,9 @@ const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
 
   <!-- Canonical & hreflang -->
   <link rel="canonical" href={canonicalURL} />
-  <link rel="alternate" hreflang="en"    href={hrefEN} />
-  <link rel="alternate" hreflang="fr"    href={hrefFR} />
-  <link rel="alternate" hreflang="x-default" href={hrefEN} />
+  {alternates && <link rel="alternate" hreflang="en"    href={hrefEN} />}
+  {alternates && <link rel="alternate" hreflang="fr"    href={hrefFR} />}
+  {alternates && <link rel="alternate" hreflang="x-default" href={hrefEN} />}
 
   <!-- Primary meta -->
   <title>{title}</title>

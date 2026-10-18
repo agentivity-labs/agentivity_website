@@ -1,0 +1,126 @@
+# Landing page for the Product Hunt launch: https://www.agentivity.io/lp/producthunt
+# Sign-ups made here reach Brevo with SOURCE = landing-page, LANDING = producthunt, CAMPAIGN = ref=producthunt (added by
+# Product Hunt to its links). Wording taken from the home page wherever it exists; only the welcome and the offer are new.
+title: Agentivity on Product Hunt — Your Next Hire Is an AI Team
+description: Build AI teams without code, with you in charge. For Product Hunt, skip the waitlist and the first 20 get an AI team built for them.
+noindex: true
+ogImage: /og/producthunt.png
+header:
+  label: Get early access
+  href: "#get-access"
+
+sections:
+  - type: banner
+    text: Welcome, Product Hunt!
+    detail: Two things for you, just below.
+
+  - type: hero
+    eyebrow: AI teams for your business, no code
+    title: Your next hire is
+    accent: an AI team.
+    sub: Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.
+    form:
+      submit: Get early access
+      fine: "Free. For Product Hunt: you skip the waitlist, and the first 20 get an AI team built for them."
+    secondary:
+      label: Install the Community edition
+      href: /community
+    note: The Community edition costs nothing, and runs on your own server.
+    film:
+      video: /media/hero-film-en.mp4
+      poster: /media/hero-film-en.jpg
+      alt: "A short film: from one helper to a team, then a team in every department and an AI company, with the hours each step gives back. It shows the Assistant building a team, a workflow, and an app where a traveller is asked to choose a hotel."
+
+  - type: home
+    block: values
+
+  - type: offer
+    eyebrow: For Product Hunt
+    title: Two things,
+    accent: just for you.
+    items:
+      - title: Skip the waitlist
+        body: Join from this page and you are first in line when the hosted plans open. Nothing to install, nothing to run.
+        action:
+          label: Get early access
+          href: "#get-access"
+      - title: Your first AI team, built for you
+        body: "The first 20: tell us what you want an AI team to do. Within 48 hours, we send you a ready-made team for it, as a Template you import in one click in the Community edition."
+        action:
+          label: Tell us your use case
+          href: "mailto:hello@agentivity.io?subject=Product%20Hunt%3A%20my%20first%20AI%20team&body=What%20I%20want%20an%20AI%20team%20to%20do%3A%20"
+    fine: Limited to the first 20 requests. One team per person. Write to us in English or French. The Template runs on the Community edition, with the AI model of your choice.
+
+  - type: clips
+    eyebrow: Recorded from the product
+    title: See it before
+    accent: you install it.
+    items:
+      - title: Describe it. The Assistant builds it.
+        body: One sentence is enough to start. The Assistant asks only what it needs to know, and shows its plan before it builds anything.
+        video: /media/assistant-create.mp4
+        poster: /media/assistant-create.jpg
+        alt: "A recording of the Assistant: a sentence is typed, a question with choices is answered, a plan is approved, and a team of three appears on the right"
+        width: 1418
+        height: 770
+      - title: Or build the team yourself
+        body: Drag your agents onto the canvas and choose how they work together.
+        video: /media/studio-team-wide.mp4
+        poster: /media/studio-team-wide.jpg
+        alt: "A recording of the Studio: a team is named, the one-after-another way of working is chosen, and a researcher, a writer and a reviewer are dragged onto the canvas one by one"
+      - title: An app built for one job
+        body: "One sentence in. Flights, a hotel to choose, a dinner to book: each screen arrives when it is needed."
+        video: /media/trip-planner.mp4
+        poster: /media/trip-planner.jpg
+        alt: "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then a hotel card with a photo, a payment step and a dinner choice appear in the conversation"
+        width: 1024
+        height: 768
+      - title: For AI engineers, the Prompt Studio
+        body: A one-line prompt scores 2.2 out of 10. An optimization rewrites it in three rounds, and the new prompt scores 10. Then its test cases run.
+        video: /media/prompt-studio.mp4
+        poster: /media/prompt-studio.jpg
+        alt: "A recording of the Prompt Studio: a one-line prompt scores 2.2 out of 10, an optimization rewrites it in three rounds, the new prompt scores 10, then a test case runs"
+    note: Recorded from the product, played faster.
+
+  - type: home
+    block: ladder
+
+  - type: steps
+    eyebrow: Community edition
+    title: Up and running
+    accent: in four steps.
+    items:
+      - title: Get Docker
+        body: Docker Desktop on Windows or macOS, Docker Engine on Linux.
+      - title: Start Agentivity
+        body: One command. Your data is kept in a Docker volume, so it survives a restart or an update.
+        command: docker run -d --name agentivity -p 5005:5005 -v agentivity-data:/app/_data agentivitylabs/agentivity
+      - title: Open the Studio
+        body: "In your browser, on the machine where it runs: http://localhost:5005"
+      - title: Connect an AI model
+        body: "Add the key of the provider you use: OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock. Then create your first agent and run it."
+    link:
+      label: Full install guide
+      href: /community
+
+  - type: faq
+    title: Questions
+    items:
+      - q: Is it free?
+        a: The Community edition is free forever and runs on your own machine or server. You pay your AI model provider directly. Hosted plans are on the way.
+      - q: Do I need to code?
+        a: No. You describe a role in plain words, as you would for a new colleague, and you drag specialists into a team. Or you tell the Assistant what you need.
+      - q: Where does my data go?
+        a: Agents, teams, workflows, tables and settings stay in the agentivity-data volume, on your server. What you send in an AI step goes to the model provider you chose.
+      - q: Is it ready for production?
+        a: It is in beta. There is no login yet, so keep it on a network you trust, never directly on the internet.
+
+  - type: cta
+    title: Your team is ready
+    accent: to work.
+    sub: Be first in line when the hosted plans open. The first 20 also get an AI team built for them.
+    submit: Get early access
+    fine: No spam. First access when the cloud launches.
+    secondary:
+      label: Self-hosting? The Community edition is free.
+      href: /community

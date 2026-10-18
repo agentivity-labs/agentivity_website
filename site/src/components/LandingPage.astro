@@ -1,0 +1,287 @@
+---
+// A landing page, drawn from one file of src/content/landings/<lang>/<slug>.yaml: a list of sections, each with its own
+// look. The header keeps only the logo, GitHub and the page's own button; the sign-up form counts the sign-up for this page.
+import type { CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import LandingAction from './LandingAction.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { entry: CollectionEntry<'landings'>; lang: Lang; slug: string; }
+const { entry, lang, slug } = Astro.props;
+const page = entry.data;
+const h = useTranslations(lang).home;
+const external = (href: string) => /^https?:\/\//.test(href);
+---
+<Base title={page.title} description={page.description} lang={lang} ogImage={page.ogImage} noindex={page.noindex} alternates={false} look="editorial">
+
+<SiteHeader lang={lang} minimal waitlistHref={page.header.href} ctaLabel={page.header.label} />
+
+<main class="lp ed-page">
+  {page.sections.map((s) => {
+    switch (s.type) {
+      case 'banner':
+        return (
+          <div class="lp-banner">
+            <div class="ed-wrap lp-banner-inner">
+              <strong>{s.text}</strong>
+              {s.detail && <span>{s.detail}</span>}
+            </div>
+          </div>
+        );
+
+      case 'hero':
+        return (
+          <section class="ed-wrap lp-hero">
+            <div class="lp-hero-copy">
+              {s.eyebrow && <p class="ed-eyebrow">{s.eyebrow}</p>}
+              <h1>{s.title} {s.accent && <em class="ed-mark">{s.accent}</em>}</h1>
+              <p class="lp-hero-sub">{s.sub}</p>
+              {s.form && (
+                <div class="lp-hero-form" id="get-access">
+                  <WaitlistForm lang={lang} tone="light" landing={slug} submitLabel={s.form.submit} />
+                  {s.form.fine && <p class="lp-hero-fine">{s.form.fine}</p>}
+                </div>
+              )}
+              {(s.primary || s.secondary) && (
+                <div class="lp-actions">
+                  {s.primary && <LandingAction action={s.primary} kind="ed-btn--navy" />}
+                  {s.secondary && <LandingAction action={s.secondary} kind={s.form ? "ed-btn--line ed-btn--sm" : "ed-btn--line"} />}
+                </div>
+              )}
+              {s.note && <p class="lp-note">{s.note}</p>}
+            </div>
+            {s.film && (
+              <figure class="lp-hero-film">
+                <video muted loop playsinline autoplay preload="auto" poster={s.film.poster} width="1600" height="900" aria-label={s.film.alt}>
+                  <source src={s.film.video} type="video/mp4" />
+                </video>
+              </figure>
+            )}
+          </section>
+        );
+
+      case 'home':
+        if (s.block === 'values') {
+          return (
+            <section class="ed-wrap">
+              <ul class="lp-values">
+                {h.values.map((value) => <li><strong>{value.title}</strong><span>{value.body}</span></li>)}
+              </ul>
+            </section>
+          );
+        }
+        return (
+          <section class="ed-band--mist">
+            <div class="ed-wrap ed-sec">
+              <header class="ed-sec-head">
+                <p class="ed-eyebrow">{h.ladder.eyebrow}</p>
+                <h2 class="ed-h2">{h.ladder.h2} <em>{h.ladder.h2_accent}</em></h2>
+                <p class="ed-sec-sub">{h.ladder.sub}</p>
+              </header>
+              <ol class="lp-ladder">
+                {h.ladder.steps.map((step: any, i: number) => (
+                  <li class:list={['lp-rung', { 'lp-rung--next': Boolean(step.note) }]}>
+                    <div class="lp-rung-top"><span class="lp-rung-num">{i + 1}</span><span class="lp-rung-tag">{step.tag}</span></div>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                    {step.gain && <p class="lp-rung-foot"><strong>{step.gain}</strong> <span>· {h.ladder.example}</span></p>}
+                    {step.note && <p class="lp-rung-foot lp-rung-foot--note">{step.note}</p>}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        );
+
+      case 'offer':
+        return (
+          <section class="ed-band--navy" id={s.id}>
+            <div class="ed-wrap ed-sec">
+              <header class="ed-sec-head">
+                {s.eyebrow && <p class="ed-eyebrow lp-on-navy">{s.eyebrow}</p>}
+                <h2 class="ed-h2">{s.title} {s.accent && <em>{s.accent}</em>}</h2>
+              </header>
+              <ol class="lp-offer">
+                {s.items.map((item, i) => (
+                  <li>
+                    <span class="lp-offer-num">{i + 1}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                    {item.action && <LandingAction action={item.action} kind="ed-btn--yellow ed-btn--sm" />}
+                  </li>
+                ))}
+              </ol>
+              {s.fine && <p class="lp-fine lp-on-navy">{s.fine}</p>}
+            </div>
+          </section>
+        );
+
+      case 'clips':
+        return (
+          <section class="ed-wrap ed-sec">
+            <header class="ed-sec-head">
+              {s.eyebrow && <p class="ed-eyebrow">{s.eyebrow}</p>}
+              <h2 class="ed-h2">{s.title} {s.accent && <em>{s.accent}</em>}</h2>
+              {s.sub && <p class="ed-sec-sub">{s.sub}</p>}
+            </header>
+            <div class="lp-clips">
+              {s.items.map((item) => (
+                <figure class="lp-clip">
+                  <div class="lp-clip-media">
+                    <video muted loop playsinline preload="none" poster={item.poster} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
+                      <source src={item.video} type="video/mp4" />
+                    </video>
+                  </div>
+                  <figcaption><strong>{item.title}</strong><span>{item.body}</span></figcaption>
+                </figure>
+              ))}
+            </div>
+            {s.note && <p class="lp-note lp-note--center">{s.note}</p>}
+          </section>
+        );
+
+      case 'steps':
+        return (
+          <section class="ed-band--mist">
+            <div class="ed-wrap ed-sec">
+              <header class="ed-sec-head">
+                {s.eyebrow && <p class="ed-eyebrow">{s.eyebrow}</p>}
+                <h2 class="ed-h2">{s.title} {s.accent && <em>{s.accent}</em>}</h2>
+              </header>
+              <ol class="ed-rows ed-rows--num lp-steps">
+                {s.items.map((item, i) => (
+                  <li>
+                    <span class="ed-rows-n" aria-hidden="true">{i + 1}</span>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <span>{item.body}</span>
+                      {item.command && <code class="lp-command">{item.command}</code>}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              {s.link && <a class="ed-link" href={s.link.href}>{s.link.label}</a>}
+            </div>
+          </section>
+        );
+
+      case 'faq':
+        return (
+          <section class="ed-wrap ed-sec lp-faq-sec">
+            <header class="ed-sec-head">
+              {s.eyebrow && <p class="ed-eyebrow">{s.eyebrow}</p>}
+              <h2 class="ed-h2 ed-h2--md">{s.title}</h2>
+            </header>
+            <div class="lp-faq">
+              {s.items.map((item) => (
+                <details>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        );
+
+      case 'cta':
+        return (
+          <section class="ed-band--yellow" id={s.id}>
+            <div class="ed-wrap ed-final">
+              <h2>{s.title} {s.accent && <em>{s.accent}</em>}</h2>
+              {s.sub && <p class="ed-final-sub">{s.sub}</p>}
+              <div class="ed-final-form">
+                <WaitlistForm lang={lang} tone="light" landing={slug} submitLabel={s.submit} />
+              </div>
+              {s.fine && <p class="ed-final-fine">{s.fine}</p>}
+              {s.secondary && <a class="ed-link" href={s.secondary.href} {...(external(s.secondary.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{s.secondary.label}</a>}
+            </div>
+          </section>
+        );
+    }
+  })}
+</main>
+
+<SiteFooter lang={lang} />
+<VideoAutoplay />
+
+</Base>
+
+<style>
+.lp-banner { background: var(--ed-navy); color: #fff; }
+.lp-banner-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 14px; padding-block: 14px; text-align: center; font-size: 16px; }
+.lp-banner strong { color: var(--ed-yellow); font-weight: 700; }
+.lp-banner span { color: var(--ed-on-navy); }
+
+.lp-hero { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 3.5vw, 56px); align-items: center; padding-block: clamp(40px, 5vw, 72px) clamp(40px, 5vw, 64px); }
+.lp-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.lp-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 5.3vw, 86px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.lp-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 33em; }
+.lp-hero-film { margin: 0; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: var(--ed-navy); box-shadow: 0 40px 70px -40px rgba(16, 26, 46, .65); }
+.lp-hero-film video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lp-hero-form { width: 100%; max-width: 560px; scroll-margin-top: 120px; }
+.lp-hero-form :global(.wl) { margin-inline: 0; max-width: none; }
+.lp-hero-form :global(.wl-row) { justify-content: flex-start; }
+.lp-hero-fine { margin-top: 12px; font-size: 15px; color: var(--ed-ink-2); }
+.lp-hero-fine strong { color: var(--ed-ink); }
+.lp-actions { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; }
+.lp-note { font-size: 15px; color: var(--ed-ink-3); }
+.lp-note--center { text-align: center; margin-top: 28px; }
+@media (max-width: 960px) {
+  .lp-hero { grid-template-columns: minmax(0, 1fr); }
+  .lp-hero-copy { align-items: center; text-align: center; }
+  .lp-actions { justify-content: center; }
+  .lp-hero-form :global(.wl-row) { justify-content: center; }
+}
+
+.lp-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px 32px; padding-bottom: clamp(56px, 7vw, 88px); }
+.lp-values li { display: flex; flex-direction: column; gap: 4px; border-top: 2px solid var(--ed-ink); padding-top: 14px; }
+.lp-values strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.1; }
+.lp-values span { font-size: 15px; color: var(--ed-ink-3); }
+
+.lp-on-navy { color: var(--ed-on-navy); }
+.lp-offer { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 24px; }
+.lp-offer li { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; border: 1px solid var(--ed-navy-line); border-radius: 24px; padding: clamp(24px, 3vw, 36px); background: var(--ed-navy-2); color: var(--ed-on-navy); }
+.lp-offer-num { width: 40px; height: 40px; border-radius: 999px; background: var(--ed-yellow); color: var(--ed-ink); display: grid; place-items: center; font-weight: 700; }
+.lp-offer h3 { font-family: var(--ed-serif); font-size: clamp(30px, 3vw, 40px); line-height: 1.05; color: #fff; }
+.lp-offer p { font-size: 17.5px; }
+.lp-fine { margin-top: 26px; font-size: 15px; }
+
+.lp-clips { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 28px; }
+.lp-clip { display: flex; flex-direction: column; border: 1px solid var(--ed-line); border-radius: 24px; overflow: hidden; background: #fff; }
+.lp-clip-media { border-bottom: 1px solid var(--ed-line); background: #F3F4F7; }
+.lp-clip-media video { display: block; width: 100%; height: clamp(240px, 24vw, 340px); object-fit: contain; }
+.lp-clip figcaption { display: flex; flex-direction: column; gap: 6px; padding: 20px 24px 24px; color: var(--ed-ink-2); }
+.lp-clip figcaption strong { font-size: 21px; font-weight: 700; letter-spacing: -.01em; color: var(--ed-ink); }
+
+.lp-ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; }
+.lp-rung { display: flex; flex-direction: column; gap: 14px; background: #fff; border-radius: 24px; padding: 26px 24px 28px; color: var(--ed-ink-2); }
+.lp-rung-top { display: flex; align-items: center; gap: 12px; }
+.lp-rung-num { flex: none; width: 40px; height: 40px; border-radius: 999px; background: var(--ed-navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
+.lp-rung-tag { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.lp-rung h3 { font-family: var(--ed-serif); font-size: 34px; line-height: 1.05; color: var(--ed-ink); }
+.lp-rung-foot { margin-top: auto; border-top: 1px solid var(--ed-line); padding-top: 12px; }
+.lp-rung-foot strong { font-weight: 700; color: var(--ed-ink); }
+.lp-rung-foot span { color: var(--ed-ink-3); }
+.lp-rung--next { background: var(--ed-navy); color: var(--ed-on-navy); }
+.lp-rung--next .lp-rung-num { background: var(--ed-yellow); color: var(--ed-ink); }
+.lp-rung--next .lp-rung-tag { color: var(--ed-yellow); }
+.lp-rung--next h3 { color: #fff; }
+.lp-rung-foot--note { border-top-color: var(--ed-navy-line); font-size: 15.5px; }
+
+.lp-steps { max-width: 860px; }
+.lp-command { display: block; margin-top: 10px; padding: 12px 14px; border-radius: 10px; background: var(--ed-navy); color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; user-select: all; }
+
+.lp-faq { display: flex; flex-direction: column; max-width: 860px; }
+.lp-faq details { border-top: 1px solid var(--ed-line-2); }
+.lp-faq details:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.lp-faq summary { cursor: pointer; padding-block: 20px; font-size: 19px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+.lp-faq summary::-webkit-details-marker { display: none; }
+.lp-faq summary::after { content: '+'; font-weight: 400; font-size: 24px; line-height: 1; }
+.lp-faq details[open] summary::after { content: '–'; }
+.lp-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
+</style>

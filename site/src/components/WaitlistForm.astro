@@ -7,11 +7,15 @@ interface Props {
   informal?: boolean;
   /** 'light' when the form sits on a light or yellow background (editorial pages). */
   tone?: 'dark' | 'light';
+  /** The slug of the landing page the form is on: the sign-up is then counted for that page and its campaign. */
+  landing?: string;
+  /** Replaces the label of the button. */
+  submitLabel?: string;
 }
 
-const { lang, informal = false, tone = 'dark' } = Astro.props;
+const { lang, informal = false, tone = 'dark', landing, submitLabel } = Astro.props;
 const t = useTranslations(lang);
-const text = { ...t.waitlist, ...(informal && 'waitlist_informal' in t ? t.waitlist_informal : {}) };
+const text = { ...t.waitlist, ...(informal && 'waitlist_informal' in t ? t.waitlist_informal : {}), ...(submitLabel ? { submit: submitLabel } : {}) };
 
 const privacyHref = lang === 'fr' ? '/fr/legal/privacy' : '/legal/privacy';
 const [consentBefore, consentAfter] = text.consent.split('{privacy}');
@@ -28,7 +32,7 @@ const messages = {
   errorRate: text.error_rate,
 };
 ---
-<form class:list={['wl', { 'wl--light': tone === 'light' }]} data-waitlist data-lang={lang} data-messages={JSON.stringify(messages)}>
+<form class:list={['wl', { 'wl--light': tone === 'light' }]} data-waitlist data-lang={lang} data-landing={landing} data-messages={JSON.stringify(messages)}>
   <div class="wl-fields">
     <div class="wl-row">
       <input
@@ -61,6 +65,15 @@ const messages = {
   const SOURCE = 'waitlist-site';
 
   type Messages = Record<string, string>;
+
+  // Where the visitor came from, read from the address of the page: ref (added by Product Hunt and others) and utm_*.
+  function campaignFromUrl(): string {
+    const params = new URLSearchParams(location.search);
+    return ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content']
+      .filter((key) => params.get(key))
+      .map((key) => key + '=' + params.get(key))
+      .join('&');
+  }
 
   function show(status: HTMLElement, kind: 'success' | 'error', title: string, detail?: string) {
     status.replaceChildren();
@@ -107,6 +120,8 @@ const messages = {
       if (button.disabled) return;
 
       const data = new FormData(form);
+      const landing = form.dataset.landing;
+      const campaign = campaignFromUrl();
       status.hidden = true;
       setLoading(true);
 
@@ -116,16 +131,20 @@ const messages = {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: String(data.get('email') ?? '').trim(),
-            source: SOURCE,
+            source: landing ? 'landing-page' : SOURCE,
             language: form.dataset.lang,
             consent: data.get('consent') === 'on',
             website: String(data.get('website') ?? ''),
+            ...(landing ? { landing, ...(campaign ? { campaign } : {}) } : {}),
           }),
         });
         const payload = await response.json().catch(() => ({}));
 
         if (response.ok) {
           const already = payload.status === 'already_subscribed';
+          // Counted by Tag Manager only when the visitor accepted the cookies (it is not loaded otherwise).
+          const w = window as any;
+          (w.dataLayer = w.dataLayer || []).push({ event: 'sign_up', signup_source: landing ? 'landing-page' : SOURCE, landing: landing ?? '', campaign, already_subscribed: already });
           form.classList.add('is-done');
           show(
             status,

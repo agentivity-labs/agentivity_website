@@ -377,3 +377,56 @@ test('the Brevo error is logged with the email and key masked, and never sent to
     assert.ok(!line.toLowerCase().includes('jane.doe'));
   }
 });
+
+test('a landing page sign-up sends its landing and campaign to Brevo', async () => {
+  const { handler, calls } = setup();
+  const res = await call(handler, { body: validBody({ source: 'landing-page', landing: 'producthunt', campaign: 'ref=producthunt' }) });
+
+  assert.equal(res.statusCode, 200);
+  assert.equal(calls.length, 1);
+  assert.deepEqual(calls[0].body.attributes, { SOURCE: 'landing-page', LANGUAGE: 'en', CONSENT_DATE: '2026-10-08', LANDING: 'producthunt', CAMPAIGN: 'ref=producthunt' });
+});
+
+test('a landing page without a valid slug is refused, and the other sources take no landing', async () => {
+  const { handler, calls } = setup();
+  for (const body of [
+    validBody({ source: 'landing-page' }),
+    validBody({ source: 'landing-page', landing: 'Product Hunt' }),
+    validBody({ source: 'landing-page', landing: 'x'.repeat(49) }),
+    validBody({ landing: 'producthunt' }),
+    validBody({ campaign: 'ref=producthunt' }),
+  ]) {
+    const res = await call(handler, { body });
+    assert.equal(res.statusCode, 400);
+    assert.deepEqual(res.payload, { error: 'invalid_landing' });
+  }
+  assert.equal(calls.length, 0);
+});
+
+test('the campaign is cleaned and shortened, never a reason to refuse', async () => {
+  const { handler, calls } = setup();
+  await call(handler, { body: validBody({ source: 'landing-page', landing: 'producthunt', campaign: '<b>utm_source=ph</b>;' + 'a'.repeat(200) }) });
+  const campaign = calls[0].body.attributes.CAMPAIGN;
+  assert.ok(!/[<>;]/.test(campaign));
+  assert.ok(campaign.startsWith('butm_source=ph/b'));
+  assert.equal(campaign.length, 120);
+
+  await call(handler, { body: validBody({ source: 'landing-page', landing: 'producthunt' }), headers: { 'x-real-ip': '203.0.113.8' } });
+  assert.ok(!('CAMPAIGN' in calls[1].body.attributes));
+});
+
+test('when Brevo does not know the landing attributes, the visitor is signed up as from the site', async () => {
+  let attempt = 0;
+  const { handler, calls, logs } = setup({
+    brevo: () => (++attempt === 1
+      ? brevoResponse(400, { code: 'invalid_parameter', message: 'Attribute LANDING does not exist' })
+      : brevoResponse(201, {})),
+  });
+  const res = await call(handler, { body: validBody({ source: 'landing-page', landing: 'producthunt', campaign: 'ref=producthunt' }) });
+
+  assert.equal(res.statusCode, 200);
+  assert.deepEqual(res.payload, { ok: true, status: 'pending_confirmation' });
+  assert.equal(calls.length, 2);
+  assert.deepEqual(calls[1].body.attributes, { SOURCE: 'waitlist-site', LANGUAGE: 'en', CONSENT_DATE: '2026-10-08' });
+  assert.ok(logs.some((line) => line.includes('brevo_landing_attributes_missing')));
+});

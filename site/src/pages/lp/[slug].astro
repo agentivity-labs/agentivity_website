@@ -1,0 +1,13 @@
+---
+// The English landing pages: src/content/landings/en/<slug>.yaml, served at /lp/<slug>.
+import { getCollection } from 'astro:content';
+import LandingPage from '../../components/LandingPage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('landings', (entry) => entry.id.startsWith('en/'));
+  return entries.map((entry) => ({ params: { slug: entry.id.slice('en/'.length) }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { slug } = Astro.params;
+---
+<LandingPage entry={entry} lang="en" slug={slug} />

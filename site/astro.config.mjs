@@ -56,6 +56,8 @@ export default defineConfig({
       },
     }),
     sitemap({
+      // Landing pages under /lp/ are campaign pages, not indexed (noindex): they stay out of the sitemap too.
+      filter: (page) => !new URL(page).pathname.startsWith('/lp/'),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en-US', fr: 'fr-FR' },

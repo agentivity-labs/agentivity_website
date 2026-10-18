@@ -1,0 +1,9 @@
+---
+// A button of a landing page: an outside address opens in a new tab.
+import GitHubIcon from './GitHubIcon.astro';
+
+interface Props { action: { label: string; href: string; github?: boolean }; kind: string; }
+const { action, kind } = Astro.props;
+const external = /^https?:\/\//.test(action.href);
+---
+<a class={'ed-btn ' + kind} href={action.href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{action.github && <GitHubIcon />}{action.label}</a>

@@ -10,9 +10,15 @@ const REDIRECTION_URLS = {
   fr: 'https://www.agentivity.io/fr/merci',
 };
 
-const SOURCES = ['waitlist-site', 'community-install', 'newsletter'];
+// 'landing-page': every landing page, told apart by LANDING (its slug) and CAMPAIGN (where the visitor came from), two text
+// attributes of Brevo, so that a new landing page needs nothing new in Brevo.
+const SOURCES = ['waitlist-site', 'community-install', 'newsletter', 'landing-page'];
 const LANGUAGES = ['en', 'fr'];
-const ALLOWED_FIELDS = new Set(['email', 'source', 'language', 'consent', 'website']);
+const ALLOWED_FIELDS = new Set(['email', 'source', 'language', 'consent', 'website', 'landing', 'campaign']);
+const LANDING_PATTERN = /^[a-z0-9][a-z0-9-]{0,47}$/;
+const MAX_CAMPAIGN_LENGTH = 120;
+// When the landing attributes are missing in Brevo, a sign-up from a landing page goes through as one from the site.
+const FALLBACK_SOURCE = 'waitlist-site';
 
 const MAX_EMAIL_LENGTH = 254;
 const MAX_LOCAL_PART_LENGTH = 64;
@@ -121,7 +127,16 @@ function validate(body) {
   const language = body.language === undefined ? 'en' : body.language;
   if (!LANGUAGES.includes(language)) return { error: 'invalid_language' };
 
-  return { value: { email, source: body.source, language } };
+  if (body.source !== 'landing-page') {
+    if (body.landing !== undefined || body.campaign !== undefined) return { error: 'invalid_landing' };
+    return { value: { email, source: body.source, language } };
+  }
+  if (typeof body.landing !== 'string' || !LANDING_PATTERN.test(body.landing)) return { error: 'invalid_landing' };
+  // The campaign comes from the address (utm_*, ref): kept readable and short, never a reason to refuse a sign-up.
+  const campaign = typeof body.campaign === 'string'
+    ? body.campaign.replace(/[^\w .:/+=&-]/g, '').trim().slice(0, MAX_CAMPAIGN_LENGTH)
+    : '';
+  return { value: { email, source: body.source, language, landing: body.landing, campaign } };
 }
 
 // Brevo's wording is only ever written to our own logs, never returned to the client.
@@ -135,7 +150,10 @@ function redactForLog(text, secrets) {
     .slice(0, MAX_LOGGED_MESSAGE_LENGTH);
 }
 
-async function callBrevo({ fetchImpl, apiKey, email, source, language, today }) {
+async function callBrevo({ fetchImpl, apiKey, email, source, language, today, landing, campaign }) {
+  const attributes = { SOURCE: source, LANGUAGE: language, CONSENT_DATE: today };
+  if (landing) attributes.LANDING = landing;
+  if (campaign) attributes.CAMPAIGN = campaign;
   const response = await fetchImpl(BREVO_URL, {
     method: 'POST',
     headers: {
@@ -148,7 +166,7 @@ async function callBrevo({ fetchImpl, apiKey, email, source, language, today }) 
       includeListIds: LIST_IDS,
       templateId: TEMPLATE_IDS[language],
       redirectionUrl: REDIRECTION_URLS[language],
-      attributes: { SOURCE: source, LANGUAGE: language, CONSENT_DATE: today },
+      attributes,
     }),
     signal: AbortSignal.timeout(BREVO_TIMEOUT_MS),
   });
@@ -231,12 +249,14 @@ export function createHandler({
 
     let result;
     try {
-      result = await callBrevo({
-        fetchImpl,
-        apiKey,
-        ...checked.value,
-        today: new Date(now()).toISOString().slice(0, 10),
-      });
+      const today = new Date(now()).toISOString().slice(0, 10);
+      result = await callBrevo({ fetchImpl, apiKey, ...checked.value, today });
+      // A landing page whose attributes Brevo does not know yet: the visitor is still signed up, as from the site.
+      if (checked.value.landing && result.outcome === 'upstream_error' && result.status === 400 && /attribute/i.test(result.message)) {
+        log('warn', 'brevo_landing_attributes_missing', { landing: checked.value.landing, brevoCode: result.code, brevoMessage: result.message });
+        const { email, language } = checked.value;
+        result = await callBrevo({ fetchImpl, apiKey, email, language, source: FALLBACK_SOURCE, today });
+      }
     } catch (error) {
       log('error', 'brevo_unreachable', { reason: error?.name ?? 'unknown' });
       return send(res, 502, { error: 'upstream_error' });

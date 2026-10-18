@@ -13,8 +13,10 @@ interface Props {
   /** Where the language switch goes, for a page whose two versions are not at / and /fr/ (the documentation). */
   hrefEn?: string;
   hrefFr?: string;
+  /** A landing page: the logo, GitHub and the button only, so that the page keeps the visitor on its own action. */
+  minimal?: boolean;
 }
-const { lang, waitlistHref, ctaLabel, hrefEn = '/', hrefFr = '/fr/' } = Astro.props;
+const { lang, waitlistHref, ctaLabel, hrefEn = '/', hrefFr = '/fr/', minimal = false } = Astro.props;
 const t = useTranslations(lang);
 const home = lang === 'fr' ? '/fr/' : '/';
 const cta = waitlistHref ?? home + '#cta';
@@ -23,27 +25,31 @@ const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
 ---
 
-<header class:list={['sh', { 'sh--long': lang === 'fr' }]}>
+<header class:list={['sh', { 'sh--long': lang === 'fr', 'sh--minimal': minimal }]}>
   <div class="ed-wrap sh-inner">
     <a class="sh-brand" href={home} aria-label="Agentivity">
       <img src="/agentivity-wordmark-navy.svg" alt="Agentivity" width="108" height="30" />
     </a>
 
-    <nav class="sh-links" aria-label={navLabel}>
-      {t.nav.links.map((link) => <a href={link.href}>{link.label}</a>)}
-    </nav>
+    {!minimal && (
+      <nav class="sh-links" aria-label={navLabel}>
+        {t.nav.links.map((link) => <a href={link.href}>{link.label}</a>)}
+      </nav>
+    )}
 
     <div class="sh-actions">
       <slot />
       <a class="sh-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon size={17} /><span class="sh-github-text">{t.site.github}</span></a>
       <a class="ed-btn ed-btn--sm ed-btn--navy" href={cta}>{ctaText}</a>
-      <div class="sh-lang" role="group" aria-label="Language">
-        <a href={hrefEn} class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
-        <a href={hrefFr} class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
-      </div>
-      <button class="sh-burger" type="button" aria-label={menuLabel} aria-expanded="false" aria-controls="sh-menu">
+      {!minimal && (
+        <div class="sh-lang" role="group" aria-label="Language">
+          <a href={hrefEn} class:list={[{ active: lang === 'en' }]} aria-label="English" hreflang="en">EN</a>
+          <a href={hrefFr} class:list={[{ active: lang === 'fr' }]} aria-label="Français" hreflang="fr">FR</a>
+        </div>
+      )}
+      {!minimal && <button class="sh-burger" type="button" aria-label={menuLabel} aria-expanded="false" aria-controls="sh-menu">
         <span></span><span></span><span></span>
-      </button>
+      </button>}
     </div>
   </div>
 
@@ -152,5 +158,9 @@ const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
   .sh-brand img { height: 26px; }
   .sh-actions > .ed-btn { display: none; }
   .sh-menu-cta { display: inline-flex; }
+}
+/* A landing page has no menu: its button stays in the bar on every screen. */
+@media (max-width: 560px) {
+  .sh--minimal .sh-actions > .ed-btn { display: inline-flex; }
 }
 </style>
