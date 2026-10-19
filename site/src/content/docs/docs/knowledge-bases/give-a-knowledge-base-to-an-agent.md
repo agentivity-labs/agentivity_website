@@ -25,8 +25,14 @@ In our example, the `Reminder Writer` must follow the payment terms of the compa
 3. Drag **Knowledge Base** onto the canvas, below the agent.
 4. Drag from its diamond to the diamond of the agent named **Knowledge Bases**. It is the second one from the left.
 5. Right-click the step and select **Edit**.
-6. Next to **Knowledge Base**, open the chooser, **Select a knowledge base**, and pick `Payment terms`. If you have none yet, **New knowledge base** creates one there, and it is read at once.
+6. Next to **The Knowledge Base it searches.**, select **Change…**. The chooser **Select a knowledge base** opens. Pick `Payment terms` and select **Select**. If you have none yet, **New knowledge base** creates one there, and it is read at once.
 7. Select **Apply**, then **Publish**.
+
+![The agent Reminder Writer on its canvas, with the step Payment terms, a Knowledge Base, linked to the second diamond from the left.](images/agent-with-knowledge-base.jpg)
+
+![The window of the step Knowledge Base: the base it searches, with a Change button, and the most passages given for one search, 5.](images/knowledge-base-step.jpg)
+
+![The chooser Select a knowledge base, with the base Payment terms and the button New knowledge base.](images/select-a-knowledge-base.jpg)
 
 You can plug several bases into the same diamond, one step for each. The agent then has one search for each base.
 
@@ -34,8 +40,8 @@ You can plug several bases into the same diamond, one step for each. The agent t
 
 | Setting | What it is |
 |---|---|
-| **Knowledge Base** | The base that the step searches. |
-| **Results** | The most passages given for one search. It is 5 at the start. You can choose from 1 to 20. |
+| **The Knowledge Base it searches.** | The base that the step searches. |
+| **Most passages given for one search.** | The number of passages given back for one search (`results` in the API and in a Template). It is 5 at the start. You can choose from 1 to 20. |
 
 ### How the agent searches
 

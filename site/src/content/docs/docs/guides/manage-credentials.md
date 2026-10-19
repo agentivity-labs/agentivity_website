@@ -44,7 +44,7 @@ The connections are sorted by what they are for. Each line shows the name, the s
 
 3. Select the service. The window **New credentials** opens.
 
-   ![The window New credentials for Anthropic: Name, Description, API Key marked as secret and required, Base URL and Default Model. This picture shows the form before the change: the field Model is now required, with no default](images/new-credentials.jpg)
+   ![The window New credentials for Anthropic: Name, Description, API Key marked as secret and required, Base URL filled in with https://api.anthropic.com, and Model, the last two marked as required](images/new-credentials.jpg)
 
 4. Give the connection a **Name** that you will recognise, for example `Claude for reminders`.
 5. Fill in the fields. Each one says whether it is **Required** or **Optional**, and whether it is a **SECRET**. The button with an eye shows what you typed in a secret field.

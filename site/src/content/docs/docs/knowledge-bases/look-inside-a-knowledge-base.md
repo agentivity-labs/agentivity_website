@@ -29,11 +29,15 @@ In **Resources** > **Knowledge Bases**, double-click the base. A window opens ov
 | **Kept up to date** | **By hand**, **When the source changes**, or "Every 24 h" with a delay. |
 | **Reads** | The kind of source. |
 
+![The window of the base Payment terms: the five figures (State, Holds, Last synchronised, Kept up to date, Reads), the three tabs and the list of its four documents.](images/knowledge-base-window.jpg)
+
 At the top right, **Synchronise** reads the source now. Three small buttons follow: **Edit**, **Empty** and **Delete**. See [Change, empty or delete a Knowledge Base](/docs/knowledge-bases/change-empty-or-delete-a-knowledge-base/).
 
 ## What could not be read
 
 If the last reading failed, or if part of it failed, a red frame titled **What could not be read** lists each problem, in the words of the server, with the kind of source it concerns. For example, a path that Agentivity refuses to read, or a web address that does not answer.
+
+![The window of a base in the state Failed: a red frame What could not be read says why, and the base holds no document.](images/failed-knowledge-base.jpg)
 
 ## The three tabs
 
@@ -47,6 +51,8 @@ Before the first reading, the tab says: "Nothing read yet: synchronise it, or it
 
 The tab **Try a search** lets you ask what an agent would ask.
 
+![The tab Try a search after the question "When is the second reminder sent?": four passages, the closest first, each with its score.](images/try-a-search.jpg)
+
 1. Type a question in **Try a question**, for example "Can I return my laptop?".
 2. Select **Search**.
 
@@ -59,6 +65,8 @@ This is the best way to improve a base. If the passage you expected does not com
 ### Used by
 
 The tab **Used by** lists the agents and workflows that use the base, each with its kind. If there is none: "No agent or workflow uses it yet." See [Give a Knowledge Base to an agent or a prompt](/docs/knowledge-bases/give-a-knowledge-base-to-an-agent/).
+
+![The tab Used by of the base Payment terms.](images/used-by-tab.jpg)
 
 ## How to know it worked
 

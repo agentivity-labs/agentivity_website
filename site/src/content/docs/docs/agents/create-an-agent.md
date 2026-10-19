@@ -11,9 +11,9 @@ lastUpdated: false
 
 An agent is one AI specialist with a role. To see what an agent is made of first, read [What an agent is made of](/docs/agents/what-an-agent-is/). This page builds an agent by hand. It takes more steps than the Assistant: to have an agent built from a description, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
-<video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: an agent named Reminder Writer is created, an Anthropic Model is dragged from the Node Catalog onto the canvas, linked to the first diamond of the agent, and the agent is published"></video>
+<video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: on the home page, Create new agent is selected, the name Reminder Writer is typed, the role is written, an Anthropic Model is dragged from the Node Catalog onto the canvas and linked to the first diamond of the agent"></video>
 
-The recording is played faster than real use. It stops before the credentials of the model are chosen.
+The recording stops before the agent is published and before the credentials of the model are chosen.
 
 ## What you need
 
@@ -22,7 +22,7 @@ The recording is played faster than real use. It stops before the credentials of
 
 ## Create the agent
 
-1. On the home page, select **Create new agent**. You can also open **Studio** > **Agents** and select **New agent**.
+1. On the home page, select **Create new agent**. You can also open **Studio** > **Agents** and select **New agent**. From the list, the new agent is added to the list and its editor does not open by itself: double-click it.
 2. In the window **New agent**, type the **Agent name**, for example `Reminder Writer`.
 3. Select **Create**.
 

@@ -31,7 +31,7 @@ If you prefer to look around first, select **Not now** or **Skip the guide**. Se
 
 Your agents need an AI model to think with.
 
-![Step 1 of the welcome guide, Connect your AI model: five providers to choose from, a field for the API key, and the button Skip for now. This picture shows the step before the change: there was one button, Check and save, and no choice of model](images/guide-step1.jpg)
+![Step 1 of the welcome guide, Connect your AI model: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a field for the API key, and the buttons Check the key and Skip for now](images/guide-step1.jpg)
 
 1. Choose your provider: **Claude**, **GPT**, **Gemini**, **Grok** or **DeepSeek**.
 2. Paste your API key in the field, then select **Check the key**. Agentivity asks the provider whether the key works. Nothing is saved yet. A key that the provider refuses shows the message of the provider.

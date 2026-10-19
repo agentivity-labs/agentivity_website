@@ -28,7 +28,7 @@ Agents need an AI model to think with. Agentivity does not provide one: you brin
 
 ## Connect your model the first time
 
-![Step 1 of the welcome guide, Connect your AI model: five providers and a field for the API key. This picture shows the step before the change: there was one button, Check and save, and no choice of model](images/guide-step1.jpg)
+![Step 1 of the welcome guide, Connect your AI model: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a field for the API key, and the buttons Check the key and Skip for now](images/guide-step1.jpg)
 
 1. Open the Studio. In the welcome guide, choose **Get started**, then the step **Connect your AI model**.
 2. Choose your provider.

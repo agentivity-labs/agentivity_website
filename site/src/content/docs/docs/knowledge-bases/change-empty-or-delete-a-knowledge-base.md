@@ -40,6 +40,8 @@ The explorer of **Knowledge Bases** has folders, as **Data Tables** has (see [Or
 
 Emptying removes what the base holds: its documents and its passages. The base, its source and its settings stay.
 
+![The window "Empty Payment terms?": the documents and passages go, the data source and settings stay.](images/empty-a-knowledge-base.jpg)
+
 1. Double-click the base, then select the button **Empty** (its name shows when you point at it).
 2. Read the question "Empty <name>?": "Its documents and passages go; its data source and settings stay. It fills again at its next synchronisation."
 3. Select **Empty**.
@@ -51,6 +53,8 @@ Use it when the source changed a lot and you want a clean start, or to remove wh
 1. Double-click the base, then select the bin, **Delete**. In the list, the menu of the line has **Delete** too.
 2. Read the warning. It says: "It is deleted with what it holds." If agents or workflows use the base, it names them: "These would no longer find anything in it", with the name and the kind of each.
 3. Select **Delete**.
+
+![The window "Delete Payment terms?", which names the agents that would no longer find anything in it.](images/delete-a-knowledge-base.jpg)
 
 This cannot be undone. The agents and workflows that used the base are not deleted, but their step **Knowledge Base** now points to nothing, and they find nothing. Give them another base: see [Give a Knowledge Base to an agent or a prompt](/docs/knowledge-bases/give-a-knowledge-base-to-an-agent/).
 

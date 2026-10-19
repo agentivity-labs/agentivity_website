@@ -11,6 +11,8 @@ lastUpdated: false
 
 You create a Knowledge Base in a window with three steps. The base reads its source as soon as it is created.
 
+<video controls muted playsinline preload="metadata" src="/docs-media/en/knowledge-bases/images/create-a-knowledge-base.mp4" aria-label="A recording of the Studio: in Resources > Knowledge Bases, New Knowledge Base is selected, the kind Files is chosen, the path /kb is typed, then the name Support FAQ and what it holds, and Create adds the base to the list"></video>
+
 ## What you need
 
 - Agentivity running, with the Studio open.
@@ -27,11 +29,15 @@ The window **New Knowledge Base** opens. A line under the title says: "What it r
 
 Choose the kind of source: **Text**, **Files**, **Web pages**, **Sitemap**, **RSS/Atom feed**, **API**, **PostgreSQL** or **SQLite**. Each choice says in a line what it reads. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/) for the list.
 
+![The window New Knowledge Base, step 1: eight cards, one per kind of source (API, Files, PostgreSQL, RSS/Atom feed, Sitemap, SQLite, Text, Web pages).](images/new-kb-what-it-reads.jpg)
+
 Select **Continue**. You can come back with **Back**, or with **Change** on the next step.
 
 ## Step 2: where it reads from
 
 The window shows the settings of the kind you chose. A setting marked with a star is needed. The others have a value already.
+
+![Step 2 of the window for the kind Files: the fields Path, Pattern, Include patterns and the switch Recursive.](images/new-kb-where-it-reads-from.jpg)
 
 The settings that matter least, such as delays and options for reading pages, wait under **More settings**. Select it to open them.
 
@@ -81,6 +87,8 @@ A path inside `/app` is refused: it is the installation of Agentivity, with its 
 | **What it holds** | A sentence on what is in the base, for example "The payment terms of the company." It is told to the agents with their search tool, so that they know when to search the base. |
 | **Synchronised** | How the base stays up to date: **By hand**, **After a delay** or **When the source changes**. See [Keep a Knowledge Base up to date](/docs/knowledge-bases/keep-a-knowledge-base-up-to-date/). |
 | **Delay (hours)** | Only with **After a delay**: a number of hours, at least 1. |
+
+![Step 3 of the window: the fields Name, What it holds and Synchronised, and the Create button.](images/new-kb-about-it.jpg)
 
 A line says: "It is synchronised once created."
 

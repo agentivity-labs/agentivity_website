@@ -75,11 +75,15 @@ On the other side:
 3. The window **Import a Template** shows what the Template is and what it will create.
 4. Select **Import**.
 
+![The window Import a Template: the name and description of the Template, a picture of what it holds, the line Will create: 1 agent · 2 knowledge bases, the folder where it goes, and the buttons Import and Choose another file.](images/import-a-template-window.jpg)
+
 The window counts what it will create, for example "Will create: 1 agent · 2 knowledge bases". The Knowledge Bases go in the folder you chose for the import, like the rest.
+
+![The window Template imported: what was created, the model connection the agent now uses, and the list To set up before it reads its documents, with the base Product manuals, its Path to fill in and a button Set up.](images/template-imported-with-a-base-to-set-up.jpg)
 
 A base that has nothing to fill in is read at once. A base that arrived without a setting waits: after the import, the window lists it under **To set up before it reads its documents**, with the settings to fill in and a button **Set up**. **Set up** opens the base on that setting. When you save, the base is read. An installation that cannot read a kind of source refuses the import and names the base.
 
-The import creates new copies: nothing they already have is changed. The imported agents then need a model connection: see "The model of the imported agents" in [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/).
+The import creates new copies: nothing they already have is changed. When you already have a model connection, the window of the end of the import says which one the imported agents now use. If you have none, they need one: see "The model of the imported agents" in [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/).
 
 ## How to know it worked
 

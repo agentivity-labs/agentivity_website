@@ -52,6 +52,8 @@ A workflow keeps four product sheets, then finds the laptops that fit a question
 4. Plug the In-Memory Vector Store into the diamond **Vector Store** of **both** steps.
 5. Run the workflow.
 
+![The workflow of example 1 on the canvas: the step Keep the sheets, then the step Find the laptops, then Show the result, and the In-Memory Vector Store plugged below into both Vector Store steps.](images/vector-store-workflow.jpg)
+
 What we saw: the first step gave `inserted` 4. The second step gave `count` 2 and `documents`: the Acme Book 13 first, with a score, then the Acme Pro 16. The accessories were left aside by the filter.
 
 ### The three operations
