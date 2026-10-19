@@ -19,7 +19,7 @@ An internet connection on the machine where Agentivity runs. The list comes from
 
 ## The list
 
-Each card is a Template. It shows a picture, the name, a short description, its tags, what it contains (for example "1 team · 9 agents · 5 data tables") and its author.
+Each card is a Template. It shows a picture, the name, a short description, its tags, what it contains (for example "1 team · 9 agents · 5 data tables", and the Knowledge Bases too, such as "1 team · 4 agents · 1 knowledge base") and its author.
 
 - **Search templates** finds a Template.
 - The buttons under the search field keep only the Templates that have one tag. **ALL** shows everything.

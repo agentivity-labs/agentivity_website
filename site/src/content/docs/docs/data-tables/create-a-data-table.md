@@ -1,6 +1,6 @@
 ---
 title: "Create a Data Table"
-description: "How to add a Data Table to your workspace, the problem that stops a new empty table from opening today, and the way that works."
+description: "How to create a Data Table in the Studio and give it its first columns."
 sidebar:
   order: 2
 editUrl: false
@@ -9,13 +9,13 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/data-tables/create-a-data-table.md. Do not edit here: edit the source and publish again. -->
 
-This page shows how a Data Table gets into your workspace. Read the section on the known problem first: in the version these pages were checked against, a table created by hand cannot be opened.
+This page shows how to create a Data Table in the Studio and give it its first columns.
 
 ## What you need
 
 - Agentivity running, with the Studio open.
 
-## Create a table by hand
+## Create the table
 
 1. In the menu on the left, open **Resources** > **Data Tables**.
 2. Select **New Data Table**.
@@ -24,17 +24,19 @@ This page shows how a Data Table gets into your workspace. Read the section on t
 
 The table appears in the list.
 
-## A known problem with a new table
+## Give it its columns
 
-A table created this way has no column yet. When you open it, the Studio shows "The request is invalid." and nothing else. The button **Add column** is on the screen that does not open, so you cannot add the first column from the Studio.
+1. Double-click the table to open it. A new table already has three columns that Agentivity fills itself: **id**,
+   **createdAt** and **updatedAt**. It says "No rows yet".
+2. Select **Add column**, at the top right.
+3. In **Column name**, type the name, for example `customer`. In **Type**, choose the kind of value, for example
+   **Text**. Select **Save**.
+4. Add the other columns the same way.
 
-![The screen of a new Data Table that has no column: only the message The request is invalid](images/new-table-error.jpg)
+The details of each setting of a column are in [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/).
 
-Until this is corrected, get a table the way below.
-
-## The way that works today
-
-**Import a Template that carries tables.** The showcases bring their tables with them: for example, **Trip Manager Team** adds two tables. See [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/). You can then add and remove columns in these tables: see [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/).
+A table can also come ready-made: a Template that carries tables adds them to your workspace when you import it. For
+example, **Trip Manager Team** adds two tables. See [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/).
 
 ## Name tables and columns well
 

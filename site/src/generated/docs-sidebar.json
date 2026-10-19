@@ -13,8 +13,8 @@
         "en": "Introduction",
         "fr": "Introduction"
       },
-      "total": 7,
-      "published": 7
+      "total": 8,
+      "published": 8
     },
     {
       "id": "getting-started",
@@ -49,8 +49,8 @@
         "en": "Workflows",
         "fr": "Workflows"
       },
-      "total": 9,
-      "published": 9
+      "total": 10,
+      "published": 10
     },
     {
       "id": "data-tables",
@@ -60,6 +60,15 @@
       },
       "total": 5,
       "published": 5
+    },
+    {
+      "id": "knowledge-bases",
+      "label": {
+        "en": "Knowledge Bases",
+        "fr": "Knowledge Bases"
+      },
+      "total": 6,
+      "published": 6
     },
     {
       "id": "prompts",
@@ -104,7 +113,7 @@
         "fr": "Espace de travail"
       },
       "total": 8,
-      "published": 7
+      "published": 8
     },
     {
       "id": "reference",

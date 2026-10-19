@@ -46,6 +46,14 @@ The details show:
 
 The arrow at the top left goes back to the list.
 
+### A run that waits for a person
+
+A workflow, an agent or a team that asks a person a question stops and waits. What we saw through the API on 2026-10-19, with a workflow that asks a question: the execution is **active** when it starts, **paused** while it waits, then **completed** once the question is answered. The run itself is in the state **waitingforinput**, which the details show as **WAITING FOR INPUT**.
+
+Between the answer and the end, the execution is active again while the work goes on. With a short workflow, this lasts too little to see.
+
+To answer, open the run in its editor and use the panel **Chat** of the tab **Execution**.
+
 ## Act on several runs at once
 
 1. Tick the box of each run. **Select page** ticks all the runs of the page, **Clear selection** unticks them.

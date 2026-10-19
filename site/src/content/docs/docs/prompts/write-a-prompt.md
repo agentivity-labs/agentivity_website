@@ -76,8 +76,6 @@ The tab **Settings** has the settings used when the prompt runs.
 
 From Claude 4.7 on, the models of Anthropic no longer use the temperature or Top P: the value of the step is ignored, with no error. Agentivity adapts its requests to each generation of Claude model, and there is nothing to set.
 
-See the known problem with **Provider credential** in [What Prompt Studio is for](/docs/prompts/what-prompt-studio-is/).
-
 ## Save
 
 Select **Save**, at the top right.

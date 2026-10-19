@@ -9,15 +9,38 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-tools.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The tools an agent can call. Each one is a resource that you plug into the place for tools of an AI Agent.
 
-This page lists 15 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 16 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## AI > Tools
 
 AI-callable tools and tool gateways.
+
+### AI Agent HTTP Request Tool
+
+Resource · in the catalogue: AI > Tools · type `ai.tools.http.request`
+
+Lets an agent call a web API or read a web page: it reads by default (GET), and may also send (POST, PUT, PATCH, DELETE) when that is allowed on the node. A page is given as plain text, JSON as data.
+
+**When to use it.** For an agent that works with a service that has a web API (looking up an order, creating a ticket), or that opens a web address it already has. Allow writing and limit the hosts to what the job needs. Not for finding pages: use a Web Search tool instead.
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | no |  | The HTTP API connection whose key signs every call, when the API needs one. Connection of type `http_api`. |
+| `allow_write` | Boolean | no | `false` | Let the agent send data (POST, PUT, PATCH, DELETE). Off: it only reads (GET, HEAD). |
+| `allowed_hosts` | Text | no |  | The hosts the agent may call, separated by commas (api.shop.com, docs.shop.com). Empty = any public address. |
+| `tool_name_prefix` | Text | no | `http` | Prefix of the tool's name, e.g. "shop" → shop_request. Needed when an agent has more than one HTTP Request tool connected: tool names must be unique per agent. |
+| `max_chars` | Number | no | `12000` | The most characters of an answer handed to the agent. |
+| `rate_limit_profile` | Choice | no | `medium` | How long to wait and try again when the service is busy (readings only). Choices: `none`, `fast`, `medium`, `slow`. |
+
+**Plugs into** a place that accepts `ai.node.tool.*`.
 
 ### AI Agent JavaScript Tool
 
@@ -25,31 +48,13 @@ Resource · in the catalogue: AI > Tools · type `ai.tools.code_javascript`
 
 Lets an AI agent run a JavaScript snippet (real, sandboxed Node.js) and use the result.
 
-**When to use it.** To let an agent write and run a small piece of JavaScript for exact calculations or reshaping data (sorting, filtering, converting a list). The code cannot reach files or the internet: to read a web page, use the Web Fetch Tool instead.
+**When to use it.** To let an agent write and run a small piece of JavaScript for exact calculations or reshaping data (sorting, filtering, converting a list). The code cannot reach files or the internet: to read a web page, use AI Agent Web Scraper Tool (Direct) instead.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `timeout_seconds` | Number | no | `5` | Execution timeout per call, in seconds. |
-
-**Plugs into** a place that accepts `ai.node.tool.*`.
-
-### AI Agent Web Fetch Tool
-
-Resource · in the catalogue: AI > Tools · type `ai.tools.webfetch`
-
-Fetches a web resource over HTTP(S) and returns normalized HTML, JSON, or text content for AI agents.
-
-**When to use it.** To let an agent open a web address it already has and read what is there: a page as plain text, or the data a JSON API returns. Not for finding pages: use a Web Search tool instead.
-
-**Effects.** reads outside.
-
-**Fields**
-
-| Name | Type | Required | Default | What it is |
-|---|---|---|---|---|
-| `rate_limit_profile` | Choice | no | `medium` | Rate limiting and retry profile. Choices: `none`, `fast`, `medium`, `slow`. |
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
@@ -110,7 +115,7 @@ Gives an agent a mailbox: search and read e-mails (IMAP), answer or write e-mail
 
 ## AI > Tools > Data
 
-AI tools that read and write Data Tables.
+AI tools that read and write Data Tables and Vector Stores.
 
 ### AI Agent Data Table Tool
 
@@ -137,6 +142,33 @@ Exposes CRUD on a shared Data Table asset as LLM-callable tools.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
+### AI Agent Vector Store Tool
+
+Resource · in the catalogue: AI > Tools > Data · type `ai.tools.vectorstore`
+
+Lets an AI agent search the connected Vector Store by meaning, and keep texts there when allowed.
+
+**When to use it.** To give an agent a memory it searches by meaning, and fills itself when storing is allowed: notes on customers, what it learned, answers it found. Connect a Vector Store to it (In-Memory lasts one run; Qdrant, Pinecone or pgvector keep the texts). For what an agent should know from documents, pages or feeds, use a Knowledge Base instead.
+
+**Effects.** writes in the workspace.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `name` | Text | yes | `documents` | Names the agent's tools: "Customer notes" gives search_customer_notes (and store_customer_notes). |
+| `description` | Text | no |  | What the texts are, said to the agent so it knows when to search them. |
+| `limit` | Number | no | `4` | The most texts one search gives. |
+| `allow_storing` | Boolean | no | `false` | Also let the agent keep texts in the Vector Store. |
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **Vector Store** | yes | `ai.vectorstore.*` | 1 |
+
+**Plugs into** a place that accepts `ai.node.tool.*`.
+
 ## AI > Tools > Documents
 
 AI tools that read documents (PDF, Word, text).
@@ -155,7 +187,7 @@ Lets an AI agent read a document the user uploaded in the chat (PDF, Word, plain
 
 AI tools for provider-based web scraping.
 
-### AI Tool - Web Scraper - Direct
+### AI Agent Web Scraper Tool (Direct)
 
 Resource · in the catalogue: AI > Tools > Scrappers · type `ai.tools.web.scraper.direct`
 
@@ -179,7 +211,7 @@ Exposes the direct web scraper to AI agents as a callable tool.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
-### AI Tool - Web Scraper - Firecrawl
+### AI Agent Web Scraper Tool (Firecrawl)
 
 Resource · in the catalogue: AI > Tools > Scrappers · type `ai.tools.web.scraper.firecrawl`
 
@@ -204,7 +236,7 @@ Exposes the Firecrawl web scraper to AI agents as a callable tool.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
-### AI Tool - Web Scraper - Jina
+### AI Agent Web Scraper Tool (Jina)
 
 Resource · in the catalogue: AI > Tools > Scrappers · type `ai.tools.web.scraper.jina`
 
@@ -232,13 +264,13 @@ Exposes the Jina Reader web scraper to AI agents as a callable tool.
 
 AI tools for provider-based web search.
 
-### AI Tool - Web Search - SearXNG
+### AI Agent Web Search Tool (SearXNG)
 
 Resource · in the catalogue: AI > Tools > Search · type `ai.tools.web.search.searxng`
 
 Exposes SearXNG web search to AI agents as a callable tool.
 
-**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) from a SearXNG server you run yourself; its address goes in the credentials. To read the pages found, also give the agent a Web Scraper tool.
+**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) from a SearXNG server you run yourself; its address goes in the credentials. To read the pages found, also give the agent an AI Agent Web Scraper Tool.
 
 **Effects.** reads outside, costs.
 
@@ -254,13 +286,13 @@ Exposes SearXNG web search to AI agents as a callable tool.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
-### AI Tool - Web Search - SerpApi
+### AI Agent Web Search Tool (SerpApi)
 
 Resource · in the catalogue: AI > Tools > Search · type `ai.tools.web.search.serpapi`
 
 Exposes SerpApi web search to AI agents as a callable tool.
 
-**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) through SerpApi, a paid service that needs a SerpApi API key. To read the pages found, also give the agent a Web Scraper tool.
+**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) through SerpApi, a paid service that needs a SerpApi API key. To read the pages found, also give the agent an AI Agent Web Scraper Tool.
 
 **Effects.** reads outside, costs.
 
@@ -276,13 +308,13 @@ Exposes SerpApi web search to AI agents as a callable tool.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
-### AI Tool - Web Search - Tavily
+### AI Agent Web Search Tool (Tavily)
 
 Resource · in the catalogue: AI > Tools > Search · type `ai.tools.web.search.tavily`
 
 Exposes Tavily web search to AI agents as a callable tool.
 
-**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) through Tavily, a paid service that needs a Tavily API key. To read the pages found, also give the agent a Web Scraper tool.
+**When to use it.** To let an agent search the web and get a list of results (title, address, short extract) through Tavily, a paid service that needs a Tavily API key. To read the pages found, also give the agent an AI Agent Web Scraper Tool.
 
 **Effects.** reads outside, costs.
 

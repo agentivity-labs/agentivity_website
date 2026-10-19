@@ -42,7 +42,7 @@ A step of a workflow is called a node. The **Node Catalog** holds all the nodes 
 
 | Category | What you find there |
 |---|---|
-| **AI** | Agents, AI models, memory, knowledge, tools for agents. |
+| **AI** | Agents, AI models, Knowledge Bases, Vector Stores, sessions, tools for agents. |
 | **Applications** | Steps that work with other applications. |
 | **Communication** | Steps that send messages. |
 | **Content** | Steps that build and change content. |

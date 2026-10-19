@@ -1,6 +1,6 @@
 ---
 title: "What an agent is made of"
-description: "An agent is one AI specialist. Its role, its instructions, its model, and the eight things you can plug into it, such as tools and memory."
+description: "An agent is one AI specialist. Its role, its instructions, its model, and the seven things you can plug into it, such as tools and knowledge."
 sidebar:
   order: 1
 editUrl: false
@@ -25,20 +25,21 @@ See [Create an agent](/docs/agents/create-an-agent/).
 
 ## What an agent looks like in the Studio
 
-In its editor, an agent is drawn as one large box, **AI Agent**, with a row of eight diamonds under it. Each diamond is a place where you plug something into the agent. What you plug in is drawn as a circle, linked to the diamond by a dotted line.
+In its editor, an agent is drawn as one large box, **AI Agent**, with a row of seven diamonds under it. Each diamond is a place where you plug something into the agent. What you plug in is drawn as a circle, linked to the diamond by a dotted line.
 
-## The eight diamonds, from left to right
+## The seven diamonds, from left to right
 
 | # | Name | What you plug in | Needed? |
 |---|---|---|---|
 | 1 | **LLM Model** | The AI model of the agent. One only. | Yes |
-| 2 | **LLM Memory** | A memory that finds, in the documents of the agent, the passages that fit the request. One only. | No |
-| 3 | **Knowledge Sources** | Documents the agent relies on: a text, files, web pages. Several are possible. | No |
-| 4 | **Human Loop Channel** | The way the agent reaches a person when it needs an answer. One only. | No |
-| 5 | **Agent Session** | A place to keep the conversation, so the agent remembers what was said before. One only. | No |
-| 6 | **AI Agent Tools** | Tools the agent can use: a calculator, a web search, a data table. Several are possible. | No |
-| 7 | **AI Agent Policies** | Rules applied to the way the agent runs. | No |
-| 8 | **AI Agent Guardrails** | Checks on what goes in and out of the agent, for example to block a word. | No |
+| 2 | **Knowledge Bases** | The documents the agent relies on, each with a **Knowledge Base** step. Several are possible. See [Give an agent knowledge and a memory](/docs/agents/give-memory-and-knowledge/). | No |
+| 3 | **Human Loop Channel** | The way the agent reaches a person when it needs an answer. One only. | No |
+| 4 | **Agent Session** | A place to keep the conversation, so the agent remembers what was said before. One only. | No |
+| 5 | **AI Agent Tools** | Tools the agent can use: a calculator, a web search, a data table. Several are possible. | No |
+| 6 | **AI Agent Policies** | Rules applied to the way the agent runs. | No |
+| 7 | **AI Agent Guardrails** | Checks on what goes in and out of the agent, for example to block a word. | No |
+
+To choose between instructions, a Data Table, a Knowledge Base, a session and a Vector Store, see [Where each kind of information goes](/docs/introduction/where-does-it-go/).
 
 An agent with a model and good instructions is already useful. Add the rest only when the job needs it.
 

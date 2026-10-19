@@ -44,14 +44,6 @@ In the menu on the left, open **Studio** > **Prompts**. The list shows your prom
 | **Debug console** | The history of what you ran, with the output of each run. |
 | **Save**, at the top right | Saves the prompt. |
 
-## A known problem with the model connection
-
-To run a prompt, Prompt Studio needs a model connection, chosen in the panel **Settings**. In the version these pages were checked against, the list **Provider credential** stays empty and says "No credential linked", even when a model connection exists in **Settings** > **Credentials**.
-
-![The panel Settings of Prompt Studio: Provider credential says No credential linked, and a red message asks to select an LLM credential before using Playground or Analyze](images/prompt-settings.jpg)
-
-While this is so, you can write and save a prompt, but **Run Prompt**, **Analyze** and the test cases cannot be used.
-
 ## What is not in the Community edition
 
 Keeping named versions of a prompt, and going back to one, is not in the Community edition.

@@ -22,6 +22,7 @@ Three lists have folders, each with its own:
 - **Studio** > **Agents**, for agents and teams;
 - **Studio** > **Workflows**, for workflows;
 - **Resources** > **Data Tables**, for data tables.
+- **Resources** > **Knowledge Bases**, for Knowledge Bases.
 
 In each list, the panel on the left shows the folders. A folder also appears as a line of the list, with **Folder** in the column **Type**.
 

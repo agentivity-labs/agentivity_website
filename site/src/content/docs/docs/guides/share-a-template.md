@@ -41,8 +41,22 @@ A Template is one file that holds a solution and everything it needs: the agent,
 
 Your browser saves a file whose name ends with `.template.json`.
 
+## The Knowledge Bases in a Template
+
+If the agents of your solution search Knowledge Bases, the Template carries those bases with the rest: the agents, the teams, the workflows and the data tables.
+
+**What travels** is the definition of each base: its kind of source, its settings, its name, what it holds, and how it is kept up to date. The window counts them in **What goes in the file**.
+
+**What never travels:**
+
+- **Its documents.** They are read again, on the machine where the Template is imported.
+- **The settings that belong to your server.** The path of a **Files** base, the file of a **SQLite** base, the connection string of a **PostgreSQL** base. The window names each base that travels without a setting, for example "Product manuals travels without its Path, which belongs to this installation: whoever imports it fills it in. Its documents do not travel either; they are read again there."
+
+The other kinds (**Text**, **Web pages**, **Sitemap**, **RSS/Atom feed**, **API**) travel as they are. For **Text**, that means the texts themselves.
+
 ## What the file does not contain
 
+- **The documents of your Knowledge Bases**, and the settings that belong to your server. See above.
 - **Your credentials.** A Template never carries a key. The window tells you what the person who imports it will need, for example a model connection.
 - **The history of your runs.**
 
@@ -60,6 +74,10 @@ On the other side:
 2. Select **Import from file**, at the top right, and choose the file.
 3. The window **Import a Template** shows what the Template is and what it will create.
 4. Select **Import**.
+
+The window counts what it will create, for example "Will create: 1 agent · 2 knowledge bases". The Knowledge Bases go in the folder you chose for the import, like the rest.
+
+A base that has nothing to fill in is read at once. A base that arrived without a setting waits: after the import, the window lists it under **To set up before it reads its documents**, with the settings to fill in and a button **Set up**. **Set up** opens the base on that setting. When you save, the base is read. An installation that cannot read a kind of source refuses the import and names the base.
 
 The import creates new copies: nothing they already have is changed. The imported agents then need a model connection: see "The model of the imported agents" in [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/).
 

@@ -57,6 +57,10 @@ In the menu on the left, open **Resources** > **Data Tables**.
 - Agentivity has no login. Anyone who can reach your server can read and change every table. Do not keep there what must stay private from the people who can reach the server.
 - Keeping earlier versions of a table is not in the Community edition.
 
+## Not the same as a Knowledge Base
+
+A Data Table holds rows, and an agent looks up or changes a value. A Knowledge Base holds texts, and an agent finds the passage that fits. See [Where each kind of information goes](/docs/introduction/where-does-it-go/).
+
 ## Next step
 
 [Create a Data Table](/docs/data-tables/create-a-data-table/).

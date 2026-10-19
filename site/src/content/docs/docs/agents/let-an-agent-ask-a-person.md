@@ -29,7 +29,7 @@ The channels are in the **Node Catalog**, under **AI** > **Interactions**.
 This page uses **Chat Channel**, which needs no account elsewhere.
 
 1. Drag **Chat Channel** onto the canvas, below the agent.
-2. Drag from its diamond to the fourth diamond of the agent, **Human Loop Channel**.
+2. Drag from its diamond to the diamond of the agent named **Human Loop Channel**.
 3. Select **Publish**.
 
 An agent has one channel only.

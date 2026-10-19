@@ -9,11 +9,11 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-content-and-web.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that read the web and documents, and the steps that build content.
 
-This page lists 20 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 21 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## Content
 
@@ -266,6 +266,48 @@ Converts DSL content to Markdown format
 
 Web scraping and content extraction.
 
+### HTTP Request
+
+Step · in the catalogue: Web · type `http.request`
+
+Calls a web API: GET, POST, PUT, PATCH, DELETE or HEAD, with parameters, headers and a body, and gives the status and the answer (as JSON when it is JSON).
+
+**When to use it.** To use a service that has a web API but no step of its own in the catalog: create or read a record, send data to another tool, call a webhook. Only public addresses can be called, never the local machine or a private network. To read a web page as text, use Scrape Web Page instead.
+
+**Example.** method: POST, url: https://api.example.com/orders, body: {"customer": "form.email"}
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `method` | Choice | no | `GET` | The HTTP method. Choices: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`. |
+| `url` | Text | yes |  | The address to call, in full (https://…). |
+| `query` | Structured | no |  | Parameters added to the address, as a JSON object: {"page": "2"}. |
+| `headers` | Structured | no |  | Headers sent with the call, as a JSON object: {"Accept": "application/json"}. Put a key in an HTTP API connection rather than here. |
+| `body` | Text | no |  | What is sent with POST, PUT, PATCH or DELETE — usually JSON. |
+| `content_type` | Choice | no |  | How the body is written (guessed from the body when left empty). Choices: `json`, `text`, `form`. |
+| `credentials` | Credentials | no |  | The HTTP API connection whose key signs the call, when the API needs one. Connection of type `http_api`. |
+| `timeout_seconds` | Number | no | `30` | How long to wait for the answer, in seconds. |
+| `max_response_chars` | Number | no | `100000` | The most characters of the answer kept. |
+| `rate_limit_profile` | Choice | no | `medium` | How long to wait and try again when the service is busy (readings only: a call that changes something is never sent twice). Choices: `none`, `fast`, `medium`, `slow`. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `status` | Number | The HTTP status the service answered (empty when it could not be called) |
+| `body` | Text | The answer, as text |
+| `json` | Structured | The answer read as JSON, when it is JSON |
+| `headers` | Structured | The headers of the answer, as a JSON object |
+| `url` | Text | The address that answered (after any redirect) |
+| `error` | Text | Why the call failed, when it did |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The service answered 2xx), **Error** (The service answered with an error, or could not be called — see 'error')
+
 ### Scrape Web Page
 
 Step · in the catalogue: Web · type `web.scrape`
@@ -283,7 +325,6 @@ Reads a web page as Markdown, ready for an LLM prompt. Uses the connected web sc
 | `url` | Text | yes |  | The page to read (http or https). |
 | `timeout_seconds` | Number | no | `30` | How long to wait for the page. |
 | `max_content_length` | Number | no | `50000` | Longest content kept, in characters. |
-| `allow_private_addresses` | Boolean | no | `false` | Allow links that point inside the backend's own network (localhost, private ranges). Leave off when the link comes from a person. |
 
 **Outputs**
 
@@ -357,13 +398,13 @@ Scrape web pages using Jina AI Reader (free, clean markdown output).
 
 Web search nodes backed by external search providers.
 
-### Web Search - SearXNG
+### Web Search (SearXNG)
 
-Resource · in the catalogue: Web > Search · type `web.search.searxng`
+Step · in the catalogue: Web > Search · type `web.search.searxng`
 
 Searches the web through a SearXNG instance and returns normalized organic results.
 
-**When to use it.** To set up a web search through a SearXNG server you run or trust, given by its address, with no paid account. To give search results to an AI step, use AI Knowledge - SearXNG instead.
+**When to use it.** To search the web in a workflow through a SearXNG server you run or trust, given by its address, with no paid account; the results go to the next steps. For an agent that searches by itself, use AI Agent Web Search Tool (SearXNG).
 
 **Effects.** reads outside, costs.
 
@@ -386,18 +427,21 @@ Searches the web through a SearXNG instance and returns normalized organic resul
 | `query` | Text | Original search query |
 | `effective_query` | Text | Executed search query including filters |
 | `result_count` | Number | Number of search results returned |
-| `results_json` | Text | Normalized search results as JSON |
+| `results_json` | Text | The results (rank, title, URL, snippet) as JSON |
 | `urls` | TextList | Returned result URLs |
+| `error` | Text | Why the search failed, when it did |
 
-**Plugs into** a place that accepts `ai.knowledge.*`.
+**Entries.** **In** (Entry point)
 
-### Web Search - SerpApi
+**Exits.** **Found** (The search ran — its results are in the outputs (there can be none)), **Failed** (The search could not run — see 'error')
 
-Resource · in the catalogue: Web > Search · type `web.search.serpapi`
+### Web Search (SerpApi)
+
+Step · in the catalogue: Web > Search · type `web.search.serpapi`
 
 Searches the web through SerpApi and returns normalized organic results.
 
-**When to use it.** To set up a web search through your own SerpApi account (an API key). To give search results to an AI step, use AI Knowledge - SerpApi instead.
+**When to use it.** To search the web in a workflow through your own SerpApi account (an API key); the results go to the next steps. For an agent that searches by itself, use AI Agent Web Search Tool (SerpApi).
 
 **Effects.** reads outside, costs.
 
@@ -420,18 +464,21 @@ Searches the web through SerpApi and returns normalized organic results.
 | `query` | Text | Original search query |
 | `effective_query` | Text | Executed search query including filters |
 | `result_count` | Number | Number of search results returned |
-| `results_json` | Text | Normalized search results as JSON |
+| `results_json` | Text | The results (rank, title, URL, snippet) as JSON |
 | `urls` | TextList | Returned result URLs |
+| `error` | Text | Why the search failed, when it did |
 
-**Plugs into** a place that accepts `ai.knowledge.*`.
+**Entries.** **In** (Entry point)
 
-### Web Search - Tavily
+**Exits.** **Found** (The search ran — its results are in the outputs (there can be none)), **Failed** (The search could not run — see 'error')
 
-Resource · in the catalogue: Web > Search · type `web.search.tavily`
+### Web Search (Tavily)
+
+Step · in the catalogue: Web > Search · type `web.search.tavily`
 
 Searches the web through Tavily and returns normalized organic results.
 
-**When to use it.** To set up a web search through your own Tavily account (an API key). To give search results to an AI step, use AI Knowledge - Tavily instead.
+**When to use it.** To search the web in a workflow through your own Tavily account (an API key); the results go to the next steps. For an agent that searches by itself, use AI Agent Web Search Tool (Tavily).
 
 **Effects.** reads outside, costs.
 
@@ -454,10 +501,13 @@ Searches the web through Tavily and returns normalized organic results.
 | `query` | Text | Original search query |
 | `effective_query` | Text | Executed search query including filters |
 | `result_count` | Number | Number of search results returned |
-| `results_json` | Text | Normalized search results as JSON |
+| `results_json` | Text | The results (rank, title, URL, snippet) as JSON |
 | `urls` | TextList | Returned result URLs |
+| `error` | Text | Why the search failed, when it did |
 
-**Plugs into** a place that accepts `ai.knowledge.*`.
+**Entries.** **In** (Entry point)
+
+**Exits.** **Found** (The search ran — its results are in the outputs (there can be none)), **Failed** (The search could not run — see 'error')
 
 ## SEO
 
@@ -504,7 +554,7 @@ Suggests relevant internal links using structure-first selection with semantic s
 | Place | Required | Accepts | How many |
 |---|---|---|---|
 | **LLM Model** | yes | `llm.model.*` | 1 |
-| **RAG/Memory** | no | `llm.memory.*` | 1 |
+| **Embeddings** | no | `ai.embeddings.*` | 1 |
 
 ### Sitemap Analyzer
 
@@ -571,7 +621,7 @@ Analyzes sitemap pages using LLM to create hierarchical content structure (pilla
 | Place | Required | Accepts | How many |
 |---|---|---|---|
 | **LLM Model** | yes | `llm.model.*` | 1 |
-| **RAG/Memory** | no | `llm.memory.*` | 1 |
+| **Embeddings** | yes | `ai.embeddings.*` | 1 |
 | **Scraper** | no | `web.scraper.*` | 1 |
 
 ## Documents

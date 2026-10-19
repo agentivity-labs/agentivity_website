@@ -1,6 +1,6 @@
 ---
 title: "Node reference: every step and resource"
-description: "The list of the 108 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
+description: "The list of the 98 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
 sidebar:
   order: 1
 editUrl: false
@@ -9,9 +9,9 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
-The Node Catalog of the Studio holds 108 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
+The Node Catalog of the Studio holds 98 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
 
 ## How to read a node
 
@@ -45,9 +45,9 @@ In this reference, a reference inside a description or a default value is printe
 |---|---|
 | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) | 16 |
 | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) | 23 |
-| [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) | 15 |
-| [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) | 21 |
-| [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) | 20 |
+| [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) | 16 |
+| [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) | 9 |
+| [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) | 21 |
 | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) | 13 |
 
 ## Every node, by name
@@ -62,38 +62,27 @@ In this reference, a reference inside a description or a default value is printe
 | AI Agent Date & Time Tool | Resource | `ai.tools.utils.datetime` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Email Tool | Resource | `ai.tools.communication.email` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Guardrail | Resource | `ai.guardrails.keyword` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| AI Agent HTTP Request Tool | Resource | `ai.tools.http.request` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent JavaScript Tool | Resource | `ai.tools.code_javascript` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Policy | Resource | `ai.policies.layer` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | AI Agent Read Document Tool | Resource | `ai.tools.documents.read` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Session (File) | Resource | `ai.sessions.file` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| AI Agent Session (Memory) | Resource | `ai.sessions.memory` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| AI Agent Session (In-Memory) | Resource | `ai.sessions.inmemory` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| AI Agent Vector Store Tool | Resource | `ai.tools.vectorstore` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Agent Weather Tool | Resource | `ai.tools.utils.weather` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Agent Web Fetch Tool | Resource | `ai.tools.webfetch` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Scraper Tool (Direct) | Resource | `ai.tools.web.scraper.direct` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Scraper Tool (Firecrawl) | Resource | `ai.tools.web.scraper.firecrawl` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Scraper Tool (Jina) | Resource | `ai.tools.web.scraper.jina` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Search Tool (SearXNG) | Resource | `ai.tools.web.search.searxng` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Search Tool (SerpApi) | Resource | `ai.tools.web.search.serpapi` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
+| AI Agent Web Search Tool (Tavily) | Resource | `ai.tools.web.search.tavily` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | AI Image Generator | Step | `ai.media.ai_image_gen` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| AI Knowledge - SearXNG | Resource | `ai.knowledge.search.searxng` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge - SerpApi | Resource | `ai.knowledge.search.serpapi` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge - Tavily | Resource | `ai.knowledge.search.tavily` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (API) | Resource | `ai.knowledge.api` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (File) | Resource | `ai.knowledge.file` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (Inline) | Resource | `ai.knowledge.inline` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (PostgreSQL) | Resource | `ai.knowledge.postgres` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (RSS/Atom) | Resource | `ai.knowledge.rss` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (Sitemap) | Resource | `ai.knowledge.sitemap` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (SQLite) | Resource | `ai.knowledge.sqlite` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (Storage) | Resource | `ai.knowledge.storage` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| AI Knowledge (Web) | Resource | `ai.knowledge.web` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | AI Semantic Guardrail | Resource | `ai.guardrails.moderation` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| AI Tool - Web Scraper - Direct | Resource | `ai.tools.web.scraper.direct` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Tool - Web Scraper - Firecrawl | Resource | `ai.tools.web.scraper.firecrawl` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Tool - Web Scraper - Jina | Resource | `ai.tools.web.scraper.jina` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Tool - Web Search - SearXNG | Resource | `ai.tools.web.search.searxng` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Tool - Web Search - SerpApi | Resource | `ai.tools.web.search.serpapi` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
-| AI Tool - Web Search - Tavily | Resource | `ai.tools.web.search.tavily` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | Anthropic Model | Resource | `ai.llm.model.anthropic` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Audio Player | Display step | `core.display.audio` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | AWS Bedrock Model | Resource | `ai.llm.model.bedrock` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Chat Channel | Resource | `ai.interactions.chat` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| Cohere Rerank | Step | `ai.rerank.cohere` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| Cohere Rerank | Step | `ai.rerank.cohere` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Collect | Step | `core.collect` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Console | Display step | `core.display.console` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Content Generator | Step | `content.content_generator` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
@@ -117,33 +106,34 @@ In this reference, a reference inside a description or a default value is printe
 | Forms Channel | Resource | `ai.interactions.forms` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Get Email | Step | `communication.email.get` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Google Gemini Model | Resource | `ai.llm.model.gemini` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
+| HTTP Request | Step | `http.request` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Human Interaction | Step | `interaction.human` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | If | Step | `core.if` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Image Gen Model | Resource | `imagegen.model` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Image Viewer | Display step | `core.display.image` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
+| In-Memory Vector Store | Resource | `ai.vectorstore.inmemory` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Internal Link Suggester | Step | `seo.links.suggest` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | JavaScript | Step | `core.code.javascript` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Jina Reader Scraper | Resource | `web.scraper.jina` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Knowledge Base | Resource | `ai.knowledge.base` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | LLM Prompt | Step | `ai.llm.prompt` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| Local Embeddings | Resource | `ai.embeddings.local` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| Local Embeddings | Resource | `ai.embeddings.local` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | MCP Server | Resource | `ai.tools.mcp.server` | [AI nodes: the tools you give to an agent](/docs/reference/nodes-ai-tools/) |
 | Merge | Step | `core.merge` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Move Block | Step | `layout.move_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
-| OpenAI Embeddings | Resource | `ai.embeddings.openai` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| OpenAI Memory | Resource | `ai.memory.openai` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| OpenAI Embeddings | Resource | `ai.embeddings.openai` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | OpenAI Model | Resource | `ai.llm.model.openai` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| pgvector Memory | Resource | `ai.memory.pgvector` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
-| Pinecone Memory | Resource | `ai.memory.pinecone` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| pgvector Vector Store | Resource | `ai.vectorstore.pgvector` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| Pinecone Vector Store | Resource | `ai.vectorstore.pinecone` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Publish Media to WordPress | Step | `app.cms.wordpress.publish_media` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Publish to WordPress | Step | `wordpress.publish` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
-| Qdrant Memory | Resource | `ai.memory.qdrant` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| Qdrant Vector Store | Resource | `ai.vectorstore.qdrant` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Read Emails | Step | `communication.email.read` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Remove Block | Step | `layout.remove_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Replace Block | Step | `layout.replace_block` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Scrape Web Page | Step | `web.scrape` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Send Email | Step | `communication.email.send` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Set Variables | Step | `core.set` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
-| Simple LLM Memory | Resource | `ai.memory.simple` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Sitemap Analyzer | Step | `seo.sitemap.analyze` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Sitemap Structure | Step | `seo.sitemap.structure` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Slack Channel | Resource | `ai.interactions.slack` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
@@ -154,11 +144,11 @@ In this reference, a reference inside a description or a default value is printe
 | Supabase Storage | Resource | `storage.database.supabase` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
 | Switch | Step | `core.switch` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | Team | Step | `team_node` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
-| Text Splitter | Resource | `ai.knowledge.splitter` | [AI nodes: knowledge, memory and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
 | Text to Speech | Step | `ai.media.text_to_speech` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |
 | Update Emails | Step | `communication.email.update` | [People, messages, storage and application nodes](/docs/reference/nodes-people-messages-and-storage/) |
-| Web Search - SearXNG | Resource | `web.search.searxng` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
-| Web Search - SerpApi | Resource | `web.search.serpapi` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
-| Web Search - Tavily | Resource | `web.search.tavily` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Vector Store | Step | `ai.vectorstore.step` | [AI nodes: knowledge, Vector Stores and embeddings](/docs/reference/nodes-ai-knowledge-and-memory/) |
+| Web Search (SearXNG) | Step | `web.search.searxng` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Web Search (SerpApi) | Step | `web.search.serpapi` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
+| Web Search (Tavily) | Step | `web.search.tavily` | [Content, web, SEO and document nodes](/docs/reference/nodes-content-and-web/) |
 | Workflow | Step | `workflow_node` | [Core nodes: conditions, loops, data and code](/docs/reference/nodes-core/) |
 | xAI / Grok Model | Resource | `ai.llm.model.xai` | [AI nodes: agents, models, sessions and channels](/docs/reference/nodes-ai-agents-and-models/) |

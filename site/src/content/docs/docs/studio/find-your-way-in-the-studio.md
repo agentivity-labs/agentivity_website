@@ -28,6 +28,7 @@ The Studio is the visual editor of Agentivity. It runs in your browser. This pag
 | **Studio** > **Prompts** | The prompts you write and test. A prompt is the text of instructions that is sent to an AI model. |
 | **Executions** | The runs: each time an agent, a team or a workflow worked on a request. |
 | **Resources** > **Data Tables** | Tables of data that your agents and workflows can read and fill. |
+| **Resources** > **Knowledge Bases** | Your documents, pages and feeds, kept so that agents can search them by meaning. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/). |
 | **Templates** | Ready-made solutions to import, and **Import from file** for a Template you received. |
 | **Settings** | **Credentials**, where you keep the keys and accounts your agents connect with, and **Configurations**. |
 

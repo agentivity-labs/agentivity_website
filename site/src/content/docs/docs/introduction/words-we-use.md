@@ -27,6 +27,9 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | **Node Catalog** | The list of all the nodes you can add. |
 | **Prompt** | The text of a request that is sent to an AI model. |
 | **Data Table** | A table of data that agents and workflows can read and fill. |
+| **Knowledge Base** | Your documents, pages or feeds, read from a source and kept cut into passages, so that an agent finds the right passage by meaning. |
+| **Vector Store** | A place that keeps texts and finds the closest to a question, by meaning. A step or an agent puts the texts in. It is not how an agent is given knowledge: that is a Knowledge Base. |
+| **Agent Session** | What keeps the earlier messages of a conversation, so that an agent remembers what was said. |
 
 ## Where you work
 

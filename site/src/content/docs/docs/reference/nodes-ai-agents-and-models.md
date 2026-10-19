@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-agents-and-models.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
@@ -52,7 +52,7 @@ Any named output that the agent itself declares is added next to this one, under
 
 Step · in the catalogue: AI > Agents · type `ai.node`
 
-Runs a multi-step LLM agent with native tool calling, optional retrieval via llm_memory, and connectable knowledge sources.
+Runs a multi-step LLM agent with native tool calling, and searches the Knowledge Bases connected to it.
 
 **When to use it.** To have an AI work through a task step by step in this workflow, with the model, tools, knowledge and people you plug into it. Not for a single question and answer: use LLM Prompt instead; to reuse an agent saved in your library, use Agent.
 
@@ -73,7 +73,6 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 | `allow_parallel_tool_calls` | Boolean | no | `false` | Allow the model to ask for several tools in the same round. |
 | `response_schema` | Text | no |  | JSON Schema for the final response (optional). |
 | `allows_human_questions` | Boolean | no | `true` | Allow this agent to ask the user a question and wait for a reply. Turn off to guarantee it always delivers its final answer directly instead of pausing the run. |
-| `memory_top_k` | Number | no | `3` | Number of knowledge snippets to retrieve when llm_memory and knowledge sources are connected. |
 | `session_id` | Text | no |  | Session identifier (leave empty to create a new one when a session resource is connected). |
 | `session_scope_hint` | Text | no |  | Optional scope hint used by forked session resources. |
 | `restore_session` | Boolean | no | `true` | Restore previous conversation history from the connected session resource. |
@@ -87,7 +86,6 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 | `finish_reason` | Text | Final LLM finish reason |
 | `iterations` | Number | Number of rounds the agent took |
 | `tool_calls` | Text | Executed tool calls as JSON |
-| `memory_context_used` | Text | config retrieved from memory (if used) |
 | `guardrail_warnings` | Text | JSON array of non-blocking guardrail matches (guardrail_id, stage, message) — branch on this with an If/Switch to decide what to do (empty array when nothing matched) |
 | `session_id` | Text | Resolved session identifier when a session resource is connected |
 | `session_scope` | Text | Resolved session scope |
@@ -103,8 +101,7 @@ Runs a multi-step LLM agent with native tool calling, optional retrieval via llm
 | Place | Required | Accepts | How many |
 |---|---|---|---|
 | **LLM Model** | yes | `llm.model.*` | 1 |
-| **LLM Memory** | no | `llm.memory.*` | 1 |
-| **Knowledge Sources** | no | `ai.knowledge.*` | several |
+| **Knowledge Bases** | no | `ai.knowledge.*` | several |
 | **Human Loop Channel** | no | `interaction.channel.*` | 1 |
 | **Agent Session** | no | `ai.node.session.*` | 1 |
 | **AI Agent Tools** | no | `ai.node.tool.*` | several |
@@ -148,7 +145,7 @@ Text generation and prompting nodes.
 
 Step · in the catalogue: AI > LLM · type `ai.llm.prompt`
 
-Executes a prompt using an LLM with optional structured output, retrieval via llm_memory, and connectable knowledge sources.
+Executes a prompt using an LLM with optional structured output, answering from the Knowledge Bases connected to it.
 
 **When to use it.** To get a single answer from a model for one prompt (summarize, classify, extract, write), as text, or as JSON when you give a JSON Schema. Not for work that needs tools or several steps: use AI Agent instead.
 
@@ -162,7 +159,6 @@ Executes a prompt using an LLM with optional structured output, retrieval via ll
 | `prompt` | Text | yes |  | User prompt (required). |
 | `images` | ImageRef | no |  | Optional image to analyze — only used by vision-capable models (GPT-4o, Claude, Gemini). Ignored by text-only models. |
 | `response_schema` | Text | no |  | JSON Schema for structured output (optional). |
-| `rag_top_k` | Number | no | `3` | Number of knowledge snippets to retrieve when llm_memory and knowledge sources are connected. |
 | `temperature` | Number | no | `0.7` | Creativity (0-2). |
 | `max_tokens` | Number | no | `2000` | Max response tokens. |
 
@@ -171,15 +167,14 @@ Executes a prompt using an LLM with optional structured output, retrieval via ll
 | Name | Type | What it holds |
 |---|---|---|
 | `response` | Text | LLM response |
-| `rag_context_used` | Text | config retrieved from RAG (if used) |
+| `knowledge_used` | Text | What the Knowledge Bases gave for this prompt (empty when none is connected) |
 
 **Places for resources**
 
 | Place | Required | Accepts | How many |
 |---|---|---|---|
 | **LLM Model** | yes | `llm.model.*` | 1 |
-| **LLM Memory** | no | `llm.memory.*` | 1 |
-| **Knowledge Sources** | no | `ai.knowledge.*` | several |
+| **Knowledge Bases** | no | `ai.knowledge.*` | several |
 
 ## AI > Models
 
@@ -374,11 +369,11 @@ Stores AI agent conversation sessions as JSON files so they survive application 
 
 **Plugs into** a place that accepts `ai.node.session.*`.
 
-### AI Agent Session (Memory)
+### AI Agent Session (In-Memory)
 
-Resource · in the catalogue: AI > Sessions · type `ai.sessions.memory`
+Resource · in the catalogue: AI > Sessions · type `ai.sessions.inmemory`
 
-Stores AI agent conversation sessions in memory for the current application lifetime.
+Keeps AI agent conversations in memory until the application restarts.
 
 **When to use it.** To let an AI Agent remember the conversation from one run to the next, until the application restarts. Plug it into the Agent Session of an AI Agent; to keep conversations after a restart, use AI Agent Session (File).
 

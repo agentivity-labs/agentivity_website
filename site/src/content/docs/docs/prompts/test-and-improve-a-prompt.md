@@ -13,7 +13,7 @@ Prompt Studio has four ways to work on a prompt: try it, test it, analyse it and
 
 ## Before you start
 
-All of this needs a model connection chosen in the tab **Settings** of the panel on the right. In the version these pages were checked against, that list stays empty: see the known problem in [What Prompt Studio is for](/docs/prompts/what-prompt-studio-is/). This page describes what the screens offer once a connection can be chosen. It was not run.
+All of this needs a model connection chosen in the tab **Settings** of the panel on the right.
 
 Each run uses the AI model, and your provider bills you for it.
 

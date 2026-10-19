@@ -42,7 +42,7 @@ Shopping Lab helps a shopper choose a product. It clarifies the need, reads the 
 - **The tables carry the work.** In a Sequential team, each member receives what the previous one produced. Here the agents also write their results in tables, and the next ones read them. Open **Resources** > **Data Tables** to see the five tables.
 - **A script for the scores.** The **Scoring Analyst** has a tool that runs a small program. The same inputs always give the same score. This is how to get a result that does not vary from an AI team.
 - **Groups.** The members are sorted in four groups: Intake, Stores, Analysis and Report. See [Name, group and give an icon to team members](/docs/teams/set-up-a-member/).
-- **Reading web pages.** The two scouts have the tool **AI Tool - Web Scraper - Direct**, which reads a page without a paid service.
+- **Reading web pages.** The two scouts have the tool **AI Agent Web Scraper Tool (Direct)**, which reads a page without a paid service.
 
 ## Try it
 

@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/api.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Studio, the SDKs and your own applications talk to an Agentivity server through these routes. Each path starts after the address of your server, for example `http://localhost:5005`.
 
@@ -149,6 +149,7 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | Method | Path | What it does |
 |---|---|---|
 | GET | `/api/v1/entities` | List all executable entities (agents, teams, workflows) from the library, optionally filtered by tag |
+| GET | `/api/v1/entities/using` | For each asset (a Knowledge Base, a Data Table…), the agents and workflows that use it |
 
 ## Executions
 
@@ -185,6 +186,32 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | Method | Path | What it does |
 |---|---|---|
 | POST | `/api/v1/interactions/slack/events` | Receive a Slack reply and resume the waiting run |
+
+## Knowledge-bases
+
+| Method | Path | What it does |
+|---|---|---|
+| GET | `/api/v1/knowledge-bases` | List the Knowledge Bases |
+| DELETE | `/api/v1/knowledge-bases/{id}` | Delete a Knowledge Base and what it holds |
+| GET | `/api/v1/knowledge-bases/{id}` | Get a Knowledge Base |
+| PUT | `/api/v1/knowledge-bases/{id}` | Create or change a Knowledge Base |
+| GET | `/api/v1/knowledge-bases/{id}/documents` | The documents a Knowledge Base holds, with how many passages each gave |
+| POST | `/api/v1/knowledge-bases/{id}/empty` | Empty a Knowledge Base: its documents go, its source and settings stay |
+| POST | `/api/v1/knowledge-bases/{id}/move` | Move a Knowledge Base to another folder |
+| POST | `/api/v1/knowledge-bases/{id}/retrieve` | Search a Knowledge Base: the passages closest to a question |
+| GET | `/api/v1/knowledge-bases/{id}/status` | What a Knowledge Base holds, and how its last synchronisation went |
+| POST | `/api/v1/knowledge-bases/{id}/sync` | Synchronise a Knowledge Base with its source (in the background) |
+| GET | `/api/v1/knowledge-bases/{id}/versions` | List the saved versions of a Knowledge Base |
+| POST | `/api/v1/knowledge-bases/{id}/versions` | Save a new version of a Knowledge Base |
+| GET | `/api/v1/knowledge-bases/{id}/versions/{versionId}` | Get one saved version of a Knowledge Base |
+| POST | `/api/v1/knowledge-bases/{id}/versions/{versionId}/restore` | Restore an earlier version of a Knowledge Base |
+| GET | `/api/v1/knowledge-bases/browse` | Browse the Knowledge Base folders and their content |
+| GET | `/api/v1/knowledge-bases/folders` | List the Knowledge Base folders |
+| POST | `/api/v1/knowledge-bases/folders` | Create a Knowledge Base folder |
+| DELETE | `/api/v1/knowledge-bases/folders/{folderId}` | Delete a Knowledge Base folder |
+| PUT | `/api/v1/knowledge-bases/folders/{folderId}` | Rename a Knowledge Base folder |
+| POST | `/api/v1/knowledge-bases/folders/{folderId}/move` | Move a Knowledge Base folder |
+| GET | `/api/v1/knowledge-bases/source-types` | The types of data source a Knowledge Base can read here, with their settings |
 
 ## Llm-connections
 

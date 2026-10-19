@@ -24,10 +24,11 @@ These tools work without an account at another service. They are in the **Node C
 | **AI Agent Date & Time Tool** | Know the current date and time. |
 | **AI Agent Calculator Tool** | Compute an arithmetic expression. |
 | **AI Agent Weather Tool** | Get the current weather of a place. |
-| **AI Agent Web Fetch Tool** | Read a web address and get its content. |
-| **AI Tool - Web Scraper - Direct** | Read a web page and get its text in a clean form. |
+| **AI Agent HTTP Request Tool** | Call a web API or read a web page. It reads by default, and may send data when you allow it on the node. |
+| **AI Agent Web Scraper Tool (Direct)** | Read a web page and get its text in a clean form. |
 | **AI Agent Read Document Tool** | Read a document that the person uploaded in the chat: PDF, Word or plain text. |
 | **AI Agent Data Table Tool** | Read and fill a Data Table of your workspace. |
+| **AI Agent Vector Store Tool** | Search texts kept in a Vector Store, by meaning, and keep texts there when you allow it. It needs a Vector Store plugged in. See [Keep texts and find them by meaning](/docs/workflows/keep-texts-and-find-them-by-meaning/). |
 | **AI Agent JavaScript Tool** | Run a short JavaScript program and use its result. For a developer. |
 
 ## The tools that need a connection
@@ -35,7 +36,7 @@ These tools work without an account at another service. They are in the **Node C
 | Tool | What it needs |
 |---|---|
 | **AI Agent Email Tool** | A mailbox: credentials to read e-mails, and credentials to send them. |
-| **AI Tool - Web Search - SearXNG** | The address of a SearXNG search service, as credentials. |
+| **AI Agent Web Search Tool (SearXNG)** | The address of a SearXNG search service, as credentials. |
 | **MCP Server** | The address of an MCP server. MCP is a standard way to give tools to AI agents. |
 
 The catalogue also has tools for web search and web reading that use services you pay for separately. These pages do not cover them.
@@ -46,7 +47,7 @@ In our example, the `Reminder Writer` must know today's date, to say how many da
 
 1. In the **Node Catalog**, open **AI** > **Tools**, or type the name of the tool in the search field and press Enter.
 2. Drag **AI Agent Date & Time Tool** onto the canvas, below the agent.
-3. Drag from the diamond of the tool to the sixth diamond of the agent, **AI Agent Tools**.
+3. Drag from the diamond of the tool to the diamond of the agent named **AI Agent Tools**.
 4. Select **Publish**.
 
 You can plug several tools into the same diamond.

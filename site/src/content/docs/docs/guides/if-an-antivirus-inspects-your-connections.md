@@ -3,7 +3,6 @@ title: "If an antivirus blocks the connections of Agentivity"
 description: "Agentivity cannot reach your AI model because an antivirus or a company proxy replaces the security certificate. How to make the container trust it."
 sidebar:
   order: 5
-draft: true
 editUrl: false
 lastUpdated: false
 ---
