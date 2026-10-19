@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/guides/share-a-template.md. Do not edit here: edit the source and publish again. -->
 
-A Template is one file that holds a solution and everything it needs: the agent, the team or the workflow, the agents it uses, and its data tables. This page shows how to make a Template of your own work, and how another person imports it.
+A Template is one file that holds a solution and everything it needs: the agent, the team or the workflow, the agents it uses, and its data tables. This page shows how to make a Template of your own work, and how another person imports it. What a solution is, and how it is marked, is in [What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/).
 
 ## What you need
 

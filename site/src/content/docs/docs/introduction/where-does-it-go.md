@@ -2,7 +2,7 @@
 title: "Where each kind of information goes"
 description: "Instructions, Prompts, Data Tables, Knowledge Bases, sessions and Vector Stores: what each one is for, how an agent gets it, and how long it is kept."
 sidebar:
-  order: 8
+  order: 9
 editUrl: false
 lastUpdated: false
 ---

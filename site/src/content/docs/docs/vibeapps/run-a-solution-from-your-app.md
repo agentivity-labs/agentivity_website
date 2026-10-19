@@ -14,7 +14,7 @@ This page is for developers. It shows the three things an application does with 
 ## What you need
 
 - An application wrapped in `AgentivityProvider`. See [Start a VibeApp with the React SDK](/docs/vibeapps/start-with-the-react-sdk/).
-- At least one solution with a tag in your workspace.
+- At least one solution with a tag in your workspace. See [What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/).
 
 ## List the solutions
 

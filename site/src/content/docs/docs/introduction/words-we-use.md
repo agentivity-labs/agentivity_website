@@ -2,7 +2,7 @@
 title: "The words Agentivity uses"
 description: "A short glossary of the words used in the Studio and in these pages. Solution, agent, team, workflow, node, run, Template, VibeApp and more."
 sidebar:
-  order: 7
+  order: 8
 editUrl: false
 lastUpdated: false
 ---
@@ -15,7 +15,7 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 
 | Word | Meaning |
 |---|---|
-| **Solution** | Something a person launches to get a need handled from start to finish. Underneath, it is an agent, a team or a workflow. |
+| **Solution** | Something a person launches to get a need handled from start to finish. Underneath, it is an agent, a team or a workflow. See [What a Solution is](/docs/introduction/what-a-solution-is/). |
 | **Agent** | One AI specialist with a role. |
 | **Role** | One or two sentences that say what an agent or a team is good at. A team reads the roles of its members to decide who does what. |
 | **Instructions** | The text that tells an agent what to do and how, in plain words. |

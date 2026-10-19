@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/vibeapps/show-a-solution-in-the-portal.md. Do not edit here: edit the source and publish again. -->
 
-The portal does not list everything in your workspace. It lists only what you marked as a solution. This page shows how to mark a team.
+The portal does not list everything in your workspace. It lists only what you marked as a solution. This page shows how to mark a team. To know what a Solution is and what to mark, read [What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/).
 
 ## What you need
 

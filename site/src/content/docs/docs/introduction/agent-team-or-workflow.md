@@ -2,7 +2,7 @@
 title: "Choose between an agent, a team and a workflow"
 description: "Agentivity has three building blocks. An agent is one AI specialist, a team is several agents working together, a workflow is fixed steps."
 sidebar:
-  order: 4
+  order: 5
 editUrl: false
 lastUpdated: false
 ---
@@ -14,6 +14,8 @@ In Agentivity you build with three blocks: the agent, the team and the workflow.
 ## A solution
 
 A solution is something a person launches to get a need handled from start to finish. The person makes a request and receives finished work. Underneath, a solution is an agent, a team or a workflow. The person who uses it does not need to know which one.
+
+To see what makes something a solution in the Studio, and how to mark one, read [What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/).
 
 ## An agent
 

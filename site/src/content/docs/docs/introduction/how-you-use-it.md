@@ -2,7 +2,7 @@
 title: "Three ways to use Agentivity"
 description: "Describe what you need to the Assistant, build it by hand in the Studio, or give it to other people in an app. And who does what."
 sidebar:
-  order: 3
+  order: 4
 editUrl: false
 lastUpdated: false
 ---

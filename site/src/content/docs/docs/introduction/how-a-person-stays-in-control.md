@@ -2,7 +2,7 @@
 title: "How a person stays in control"
 description: "Where you decide in Agentivity. Drafts that you save yourself, steps that wait for your approval, runs you can stop, and a record of each step."
 sidebar:
-  order: 5
+  order: 6
 editUrl: false
 lastUpdated: false
 ---

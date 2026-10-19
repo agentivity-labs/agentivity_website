@@ -51,4 +51,4 @@ Your agents, teams, workflows, tables and settings are stored on your machine. W
 
 ## Next step
 
-[What you can do with Agentivity](/docs/introduction/what-you-can-do-with-it/).
+[What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/).

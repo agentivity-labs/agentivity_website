@@ -2,7 +2,7 @@
 title: "What you can do with Agentivity"
 description: "The kinds of work Agentivity handles, shown with the four showcase solutions you can import, and what it does not do today."
 sidebar:
-  order: 2
+  order: 3
 editUrl: false
 lastUpdated: false
 ---
