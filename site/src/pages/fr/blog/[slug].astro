@@ -1,0 +1,13 @@
+---
+// The French blog articles: src/content/blog/fr/<slug>.md, served at /fr/blog/<slug> (same slug as the English article).
+import { getCollection } from 'astro:content';
+import BlogArticlePage from '../../../components/BlogArticlePage.astro';
+import { blogSlug, isLang } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (post) => !post.data.draft && isLang(post, 'fr'));
+  return posts.map((post) => ({ params: { slug: blogSlug(post.id) }, props: { post } }));
+}
+const { post } = Astro.props;
+---
+<BlogArticlePage post={post} />

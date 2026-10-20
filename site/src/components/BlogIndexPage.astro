@@ -1,22 +1,30 @@
 ---
 // Blog index, shared by /blog and /fr/blog. Texts come from the "blog_page" block of the translation files.
-// The articles themselves are English Markdown files in src/content/blog; both languages list the same ones.
+// The articles are Markdown files: English in src/content/blog, French in src/content/blog/fr (same file name). The French
+// index lists the French version of each article, and the English one while an article is not translated yet.
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import { blogSlug, isLang } from '../lib/blog';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = t.blog_page;
 
-const posts = (await getCollection('blog'))
-  .filter((post) => post.data.lang !== 'fr' && !post.data.draft)
+const all = await getCollection('blog', ({ data }) => !data.draft);
+type Post = (typeof all)[number];
+const translated = (post: Post) => all.find((other) => isLang(other, lang) && blogSlug(other.id) === blogSlug(post.id));
+const posts = all
+  .filter((post) => isLang(post, 'en'))
+  .map((post) => (lang === 'en' ? post : translated(post) ?? post))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const slug = (id: string) => id.replace(/\.(md|mdx)$/, '');
+const href = (post: Post) => (isLang(post, 'fr') ? '/fr/blog/' : '/blog/') + blogSlug(post.id);
+// "The articles are in English for now" only while some still are.
+const showLangNote = lang !== 'en' && posts.some((post) => !isLang(post, lang));
 const formatDate = (date: Date) => date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const schema = {
@@ -37,7 +45,7 @@ const schema = {
     <p class="ed-eyebrow">{p.hero.eyebrow}</p>
     <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
     <p class="bl-hero-sub">{p.hero.sub}</p>
-    {p.lang_note && <p class="bl-lang-note">{p.lang_note}</p>}
+    {showLangNote && p.lang_note && <p class="bl-lang-note">{p.lang_note}</p>}
   </section>
 
   <section class="ed-wrap bl-list">
@@ -47,7 +55,7 @@ const schema = {
       <ul class="bl-posts">
         {posts.map((post) => (
           <li>
-            <a class="bl-post" href={'/blog/' + slug(post.id)}>
+            <a class="bl-post" href={href(post)}>
               <p class="bl-post-meta">
                 <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
                 {post.data.tags.slice(0, 2).map((tag) => <span class="bl-tag">{tag}</span>)}
