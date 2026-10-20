@@ -3,6 +3,7 @@ title: "Choose how a team works together"
 description: "The five ways a team of agents can work in Agentivity (Sequential, Concurrent, Handoff, Group Chat and Manager-led), and when to use each."
 sidebar:
   order: 1
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -51,6 +52,20 @@ In every pattern, give each member a clear role. In **Handoff** and **Manager-le
 - **Concurrent**: not for steps that need the result of another step.
 - **Group Chat**: not for work with a clear sequence, or with one precise thing to deliver.
 - **Manager-led**: choose **Handoff** instead when the specialists should decide among themselves who goes next.
+
+## What the team answers
+
+When a team has finished, it gives one answer. It is what the run of the team shows, what a step **Team** gives to a workflow, and what the team gives when it is a member of another team. How the answer is made depends on the pattern.
+
+| Pattern | The answer of the team |
+|---|---|
+| **Sequential** | The answer of the last member. |
+| **Concurrent** | The answer of every member, each one after the name of the member (`Flights:`, then its answer, then `Hotels:`, and so on), in the order of the team. |
+| **Handoff** | The answer of the last member who answered: the one who handled the request. A member that only passed the request on is not the answer. |
+| **Group Chat** | The last answer of the discussion. |
+| **Manager-led** | The final answer of the manager. If the manager ended without one, the last answer given. |
+
+A team also gives the named outputs of the member whose answer is its answer, the one who concludes. In a **Manager-led** team, it is the manager. A **Concurrent** team gives none, because nobody concludes there. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
 
 ## Positions on the canvas
 

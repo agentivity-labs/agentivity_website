@@ -3,6 +3,7 @@ title: "Create a workflow"
 description: "Draw a workflow in the Studio. Name it, drag steps from the Node Catalog onto the canvas, link them, set them up and publish."
 sidebar:
   order: 2
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -30,6 +31,26 @@ The editor opens with an empty canvas.
 ## Describe it
 
 In the panel **Info**, on the right, fill in **Role**: one or two sentences on what this workflow handles.
+
+## Say what the workflow gives
+
+Another workflow, or a team, can call this workflow. What it gives to whoever calls it is what you declare, and nothing else: what happens inside stays inside.
+
+![The panel Info of the workflow Reminder Approval: Name, Role, the box Solution, Tags, then the section Outputs with its sentence and two lines, output and subject, each with a Name and a Value](images/workflow-outputs-section.jpg)
+
+1. In the panel **Info**, under **Tags**, find **Outputs**. The Studio says what it is for: what this workflow gives to a workflow or a team that calls it; each value is taken from a step, written between two pairs of curly braces; the output named `output` is its answer, and without it, the answer is what the last step produced.
+2. Select **Add its answer**. A first line appears, with a **Name** and a **Value**. The name of the answer is `output`.
+3. In **Value**, say where the answer comes from: the reference of the output of a step, such as the step `write` and its output `response`, between two pairs of curly braces, or a text that holds some. To choose it from a list, select the button **Take the value from a step**. It lists the outputs of the steps, each as the name of the step, a dot-separated dot and the name of the output, including the named outputs of what a step calls, and puts the one you choose where the cursor is.
+4. To give more than the answer, select **Add an output**. Give it a **Name**, for example `city`, and a **Value** in the same way.
+5. Select **Publish**.
+
+![The list opened by the button Take the value from a step: write · amount, write · body, write · output, write · subject and show · value](images/take-the-value-from-a-step.jpg)
+
+Two outputs cannot have the same name: the Studio shows "Another output has this name". To remove a line, select the cross at its end.
+
+A step that calls this workflow reads the answer as `output`, and each other output under its name. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/). The same goes when the workflow is a member of a team.
+
+A workflow that declares nothing still has an answer: the text of its last step that produced one. But it gives nothing else, and what its steps hold cannot be read from outside. Declare what the callers need.
 
 ## Find a step in the Node Catalog
 

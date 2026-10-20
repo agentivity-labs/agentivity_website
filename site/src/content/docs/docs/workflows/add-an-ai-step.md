@@ -3,6 +3,7 @@ title: "Add an AI step to a workflow"
 description: "Put an AI Agent node in a workflow, give it an AI model and a prompt, so that AI works in this step only and the other steps stay fixed."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -39,6 +40,12 @@ In a workflow, AI works only in the steps you choose. This page adds one such st
 4. Select **Apply**.
 
 To use the result of an earlier step in the prompt, look at the panel **Outputs**, on the right of the window. It lists what the earlier steps produce, with the exact name of each output. The fields say "Enter value or drop an output": you can type a value, or use one of these outputs.
+
+## Give the answer a format
+
+The tab **General** of **AI Agent** has the field **JSON Schema for the final response (optional)**, in the group **Response**. When you fill it in, the model is asked to answer in that format, and the output `response` holds the answer, as a text, in that format.
+
+In this step, the fields of the format are not separate outputs. To have each field as an output, save the agent in **Studio** > **Agents** and call it with the step **Agent**. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 
 ## Save
 

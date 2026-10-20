@@ -3,13 +3,14 @@ title: "Node reference: every step and resource"
 description: "The list of the 98 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
 sidebar:
   order: 1
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Node Catalog of the Studio holds 98 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
 

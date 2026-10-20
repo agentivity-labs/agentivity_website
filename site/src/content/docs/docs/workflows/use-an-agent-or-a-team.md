@@ -3,6 +3,7 @@ title: "Use an agent or a team as a step"
 description: "Call an agent, a team or another workflow of your library from a workflow, with the steps Agent, Team and Workflow. What to fill in, and what they refuse."
 sidebar:
   order: 4
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -66,20 +67,60 @@ Then select **Apply**, and **Publish**.
 
 ## Use the answer
 
+What you call is a closed box. The step gets its answer and, when it has some, its named outputs. Nothing else of what happens inside is visible to the step: not the steps of a workflow you called, not what the members of a team said to each other.
+
 | Output | What it holds |
 |---|---|
-| `output` | The answer. For an agent or a team: its final answer. For a workflow: see below. |
-| Named outputs | If what you call declares outputs of its own, they come next to `output`, under their own names. |
+| `output` | The answer. |
+| Named outputs | The values that what you call gives next to its answer, each under its own name. |
 
-Use the answer in a later step with its reference: the node name of the step, a dot, then `output`.
+Use a value in a later step with its reference: the node name of the step, a dot, then the name of the output, between two pairs of curly braces. For a step named `call`, the reference `call.output` is the answer, and `call.city` is a named output `city`.
 
-The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**. If the call fails, for example because the identifier is unknown, the workflow goes on from **Error**, and the output `error` holds the message. Link **Error** to a step that handles it. Without a step on **Error**, nothing follows a failed call.
+The panel **Outputs**, in the window of a later step, lists the names you can use. It includes the named outputs of what the step calls, with their type and their description.
+
+![The panel Outputs in the window of a Console step: the step write, an Agent, with four items: write.amount (number), write.body (text), write.output (Text) and write.subject (text), each with its description](images/outputs-panel-agent-step.jpg)
+
+| You call | Its answer, `output` | Its named outputs |
+|---|---|---|
+| An agent | Its final answer. | The fields of the format of its answer, when it has one. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/). |
+| A team | The answer of the team: see below. | Those of the member who concludes: see below. |
+| A workflow | Its output named `output`. | The outputs it declares. See [Create a workflow](/docs/workflows/create-a-workflow/). |
+
+### What a team gives
+
+The answer of a team depends on how it works.
+
+| How the team works | Its answer |
+|---|---|
+| **Manager-led** | The final answer of the manager. If the manager ended without one, the last answer given. |
+| **Handoff** | The answer of the last member who answered: the one who handled the request. A member that only passed the request on is not the answer. |
+| **Sequential** | The answer of the last member. |
+| **Concurrent** | The answer of every member, each one after the name of the member (`Flights:`, then its answer, then `Hotels:`, and so on), in the order of the team. |
+| **Group chat** | The last answer of the discussion. |
+
+This is also the answer that the run of the team shows, and the one that a team gives when it is a member of another team.
+
+A team gives the named outputs of the member whose answer is its answer: the one who concludes. In a **Manager-led** team, it is the manager. A **Concurrent** team gives none, because nobody concludes there. See [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/).
 
 ### What a workflow gives back
 
-A called workflow gives back the text of its last step that produced one. The engine looks, from the last step that ran back to the first, for an output named `output`, `result`, `response` or `content`.
+A called workflow gives only what it says it gives: its answer, and the outputs it declares. See "Say what the workflow gives" in [Create a workflow](/docs/workflows/create-a-workflow/).
 
-So make the last useful step of the called workflow produce one of these names. An **AI Agent** step does: its answer is named `response`. A **Console** step does not: its output is named `value`, and the calling step gets an empty `output`. We saw both cases. The outputs of the steps of the called workflow are also given, named by the step and the output, for example `line.value`.
+- **Its answer** is its output named `output`. A workflow that declares none answers with the text of its last step that produced one: the engine looks, from the last step that ran back to the first, for an output named `output`, `result`, `response` or `content`.
+- **The outputs of its steps are not given.** A value that belongs to a step of the called workflow, such as `line.value`, cannot be read from the workflow that calls it. If you need that value, declare it as an output of the called workflow.
+
+What we saw: a called workflow that declared `output` and `city` gave both, and the calling step read `call.city`. The value of one of its inner steps, `call.a.value`, was empty. A called workflow that declared nothing and ended on a **Console** step gave an empty answer, because the output of a **Console** is named `value`.
+
+### When what you call fails
+
+A failure inside what you call fails the step that called it, as an exception goes up: the agent, the team or the workflow fails, then the step that called it, and so on as far as the whole run. The message says what failed, and why. For example: `The workflow 'Reminder Approval' failed: …`. When the failure is deep inside, the message names each level.
+
+The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**.
+
+- If **Error** is linked, the workflow goes on from there, and the output `error` holds the message. Link it to a step that handles the failure.
+- If **Error** is not linked, the run fails, and the whole execution with it. No later step runs.
+
+A team whose model does not answer, refuses, or cannot choose which member answers first fails too: the message says that the team could not choose which member answers first. It no longer goes on with a member chosen by default.
 
 ## When what you call waits
 
@@ -105,8 +146,10 @@ Run the workflow. In the tab **Execution**, the step turns to completed, and the
 ## If it does not work
 
 - **The run fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
-- **The answer is empty, and the step called a workflow.** No step of that workflow produced an output named `output`, `result`, `response` or `content`. See "What a workflow gives back".
-- **A failed call does nothing more.** The step has an exit **Error**, and nothing is linked to it. Link a step to it.
+- **The answer is empty, and the step called a workflow.** The called workflow declares no output named `output`, and none of its steps produced an output named `output`, `result`, `response` or `content`. Declare its answer. See "What a workflow gives back".
+- **A value from inside the called workflow is empty.** A called workflow no longer gives the outputs of its own steps. Declare that value as an output of the called workflow, then read it by the name of the step and the name of the output, between two pairs of curly braces.
+- **The whole run fails at this step.** What you called failed, and the exit **Error** of the step is not linked. The message says what failed, and why. Fix it, or link a step to **Error** to go on.
+- **A named output of an agent is empty.** The agent has no format for its answer, or its answer does not hold that field. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 - **The agent answers beside the point.** The step sends only the message. Put the facts the agent needs in it.
 
 ## Good to know

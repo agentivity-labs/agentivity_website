@@ -3,13 +3,14 @@ title: "Core nodes: conditions, loops, data and code"
 description: "Reference of the Core nodes of the Node Catalog: If, Switch, For Each, First Of, data, variables, files, display and JavaScript."
 sidebar:
   order: 2
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-core.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The building blocks of a workflow that use no AI: conditions, loops, data, variables, files, display and code.
 

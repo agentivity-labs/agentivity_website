@@ -3,13 +3,14 @@ title: "API reference: the routes of the server"
 description: "The list of the HTTP routes of an Agentivity server, by area, with what each one does when the product says it."
 sidebar:
   order: 8
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/api.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The Studio, the SDKs and your own applications talk to an Agentivity server through these routes. Each path starts after the address of your server, for example `http://localhost:5005`.
 
@@ -149,6 +150,7 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | Method | Path | What it does |
 |---|---|---|
 | GET | `/api/v1/entities` | List all executable entities (agents, teams, workflows) from the library, optionally filtered by tag |
+| PUT | `/api/v1/entities/{kind}/{id}/tags` | Set the tags of an agent, a team or a workflow (to mark it as a Solution, say) |
 | GET | `/api/v1/entities/using` | For each asset (a Knowledge Base, a Data Table…), the agents and workflows that use it |
 
 ## Executions

@@ -3,13 +3,14 @@ title: "People, messages, storage and application nodes"
 description: "Reference of the nodes that ask a person, send and read messages, store values, and connect to outside applications."
 sidebar:
   order: 7
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-people-messages-and-storage.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-18 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The steps that ask a person, send and read messages, store values, and work with outside applications.
 

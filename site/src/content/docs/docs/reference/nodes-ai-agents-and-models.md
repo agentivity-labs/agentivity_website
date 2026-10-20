@@ -3,13 +3,14 @@ title: "AI nodes: agents, models, sessions and channels"
 description: "Reference of the AI nodes for agents: AI Agent, Agent, Team, LLM Prompt, models, sessions, channels, policies, guardrails, media."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-agents-and-models.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
@@ -288,9 +289,9 @@ Exposes an image generation provider credential and model configuration.
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Image generation provider credentials (includes base_url). Connection of type `openai_image`. |
-| `model` | Text | no | `dall-e-3` | Model identifier to use. |
-| `quality` | Choice | no | `standard` | Image quality. Choices: `standard`, `hd`. |
-| `style` | Choice | no | `vivid` | Image style. Choices: `vivid`, `natural`. |
+| `model` | Text | no | `gpt-image-1.5` | OpenAI image model to draw with (gpt-image family). |
+| `quality` | Choice | no | `medium` | Image quality. Choices: `low`, `medium`, `high`. |
+| `style` | Choice | no | `none` | Look of the image, said to the model with the description. Choices: `none`, `vivid`, `natural`. |
 
 **Plugs into** a place that accepts `imagegen.model.*`.
 

@@ -3,13 +3,14 @@ title: "AI nodes: knowledge, Vector Stores and embeddings"
 description: "Reference of the Knowledge Base step, the Vector Stores and the Vector Store step, the embeddings and the rerank nodes."
 sidebar:
   order: 5
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-knowledge-and-memory.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The step that gives an agent its Knowledge Bases, the Vector Stores that keep texts and find them by meaning, and the embeddings they use.
 

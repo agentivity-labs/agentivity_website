@@ -3,13 +3,16 @@ title: "Name, group and give an icon to team members"
 description: "Change how a member looks in a team. Give it an icon, put related members in a group that shares a colour, and remove a member."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/teams/set-up-a-member.md. Do not edit here: edit the source and publish again. -->
 
-In a team with many members, the drawing becomes hard to read. You can give each member an icon, and put related members in a group. This changes only how the team looks: it does not change how the members work.
+In a team with many members, the drawing becomes hard to read. You can give each member an icon, and put related members in a group. This changes only how the team looks: it does not change how the members work. It does not change what a member gives to the team either: its answer, and its named outputs. See [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/).
+
+The name of a member is shown in the answer of a **Concurrent** team: each answer comes after the name of its member.
 
 ## What you need
 

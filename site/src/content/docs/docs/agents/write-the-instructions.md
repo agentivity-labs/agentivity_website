@@ -3,6 +3,7 @@ title: "Write the role and the instructions of an agent"
 description: "The role says when to use an agent. The instructions say what it must do and how. How to write both, with an example you can copy."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -63,13 +64,51 @@ Keep it short. When the agent is in a team, the team uses this text to decide wh
 
 Write as you would for a new colleague. Short sentences work better than long ones.
 
+## Give the answer a format
+
+By default, an agent answers in free text. When a later step needs one piece of the answer, a subject, an amount, a city, you can give the answer a format. The agent is then asked for that format, and each field of it becomes a named output that a step can use on its own.
+
+In our example, the `Reminder Writer` gives its reminder in two parts, a subject and a body, and the amount due.
+
+1. Right-click the box **AI Agent** and select **Edit**.
+2. In the tab **General**, in the group **Response**, find the field **JSON Schema for the final response (optional)**.
+3. Describe the answer as a JSON Schema of an object, one property for each field:
+
+   ```json
+   {
+     "type": "object",
+     "properties": {
+       "subject": { "type": "string", "description": "The subject line of the reminder" },
+       "body": { "type": "string", "description": "The text of the reminder" },
+       "amount": { "type": "number", "description": "The amount due, in euros" }
+     },
+     "required": ["subject", "body"]
+   }
+   ```
+
+4. Select **Apply**, then **Publish**.
+
+![The window AI Agent, tab General: the group Response with the field JSON Schema for the final response (optional), filled in with a format of three fields](images/response-format-window.jpg)
+
+What it gives:
+
+- The answer, `output`, stays the whole answer: here, the JSON text.
+- Each field is also a named output, under its own name. A step that calls the agent reads `subject`, `body` or `amount` as it reads any output: the node name of the step, a dot, then the name of the field, between two pairs of curly braces.
+- A text, a whole number, a number, a yes or no and a list of texts are given as they are. An object, or a list of objects, is given as its JSON text. To read a field of it, add a dot and the name of the field after the name of the output: for an output `hotel` that is an object, `hotel.name`.
+
+In the window of a later step, the panel **Outputs** lists these named outputs under the step **Agent** that calls the agent, with their type and their description. Write a clear `description` for each field: the model reads it. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
+
+What we saw: an agent with a format of four fields, called by a step **Agent**. The step gave the outputs `city` as a text, `nights` as a whole number, `tips` as a list, and `hotel` as a JSON text; `hotel.name` gave the name of the hotel.
+
+When the agent is a member of a team, its named outputs are seen by the next members and by the manager. See [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/).
+
 ## The other fields of the tab General
 
 | Field | What it is for |
 |---|---|
 | **Agent execution mode** | How the agent works. See [What an agent is made of](/docs/agents/what-an-agent-is/). |
 | **User prompt** | The request the agent receives. For an agent you run alone, leave the value that is there: it stands for what you type when you run the agent. |
-| **JSON Schema for the final response** | For a developer: forces the answer into a fixed structure. Leave it empty otherwise. |
+| **JSON Schema for the final response (optional)** | Gives the answer a format, so that each field of it can be used on its own. See "Give the answer a format" below. Leave it empty otherwise. |
 
 ## One setting in the tab Advanced
 

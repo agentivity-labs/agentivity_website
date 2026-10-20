@@ -3,13 +3,14 @@ title: "AI nodes: the tools you give to an agent"
 description: "Reference of the tools you can plug into an AI agent: Data Table, calculator, date, documents, e-mail, web search, web scraper and more."
 sidebar:
   order: 4
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-ai-tools.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-19 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
 
 The tools an agent can call. Each one is a resource that you plug into the place for tools of an AI Agent.
 
