@@ -253,7 +253,7 @@ const schema = {
     </div>
     <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
-        <img src="/media/studio-workflow.webp" alt={h.control.alt} width="1862" height="712" loading="lazy" class="hp-shot-workflow" />
+        <img src="/media/studio-workflow-approval.webp" alt={h.control.alt} width="1400" height="616" loading="lazy" class="hp-shot-workflow" />
       </div>
       <figcaption>{h.control.caption}</figcaption>
     </figure>
@@ -264,7 +264,9 @@ const schema = {
     <div class="ed-wrap ed-sec ed-split ed-split--center">
       <figure class="ed-shot">
         <div class="ed-shot-frame">
-          <img src="/media/team-canvas.webp" alt={h.nocode.alt} width="730" height="598" loading="lazy" class="hp-shot-canvas" />
+          <video muted loop playsinline preload="none" poster="/media/studio-team-trip-run.jpg" width="1600" height="900" aria-label={h.nocode.alt} class="hp-shot-canvas" data-autoplay>
+            <source src="/media/studio-team-trip-run.mp4" type="video/mp4" />
+          </video>
         </div>
         <figcaption>{h.nocode.caption}</figcaption>
       </figure>
@@ -483,8 +485,7 @@ const schema = {
 
 /* ---------- 7 and 8. product captures ---------- */
 
-.hp-shot-workflow { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 38% 50%; }
-.hp-shot-canvas { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.hp-shot-workflow, .hp-shot-canvas { display: block; width: 100%; height: auto; }
 
 /* ---------- 9. ready-made teams ---------- */
 .hp-ready { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }

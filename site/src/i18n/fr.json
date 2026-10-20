@@ -304,7 +304,7 @@
         }
       ],
       "caption": "Un vrai workflow dans le Studio.",
-      "alt": "Un vrai workflow Agentivity sur le canevas : des étapes d'analyse, de rédaction et de publication reliées de gauche à droite"
+      "alt": "Un workflow court dans le Studio : une facture arrive et l'IA la lit ; au-delà de 1 000 €, Finance la valide avant que le demandeur soit prévenu"
     },
     "nocode": {
       "eyebrow": "Comment vous la construisez",
@@ -325,8 +325,8 @@
         }
       ],
       "link": "Voir comment ça marche",
-      "caption": "Le canevas d'équipe dans le Studio.",
-      "alt": "Trois agents sur le canevas d'équipe : un stratège produit, un ingénieur et un designer UX"
+      "caption": "L'équipe Trip Manager au travail dans le Studio. Enregistré depuis le produit, accéléré.",
+      "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur valide chaque étape dans le chat"
     },
     "ready": {
       "eyebrow": "Bientôt",

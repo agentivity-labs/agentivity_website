@@ -293,7 +293,7 @@
         }
       ],
       "caption": "A real workflow in the Studio.",
-      "alt": "A real Agentivity workflow on the canvas: analysis, writing and publishing steps connected left to right"
+      "alt": "A short Agentivity workflow in the Studio: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told"
     },
     "nocode": {
       "eyebrow": "How you build it",
@@ -314,8 +314,8 @@
         }
       ],
       "link": "See how it works",
-      "caption": "The team canvas in the Studio.",
-      "alt": "Three agents on the team canvas: a Product Strategist, an Engineer and a UX Designer"
+      "caption": "The Trip Manager Team at work in the Studio. Recorded from the product, played faster.",
+      "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller approves each step in the chat"
     },
     "ready": {
       "eyebrow": "Coming soon",
