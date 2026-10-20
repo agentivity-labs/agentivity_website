@@ -1,6 +1,6 @@
 ---
 title: "Questions about building and running"
-description: "Short answers about the Assistant, agents, teams and workflows, about runs, and about what Agentivity does not do yet."
+description: "Short answers about the Assistant, agents, teams and workflows, about executions, and about what Agentivity does not do yet."
 sidebar:
   order: 2
 editUrl: false
@@ -65,23 +65,23 @@ Yes, an AI model can vary. Clear instructions reduce it, and so does a low value
 
 ## Running
 
-### How does a run start?
+### How does an execution start?
 
 A person starts it in the Studio, or an application asks for it.
 
-### Can a run start by itself, every morning for example?
+### Can an execution start by itself, every morning for example?
 
-Not yet. Starting runs on a schedule is planned.
+Not yet. Starting executions on a schedule is planned.
 
-### Can a run be started by an incoming e-mail?
+### Can an execution be started by an incoming e-mail?
 
-Not today. A run starts from the Studio or from an application.
+Not today. An execution starts from the Studio or from an application.
 
 ### Where do I see what happened?
 
 In the tab **Execution** of the editor, and in the section **Executions** for the whole workspace. See [The Executions screen](/docs/studio/executions/).
 
-### A run is waiting. What do I do?
+### An execution is waiting. What do I do?
 
 It waits for the answer of a person. In **Executions** it has the label **ACTION REQUIRED**. Open it in its editor and answer in the tab **Execution**.
 

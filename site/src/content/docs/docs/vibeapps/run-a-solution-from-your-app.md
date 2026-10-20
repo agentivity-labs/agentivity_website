@@ -1,6 +1,6 @@
 ---
-title: "List solutions and start a run from your app"
-description: "For developers. With the React SDK, list the solutions of a workspace, start a run, show the conversation and send the answers of the person."
+title: "List solutions and start an execution from your app"
+description: "For developers. With the React SDK, list the solutions of a workspace, start an execution, show the conversation and send the answers of the person."
 sidebar:
   order: 8
 editUrl: false
@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/vibeapps/run-a-solution-from-your-app.md. Do not edit here: edit the source and publish again. -->
 
-This page is for developers. It shows the three things an application does with the React SDK: list what can be launched, start a run, and show the conversation.
+This page is for developers. It shows the three things an application does with the React SDK: list what can be launched, start an execution, and show the conversation.
 
 ## What you need
 
@@ -46,9 +46,9 @@ export function Solutions({ onPick }: { onPick: (id: string) => void }) {
 
 Each entity also has a `kind` (agent, team or workflow) and a `role`, which you can show as a description.
 
-## Start a run and show the conversation
+## Start an execution and show the conversation
 
-`runs.startExecution` starts a run. It returns an `executionId` and a `streamUrl`. `useRunStream` listens to the stream. `ChatController` turns the events into a conversation, and `ChatDiscussion` shows it.
+`runs.startExecution` starts an execution. It returns an `executionId` and a `streamUrl`. `useRunStream` listens to the stream. `ChatController` turns the events into a conversation, and `ChatDiscussion` shows it.
 
 ```tsx
 import { useEffect, useMemo, useState } from 'react';
@@ -90,8 +90,8 @@ What each part does:
 | `entityId` | The identifier of the agent, the team or the workflow to run. |
 | `input` | The request of the person. |
 | `executionId` | Give the one you received to continue the same conversation. Leave it empty to start a new one. |
-| `enableHil` | Lets the run stop and ask the person. HIL stands for "human in the loop". |
-| `onHilResponse` | Called when the person answers a question of the run. `submitHilResponse` sends the answer, and the run continues. The answer names its question with `requestId`, so several questions can wait at the same time, and the answer is kept in the conversation. |
+| `enableHil` | Lets the execution stop and ask the person. HIL stands for "human in the loop". |
+| `onHilResponse` | Called when the person answers a question of the execution. `submitHilResponse` sends the answer, and the execution continues. The answer names its question with `requestId`, so several questions can wait at the same time, and the answer is kept in the conversation. |
 
 ## The screens sent by the team
 
@@ -99,7 +99,7 @@ When a team asks the application to show a choice, a form or a chart, `ChatDiscu
 
 ## Read and write Data Table rows
 
-The client also reads and writes the rows of a Data Table, for example to list past requests without starting a run.
+The client also reads and writes the rows of a Data Table, for example to list past requests without starting an execution.
 
 ```tsx
 const rows = await client.dataTables.listRows(tableId);
@@ -125,14 +125,14 @@ The columns of a table are set in the Studio, not from an application.
 ## How to know it worked
 
 - The list shows your solutions.
-- After a message is sent, the conversation fills in as the run goes.
-- When the run asks a question, the person can answer in the conversation, and the run continues.
+- After a message is sent, the conversation fills in as the execution goes.
+- When the execution asks a question, the person can answer in the conversation, and the execution continues.
 
 ## If it does not work
 
 - **The list is empty.** No entity carries the tag you asked for.
 - **Nothing arrives after a message.** The event stream is not reached. Check that the application and the server share one address, and that nothing in between holds the stream back.
-- **The run fails at once.** The solution itself does not work. Run it in the Studio first.
+- **The execution fails at once.** The solution itself does not work. Run it in the Studio first.
 
 ## Next step
 

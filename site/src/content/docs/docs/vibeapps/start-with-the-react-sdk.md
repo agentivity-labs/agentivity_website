@@ -103,4 +103,4 @@ The SDK needs React 18 or later.
 
 ## Next step
 
-[List solutions and start a run from your app](/docs/vibeapps/run-a-solution-from-your-app/).
+[List solutions and start an execution from your app](/docs/vibeapps/run-a-solution-from-your-app/).

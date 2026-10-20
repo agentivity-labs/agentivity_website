@@ -1,6 +1,6 @@
 ---
-title: "Tri de CV par l'IA : comment le recruteur garde la main"
-description: "Comment fonctionne le tri de CV par l'IA, étape par étape : lire le CV, évaluer l'adéquation, expliquer pourquoi, et envoyer les cas douteux à un recruteur. Avec les risques à surveiller."
+title: "CV screening par l'IA : comment le recruteur garde la main"
+description: "Comment fonctionne le CV screening par l'IA, étape par étape : lire le CV, évaluer l'adéquation, expliquer pourquoi, et envoyer les cas douteux à un recruteur. Avec les risques à surveiller."
 pubDate: 2026-10-10
 author: "Agentivity Team"
 tags: ["HR", "CV screening", "use case", "how-to"]
@@ -14,15 +14,15 @@ faq:
     a: "Oui. Le workflow est dessiné dans le Studio d'Agentivity, étape par étape, et les instructions de chaque étape sont écrites en mots simples. Vous les adaptez à vos postes et à votre façon d'évaluer les candidats."
   - q: "Où vont les données des candidats ?"
     a: "Avec l'édition Community, le workflow tourne sur votre propre serveur. Le texte du CV est envoyé au fournisseur de modèle d'IA que vous avez connecté, pour l'évaluation. Vérifiez les conditions de ce fournisseur, et dites aux candidats comment leurs données sont utilisées."
-  - q: "Le tri de CV par l'IA est-il légal ?"
+  - q: "Le CV screening par l'IA est-il légal ?"
     a: "Il est encadré. Dans l'Union européenne, le règlement européen sur l'IA (AI Act) classe le recrutement parmi les usages de l'IA à haut risque, et le RGPD donne aux personnes des droits face aux décisions prises uniquement par des moyens automatisés. Gardez une personne dans la décision et demandez l'avis de votre conseiller juridique avant la mise en service."
 ---
 
-Le tri de CV par l'IA consiste à utiliser l'IA pour lire chaque CV au regard d'une fiche de poste, évaluer à quel point il correspond, et expliquer pourquoi. Bien fait, il ne remplace pas le recruteur. Il lit tout, trie les cas clairs, et envoie les cas douteux à une personne qui décide.
+Le CV screening par l'IA consiste à utiliser l'IA pour lire chaque CV au regard d'une fiche de poste, évaluer à quel point il correspond, et expliquer pourquoi. Bien fait, il ne remplace pas le recruteur. Il lit tout, trie les cas clairs, et envoie les cas douteux à une personne qui décide.
 
 Cet article montre comment cela fonctionne étape par étape, à partir d'un exemple réel que vous pouvez installer, et liste les risques à garder en vue.
 
-## Ce que fait le tri de CV par l'IA, et ce qu'il ne fait pas
+## Ce que fait le CV screening par l'IA, et ce qu'il ne fait pas
 
 **Ce qu'il fait :**
 
@@ -84,7 +84,7 @@ Parce que les candidats doivent être traités de la même façon.
 
 Un workflow suit le chemin que vous avez dessiné, à l'identique pour chaque candidature. Cela vous donne deux choses dont le recrutement a besoin : la régularité, car chaque CV passe par les mêmes étapes avec les mêmes critères, et une trace, car vous pouvez montrer par quelles étapes une candidature est passée et pourquoi elle a abouti là où elle a abouti.
 
-Une équipe de spécialistes IA, qui choisit elle-même son chemin, convient au travail où chaque demande est différente. Le tri de CV, c'est l'inverse : sa valeur tient au fait de le faire de la même façon à chaque fois. Si vous ne savez pas trop ce qu'un travail demande, [ce guide des systèmes multi-agents](/fr/blog/what-is-a-multi-agent-system) compare les deux.
+Une équipe de spécialistes IA, qui choisit elle-même son chemin, convient au travail où chaque demande est différente. Le CV screening, c'est l'inverse : sa valeur tient au fait de le faire de la même façon à chaque fois. Si vous ne savez pas trop ce qu'un travail demande, [ce guide des systèmes multi-agents](/fr/blog/what-is-a-multi-agent-system) compare les deux.
 
 ## Quatre risques à surveiller
 

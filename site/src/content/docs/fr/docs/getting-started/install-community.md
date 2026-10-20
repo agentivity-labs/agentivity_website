@@ -38,7 +38,7 @@ Dans votre navigateur, sur la machine où tourne Agentivity, ouvrez :
 http://localhost:5005
 ```
 
-Le Studio s'ouvre avec un court guide de bienvenue. C'est là que vous construisez vos agents, équipes et workflows. Le Studio est en anglais.
+Le Studio s'ouvre avec un court guide de bienvenue. C'est là que vous construisez vos agents, équipes et workflows. Le Studio est en anglais : dans cette documentation, les noms des écrans et des boutons sont ceux de l'écran.
 
 **Comment savoir que ça marche :** vous voyez le Studio dans votre navigateur. Si la page ne se charge pas, vérifiez que le conteneur tourne avec `docker ps`.
 
@@ -68,7 +68,7 @@ Le Studio n'est pas concerné : le serveur le fournit lui-même, il appelle donc
 
 ## Bon à savoir
 
-- **Il n'y a pas encore de connexion.** Toute personne qui peut joindre le serveur peut l'utiliser. Gardez-le sur un réseau de confiance, ou derrière votre propre contrôle d'accès. Ne l'exposez pas directement sur Internet. Voyez [Qui peut appeler l'API](#qui-peut-appeler-lapi).
+- **Il n'y a pas encore d'écran de connexion.** Toute personne qui peut joindre le serveur peut l'utiliser. Voyez [Qui peut appeler l'API](#qui-peut-appeler-lapi).
 - **Vos données restent chez vous.** Agents, équipes, workflows, tables et réglages sont stockés dans le volume `agentivity-data`. Sauvegardez-le comme toute autre donnée. Ce que vous envoyez dans une étape d'IA va chez le fournisseur de modèle que vous avez choisi.
 - **Arrêter et démarrer.** Utilisez `docker stop agentivity` pour l'arrêter et `docker start agentivity` pour le redémarrer. Vos données sont conservées.
 - **Mettre à jour.** Récupérez la nouvelle image, supprimez le conteneur, puis relancez la commande de démarrage. Le volume conserve vos données.

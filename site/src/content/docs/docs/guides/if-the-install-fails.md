@@ -105,7 +105,7 @@ On a company machine, do not change the antivirus yourself: ask the person who m
 
 ## The bar at the bottom says Realtime reconnecting
 
-The Studio works, but its screens do not update by themselves, and the chat of a run stays empty. The live connection between your browser and Agentivity is blocked. The cause is often the same as above: a security program or a proxy that holds back the connection. See [The status bar, the theme and the guide button](/docs/studio/status-bar-and-theme/).
+The Studio works, but its screens do not update by themselves, and the chat of an execution stays empty. The live connection between your browser and Agentivity is blocked. The cause is often the same as above: a security program or a proxy that holds back the connection. See [The status bar, the theme and the guide button](/docs/studio/status-bar-and-theme/).
 
 ## The ready-made solutions do not load
 

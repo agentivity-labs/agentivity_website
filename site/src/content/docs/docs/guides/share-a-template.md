@@ -58,7 +58,7 @@ The other kinds (**Text**, **Web pages**, **Sitemap**, **RSS/Atom feed**, **API*
 
 - **The documents of your Knowledge Bases**, and the settings that belong to your server. See above.
 - **Your credentials.** A Template never carries a key. The window tells you what the person who imports it will need, for example a model connection.
-- **The history of your runs.**
+- **The history of your executions.**
 
 Before you share the file, read the instructions of your agents again: anything you wrote there is in the file.
 
@@ -93,7 +93,7 @@ The import creates new copies: nothing they already have is changed. When you al
 ## If it does not work
 
 - **"This file is not a JSON document."** The file chosen is not a Template, or it was changed.
-- **The imported agents fail at their first run.** They have no model connection yet.
+- **The imported agents fail at their first execution.** They have no model connection yet.
 
 ## Next step
 

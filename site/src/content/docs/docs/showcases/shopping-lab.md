@@ -52,7 +52,7 @@ Shopping Lab helps a shopper choose a product. It clarifies the need, reads the 
 
 See [Run a team and read its work](/docs/teams/run-a-team/).
 
-A run uses the AI model many times: nine agents work, and several of them make several calls.
+An execution uses the AI model many times: nine agents work, and several of them make several calls.
 
 ## Make it yours
 

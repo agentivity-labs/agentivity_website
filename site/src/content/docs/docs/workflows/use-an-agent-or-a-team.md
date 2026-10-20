@@ -97,7 +97,7 @@ The answer of a team depends on how it works.
 | **Concurrent** | The answer of every member, each one after the name of the member (`Flights:`, then its answer, then `Hotels:`, and so on), in the order of the team. |
 | **Group chat** | The last answer of the discussion. |
 
-This is also the answer that the run of the team shows, and the one that a team gives when it is a member of another team.
+This is also the answer that the execution of the team shows, and the one that a team gives when it is a member of another team.
 
 A team gives the named outputs of the member whose answer is its answer: the one who concludes. In a **Manager-led** team, it is the manager. A **Concurrent** team gives none, because nobody concludes there. See [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/).
 
@@ -112,12 +112,12 @@ What we saw: a called workflow that declared `output` and `city` gave both, and 
 
 ### When what you call fails
 
-A failure inside what you call fails the step that called it: the agent, the team or the workflow fails, then the step that called it, and so on as far as the whole run. The message says what failed, and why. For example: `The workflow 'Reminder Approval' failed: …`. When the failure is deep inside, the message names each level.
+A failure inside what you call fails the step that called it: the agent, the team or the workflow fails, then the step that called it, and so on as far as the whole execution. The message says what failed, and why. For example: `The workflow 'Reminder Approval' failed: …`. When the failure is deep inside, the message names each level.
 
 The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**.
 
 - If **Error** is linked, the workflow goes on from there, and the output `error` holds the message. Link it to a step that handles the failure.
-- If **Error** is not linked, the run fails, and the whole execution with it. No later step runs.
+- If **Error** is not linked, the execution fails, and the whole execution with it. No later step runs.
 
 A team whose model does not answer, refuses, or cannot choose which member answers first fails too: the message says that the team could not choose which member answers first. It no longer goes on with a member chosen by default.
 
@@ -125,14 +125,14 @@ A team whose model does not answer, refuses, or cannot choose which member answe
 
 What you call may stop to wait: an agent that asks a person a question, a workflow with an approval step. Your workflow then waits with it, and goes on when what you called has finished.
 
-What we saw with a workflow that asks a person: the calling step showed the state "waiting for input", and the run stayed in that state. We did not see the question in the list of pending questions of the calling execution (`/executions/{executionId}/hil/pending`), so we could not answer it through the API. We did not try to answer it in the Studio. Until this is checked, test a call that waits in the Studio before you rely on it.
+What we saw with a workflow that asks a person: the calling step showed the state "waiting for input", and the execution stayed in that state. We did not see the question in the list of pending questions of the calling execution (`/executions/{executionId}/hil/pending`), so we could not answer it through the API. We did not try to answer it in the Studio. Until this is checked, test a call that waits in the Studio before you rely on it.
 
-This is not possible inside a loop. If a step of a **For Each** loop calls something that waits, the run fails, and the message says that a loop cannot wait. See [Repeat steps for each item of a list](/docs/workflows/repeat-steps/).
+This is not possible inside a loop. If a step of a **For Each** loop calls something that waits, the execution fails, and the message says that a loop cannot wait. See [Repeat steps for each item of a list](/docs/workflows/repeat-steps/).
 
 ## What the step refuses
 
-- **Something of another kind.** Each step calls only its own kind. Given a team, the step **Agent** stops the run, with a message that names the chosen item and says that it is a team. Use the step **Team** for a team.
-- **Nothing chosen.** A step with nothing chosen stops the run, with a message that says no agent (or team, or workflow) is chosen.
+- **Something of another kind.** Each step calls only its own kind. Given a team, the step **Agent** stops the execution, with a message that names the chosen item and says that it is a team. Use the step **Team** for a team.
+- **Nothing chosen.** A step with nothing chosen stops the execution, with a message that says no agent (or team, or workflow) is chosen.
 
 ## If Agent and Team are not in the catalogue
 
@@ -144,10 +144,10 @@ Run the workflow. In the tab **Execution**, the step turns to completed, and the
 
 ## If it does not work
 
-- **The run fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
+- **The execution fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
 - **The answer is empty, and the step called a workflow.** The called workflow declares no output named `output`, and none of its steps produced an output named `output`, `result`, `response` or `content`. Declare its answer. See "What a workflow gives back".
 - **A value from inside the called workflow is empty.** A called workflow no longer gives the outputs of its own steps. Declare that value as an output of the called workflow, then read it by the name of the step and the name of the output, between two pairs of curly braces.
-- **The whole run fails at this step.** What you called failed, and the exit **Error** of the step is not linked. The message says what failed, and why. Fix it, or link a step to **Error** to go on.
+- **The whole execution fails at this step.** What you called failed, and the exit **Error** of the step is not linked. The message says what failed, and why. Fix it, or link a step to **Error** to go on.
 - **A named output of an agent is empty.** The agent has no format for its answer, or its answer does not hold that field. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 - **The agent answers beside the point.** The step sends only the message. Put the facts the agent needs in it.
 

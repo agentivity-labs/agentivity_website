@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/fr/getting-started/welcome-guide.md. Do not edit here: edit the source and publish again. -->
 
-La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. Il compte quatre étapes courtes. Vous pouvez passer n'importe quelle étape et y revenir plus tard.
+La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. Il compte quatre étapes courtes. La liste de gauche montre aussi l'écran d'accueil et l'écran de fin, qui ne sont pas comptés comme des étapes. Vous pouvez passer n'importe quelle étape et y revenir plus tard.
 
 ## Ce dont vous avez besoin
 
@@ -19,7 +19,7 @@ La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. Il
 
 ## Lancer le guide
 
-![Le guide de bienvenue du Studio : les six étapes à gauche et, à droite, les trois cartes Connect your model, Try a ready-made solution et Take the two-minute tour, avec le bouton Get started](images/welcome-guide.jpg)
+![Le guide de bienvenue du Studio : la liste des étapes à gauche, de Welcome à You are set, et, à droite, les trois cartes Connect your model, Try a ready-made solution et Take the two-minute tour, avec le bouton Get started](images/welcome-guide.jpg)
 
 L'écran de bienvenue montre ce que couvre le guide : **Connect your model**, **Try a ready-made solution** et **Take the two-minute tour**.
 
@@ -44,7 +44,7 @@ Pour le faire plus tard, sélectionnez **Skip for now**. La page [Connecter un m
 
 ## Étape 2 : essayer une première Solution
 
-Une Solution, c'est ce que vous lancez pour qu'un besoin soit pris en charge de bout en bout. Cette étape propose des Solutions prêtes à l'emploi : vous en voyez une fonctionner avant de construire quoi que ce soit. Chaque carte indique ce que contient la Solution, par exemple « 1 team · 13 agents · 2 data tables ».
+Une solution, c'est ce que vous lancez pour qu'un besoin soit pris en charge de bout en bout. Cette étape propose des Solutions prêtes à l'emploi : vous en voyez une fonctionner avant de construire quoi que ce soit. Chaque carte indique ce que contient la Solution, par exemple « 1 team · 13 agents · 2 data tables ».
 
 ![L'étape 2 du guide de bienvenue, Try a first solution : les cartes CV Screening, Invoice Clerk, Shopping Lab et Trip Manager Team, chacune avec son contenu et un lien Try it](images/four-showcases.jpg)
 

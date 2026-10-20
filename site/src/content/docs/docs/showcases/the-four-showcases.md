@@ -50,7 +50,7 @@ The machine where Agentivity runs needs an internet connection: the showcases co
 ## Before you run one
 
 - **You need a model connection.** The import makes the agents use yours. See [Connect an AI model](/docs/guides/connect-a-model/).
-- **A run costs.** Each agent that works uses the AI model, and your provider bills you. Trip Manager Team has thirteen agents and Shopping Lab has nine: one request uses the model many times.
+- **An execution costs.** Each agent that works uses the AI model, and your provider bills you. Trip Manager Team has thirteen agents and Shopping Lab has nine: one request uses the model many times.
 - **They are examples.** They show how to build. Read their instructions and adapt them before you rely on one for real work.
 
 ## Each showcase is a solution

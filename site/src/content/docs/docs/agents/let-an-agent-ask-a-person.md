@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/agents/let-an-agent-ask-a-person.md. Do not edit here: edit the source and publish again. -->
 
-An agent can stop in the middle of its work and ask a person: a missing detail, a choice, or an approval. The run waits, and continues when the person has answered. For this, the agent needs a channel: the way its question reaches the person.
+An agent can stop in the middle of its work and ask a person: a missing detail, a choice, or an approval. The execution waits, and continues when the person has answered. For this, the agent needs a channel: the way its question reaches the person.
 
 ## What you need
 
@@ -21,7 +21,7 @@ The channels are in the **Node Catalog**, under **AI** > **Interactions**.
 
 | Channel | Where the person answers |
 |---|---|
-| **Chat Channel** | In the chat of the run, inside the Studio or inside an application built on Agentivity. |
+| **Chat Channel** | In the chat of the execution, inside the Studio or inside an application built on Agentivity. |
 | **Forms Channel** | In a form. |
 | **Email Channel** | By e-mail. |
 | **Slack Channel** | In Slack. |
@@ -50,7 +50,7 @@ See [Write the role and the instructions of an agent](/docs/agents/write-the-ins
 2. When the agent asks, its question appears in the panel on the right, and the field at the bottom says **Type your response…**
 3. Type the answer and send it. The agent continues.
 
-A run that waits for a person has the label **ACTION REQUIRED** in the section **Executions**.
+An execution that waits for a person has the label **ACTION REQUIRED** in the section **Executions**.
 
 ## Stop an agent from asking
 

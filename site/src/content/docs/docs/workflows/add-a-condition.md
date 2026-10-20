@@ -55,7 +55,7 @@ When you [run the workflow](/docs/workflows/run-a-workflow/), only one of the tw
 
 ## If it does not work
 
-- **The workflow always takes the path False.** The condition has no row, or the value does not match exactly. Open the run, select the step before **If** in the **Inspector**, and read what it really produced.
+- **The workflow always takes the path False.** The condition has no row, or the value does not match exactly. Open the execution, select the step before **If** in the **Inspector**, and read what it really produced.
 - **The window shows no output to choose from.** **If** is not linked to an earlier step.
 
 ## Other steps that control the path

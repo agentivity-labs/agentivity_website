@@ -14,10 +14,10 @@ Agentivity has no login today. The Studio opens for anyone who can reach its add
 ## What anyone who reaches the server can do
 
 - Open the Studio, and change or delete agents, teams, workflows and tables.
-- Start any run, with your AI model and at your cost.
+- Start any execution, with your AI model and at your cost.
 - Read the rows of your Data Tables.
 - Add, change and delete credentials. A secret that is already saved is shown as dots and is not given back.
-- Answer a question that a run asks a person.
+- Answer a question that an execution asks a person.
 
 Agentivity does not record who did what.
 

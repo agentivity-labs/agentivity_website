@@ -1,6 +1,6 @@
 ---
 title: "The words Agentivity uses"
-description: "A short glossary of the words used in the Studio and in these pages. Solution, agent, team, workflow, node, run, Template, VibeApp and more."
+description: "A short glossary of the words used in the Studio and in these pages. Solution, agent, team, workflow, node, execution, Template, VibeApp and more."
 sidebar:
   order: 8
 editUrl: false
@@ -47,9 +47,9 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | Word | Meaning |
 |---|---|
 | **Request** | What a person asks a solution to do. |
-| **Run**, **execution** | One request handled from start to finish. The Studio uses both words. |
-| **Finished work** | What the person receives at the end of a run. |
-| **Human interaction** | A moment where a run stops and waits for the answer of a person. |
+| **Execution** | One request handled from start to finish. |
+| **Finished work** | What the person receives at the end of an execution. |
+| **Human interaction** | A moment where an execution stops and waits for the answer of a person. |
 | **Channel** | The way a question reaches a person, for example the chat of the Studio. |
 
 ## Models and connections

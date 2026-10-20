@@ -13,7 +13,7 @@ A team is several agents that work together on one request. This page builds a t
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/teams/images/create-a-team.mp4" aria-label="A recording of the Studio: a team named Payment Reminders is created, the Sequential pattern is chosen, two agents are dragged onto the canvas, and the team is published"></video>
 
-The recording is played faster than real use. To have a team built from a description instead, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+Recorded from the product, played faster. To have a team built from a description instead, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
 ## What you need
 

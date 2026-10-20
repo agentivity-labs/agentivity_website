@@ -1,6 +1,6 @@
 ---
 title: "Les mots qu'utilise Agentivity"
-description: "Un court glossaire des mots du Studio et de ces pages, expliqués en français : Solution, agent, team, workflow, node, run, Template, VibeApp et d'autres."
+description: "Un court glossaire des mots du Studio et de ces pages, expliqués en français : Solution, agent, team, workflow, node, exécution, Template, VibeApp et d'autres."
 sidebar:
   order: 8
 editUrl: false
@@ -47,7 +47,7 @@ Voici les mots que vous rencontrez dans le Studio et dans ces pages, expliqués 
 | Mot | Sens |
 |---|---|
 | **Request** (demande) | Ce qu'une personne demande à une solution de faire. |
-| **Run**, **execution** (exécution) | Une demande traitée du début à la fin. Le Studio utilise les deux mots. |
+| **Execution** (exécution) | Une demande traitée du début à la fin. |
 | **Finished work** (travail terminé) | Ce que la personne reçoit à la fin d'une exécution. |
 | **Human interaction** (interaction humaine) | Un moment où une exécution s'arrête et attend la réponse d'une personne. |
 | **Channel** (canal) | Le chemin par lequel une question parvient à une personne, par exemple le chat du Studio. |
@@ -67,7 +67,7 @@ Voici les mots que vous rencontrez dans le Studio et dans ces pages, expliqués 
 | Mot | Sens |
 |---|---|
 | **Template** | Un fichier unique qui contient une solution et tout ce dont elle a besoin. Vous importez un Template pour obtenir une solution, et vous en créez un pour partager votre travail. |
-| **Showcase** (démonstration) | Une solution toute prête, proposée sous forme de Template, qui montre comment quelque chose est construit. |
+| **Showcase** (solution de démonstration) | Une solution toute prête, proposée sous forme de Template, qui montre comment quelque chose est construit. |
 | **Synergi** | La marketplace d'Agentivity, où se trouvent les Templates. Le Studio l'appelle « the marketplace ». |
 | **VibeApp** | Une application qui s'adapte à la personne qui l'utilise, avec une équipe de spécialistes IA derrière elle. La personne fixe l'objectif, et les écrans arrivent quand on en a besoin. S'écrit en un seul mot, avec un V et un A majuscules. |
 

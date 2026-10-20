@@ -26,7 +26,7 @@ The Studio is the visual editor of Agentivity. It runs in your browser. This pag
 | **Studio** > **Agents** | The list of your agents and your teams. Open one to change it or to run it. |
 | **Studio** > **Workflows** | The list of your workflows. |
 | **Studio** > **Prompts** | The prompts you write and test. A prompt is the text of instructions that is sent to an AI model. |
-| **Executions** | The runs: each time an agent, a team or a workflow worked on a request. |
+| **Executions** | The executions: each time an agent, a team or a workflow worked on a request. |
 | **Resources** > **Data Tables** | Tables of data that your agents and workflows can read and fill. |
 | **Resources** > **Knowledge Bases** | Your documents, pages and feeds, kept so that agents can search them by meaning. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/). |
 | **Templates** | Ready-made solutions to import, and **Import from file** for a Template you received. |
@@ -51,9 +51,9 @@ The home page is titled **Welcome back**. It has three parts.
 - **Create new team**
 - **Browse templates**
 
-**Counters**: **Executions this week** and **Executions this year** count the runs. **Saved this week** and **Saved this year** show an estimate of the time saved by these runs.
+**Counters**: **Executions this week** and **Executions this year** count the executions. **Saved this week** and **Saved this year** show an estimate of the time saved by these executions.
 
-**Active & needs attention**: the runs that are in progress, the runs that failed, and the runs that wait for an answer from a person. When there is nothing, you read "Nothing running and nothing waiting on you right now."
+**Active & needs attention**: the executions that are in progress, the executions that failed, and the executions that wait for an answer from a person. When there is nothing, you read "Nothing running and nothing waiting on you right now."
 
 ## The list of agents and teams
 

@@ -13,7 +13,7 @@ A workflow is a set of steps that you draw in advance. The steps run in the orde
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/workflows/images/create-a-workflow.mp4" aria-label="A recording of the Studio: a workflow named Reminder Approval is created, three nodes are dragged from the Node Catalog onto the canvas, they are linked, and the workflow is published"></video>
 
-The recording is played faster than real use.
+Recorded from the product, played faster.
 
 ## What you need
 

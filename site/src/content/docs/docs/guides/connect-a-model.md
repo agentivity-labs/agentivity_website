@@ -60,6 +60,7 @@ This list has more providers than the welcome guide. For example, it also offers
 | Field | What to enter |
 |---|---|
 | **Name** | A name that you will recognise. |
+| **Description** | Optional. A note to help you tell this connection from another one. |
 | **API key** | The key of your provider. It is a secret. |
 | **Model** | **Required.** The exact ID of the model, as your provider names it, for example `claude-opus-4-5-20251101`. There is no default value. |
 | **Base URL** | **Required** for Anthropic, OpenAI, Google Gemini, xAI and DeepSeek. The address of the API of the provider. It is already filled in with the official address. |

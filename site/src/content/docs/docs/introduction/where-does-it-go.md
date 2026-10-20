@@ -20,7 +20,7 @@ An agent can be given six kinds of things. They look alike, and people mix them 
 | Look up or change facts kept in rows: prices, stock, orders, customers | **A Data Table** | A **Data Table** tool | Until the rows are changed |
 | Know your texts: policies, guides, manuals, a website, a feed, the rows of a database seen as texts | **A Knowledge Base** | The **Knowledge Base** step, on the diamond **Knowledge Bases**. The agent searches by meaning | Kept, and kept up to date from its source |
 | Remember the earlier messages of a conversation | **An Agent Session** | The diamond **Agent Session** | **In-Memory**: until the server restarts. **File**: kept |
-| Keep texts while it works and find them again by meaning: notes, what it learned | **A Vector Store** | The **AI Agent Vector Store Tool**, or a **Vector Store** step in a workflow | **In-Memory**: the time of one run. **Qdrant**, **Pinecone**, **pgvector**: kept |
+| Keep texts while it works and find them again by meaning: notes, what it learned | **A Vector Store** | The **AI Agent Vector Store Tool**, or a **Vector Store** step in a workflow | **In-Memory**: the time of one execution. **Qdrant**, **Pinecone**, **pgvector**: kept |
 
 ## An example, with the agent Reminder Writer
 

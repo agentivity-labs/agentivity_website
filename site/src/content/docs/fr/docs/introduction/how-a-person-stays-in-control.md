@@ -1,6 +1,6 @@
 ---
 title: "Comment une personne garde la main"
-description: "Où vous décidez dans Agentivity : des brouillons que vous enregistrez, des étapes qui attendent votre accord, des exécutions à arrêter, un suivi pas à pas."
+description: "Où vous décidez dans Agentivity : des brouillons que vous enregistrez, des étapes qui attendent votre validation, des exécutions à arrêter, un suivi pas à pas."
 sidebar:
   order: 6
 editUrl: false
@@ -19,7 +19,7 @@ Une équipe IA fait le travail répétitif. Les décisions restent les vôtres. 
 ## Quand une solution tourne
 
 - **Une étape peut attendre une personne.** Dans un workflow, vous ajoutez une étape qui envoie une question et s'arrête. Le workflow ne continue que lorsque quelqu'un a répondu. Voyez [Demander à une personne de valider ou de répondre](/fr/docs/workflows/ask-a-person-to-decide/).
-- **Un agent peut demander avant de décider.** Un agent qui dispose d'un canal pour joindre une personne peut s'arrêter et demander un choix ou un accord.
+- **Un agent peut demander avant de décider.** Un agent qui dispose d'un canal pour joindre une personne peut s'arrêter et demander un choix ou une validation.
 - **Vous pouvez arrêter une exécution.** La barre au-dessus du canevas propose **Pause**, **Resume** et **Stop**. La section **Executions** peut arrêter plusieurs exécutions à la fois.
 - **Une exécution démarre quand une personne la lance.** Rien ne démarre tout seul. Le lancement d'exécutions selon un planning est prévu, mais pas encore disponible.
 

@@ -15,7 +15,7 @@ Prompt Studio has four ways to work on a prompt: try it, test it, analyse it and
 
 All of this needs a model connection chosen in the tab **Settings** of the panel on the right.
 
-Each run uses the AI model, and your provider bills you for it.
+Each execution uses the AI model, and your provider bills you for it.
 
 ## Try the prompt
 
@@ -41,7 +41,7 @@ A test case is one example that you keep: values for the inputs, and the answer 
 ## Run the test cases
 
 - **Run All Test Cases** runs every saved case against the current prompt.
-- Select one case to see its last run: the expected answer, the actual answer, and a score.
+- Select one case to see its last execution: the expected answer, the actual answer, and a score.
 
 A case that passes is marked **Success**; one that does not is marked **Failed**, with an analysis of the failure.
 

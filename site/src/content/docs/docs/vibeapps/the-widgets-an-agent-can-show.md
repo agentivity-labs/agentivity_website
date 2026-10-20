@@ -11,12 +11,12 @@ lastUpdated: false
 
 This page is for developers. An agent does not only write text. It can put a chart, a form or a choice in the conversation. These pieces are named widgets. The SDK has twenty-two, and your application shows them with one line.
 
-This is what makes a VibeApp more than a chat window: the run decides which screen comes next.
+This is what makes a VibeApp more than a chat window: the execution decides which screen comes next.
 
 ## How it works
 
 1. **In the Studio, the Chat Channel of the agent says which widgets exist.** A group of widgets is named a bundle. The bundle **Agentivity Artifacts** holds the twenty-two widgets, and it is on by default.
-2. **During a run, the agent chooses.** Each widget has a description that tells the agent when to use it. The agent fills in the content: the bars of a chart, the options of a choice.
+2. **During an execution, the agent chooses.** Each widget has a description that tells the agent when to use it. The agent fills in the content: the bars of a chart, the options of a choice.
 3. **Your application draws it.** The SDK has the matching component for each name.
 4. **If the widget asks something, the person answers in it,** and the answer goes back to the agent like a typed message.
 
@@ -71,7 +71,7 @@ const widgetRegistry = buildArtifactsBundle();
 <ChatDiscussion controller={controller} onSend={handleSend} onHilResponse={handleHilResponse} widgetRegistry={widgetRegistry} />;
 ```
 
-`controller`, `handleSend` and `handleHilResponse` are those of [List solutions and start a run from your app](/docs/vibeapps/run-a-solution-from-your-app/).
+`controller`, `handleSend` and `handleHilResponse` are those of [List solutions and start an execution from your app](/docs/vibeapps/run-a-solution-from-your-app/).
 
 ## Make the agent use the right widget
 

@@ -1,6 +1,6 @@
 ---
 title: "Run a team and read its work"
-description: "Give a task to a team in the Studio, follow each member while it works, answer when the team asks you something, and find the run again later."
+description: "Give a task to a team in the Studio, follow each member while it works, answer when the team asks you something, and find the execution again later."
 sidebar:
   order: 7
 editUrl: false
@@ -9,12 +9,12 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/teams/run-a-team.md. Do not edit here: edit the source and publish again. -->
 
-A run is one request handled by a team, from the task you give to the finished work. This page shows how to start a run and how to read what happened.
+An execution is one request handled by a team, from the task you give to the finished work. This page shows how to start an execution and how to read what happened.
 
 ## What you need
 
 - A team in your workspace. To get one, [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/), [build one with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/) or [create one by hand](/docs/teams/create-a-team/).
-- A model connection that works. See [Connect an AI model](/docs/guides/connect-a-model/). Each run uses the AI model, and your provider bills you for it.
+- A model connection that works. See [Connect an AI model](/docs/guides/connect-a-model/). Each execution uses the AI model, and your provider bills you for it.
 
 ## Give a task to the team
 
@@ -34,51 +34,51 @@ Below the drawing, three tabs show what happens:
 
 | Tab | What it shows |
 |---|---|
-| **Inspector** | The steps of the run. Select a step to see what the member received, what it produced and its logs. |
+| **Inspector** | The steps of the execution. Select a step to see what the member received, what it produced and its logs. |
 | **Errors** | What went wrong. When all is well, it says "No runtime errors detected." |
-| **Logs** | The technical record of the run. |
+| **Logs** | The technical record of the execution. |
 
-The buttons above the drawing control the run: **Run**, **Pause**, **Resume** and **Stop**.
+The buttons above the drawing control the execution: **Run**, **Pause**, **Resume** and **Stop**.
 
 ## Answer when the team asks
 
-A team can stop and ask you something: a choice, an approval or a missing detail. The run waits for you.
+A team can stop and ask you something: a choice, an approval or a missing detail. The execution waits for you.
 
 1. Read the question in the panel **Chat**.
 2. Type your answer in the field **Type your response…**
-3. Select **Send response**. The run continues.
+3. Select **Send response**. The execution continues.
 
-A run that waits for you is listed in the section **Executions**, with the label **ACTION REQUIRED**.
+An execution that waits for you is listed in the section **Executions**, with the label **ACTION REQUIRED**.
 
-## Find a run again
+## Find an execution again
 
-In the tab **Execution**, the panel on the right has a list **Executions**. Each run has a state:
+In the tab **Execution**, the panel on the right has a list **Executions**. Each execution has a state:
 
 | State | What it means |
 |---|---|
 | **Running** | The team is working. |
 | **Awaiting input** | The team waits for your answer. |
 | **Completed** | The work is finished. |
-| **Failed** | The run stopped on an error. |
-| **Cancelled** | The run was stopped by a person. |
+| **Failed** | The execution stopped on an error. |
+| **Cancelled** | The execution was stopped by a person. |
 
-The section **Executions**, in the menu on the left, lists the runs of your whole workspace.
+The section **Executions**, in the menu on the left, lists the executions of your whole workspace.
 
 ## How to know it worked
 
-- The run reaches the state **Completed**.
+- The execution reaches the state **Completed**.
 - The panel **Chat** shows the finished work of the team.
 - The tab **Errors** says "No runtime errors detected."
 
 ## If it does not work
 
-- **The run fails at the first step.** The model connection of the agents does not work. For an imported team, see "The model of the imported agents" in [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/). Otherwise, check your key in **Settings** > **Credentials**.
-- **The run does not move.** Look at its state. If it is **Awaiting input**, the team waits for your answer.
+- **The execution fails at the first step.** The model connection of the agents does not work. For an imported team, see "The model of the imported agents" in [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/). Otherwise, check your key in **Settings** > **Credentials**.
+- **The execution does not move.** Look at its state. If it is **Awaiting input**, the team waits for your answer.
 - **The result is not what you wanted.** Open the tab **Inspector** and read the steps one by one, to find which member went wrong. Then change the role or the instructions of that member.
 
 ## Good to know
 
-Runs start when a person starts them. Starting runs on a schedule is planned, and it is not available yet.
+Executions start when a person starts them. Starting executions on a schedule is planned, and it is not available yet.
 
 ## Next step
 

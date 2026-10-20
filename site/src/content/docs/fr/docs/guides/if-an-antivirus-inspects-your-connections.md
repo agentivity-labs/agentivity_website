@@ -71,7 +71,7 @@ Nous avons essayé cette méthode avec un certificat de substitution sur une pag
 
 ## Méthode 2 : désactiver l'analyse des connexions sécurisées
 
-Ouvrez les réglages de l'antivirus et cherchez l'option qui analyse les connexions sécurisées. En anglais, elle s'appelle « HTTPS scanning », « SSL/TLS scanning » ou « Encrypted connections scanning ». Dans Avast et AVG, elle se trouve dans **Protection**, **Core Shields**, **Web Shield**.
+Ouvrez les réglages de l'antivirus et cherchez l'option qui analyse les connexions sécurisées. En anglais, elle s'appelle « HTTPS scanning », « SSL/TLS scanning » ou « Encrypted connections scanning ». Dans Avast et AVG, elle se trouve dans **Protection**, **Core Shields**, **Web Shield**. Dans une version française d'Avast, ces noms peuvent être différents (par exemple « Bouclier Web » et « Activer l'analyse HTTPS ») : cherchez l'option d'analyse HTTPS dans les réglages du bouclier Web.
 
 Désactivez-la, ou ajoutez une exception pour Docker si l'antivirus le permet. Redémarrez ensuite Agentivity avec `docker restart agentivity`, puis sélectionnez de nouveau **Test** sur votre connexion au modèle.
 

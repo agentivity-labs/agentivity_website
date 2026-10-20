@@ -15,7 +15,7 @@ Agentivity est une plateforme pour construire et faire tourner des agents IA, de
 
 La plupart des outils d'IA répondent à une question. Mais c'est encore vous qui pilotez : vous demandez, vous vérifiez, vous corrigez, vous redemandez.
 
-Agentivity est fait pour le travail qui doit arriver terminé. Vous construisez une solution : quelque chose qu'une personne lance pour faire traiter un besoin du début à la fin. Par exemple, une solution qui lit une facture fournisseur, vérifie ses montants et la classe. Ou une solution qui rédige une relance de paiement et attend votre accord avant que quoi que ce soit ne parte.
+Agentivity est fait pour le travail qui doit arriver terminé. Vous construisez une solution : quelque chose qu'une personne lance pour faire traiter un besoin du début à la fin. Par exemple, une solution qui lit une facture fournisseur, vérifie ses montants et la classe. Ou une solution qui rédige une relance de paiement et attend votre validation avant que quoi que ce soit ne parte.
 
 ## Les trois briques
 
@@ -32,7 +32,7 @@ Pour choisir entre les trois, lisez [Choisir entre un agent, une équipe et un w
 - **Le moteur.** Le programme qui fait tourner vos agents, vos équipes et vos workflows. Il tourne sur votre propre machine ou serveur, avec Docker.
 - **Le Studio.** L'éditeur visuel, dans votre navigateur. C'est là que vous construisez, lancez et suivez tout. Voyez [Se repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/).
 - **L'Assistant.** Une partie du Studio qui construit pour vous. Vous décrivez votre besoin avec vos mots ; il pose des questions, montre un plan et construit un brouillon que vous vérifiez et enregistrez.
-- **Des solutions toutes prêtes.** Quatre démonstrations que vous pouvez importer et ouvrir, pour voir comment une solution terminée est construite.
+- **Des Solutions toutes prêtes.** Quatre Solutions de démonstration que vous pouvez importer et ouvrir, pour voir comment une solution terminée est construite.
 
 ## Ce que vous apportez
 

@@ -99,16 +99,16 @@ The option **reset** of **Collect** clears the list before adding. Leave it off 
 1. Put a **Console** step in the loop, with the reference of one field of the current item as its value.
 2. Put another **Console** step after the loop, with `each.count`.
 3. Run the workflow.
-4. The run ends as completed, and the second **Console** shows the number of items.
+4. The execution ends as completed, and the second **Console** shows the number of items.
 
 We ran this with the list above. The steps in the loop received each customer in turn, and the step after the loop showed 3.
 
 ## Limits to know today
 
-- **Nothing that waits inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, or calls an agent, a team or a workflow that stops to wait, the run fails, and the message says so. Ask before the loop or after it.
-- **The Studio shows the last item only.** After a run, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
+- **Nothing that waits inside a loop.** A loop runs all its items in one go and cannot wait. If a step in the loop asks a person, or calls an agent, a team or a workflow that stops to wait, the execution fails, and the message says so. Ask before the loop or after it.
+- **The Studio shows the last item only.** After an execution, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
 - **The loop does not collect what its steps produce by itself.** After the loop, `each.count` is the only output of **For Each**. Add a **Collect** step in the loop to keep what each item produces.
-- **One failure fails the run.** If a step of the loop fails on one item, the whole run fails.
+- **One failure fails the execution.** If a step of the loop fails on one item, the whole execution fails.
 - **An empty list is not an error.** The steps of the loop are skipped, `count` is 0, and the workflow continues from the lower dot.
 - **An AI step in a loop costs once per item.** A list of one hundred items uses the AI model at least one hundred times. Try with two or three items first.
 
@@ -116,7 +116,7 @@ We ran this with the list above. The steps in the loop received each customer in
 
 - **The loop runs once, with the whole list as one item.** The list is not valid JSON. Check the square brackets, the commas and the quotation marks.
 - **A field of the item is empty.** Check the spelling of the field, and the node name of the **For Each** step in the reference.
-- **The run fails with a message about a loop that cannot wait.** A step in the loop asks a person, or calls something that asks one. Move it out of the loop.
+- **The execution fails with a message about a loop that cannot wait.** A step in the loop asks a person, or calls something that asks one. Move it out of the loop.
 
 ## Reference
 

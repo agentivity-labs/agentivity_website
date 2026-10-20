@@ -22,11 +22,11 @@ L'édition Community est l'édition d'Agentivity que vous installez vous-même, 
 - **Les Knowledge Bases**, pour donner à vos agents vos documents, vos pages et vos flux. Huit types de sources sont proposés, parmi lesquels des fichiers du serveur, des pages web et une base de données SQLite ou PostgreSQL. La recherche tourne sur votre serveur, avec un petit modèle local, et ne demande aucun compte.
 - **Les Vector Stores**, pour conserver des textes et les retrouver par leur sens : un gratuit qui dure le temps d'une exécution, et trois qui conservent les textes (Qdrant, Pinecone, pgvector).
 - **Prompt Studio**, pour écrire et tester des prompts.
-- **Les Templates** : vous pouvez importer une solution depuis un fichier, et enregistrer votre propre travail dans un fichier à partager.
-- **Les dossiers**, pour ranger vos agents, équipes, workflows et tables.
+- **Les Templates** : vous pouvez importer une Solution depuis un fichier, et enregistrer votre propre travail dans un fichier à partager.
+- **Folders**, pour ranger vos agents, équipes, workflows et tables.
 - **Un catalogue de plus de cent nœuds** pour les workflows et les agents : modèles d'IA, outils, recherche web, stockage, messages, et plus encore.
 
-Les quatre solutions de démonstration sont proposées sous forme de Templates. Elles sont téléchargées depuis le catalogue Agentivity quand vous les importez : la machine a donc besoin d'une connexion Internet.
+Les quatre Solutions de démonstration sont proposées sous forme de Templates. Elles sont téléchargées depuis le catalogue Agentivity quand vous les importez : la machine a donc besoin d'une connexion Internet.
 
 ## Ce qui n'est pas inclus
 

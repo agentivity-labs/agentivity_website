@@ -1,6 +1,6 @@
 ---
 title: "How a person stays in control"
-description: "Where you decide in Agentivity. Drafts that you save yourself, steps that wait for your approval, runs you can stop, and a record of each step."
+description: "Where you decide in Agentivity. Drafts that you save yourself, steps that wait for your approval, executions you can stop, and a record of each step."
 sidebar:
   order: 6
 editUrl: false
@@ -20,12 +20,12 @@ An AI team does the repetitive work. The decisions stay with you. This page list
 
 - **A step can wait for a person.** In a workflow, you add a step that sends a question and stops. The workflow continues only when someone has answered. See [Ask a person to approve or answer](/docs/workflows/ask-a-person-to-decide/).
 - **An agent can ask before it decides.** An agent that has a channel to reach a person can stop and ask for a choice or an approval.
-- **You can stop a run.** The bar above the canvas has **Pause**, **Resume** and **Stop**. The section **Executions** can stop several runs at once.
-- **A run starts when a person starts it.** Nothing starts by itself. Starting runs on a schedule is planned, and it is not available yet.
+- **You can stop an execution.** The bar above the canvas has **Pause**, **Resume** and **Stop**. The section **Executions** can stop several executions at once.
+- **An execution starts when a person starts it.** Nothing starts by itself. Starting executions on a schedule is planned, and it is not available yet.
 
-## After a run
+## After an execution
 
-- **Every run is listed.** The section **Executions** shows the runs of your workspace and their state. A run that waits for a person has the label **ACTION REQUIRED**.
+- **Every execution is listed.** The section **Executions** shows the executions of your workspace and their state. An execution that waits for a person has the label **ACTION REQUIRED**.
 - **Every step can be read.** In the tab **Execution** of an editor, the **Inspector** shows, for each step, what it received and what it produced.
 
 ## Fixed rules where you need them

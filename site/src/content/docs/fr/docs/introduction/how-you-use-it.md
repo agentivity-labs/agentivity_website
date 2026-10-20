@@ -44,7 +44,7 @@ Une fois qu'une solution fonctionne, d'autres personnes peuvent l'utiliser. Il y
 | **Un portail** | Une seule page web où les gens lancent les solutions que vous avez mises à leur disposition. | Une application web à installer à côté d'Agentivity. |
 | **Une VibeApp** | Une application qui s'adapte à la personne qui l'utilise, avec votre équipe de spécialistes IA derrière elle. | Pour une application à vous : un développeur, et le SDK Agentivity. |
 
-Dans une VibeApp, la personne fixe l'objectif avec ses mots, et l'application s'occupe du reste : les bons spécialistes travaillent sur chaque partie, et les écrans arrivent quand un choix lui revient. Trip Planner, l'une des démonstrations, est une VibeApp. Dans cette démonstration, les réservations et le paiement sont simulés.
+Dans une VibeApp, la personne fixe l'objectif avec ses mots, et l'application s'occupe du reste : les bons spécialistes travaillent sur chaque partie, et les écrans arrivent quand un choix lui revient. Trip Planner, l'une des Solutions de démonstration, est une VibeApp. Dans cette démonstration, les réservations et le paiement sont simulés.
 
 Une application ne construit rien. Elle liste ce qui existe, lance une exécution, montre ce qui se passe et transmet les réponses de la personne. La construction reste dans le Studio.
 

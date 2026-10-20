@@ -74,7 +74,7 @@ If you rest the pointer on the mark, it tells what a Solution is.
 | Where | What happens |
 |---|---|
 | **The libraries** | The mark beside the name, as above. |
-| **The portal, and the apps you build** | The portal is a white-label application: people can use it as it is, or adapt it. It finds the Solutions of your workspace by this tag, and nothing more. An app of your own can do the same. See [Show a team in the portal](/docs/vibeapps/show-a-solution-in-the-portal/) and [List solutions and start a run from your app](/docs/vibeapps/run-a-solution-from-your-app/). |
+| **The portal, and the apps you build** | The portal is a white-label application: people can use it as it is, or adapt it. It finds the Solutions of your workspace by this tag, and nothing more. An app of your own can do the same. See [Show a team in the portal](/docs/vibeapps/show-a-solution-in-the-portal/) and [List solutions and start an execution from your app](/docs/vibeapps/run-a-solution-from-your-app/). |
 | **A Template** | A Template always has a Solution at its heart. When the Template is created, its main agent, team or workflow carries the tag. So what you import from a Template shows up as a Solution in your library. See [Share your work as a Template](/docs/guides/share-a-template/). |
 | **What the Assistant builds** | The Assistant saves its work with the main agent, team or workflow marked as a Solution. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/). |
 

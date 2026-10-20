@@ -1,6 +1,6 @@
 ---
 title: "Connecter un modèle d'IA à Agentivity"
-description: "Ajoutez la clé API d'OpenAI, Anthropic, Google Gemini, xAI ou DeepSeek pour que vos agents et équipes puissent tourner. Votre clé reste sur votre serveur."
+description: "Ajoutez la clé API et choisissez le modèle d'OpenAI, Anthropic, Google Gemini, xAI ou DeepSeek pour que vos agents tournent. Votre clé reste sur votre serveur."
 sidebar:
   order: 1
 editUrl: false
@@ -62,6 +62,7 @@ Cette liste propose plus de fournisseurs que le guide de bienvenue. Par exemple,
 | Champ | Ce qu'il faut saisir |
 |---|---|
 | **Name** | Un nom que vous reconnaîtrez. |
+| **Description** | Facultatif. Une note pour distinguer cette connexion d'une autre. |
 | **API key** | La clé de votre fournisseur. C'est un secret. |
 | **Model** | **Obligatoire.** L'ID exact du modèle, tel que votre fournisseur le nomme, par exemple `claude-opus-4-5-20251101`. Il n'y a pas de valeur par défaut. |
 | **Base URL** | **Obligatoire** pour Anthropic, OpenAI, Google Gemini, xAI et DeepSeek. L'adresse de l'API du fournisseur. Elle est déjà remplie avec l'adresse officielle. |
@@ -94,5 +95,3 @@ Chaque champ est vérifié pendant que vous tapez, et le problème s'affiche sou
 ## Étape suivante
 
 [Construisez votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/), ou [essayez d'abord une Solution prête à l'emploi](/fr/docs/getting-started/try-a-ready-made-solution/).
-
-Créez votre premier agent, équipe ou workflow dans le Studio. Pour voir à quoi ressemble le Studio, lisez [comment ça marche](/fr/how-it-works).

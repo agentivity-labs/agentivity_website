@@ -10,7 +10,7 @@ faq:
   - q: "Un système multi-agents, est-ce la même chose que l'IA agentique ?"
     a: "L'IA agentique, c'est l'idée générale d'une IA qui agit pour atteindre un objectif au lieu de seulement répondre. Un système multi-agents est une façon d'y arriver : plusieurs agents d'IA, chacun avec un rôle, qui travaillent en équipe."
   - q: "Combien d'agents faut-il dans une équipe ?"
-    a: "Aussi peu que le travail le permet. Deux ou trois, c'est un bon début : un qui fait le travail et un qui le vérifie, ou un responsable et deux spécialistes. N'ajoutez un membre que lorsqu'une tâche mérite clairement son propre spécialiste."
+    a: "Aussi peu que le travail le permet. Deux ou trois, c'est un bon début : un qui fait le travail et un qui le vérifie, ou un manager et deux spécialistes. N'ajoutez un membre que lorsqu'une tâche mérite clairement son propre spécialiste."
   - q: "Faut-il coder pour construire un système multi-agents ?"
     a: "Pas avec une plateforme sans code. Dans Agentivity, vous créez chaque agent en lui donnant un nom et en décrivant son rôle avec vos mots, puis vous glissez les agents dans une équipe et vous choisissez comment ils travaillent ensemble."
   - q: "Chaque agent peut-il utiliser un modèle d'IA différent ?"
@@ -37,16 +37,16 @@ Un chatbot répond à une question. Un agent travaille vers un résultat : il li
 
 Plusieurs agents, chacun avec son propre rôle, et une règle qui fixe comment ils travaillent ensemble.
 
-Prenez une équipe qui organise un voyage. Un agent seul devrait tout connaître à la fois : vols, hôtels, transferts, restaurants, visas, assurances et budgets. Une équipe répartit ce travail : un responsable lit la demande et confie chaque partie à un spécialiste, et chaque spécialiste fait une seule chose et rend compte.
+Prenez une équipe qui organise un voyage. Un agent seul devrait tout connaître à la fois : vols, hôtels, transferts, restaurants, visas, assurances et budgets. Une équipe répartit ce travail : un manager lit la demande et confie chaque partie à un spécialiste, et chaque spécialiste fait une seule chose et rend compte.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
-<figcaption>Un responsable qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>
+<figcaption>Un manager qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>
 </figure>
 
-C'est un exemple réel : l'[équipe Trip Planner](/fr/use-cases/trip-planner) compte treize membres, et seul le responsable parle à tous les autres.
+C'est un exemple réel : l'[équipe Trip Planner](/fr/use-cases/trip-planner) compte treize membres, et seul le manager parle à tous les autres.
 
 ## Pourquoi plusieurs agents plutôt qu'un seul ?
 
@@ -67,9 +67,9 @@ La façon dont les membres collaborent compte autant que leur identité. Voici l
 |---|---|---|
 | Sequential | L'un après l'autre | Une chaîne fixe : recherche, puis rédaction, puis relecture |
 | Concurrent | Tous en même temps | Des tâches indépendantes : lire cinq sources à la fois |
-| Handoff | Chacun passe le dossier au bon collègue | Des demandes qui doivent arriver au bon spécialiste |
+| Handoff | Chacun passe le cas au bon collègue | Des demandes qui doivent arriver au bon spécialiste |
 | Group Chat | Ils discutent à tour de rôle | Des questions qui gagnent à réunir plusieurs points de vue |
-| Manager-led | Un responsable planifie et répartit le travail | Des travaux dont les étapes dépendent de la demande |
+| Manager-led | Un manager planifie et répartit le travail | Des travaux dont les étapes dépendent de la demande |
 
 ### Sequential : l'un après l'autre
 
@@ -79,7 +79,7 @@ La plus simple. Le premier agent termine et passe son travail au deuxième, et a
 
 Plusieurs agents travaillent en parallèle sur des parties distinctes, et leurs résultats sont rassemblés à la fin. Utilisez-la quand les parties ne dépendent pas les unes des autres, et quand la vitesse compte.
 
-### Handoff : passer le dossier
+### Handoff : passer le cas
 
 Un agent qui reçoit une demande qu'il ne doit pas traiter la passe au collègue qui doit s'en charger, comme un accueil qui vous envoie au bon service. Utilisez-la quand les demandes arrivent mélangées et doivent trouver leur spécialiste.
 
@@ -87,9 +87,9 @@ Un agent qui reçoit une demande qu'il ne doit pas traiter la passe au collègue
 
 Les agents parlent chacun leur tour, et chacun réagit à ce que les autres ont dit. Utilisez-la quand une question gagne à être discutée : un plan, un diagnostic, un texte.
 
-### Manager-led : un responsable planifie le travail
+### Manager-led : un manager planifie le travail
 
-Un responsable lit la demande, décide quels spécialistes il faut, répartit le travail et assemble le résultat. Utilisez-la quand deux demandes ne demandent jamais exactement les mêmes étapes. C'est ainsi que fonctionne Trip Planner : un week-end et un mois à l'étranger ne font pas appel aux mêmes spécialistes.
+Un manager lit la demande, décide quels spécialistes il faut, répartit le travail et assemble le résultat. Utilisez-la quand deux demandes ne demandent jamais exactement les mêmes étapes. C'est ainsi que fonctionne Trip Planner : un week-end et un mois à l'étranger ne font pas appel aux mêmes spécialistes.
 
 ## Et les personnes, dans tout ça ?
 
@@ -111,7 +111,7 @@ Passez à une équipe quand le travail a des parties distinctes qui demandent de
 
 Ils répondent à des problèmes différents, et vous pouvez les combiner.
 
-Un **workflow** suit le chemin que vous avez tracé, de la même façon à chaque fois. Il convient aux processus qui doivent être réguliers et faciles à contrôler. L'[exemple de tri de CV](/fr/use-cases/cv-screening) est un workflow : chaque CV passe par les mêmes étapes.
+Un **workflow** suit le chemin que vous avez tracé, de la même façon à chaque fois. Il convient aux processus qui doivent être réguliers et faciles à contrôler. L'[exemple de CV screening](/fr/use-cases/cv-screening) est un workflow : chaque CV passe par les mêmes étapes.
 
 Une **équipe** choisit elle-même son chemin, dans le cadre des rôles que vous lui avez donnés. Elle convient au travail où chaque demande est différente.
 

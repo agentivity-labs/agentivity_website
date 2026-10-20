@@ -1,6 +1,6 @@
 ---
 title: "Essayer une Solution prête à l'emploi"
-description: "Importez une Solution de démonstration comme Template, ouvrez-la dans le Studio et voyez comment un agent, une équipe ou un workflow fini est construit."
+description: "Importez une Solution de démonstration comme Template, ouvrez-la dans le Studio et voyez comment est construit un agent, une équipe ou un workflow terminé."
 sidebar:
   order: 4
 editUrl: false
@@ -13,7 +13,7 @@ Le moyen le plus rapide de comprendre Agentivity, c'est d'ouvrir une Solution d�
 
 <video controls muted playsinline preload="metadata" src="/docs-media/fr/getting-started/images/import-a-showcase.mp4" aria-label="Un enregistrement du Studio : Try it est sélectionné sur la carte Trip Manager Team, la fenêtre Import a Template s'ouvre, Import est sélectionné, le message Template imported apparaît, et l'équipe s'ouvre dans son éditeur"></video>
 
-L'enregistrement est accéléré par rapport à un usage réel.
+Enregistré depuis le produit, accéléré.
 
 ## Ce dont vous avez besoin
 
@@ -60,7 +60,8 @@ Les agents d'un Template ont été configurés avec la connexion au modèle de l
 La Solution s'ouvre dans son éditeur et vous la voyez dessinée sur le canevas.
 
 ![L'équipe Trip Manager Team dans son éditeur : le manager en haut, douze spécialistes alignés en dessous, et le panneau Info à droite](images/showcase-opened.jpg)
- Pour **Trip Manager Team**, vous voyez le manager en haut et ses spécialistes en dessous. Les agents importés et l'équipe se trouvent aussi dans **Studio** > **Agents**.
+
+Pour **Trip Manager Team**, vous voyez le manager en haut et ses spécialistes en dessous. Les agents importés et l'équipe se trouvent aussi dans **Studio** > **Agents**.
 
 ## Si ça ne marche pas
 

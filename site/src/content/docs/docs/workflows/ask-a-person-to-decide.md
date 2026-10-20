@@ -44,11 +44,11 @@ The step needs two nodes: the question, and the channel that carries it to the p
 ## What happens when the workflow runs
 
 1. The workflow reaches the step and stops. At the top of the tab **Execution**, the state is **Waiting for human input**.
-2. The question is sent to the chat of the run. In the tab **Execution**, open the panel **Chat**, on the right.
+2. The question is sent to the chat of the execution. In the tab **Execution**, open the panel **Chat**, on the right.
 3. Type the answer in the field **Type your response…** and select **Send response**.
 4. The workflow continues with the next step.
 
-A run that waits can wait for a long time: the workflow is paused, and it continues when the answer arrives.
+An execution that waits can wait for a long time: the workflow is paused, and it continues when the answer arrives.
 
 ## Use the answer in the next steps
 
@@ -65,11 +65,11 @@ For example, link an **If** step after it to take one path when the answer is ye
 ## How to know it worked
 
 - When you run the workflow, the state becomes **Waiting for human input**.
-- In the section **Executions**, the run has the label **ACTION REQUIRED**.
+- In the section **Executions**, the execution has the label **ACTION REQUIRED**.
 
-![The section Executions: one run of the workflow Reminder Approval, with the label ACTION REQUIRED and the buttons Open workflow and Details](images/executions.jpg)
+![The section Executions: one execution of the workflow Reminder Approval, with the label ACTION REQUIRED and the buttons Open workflow and Details](images/executions.jpg)
 
-- After the answer, the run continues and reaches the state completed.
+- After the answer, the execution continues and reaches the state completed.
 
 ## If it does not work
 

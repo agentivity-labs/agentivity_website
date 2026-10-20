@@ -86,7 +86,7 @@ Not yet. Hosted editions are planned. See [pricing and editions](/pricing).
 
 ### What is planned?
 
-Hosted editions, starting runs on a schedule, and accounts with roles and rights. These pages describe only what works today.
+Hosted editions, starting executions on a schedule, and accounts with roles and rights. These pages describe only what works today.
 
 ## More questions
 

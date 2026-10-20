@@ -20,7 +20,7 @@ The Community edition is the edition of Agentivity that you install yourself, on
 - **Workflows**, with conditions, loops, steps that wait for a person, and AI steps.
 - **Data Tables**, to store what your agents and workflows read and fill.
 - **Knowledge Bases**, to give your agents your documents, pages and feeds. Eight kinds of source are offered, among them files of the server, web pages and a SQLite or PostgreSQL database. The search runs on your server, with a small local model, and needs no account.
-- **Vector Stores**, to keep texts and find them by meaning: one that is free and lasts a run, and three that keep texts (Qdrant, Pinecone, pgvector).
+- **Vector Stores**, to keep texts and find them by meaning: one that is free and lasts an execution, and three that keep texts (Qdrant, Pinecone, pgvector).
 - **Prompt Studio**, to write and test prompts.
 - **Templates**: you can import a solution from a file, and save your own work as a file to share.
 - **Folders**, to keep your agents, teams, workflows and tables in order.
@@ -37,7 +37,7 @@ The four showcase solutions are offered as Templates. They are downloaded from t
 ## What is planned
 
 - **Hosted editions**, where there is nothing to install.
-- **Starting runs on a schedule.**
+- **Starting executions on a schedule.**
 
 For the other editions and what each one is for, see [pricing and editions](/pricing).
 

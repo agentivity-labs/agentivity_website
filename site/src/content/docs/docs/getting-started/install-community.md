@@ -68,7 +68,7 @@ The Studio is not concerned: the server delivers it itself, so it always calls t
 
 ## Good to know
 
-- **There is no login yet.** Anyone who can reach the server can use it. See [Who can call the API](#who-can-call-the-api) below.
+- **There is no login yet.** Anyone who can reach the server can use it. See [Who can call the API](#who-can-call-the-api).
 - **Your data stays with you.** Agents, teams, workflows, tables and settings are stored in the `agentivity-data` volume. Back it up like any other data. What you send in an AI step goes to the model provider you chose.
 - **Stop and start.** Use `docker stop agentivity` to stop it and `docker start agentivity` to start it again. Your data is kept.
 - **Updating.** Pull the new image, remove the container, then run the start command again. The volume keeps your data.

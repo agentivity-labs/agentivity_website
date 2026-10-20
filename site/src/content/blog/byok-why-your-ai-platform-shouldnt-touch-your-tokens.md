@@ -19,7 +19,7 @@ BYOK — Bring Your Own Key — is the alternative.
 
 ## What BYOK means
 
-BYOK means you connect your own API key from your LLM provider (Anthropic, OpenAI, Mistral, or any OpenAI-compatible endpoint) directly to your AI platform. The platform orchestrates the agents and the workflow. But every token goes from your environment to your provider. The platform never touches it.
+BYOK means you connect your own API key from your LLM provider (Anthropic, OpenAI, Google Gemini, xAI, DeepSeek or AWS Bedrock) directly to your AI platform. The platform orchestrates the agents and the workflow. But every token goes from your environment to your provider. The platform never touches it.
 
 In concrete terms:
 
@@ -42,25 +42,24 @@ Token costs are already variable. Adding a platform markup on top makes them dou
 
 ### For model flexibility
 
-LLM providers release new models constantly. With BYOK, switching from Claude 3.5 to Claude 4.0 is changing a dropdown — not waiting for your SaaS provider to upgrade their integration. You can also run different models for different agents. Use a fast, cheap model for the data extraction step. Use a more capable model for the reasoning step. The cost profile is yours to optimise.
+LLM providers release new models constantly. With BYOK, moving to a newer model means choosing it in your connection: the list shows the models your key can use. No waiting for your SaaS provider to upgrade their integration. You can also keep several connections and run different models for different agents. Use a fast, cheap model for the data extraction step. Use a more capable model for the reasoning step. The cost profile is yours to optimise.
 
 ### For vendor independence
 
 If you're paying a platform to call Anthropic on your behalf, you have two dependencies: the platform *and* Anthropic. If either changes their terms, raises prices, or goes down — you're affected. With BYOK and a self-hosted platform, you own the orchestration layer. Swap providers by changing a key. Self-host on any infrastructure that runs Docker.
 
-## The compatible providers
+## The providers you can connect
 
-Any OpenAI-compatible endpoint works with BYOK. That includes:
+Agentivity connects to these providers, each with your own key:
 
-- **Anthropic** (Claude 3.5, Claude 4, Opus, Haiku)
-- **OpenAI** (GPT-4o, o1, o3)
-- **Mistral** (Mistral Large, Codestral)
-- **Groq** (for fast inference)
-- **Ollama** (for local models — completely air-gapped)
-- **LM Studio** (for local models)
-- Any provider with an OpenAI-compatible API
+- **Anthropic** (the Claude models)
+- **OpenAI** (the GPT models)
+- **Google Gemini**
+- **xAI** (the Grok models)
+- **DeepSeek**
+- **AWS Bedrock**, if your company reaches its models through AWS
 
-Running local models via Ollama deserves a mention. For the highest-sensitivity workloads, you can run your entire AI team — Agentivity + local LLMs — on a single server with no external API calls. Zero data leaves your network.
+Each connection names the exact model it uses. For most providers, the Studio asks the provider which models your key can use and shows them in a list. Each connection also has the address of the provider's API, already filled in with the official one: change it only to go through a proxy of your own.
 
 ## What BYOK doesn't solve
 
@@ -74,13 +73,13 @@ BYOK narrows the attack surface significantly. It doesn't eliminate it. A proper
 
 ## How to set it up in Agentivity
 
-1. Get an API key from your LLM provider (Anthropic, OpenAI, etc.)
-2. In Agentivity, go to Settings → API Keys
-3. Add your key and select the provider
-4. Choose which model each agent uses (you can mix models per agent)
+1. Get an API key from your LLM provider (Anthropic, OpenAI, Google, xAI or DeepSeek), with credit on your account there.
+2. In the Studio, open **Settings**, then **Credentials**, and select **New credentials**. Choose **AI models**, then your provider. (The first time, the welcome guide offers the same step: **Connect your AI model**.)
+3. Paste your key, then choose the **model**: the list shows the models your key can use.
+4. Save. Keep several connections if you want different models for different agents, and choose which one each agent runs on.
 
-That's it. Your agents now call your provider directly. Agentivity never sees your tokens.
+That's it. Your agents now call your provider directly, from your own server. No Agentivity server sits in between, and your provider bills you directly.
 
 ---
 
-*Agentivity is self-hosted and BYOK by design. [Star on GitHub](https://github.com/agentivity-labs/agentivity) or [read the docs](/docs).*
+*Agentivity is self-hosted and BYOK by design. [Star on GitHub](https://github.com/agentivity-labs/agentivity) or [read how to connect a model](/docs/guides/connect-a-model).*

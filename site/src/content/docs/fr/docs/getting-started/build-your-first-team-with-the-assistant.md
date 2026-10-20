@@ -23,10 +23,10 @@ Sur cette page, vous construisez une équipe de trois : un chercheur, un rédact
 1. Dans le menu de gauche, sélectionnez **Assistant**.
 2. Sélectionnez **New solution**. L'écran demande **What would you like to build?** et propose trois exemples. Vous pouvez en sélectionner un pour partir de là.
 3. En haut de la conversation, **Agents run on** indique la connexion au modèle utilisée. Si vous en avez plusieurs, choisissez-en une autre dans la liste.
-4. Dans le champ du bas, décrivez l'équipe. Par exemple :
+4. Dans le champ du bas, décrivez l'équipe, en français si vous préférez : l'Assistant comprend le français. Par exemple :
 
    ```text
-   A team of three that writes a one-page note about a topic I give: a researcher, a writer and a reviewer.
+   Une équipe de trois qui rédige une note d'une page sur un sujet que je donne : un chercheur, un rédacteur et un relecteur.
    ```
 
 5. Envoyez votre message.
@@ -38,7 +38,7 @@ Sur cette page, vous construisez une équipe de trois : un chercheur, un rédact
 
 ## Regarder le brouillon
 
-Quand vous êtes d'accord, l'Assistant construit. La partie droite de l'écran dessine en direct ce qu'il construit : l'équipe, ses membres et leurs liens. Sous le dessin, une liste montre tout ce qui compose le brouillon.
+Quand vous validez le plan, l'Assistant construit. La partie droite de l'écran dessine en direct ce qu'il construit : l'équipe, ses membres et leurs liens. Sous le dessin, une liste montre tout ce qui compose le brouillon.
 
 À ce stade, le brouillon est marqué **Draft · not saved**. Votre espace de travail n'a pas changé.
 

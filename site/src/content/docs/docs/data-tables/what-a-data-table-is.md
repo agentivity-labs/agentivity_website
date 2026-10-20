@@ -13,7 +13,7 @@ A Data Table is a table of data that lives in your Agentivity workspace. Your ag
 
 ## What it is for
 
-An agent or a workflow forgets everything when its run ends. A Data Table is where the work is kept.
+An agent or a workflow forgets everything when its execution ends. A Data Table is where the work is kept.
 
 - **Keep what was done.** The reminders that were sent, the invoices that were read, the requests that were handled.
 - **Give facts to work from.** A list of customers, of products, of open invoices.
@@ -39,7 +39,7 @@ In our example, a table `reminders` keeps one row for each payment reminder: the
 | **You, in the Studio** | Open the table, sort and filter its rows, change its columns. See [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/). |
 | **A workflow** | A step reads, adds, changes or deletes rows. See [Read and write a Data Table from a workflow](/docs/data-tables/use-a-table-in-a-workflow/). |
 | **An agent** | A tool lets the agent read and fill the table, within the limits you set. See [Let an agent read and fill a Data Table](/docs/data-tables/give-a-table-to-an-agent/). |
-| **An application** | It reads and writes rows. It cannot change the columns. See [List solutions and start a run from your app](/docs/vibeapps/run-a-solution-from-your-app/). |
+| **An application** | It reads and writes rows. It cannot change the columns. See [List solutions and start an execution from your app](/docs/vibeapps/run-a-solution-from-your-app/). |
 
 ## Where the tables are
 

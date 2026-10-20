@@ -74,7 +74,7 @@ This is why a workflow used as a member should declare what it gives. What is no
 
 ## When a member fails
 
-A member that fails makes the team fail. The message says that the team failed, names the member, and says why. A team inside a team fails its parent in the same way, and so on up to the run.
+A member that fails makes the team fail. The message says that the team failed, names the member, and says why. A team inside a team fails its parent in the same way, and so on up to the execution.
 
 ## Good to know
 

@@ -35,7 +35,7 @@ Choisissez une équipe quand le travail demande plusieurs compétences, ou quand
 
 Un workflow est un ensemble d'étapes que vous dessinez à l'avance. Les étapes s'exécutent dans l'ordre où vous les avez dessinées, de la même façon à chaque fois. L'IA n'intervient que dans les étapes que vous choisissez. Les autres étapes suivent des règles fixes : une condition, une boucle, un formulaire à remplir, une validation par une personne.
 
-Choisissez un workflow quand le chemin doit être le même à chaque fois, quand certaines étapes ne doivent pas être confiées à un modèle d'IA, ou quand une personne doit donner son accord avant que le travail continue.
+Choisissez un workflow quand le chemin doit être le même à chaque fois, quand certaines étapes ne doivent pas être confiées à un modèle d'IA, ou quand une personne doit valider avant que le travail continue.
 
 ## Comment choisir
 

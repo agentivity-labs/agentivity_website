@@ -46,7 +46,7 @@ Once a solution works, other people can use it. There are three ways, from the s
 
 In a VibeApp, the person sets the goal in their own words, and the application handles the rest: the right specialists work on each part, and the screens arrive when a choice is theirs. Trip Planner, one of the showcases, is a VibeApp. In that demo, the bookings and the payment are simulated.
 
-An application does not build anything. It lists what exists, starts a run, shows what happens and sends the answers of the person. Building stays in the Studio.
+An application does not build anything. It lists what exists, starts an execution, shows what happens and sends the answers of the person. Building stays in the Studio.
 
 See [What a VibeApp is](/docs/vibeapps/what-a-vibeapp-is/) and [One app for one job, or one portal for all](/docs/vibeapps/one-app-or-one-portal/).
 

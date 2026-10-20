@@ -61,7 +61,7 @@ Organiser un voyage en est un bon exemple. Un agent seul devrait maîtriser à l
 <video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
-<figcaption>Un responsable qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>
+<figcaption>Un manager qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>
 </figure>
 
 Une équipe s'adapte aussi. Le manager décide de quels spécialistes une demande a besoin : deux demandes différentes ne passent donc pas par les mêmes étapes.
@@ -81,7 +81,7 @@ Certaines de ses cases peuvent utiliser l'IA, par exemple pour lire un document 
 <figcaption>Un workflow dans le Studio d'Agentivity : l'exemple CV Screening, d'abord de près, puis en entier. Enregistré depuis le produit.</figcaption>
 </figure>
 
-Sa force, c'est la prévisibilité. Dans l'[exemple du tri de CV](/fr/use-cases/cv-screening), chaque candidature passe par les mêmes étapes avec les mêmes critères, et vous pouvez montrer ensuite quel chemin chacune a pris.
+Sa force, c'est la prévisibilité. Dans l'[exemple du CV screening](/fr/use-cases/cv-screening), chaque candidature passe par les mêmes étapes avec les mêmes critères, et vous pouvez montrer ensuite quel chemin chacune a pris.
 
 **Choisissez un workflow quand** le processus doit être identique pour tout le monde, et quand vous devez pouvoir expliquer ce qui s'est passé.
 

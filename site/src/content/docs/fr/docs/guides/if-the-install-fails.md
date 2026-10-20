@@ -94,7 +94,7 @@ De nombreux antivirus (Avast, AVG, Kaspersky, ESET, Bitdefender…) lisent les c
 
 Si la machine est à vous :
 
-1. Ouvrez les réglages de l'antivirus et cherchez l'option qui analyse les connexions sécurisées. En anglais, elle s'appelle « HTTPS scanning », « SSL/TLS scanning » ou « Encrypted connections scanning ». Dans Avast et AVG, elle se trouve dans **Protection**, **Core Shields**, **Web Shield**.
+1. Ouvrez les réglages de l'antivirus et cherchez l'option qui analyse les connexions sécurisées. En anglais, elle s'appelle « HTTPS scanning », « SSL/TLS scanning » ou « Encrypted connections scanning ». Dans Avast et AVG, elle se trouve dans **Protection**, **Core Shields**, **Web Shield**. Dans une version française d'Avast, ces noms peuvent être différents (par exemple « Bouclier Web » et « Activer l'analyse HTTPS ») : cherchez l'option d'analyse HTTPS dans les réglages du bouclier Web.
 2. Désactivez cette option, ou ajoutez une exception pour Docker si l'antivirus le permet.
 3. Redémarrez Agentivity : `docker restart agentivity`.
 4. Dans le Studio, ouvrez votre connexion au modèle et appuyez de nouveau sur **Test**.

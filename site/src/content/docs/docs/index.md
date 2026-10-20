@@ -14,11 +14,12 @@ Agentivity is a platform to build and run AI agents, AI teams and workflows, wit
 ## New here? Start with the idea
 
 1. [What Agentivity is](/docs/introduction/what-agentivity-is/)
-2. [What you can do with Agentivity](/docs/introduction/what-you-can-do-with-it/)
-3. [Three ways to use Agentivity](/docs/introduction/how-you-use-it/)
-4. [Choose between an agent, a team and a workflow](/docs/introduction/agent-team-or-workflow/)
+2. [What a Solution is, and how to mark one](/docs/introduction/what-a-solution-is/)
+3. [What you can do with Agentivity](/docs/introduction/what-you-can-do-with-it/)
+4. [Three ways to use Agentivity](/docs/introduction/how-you-use-it/)
+5. [Choose between an agent, a team and a workflow](/docs/introduction/agent-team-or-workflow/)
 
-Also in this section: [how a person stays in control](/docs/introduction/how-a-person-stays-in-control/), [what the Community edition includes](/docs/introduction/what-the-community-edition-includes/) and [the words Agentivity uses](/docs/introduction/words-we-use/).
+Also in this section: [how a person stays in control](/docs/introduction/how-a-person-stays-in-control/), [what the Community edition includes](/docs/introduction/what-the-community-edition-includes/) and [the words Agentivity uses](/docs/introduction/words-we-use/) and [where each kind of information goes](/docs/introduction/where-does-it-go/).
 
 ## Then follow the steps
 
@@ -36,7 +37,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/)
 - [Choose or change the model of an agent](/docs/agents/choose-the-model/)
 - [Give tools to an agent](/docs/agents/give-tools-to-an-agent/)
-- [Give an agent documents and a memory](/docs/agents/give-memory-and-knowledge/)
+- [Give an agent knowledge and a memory](/docs/agents/give-memory-and-knowledge/)
 - [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/)
 - [Run an agent and read its answer](/docs/agents/run-an-agent/)
 
@@ -59,6 +60,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Add a condition to a workflow](/docs/workflows/add-a-condition/)
 - [Repeat steps for each item of a list](/docs/workflows/repeat-steps/)
 - [Run a workflow and follow each step](/docs/workflows/run-a-workflow/)
+- [Keep texts and find them by meaning](/docs/workflows/keep-texts-and-find-them-by-meaning/)
 
 **Data Tables**
 
@@ -67,6 +69,15 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/)
 - [Read and write a Data Table from a workflow](/docs/data-tables/use-a-table-in-a-workflow/)
 - [Let an agent read and fill a Data Table](/docs/data-tables/give-a-table-to-an-agent/)
+
+**Knowledge Bases**
+
+- [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/)
+- [Create a Knowledge Base](/docs/knowledge-bases/create-a-knowledge-base/)
+- [Keep a Knowledge Base up to date](/docs/knowledge-bases/keep-a-knowledge-base-up-to-date/)
+- [Look inside a Knowledge Base and try a search](/docs/knowledge-bases/look-inside-a-knowledge-base/)
+- [Change, empty or delete a Knowledge Base](/docs/knowledge-bases/change-empty-or-delete-a-knowledge-base/)
+- [Give a Knowledge Base to an agent or a prompt](/docs/knowledge-bases/give-a-knowledge-base-to-an-agent/)
 
 **Prompts**
 

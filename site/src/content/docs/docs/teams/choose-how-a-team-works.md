@@ -54,7 +54,7 @@ In every pattern, give each member a clear role. In **Handoff** and **Manager-le
 
 ## What the team answers
 
-When a team has finished, it gives one answer. It is what the run of the team shows, what a step **Team** gives to a workflow, and what the team gives when it is a member of another team. How the answer is made depends on the pattern.
+When a team has finished, it gives one answer. It is what the execution of the team shows, what a step **Team** gives to a workflow, and what the team gives when it is a member of another team. How the answer is made depends on the pattern.
 
 | Pattern | The answer of the team |
 |---|---|

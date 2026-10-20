@@ -28,10 +28,10 @@ To change a setting on a server that already runs, remove the container and crea
 | Folder in the container | What it holds | On the volume of the install page |
 |---|---|---|
 | `/app/_data` | What you build: agents, teams, workflows, prompts, Data Tables and their rows, credentials, settings, the drafts of the Assistant. | Yes |
-| `/app/_data/_cache` | What the runs leave: the run history, the runs that wait for a person, the conversations with agents and teams, the uploaded files, pictures and sounds. | Yes, it is inside `/app/_data` |
+| `/app/_data/_cache` | What the executions leave: the execution history, the executions that wait for a person, the conversations with agents and teams, the uploaded files, pictures and sounds. | Yes, it is inside `/app/_data` |
 | `/app/_logs` | The log files of the server. | No |
 
-The run history is in the volume. An update that replaces the container keeps it: the screen **Executions** and the runs that wait for a person are still there. We tested it on the image of 2026-10-15.
+The execution history is in the volume. An update that replaces the container keeps it: the screen **Executions** and the executions that wait for a person are still there. We tested it on the image of 2026-10-15.
 
 Only the log files are lost when the container is removed. To keep them, add a volume on `/app/_logs`, or read them with `docker logs agentivity`.
 
@@ -45,7 +45,7 @@ To send the logs, the traces and the measures of the server to your own collecto
 docker run -d --name agentivity -p 5005:5005   -v agentivity-data:/app/_data   -e OpenTelemetry__Endpoint=https://collector.mycompany.com   agentivitylabs/agentivity
 ```
 
-The collector must accept the OpenTelemetry protocol (OTLP). If it asks for a key, add it as `OpenTelemetry__Headers__Authorization`. `OpenTelemetry__Protocol` is `HttpProtobuf` by default; the other value is `Grpc`. The logs of a server can contain parts of what your runs handle: send them only to a place you control.
+The collector must accept the OpenTelemetry protocol (OTLP). If it asks for a key, add it as `OpenTelemetry__Headers__Authorization`. `OpenTelemetry__Protocol` is `HttpProtobuf` by default; the other value is `Grpc`. The logs of a server can contain parts of what your executions handle: send them only to a place you control.
 
 ## The port and the address
 
@@ -73,11 +73,11 @@ An address is written as the page shows it: the scheme, the name and the port if
 
 | Setting | Default | What it is |
 |---|---|---|
-| `UploadCache__MaxFileSizeMb` | `10` | The largest file a person can give to a run, in megabytes. A larger file is refused. |
+| `UploadCache__MaxFileSizeMb` | `10` | The largest file a person can give to an execution, in megabytes. A larger file is refused. |
 | `UploadCache__RetentionDays` | `7` | The number of days an uploaded file is kept. |
 | `UploadCache__CleanupIntervalMinutes` | `60` | How often the old files are removed. |
 
-## How long the run history is kept
+## How long the execution history is kept
 
 The server removes old runs by itself.
 
@@ -89,7 +89,7 @@ The server removes old runs by itself.
 | `WorkflowRunRetention__MaxRunsToKeep` | `1000` | The largest number of runs kept. |
 | `WorkflowRunRetention__CleanupIntervalMinutes` | `60` | How often the old runs are removed. |
 
-## Pictures and sounds made by the runs
+## Pictures and sounds made by the executions
 
 | Setting | Default | What it is |
 |---|---|---|

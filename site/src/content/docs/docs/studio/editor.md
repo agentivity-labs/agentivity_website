@@ -11,7 +11,7 @@ lastUpdated: false
 
 Agents, teams and workflows each open in an editor. The three editors are built the same way. This page names their parts.
 
-![The editor of an agent: the tabs Editor and Execution at the top, the agent drawn on the canvas, the bar of run buttons, and the Node Catalog on the right](images/agent-editor.jpg)
+![The editor of an agent: the tabs Editor and Execution at the top, the agent drawn on the canvas, the bar of execution buttons, and the Node Catalog on the right](images/agent-editor.jpg)
 
 ## At the top
 
@@ -38,7 +38,7 @@ The canvas is the large area in the middle, where the agent, the team or the wor
 
 In the agent and workflow editors, a small map at the bottom right shows the whole drawing and the part you are looking at.
 
-## The bar of run buttons
+## The bar of execution buttons
 
 Above the canvas, a small bar has four buttons: **Run**, **Pause**, **Resume** and **Stop**.
 
@@ -92,7 +92,7 @@ Changes are saved in your workspace only when you select **Publish**.
 
 ## In the tab Execution
 
-Below the canvas, three tabs show a run: **Inspector**, **Errors** and **Logs**. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
+Below the canvas, three tabs show an execution: **Inspector**, **Errors** and **Logs**. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
 
 ## Next step
 

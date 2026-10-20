@@ -1,6 +1,6 @@
 ---
 title: "How a VibeApp talks to Agentivity"
-description: "For developers. What an application can ask the Agentivity server, how a run is followed, and which web pages may call the server."
+description: "For developers. What an application can ask the Agentivity server, how an execution is followed, and which web pages may call the server."
 sidebar:
   order: 5
 editUrl: false
@@ -18,9 +18,9 @@ An application **reads, runs and watches**. It does not build.
 | An application can | An application cannot |
 |---|---|
 | List the agents, teams and workflows of the workspace. | Create or change an agent, a team or a workflow. |
-| Start a run and send it a request. | Change credentials. |
-| Follow the run as it happens. | Change the columns of a Data Table. |
-| Send the answer of a person when the run waits. | |
+| Start an execution and send it a request. | Change credentials. |
+| Follow the execution as it happens. | Change the columns of a Data Table. |
+| Send the answer of a person when the execution waits. | |
 | Read and write the rows of a Data Table. | |
 
 Creating and changing stay in the Studio. This is by design: the person who knows the job changes the team, and the application does not need to be rebuilt.
@@ -28,17 +28,17 @@ Creating and changing stay in the Studio. This is by design: the person who know
 ## The four calls an application makes
 
 1. **List what can be launched.** The application asks for the entities of the workspace. An entity is an agent, a team or a workflow. It can ask only for those that carry a tag, for example `solution`.
-2. **Start a run.** The application sends the identifier of the entity and the request of the person. The server answers with the identifier of the run and the address of its event stream.
-3. **Follow the run.** The application listens to the event stream. Events arrive as the run goes: a message being written, a member starting to work, a screen to show, a question for the person.
-4. **Answer.** When the run waits for a person, the application sends the answer, and the run continues.
+2. **Start an execution.** The application sends the identifier of the entity and the request of the person. The server answers with the identifier of the execution and the address of its event stream.
+3. **Follow the execution.** The application listens to the event stream. Events arrive as the execution goes: a message being written, a member starting to work, a screen to show, a question for the person.
+4. **Answer.** When the execution waits for a person, the application sends the answer, and the execution continues.
 
 All the calls are under the path `/api/v1/` of your Agentivity server.
 
-## The screens come from the run
+## The screens come from the execution
 
 A team does not only send text. It can ask the application to show something: a choice, a form, a date, a table, a chart. The SDK has a ready-made component for each. The application shows it in the conversation, and sends back what the person chose.
 
-This is what makes a VibeApp different from a chat window. The application does not decide in advance which screen comes next: the run does.
+This is what makes a VibeApp different from a chat window. The application does not decide in advance which screen comes next: the execution does.
 
 ## Which pages may call the server
 

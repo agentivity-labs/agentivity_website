@@ -23,10 +23,10 @@ The four stores are under **AI** > **Vector Stores** in the **Node Catalog**. Th
 
 | Store | Kept for | What it needs |
 |---|---|---|
-| **In-Memory Vector Store** | The time of one run. It is free and needs no account. | **Memory key** (`default` at the start): the steps of a run that use the same key share the same texts. |
-| **Qdrant Vector Store** | From one run to the next. | A Qdrant connection, and a **Collection name** (`agentivity` at the start, created at the first insert). |
-| **Pinecone Vector Store** | From one run to the next. | A Pinecone connection, and a **Namespace** (empty for the default one). |
-| **pgvector Vector Store** | From one run to the next. | A **Connection string** to a PostgreSQL database of your own, with the pgvector extension, and a **Table name** (`agentivity_vectors` at the start, created at the first insert). |
+| **In-Memory Vector Store** | The time of one execution. It is free and needs no account. | **Memory key** (`default` at the start): the steps of an execution that use the same key share the same texts. |
+| **Qdrant Vector Store** | From one execution to the next. | A Qdrant connection, and a **Collection name** (`agentivity` at the start, created at the first insert). |
+| **Pinecone Vector Store** | From one execution to the next. | A Pinecone connection, and a **Namespace** (empty for the default one). |
+| **pgvector Vector Store** | From one execution to the next. | A **Connection string** to a PostgreSQL database of your own, with the pgvector extension, and a **Table name** (`agentivity_vectors` at the start, created at the first insert). |
 
 The database of the pgvector store is yours: an outside connection. It has nothing to do with the database of your Agentivity workspace.
 
@@ -81,7 +81,7 @@ By default, the tool only searches. To let the agent keep texts itself, turn on 
 
 1. Give the tool the **Name** `Customer notes`, and the **Description** "Notes on our customers."
 2. Turn on **Allow storing**.
-3. Use a store that keeps texts (Qdrant, Pinecone or pgvector) if the notes must last after the run. With **In-Memory**, they last one run.
+3. Use a store that keeps texts (Qdrant, Pinecone or pgvector) if the notes must last after the execution. With **In-Memory**, they last one execution.
 
 The developer ran this with a model: the agent stored "Mrs Martin prefers to be called in the morning, before 10", found it again, and answered "before 10". We did not run it ourselves.
 
@@ -103,7 +103,7 @@ The developer ran this with a model: the agent stored "Mrs Martin prefers to be 
 
 - **`count` is 0.** The two steps do not use the same store, or the same **Memory key**. Plug the same circle into both. Or the **Metadata filter** keeps nothing: check the spelling of the values.
 - **The agent never searches.** Say in its instructions what the texts are and when to look in them. Check the **Description** of the tool.
-- **The texts are gone after the run.** The store is **In-Memory**. Use Qdrant, Pinecone or pgvector.
+- **The texts are gone after the execution.** The store is **In-Memory**. Use Qdrant, Pinecone or pgvector.
 - **A message about the size of the model.** The collection was filled with another embeddings model. Plug the same one, or use another collection.
 
 ## Good to know

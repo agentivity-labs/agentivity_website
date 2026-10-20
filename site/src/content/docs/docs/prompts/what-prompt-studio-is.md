@@ -41,7 +41,7 @@ In the menu on the left, open **Studio** > **Prompts**. The list shows your prom
 | **Run Prompt** | Sends the prompt to the AI model. |
 | **Analyze** | Asks for an analysis of the prompt. |
 | The panel on the right | **Details** (name, category, description), **Settings** (model connection and generation settings), **Inputs** (the values that change), and the evaluation prompt. |
-| **Debug console** | The history of what you ran, with the output of each run. |
+| **Debug console** | The history of what you ran, with the output of each execution. |
 | **Save**, at the top right | Saves the prompt. |
 
 ## What is not in the Community edition

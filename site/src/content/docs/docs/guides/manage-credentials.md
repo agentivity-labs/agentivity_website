@@ -67,7 +67,7 @@ The Assistant opens this same form when it needs a connection. It no longer crea
 2. Change what you need. To replace a secret, type the new value in its field. To keep the secret, leave its field as it is.
 3. Select **Save changes**.
 
-Everything that uses this connection uses the new values at its next run. You do not have to change your agents.
+Everything that uses this connection uses the new values at its next execution. You do not have to change your agents.
 
 ## Copy a connection
 

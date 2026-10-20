@@ -28,7 +28,7 @@ Ce guide suit ces six étapes dans le Studio d'Agentivity, avec un seul exemple 
 - **Un compte chez un fournisseur d'IA.** Agentivity se connecte à OpenAI, Anthropic, Gemini, DeepSeek, xAI et AWS Bedrock. Vous ajoutez votre clé une seule fois, dans le Studio.
 - **Un travail que vous connaissez bien.** C'est plus important que les deux points ci-dessus.
 
-Une précaution avec l'édition Community : elle n'a pas encore de connexion, donc toute personne qui peut joindre le serveur peut l'utiliser. Gardez-la sur un réseau de confiance, et ne l'exposez jamais directement sur Internet.
+Une précaution avec l'édition Community : elle n'a pas encore d'écran de connexion, donc toute personne qui peut joindre le serveur peut l'utiliser. Gardez-la sur un réseau de confiance, et ne l'exposez jamais directement sur Internet.
 
 ## Étape 1 : choisir un travail
 

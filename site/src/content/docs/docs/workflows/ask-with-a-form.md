@@ -88,9 +88,9 @@ For example, link an **If** step after the form, and test the output `send`. See
 ## How to know it worked
 
 1. Run the workflow. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
-2. The workflow stops at the form. In the section **Executions**, the run has the label **ACTION REQUIRED**.
+2. The workflow stops at the form. In the section **Executions**, the execution has the label **ACTION REQUIRED**.
 3. In the tab **Execution** of the workflow, open the forms panel on the right, fill in the form and submit it.
-4. The run continues and reaches the state completed.
+4. The execution continues and reaches the state completed.
 
 ## If it does not work
 

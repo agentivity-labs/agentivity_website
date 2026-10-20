@@ -1,6 +1,6 @@
 ---
 title: "The Home page of the Studio"
-description: "What the Home page of the Agentivity Studio shows. The four shortcuts, the counters, the recent activity, and the runs that need your attention."
+description: "What the Home page of the Agentivity Studio shows. The four shortcuts, the counters, the recent activity, and the executions that need your attention."
 sidebar:
   order: 2
 editUrl: false
@@ -26,8 +26,8 @@ The Home page is the first screen of the Studio. It is titled **Welcome back**. 
 
 | Counter | What it counts |
 |---|---|
-| **Executions this week**, **Executions this year** | The number of runs of your agents, teams and workflows. |
-| **Saved this week**, **Saved this year** | An estimate of the time these runs saved, in minutes. |
+| **Executions this week**, **Executions this year** | The number of executions of your agents, teams and workflows. |
+| **Saved this week**, **Saved this year** | An estimate of the time these executions saved, in minutes. |
 
 ## The recent activity
 
@@ -36,9 +36,9 @@ The Home page is the first screen of the Studio. It is titled **Welcome back**. 
 
 ## Active & needs attention
 
-This panel lists the runs that are in progress and the runs that need you, with a label: **Running**, **Needs input** or **Failed**. When there is nothing, it says "Nothing running and nothing waiting on you right now."
+This panel lists the executions that are in progress and the executions that need you, with a label: **Running**, **Needs input** or **Failed**. When there is nothing, it says "Nothing running and nothing waiting on you right now."
 
-For the complete list of runs and their state, open the [Executions screen](/docs/studio/executions/).
+For the complete list of executions and their state, open the [Executions screen](/docs/studio/executions/).
 
 ## Next step
 

@@ -52,7 +52,7 @@ Everything is simulated. No real booking is made and no real payment is taken: e
 
 See [Run a team and read its work](/docs/teams/run-a-team/).
 
-A run uses the AI model many times: the manager and each specialist that works.
+An execution uses the AI model many times: the manager and each specialist that works.
 
 ## As an application
 

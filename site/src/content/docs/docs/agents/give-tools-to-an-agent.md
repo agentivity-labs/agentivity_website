@@ -81,12 +81,12 @@ A step can require the model to call a tool. The models Claude Opus 5.5, Claude 
 
 ## How to know it worked
 
-Run the agent with a request that needs the tool. The answer must contain what only the tool could give: here, the number of days the invoice is late. In the tab **Execution**, the **Inspector** shows the steps of the run. See [Run an agent and read its answer](/docs/agents/run-an-agent/).
+Run the agent with a request that needs the tool. The answer must contain what only the tool could give: here, the number of days the invoice is late. In the tab **Execution**, the **Inspector** shows the steps of the execution. See [Run an agent and read its answer](/docs/agents/run-an-agent/).
 
 ## Good to know
 
 - A tool gives the agent a way to act. Before you give an agent a tool that sends or changes something, such as e-mail or a table, decide whether a person must approve first. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
-- Each use of a tool adds a call to the AI model. An agent with many tools costs more for each run.
+- Each use of a tool adds a call to the AI model. An agent with many tools costs more for each execution.
 
 ## Next step
 

@@ -63,7 +63,7 @@ In this step, the fields of the format are not separate outputs. To have each fi
 
 ## Good to know
 
-- Each run of this step uses the AI model. Your provider bills you for it.
+- Each execution of this step uses the AI model. Your provider bills you for it.
 - Keep AI for the steps that need judgement or writing. Use fixed steps, such as [a condition](/docs/workflows/add-a-condition/), for rules that must always give the same result.
 
 ## Reuse an agent you already built

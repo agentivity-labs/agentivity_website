@@ -39,7 +39,7 @@ Chaque agent fait une chose, et la fait bien. L'équipe fait ce qu'aucun agent s
 
 ## Les trois modes de collaboration
 
-Toutes les équipes d'agents ne fonctionnent pas de la même façon. Il existe trois grandes organisations :
+Toutes les équipes d'agents ne fonctionnent pas de la même façon. Il existe trois grandes topologies :
 
 ### Sequential
 Les agents travaillent à la chaîne. L'agent 1 termine, passe son résultat à l'agent 2, et ainsi de suite. Prévisible, facile à contrôler, idéal pour les traitements dont l'ordre des opérations est clair.
@@ -82,7 +82,7 @@ Vous n'avez pas besoin de construire une chaîne de sept agents dès le premier 
 1. Choisissez une tâche répétitive et chronophage que votre équipe fait chaque semaine
 2. Découpez-la en ses étapes naturelles (rechercher, analyser, rédiger, mettre en forme)
 3. Associez un agent à chaque étape
-4. Choisissez une organisation (Sequential est en général le bon point de départ)
+4. Choisissez une topologie (Sequential est en général le bon point de départ)
 
 Ensuite, vous ajoutez des agents, vous affinez les prompts, et vous passez à de nouveaux workflows.
 

@@ -19,7 +19,7 @@ Le BYOK (Bring Your Own Key, « apportez votre propre clé ») est l'alternative
 
 ## Ce que veut dire BYOK
 
-BYOK signifie que vous connectez directement à votre plateforme d'IA votre propre clé API, obtenue chez votre fournisseur de LLM (Anthropic, OpenAI, Mistral, ou tout point d'accès compatible OpenAI). La plateforme orchestre les agents et le workflow. Mais chaque token va de votre environnement à votre fournisseur. La plateforme n'y touche jamais.
+BYOK signifie que vous connectez directement à votre plateforme d'IA votre propre clé API, obtenue chez votre fournisseur de LLM (Anthropic, OpenAI, Google Gemini, xAI, DeepSeek ou AWS Bedrock). La plateforme orchestre les agents et le workflow. Mais chaque token va de votre environnement à votre fournisseur. La plateforme n'y touche jamais.
 
 Concrètement :
 
@@ -42,25 +42,24 @@ Le coût des tokens est déjà variable. Y ajouter une marge de plateforme le re
 
 ### Pour la liberté de choix du modèle
 
-Les fournisseurs de LLM sortent sans cesse de nouveaux modèles. Avec le BYOK, passer de Claude 3.5 à Claude 4.0 revient à changer un choix dans une liste déroulante, sans attendre que votre fournisseur SaaS mette à jour son intégration. Vous pouvez aussi utiliser des modèles différents pour des agents différents. Un modèle rapide et bon marché pour l'étape d'extraction des données. Un modèle plus performant pour l'étape de raisonnement. À vous d'optimiser vos coûts.
+Les fournisseurs de LLM sortent sans cesse de nouveaux modèles. Avec le BYOK, passer à un modèle plus récent revient à le choisir dans votre connexion : la liste montre les modèles que votre clé peut utiliser. Pas besoin d'attendre que votre fournisseur SaaS mette à jour son intégration. Vous pouvez aussi garder plusieurs connexions et utiliser des modèles différents pour des agents différents. Un modèle rapide et bon marché pour l'étape d'extraction des données. Un modèle plus performant pour l'étape de raisonnement. À vous d'optimiser vos coûts.
 
 ### Pour l'indépendance vis-à-vis des fournisseurs
 
 Si vous payez une plateforme pour appeler Anthropic à votre place, vous avez deux dépendances : la plateforme *et* Anthropic. Si l'une ou l'autre change ses conditions, augmente ses prix ou tombe en panne, vous êtes touché. Avec le BYOK et une plateforme auto-hébergée, la couche d'orchestration vous appartient. Vous changez de fournisseur en changeant une clé. Vous l'hébergez sur n'importe quelle infrastructure qui fait tourner Docker.
 
-## Les fournisseurs compatibles
+## Les fournisseurs que vous pouvez connecter
 
-Tout point d'accès compatible OpenAI fonctionne en BYOK. Cela comprend :
+Agentivity se connecte à ces fournisseurs, chacun avec votre propre clé :
 
-- **Anthropic** (Claude 3.5, Claude 4, Opus, Haiku)
-- **OpenAI** (GPT-4o, o1, o3)
-- **Mistral** (Mistral Large, Codestral)
-- **Groq** (pour une inférence rapide)
-- **Ollama** (pour des modèles locaux, entièrement coupés de l'extérieur)
-- **LM Studio** (pour des modèles locaux)
-- Tout fournisseur doté d'une API compatible OpenAI
+- **Anthropic** (les modèles Claude)
+- **OpenAI** (les modèles GPT)
+- **Google Gemini**
+- **xAI** (les modèles Grok)
+- **DeepSeek**
+- **AWS Bedrock**, si votre entreprise accède à ses modèles par AWS
 
-Les modèles locaux via Ollama méritent une mention. Pour les usages les plus sensibles, vous pouvez faire tourner toute votre équipe IA (Agentivity + LLM locaux) sur un seul serveur, sans aucun appel à une API externe. Aucune donnée ne quitte votre réseau.
+Chaque connexion indique le modèle exact qu'elle utilise. Pour la plupart des fournisseurs, le Studio demande au fournisseur quels modèles votre clé peut utiliser et les affiche dans une liste. Chaque connexion contient aussi l'adresse de l'API du fournisseur, déjà remplie avec l'adresse officielle : ne la changez que pour passer par un proxy à vous.
 
 ## Ce que le BYOK ne règle pas
 
@@ -74,13 +73,13 @@ Le BYOK réduit nettement la surface d'attaque. Il ne la supprime pas. Une vraie
 
 ## Comment le mettre en place dans Agentivity
 
-1. Obtenez une clé API auprès de votre fournisseur de LLM (Anthropic, OpenAI, etc.)
-2. Dans Agentivity, allez dans Settings → API Keys
-3. Ajoutez votre clé et sélectionnez le fournisseur
-4. Choisissez le modèle utilisé par chaque agent (vous pouvez mélanger les modèles d'un agent à l'autre)
+1. Obtenez une clé API auprès de votre fournisseur de LLM (Anthropic, OpenAI, Google, xAI ou DeepSeek), avec du crédit sur votre compte chez lui.
+2. Dans le Studio, ouvrez **Settings**, puis **Credentials**, et sélectionnez **New credentials**. Choisissez **AI models**, puis votre fournisseur. (La première fois, le guide de bienvenue propose la même étape : **Connect your AI model**.)
+3. Collez votre clé, puis choisissez le **modèle** : la liste montre les modèles que votre clé peut utiliser.
+4. Enregistrez. Gardez plusieurs connexions si vous voulez des modèles différents pour des agents différents, et choisissez celle sur laquelle chaque agent tourne.
 
-C'est tout. Vos agents appellent maintenant directement votre fournisseur. Agentivity ne voit jamais vos tokens.
+C'est tout. Vos agents appellent maintenant directement votre fournisseur, depuis votre propre serveur. Aucun serveur d'Agentivity ne se place entre les deux, et votre fournisseur vous facture directement.
 
 ---
 
-*Agentivity est auto-hébergé et BYOK par conception. [Ajoutez une étoile sur GitHub](https://github.com/agentivity-labs/agentivity) ou [lisez la documentation](/fr/docs).*
+*Agentivity est auto-hébergé et BYOK par conception. [Ajoutez une étoile sur GitHub](https://github.com/agentivity-labs/agentivity) ou [lisez comment connecter un modèle](/fr/docs/guides/connect-a-model).*

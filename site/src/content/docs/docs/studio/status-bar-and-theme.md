@@ -20,7 +20,7 @@ The bar at the bottom of the Studio shows the state of the live connection betwe
 | **Realtime connected** | The Studio receives what happens in the engine as it happens. |
 | **Realtime reconnecting** | The live connection is lost and the Studio tries to get it back. |
 
-While the bar says **Realtime reconnecting**, the screens do not update by themselves. A run can be further than what you see, and the chat of a run can stay empty. Use the refresh buttons, or load the page again.
+While the bar says **Realtime reconnecting**, the screens do not update by themselves. An execution can be further than what you see, and the chat of an execution can stay empty. Use the refresh buttons, or load the page again.
 
 A security program or a company proxy that inspects the traffic of your machine can block this connection.
 

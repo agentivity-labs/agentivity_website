@@ -15,14 +15,14 @@ The source code is the reference. These pages do not list every function.
 
 ## The idea in one minute
 
-Your application does three things: it lists what can be launched, it starts a run, and it shows what the run sends. The SDK gives you a ready-made piece for each, so that most of your code is your own screens.
+Your application does three things: it lists what can be launched, it starts an execution, and it shows what the execution sends. The SDK gives you a ready-made piece for each, so that most of your code is your own screens.
 
 ## What you get
 
 | Part | What it does for you | Read |
 |---|---|---|
-| **The client** | Calls the server: list agents, teams and workflows, start a run, answer a question, stop a run, read past conversations, upload a file, read and write the rows of a Data Table. | [List solutions and start a run](/docs/vibeapps/run-a-solution-from-your-app/) |
-| **The chat** | A complete conversation: messages as they are written, the input box, a stop button, who is working, questions to the person, a notice when the connection is lost. | [List solutions and start a run](/docs/vibeapps/run-a-solution-from-your-app/) |
+| **The client** | Calls the server: list agents, teams and workflows, start an execution, answer a question, stop an execution, read past conversations, upload a file, read and write the rows of a Data Table. | [List solutions and start an execution](/docs/vibeapps/run-a-solution-from-your-app/) |
+| **The chat** | A complete conversation: messages as they are written, the input box, a stop button, who is working, questions to the person, a notice when the connection is lost. | [List solutions and start an execution](/docs/vibeapps/run-a-solution-from-your-app/) |
 | **The team and the workflow, drawn** | Shows the members of a team or the steps of a workflow, and lights them up as they work. | [Show the team at work](/docs/vibeapps/show-the-team-at-work/) |
 | **Widgets** | What an agent can show in the conversation besides text: charts, cards, a form, a choice, a date, a confirmation. Twenty-two are ready. | [The widgets an agent can show](/docs/vibeapps/the-widgets-an-agent-can-show/) |
 | **Your own widgets** | A screen of your own that the agent fills in and the person answers: a hotel picker, a payment card, an order summary. | [Add your own widgets](/docs/vibeapps/add-your-own-widgets/) |
@@ -63,7 +63,7 @@ The SDK and the two example applications are published with their source. That m
 - **Give it the three rules of this section.** The application reads, runs and watches, and does not build. The application and the server share one address. The server has no login.
 - **Ask for one screen at a time**, and run it against your server after each change.
 
-The assistant writes the code. You still check the result against a real run: only a run shows what your team really sends.
+The assistant writes the code. You still check the result against a real execution: only an execution shows what your team really sends.
 
 ## The SDK for Flutter
 

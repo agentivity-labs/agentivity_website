@@ -69,9 +69,9 @@ For a team, this applies to its agents.
 
 ## Which model to choose
 
-- A larger model reasons better and costs more for each run. A smaller model is faster and cheaper.
-- Start with the default model of your connection. Change only if the answers are not good enough, or if the runs are too slow.
-- Your provider bills you for each run. A team with many members uses the model many times for one request.
+- A larger model reasons better and costs more for each execution. A smaller model is faster and cheaper.
+- Start with the default model of your connection. Change only if the answers are not good enough, or if the executions are too slow.
+- Your provider bills you for each execution. A team with many members uses the model many times for one request.
 
 ## How to know it worked
 
@@ -81,7 +81,7 @@ For a team, this applies to its agents.
 ## If it does not work
 
 - **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Settings** > **Credentials**.
-- **The agent fails at its first run after an import.** It still points to the connection of its author. Use **Use my default model**.
+- **The agent fails at its first execution after an import.** It still points to the connection of its author. Use **Use my default model**.
 
 ## Next step
 

@@ -32,7 +32,7 @@ La suite de cet article explique ce que cela veut dire concrètement, avec un ex
 
 Prenez la réservation d'un voyage. Dans la plupart des applications de voyage, vous remplissez un formulaire de recherche, vous triez des dizaines de résultats, puis vous recommencez pour l'hôtel, et encore pour le transfert depuis l'aéroport.
 
-Dans une VibeApp, vous écrivez une phrase : Lisbonne pour deux, en mai, avec un budget. Un responsable lit la demande et confie chaque partie à un spécialiste. Le spécialiste des vols propose des vols. Le spécialiste des hôtels revient avec un hôtel qui convient, présenté sous forme de fiche avec une photo et un prix. Vous choisissez, et votre choix oriente la suite : les propositions de dîner tiennent compte de ce qui reste du budget.
+Dans une VibeApp, vous écrivez une phrase : Lisbonne pour deux, en mai, avec un budget. Un manager lit la demande et confie chaque partie à un spécialiste. Le spécialiste des vols propose des vols. Le spécialiste des hôtels revient avec un hôtel qui convient, présenté sous forme de fiche avec une photo et un prix. Vous choisissez, et votre choix oriente la suite : les propositions de dîner tiennent compte de ce qui reste du budget.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/trip-planner.jpg" width="1024" height="768">
@@ -66,9 +66,9 @@ Il vaut la peine d'insister, car c'est souvent mal compris. Une VibeApp n'est pa
 
 Une équipe. Pas un grand modèle d'IA qui essaie de tout faire, mais plusieurs spécialistes de l'IA, chacun avec un rôle, qui travaillent ensemble comme le font des collègues.
 
-Trip Planner compte treize membres : un responsable, et des spécialistes des vols, des hôtels, des transports sur place, de la restauration, des activités, de l'assurance, des documents de voyage, du budget, du paiement et des réservations. Le responsable est le seul à parler à tous les autres. Chaque spécialiste fait une seule chose et rend compte.
+Trip Planner compte treize membres : un manager, et des spécialistes des vols, des hôtels, des transports sur place, de la restauration, des activités, de l'assurance, des documents de voyage, du budget, du paiement et des réservations. Le manager est le seul à parler à tous les autres. Chaque spécialiste fait une seule chose et rend compte.
 
-C'est ce qui permet à une VibeApp d'apporter « les bonnes compétences, au bon moment ». Un week-end près de chez soi n'a peut-être pas besoin du spécialiste des visas. Un voyage sur un autre continent, si. Le responsable décide qui est nécessaire, demande par demande.
+C'est ce qui permet à une VibeApp d'apporter « les bonnes compétences, au bon moment ». Un week-end près de chez soi n'a peut-être pas besoin du spécialiste des visas. Un voyage sur un autre continent, si. Le manager décide qui est nécessaire, demande par demande.
 
 Si l'idée de spécialistes de l'IA qui travaillent en équipe est nouvelle pour vous, commencez par [ce qu'est un système multi-agents](/fr/blog/what-is-a-multi-agent-system).
 

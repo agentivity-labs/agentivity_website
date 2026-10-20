@@ -81,7 +81,7 @@ Trois exemples réels, du plus simple au plus strict.
 
 **Confirmer avant que le travail commence.** Dans l'[exemple Shopping Lab](/fr/use-cases/shopping-lab), un membre transforme un souhait vague en demande précise et la fait confirmer par l'acheteur avant que huit autres se mettent au travail. Une confirmation de deux lignes évite une longue recherche dans la mauvaise direction.
 
-**Revoir les cas douteux.** Dans l'[exemple de tri de CV](/fr/use-cases/cv-screening), les cas clairs sont triés, et ceux dont le workflow n'est pas sûr vont à un recruteur. Le workflow demande aussi de l'aide quand il ne peut pas lire un document. Pour en savoir plus : [tri de CV par l'IA : comment laisser la main au recruteur](/fr/blog/ai-cv-screening).
+**Revoir les cas douteux.** Dans l'[exemple de CV screening](/fr/use-cases/cv-screening), les cas clairs sont triés, et ceux dont le workflow n'est pas sûr vont à un recruteur. Le workflow demande aussi de l'aide quand il ne peut pas lire un document. Pour en savoir plus : [CV screening par l'IA : comment laisser la main au recruteur](/fr/blog/ai-cv-screening).
 
 ## Comment la question doit-elle arriver à la personne ?
 

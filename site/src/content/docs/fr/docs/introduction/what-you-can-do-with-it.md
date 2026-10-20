@@ -30,7 +30,7 @@ Les quatre exemples utilisent les trois briques : un agent, un workflow, deux é
 - **Préparer et rédiger.** Rassembler des informations, rédiger une note, une réponse ou un rapport, et le faire relire par un autre spécialiste.
 - **Comparer et recommander.** Examiner plusieurs options selon vos critères et dire laquelle convient.
 - **Traiter une demande du début à la fin.** Comprendre ce qu'une personne demande, confier chaque partie au bon spécialiste, et revenir avec une réponse complète.
-- **Le travail qui a besoin de votre accord.** Tout faire jusqu'à la décision, puis s'arrêter et attendre une personne.
+- **Le travail qui a besoin de votre validation.** Tout faire jusqu'à la décision, puis s'arrêter et attendre une personne.
 
 ## Commencer petit, puis grandir
 
@@ -38,7 +38,7 @@ Vous n'avez pas besoin d'un grand projet pour commencer.
 
 1. **Un agent**, qui vous décharge d'une tâche répétitive.
 2. **Une équipe**, quand la tâche demande plusieurs compétences, ou quand un spécialiste doit vérifier le travail d'un autre.
-3. **Un workflow**, quand les étapes doivent être les mêmes à chaque fois et qu'une personne doit donner son accord avant que le travail continue.
+3. **Un workflow**, quand les étapes doivent être les mêmes à chaque fois et qu'une personne doit valider avant que le travail continue.
 4. **Des équipes qui utilisent d'autres équipes.** Un membre d'une équipe peut être une autre équipe ou un workflow.
 
 ## Ce qu'il ne fait pas aujourd'hui

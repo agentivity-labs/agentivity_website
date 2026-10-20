@@ -13,7 +13,7 @@ The fastest way to understand Agentivity is to open a solution that is already b
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/getting-started/images/import-a-showcase.mp4" aria-label="A recording of the Studio: Try it is selected on the card Trip Manager Team, the window Import a Template opens, Import is selected, the message Template imported appears, and the team opens in its editor"></video>
 
-The recording is played faster than real use.
+Recorded from the product, played faster.
 
 ## What you need
 
@@ -53,14 +53,15 @@ You can also start from the Studio: on the home page, select **Browse templates*
 The agents of a Template were set up with the model connection of their author. That connection does not exist on your server. So the import replaces it:
 
 - **If you have a model connection**, the imported agents use yours. The message **Template imported** says which one, for example "13 model connections now use" followed by the name of your connection.
-- **If you have no model connection yet**, the import still works, but the agents fail at their first run. Add a connection in **Settings** > **Credentials**. Then go to **Studio** > **Agents**, open the menu of the imported item and select **Use my default model**.
+- **If you have no model connection yet**, the import still works, but the agents fail at their first execution. Add a connection in **Settings** > **Credentials**. Then go to **Studio** > **Agents**, open the menu of the imported item and select **Use my default model**.
 
 ## How to know it worked
 
 The solution opens in its editor and you see it drawn on the canvas.
 
 ![The team Trip Manager Team in its editor: the manager at the top, twelve specialists in a row below, and the panel Info on the right](images/showcase-opened.jpg)
- For **Trip Manager Team**, you see the manager at the top and its specialists below. The imported agents and the team are also in **Studio** > **Agents**.
+
+For **Trip Manager Team**, you see the manager at the top and its specialists below. The imported agents and the team are also in **Studio** > **Agents**.
 
 ## If it does not work
 

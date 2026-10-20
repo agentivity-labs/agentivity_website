@@ -1,6 +1,6 @@
 ---
 title: "Run an agent and read its answer"
-description: "Give a task to an agent in the Studio, read its answer, answer its questions, run it again, and find the run later."
+description: "Give a task to an agent in the Studio, read its answer, answer its questions, run it again, and find the execution later."
 sidebar:
   order: 8
 editUrl: false
@@ -14,7 +14,7 @@ Running an agent alone is the fastest way to test it: you give it a task, you re
 ## What you need
 
 - An agent with a model and instructions, published. See [Create an agent](/docs/agents/create-an-agent/).
-- A model connection that works. Each run uses the AI model, and your provider bills you for it.
+- A model connection that works. Each execution uses the AI model, and your provider bills you for it.
 
 ## Give a task
 
@@ -34,19 +34,19 @@ The answer arrives in the same panel, as it is written.
 
 If the agent has a channel, it can stop and ask you something. The field at the bottom then says **Type your response…** Type your answer and send it. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
 
-## Control the run
+## Control the execution
 
-The panel has buttons to **Pause run**, **Resume run** and **Cancel run**. After a run, it also has **Run again** and **Reset**.
+The panel has buttons to **Pause run**, **Resume run** and **Cancel run**. After an execution, it also has **Run again** and **Reset**.
 
 ## Read what happened
 
-Below the canvas, three tabs show the run:
+Below the canvas, three tabs show the execution:
 
 | Tab | What it shows |
 |---|---|
-| **Inspector** | The steps of the run. Select a step to see its inputs, its outputs and its logs. |
+| **Inspector** | The steps of the execution. Select a step to see its inputs, its outputs and its logs. |
 | **Errors** | What went wrong. When all is well, it says "No runtime errors detected." |
-| **Logs** | The technical record of the run. |
+| **Logs** | The technical record of the execution. |
 
 ## Improve and try again
 
@@ -57,9 +57,9 @@ Below the canvas, three tabs show the run:
 
 Change one thing at a time. You then know which change improved the answer.
 
-## Find a run again
+## Find an execution again
 
-The section **Executions**, in the menu on the left, lists the runs of your whole workspace, with their state. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/) for what this page shows.
+The section **Executions**, in the menu on the left, lists the executions of your whole workspace, with their state. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/) for what this page shows.
 
 ## How to know it worked
 
@@ -68,7 +68,7 @@ The section **Executions**, in the menu on the left, lists the runs of your whol
 
 ## If it does not work
 
-- **The run fails at once.** The agent has no model, or the credentials of its model are not chosen. See [Choose or change the model of an agent](/docs/agents/choose-the-model/).
+- **The execution fails at once.** The agent has no model, or the credentials of its model are not chosen. See [Choose or change the model of an agent](/docs/agents/choose-the-model/).
 - **The answer ignores your documents or your tools.** Say in the instructions when to use them.
 - **The agent asks a question you did not expect.** Change its instructions, or stop it from asking. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
 

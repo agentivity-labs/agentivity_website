@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/getting-started/welcome-guide.md. Do not edit here: edit the source and publish again. -->
 
-The first time you open the Studio, a welcome guide appears. It has four short steps. You can skip any step and come back to it later.
+The first time you open the Studio, a welcome guide appears. It has four short steps. The list on the left also shows the welcome screen and the last screen, which are not counted as steps. You can skip any step and come back to it later.
 
 ## What you need
 
@@ -19,7 +19,7 @@ The first time you open the Studio, a welcome guide appears. It has four short s
 
 ## Start the guide
 
-![The welcome guide of the Studio: the six steps on the left, and on the right the three cards Connect your model, Try a ready-made solution and Take the two-minute tour, with the button Get started](images/welcome-guide.jpg)
+![The welcome guide of the Studio: the list of steps on the left, from Welcome to You are set, and on the right the three cards Connect your model, Try a ready-made solution and Take the two-minute tour, with the button Get started](images/welcome-guide.jpg)
 
 The welcome screen shows what the guide covers: **Connect your model**, **Try a ready-made solution** and **Take the two-minute tour**.
 

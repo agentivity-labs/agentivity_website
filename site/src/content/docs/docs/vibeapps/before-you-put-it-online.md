@@ -29,7 +29,7 @@ An application does not limit this by itself. The portal lists only tagged solut
 **2. Put your own access control in front.** A reverse proxy, or your own small server, that:
 
 - asks people to sign in, with the system your company already uses;
-- lets through only the calls your application needs: listing solutions, starting a run, following it, answering it, and the rows of the tables it uses;
+- lets through only the calls your application needs: listing solutions, starting an execution, following it, answering it, and the rows of the tables it uses;
 - blocks everything else, including the Studio, for people who are not builders.
 
 **3. Limit the pages that may call the server.** By default, the server accepts calls from any web page. Start it with the address of your application only, with the setting `Cors__AllowedOrigins__0=https://app.mydomain.com`. Without it, any website opened by a visitor who can reach your server can call it in the background. This helps against other sites. It does not replace the access control of the step above: a script is not a web page, and it is not stopped. See [Who can call the API](/docs/getting-started/install-community/#who-can-call-the-api).

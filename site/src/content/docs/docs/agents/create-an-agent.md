@@ -13,7 +13,7 @@ An agent is one AI specialist with a role. To see what an agent is made of first
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: on the home page, Create new agent is selected, the name Reminder Writer is typed, the role is written, an Anthropic Model is dragged from the Node Catalog onto the canvas and linked to the first diamond of the agent"></video>
 
-The recording stops before the agent is published and before the credentials of the model are chosen.
+Recorded from the product. It stops before the agent is published and before the credentials of the model are chosen.
 
 ## What you need
 
