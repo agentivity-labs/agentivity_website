@@ -3,7 +3,6 @@ title: "AI nodes: knowledge, Vector Stores and embeddings"
 description: "Reference of the Knowledge Base step, the Vector Stores and the Vector Store step, the embeddings and the rerank nodes."
 sidebar:
   order: 5
-draft: true
 editUrl: false
 lastUpdated: false
 ---

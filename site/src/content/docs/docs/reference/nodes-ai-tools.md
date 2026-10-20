@@ -3,7 +3,6 @@ title: "AI nodes: the tools you give to an agent"
 description: "Reference of the tools you can plug into an AI agent: Data Table, calculator, date, documents, e-mail, web search, web scraper and more."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "People, messages, storage and application nodes"
 description: "Reference of the nodes that ask a person, send and read messages, store values, and connect to outside applications."
 sidebar:
   order: 7
-draft: true
 editUrl: false
 lastUpdated: false
 ---

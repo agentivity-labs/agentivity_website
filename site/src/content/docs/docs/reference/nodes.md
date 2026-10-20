@@ -3,7 +3,6 @@ title: "Node reference: every step and resource"
 description: "The list of the 98 nodes of the Node Catalog, and how to read the reference of a node: fields, outputs, exits, effects."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

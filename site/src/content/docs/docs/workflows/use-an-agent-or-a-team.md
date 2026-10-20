@@ -3,7 +3,6 @@ title: "Use an agent or a team as a step"
 description: "Call an agent, a team or another workflow of your library from a workflow, with the steps Agent, Team and Workflow. What to fill in, and what they refuse."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -113,7 +112,7 @@ What we saw: a called workflow that declared `output` and `city` gave both, and 
 
 ### When what you call fails
 
-A failure inside what you call fails the step that called it, as an exception goes up: the agent, the team or the workflow fails, then the step that called it, and so on as far as the whole run. The message says what failed, and why. For example: `The workflow 'Reminder Approval' failed: …`. When the failure is deep inside, the message names each level.
+A failure inside what you call fails the step that called it: the agent, the team or the workflow fails, then the step that called it, and so on as far as the whole run. The message says what failed, and why. For example: `The workflow 'Reminder Approval' failed: …`. When the failure is deep inside, the message names each level.
 
 The step has two exits on its right side: **Out**, where the workflow goes on, and **Error**.
 

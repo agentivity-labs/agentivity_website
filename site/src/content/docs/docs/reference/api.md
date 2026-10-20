@@ -3,7 +3,6 @@ title: "API reference: the routes of the server"
 description: "The list of the HTTP routes of an Agentivity server, by area, with what each one does when the product says it."
 sidebar:
   order: 8
-draft: true
 editUrl: false
 lastUpdated: false
 ---

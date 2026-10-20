@@ -3,7 +3,6 @@ title: "What a Solution is, and how to mark one"
 description: "A Solution is an agent, a team or a workflow that a person launches, marked with the tag solution. What to mark, how to mark it, and where Solutions show."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -38,6 +37,8 @@ You can do it from a library or from an editor.
 
 ### From a library
 
+![The list of agents: Reminder Writer carries the mark Solution beside its name, and the menu of its row offers Open, No longer a solution, Create Template, Use my default model and Delete](images/solution-library-menu.jpg)
+
 1. Open **Studio** > **Agents** for an agent or a team, or **Studio** > **Workflows** for a workflow.
 2. On the row of the agent, the team or the workflow, select the three dots.
 3. Select **Mark as solution**.
@@ -47,6 +48,8 @@ When it is already a Solution, the same entry reads **No longer a solution**. Se
 This changes only the tags. You do not need to publish.
 
 ### From an editor
+
+![The panel Info of a workflow: Name, Role, then the box Solution with its switch, then Tags](images/solution-switch-editor.jpg)
 
 1. Open the agent, the team or the workflow in its editor.
 2. In the panel **Info**, on the right, find the box **Solution**. It is above **Tags**.

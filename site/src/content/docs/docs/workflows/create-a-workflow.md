@@ -3,7 +3,6 @@ title: "Create a workflow"
 description: "Draw a workflow in the Studio. Name it, drag steps from the Node Catalog onto the canvas, link them, set them up and publish."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "Use a team or a workflow as a member"
 description: "A member of a team can be an agent, another team or a workflow. How to add one, and when it is a good idea."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---

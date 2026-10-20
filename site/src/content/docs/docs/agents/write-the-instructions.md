@@ -3,7 +3,6 @@ title: "Write the role and the instructions of an agent"
 description: "The role says when to use an agent. The instructions say what it must do and how. How to write both, with an example you can copy."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

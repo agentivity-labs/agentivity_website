@@ -3,7 +3,6 @@ title: "AI nodes: agents, models, sessions and channels"
 description: "Reference of the AI nodes for agents: AI Agent, Agent, Team, LLM Prompt, models, sessions, channels, policies, guardrails, media."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "Core nodes: conditions, loops, data and code"
 description: "Reference of the Core nodes of the Node Catalog: If, Switch, For Each, First Of, data, variables, files, display and JavaScript."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---

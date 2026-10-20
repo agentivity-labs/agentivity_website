@@ -3,7 +3,6 @@ title: "Choose how a team works together"
 description: "The five ways a team of agents can work in Agentivity (Sequential, Concurrent, Handoff, Group Chat and Manager-led), and when to use each."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "Add an AI step to a workflow"
 description: "Put an AI Agent node in a workflow, give it an AI model and a prompt, so that AI works in this step only and the other steps stay fixed."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

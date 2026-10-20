@@ -3,7 +3,6 @@ title: "Name, group and give an icon to team members"
 description: "Change how a member looks in a team. Give it an icon, put related members in a group that shares a colour, and remove a member."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---
