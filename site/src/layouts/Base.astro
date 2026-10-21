@@ -32,13 +32,16 @@ const fontsHref = look === 'editorial'
   ? 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap'
   : 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap';
 
-const canonicalURL  = new URL(Astro.url.pathname, Astro.site);
+// Every address of the site ends with a slash, like the built pages and the sitemap; Vercel redirects the others to it.
+// The canonical and the hreflang links use that form, so each page has one address only.
+const pagePath      = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const canonicalURL  = new URL(pagePath, Astro.site);
 const schemaJson    = schema ? JSON.stringify(schema) : null;
 
 // hreflang: derive alternate URLs
-const pathWithoutLang = Astro.url.pathname.replace(/^\/fr/, '') || '/';
+const pathWithoutLang = pagePath.replace(/^\/fr(?=\/)/, '');
 const hrefEN = new URL(pathWithoutLang, Astro.site).href;
-const hrefFR = new URL('/fr' + pathWithoutLang.replace(/\/$/, '') , Astro.site).href;
+const hrefFR = new URL('/fr' + pathWithoutLang, Astro.site).href;
 
 // The language of the page: from the address first (some French pages do not pass `lang`).
 const pageLang = Astro.url.pathname === '/fr' || Astro.url.pathname.startsWith('/fr/') ? 'fr' : lang;

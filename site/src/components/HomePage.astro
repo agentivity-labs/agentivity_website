@@ -36,12 +36,22 @@ const schema = {
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: h.pricing.tiers[0].name + ' — ' + h.pricing.tiers[0].badge },
       url: siteUrl,
       description: h.meta.description,
+      publisher: { '@id': 'https://www.agentivity.io/#organization' },
     },
     {
       '@type': 'Organization',
+      '@id': 'https://www.agentivity.io/#organization',
       name: 'Agentivity',
+      legalName: 'SMART PIXEL BV',
       url: 'https://www.agentivity.io',
       logo: 'https://www.agentivity.io/agentivity-wordmark-navy.svg',
+      // The profiles that are Agentivity, so that search engines and AI assistants tell it apart from other uses of the name.
+      sameAs: [
+        'https://github.com/agentivity-labs',
+        'https://github.com/agentivity-labs/agentivity',
+        'https://hub.docker.com/r/agentivitylabs/agentivity',
+        'https://synergi.agentivity.io',
+      ],
     },
   ],
 };

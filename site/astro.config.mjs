@@ -56,8 +56,9 @@ export default defineConfig({
       },
     }),
     sitemap({
-      // Landing pages under /lp/ are campaign pages, not indexed (noindex): they stay out of the sitemap too.
-      filter: (page) => !new URL(page).pathname.startsWith('/lp/'),
+      // Landing pages under /lp/ are campaign pages, and the pages shown after a sign-up are thank-you pages: none is indexed
+      // (noindex), so they stay out of the sitemap too.
+      filter: (page) => !/^\/(lp\/|thank-you\/|fr\/merci\/)/.test(new URL(page).pathname),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en-US', fr: 'fr-FR' },
