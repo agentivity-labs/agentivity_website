@@ -1,7 +1,6 @@
 {
   "nav": {
     "links": [
-      { "label": "How it works", "href": "/how-it-works" },
       { "label": "Use Cases",    "href": "/use-cases" },
       { "label": "Synergi",      "href": "https://synergi.agentivity.io" },
       { "label": "Services",     "href": "/services" },
@@ -9,6 +8,84 @@
       { "label": "Pricing",      "href": "/pricing" },
       { "label": "Docs",         "href": "/docs" }
     ],
+    "product": {
+      "label": "Product",
+      "intro": {
+        "title": "How it works",
+        "body": "The whole picture: describe what you need to the Assistant, or build it by hand in the Studio. No code.",
+        "link": "See how it works",
+        "href": "/how-it-works"
+      },
+      "groups": [
+        {
+          "title": "Build",
+          "items": [
+            {
+              "icon": "team",
+              "label": "Teams",
+              "body": "AI specialists that work together",
+              "href": "/teams"
+            },
+            {
+              "icon": "agent",
+              "label": "Agents",
+              "body": "One specialist, one role, its own tools",
+              "href": "/agents"
+            },
+            {
+              "icon": "workflow",
+              "label": "Workflows",
+              "body": "Fixed steps, with a person who approves",
+              "href": "/workflows"
+            }
+          ]
+        },
+        {
+          "title": "Make it better",
+          "items": [
+            {
+              "icon": "prompt",
+              "label": "Prompt Studio",
+              "body": "Test and improve what your agents are told",
+              "href": "/prompt-studio"
+            },
+            {
+              "icon": "data",
+              "label": "Knowledge Bases & Data Tables",
+              "body": "Your documents and tables, for your agents",
+              "href": "/knowledge-and-data"
+            }
+          ]
+        },
+        {
+          "title": "Use it",
+          "items": [
+            {
+              "icon": "app",
+              "label": "VibeApps",
+              "body": "Apps your users simply talk to",
+              "href": "/vibeapps"
+            },
+            {
+              "icon": "assistant",
+              "label": "Assistant",
+              "body": "Build by describing what you need",
+              "href": "/assistant"
+            }
+          ]
+        }
+      ],
+      "foot": [
+        {
+          "label": "Ready-made teams on Synergi",
+          "href": "https://synergi.agentivity.io"
+        },
+        {
+          "label": "Install the free Community edition",
+          "href": "/community"
+        }
+      ]
+    },
     "github": "Star on GitHub",
     "cta": "Join the waitlist"
   },
@@ -35,6 +112,12 @@
         "links": [
           { "label": "How it works",   "href": "/how-it-works" },
           { "label": "Assistant", "href": "/assistant" },
+          { "label": "Teams", "href": "/teams" },
+          { "label": "Agents", "href": "/agents" },
+          { "label": "Workflows", "href": "/workflows" },
+          { "label": "Prompt Studio", "href": "/prompt-studio" },
+          { "label": "Knowledge & Data", "href": "/knowledge-and-data" },
+          { "label": "VibeApps", "href": "/vibeapps" },
           { "label": "Use Cases",      "href": "/use-cases" },
           { "label": "Services",       "href": "/services" },
           { "label": "Pricing",        "href": "/pricing" },
@@ -1670,6 +1753,995 @@
       "secondary": "See the use cases",
       "cloud": "Rather not install anything?",
       "cloud_link": "Join the waitlist for the cloud"
+    }
+  },
+  "teams_page": {
+    "meta": {
+      "title": "AI Agent Teams: Specialists That Work Together | Agentivity",
+      "description": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. Five ways to work together, no code."
+    },
+    "hero": {
+      "crumb": "Product",
+      "name": "Teams",
+      "h1": "A chatbot answers.",
+      "h1_accent": "A team does the work.",
+      "sub": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. They share the work, and come back to you for every decision that is yours.",
+      "cta": "Join the waitlist",
+      "cta_secondary": "See ready-made teams",
+      "caption": "The Trip Manager Team at work in the Studio. Recorded from the product, played faster.",
+      "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller approves each step in the chat"
+    },
+    "build": {
+      "eyebrow": "How you build one",
+      "h2": "No code.",
+      "h2_accent": "Brief it like a colleague.",
+      "lead": "Or simply describe the team to the Assistant, and it builds a draft for you to check.",
+      "link": "Build it with the Assistant",
+      "steps": [
+        "Describe the role of each specialist",
+        "Drag them onto the canvas and choose who leads",
+        "Ask in plain words, and decide when they ask you"
+      ],
+      "caption": "Recorded in the Studio, played faster.",
+      "alt": "A recording of the Studio: a team is named, the manager-led way of working is chosen among five, then a manager and three specialists are dragged onto the canvas"
+    },
+    "ways": {
+      "eyebrow": "Ways of working",
+      "h2": "Five ways",
+      "h2_accent": "to work together.",
+      "sub": "Organise your AI specialists the way you would organise people. Pick the way that fits the job.",
+      "good_for": "Good for:",
+      "items": [
+        {
+          "id": "sequential",
+          "name": "Sequential",
+          "body": "One after another. Each specialist finishes a step and passes it on.",
+          "example": "write, check, then translate."
+        },
+        {
+          "id": "concurrent",
+          "name": "Concurrent",
+          "body": "All at the same time, on the same request. You get every answer.",
+          "example": "three opinions on the same file."
+        },
+        {
+          "id": "handoff",
+          "name": "Handoff",
+          "body": "Each passes the case to the right colleague, until it is solved.",
+          "example": "customer support."
+        },
+        {
+          "id": "groupchat",
+          "name": "Group chat",
+          "body": "They discuss in turns and build on each other's answers.",
+          "example": "weighing a decision."
+        },
+        {
+          "id": "manager",
+          "name": "Manager-led",
+          "body": "A manager plans and hands out the work, then puts it together.",
+          "example": "a trip, a project, anything with many parts."
+        }
+      ],
+      "capture": "Captured from the product",
+      "loops": [
+        {
+          "title": "Led by a manager",
+          "body": "A manager hands each part of the job to the right specialist. Here, a travel agency: one manager, twelve specialists.",
+          "alt": "A team graph from the product: a trip manager in the centre and its specialists lighting up one after another as they start working"
+        },
+        {
+          "title": "One after another",
+          "body": "Each specialist finishes a step and passes it on. Here, nine of them compare products and write the report.",
+          "alt": "A team graph from the product: nine specialists in a chain, each one lighting up as the previous one finishes"
+        }
+      ]
+    },
+    "control": {
+      "eyebrow": "You stay in charge",
+      "h2": "The team works.",
+      "h2_accent": "You decide.",
+      "points": [
+        {
+          "title": "It stops for your decisions",
+          "body": "A specialist proposes a flight, a hotel, a payment. You accept or change it. Nothing moves on without you."
+        },
+        {
+          "title": "You see who works",
+          "body": "On the team canvas, each specialist lights up while it works. Every step is kept, with what it read and what it wrote."
+        },
+        {
+          "title": "Your model, your key",
+          "body": "Your agents run on the AI model you connect, with your own key. Each agent can use a different one."
+        }
+      ]
+    },
+    "mix": {
+      "eyebrow": "Teams and workflows",
+      "h2": "Free where it helps,",
+      "h2_accent": "fixed where it must be.",
+      "sub": "A team decides how to do the job. When some steps must be the same every time, draw them in a workflow.",
+      "items": [
+        {
+          "title": "A team can have a team as a member",
+          "body": "Or a workflow. Build a large solution from small parts you have already tested.",
+          "link": "Put a team in a team",
+          "href": "/docs/teams/put-a-team-in-a-team"
+        },
+        {
+          "title": "A workflow can call a team",
+          "body": "One step of your process hands the open part of the job to a whole team.",
+          "link": "Use an agent or a team in a workflow",
+          "href": "/docs/workflows/use-an-agent-or-a-team"
+        },
+        {
+          "title": "Your users talk to it",
+          "body": "Put a team behind a VibeApp: your users ask in their own words, the team does the work.",
+          "link": "What a VibeApp is",
+          "href": "/docs/vibeapps/what-a-vibeapp-is"
+        }
+      ]
+    },
+    "ready": {
+      "eyebrow": "Start in minutes",
+      "h2": "Ready-made teams.",
+      "h2_accent": "Change what you want.",
+      "link": "Browse them on Synergi",
+      "href": "https://synergi.agentivity.io",
+      "cards": [
+        {
+          "tag": "Manager-led",
+          "title": "Trip Manager",
+          "body": "A manager and twelve specialists plan, book and pay for a trip, and ask the traveller at each decision.",
+          "href": "https://synergi.agentivity.io"
+        },
+        {
+          "tag": "Coming soon",
+          "title": "Hiring Pipeline",
+          "body": "From job post to shortlisted candidates. HR · team of 3."
+        },
+        {
+          "tag": "Coming soon",
+          "title": "Competitor Briefing",
+          "body": "Market intelligence, sourced and summarised. Finance · team of 3."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "h2": "What people",
+      "h2_accent": "ask us.",
+      "items": [
+        {
+          "q": "Do I need to code?",
+          "a": "No. You describe each specialist in plain words, drag them onto the canvas and choose how they work together. Or you describe the whole team to the Assistant."
+        },
+        {
+          "q": "When should I use a team rather than one agent?",
+          "a": "When the job has several parts that need different skills, or a check by someone else. One agent is enough for one clear task."
+        },
+        {
+          "q": "Which AI models can the agents use?",
+          "a": "The one you connect, with your own key: Anthropic, OpenAI, Google Gemini, xAI, DeepSeek or AWS Bedrock."
+        },
+        {
+          "q": "Is it free?",
+          "a": "The Community edition is free forever, on your own server."
+        }
+      ]
+    },
+    "cta": {
+      "h2": "Your next hire",
+      "h2_accent": "is an AI team.",
+      "sub": "Join the waitlist for the cloud edition.",
+      "fine": "Hosting it yourself? The Community edition is free.",
+      "fine_link": "Install Community"
+    }
+  },
+  "product_pages": {
+    "crumb": "Product",
+    "waitlist": "Join the waitlist",
+    "faq_eyebrow": "Questions",
+    "faq_h2": "What people",
+    "faq_h2_accent": "ask us.",
+    "cta": {
+      "h2": "Your next hire",
+      "h2_accent": "is an AI team.",
+      "sub": "Join the waitlist for the cloud edition.",
+      "fine": "Hosting it yourself? The Community edition is free.",
+      "fine_link": "Install Community"
+    },
+    "agents": {
+      "meta": {
+        "title": "AI Agents: One Specialist, One Role | Agentivity",
+        "description": "An agent is one AI specialist with a role. Describe it in plain words, then give it the tools, the knowledge and the model the job needs. No code."
+      },
+      "hero": {
+        "name": "Agents",
+        "h1": "One AI specialist.",
+        "h1_accent": "Brief it like a colleague.",
+        "sub": "An agent is one AI specialist with a role. You describe what it is good at and how it should work, in plain words. Then you give it the tools and the knowledge the job needs.",
+        "secondary": {
+          "label": "Build it with the Assistant",
+          "href": "/assistant"
+        },
+        "media": {
+          "kind": "video",
+          "src": "/media/studio-agent.mp4",
+          "poster": "/media/studio-agent.jpg",
+          "width": 1418,
+          "height": 770,
+          "alt": "A recording of the Studio: the New agent window opens, a name is typed, the agent appears on the canvas and its role is written in a side panel",
+          "caption": "Recorded in the Studio, played faster."
+        }
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "id": "build",
+          "tone": "mist",
+          "eyebrow": "How you build one",
+          "h2": "Three things.",
+          "h2_accent": "The rest only when the job needs it.",
+          "lead": "An agent with a role, good instructions and a model is already useful.",
+          "steps": [
+            "A role: one or two sentences on what it is good at",
+            "Instructions: what it must do, and how, in plain words",
+            "A model: the AI model it thinks with, from your own provider"
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/product/agent-with-knowledge-base.jpg",
+            "width": 1600,
+            "height": 904,
+            "alt": "The agent Reminder Writer in the Studio: the agent box, with its AI model, a chat channel, a session and the Payment terms knowledge base plugged in, and its role in the panel on the right",
+            "caption": "Reminder Writer: it writes a polite payment reminder, and checks the payment terms before it does."
+          }
+        },
+        {
+          "type": "cards",
+          "id": "plug",
+          "eyebrow": "Give it what the job needs",
+          "h2": "Tools, knowledge,",
+          "h2_accent": "a memory, a person to ask.",
+          "sub": "Each one plugs into the agent on the canvas. Add only what the job asks for.",
+          "items": [
+            {
+              "title": "Tools",
+              "body": "A calculator, a web search, a data table. The agent chooses which one to use."
+            },
+            {
+              "title": "Your knowledge",
+              "body": "Your own texts, in a Knowledge Base. The agent receives only the passages that fit its question.",
+              "link": {
+                "label": "Knowledge & Data",
+                "href": "/knowledge-and-data"
+              }
+            },
+            {
+              "title": "A memory",
+              "body": "A session keeps the conversation, so the agent remembers what was said before."
+            },
+            {
+              "title": "A person to ask",
+              "body": "A channel to reach a person when the agent needs an answer."
+            },
+            {
+              "title": "Guardrails",
+              "body": "Checks on what goes in and out of the agent, for example to block a word."
+            },
+            {
+              "title": "A way of working",
+              "body": "Answer directly, use its tools, or think, act, look at the result and repeat until it can answer."
+            }
+          ]
+        },
+        {
+          "type": "shots",
+          "id": "studio",
+          "tone": "mist",
+          "eyebrow": "In the Studio",
+          "h2": "What you see",
+          "h2_accent": "when you build one.",
+          "items": [
+            {
+              "media": {
+                "kind": "image",
+                "src": "/media/product/agent-with-tools.jpg",
+                "width": 1600,
+                "height": 904,
+                "alt": "The agent Invoice Clerk in the Studio, with its AI model, a chat channel, a session and three tools: a data table, a calculator and a document reader"
+              },
+              "title": "An agent and its tools",
+              "body": "Invoice Clerk reads the supplier invoices you upload, files each one and checks its figures."
+            },
+            {
+              "media": {
+                "kind": "image",
+                "src": "/media/product/agent-instructions.jpg",
+                "width": 1600,
+                "height": 904,
+                "alt": "The window of an AI Agent step: the way it works, the request it receives and its instructions, written in plain words"
+              },
+              "title": "Its instructions, in plain words",
+              "body": "What it must do, and how. Like a short brief for a new colleague."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "where",
+          "eyebrow": "Where an agent works",
+          "h2": "Alone, in a team,",
+          "h2_accent": "or in a workflow.",
+          "items": [
+            {
+              "title": "Alone",
+              "body": "You open it and give it a task. It answers, and uses its tools when it needs them."
+            },
+            {
+              "title": "In a team",
+              "body": "It becomes a member, next to other specialists. The team reads its role to decide when to use it.",
+              "link": {
+                "label": "Teams",
+                "href": "/teams"
+              }
+            },
+            {
+              "title": "In a workflow",
+              "body": "It becomes one step among fixed steps. AI works only where you put it.",
+              "link": {
+                "label": "Workflows",
+                "href": "/workflows"
+              }
+            }
+          ]
+        }
+      ],
+      "faq": {
+        "items": [
+          {
+            "q": "Do I need to code?",
+            "a": "No. You write the role and the instructions in plain words, and you plug in what the agent needs on the canvas. Or you describe the agent to the Assistant."
+          },
+          {
+            "q": "Which AI models can an agent use?",
+            "a": "The one you connect, with your own key: Anthropic, OpenAI, Google Gemini, xAI, DeepSeek or AWS Bedrock."
+          },
+          {
+            "q": "When should I use a team instead?",
+            "a": "When the job has several parts that need different skills, or a check by someone else. One agent is enough for one clear task."
+          },
+          {
+            "q": "Is it free?",
+            "a": "The Community edition is free forever, on your own server."
+          }
+        ]
+      }
+    },
+    "workflows": {
+      "meta": {
+        "title": "AI Workflows With Human Approval | Agentivity",
+        "description": "Draw the steps in advance: a form, a rule, an approval, an AI step. The same path every time, and a person decides where it matters. No code."
+      },
+      "hero": {
+        "name": "Workflows",
+        "h1": "The same steps,",
+        "h1_accent": "every time.",
+        "sub": "Draw the steps in advance: a form, a rule, an approval, an AI step. The workflow follows them in the order you drew, and waits for a person where a decision is theirs. AI works only in the steps you choose.",
+        "secondary": {
+          "label": "See the CV Screening example",
+          "href": "/use-cases/cv-screening"
+        },
+        "media": {
+          "kind": "video",
+          "src": "/media/studio-workflow.mp4",
+          "poster": "/media/studio-workflow.jpg",
+          "width": 1418,
+          "height": 770,
+          "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, a team, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole",
+          "caption": "Three steps to start: a form, a team, a person who approves. Then a real one: CV screening."
+        }
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "id": "why",
+          "tone": "mist",
+          "eyebrow": "Why a workflow",
+          "h2": "When the path is known,",
+          "h2_accent": "it must be followed.",
+          "lead": "An agent or a team decides by itself how to handle a request. A workflow is for the opposite need.",
+          "steps": [
+            "The same steps, every time",
+            "Rules that always give the same result",
+            "A person who approves before the work continues",
+            "AI only where you want it"
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/studio-workflow-approval.webp",
+            "width": 1400,
+            "height": 616,
+            "alt": "A short Agentivity workflow in the Studio: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told",
+            "caption": "An invoice comes in and the AI reads it. Over 1,000 €, Finance approves it first."
+          }
+        },
+        {
+          "type": "cards",
+          "id": "steps",
+          "eyebrow": "The steps you drag in",
+          "h2": "Ask, decide, repeat,",
+          "h2_accent": "and let AI work where you want.",
+          "items": [
+            {
+              "title": "Ask a person",
+              "body": "To approve, or to answer a question, before the work goes on."
+            },
+            {
+              "title": "A form",
+              "body": "Ask a person to fill in several fields at once."
+            },
+            {
+              "title": "A condition",
+              "body": "Take one path or another. The same input always takes the same path."
+            },
+            {
+              "title": "Repeat",
+              "body": "Do the same steps for each item of a list."
+            },
+            {
+              "title": "An AI step",
+              "body": "Let an agent, or a whole team, do the open part of the job.",
+              "link": {
+                "label": "Teams",
+                "href": "/teams"
+              }
+            },
+            {
+              "title": "A table",
+              "body": "Read, add, change or delete rows of a Data Table.",
+              "link": {
+                "label": "Knowledge & Data",
+                "href": "/knowledge-and-data"
+              }
+            }
+          ]
+        },
+        {
+          "type": "shots",
+          "id": "studio",
+          "tone": "mist",
+          "eyebrow": "In the Studio",
+          "h2": "Draw it,",
+          "h2_accent": "then follow it step by step.",
+          "items": [
+            {
+              "media": {
+                "kind": "video",
+                "src": "/media/cv-screening.mp4",
+                "poster": "/media/cv-screening.jpg",
+                "width": 1418,
+                "height": 770,
+                "alt": "The CV Screening workflow in the Studio, first up close, then in full"
+              },
+              "title": "A real one: CV Screening",
+              "body": "Some steps use AI, such as reading a CV. Others are plain logic: a condition, a calculation, a pause to ask a person."
+            },
+            {
+              "media": {
+                "kind": "image",
+                "src": "/media/product/workflow-run.jpg",
+                "width": 1600,
+                "height": 904,
+                "alt": "A workflow while it runs: the step that asks a person is active on the canvas, with the chat on the right and the logs at the bottom"
+              },
+              "title": "Follow each step",
+              "body": "While it runs, the active step lights up, and every step is kept with its logs."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "together",
+          "eyebrow": "With your teams and your apps",
+          "h2": "Free where it helps,",
+          "h2_accent": "fixed where it must be.",
+          "items": [
+            {
+              "title": "A workflow can call a team",
+              "body": "One step of your process hands the open part of the job to a whole team.",
+              "link": {
+                "label": "Teams",
+                "href": "/teams"
+              }
+            },
+            {
+              "title": "A team can use a workflow",
+              "body": "A workflow can be a member of a team, for the part that must follow fixed steps."
+            },
+            {
+              "title": "An app can start it",
+              "body": "A person starts it in the Studio, or an application asks for it.",
+              "link": {
+                "label": "VibeApps",
+                "href": "/vibeapps"
+              }
+            }
+          ]
+        }
+      ],
+      "faq": {
+        "items": [
+          {
+            "q": "Do I need to code?",
+            "a": "No. You drag the steps from a catalogue onto the canvas, link them, and fill in their fields."
+          },
+          {
+            "q": "A workflow or a team?",
+            "a": "A workflow when the path is known and must be followed. A team when the cases are many and different, and the specialists must decide how to handle each one. You can combine them."
+          },
+          {
+            "q": "Can a workflow start on a schedule?",
+            "a": "Not yet. Today a person starts it in the Studio, or an application asks for it."
+          },
+          {
+            "q": "Is it free?",
+            "a": "The Community edition is free forever, on your own server."
+          }
+        ]
+      }
+    },
+    "prompt_studio": {
+      "meta": {
+        "title": "Prompt Studio: Test and Improve Agent Instructions | Agentivity",
+        "description": "The instructions of an agent decide how well it works. Write them, try them, check them against saved cases, and get a better version."
+      },
+      "hero": {
+        "name": "Prompt Studio",
+        "h1": "Better instructions,",
+        "h1_accent": "better agents.",
+        "sub": "The instructions of an agent decide how well it works. Prompt Studio lets you work on them by themselves: write, try, check against cases you saved, and get a better version.",
+        "secondary": {
+          "label": "Read the guide",
+          "href": "/docs/prompts/what-prompt-studio-is"
+        },
+        "media": {
+          "kind": "video",
+          "src": "/media/prompt-studio.mp4",
+          "poster": "/media/prompt-studio.jpg",
+          "width": 1280,
+          "height": 640,
+          "alt": "A recording of Prompt Studio: a one-line prompt for a payment reminder is improved over several tries, each try gets a score, and the best version replaces the prompt",
+          "caption": "A one-line prompt, improved try after try: each version gets a score, and the best one replaces it. Recorded in the Studio, played faster."
+        }
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "id": "how",
+          "tone": "mist",
+          "eyebrow": "How it works",
+          "h2": "Write, try,",
+          "h2_accent": "check, improve.",
+          "lead": "When the prompt is good, copy it into the instructions of an agent or into an AI step of a workflow.",
+          "steps": [
+            "Write the prompt, with places for the values that change",
+            "Try it on an example and read the answer",
+            "Check it against cases you saved, each with the answer you expect",
+            "Ask for an analysis of its strong and weak points, and for a better version"
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/product/prompt-studio-screen.jpg",
+            "width": 1600,
+            "height": 904,
+            "alt": "Prompt Studio: the tabs Playground and Test Cases, the buttons Run Prompt and Analyze, the editor of the prompt, a panel on the right with Details, Settings and Inputs, and the Debug console at the bottom",
+            "caption": "Prompt Studio, in the Studio: the prompt in the middle, its settings on the right, every try in the console below."
+          }
+        },
+        {
+          "type": "cards",
+          "id": "screen",
+          "eyebrow": "What you work with",
+          "h2": "Everything to get it right,",
+          "h2_accent": "on one screen.",
+          "items": [
+            {
+              "title": "Playground",
+              "body": "Write the prompt and try it freely."
+            },
+            {
+              "title": "Inputs",
+              "body": "The values that change from one request to the next, such as a name or an amount."
+            },
+            {
+              "title": "Test cases",
+              "body": "Keep cases with the answer you expect, and run them all at once."
+            },
+            {
+              "title": "Analyze",
+              "body": "An analysis of the prompt: what works, what does not, and a better version."
+            },
+            {
+              "title": "Your model",
+              "body": "Choose the model connection and its settings, to test with the model your agent will use."
+            },
+            {
+              "title": "Debug console",
+              "body": "The history of what you ran, with the output of each execution."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "use",
+          "eyebrow": "Then use it",
+          "h2": "In an agent,",
+          "h2_accent": "or in a workflow.",
+          "items": [
+            {
+              "title": "In an agent",
+              "body": "Paste it into the instructions of an agent.",
+              "link": {
+                "label": "Agents",
+                "href": "/agents"
+              }
+            },
+            {
+              "title": "In a workflow",
+              "body": "Use it in an AI step, among your fixed steps.",
+              "link": {
+                "label": "Workflows",
+                "href": "/workflows"
+              }
+            }
+          ]
+        }
+      ],
+      "faq": {
+        "items": [
+          {
+            "q": "Do I need to code?",
+            "a": "No. You write in plain words. Prompt Studio runs the prompt, scores it and proposes a better version."
+          },
+          {
+            "q": "Which model does it test with?",
+            "a": "The model connection you choose in its settings, with your own key."
+          },
+          {
+            "q": "Are earlier versions kept?",
+            "a": "Keeping named versions of a prompt, and going back to one, is not in the Community edition."
+          },
+          {
+            "q": "Is it free?",
+            "a": "The Community edition is free forever, on your own server."
+          }
+        ]
+      }
+    },
+    "knowledge": {
+      "meta": {
+        "title": "Knowledge Bases and Data Tables for AI Agents | Agentivity",
+        "description": "Give your agents your own texts, found by meaning, and tables to look up and fill. The search runs on your server. No code."
+      },
+      "hero": {
+        "name": "Knowledge & Data",
+        "h1": "Your documents, your data.",
+        "h1_accent": "Ready for your agents.",
+        "sub": "An AI model does not know your company. Give your agents your own texts to search, and tables to look up and fill.",
+        "secondary": {
+          "label": "Read the guide",
+          "href": "/docs/knowledge-bases/what-a-knowledge-base-is"
+        },
+        "media": {
+          "kind": "image",
+          "src": "/media/product/kb-search-dialog.jpg",
+          "width": 926,
+          "height": 708,
+          "alt": "A Knowledge Base named Payment terms in the Studio: a question typed in Try a search, and the passages closest in meaning, each with its score",
+          "caption": "A Knowledge Base in the Studio: one question, and the passages closest in meaning."
+        }
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "id": "knowledge-bases",
+          "tone": "mist",
+          "eyebrow": "Knowledge Bases",
+          "h2": "Your texts,",
+          "h2_accent": "found by meaning.",
+          "lead": "A base reads a source and keeps it cut into short passages. When an agent asks a question, it receives only the few that fit.",
+          "link": {
+            "label": "Create a Knowledge Base",
+            "href": "/docs/knowledge-bases/create-a-knowledge-base"
+          },
+          "steps": [
+            "It finds by meaning: a question about sending a laptop back finds the passage titled Returns",
+            "It stays up to date: it reads its source again, as often as you choose",
+            "It needs no account: the search runs on your server, with a small local model"
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/product/agent-with-knowledge-base.jpg",
+            "width": 1600,
+            "height": 904,
+            "alt": "The agent Reminder Writer in the Studio, with the knowledge base Payment terms plugged in",
+            "caption": "An agent with a Knowledge Base: it searches the payment terms each time it writes a reminder."
+          }
+        },
+        {
+          "type": "cards",
+          "id": "sources",
+          "eyebrow": "What a base can read",
+          "h2": "Eight kinds",
+          "h2_accent": "of source.",
+          "note": "Files and SQLite read the server: they are for an installation that you run yourself.",
+          "items": [
+            {
+              "title": "Text",
+              "body": "Texts that you type in the base itself."
+            },
+            {
+              "title": "Files",
+              "body": "Plain text, Markdown, HTML or JSON files: one file, or a folder."
+            },
+            {
+              "title": "Web pages",
+              "body": "Web pages that you list, one address per line."
+            },
+            {
+              "title": "Sitemap",
+              "body": "Every page of a website, from its sitemap."
+            },
+            {
+              "title": "RSS or Atom feed",
+              "body": "The latest entries of a news feed or a blog."
+            },
+            {
+              "title": "API",
+              "body": "A web address that returns text or JSON."
+            },
+            {
+              "title": "PostgreSQL",
+              "body": "The rows of a PostgreSQL database, read with a query."
+            },
+            {
+              "title": "SQLite",
+              "body": "The rows of a SQLite file, read with a query."
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "id": "data-tables",
+          "tone": "mist",
+          "eyebrow": "Data Tables",
+          "h2": "Where the work",
+          "h2_accent": "is kept.",
+          "lead": "An agent or a workflow forgets everything when its execution ends. A Data Table keeps it, in rows and columns that you can open and filter in the Studio.",
+          "link": {
+            "label": "Create a Data Table",
+            "href": "/docs/data-tables/create-a-data-table"
+          },
+          "steps": [
+            "Keep what was done: the reminders sent, the invoices read",
+            "Give facts to work from: customers, products, open invoices",
+            "Pass work between solutions: one fills a table, another reads it",
+            "Show data in an application built with the SDK"
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/product/data-table.jpg",
+            "width": 1600,
+            "height": 904,
+            "alt": "A Data Table named trips open in the Studio: 57 rows and 16 fields, with buttons to sort and filter each column",
+            "caption": "A Data Table in the Studio: the trips booked by the Trip Manager Team."
+          }
+        },
+        {
+          "type": "cards",
+          "id": "which",
+          "eyebrow": "Which one",
+          "h2": "Texts or rows?",
+          "h2_accent": "Each has its place.",
+          "items": [
+            {
+              "title": "The agent must know your texts",
+              "body": "A Knowledge Base: your policies, your guides, the pages of your site."
+            },
+            {
+              "title": "It must look up or change a value",
+              "body": "A Data Table: one row per customer, invoice or trip."
+            },
+            {
+              "title": "It must remember the conversation",
+              "body": "A session, plugged into the agent.",
+              "link": {
+                "label": "Agents",
+                "href": "/agents"
+              }
+            }
+          ]
+        }
+      ],
+      "faq": {
+        "items": [
+          {
+            "q": "Does my data leave my server?",
+            "a": "The search runs on your server. The passages an agent receives are sent to your AI model provider, like the rest of what the agent works with. Do not put in a base what must not leave your server."
+          },
+          {
+            "q": "Who can use a Knowledge Base?",
+            "a": "An agent searches it when it wants, with a tool named after the base. An AI step can search it once and add the passages to its prompt. And you can try a search in the Studio."
+          },
+          {
+            "q": "Who can use a Data Table?",
+            "a": "You in the Studio, a workflow step, an agent with a tool, and an application built with the SDK."
+          },
+          {
+            "q": "Is it free?",
+            "a": "The Community edition is free forever, on your own server."
+          }
+        ]
+      }
+    },
+    "vibeapps": {
+      "meta": {
+        "title": "VibeApps: Apps That Adapt, With an AI Team Behind | Agentivity",
+        "description": "A VibeApp adapts to the person who uses it. Behind it, a team of AI specialists does the work and asks for each decision that is theirs."
+      },
+      "hero": {
+        "name": "VibeApps",
+        "h1": "Set the goal.",
+        "h1_accent": "The VibeApp handles the rest.",
+        "sub": "An application that adapts to the person who uses it. Behind it, a team of AI specialists does the work.",
+        "secondary": {
+          "label": "See the use cases",
+          "href": "/use-cases"
+        },
+        "media": {
+          "kind": "video",
+          "src": "/media/trip-planner.mp4",
+          "poster": "/media/trip-planner.jpg",
+          "width": 1024,
+          "height": 768,
+          "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+          "caption": "Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster."
+        }
+      },
+      "blocks": [
+        {
+          "type": "cards",
+          "id": "two-ways",
+          "tone": "mist",
+          "eyebrow": "The same request, two ways",
+          "h2": "You explain, it adapts:",
+          "h2_accent": "the right skills, at the right moment.",
+          "items": [
+            {
+              "tag": "A classic app",
+              "title": "The traveller adapts to the app",
+              "body": "They open the flights screen and fill in the dates, then the hotels screen, and fill them in again. They add up the prices themselves. If their case is unusual, there is no screen for it."
+            },
+            {
+              "tag": "A VibeApp",
+              "title": "The app adapts to the traveller",
+              "body": "They write one sentence: Lisbon for two, these dates, this budget. A manager hands each part to the right specialist. The team stops and asks each time a choice belongs to the traveller."
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "id": "person",
+          "eyebrow": "What changes for the person",
+          "h2": "Closer to someone",
+          "h2_accent": "who knows the job.",
+          "steps": [
+            "They say what they want, in their own words",
+            "They see only what their request needs",
+            "Each choice shapes what comes next: a cheaper hotel leaves more for dinner",
+            "They stay in charge: the app asks each time a decision is theirs",
+            "They receive finished work, not a list of things to do next"
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "three-ways",
+          "tone": "mist",
+          "eyebrow": "Three ways to get one",
+          "h2": "In a portal, in your own app,",
+          "h2_accent": "or in the apps you already use.",
+          "sub": "In all three, the team itself needs no developer.",
+          "items": [
+            {
+              "title": "The ready-made portal",
+              "body": "Publish a team, and it appears in a portal under your brand. Nobody develops: a developer installs the portal once."
+            },
+            {
+              "title": "A VibeApp of your own",
+              "body": "An application made for one job, connected to your team. Many screens are ready-made: forms, tables, choices, cards."
+            },
+            {
+              "title": "Inside an app you already use",
+              "body": "Your existing application calls the team for the cases that need it, and keeps the screens that work."
+            }
+          ]
+        },
+        {
+          "type": "shots",
+          "id": "portal",
+          "eyebrow": "The portal",
+          "h2": "Publish a team,",
+          "h2_accent": "no app to build.",
+          "items": [
+            {
+              "media": {
+                "kind": "video",
+                "src": "/media/shopping-lab.mp4",
+                "poster": "/media/shopping-lab.jpg",
+                "width": 1024,
+                "height": 768,
+                "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears"
+              },
+              "title": "Shopping Lab, in the portal",
+              "body": "A shopper asks for headphones. Nine specialists work in turn, and a report appears with product cards and photos."
+            },
+            {
+              "media": {
+                "kind": "image",
+                "src": "/media/product/portal-chat.jpg",
+                "width": 1600,
+                "height": 904,
+                "alt": "The portal after a solution is chosen: the conversation on the left, and the Trip Manager Team drawn with its members on the right"
+              },
+              "title": "The conversation, and the team",
+              "body": "A person picks a solution and writes a request. The conversation is on the left, and the team is drawn on the right."
+            }
+          ]
+        },
+        {
+          "type": "band",
+          "id": "behind",
+          "eyebrow": "What is true behind it",
+          "h2": "Your need evolves,",
+          "h2_accent": "it moves forward with you.",
+          "points": [
+            {
+              "title": "People stay in charge",
+              "body": "The team proposes. The app stops and asks each time a choice belongs to the person."
+            },
+            {
+              "title": "Change the work, not the app",
+              "body": "The team is built and changed in the Studio, in plain words. The application stays the same."
+            },
+            {
+              "title": "Your server and your keys",
+              "body": "The Community edition runs on your own server, with your own key from your AI model provider."
+            }
+          ]
+        }
+      ],
+      "faq": {
+        "items": [
+          {
+            "q": "Do I need a developer?",
+            "a": "Not for the team: it is built in the Studio. The portal is ready-made, and a developer installs it once. An application of your own needs a developer and the SDK."
+          },
+          {
+            "q": "Can a VibeApp have classic screens too?",
+            "a": "Yes. A list of past requests, a profile page: most real VibeApps mix ordinary screens and a team."
+          },
+          {
+            "q": "Is a classic app sometimes better?",
+            "a": "Yes. When everyone needs the same thing, a form is right."
+          },
+          {
+            "q": "What does each request cost?",
+            "a": "Each request uses an AI model, and your provider bills you for it, with your own key."
+          }
+        ]
+      }
     }
   }
 }

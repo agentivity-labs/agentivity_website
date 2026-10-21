@@ -1,0 +1,321 @@
+---
+// The Teams page, shared by /teams and /fr/teams. Texts come from the "teams_page" block of the translation files.
+// The page shows a team at work, how to build one, the five ways of working, what stays in the user's hands,
+// how teams and workflows fit together, ready-made teams, questions, then the waitlist.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.teams_page;
+const prefix = lang === 'fr' ? '/fr' : '';
+
+const loops = [
+  { ...p.ways.loops[0], video: '/media/team-manager.mp4', poster: '/media/team-manager.jpg', width: 546, height: 680 },
+  { ...p.ways.loops[1], video: '/media/team-chain.mp4', poster: '/media/team-chain.jpg', width: 456, height: 560 },
+];
+
+// A small diagram for each way of working: navy lines, white members, the yellow one is working.
+const diagrams: Record<string, string> = {
+  sequential: '<path d="M37 43h26M89 43h26M141 43h24" stroke="#152844" stroke-width="2"/><path d="m160 38 7 5-7 5" fill="none" stroke="#152844" stroke-width="2" stroke-linejoin="round"/><g fill="#fff" stroke="#152844" stroke-width="2"><circle cx="24" cy="43" r="13"/><circle cx="76" cy="43" r="13"/><circle cx="128" cy="43" r="13"/><circle cx="180" cy="43" r="13" fill="#FFC83D"/></g>',
+  concurrent: '<path d="M43 40 88 16M43 43h45M43 46l45 24M112 16l45 24M112 43h45M112 70l45-24" stroke="#152844" stroke-width="2" fill="none"/><g fill="#fff" stroke="#152844" stroke-width="2"><circle cx="30" cy="43" r="13"/><circle cx="100" cy="13" r="11" fill="#FFC83D"/><circle cx="100" cy="43" r="11" fill="#FFC83D"/><circle cx="100" cy="73" r="11" fill="#FFC83D"/><circle cx="170" cy="43" r="13"/></g>',
+  handoff: '<path d="M40 51 84 29M108 29l50 23" stroke="#152844" stroke-width="2" fill="none" stroke-dasharray="5 4"/><g fill="#fff" stroke="#152844" stroke-width="2"><circle cx="28" cy="58" r="13"/><circle cx="96" cy="22" r="13"/><circle cx="170" cy="58" r="13" fill="#FFC83D"/></g>',
+  groupchat: '<circle cx="100" cy="43" r="30" fill="none" stroke="#D5DAE5" stroke-width="2"/><g fill="#fff" stroke="#152844" stroke-width="2"><circle cx="100" cy="13" r="11" fill="#FFC83D"/><circle cx="130" cy="43" r="11"/><circle cx="100" cy="73" r="11"/><circle cx="70" cy="43" r="11"/></g>',
+  manager: '<path d="M100 26 34 62M100 26 78 62M100 26l22 36M100 26l66 36" stroke="#152844" stroke-width="2" fill="none"/><g fill="#fff" stroke="#152844" stroke-width="2"><circle cx="100" cy="18" r="13" fill="#152844"/><circle cx="34" cy="68" r="11"/><circle cx="78" cy="68" r="11" fill="#FFC83D"/><circle cx="122" cy="68" r="11"/><circle cx="166" cy="68" r="11"/></g>',
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: p.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} waitlistHref="#cta" />
+
+<main class="ed-page">
+
+  <!-- Hero: the line, then a team at work -->
+  <section class="ed-wrap tm-hero">
+    <p class="tm-crumb"><a href={prefix + '/how-it-works'}>{p.hero.crumb}</a> · {p.hero.name}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="tm-hero-sub">{p.hero.sub}</p>
+    <div class="tm-actions">
+      <a class="ed-btn ed-btn--navy" href="#cta">{p.hero.cta}</a>
+      <a class="ed-btn ed-btn--line" href="#ready">{p.hero.cta_secondary}</a>
+    </div>
+    <figure class="ed-shot tm-hero-shot">
+      <div class="ed-shot-frame ed-shot-frame--lift">
+        <video muted loop playsinline preload="metadata" poster="/media/studio-team-trip-run.jpg" width="1600" height="900" aria-label={p.hero.alt} data-autoplay>
+          <source src="/media/studio-team-trip-run.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <figcaption>{p.hero.caption}</figcaption>
+    </figure>
+  </section>
+
+  <!-- How you build one -->
+  <section class="ed-band--mist" id="build">
+    <div class="ed-wrap tm-build">
+      <header class="tm-build-head">
+        <div class="tm-build-intro">
+          <p class="ed-eyebrow">{p.build.eyebrow}</p>
+          <h2 class="ed-h2 ed-h2--md">{p.build.h2} <em>{p.build.h2_accent}</em></h2>
+          <p class="ed-sec-sub">{p.build.lead}</p>
+          <a class="tm-link" href={prefix + '/assistant'}>{p.build.link} →</a>
+        </div>
+        <ol class="tm-beats">
+          {p.build.steps.map((step: string) => <li>{step}</li>)}
+        </ol>
+      </header>
+      <figure class="ed-shot">
+        <div class="ed-shot-frame ed-shot-frame--lift">
+          <video muted loop playsinline controls preload="none" poster="/media/studio-team.jpg" width="1418" height="770" aria-label={p.build.alt} data-autoplay>
+            <source src="/media/studio-team.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>{p.build.caption}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Five ways to work together -->
+  <section class="ed-wrap ed-sec" id="ways">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.ways.eyebrow}</p>
+      <h2 class="ed-h2">{p.ways.h2} <em>{p.ways.h2_accent}</em></h2>
+      <p class="ed-sec-sub">{p.ways.sub}</p>
+    </header>
+    <ul class="tm-ways">
+      {p.ways.items.map((way) => (
+        <li class="tm-way">
+          <svg viewBox="0 0 200 86" aria-hidden="true" set:html={diagrams[way.id]} />
+          <h3>{way.name}</h3>
+          <p>{way.body}</p>
+          <p class="tm-good"><b>{p.ways.good_for}</b> {way.example}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="tm-loops">
+      {loops.map((loop) => (
+        <figure class="tm-loop">
+          <div class="tm-loop-media">
+            <video muted loop playsinline preload="none" poster={loop.poster} width={loop.width} height={loop.height} aria-label={loop.alt} data-autoplay>
+              <source src={loop.video} type="video/mp4" />
+            </video>
+          </div>
+          <figcaption>
+            <span class="tm-loop-label">{p.ways.capture}</span>
+            <strong>{loop.title}</strong>
+            <span>{loop.body}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <!-- What stays in the user's hands -->
+  <section class="ed-band--navy" id="control">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow tm-on-navy-eyebrow">{p.control.eyebrow}</p>
+        <h2 class="ed-h2">{p.control.h2} <em>{p.control.h2_accent}</em></h2>
+      </header>
+      <ul class="tm-control">
+        {p.control.points.map((point) => (
+          <li>
+            <strong>{point.title}</strong>
+            <span>{point.body}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Teams and workflows -->
+  <section class="ed-wrap ed-sec" id="mix">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.mix.eyebrow}</p>
+      <h2 class="ed-h2">{p.mix.h2} <em>{p.mix.h2_accent}</em></h2>
+      <p class="ed-sec-sub">{p.mix.sub}</p>
+    </header>
+    <ul class="tm-mix">
+      {p.mix.items.map((item) => (
+        <li>
+          <strong>{item.title}</strong>
+          <span>{item.body}</span>
+          <a href={item.href}>{item.link}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Ready-made teams -->
+  <section class="ed-band--mist" id="ready">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head ed-sec-head--row">
+        <div>
+          <p class="ed-eyebrow">{p.ready.eyebrow}</p>
+          <h2 class="ed-h2">{p.ready.h2} <em>{p.ready.h2_accent}</em></h2>
+        </div>
+        <a class="ed-link" href={p.ready.href}>{p.ready.link}</a>
+      </header>
+      <ul class="tm-ready">
+        {p.ready.cards.map((card: { tag: string; title: string; body: string; href?: string }) => (
+          <li>
+            {card.href ? (
+              <a class="tm-card tm-card--link" href={card.href}>
+                <span class="tm-tag">{card.tag}</span>
+                <strong>{card.title}</strong>
+                <span>{card.body}</span>
+              </a>
+            ) : (
+              <div class="tm-card">
+                <span class="tm-tag tm-tag--soon">{card.tag}</span>
+                <strong>{card.title}</strong>
+                <span>{card.body}</span>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="ed-wrap ed-sec" id="faq">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.faq.eyebrow}</p>
+      <h2 class="ed-h2">{p.faq.h2} <em>{p.faq.h2_accent}</em></h2>
+    </header>
+    <div class="tm-faq">
+      {p.faq.items.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <div class="ed-final-form">
+        <WaitlistForm lang={lang} tone="light" />
+      </div>
+      <p class="ed-final-fine">{p.cta.fine} <a class="tm-fine-link" href={t.site.install_href}>{p.cta.fine_link}</a></p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+<VideoAutoplay />
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.tm-hero { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; padding-block: clamp(48px, 7vw, 88px) clamp(48px, 6vw, 80px); }
+.tm-crumb { font-size: 14.5px; color: var(--ed-ink-3); }
+.tm-crumb a { color: var(--ed-ink-2); font-weight: 600; }
+.tm-crumb a:hover { color: var(--ed-ink); }
+.tm-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.tm-hero h1 em { display: block; }
+.tm-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.tm-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.tm-hero-shot { width: 100%; margin-top: 18px; text-align: left; }
+.tm-hero-shot video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #F4F4F4; }
+
+/* ---------- how you build one ---------- */
+.tm-build { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); padding-block: clamp(56px, 7vw, 96px); }
+.tm-build-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px clamp(24px, 4vw, 56px); align-items: start; }
+.tm-build-intro { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.tm-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.tm-link:hover { opacity: .7; }
+.tm-beats { counter-reset: beat; display: flex; flex-direction: column; }
+.tm-beats li { counter-increment: beat; display: flex; gap: 14px; align-items: baseline; padding-block: 12px; border-top: 1px solid var(--ed-line-2); font-weight: 600; }
+.tm-beats li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.tm-beats li::before { content: counter(beat); flex: none; font-family: var(--ed-serif); font-size: 24px; line-height: 1; color: var(--ed-ink-3); min-width: 1ch; }
+.tm-build video { display: block; width: 100%; height: auto; aspect-ratio: 1418 / 770; background: #F4F4F4; }
+
+/* ---------- five ways ---------- */
+.tm-ways { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.tm-way { display: flex; flex-direction: column; gap: 10px; padding: 20px 18px 22px; border: 1px solid var(--ed-line); border-radius: 20px; background: #fff; }
+.tm-way svg { width: 100%; height: 86px; }
+.tm-way h3 { font-family: var(--ed-sans); font-size: 18px; font-weight: 700; color: var(--ed-ink); }
+.tm-way p { font-size: 15.5px; line-height: 1.45; color: var(--ed-ink-2); }
+.tm-way .tm-good { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--ed-line); font-size: 14px; color: var(--ed-ink-3); }
+.tm-good b { font-weight: 600; color: var(--ed-ink); }
+.tm-loops { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 28px; margin-top: clamp(36px, 4vw, 52px); }
+.tm-loop { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--ed-line); border-radius: 24px; background: #fff; }
+.tm-loop-media { display: flex; justify-content: center; padding: 20px; border-bottom: 1px solid var(--ed-line); }
+.tm-loop-media video { display: block; width: 100%; height: clamp(280px, 30vw, 400px); object-fit: contain; background: #fff; }
+.tm-loop figcaption { display: flex; flex-direction: column; gap: 6px; padding: 20px 24px 24px; color: var(--ed-ink-2); }
+.tm-loop figcaption strong { font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+.tm-loop-label { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+
+/* ---------- you stay in charge ---------- */
+.tm-on-navy-eyebrow { color: var(--ed-yellow); }
+.tm-control { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px; }
+.tm-control li { display: flex; flex-direction: column; gap: 8px; padding: 22px 22px 24px; border: 1px solid var(--ed-navy-line); border-radius: 20px; background: var(--ed-navy-2); color: var(--ed-on-navy-2); }
+.tm-control strong { font-size: 19px; line-height: 1.25; color: #fff; }
+.tm-control span { font-size: 16.5px; line-height: 1.5; }
+
+/* ---------- teams and workflows ---------- */
+.tm-mix { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.tm-mix li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid var(--ed-line-2); border-radius: 20px; }
+.tm-mix strong { font-size: 19px; line-height: 1.25; color: var(--ed-ink); }
+.tm-mix span { color: var(--ed-ink-2); }
+.tm-mix a { align-self: flex-start; margin-top: auto; padding-top: 6px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.tm-mix a:hover { opacity: .7; }
+
+/* ---------- ready-made teams ---------- */
+.tm-ready { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.tm-card { display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 24px; border: 1px solid var(--ed-line); border-radius: 20px; background: #fff; }
+.tm-card--link { transition: border-color .15s ease, transform .15s ease; }
+.tm-card--link:hover { border-color: var(--ed-ink); transform: translateY(-2px); }
+.tm-tag { align-self: flex-start; padding: 5px 9px; border-radius: 6px; background: var(--ed-mist); color: var(--ed-navy); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.tm-tag--soon { background: var(--ed-yellow); color: var(--ed-ink); }
+.tm-card strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+.tm-card span:not(.tm-tag) { color: var(--ed-ink-2); }
+
+/* ---------- questions ---------- */
+.tm-faq { max-width: 900px; border-top: 2px solid var(--ed-ink); }
+.tm-faq details { border-bottom: 1px solid var(--ed-line-2); }
+.tm-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+.tm-faq summary::-webkit-details-marker { display: none; }
+.tm-faq summary::after { content: "+"; flex: none; font-family: var(--ed-serif); font-size: 34px; line-height: 1; font-weight: 400; }
+.tm-faq details[open] summary::after { content: "–"; }
+.tm-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
+
+/* ---------- final call ---------- */
+.tm-fine-link { font-weight: 700; border-bottom: 1.5px solid currentColor; }
+
+#build, #ways, #control, #mix, #ready, #faq, #cta { scroll-margin-top: 78px; }
+
+@media (max-width: 1100px) {
+  .tm-ways { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+}
+@media (max-width: 900px) {
+  .tm-build-head { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .tm-faq summary { font-size: 19px; }
+}
+</style>

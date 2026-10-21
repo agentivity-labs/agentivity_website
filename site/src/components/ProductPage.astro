@@ -1,0 +1,282 @@
+---
+// A page of the Product menu (Agents, Workflows, Prompt Studio, Knowledge & Data, VibeApps), shared by the English and French routes.
+// Its texts, links and media come from "product_pages.<page>" in the translation files. The page is a hero, then a list of
+// blocks drawn in order, then questions and the waitlist. The Teams page has its own component, for its five ways of working.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import WaitlistForm from './WaitlistForm.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+type Media = { kind: 'video' | 'image'; src: string; poster?: string; width: number; height: number; alt: string; caption?: string };
+type Link = { label: string; href: string };
+type Block =
+  | { type: 'steps'; id: string; tone?: string; eyebrow: string; h2: string; h2_accent: string; lead?: string; link?: Link; steps: string[]; media?: Media }
+  | { type: 'cards'; id: string; tone?: string; eyebrow: string; h2: string; h2_accent: string; sub?: string; note?: string; items: { tag?: string; title: string; body: string; link?: Link }[] }
+  | { type: 'shots'; id: string; tone?: string; eyebrow?: string; h2?: string; h2_accent?: string; items: { media: Media; title: string; body: string }[] }
+  | { type: 'band'; id: string; tone?: string; eyebrow: string; h2: string; h2_accent: string; points: { title: string; body: string }[] };
+
+interface Props { lang: Lang; page: 'agents' | 'workflows' | 'prompt_studio' | 'knowledge' | 'vibeapps'; }
+const { lang, page } = Astro.props;
+const t = useTranslations(lang);
+const all = t.product_pages;
+const p = all[page];
+const blocks = p.blocks as Block[];
+const prefix = lang === 'fr' ? '/fr' : '';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: p.faq.items.map((item: { q: string; a: string }) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+
+<SiteHeader lang={lang} waitlistHref="#cta" />
+
+<main class="ed-page">
+
+  <!-- Hero: what it does for you, then the real screen -->
+  <section class="ed-wrap pp-hero">
+    <p class="pp-crumb"><a href={prefix + '/how-it-works'}>{all.crumb}</a> · {p.hero.name}</p>
+    <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
+    <p class="pp-hero-sub">{p.hero.sub}</p>
+    <div class="pp-actions">
+      <a class="ed-btn ed-btn--navy" href="#cta">{all.waitlist}</a>
+      <a class="ed-btn ed-btn--line" href={p.hero.secondary.href}>{p.hero.secondary.label}</a>
+    </div>
+    <figure class="ed-shot pp-hero-shot" style={p.hero.media.kind === 'image' ? `max-width: ${p.hero.media.width}px` : undefined}>
+      <div class="ed-shot-frame ed-shot-frame--lift">
+        {p.hero.media.kind === 'video' ? (
+          <video muted loop playsinline preload="metadata" poster={p.hero.media.poster} width={p.hero.media.width} height={p.hero.media.height} aria-label={p.hero.media.alt} style={`aspect-ratio: ${p.hero.media.width} / ${p.hero.media.height}`} data-autoplay>
+            <source src={p.hero.media.src} type="video/mp4" />
+          </video>
+        ) : (
+          <img src={p.hero.media.src} alt={p.hero.media.alt} width={p.hero.media.width} height={p.hero.media.height} />
+        )}
+      </div>
+      {p.hero.media.caption && <figcaption>{p.hero.media.caption}</figcaption>}
+    </figure>
+  </section>
+
+  {blocks.map((block) => (
+    <section class:list={[{ 'ed-band--mist': block.tone === 'mist', 'ed-band--navy': block.type === 'band' }]} id={block.id}>
+
+      {block.type === 'steps' && (
+        <div class="ed-wrap pp-steps">
+          <header class="pp-steps-head">
+            <div class="pp-steps-intro">
+              <p class="ed-eyebrow">{block.eyebrow}</p>
+              <h2 class="ed-h2 ed-h2--md">{block.h2} <em>{block.h2_accent}</em></h2>
+              {block.lead && <p class="ed-sec-sub">{block.lead}</p>}
+              {block.link && <a class="pp-link" href={block.link.href}>{block.link.label} →</a>}
+            </div>
+            <ol class="pp-beats">
+              {block.steps.map((step) => <li>{step}</li>)}
+            </ol>
+          </header>
+          {block.media && (
+            <figure class="ed-shot">
+              <div class="ed-shot-frame ed-shot-frame--lift">
+                {block.media.kind === 'video' ? (
+                  <video muted loop playsinline controls preload="none" poster={block.media.poster} width={block.media.width} height={block.media.height} aria-label={block.media.alt} style={`aspect-ratio: ${block.media.width} / ${block.media.height}`} data-autoplay>
+                    <source src={block.media.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img src={block.media.src} alt={block.media.alt} width={block.media.width} height={block.media.height} loading="lazy" />
+                )}
+              </div>
+              {block.media.caption && <figcaption>{block.media.caption}</figcaption>}
+            </figure>
+          )}
+        </div>
+      )}
+
+      {block.type === 'cards' && (
+        <div class="ed-wrap ed-sec">
+          <header class="ed-sec-head">
+            <p class="ed-eyebrow">{block.eyebrow}</p>
+            <h2 class="ed-h2">{block.h2} <em>{block.h2_accent}</em></h2>
+            {block.sub && <p class="ed-sec-sub">{block.sub}</p>}
+          </header>
+          <ul class:list={['pp-cards', { 'pp-cards--two': block.items.length === 2, 'pp-cards--four': block.items.length === 4 || block.items.length === 8 }]}>
+            {block.items.map((item) => (
+              <li>
+                {item.tag && <span class="pp-tag">{item.tag}</span>}
+                <strong>{item.title}</strong>
+                <span>{item.body}</span>
+                {item.link && <a href={item.link.href}>{item.link.label}</a>}
+              </li>
+            ))}
+          </ul>
+          {block.note && <p class="pp-note">{block.note}</p>}
+        </div>
+      )}
+
+      {block.type === 'shots' && (
+        <div class="ed-wrap ed-sec">
+          {block.h2 && (
+            <header class="ed-sec-head">
+              {block.eyebrow && <p class="ed-eyebrow">{block.eyebrow}</p>}
+              <h2 class="ed-h2">{block.h2} <em>{block.h2_accent}</em></h2>
+            </header>
+          )}
+          <div class="pp-shots">
+            {block.items.map((item) => (
+              <figure class="pp-shot">
+                <div class="pp-shot-media">
+                  {item.media.kind === 'video' ? (
+                    <video muted loop playsinline preload="none" poster={item.media.poster} width={item.media.width} height={item.media.height} aria-label={item.media.alt} style={`aspect-ratio: ${item.media.width} / ${item.media.height}`} data-autoplay>
+                      <source src={item.media.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={item.media.src} alt={item.media.alt} width={item.media.width} height={item.media.height} loading="lazy" />
+                  )}
+                </div>
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  <span>{item.body}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {block.type === 'band' && (
+        <div class="ed-wrap ed-sec">
+          <header class="ed-sec-head">
+            <p class="ed-eyebrow pp-on-navy-eyebrow">{block.eyebrow}</p>
+            <h2 class="ed-h2">{block.h2} <em>{block.h2_accent}</em></h2>
+          </header>
+          <ul class="pp-band">
+            {block.points.map((point) => (
+              <li>
+                <strong>{point.title}</strong>
+                <span>{point.body}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+    </section>
+  ))}
+
+  <!-- Questions -->
+  <section class="ed-wrap ed-sec" id="faq">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{all.faq_eyebrow}</p>
+      <h2 class="ed-h2">{all.faq_h2} <em>{all.faq_h2_accent}</em></h2>
+    </header>
+    <div class="pp-faq">
+      {p.faq.items.map((item: { q: string; a: string }) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{all.cta.h2} <em>{all.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{all.cta.sub}</p>
+      <div class="ed-final-form">
+        <WaitlistForm lang={lang} tone="light" />
+      </div>
+      <p class="ed-final-fine">{all.cta.fine} <a class="pp-fine-link" href={t.site.install_href}>{all.cta.fine_link}</a></p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+<VideoAutoplay />
+
+</Base>
+
+<style>
+/* ---------- hero ---------- */
+.pp-hero { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; padding-block: clamp(48px, 7vw, 88px) clamp(48px, 6vw, 80px); }
+.pp-crumb { font-size: 14.5px; color: var(--ed-ink-3); }
+.pp-crumb a { color: var(--ed-ink-2); font-weight: 600; }
+.pp-crumb a:hover { color: var(--ed-ink); }
+.pp-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7.4vw, 112px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.pp-hero h1 em { display: block; }
+.pp-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.pp-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
+.pp-hero-shot { width: 100%; margin-top: 18px; text-align: left; }
+.pp-hero-shot video, .pp-hero-shot img { display: block; width: 100%; height: auto; background: #F4F4F4; }
+
+/* ---------- steps: a title, numbered points, then a screen ---------- */
+.pp-steps { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); padding-block: clamp(56px, 7vw, 96px); }
+.pp-steps-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px clamp(24px, 4vw, 56px); align-items: start; }
+.pp-steps-intro { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.pp-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.pp-link:hover { opacity: .7; }
+.pp-beats { counter-reset: beat; display: flex; flex-direction: column; }
+.pp-beats li { counter-increment: beat; display: flex; gap: 14px; align-items: baseline; padding-block: 12px; border-top: 1px solid var(--ed-line-2); font-weight: 600; }
+.pp-beats li:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.pp-beats li::before { content: counter(beat); flex: none; font-family: var(--ed-serif); font-size: 24px; line-height: 1; color: var(--ed-ink-3); min-width: 1ch; }
+.pp-steps video, .pp-steps img { display: block; width: 100%; height: auto; background: #F4F4F4; }
+
+/* ---------- cards ---------- */
+.pp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; }
+.pp-cards--two { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
+.pp-cards--four { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+.pp-cards li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid var(--ed-line-2); border-radius: 20px; background: #fff; }
+.pp-cards strong { font-size: 19px; line-height: 1.25; color: var(--ed-ink); }
+.pp-cards span { color: var(--ed-ink-2); }
+.pp-cards .pp-tag { align-self: flex-start; padding: 5px 9px; border-radius: 6px; background: var(--ed-mist); color: var(--ed-navy); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.ed-band--mist .pp-cards .pp-tag { background: var(--ed-yellow); color: var(--ed-ink); }
+.pp-cards a { align-self: flex-start; margin-top: auto; padding-top: 6px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.pp-cards a:hover { opacity: .7; }
+.pp-note { margin-top: 18px; font-size: 15px; color: var(--ed-ink-3); max-width: 48em; }
+
+/* ---------- shots: real screens, two by two ---------- */
+.pp-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 28px; }
+.pp-shot { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--ed-line); border-radius: 24px; background: #fff; }
+.pp-shot-media { aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--ed-line); background: #F4F4F4; }
+/* Screens of different shapes share one frame, so the two captions line up; each one is shown whole. */
+.pp-shot-media video, .pp-shot-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.pp-shot figcaption { display: flex; flex-direction: column; gap: 6px; padding: 20px 24px 24px; color: var(--ed-ink-2); }
+.pp-shot figcaption strong { font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+
+/* ---------- navy band ---------- */
+.pp-on-navy-eyebrow { color: var(--ed-yellow); }
+.pp-band { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px; }
+.pp-band li { display: flex; flex-direction: column; gap: 8px; padding: 22px 22px 24px; border: 1px solid var(--ed-navy-line); border-radius: 20px; background: var(--ed-navy-2); color: var(--ed-on-navy-2); }
+.pp-band strong { font-size: 19px; line-height: 1.25; color: #fff; }
+.pp-band span { font-size: 16.5px; line-height: 1.5; }
+
+/* ---------- questions ---------- */
+.pp-faq { max-width: 900px; border-top: 2px solid var(--ed-ink); }
+.pp-faq details { border-bottom: 1px solid var(--ed-line-2); }
+.pp-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; font-size: 21px; font-weight: 700; color: var(--ed-ink); }
+.pp-faq summary::-webkit-details-marker { display: none; }
+.pp-faq summary::after { content: "+"; flex: none; font-family: var(--ed-serif); font-size: 34px; line-height: 1; font-weight: 400; }
+.pp-faq details[open] summary::after { content: "–"; }
+.pp-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
+
+/* ---------- final call ---------- */
+.pp-fine-link { font-weight: 700; border-bottom: 1.5px solid currentColor; }
+
+main section[id] { scroll-margin-top: 78px; }
+
+@media (max-width: 900px) {
+  .pp-steps-head { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .pp-faq summary { font-size: 19px; }
+}
+</style>
