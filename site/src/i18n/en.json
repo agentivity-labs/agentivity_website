@@ -2790,6 +2790,8 @@
     "progress": {
       "eyebrow": "Your workspace",
       "h2": "Preparing",
+      "sub": "It takes 2 to 5 minutes. You can leave this page: the link arrives by e-mail either way.",
+      "now": "In progress",
       "steps": [
         "Reserving your address",
         "Saving your settings",

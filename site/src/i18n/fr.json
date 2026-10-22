@@ -2802,6 +2802,8 @@
     "progress": {
       "eyebrow": "Votre espace",
       "h2": "Préparation de",
+      "sub": "Cela prend 2 à 5 minutes. Vous pouvez quitter cette page : le lien arrive par e-mail dans tous les cas.",
+      "now": "En cours",
       "steps": [
         "Réservation de votre adresse",
         "Enregistrement de vos réglages",

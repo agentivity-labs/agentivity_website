@@ -90,8 +90,9 @@ const config = {
           <div class="st-progress" hidden>
             <p class="ed-eyebrow">{s.progress.eyebrow}</p>
             <h2 class="st-progress-title">{s.progress.h2} <em data-host></em></h2>
+            <p class="st-progress-sub">{s.progress.sub}</p>
             <ol class="st-steps">
-              {s.progress.steps.map((step: string) => <li>{step}</li>)}
+              {s.progress.steps.map((step: string) => <li><span>{step}</span><em class="st-step-now">{s.progress.now}</em></li>)}
             </ol>
             <div class="st-outcome" aria-live="polite" hidden>
               <h3 data-outcome-title></h3>
@@ -237,6 +238,7 @@ const config = {
       progress.hidden = false;
       progress.querySelector('[data-host]')!.textContent = hostname;
       const steps = [...progress.querySelectorAll<HTMLElement>('.st-steps li')];
+      steps[0].dataset.state = 'now';
       const outcome = progress.querySelector<HTMLElement>('.st-outcome')!;
       const say = (title: string, body: string, fine = '') => {
         outcome.querySelector('[data-outcome-title]')!.textContent = title;
@@ -313,11 +315,14 @@ const config = {
 .st-steps li { counter-increment: step; display: flex; align-items: center; gap: 14px; padding-block: 12px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-3); font-weight: 600; }
 .st-steps li::before { content: counter(step); flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; border: 1.5px solid currentColor; font-size: 13px; }
 .st-steps li[data-state="now"] { color: var(--ed-ink); }
-.st-steps li[data-state="now"]::before { animation: st-pulse 1.2s ease-in-out infinite; }
+.st-steps li[data-state="now"]::before { content: ""; border-color: var(--ed-line-2); border-top-color: var(--ed-ink); animation: st-turn .9s linear infinite; }
+.st-step-now { display: none; margin-left: auto; font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink); }
+.st-steps li[data-state="now"] .st-step-now { display: inline; }
+.st-progress-sub { margin: -6px 0 0; color: var(--ed-ink-2); }
 .st-steps li[data-state="done"] { color: var(--ed-ink); }
 .st-steps li[data-state="done"]::before { content: "✓"; background: var(--ed-yellow); border-color: var(--ed-yellow); }
-@keyframes st-pulse { 50% { transform: scale(1.15); } }
-@media (prefers-reduced-motion: reduce) { .st-steps li[data-state="now"]::before { animation: none; } }
+@keyframes st-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .st-steps li[data-state="now"]::before { animation: none; border-top-color: var(--ed-line-2); background: var(--ed-yellow); } }
 .st-outcome { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; border-radius: 16px; background: var(--ed-mist); }
 .st-outcome h3 { font-family: var(--ed-serif); font-size: 28px; line-height: 1.1; }
 
