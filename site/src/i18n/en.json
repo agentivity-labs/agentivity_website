@@ -2743,5 +2743,71 @@
         ]
       }
     }
+  },
+  "start_page": {
+    "meta": {
+      "title": "Start your 14-day trial | Agentivity",
+      "description": "Agentivity hosted for you: your own workspace, ready in minutes. 14 days with no card."
+    },
+    "hero": {
+      "eyebrow": "14-day trial",
+      "h1": "Your Agentivity,",
+      "h1_accent": "ready in minutes.",
+      "sub": "Hosted for you: nothing to install. Your own workspace, at your own address. No card for 14 days."
+    },
+    "form": {
+      "plan_label": "Plan to try",
+      "email_label": "Your email",
+      "email_placeholder": "you@company.com",
+      "email_hint": "You become the owner of the workspace: the link to open it goes to this address.",
+      "slug_label": "Name of your workspace",
+      "slug_placeholder": "acme",
+      "slug_address": "Its address",
+      "slug_checking": "Checking…",
+      "slug_free": "Available",
+      "consent": "I accept the {terms} and have read the {privacy}.",
+      "terms_link": "terms of use",
+      "privacy_link": "privacy policy",
+      "submit": "Start my trial",
+      "submitting": "Starting…",
+      "fine": "14 days with every feature of the plan and up to 200 runs. No card, nothing to cancel."
+    },
+    "errors": {
+      "slug_invalid": "Use 3 to 30 lowercase letters, digits and hyphens, without a hyphen at either end.",
+      "slug_reserved": "This name is kept for Agentivity. Choose another one.",
+      "slug_taken": "This name is already taken. Choose another one.",
+      "captcha_failed": "We could not confirm that you are human. Try again.",
+      "email_invalid": "Check your email address.",
+      "plan_invalid": "Choose a plan.",
+      "email_has_trial": "A trial is already running for this email. The link to open it is in your inbox.",
+      "trials_full": "Trials are full for now. Join the waitlist on the pricing page and we will write as soon as a place opens.",
+      "signups_closed": "Trials are not open yet. Join the waitlist on the pricing page to be told first.",
+      "rate": "Too many tries. Wait a few minutes, then try again.",
+      "generic": "Something went wrong on our side. Try again in a moment.",
+      "consent": "Accept the terms of use to continue.",
+      "captcha_missing": "Wait for the check under the form to finish, then try again."
+    },
+    "progress": {
+      "eyebrow": "Your workspace",
+      "h2": "Preparing",
+      "steps": [
+        "Reserving your address",
+        "Saving your settings",
+        "Creating your storage",
+        "Starting your machine",
+        "Securing the connection",
+        "Publishing your address"
+      ],
+      "ready_title": "Your workspace is ready.",
+      "ready_body": "We sent the link to {email}. Open it to choose your password and become the owner. It works once and for 7 days.",
+      "ready_fine": "Nothing in your inbox after a few minutes? Look in your spam, or write to hello@agentivity.io.",
+      "delayed_title": "This is taking longer than usual.",
+      "delayed_body": "We are on it. The link will reach {email} as soon as your workspace is ready."
+    },
+    "closed": {
+      "title": "Trials open soon.",
+      "body": "Join the waitlist and we will write when they open.",
+      "link": "Go to the waitlist"
+    }
   }
 }

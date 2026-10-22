@@ -2755,5 +2755,71 @@
         ]
       }
     }
+  },
+  "start_page": {
+    "meta": {
+      "title": "Démarrer votre essai de 14 jours | Agentivity",
+      "description": "Agentivity hébergé pour vous : votre propre espace, prêt en quelques minutes. 14 jours sans carte bancaire."
+    },
+    "hero": {
+      "eyebrow": "Essai de 14 jours",
+      "h1": "Votre Agentivity,",
+      "h1_accent": "prêt en quelques minutes.",
+      "sub": "Hébergé pour vous : rien à installer. Votre propre espace, à votre adresse. Sans carte bancaire pendant 14 jours."
+    },
+    "form": {
+      "plan_label": "Plan à essayer",
+      "email_label": "Votre e-mail",
+      "email_placeholder": "vous@entreprise.com",
+      "email_hint": "Vous devenez le propriétaire de l'espace : le lien pour l'ouvrir part à cette adresse.",
+      "slug_label": "Nom de votre espace",
+      "slug_placeholder": "acme",
+      "slug_address": "Son adresse",
+      "slug_checking": "Vérification…",
+      "slug_free": "Disponible",
+      "consent": "J'accepte les {terms} et j'ai lu la {privacy}.",
+      "terms_link": "conditions d'utilisation",
+      "privacy_link": "politique de confidentialité",
+      "submit": "Démarrer mon essai",
+      "submitting": "Démarrage…",
+      "fine": "14 jours avec toutes les fonctionnalités du plan et jusqu'à 200 exécutions. Sans carte, rien à résilier."
+    },
+    "errors": {
+      "slug_invalid": "Utilisez 3 à 30 lettres minuscules, chiffres et tirets, sans tiret au début ni à la fin.",
+      "slug_reserved": "Ce nom est réservé à Agentivity. Choisissez-en un autre.",
+      "slug_taken": "Ce nom est déjà pris. Choisissez-en un autre.",
+      "captcha_failed": "Nous n'avons pas pu vérifier que vous êtes humain. Réessayez.",
+      "email_invalid": "Vérifiez votre adresse e-mail.",
+      "plan_invalid": "Choisissez un plan.",
+      "email_has_trial": "Un essai est déjà en cours pour cette adresse. Le lien pour l'ouvrir est dans votre boîte de réception.",
+      "trials_full": "Les essais sont complets pour le moment. Inscrivez-vous sur la liste d'attente de la page tarifs : nous vous écrirons dès qu'une place se libère.",
+      "signups_closed": "Les essais ne sont pas encore ouverts. Inscrivez-vous sur la liste d'attente de la page tarifs pour être prévenu en premier.",
+      "rate": "Trop d'essais. Attendez quelques minutes, puis réessayez.",
+      "generic": "Un problème est survenu de notre côté. Réessayez dans un instant.",
+      "consent": "Acceptez les conditions d'utilisation pour continuer.",
+      "captcha_missing": "Attendez la fin de la vérification sous le formulaire, puis réessayez."
+    },
+    "progress": {
+      "eyebrow": "Votre espace",
+      "h2": "Préparation de",
+      "steps": [
+        "Réservation de votre adresse",
+        "Enregistrement de vos réglages",
+        "Création de votre stockage",
+        "Démarrage de votre machine",
+        "Sécurisation de la connexion",
+        "Publication de votre adresse"
+      ],
+      "ready_title": "Votre espace est prêt.",
+      "ready_body": "Nous avons envoyé le lien à {email}. Ouvrez-le pour choisir votre mot de passe et devenir le propriétaire. Il ne sert qu'une fois et vaut 7 jours.",
+      "ready_fine": "Rien dans votre boîte après quelques minutes ? Regardez dans les indésirables, ou écrivez à hello@agentivity.io.",
+      "delayed_title": "Cela prend plus de temps que d'habitude.",
+      "delayed_body": "Nous nous en occupons. Le lien arrivera à {email} dès que votre espace sera prêt."
+    },
+    "closed": {
+      "title": "Les essais ouvrent bientôt.",
+      "body": "Inscrivez-vous sur la liste d'attente : nous vous écrirons à l'ouverture.",
+      "link": "Aller à la liste d'attente"
+    }
   }
 }

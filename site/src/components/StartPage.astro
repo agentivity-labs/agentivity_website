@@ -1,0 +1,333 @@
+---
+// The trial sign-up, shared by /start and /fr/start. Texts come from the "start_page" block of the translation files.
+// The form calls accounts_service from the browser (its address in PUBLIC_ACCOUNTS_URL), protected by Cloudflare Turnstile
+// (PUBLIC_TURNSTILE_SITE_KEY), then follows the creation of the workspace. The link to open the workspace only leaves by
+// e-mail. Not indexed and not linked while the trials are not open.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const s = t.start_page;
+const pricing = lang === 'fr' ? '/fr/pricing/#waitlist' : '/pricing/#waitlist';
+const termsHref = lang === 'fr' ? '/fr/legal/terms' : '/legal/terms';
+const privacyHref = lang === 'fr' ? '/fr/legal/privacy' : '/legal/privacy';
+
+const accountsUrl = (import.meta.env.PUBLIC_ACCOUNTS_URL || 'https://agentivity-accounts-service.fly.dev').replace(/\/$/, '');
+// Cloudflare's test key (always passes) while developing; the real key comes with the build of the site.
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || (import.meta.env.DEV ? '1x00000000000000000000AA' : '');
+
+const plans = t.pricing_page.editions.plans
+  .filter((plan: any) => ['Personal', 'Pro', 'Business'].includes(plan.name))
+  .map((plan: any) => ({ code: plan.name.toLowerCase(), name: plan.name, for: plan.for }));
+
+const [consentBefore, consentMiddle, consentAfter] = s.form.consent.split(/\{terms\}|\{privacy\}/);
+const config = {
+  api: accountsUrl,
+  lang,
+  messages: { ...s.form, ...s.errors, ...s.progress },
+};
+---
+<Base title={s.meta.title} description={s.meta.description} lang={lang} look="editorial" noindex>
+
+<SiteHeader lang={lang} waitlistHref={pricing} />
+
+<main class="ed-page">
+  <section class="ed-wrap st-hero">
+    <p class="ed-eyebrow">{s.hero.eyebrow}</p>
+    <h1>{s.hero.h1} <em>{s.hero.h1_accent}</em></h1>
+    <p class="st-sub">{s.hero.sub}</p>
+  </section>
+
+  <section class="ed-band--mist">
+    <div class="ed-wrap st-body">
+      {siteKey ? (
+        <div class="st-card" data-start data-config={JSON.stringify(config)}>
+          <form class="st-form" novalidate>
+            <fieldset class="st-plans">
+              <legend>{s.form.plan_label}</legend>
+              {plans.map((plan: any, i: number) => (
+                <label class="st-plan">
+                  <input type="radio" name="plan" value={plan.code} checked={plan.code === 'pro'} />
+                  <span class="st-plan-name">{plan.name}</span>
+                  <span class="st-plan-for">{plan.for}</span>
+                </label>
+              ))}
+            </fieldset>
+
+            <label class="st-field">
+              <span class="st-label">{s.form.email_label}</span>
+              <input type="email" name="email" placeholder={s.form.email_placeholder} maxlength="254" autocomplete="email" required />
+              <span class="st-hint">{s.form.email_hint}</span>
+            </label>
+
+            <label class="st-field">
+              <span class="st-label">{s.form.slug_label}</span>
+              <span class="st-slug">
+                <input type="text" name="slug" placeholder={s.form.slug_placeholder} maxlength="30" autocomplete="off"
+                       autocapitalize="none" spellcheck="false" pattern="[a-z0-9-]{3,30}" required />
+                <span class="st-slug-domain">.agentivity.app</span>
+              </span>
+              <span class="st-hint" data-slug-status aria-live="polite">{s.form.slug_address}: <strong data-slug-preview>…</strong></span>
+            </label>
+
+            <label class="st-consent">
+              <input type="checkbox" name="consent" required />
+              <span>{consentBefore}<a href={termsHref} target="_blank" rel="noopener">{s.form.terms_link}</a>{consentMiddle}<a href={privacyHref} target="_blank" rel="noopener">{s.form.privacy_link}</a>{consentAfter}</span>
+            </label>
+
+            <div class="st-turnstile" data-turnstile data-sitekey={siteKey} data-language={lang}></div>
+
+            <button type="submit" class="ed-btn ed-btn--navy st-submit">{s.form.submit}</button>
+            <p class="st-error" role="alert" hidden></p>
+            <p class="st-fine">{s.form.fine}</p>
+          </form>
+
+          <div class="st-progress" hidden>
+            <p class="ed-eyebrow">{s.progress.eyebrow}</p>
+            <h2 class="st-progress-title">{s.progress.h2} <em data-host></em></h2>
+            <ol class="st-steps">
+              {s.progress.steps.map((step: string) => <li>{step}</li>)}
+            </ol>
+            <div class="st-outcome" aria-live="polite" hidden>
+              <h3 data-outcome-title></h3>
+              <p data-outcome-body></p>
+              <p class="st-fine" data-outcome-fine></p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="st-card st-closed">
+          <h2>{s.closed.title}</h2>
+          <p>{s.closed.body}</p>
+          <a class="ed-btn ed-btn--navy" href={pricing}>{s.closed.link}</a>
+        </div>
+      )}
+    </div>
+  </section>
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>}
+
+<script>
+  type Messages = Record<string, any>;
+  type Config = { api: string; lang: string; messages: Messages };
+
+  const SLUG = /^[a-z0-9](?:[a-z0-9-]{1,28}[a-z0-9])$/;
+
+  document.querySelectorAll<HTMLElement>('[data-start]').forEach((root) => {
+    const config: Config = JSON.parse(root.dataset.config ?? '{}');
+    const m = config.messages;
+    const form = root.querySelector<HTMLFormElement>('form')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const error = form.querySelector<HTMLElement>('.st-error')!;
+    const slugInput = form.querySelector<HTMLInputElement>('input[name="slug"]')!;
+    const slugStatus = form.querySelector<HTMLElement>('[data-slug-status]')!;
+    const progress = root.querySelector<HTMLElement>('.st-progress')!;
+    const turnstileBox = form.querySelector<HTMLElement>('[data-turnstile]')!;
+
+    // The plan from the address (?plan=business), when it is one of the plans offered.
+    const wanted = new URLSearchParams(location.search).get('plan');
+    form.querySelector<HTMLInputElement>(`input[name="plan"][value="${CSS.escape(wanted ?? '')}"]`)?.click();
+
+    // Cloudflare Turnstile, drawn once its script is there; the token is read at submit.
+    let widget: string | undefined;
+    const drawTurnstile = () => {
+      const w = window as any;
+      if (!w.turnstile) return void setTimeout(drawTurnstile, 200);
+      widget = w.turnstile.render(turnstileBox, { sitekey: turnstileBox.dataset.sitekey, language: turnstileBox.dataset.language, theme: 'light' });
+    };
+    drawTurnstile();
+    const turnstileToken = (): string => ((window as any).turnstile?.getResponse(widget) as string | undefined) ?? '';
+    const resetTurnstile = () => (window as any).turnstile?.reset(widget);
+
+    const showError = (text: string) => {
+      error.textContent = text;
+      error.hidden = false;
+    };
+
+    // The address while it is typed, then whether it is free (asked once the typing stops).
+    let checkTimer: number | undefined;
+    let checked = '';
+    const setSlugStatus = (text: string, kind?: 'ok' | 'bad') => {
+      slugStatus.replaceChildren();
+      const strong = document.createElement('strong');
+      strong.textContent = text;
+      slugStatus.dataset.kind = kind ?? '';
+      slugStatus.append(strong);
+    };
+    const showAddress = (slug: string) => setSlugStatus(`${m.slug_address}: ${slug || '…'}.agentivity.app`);
+    showAddress('');
+    slugInput.addEventListener('input', () => {
+      const slug = slugInput.value.trim().toLowerCase();
+      if (slugInput.value !== slug) slugInput.value = slug;
+      showAddress(slug);
+      window.clearTimeout(checkTimer);
+      if (!slug) return;
+      if (!SLUG.test(slug) || slug.includes('--')) return void setSlugStatus(m.slug_invalid, 'bad');
+      checkTimer = window.setTimeout(async () => {
+        setSlugStatus(m.slug_checking);
+        try {
+          const answer = await fetch(`${config.api}/api/v1/signup/slugs/${encodeURIComponent(slug)}`);
+          const said = await answer.json();
+          if (slugInput.value.trim().toLowerCase() !== slug) return;
+          checked = slug;
+          if (said.available) setSlugStatus(`${m.slug_free}: ${slug}.agentivity.app`, 'ok');
+          else setSlugStatus(m[said.reason] ?? m.slug_invalid, 'bad');
+        } catch {
+          showAddress(slug);
+        }
+      }, 400);
+    });
+
+    const errorOf = (status: number, code: string | undefined) =>
+      status === 429 ? m.rate : (code && m[code]) || m.generic;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (button.disabled) return;
+      error.hidden = true;
+
+      const data = new FormData(form);
+      const email = String(data.get('email') ?? '').trim();
+      const slug = String(data.get('slug') ?? '').trim().toLowerCase();
+      if (!form.querySelector<HTMLInputElement>('input[name="email"]')!.checkValidity()) return showError(m.email_invalid);
+      if (!SLUG.test(slug) || slug.includes('--')) return showError(m.slug_invalid);
+      if (data.get('consent') !== 'on') return showError(m.consent);
+      const token = turnstileToken();
+      if (!token) return showError(m.captcha_missing);
+
+      button.disabled = true;
+      button.textContent = m.submitting;
+      try {
+        const answer = await fetch(`${config.api}/api/v1/signup`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, slug, plan: data.get('plan'), language: config.lang, turnstileToken: token }),
+        });
+        const said = await answer.json().catch(() => ({}));
+        if (!answer.ok) {
+          resetTurnstile();
+          return showError(errorOf(answer.status, said.error));
+        }
+        // Counted by Tag Manager only when the visitor accepted the cookies (it is not loaded otherwise).
+        const w = window as any;
+        (w.dataLayer = w.dataLayer || []).push({ event: 'trial_start', plan: data.get('plan') });
+        follow(said.signupId, said.statusToken, said.hostname, email);
+      } catch {
+        resetTurnstile();
+        showError(m.generic);
+      } finally {
+        button.disabled = false;
+        button.textContent = m.submit;
+      }
+    });
+
+    // The creation, step by step, until the workspace is ready (or late: the team takes over, the e-mail still comes).
+    function follow(signupId: string, token: string, hostname: string, email: string) {
+      form.hidden = true;
+      progress.hidden = false;
+      progress.querySelector('[data-host]')!.textContent = hostname;
+      const steps = [...progress.querySelectorAll<HTMLElement>('.st-steps li')];
+      const outcome = progress.querySelector<HTMLElement>('.st-outcome')!;
+      const say = (title: string, body: string, fine = '') => {
+        outcome.querySelector('[data-outcome-title]')!.textContent = title;
+        outcome.querySelector('[data-outcome-body]')!.textContent = body.replace('{email}', email);
+        outcome.querySelector('[data-outcome-fine]')!.textContent = fine;
+        outcome.hidden = false;
+      };
+      progress.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      const tick = async () => {
+        try {
+          const answer = await fetch(`${config.api}/api/v1/signup/${signupId}?token=${encodeURIComponent(token)}`);
+          if (answer.ok) {
+            const state = await answer.json();
+            steps.forEach((step, i) => {
+              step.dataset.state = i < state.stepsDone ? 'done' : i === state.stepsDone && state.state === 'preparing' ? 'now' : '';
+            });
+            if (state.state === 'ready') return say(m.ready_title, m.ready_body, m.ready_fine);
+            if (state.state === 'delayed') return say(m.delayed_title, m.delayed_body);
+          }
+        } catch {
+          // A missed look changes nothing: the next one comes.
+        }
+        setTimeout(tick, 3000);
+      };
+      tick();
+    }
+  });
+</script>
+
+<style>
+.st-hero { display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; padding-block: clamp(48px, 7vw, 88px) clamp(40px, 5vw, 64px); }
+.st-hero h1 { font-family: var(--ed-serif); font-size: clamp(48px, 7vw, 96px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.st-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+
+.st-body { padding-block: clamp(40px, 6vw, 80px); display: flex; justify-content: center; }
+.st-card { width: 100%; max-width: 640px; background: #fff; border-radius: 28px; padding: clamp(24px, 4vw, 44px); color: var(--ed-ink); }
+
+.st-form { display: flex; flex-direction: column; gap: 24px; }
+.st-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; border: 0; padding: 0; margin: 0; }
+.st-plans legend { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); margin-bottom: 10px; }
+.st-plan { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1.5px solid var(--ed-line-2); border-radius: 16px; cursor: pointer; }
+.st-plan input { position: absolute; opacity: 0; pointer-events: none; }
+.st-plan:has(input:checked) { border-color: var(--ed-ink); box-shadow: inset 0 0 0 1px var(--ed-ink); background: var(--ed-mist); }
+.st-plan:has(input:focus-visible) { outline: 3px solid rgba(21,40,68,.35); outline-offset: 2px; }
+.st-plan-name { font-family: var(--ed-serif); font-size: 26px; line-height: 1.05; }
+.st-plan-for { font-size: 14px; line-height: 1.4; color: var(--ed-ink-2); }
+
+.st-field { display: flex; flex-direction: column; gap: 8px; }
+.st-label { font-size: 16px; font-weight: 700; }
+.st-field input, .st-slug { min-height: 52px; border: 1.5px solid #101A2E; border-radius: 14px; background: #fff; font: inherit; font-size: 17px; color: #101A2E; }
+.st-field input { padding: 0 16px; }
+.st-field input:focus, .st-slug:focus-within { outline: none; box-shadow: 0 0 0 3px rgba(21,40,68,.25); }
+.st-slug { display: flex; align-items: center; overflow: hidden; }
+.st-slug input { flex: 1; min-width: 0; border: 0; min-height: 49px; box-shadow: none !important; }
+.st-slug-domain { padding-right: 16px; color: var(--ed-ink-3); white-space: nowrap; }
+.st-hint { font-size: 14px; line-height: 1.45; color: var(--ed-ink-2); overflow-wrap: anywhere; }
+.st-hint[data-kind="ok"] strong { color: #1F6B3A; }
+.st-hint[data-kind="bad"] strong { color: #8C1D18; }
+
+.st-consent { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; line-height: 1.5; cursor: pointer; }
+.st-consent input { flex: none; margin-top: 3px; width: 17px; height: 17px; accent-color: #152844; }
+.st-consent a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+.st-turnstile { min-height: 65px; }
+.st-submit { align-self: flex-start; }
+.st-submit:disabled { opacity: .6; cursor: progress; }
+.st-error { margin: 0; font-weight: 600; color: #8C1D18; }
+.st-fine { margin: 0; font-size: 14px; color: var(--ed-ink-2); }
+
+.st-progress { display: flex; flex-direction: column; gap: 18px; }
+.st-progress-title { font-family: var(--ed-serif); font-size: clamp(30px, 4vw, 44px); line-height: 1.05; overflow-wrap: anywhere; }
+.st-steps { display: flex; flex-direction: column; gap: 0; padding: 0; margin: 0; list-style: none; counter-reset: step; }
+.st-steps li { counter-increment: step; display: flex; align-items: center; gap: 14px; padding-block: 12px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-3); font-weight: 600; }
+.st-steps li::before { content: counter(step); flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; border: 1.5px solid currentColor; font-size: 13px; }
+.st-steps li[data-state="now"] { color: var(--ed-ink); }
+.st-steps li[data-state="now"]::before { animation: st-pulse 1.2s ease-in-out infinite; }
+.st-steps li[data-state="done"] { color: var(--ed-ink); }
+.st-steps li[data-state="done"]::before { content: "✓"; background: var(--ed-yellow); border-color: var(--ed-yellow); }
+@keyframes st-pulse { 50% { transform: scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { .st-steps li[data-state="now"]::before { animation: none; } }
+.st-outcome { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; border-radius: 16px; background: var(--ed-mist); }
+.st-outcome h3 { font-family: var(--ed-serif); font-size: 28px; line-height: 1.1; }
+
+/* hidden wins over the display of the blocks above */
+.st-form[hidden], .st-progress[hidden], .st-outcome[hidden], .st-error[hidden] { display: none; }
+
+.st-closed { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.st-closed h2 { font-family: var(--ed-serif); font-size: 36px; line-height: 1.05; }
+
+@media (max-width: 640px) {
+  .st-plans { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
