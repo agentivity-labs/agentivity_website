@@ -1,0 +1,52 @@
+{
+  "_comment": "The hosted plans: their prices (euros, excluding VAT) and their limits. The only place of the site that holds them: the pricing page reads them, and its texts take the prices from here. Later, a read from accounts_service.",
+  "currency": "EUR",
+  "trial": { "days": 14, "executions": 200 },
+  "plans": [
+    {
+      "code": "personal",
+      "name": "Personal",
+      "monthly": 24,
+      "yearly": 240,
+      "users": 1,
+      "spaces": 1,
+      "executionsPerMonth": 1000,
+      "parallelExecutions": 2,
+      "maxExecutionMinutes": 15,
+      "diskGb": 2,
+      "backupDays": 7,
+      "support": "email",
+      "extras": []
+    },
+    {
+      "code": "pro",
+      "name": "Pro",
+      "monthly": 49,
+      "yearly": 490,
+      "users": 3,
+      "spaces": 3,
+      "executionsPerMonth": 5000,
+      "parallelExecutions": 5,
+      "maxExecutionMinutes": 60,
+      "diskGb": 10,
+      "backupDays": 14,
+      "support": "priority",
+      "extras": []
+    },
+    {
+      "code": "business",
+      "name": "Business",
+      "monthly": 199,
+      "yearly": 1990,
+      "users": 15,
+      "spaces": 15,
+      "executionsPerMonth": 25000,
+      "parallelExecutions": 20,
+      "maxExecutionMinutes": 240,
+      "diskGb": 50,
+      "backupDays": 30,
+      "support": "priority_call",
+      "extras": ["groups", "audit", "monitoring"]
+    }
+  ]
+}

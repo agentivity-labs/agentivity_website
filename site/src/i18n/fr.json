@@ -992,14 +992,15 @@
   "pricing_page": {
     "meta": {
       "title": "Tarifs Agentivity — édition Community gratuite, offres cloud et Enterprise",
-      "description": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Les offres hébergées arrivent : Personal, Pro et Business. Enterprise sur demande."
+      "description": "L'édition Community est gratuite pour toujours, sur votre serveur. Offres hébergées dès {from} par mois, avec un essai gratuit de {trial_days} jours. Enterprise sur devis."
     },
     "hero": {
       "eyebrow": "Tarifs",
       "price": "0 €",
       "rest": "pour commencer.",
-      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Les offres hébergées arrivent, pour ceux qui préfèrent ne rien installer.",
-      "primary": "Rejoindre la liste d'attente",
+      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Vous préférez ne rien installer ? Les offres hébergées commencent à {from} par mois, avec un essai gratuit de {trial_days} jours, sans carte.",
+      "primary": "Commencer l'essai gratuit",
+      "primary_href": "/fr/start",
       "secondary": "Installer Community"
     },
     "editions": {
@@ -1008,6 +1009,65 @@
       "h2_accent": "un seul produit.",
       "sub": "Chaque édition comprend le Studio, les agents, les équipes et les workflows. Ce qui change : l'endroit où elle tourne et le nombre de personnes qui la partagent.",
       "for_label": "Pour",
+      "billing": {
+        "label": "Facturation",
+        "yearly": "Annuel",
+        "yearly_badge": "2 mois offerts",
+        "monthly": "Mensuel",
+        "per_month": "/ mois",
+        "billed_yearly": "Facturé annuellement : {price}",
+        "billed_monthly": "Facturé mensuellement",
+        "vat": "Prix hors TVA : la TVA s'ajoute selon votre pays.",
+        "trial": "Essai gratuit de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai)."
+      },
+      "limits": {
+        "users": [
+          "{n} utilisateur",
+          "{n} utilisateurs"
+        ],
+        "spaces": [
+          "{n} espace",
+          "{n} espaces"
+        ],
+        "executions": "{n} exécutions par mois",
+        "parallel": "{n} en même temps",
+        "duration": "Exécutions jusqu'à {d}",
+        "disk": "{n} Go de disque",
+        "gb": "{n} Go",
+        "backups": "{n} jours",
+        "minutes": "{n} min",
+        "hours": "{n} h"
+      },
+      "compare": {
+        "h3": "Comparer les offres hébergées",
+        "plan": "Offre",
+        "rows": {
+          "monthly": "Facturé mensuellement",
+          "yearly": "Facturé annuellement",
+          "users": "Utilisateurs",
+          "spaces": "Espaces",
+          "executions": "Exécutions par mois",
+          "parallel": "Exécutions en même temps",
+          "duration": "Durée maximale d'une exécution",
+          "disk": "Disque",
+          "backups": "Sauvegardes gardées",
+          "support": "Support",
+          "extras": "En plus"
+        },
+        "per_month": "{price} / mois",
+        "per_year": "{price} / an",
+        "support": {
+          "email": "E-mail",
+          "priority": "E-mail prioritaire",
+          "priority_call": "E-mail prioritaire et visio de démarrage"
+        },
+        "extras": {
+          "groups": "Groupes",
+          "audit": "Journal d'activité",
+          "monitoring": "Surveillance branchée (OpenTelemetry)"
+        },
+        "none": "—"
+      },
       "cloud_note": "À venir avec les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
       "community": {
         "name": "Community",
@@ -1028,30 +1088,27 @@
       "plans": [
         {
           "name": "Personal",
-          "status": "Bientôt",
-          "price": "Prix au lancement",
+          "status": "Essai gratuit de {trial_days} jours",
           "for": "une personne : un indépendant, un commerçant, un freelance",
           "desc": "Hébergé pour vous. Rien à installer : connectez-vous et créez votre première équipe.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#waitlist"
+          "cta": "Commencer l'essai gratuit",
+          "href": "/fr/start?plan=personal"
         },
         {
           "name": "Pro",
-          "status": "Bientôt",
-          "price": "Prix au lancement",
+          "status": "Essai gratuit de {trial_days} jours",
           "for": "un professionnel qui s'en sert tous les jours",
           "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#waitlist"
+          "cta": "Commencer l'essai gratuit",
+          "href": "/fr/start?plan=pro"
         },
         {
           "name": "Business",
-          "status": "Bientôt",
-          "price": "Prix au lancement",
+          "status": "Essai gratuit de {trial_days} jours",
           "for": "une équipe ou un service",
           "desc": "Des espaces de travail partagés : une personne construit, tout le monde en profite.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#waitlist"
+          "cta": "Commencer l'essai gratuit",
+          "href": "/fr/start?plan=business"
         },
         {
           "name": "Enterprise",
@@ -1071,7 +1128,7 @@
       "items": [
         {
           "title": "Le logiciel",
-          "body": "Community coûte 0 €, sans limite de durée. Les prix des offres hébergées seront annoncés à leur ouverture."
+          "body": "Community coûte 0 €, sans limite de durée. Les offres hébergées ont un prix par mois, hors TVA, avec deux mois offerts quand vous payez un an."
         },
         {
           "title": "Les modèles d'IA",
@@ -1112,11 +1169,27 @@
         },
         {
           "q": "Je ne suis pas technicien. Quelle édition est faite pour moi ?",
-          "a": "Une offre hébergée : il n'y a rien à installer. Elles ne sont pas encore ouvertes ; inscrivez-vous sur la liste d'attente et vous serez prévenu en premier."
+          "a": "Une offre hébergée : il n'y a rien à installer. Essayez-la gratuitement pendant {trial_days} jours, sans carte."
         },
         {
-          "q": "Quand les offres hébergées ouvrent-elles, et à quel prix ?",
-          "a": "Les dates et les prix ne sont pas encore annoncés. Les inscrits à la liste d'attente seront les premiers informés."
+          "q": "Combien coûtent les offres hébergées ?",
+          "a": "À partir de {from} par mois, facturé annuellement, hors TVA. Chaque offre et ses limites sont présentées plus haut."
+        },
+        {
+          "q": "Faut-il une carte pour l'essai ?",
+          "a": "Non. L'essai dure {trial_days} jours, avec les fonctionnalités de l'offre choisie. Les exécutions sont plafonnées à {trial_executions} pendant l'essai."
+        },
+        {
+          "q": "Que se passe-t-il quand j'achète ?",
+          "a": "Acheter met fin à l'essai : votre offre démarre et le premier paiement est pris tout de suite."
+        },
+        {
+          "q": "Puis-je changer d'offre ou résilier ?",
+          "a": "Oui, à tout moment. Un changement d'offre est calculé au prorata. Si vous résiliez, votre offre continue jusqu'à la fin de la période payée."
+        },
+        {
+          "q": "Les prix sont-ils hors TVA ?",
+          "a": "Oui. La TVA s'ajoute selon votre pays."
         },
         {
           "q": "Est-ce que je paie les modèles d'IA à part ?",

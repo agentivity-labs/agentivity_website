@@ -1,11 +1,14 @@
 ---
 // Pricing, shared by /pricing and /fr/pricing. Texts come from the "pricing_page" block of the translation files.
-// No price is shown for the hosted plans: they are not decided yet.
+// The prices and limits of the hosted plans come from src/data/plans.json, the only place of the site that holds them;
+// the texts take them through markers ({from}, {trial_days}, {trial_executions}, {price}, {n}, {d}).
+// A switch shows the hosted plans billed yearly (the default, also without JavaScript) or monthly.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import GitHubIcon from './GitHubIcon.astro';
 import WaitlistForm from './WaitlistForm.astro';
+import data from '../data/plans.json';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -15,6 +18,25 @@ const t = useTranslations(lang);
 const p = t.pricing_page;
 const home = lang === 'fr' ? '/fr/' : '/';
 const community = p.editions.community;
+const billing = p.editions.billing;
+const limits = p.editions.limits;
+const compare = p.editions.compare;
+
+// Numbers and prices in the reader's language: "€40.83" and "1,000" in English, "40,83 €" and "1 000" in French.
+const locale = lang === 'fr' ? 'fr-FR' : 'en-IE';
+const money = (v: number) => new Intl.NumberFormat(locale, { style: 'currency', currency: data.currency, minimumFractionDigits: Number.isInteger(v) ? 0 : 2, maximumFractionDigits: 2 }).format(v);
+const num = (v: number) => new Intl.NumberFormat(locale).format(v);
+const perMonthYearly = (plan: { yearly: number }) => Math.round(plan.yearly / 12 * 100) / 100;
+const from = money(Math.min(...data.plans.map(perMonthYearly)));
+const fill = (text: string, values: Record<string, string> = {}) =>
+  Object.entries({ from, trial_days: String(data.trial.days), trial_executions: num(data.trial.executions), ...values })
+    .reduce((s, [k, v]) => s.split('{' + k + '}').join(v), text);
+const plural = (forms: string[], n: number) => fill(forms[n === 1 ? 0 : 1], { n: num(n) });
+const duration = (minutes: number) => minutes < 60 ? fill(limits.minutes, { n: num(minutes) }) : fill(limits.hours, { n: num(minutes / 60) });
+
+// The cards: the three hosted plans take their figures from plans.json, Enterprise keeps its text price.
+const hosted = new Map(data.plans.map((plan) => [plan.name, plan]));
+const cards = p.editions.plans.map((plan: any) => ({ ...plan, data: hosted.get(plan.name) }));
 
 const schema = [
   {
@@ -25,18 +47,34 @@ const schema = [
     priceCurrency: 'EUR',
     description: community.desc,
   },
+  ...data.plans.map((plan) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: 'Agentivity ' + plan.name,
+    price: String(plan.monthly),
+    priceCurrency: data.currency,
+    description: cards.find((c: any) => c.name === plan.name)?.for,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: plan.monthly,
+      priceCurrency: data.currency,
+      unitText: 'MONTH',
+      billingDuration: 'P1M',
+      valueAddedTaxIncluded: false,
+    },
+  })),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: p.faq.items.map((item: any) => ({
       '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
+      name: fill(item.q),
+      acceptedAnswer: { '@type': 'Answer', text: fill(item.a) },
     })),
   },
 ];
 ---
-<Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} look="editorial">
+<Base title={p.meta.title} description={fill(p.meta.description)} lang={lang} schema={schema} look="editorial">
 
 <SiteHeader lang={lang} waitlistHref="#waitlist" />
 
@@ -45,9 +83,9 @@ const schema = [
   <section class="ed-wrap pr-hero">
     <p class="ed-eyebrow">{p.hero.eyebrow}</p>
     <h1><span class="ed-mark">{p.hero.price}</span> <em>{p.hero.rest}</em></h1>
-    <p class="pr-hero-sub">{p.hero.sub}</p>
+    <p class="pr-hero-sub">{fill(p.hero.sub)}</p>
     <div class="pr-actions">
-      <a class="ed-btn ed-btn--navy" href="#waitlist">{p.hero.primary}</a>
+      <a class="ed-btn ed-btn--navy" href={p.hero.primary_href}>{p.hero.primary}</a>
       <a class="ed-btn ed-btn--line" href={t.site.install_href}>{p.hero.secondary}</a>
     </div>
   </section>
@@ -78,18 +116,75 @@ const schema = [
         </ul>
       </article>
 
-      <ul class="pr-plans">
-        {p.editions.plans.map((plan: any) => (
-          <li class="pr-plan">
-            <span class="pr-status">{plan.status}</span>
-            <h3>{plan.name}</h3>
-            <p class="pr-plan-price">{plan.price}</p>
-            <p class="pr-for"><span>{p.editions.for_label}</span> {plan.for}</p>
-            <p class="pr-desc">{plan.desc}</p>
-            <a class="pr-plan-cta" href={plan.href}>{plan.cta}</a>
-          </li>
-        ))}
-      </ul>
+      <div class="pr-hosted">
+        <!-- Yearly or monthly: two radio buttons, so that the switch works without JavaScript (yearly when nothing is chosen) -->
+        <fieldset class="pr-billing">
+          <legend class="pr-sr">{billing.label}</legend>
+          <input type="radio" name="billing" id={'billing-yearly-' + lang} value="yearly" checked />
+          <label for={'billing-yearly-' + lang}>{billing.yearly} <span class="pr-billing-badge">{billing.yearly_badge}</span></label>
+          <input type="radio" name="billing" id={'billing-monthly-' + lang} value="monthly" />
+          <label for={'billing-monthly-' + lang}>{billing.monthly}</label>
+        </fieldset>
+
+        <ul class="pr-plans">
+          {cards.map((plan: any) => (
+            <li class:list={['pr-plan', { 'pr-plan--hosted': plan.data }]}>
+              <span class="pr-status">{fill(plan.status)}</span>
+              <h3>{plan.name}</h3>
+              {plan.data ? (
+                <div class="pr-plan-price">
+                  <p class="pr-amount is-yearly"><strong>{money(perMonthYearly(plan.data))}</strong> <span>{billing.per_month}</span></p>
+                  <p class="pr-billed is-yearly">{fill(billing.billed_yearly, { price: money(plan.data.yearly) })}</p>
+                  <p class="pr-amount is-monthly"><strong>{money(plan.data.monthly)}</strong> <span>{billing.per_month}</span></p>
+                  <p class="pr-billed is-monthly">{billing.billed_monthly}</p>
+                </div>
+              ) : (
+                <p class="pr-plan-quote">{plan.price}</p>
+              )}
+              <p class="pr-for"><span>{p.editions.for_label}</span> {plan.for}</p>
+              <p class="pr-desc">{plan.desc}</p>
+              {plan.data && (
+                <ul class="pr-limits">
+                  <li>{plural(limits.users, plan.data.users)}</li>
+                  <li>{fill(limits.executions, { n: num(plan.data.executionsPerMonth) })}</li>
+                  <li>{fill(limits.duration, { d: duration(plan.data.maxExecutionMinutes) })}</li>
+                  <li>{fill(limits.disk, { n: num(plan.data.diskGb) })}</li>
+                </ul>
+              )}
+              <a class:list={[plan.data ? 'ed-btn ed-btn--navy ed-btn--sm pr-plan-start' : 'pr-plan-cta']} href={plan.href}>{plan.cta}</a>
+            </li>
+          ))}
+        </ul>
+        <p class="pr-notes">{billing.vat} {fill(billing.trial)}</p>
+
+        <!-- Every limit of the hosted plans, side by side -->
+        <div class="pr-compare">
+          <h3>{compare.h3}</h3>
+          <div class="pr-compare-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="pr-sr">{compare.plan}</span></th>
+                  {data.plans.map((plan) => <th scope="col">{plan.name}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">{compare.rows.yearly}</th>{data.plans.map((plan) => <td>{fill(compare.per_year, { price: money(plan.yearly) })}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.monthly}</th>{data.plans.map((plan) => <td>{fill(compare.per_month, { price: money(plan.monthly) })}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.users}</th>{data.plans.map((plan) => <td>{num(plan.users)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.spaces}</th>{data.plans.map((plan) => <td>{num(plan.spaces)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.executions}</th>{data.plans.map((plan) => <td>{num(plan.executionsPerMonth)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.parallel}</th>{data.plans.map((plan) => <td>{num(plan.parallelExecutions)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.duration}</th>{data.plans.map((plan) => <td>{duration(plan.maxExecutionMinutes)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.disk}</th>{data.plans.map((plan) => <td>{fill(limits.gb, { n: num(plan.diskGb) })}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.backups}</th>{data.plans.map((plan) => <td>{fill(limits.backups, { n: num(plan.backupDays) })}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.support}</th>{data.plans.map((plan) => <td class="pr-wrap">{compare.support[plan.support as keyof typeof compare.support]}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.extras}</th>{data.plans.map((plan) => <td class="pr-wrap">{plan.extras.length ? plan.extras.map((e) => compare.extras[e as keyof typeof compare.extras]).join(', ') : compare.none}</td>)}</tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
       <p class="pr-cloud-note">{p.editions.cloud_note}</p>
     </div>
   </section>
@@ -144,8 +239,8 @@ const schema = [
       <div class="pr-faq">
         {p.faq.items.map((item: any) => (
           <details>
-            <summary>{item.q}</summary>
-            <p>{item.a} {item.link && <a href={item.href}>{item.link}</a>}</p>
+            <summary>{fill(item.q)}</summary>
+            <p>{fill(item.a)} {item.link && <a href={item.href}>{item.link}</a>}</p>
           </details>
         ))}
       </div>
@@ -208,7 +303,44 @@ const schema = [
 .pr-plans { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
 .pr-plan { display: flex; flex-direction: column; gap: 12px; background: #fff; border-radius: 24px; padding: 26px 24px; color: var(--ed-ink-2); }
 .pr-plan h3 { font-family: var(--ed-serif); font-size: 36px; line-height: 1.05; color: var(--ed-ink); }
-.pr-plan-price { font-family: var(--ed-serif); font-style: italic; font-size: 22px; line-height: 1.1; color: var(--ed-ink); padding-bottom: 12px; border-bottom: 1px solid var(--ed-line-2); }
+.pr-plan-quote { font-family: var(--ed-serif); font-style: italic; font-size: 22px; line-height: 1.1; color: var(--ed-ink); padding-bottom: 12px; border-bottom: 1px solid var(--ed-line-2); }
+
+/* the yearly / monthly switch: two radio buttons drawn as one control; yearly is checked in the page itself */
+.pr-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.pr-hosted { display: flex; flex-direction: column; margin-top: 36px; }
+.pr-billing { align-self: center; display: inline-flex; gap: 4px; margin: 0; padding: 5px; border: 1px solid var(--ed-line-2); border-radius: 999px; background: #fff; }
+.pr-billing input { position: absolute; opacity: 0; pointer-events: none; }
+.pr-billing label { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 20px; border-radius: 999px; font-size: 16px; font-weight: 700; color: var(--ed-ink-2); cursor: pointer; transition: background .15s ease, color .15s ease; }
+.pr-billing input:checked + label { background: var(--ed-navy); color: #fff; }
+.pr-billing input:focus-visible + label { outline: 2px solid var(--ed-navy); outline-offset: 2px; }
+.pr-billing-badge { padding: 3px 9px; border-radius: 999px; background: var(--ed-yellow); color: var(--ed-ink); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.pr-hosted .pr-plan-price .is-monthly { display: none; }
+.pr-hosted:has(input[value="monthly"]:checked) .pr-plan-price .is-monthly { display: flex; }
+.pr-hosted:has(input[value="monthly"]:checked) .pr-plan-price .is-yearly { display: none; }
+
+/* the price of a hosted plan: per month, large; how it is billed, under it */
+.pr-plan-price { display: flex; flex-direction: column; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid var(--ed-line-2); }
+.pr-amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; }
+.pr-amount strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(42px, 3.6vw, 52px); line-height: 1; letter-spacing: -.01em; color: var(--ed-ink); }
+.pr-amount span { font-size: 16px; font-weight: 600; color: var(--ed-ink-3); }
+.pr-billed { font-size: 14.5px; color: var(--ed-ink-3); }
+.pr-limits { display: flex; flex-direction: column; }
+.pr-limits li { position: relative; padding: 8px 0 8px 24px; border-top: 1px solid var(--ed-line); font-size: 15.5px; font-weight: 600; color: var(--ed-ink); }
+.pr-limits li::before { content: ""; position: absolute; left: 3px; top: 13px; width: 10px; height: 6px; border-left: 2px solid var(--ed-navy); border-bottom: 2px solid var(--ed-navy); transform: rotate(-45deg); }
+.pr-plan-start { margin-top: auto; align-self: stretch; }
+.pr-notes { margin-top: 18px; text-align: center; font-size: 15px; color: var(--ed-ink-3); }
+
+/* every limit side by side */
+.pr-compare { margin-top: 36px; padding: clamp(22px, 3vw, 34px); border-radius: 24px; background: #fff; }
+.pr-compare h3 { font-family: var(--ed-serif); font-size: clamp(28px, 2.8vw, 36px); line-height: 1.05; color: var(--ed-ink); margin-bottom: 16px; }
+.pr-compare-scroll { overflow-x: auto; }
+.pr-compare table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15.5px; }
+.pr-compare th, .pr-compare td { padding: 12px 14px; border-bottom: 1px solid var(--ed-line); text-align: left; vertical-align: top; }
+.pr-compare thead th { font-family: var(--ed-serif); font-weight: 400; font-size: 24px; color: var(--ed-ink); border-bottom: 2px solid var(--ed-ink); }
+.pr-compare tbody th { font-weight: 600; color: var(--ed-ink-2); width: 30%; }
+.pr-compare td { color: var(--ed-ink); white-space: nowrap; }
+.pr-compare td.pr-wrap { white-space: normal; }
+.pr-compare tbody tr:last-child th, .pr-compare tbody tr:last-child td { border-bottom: 0; }
 .pr-plan .pr-for { color: var(--ed-ink); }
 .pr-plan .pr-for span { color: var(--ed-ink-3); }
 .pr-plan-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }

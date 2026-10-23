@@ -981,14 +981,15 @@
   "pricing_page": {
     "meta": {
       "title": "Agentivity Pricing — Free Community Edition, Cloud Plans and Enterprise",
-      "description": "The Community edition is free forever on your own server. Hosted plans are coming: Personal, Pro and Business. Enterprise on request."
+      "description": "The Community edition is free forever on your own server. Hosted plans from {from} a month, with a {trial_days}-day free trial. Enterprise on request."
     },
     "hero": {
       "eyebrow": "Pricing",
       "price": "0€",
       "rest": "to start.",
-      "sub": "The Community edition is free forever, on your own server. Hosted plans are on the way, for those who would rather install nothing.",
-      "primary": "Join the waitlist",
+      "sub": "The Community edition is free forever, on your own server. Would you rather install nothing? The hosted plans start at {from} a month, with a {trial_days}-day free trial and no card.",
+      "primary": "Start a free trial",
+      "primary_href": "/start",
       "secondary": "Install Community"
     },
     "editions": {
@@ -997,6 +998,65 @@
       "h2_accent": "one product.",
       "sub": "Every edition has the Studio, agents, teams and workflows. What changes is where it runs and how many people share it.",
       "for_label": "For",
+      "billing": {
+        "label": "Billing",
+        "yearly": "Yearly",
+        "yearly_badge": "2 months free",
+        "monthly": "Monthly",
+        "per_month": "/ month",
+        "billed_yearly": "Billed yearly: {price}",
+        "billed_monthly": "Billed monthly",
+        "vat": "Prices excluding VAT: VAT is added according to your country.",
+        "trial": "{trial_days}-day free trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial)."
+      },
+      "limits": {
+        "users": [
+          "{n} user",
+          "{n} users"
+        ],
+        "spaces": [
+          "{n} space",
+          "{n} spaces"
+        ],
+        "executions": "{n} executions a month",
+        "parallel": "{n} at the same time",
+        "duration": "Executions up to {d}",
+        "disk": "{n} GB of disk",
+        "gb": "{n} GB",
+        "backups": "{n} days",
+        "minutes": "{n} min",
+        "hours": "{n} h"
+      },
+      "compare": {
+        "h3": "Compare the hosted plans",
+        "plan": "Plan",
+        "rows": {
+          "monthly": "Billed monthly",
+          "yearly": "Billed yearly",
+          "users": "Users",
+          "spaces": "Spaces",
+          "executions": "Executions per month",
+          "parallel": "Executions at the same time",
+          "duration": "Longest execution",
+          "disk": "Disk",
+          "backups": "Backups kept",
+          "support": "Support",
+          "extras": "Also"
+        },
+        "per_month": "{price} / month",
+        "per_year": "{price} / year",
+        "support": {
+          "email": "E-mail",
+          "priority": "Priority e-mail",
+          "priority_call": "Priority e-mail and a kick-off video call"
+        },
+        "extras": {
+          "groups": "Groups",
+          "audit": "Audit log",
+          "monitoring": "Monitoring hook-up (OpenTelemetry)"
+        },
+        "none": "—"
+      },
       "cloud_note": "Coming with the hosted plans: automatic scheduling. Your teams start on their own, every morning or every Monday.",
       "community": {
         "name": "Community",
@@ -1017,30 +1077,27 @@
       "plans": [
         {
           "name": "Personal",
-          "status": "Coming soon",
-          "price": "Price at launch",
+          "status": "{trial_days}-day free trial",
           "for": "one person: an independent, a shop owner, a freelancer",
           "desc": "Hosted for you. Nothing to install: sign in and build your first team.",
-          "cta": "Join the waitlist",
-          "href": "#waitlist"
+          "cta": "Start a free trial",
+          "href": "/start?plan=personal"
         },
         {
           "name": "Pro",
-          "status": "Coming soon",
-          "price": "Price at launch",
+          "status": "{trial_days}-day free trial",
           "for": "a professional who relies on it every day",
-          "desc": "More agents, longer runs and priority execution.",
-          "cta": "Join the waitlist",
-          "href": "#waitlist"
+          "desc": "More agents, longer executions and priority execution.",
+          "cta": "Start a free trial",
+          "href": "/start?plan=pro"
         },
         {
           "name": "Business",
-          "status": "Coming soon",
-          "price": "Price at launch",
+          "status": "{trial_days}-day free trial",
           "for": "a team or a department",
           "desc": "Shared workspaces: one person builds, everyone benefits.",
-          "cta": "Join the waitlist",
-          "href": "#waitlist"
+          "cta": "Start a free trial",
+          "href": "/start?plan=business"
         },
         {
           "name": "Enterprise",
@@ -1060,7 +1117,7 @@
       "items": [
         {
           "title": "The software",
-          "body": "Community costs 0€, with no time limit. Prices of the hosted plans will be announced when they open."
+          "body": "Community costs 0€, with no time limit. The hosted plans have a price per month, excluding VAT, with two months free when you pay for a year."
         },
         {
           "title": "The AI models",
@@ -1101,11 +1158,27 @@
         },
         {
           "q": "I am not technical. Which edition is for me?",
-          "a": "A hosted plan: there is nothing to install. They are not open yet, so join the waitlist and you will be told first."
+          "a": "A hosted plan: there is nothing to install. Try one free for {trial_days} days, no card needed."
         },
         {
-          "q": "When do the hosted plans open, and at what price?",
-          "a": "Dates and prices are not announced yet. People on the waitlist will be the first to know."
+          "q": "What do the hosted plans cost?",
+          "a": "From {from} a month, billed yearly, excluding VAT. Each plan and its limits are shown above."
+        },
+        {
+          "q": "Do I need a card for the trial?",
+          "a": "No. The trial lasts {trial_days} days, with the features of the plan you chose. Executions are capped at {trial_executions} during the trial."
+        },
+        {
+          "q": "What happens when I buy?",
+          "a": "Buying ends the trial: your plan starts and the first payment is taken at once."
+        },
+        {
+          "q": "Can I change plan or cancel?",
+          "a": "Yes, at any time. A change of plan is prorated. If you cancel, your plan runs until the end of the period you paid for."
+        },
+        {
+          "q": "Are the prices with or without VAT?",
+          "a": "Without VAT. VAT is added according to your country."
         },
         {
           "q": "Do I pay for the AI models separately?",
