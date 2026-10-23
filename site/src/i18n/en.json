@@ -2775,7 +2775,7 @@
     },
     "errors": {
       "slug_invalid": "Use 3 to 30 lowercase letters, digits and hyphens, without a hyphen at either end.",
-      "slug_reserved": "This name is kept for Agentivity. Choose another one.",
+      "slug_reserved": "This name is already taken. Choose another one.",
       "slug_taken": "This name is already taken. Choose another one.",
       "captcha_failed": "We could not confirm that you are human. Try again.",
       "email_invalid": "Check your email address.",

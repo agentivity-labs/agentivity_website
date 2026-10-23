@@ -2787,7 +2787,7 @@
     },
     "errors": {
       "slug_invalid": "Utilisez 3 à 30 lettres minuscules, chiffres et tirets, sans tiret au début ni à la fin.",
-      "slug_reserved": "Ce nom est réservé à Agentivity. Choisissez-en un autre.",
+      "slug_reserved": "Ce nom est déjà pris. Choisissez-en un autre.",
       "slug_taken": "Ce nom est déjà pris. Choisissez-en un autre.",
       "captcha_failed": "Nous n'avons pas pu vérifier que vous êtes humain. Réessayez.",
       "email_invalid": "Vérifiez votre adresse e-mail.",
