@@ -2770,7 +2770,8 @@
       "privacy_link": "privacy policy",
       "submit": "Start my trial",
       "submitting": "Starting…",
-      "fine": "14 days with every feature of the plan and up to 200 runs. No card, nothing to cancel."
+      "fine": "14 days with every feature of the plan and up to 200 runs. No card, nothing to cancel.",
+      "find": "Already have a workspace? Find it"
     },
     "errors": {
       "slug_invalid": "Use 3 to 30 lowercase letters, digits and hyphens, without a hyphen at either end.",
@@ -2811,5 +2812,29 @@
       "body": "Join the waitlist and we will write when they open.",
       "link": "Go to the waitlist"
     }
+  },
+  "find_page": {
+    "meta": {
+      "title": "Find my workspace | Agentivity",
+      "description": "Get the address of your Agentivity workspace, or its link again, by e-mail."
+    },
+    "eyebrow": "Your workspace",
+    "h1": "Find my",
+    "h1_accent": "workspace.",
+    "sub": "Give the e-mail you signed up with. We send the address of your workspace, and the link to open it again if you have not chosen your password yet.",
+    "email_label": "Your email",
+    "email_placeholder": "you@company.com",
+    "submit": "Send it to me",
+    "submitting": "Sending…",
+    "done_title": "Look in your inbox.",
+    "done_body": "If a workspace exists for {email}, an e-mail is on its way with its address. Nothing after a few minutes? Look in your spam.",
+    "errors": {
+      "email_invalid": "Check your email address.",
+      "captcha_failed": "We could not confirm that you are human. Try again.",
+      "captcha_missing": "Wait for the check under the form to finish, then try again.",
+      "rate": "Too many tries. Wait a few minutes, then try again.",
+      "generic": "Something went wrong on our side. Try again in a moment."
+    },
+    "start": "No workspace yet? Start a 14-day trial"
   }
 }

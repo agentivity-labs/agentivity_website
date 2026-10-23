@@ -2782,7 +2782,8 @@
       "privacy_link": "politique de confidentialité",
       "submit": "Démarrer mon essai",
       "submitting": "Démarrage…",
-      "fine": "14 jours avec toutes les fonctionnalités du plan et jusqu'à 200 exécutions. Sans carte, rien à résilier."
+      "fine": "14 jours avec toutes les fonctionnalités du plan et jusqu'à 200 exécutions. Sans carte, rien à résilier.",
+      "find": "Vous avez déjà un espace ? Retrouvez-le"
     },
     "errors": {
       "slug_invalid": "Utilisez 3 à 30 lettres minuscules, chiffres et tirets, sans tiret au début ni à la fin.",
@@ -2823,5 +2824,29 @@
       "body": "Inscrivez-vous sur la liste d'attente : nous vous écrirons à l'ouverture.",
       "link": "Aller à la liste d'attente"
     }
+  },
+  "find_page": {
+    "meta": {
+      "title": "Retrouver mon espace | Agentivity",
+      "description": "Recevez l'adresse de votre espace Agentivity, ou de nouveau son lien, par e-mail."
+    },
+    "eyebrow": "Votre espace",
+    "h1": "Retrouver mon",
+    "h1_accent": "espace.",
+    "sub": "Indiquez l'e-mail utilisé à l'inscription. Nous envoyons l'adresse de votre espace, et le lien pour l'ouvrir si vous n'avez pas encore choisi votre mot de passe.",
+    "email_label": "Votre e-mail",
+    "email_placeholder": "vous@entreprise.com",
+    "submit": "Me l'envoyer",
+    "submitting": "Envoi…",
+    "done_title": "Regardez votre boîte de réception.",
+    "done_body": "Si un espace existe pour {email}, un e-mail est en route avec son adresse. Rien après quelques minutes ? Regardez dans les indésirables.",
+    "errors": {
+      "email_invalid": "Vérifiez votre adresse e-mail.",
+      "captcha_failed": "Nous n'avons pas pu vérifier que vous êtes humain. Réessayez.",
+      "captcha_missing": "Attendez la fin de la vérification sous le formulaire, puis réessayez.",
+      "rate": "Trop d'essais. Attendez quelques minutes, puis réessayez.",
+      "generic": "Un problème est survenu de notre côté. Réessayez dans un instant."
+    },
+    "start": "Pas encore d'espace ? Démarrez un essai de 14 jours"
   }
 }

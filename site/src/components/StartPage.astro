@@ -85,6 +85,7 @@ const config = {
             <button type="submit" class="ed-btn ed-btn--navy st-submit">{s.form.submit}</button>
             <p class="st-error" role="alert" hidden></p>
             <p class="st-fine">{s.form.fine}</p>
+            <a class="st-find" href={lang === 'fr' ? '/fr/find/' : '/find/'}>{s.form.find}</a>
           </form>
 
           <div class="st-progress" hidden>
@@ -144,7 +145,7 @@ const config = {
     const drawTurnstile = () => {
       const w = window as any;
       if (!w.turnstile) return void setTimeout(drawTurnstile, 200);
-      widget = w.turnstile.render(turnstileBox, { sitekey: turnstileBox.dataset.sitekey, language: turnstileBox.dataset.language, theme: 'light' });
+      widget = w.turnstile.render(turnstileBox, { sitekey: turnstileBox.dataset.sitekey, language: turnstileBox.dataset.language, theme: 'light', size: turnstileBox.clientWidth < 300 ? 'compact' : 'flexible' });
     };
     drawTurnstile();
     const turnstileToken = (): string => ((window as any).turnstile?.getResponse(widget) as string | undefined) ?? '';
@@ -308,6 +309,7 @@ const config = {
 .st-submit:disabled { opacity: .6; cursor: progress; }
 .st-error { margin: 0; font-weight: 600; color: #8C1D18; }
 .st-fine { margin: 0; font-size: 14px; color: var(--ed-ink-2); }
+.st-find { align-self: flex-start; font-size: 15px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
 
 .st-progress { display: flex; flex-direction: column; gap: 18px; }
 .st-progress-title { font-family: var(--ed-serif); font-size: clamp(30px, 4vw, 44px); line-height: 1.05; overflow-wrap: anywhere; }

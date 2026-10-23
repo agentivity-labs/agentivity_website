@@ -1,0 +1,143 @@
+---
+// "Find my workspace", shared by /find and /fr/find. Texts come from the "find_page" block of the translation files.
+// The form calls accounts_service from the browser (PUBLIC_ACCOUNTS_URL), protected by Cloudflare Turnstile
+// (PUBLIC_TURNSTILE_SITE_KEY); the answer is the same whether the e-mail has workspaces or not, which leave by e-mail.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const f = t.find_page;
+const start = lang === 'fr' ? '/fr/start/' : '/start/';
+const pricing = lang === 'fr' ? '/fr/pricing/#waitlist' : '/pricing/#waitlist';
+
+const accountsUrl = (import.meta.env.PUBLIC_ACCOUNTS_URL || 'https://agentivity-accounts-service.fly.dev').replace(/\/$/, '');
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || (import.meta.env.DEV ? '1x00000000000000000000AA' : '');
+const config = { api: accountsUrl, lang, messages: { ...f, ...f.errors } };
+---
+<Base title={f.meta.title} description={f.meta.description} lang={lang} look="editorial" noindex>
+
+<SiteHeader lang={lang} waitlistHref={pricing} />
+
+<main class="ed-page">
+  <section class="ed-wrap fd-hero">
+    <p class="ed-eyebrow">{f.eyebrow}</p>
+    <h1>{f.h1} <em>{f.h1_accent}</em></h1>
+    <p class="fd-sub">{f.sub}</p>
+  </section>
+
+  <section class="ed-band--mist">
+    <div class="ed-wrap fd-body">
+      <div class="fd-card" data-find data-config={JSON.stringify(config)}>
+        <form class="fd-form" novalidate>
+          <label class="fd-field">
+            <span class="fd-label">{f.email_label}</span>
+            <input type="email" name="email" placeholder={f.email_placeholder} maxlength="254" autocomplete="email" required />
+          </label>
+          {siteKey && <div class="fd-turnstile" data-turnstile data-sitekey={siteKey} data-language={lang}></div>}
+          <button type="submit" class="ed-btn ed-btn--navy fd-submit">{f.submit}</button>
+          <p class="fd-error" role="alert" hidden></p>
+          <a class="fd-start" href={start}>{f.start}</a>
+        </form>
+        <div class="fd-done" aria-live="polite" hidden>
+          <h2>{f.done_title}</h2>
+          <p data-done-body></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>}
+
+<script>
+  type Config = { api: string; lang: string; messages: Record<string, string> };
+
+  document.querySelectorAll<HTMLElement>('[data-find]').forEach((root) => {
+    const config: Config = JSON.parse(root.dataset.config ?? '{}');
+    const m = config.messages;
+    const form = root.querySelector<HTMLFormElement>('form')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const error = form.querySelector<HTMLElement>('.fd-error')!;
+    const done = root.querySelector<HTMLElement>('.fd-done')!;
+    const box = form.querySelector<HTMLElement>('[data-turnstile]');
+
+    let widget: string | undefined;
+    const draw = () => {
+      const w = window as any;
+      if (!box) return;
+      if (!w.turnstile) return void setTimeout(draw, 200);
+      widget = w.turnstile.render(box, { sitekey: box.dataset.sitekey, language: box.dataset.language, theme: 'light', size: box.clientWidth < 300 ? 'compact' : 'flexible' });
+    };
+    draw();
+
+    const showError = (text: string) => {
+      error.textContent = text;
+      error.hidden = false;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (button.disabled) return;
+      error.hidden = true;
+      const input = form.querySelector<HTMLInputElement>('input[name="email"]')!;
+      const email = input.value.trim();
+      if (!input.checkValidity() || !email) return showError(m.email_invalid);
+      const token = ((window as any).turnstile?.getResponse(widget) as string | undefined) ?? '';
+      if (!token) return showError(m.captcha_missing);
+
+      button.disabled = true;
+      button.textContent = m.submitting;
+      try {
+        const answer = await fetch(`${config.api}/api/v1/signup/find`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, language: config.lang, turnstileToken: token }),
+        });
+        if (!answer.ok) {
+          (window as any).turnstile?.reset(widget);
+          const said = await answer.json().catch(() => ({}));
+          return showError(answer.status === 429 ? m.rate : m[said.error] || m.generic);
+        }
+        form.hidden = true;
+        done.querySelector('[data-done-body]')!.textContent = m.done_body.replace('{email}', email);
+        done.hidden = false;
+      } catch {
+        (window as any).turnstile?.reset(widget);
+        showError(m.generic);
+      } finally {
+        button.disabled = false;
+        button.textContent = m.submit;
+      }
+    });
+  });
+</script>
+
+<style>
+.fd-hero { display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; padding-block: clamp(48px, 7vw, 88px) clamp(40px, 5vw, 64px); }
+.fd-hero h1 { font-family: var(--ed-serif); font-size: clamp(48px, 7vw, 96px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.fd-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
+.fd-body { padding-block: clamp(40px, 6vw, 80px); display: flex; justify-content: center; }
+.fd-card { width: 100%; max-width: 560px; background: #fff; border-radius: 28px; padding: clamp(24px, 4vw, 44px); color: var(--ed-ink); }
+.fd-form { display: flex; flex-direction: column; gap: 22px; }
+.fd-form[hidden], .fd-done[hidden], .fd-error[hidden] { display: none; }
+.fd-field { display: flex; flex-direction: column; gap: 8px; }
+.fd-label { font-size: 16px; font-weight: 700; }
+.fd-field input { min-height: 52px; padding: 0 16px; border: 1.5px solid #101A2E; border-radius: 14px; background: #fff; font: inherit; font-size: 17px; color: #101A2E; }
+.fd-field input:focus { outline: none; box-shadow: 0 0 0 3px rgba(21,40,68,.25); }
+.fd-turnstile { min-height: 65px; }
+.fd-submit { align-self: flex-start; }
+.fd-submit:disabled { opacity: .6; cursor: progress; }
+.fd-error { margin: 0; font-weight: 600; color: #8C1D18; }
+.fd-start { font-size: 15px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; align-self: flex-start; }
+.fd-done { display: flex; flex-direction: column; gap: 10px; }
+.fd-done h2 { font-family: var(--ed-serif); font-size: 32px; line-height: 1.1; }
+</style>
