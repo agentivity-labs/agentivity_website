@@ -2811,7 +2811,8 @@
         "Création de votre stockage",
         "Démarrage de votre machine",
         "Sécurisation de la connexion",
-        "Publication de votre adresse"
+        "Publication de votre adresse",
+      "Premier démarrage de votre espace"
       ],
       "ready_title": "Votre espace est prêt.",
       "ready_body": "Nous avons envoyé le lien à {email}. Ouvrez-le pour choisir votre mot de passe et devenir le propriétaire. Il ne sert qu'une fois et vaut 7 jours.",

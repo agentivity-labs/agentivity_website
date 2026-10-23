@@ -2799,7 +2799,8 @@
         "Creating your storage",
         "Starting your machine",
         "Securing the connection",
-        "Publishing your address"
+        "Publishing your address",
+      "Starting your workspace for the first time"
       ],
       "ready_title": "Your workspace is ready.",
       "ready_body": "We sent the link to {email}. Open it to choose your password and become the owner. It works once and for 7 days.",
