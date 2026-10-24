@@ -87,7 +87,7 @@
       ]
     },
     "github": "Star on GitHub",
-    "cta": "Join the waitlist"
+    "cta": "Start free"
   },
   "waitlist": {
     "email_label": "Email address",
@@ -177,7 +177,7 @@
       "h1": "Your next hire is",
       "h1_accent": "an AI team.",
       "sub": "Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.",
-      "cta_waitlist": "Join the waitlist",
+      "cta_start": "Start free",
       "film_alt": "A short film: from one helper to a team, then a team in every department and an AI company, with the hours each step gives back. It shows the Assistant building a team, a workflow, and an app where a traveller is asked to choose a hotel.",
       "visual_label": "A marketing team at work on the Agentivity canvas: a manager and five specialists",
       "teams": [
@@ -406,7 +406,7 @@
       "eyebrow": "Coming soon",
       "h2": "Ready-made teams.",
       "h2_accent": "Start in minutes.",
-      "link": "Tell me when they are out",
+      "link": "Start free",
       "soon": "Coming soon",
       "cards": [
         {
@@ -445,22 +445,22 @@
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hosted for you. No setup: sign in and build your first team.",
-          "cta": "Join the waitlist",
-          "href": "#cta"
+          "cta": "Start free",
+          "href": "/start?plan=personal"
         },
         {
           "name": "Pro",
           "badge": "Cloud",
           "desc": "More agents, longer runs and priority execution.",
-          "cta": "Join the waitlist",
-          "href": "#cta"
+          "cta": "Start free",
+          "href": "/start?plan=pro"
         },
         {
           "name": "Business",
           "badge": "Teams",
           "desc": "Shared workspaces. Everyone builds, everyone benefits.",
-          "cta": "Join the waitlist",
-          "href": "#cta"
+          "cta": "Start free",
+          "href": "/start?plan=business"
         },
         {
           "name": "Enterprise",
@@ -476,7 +476,7 @@
     "cta": {
       "h2": "Your team is ready",
       "h2_accent": "to work.",
-      "sub": "Start free, or join the waitlist and be first on the cloud.",
+      "sub": "Start free in the cloud, or install the Community edition on your own server.",
       "fine": "No spam. First access when the cloud launches.",
       "github_line": "Self-hosting? The Community edition is free."
     }
@@ -601,10 +601,10 @@
         "github": "Star on GitHub"
       },
       "cloud": {
-        "name": "Wait for the cloud",
-        "badge": "Coming soon",
+        "name": "Use the cloud",
+        "badge": "14 days free",
         "body": "Nothing to install: sign in and build your first team.",
-        "link": "Join the waitlist"
+        "link": "Start free"
       }
     },
     "faq": {
@@ -637,7 +637,7 @@
     "cta": {
       "h2": "Ready to build",
       "h2_accent": "your first team?",
-      "sub": "Join the waitlist and be first on the cloud.",
+      "sub": "Nothing to install: start free in the cloud.",
       "fine": "No spam. First access when the cloud launches."
     },
     "assistant": {
@@ -689,7 +689,7 @@
       "github": "Star on GitHub",
       "hub": "See the image on Docker Hub",
       "not_technical": "Not technical? The cloud version needs no installation.",
-      "waitlist": "Join the waitlist"
+      "start": "Start free"
     },
     "install": {
       "eyebrow": "Install",
@@ -1206,8 +1206,8 @@
     },
     "cta": {
       "h2": "Start free,",
-      "h2_accent": "or be first on the cloud.",
-      "sub": "Leave your email and we will write when the hosted plans open.",
+      "h2_accent": "in the cloud or on your server.",
+      "sub": "Try a hosted plan free for 14 days, or install the Community edition today.",
       "fine": "No spam. One message when it matters.",
       "github_line": "Comfortable with Docker? Community is ready today."
     }
@@ -1348,7 +1348,7 @@
           "body": "A personal app: training and meals planned around your goals, and adjusted week after week."
         }
       ],
-      "link": "Tell me when they are out"
+      "link": "Start free"
     },
     "cases": [
       {
@@ -1637,11 +1637,11 @@
     "cta": {
       "h2": "A case in mind?",
       "h2_accent": "Build it.",
-      "sub": "See how a team is put together in the Studio, or be told when the cloud opens.",
+      "sub": "See how a team is put together in the Studio, or start free in the cloud.",
       "primary": "See how it works",
       "primary_href": "/how-it-works",
-      "secondary": "Join the waitlist",
-      "secondary_href": "/pricing#waitlist",
+      "secondary": "Start free",
+      "secondary_href": "/start",
       "services": "A larger project in your organisation?",
       "services_link": "About our services",
       "services_href": "/services"
@@ -1833,7 +1833,7 @@
       "primary": "Install the Community edition",
       "secondary": "See the use cases",
       "cloud": "Rather not install anything?",
-      "cloud_link": "Join the waitlist for the cloud"
+      "cloud_link": "Start free in the cloud"
     }
   },
   "teams_page": {
@@ -1847,7 +1847,7 @@
       "h1": "A chatbot answers.",
       "h1_accent": "A team does the work.",
       "sub": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. They share the work, and come back to you for every decision that is yours.",
-      "cta": "Join the waitlist",
+      "cta": "Start free",
       "cta_secondary": "See ready-made teams",
       "caption": "The Trip Manager Team at work in the Studio. Recorded from the product, played faster.",
       "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller approves each step in the chat"
@@ -2014,21 +2014,21 @@
     "cta": {
       "h2": "Your next hire",
       "h2_accent": "is an AI team.",
-      "sub": "Join the waitlist for the cloud edition.",
+      "sub": "Start free in the cloud: nothing to install.",
       "fine": "Hosting it yourself? The Community edition is free.",
       "fine_link": "Install Community"
     }
   },
   "product_pages": {
     "crumb": "Product",
-    "waitlist": "Join the waitlist",
+    "start": "Start free",
     "faq_eyebrow": "Questions",
     "faq_h2": "What people",
     "faq_h2_accent": "ask us.",
     "cta": {
       "h2": "Your next hire",
       "h2_accent": "is an AI team.",
-      "sub": "Join the waitlist for the cloud edition.",
+      "sub": "Start free in the cloud: nothing to install.",
       "fine": "Hosting it yourself? The Community edition is free.",
       "fine_link": "Install Community"
     },
@@ -2863,8 +2863,8 @@
       "email_invalid": "Check your email address.",
       "plan_invalid": "Choose a plan.",
       "email_has_trial": "A trial is already running for this email. The link to open it is in your inbox.",
-      "trials_full": "Trials are full for now. Join the waitlist on the pricing page and we will write as soon as a place opens.",
-      "signups_closed": "Trials are not open yet. Join the waitlist on the pricing page to be told first.",
+      "trials_full": "Too many trials are starting right now. Try again in a few hours, or write to hello@agentivity.io.",
+      "signups_closed": "Sign-ups are paused for a moment. Try again later, or write to hello@agentivity.io.",
       "rate": "Too many tries. Wait a few minutes, then try again.",
       "generic": "Something went wrong on our side. Try again in a moment.",
       "consent": "Accept the terms of use to continue.",
@@ -2891,9 +2891,9 @@
       "delayed_body": "We are on it. The link will reach {email} as soon as your workspace is ready."
     },
     "closed": {
-      "title": "Trials open soon.",
-      "body": "Join the waitlist and we will write when they open.",
-      "link": "Go to the waitlist"
+      "title": "Sign-ups are paused for a moment.",
+      "body": "Try again later, or write to hello@agentivity.io.",
+      "link": "See the plans"
     }
   },
   "find_page": {
@@ -2987,5 +2987,9 @@
       "primary_href": "/pricing",
       "secondary": "Install Community"
     }
+  },
+  "start_cta": {
+    "label": "Start free",
+    "note": "14 days free · no credit card"
   }
 }

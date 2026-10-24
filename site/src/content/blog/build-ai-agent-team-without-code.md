@@ -24,7 +24,7 @@ This guide follows those six steps in the Agentivity Studio, with one example fr
 
 ## What you need before you start
 
-- **Agentivity.** The Community edition is free and runs on your own machine or server. [Installing it](/community) takes one command, on a machine that runs Docker. If that is not for you, hosted plans are on the way: [join the waitlist](/pricing#waitlist).
+- **Agentivity.** The Community edition is free and runs on your own machine or server. [Installing it](/community) takes one command, on a machine that runs Docker. If that is not for you, the hosted plans start with a 14-day free trial: [start free](/start).
 - **An account with an AI provider.** Agentivity connects to OpenAI, Anthropic, Gemini, DeepSeek, xAI and AWS Bedrock. You add your key once, in the Studio.
 - **A job you know well.** This matters more than the two points above.
 

@@ -6,9 +6,9 @@ import GitHubIcon from './GitHubIcon.astro';
 
 interface Props {
   lang: Lang;
-  /** Where the waitlist button goes. Defaults to the form at the bottom of the home page. */
-  waitlistHref?: string;
-  /** Replaces the label of that button, for a page whose main action is not the waitlist. */
+  /** Where the main button goes. Defaults to the sign-up page (the free trial). */
+  ctaHref?: string;
+  /** Replaces the label of that button, for a page whose main action is not the free trial. */
   ctaLabel?: string;
   /** Where the language switch goes, for a page whose two versions are not at / and /fr/ (the documentation). */
   hrefEn?: string;
@@ -16,10 +16,10 @@ interface Props {
   /** A landing page: the logo, GitHub and the button only, so that the page keeps the visitor on its own action. */
   minimal?: boolean;
 }
-const { lang, waitlistHref, ctaLabel, hrefEn = '/', hrefFr = '/fr/', minimal = false } = Astro.props;
+const { lang, ctaHref, ctaLabel, hrefEn = '/', hrefFr = '/fr/', minimal = false } = Astro.props;
 const t = useTranslations(lang);
 const home = lang === 'fr' ? '/fr/' : '/';
-const cta = waitlistHref ?? home + '#cta';
+const cta = ctaHref ?? (lang === 'fr' ? '/fr/start' : '/start');
 const ctaText = ctaLabel ?? t.nav.cta;
 const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
@@ -265,7 +265,7 @@ const icons: Record<string, string> = {
 @media (min-width: 1261px) {
   .sh-menu { display: none !important; }
 }
-/* On a phone the waitlist button moves into the menu: the French label does not fit beside the logo. */
+/* On a phone the start button moves into the menu: the French label does not fit beside the logo. */
 @media (max-width: 560px) {
   .sh-inner { min-height: 68px; }
   .sh-brand img { height: 26px; }

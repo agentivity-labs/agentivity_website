@@ -24,7 +24,7 @@ Ce guide suit ces six étapes dans le Studio d'Agentivity, avec un seul exemple 
 
 ## Ce dont vous avez besoin avant de commencer
 
-- **Agentivity.** L'édition Community est gratuite et tourne sur votre propre machine ou serveur. [L'installer](/fr/community) tient en une commande, sur une machine qui fait tourner Docker. Si ce n'est pas pour vous, des offres hébergées sont en préparation : [inscrivez-vous sur la liste d'attente](/fr/pricing#waitlist).
+- **Agentivity.** L'édition Community est gratuite et tourne sur votre propre machine ou serveur. [L'installer](/fr/community) tient en une commande, sur une machine qui fait tourner Docker. Si ce n'est pas pour vous, les offres hébergées commencent par un essai gratuit de 14 jours : [commencer gratuitement](/fr/start).
 - **Un compte chez un fournisseur d'IA.** Agentivity se connecte à OpenAI, Anthropic, Gemini, DeepSeek, xAI et AWS Bedrock. Vous ajoutez votre clé une seule fois, dans le Studio.
 - **Un travail que vous connaissez bien.** C'est plus important que les deux points ci-dessus.
 

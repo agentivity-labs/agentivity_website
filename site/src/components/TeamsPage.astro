@@ -1,12 +1,12 @@
 ---
 // The Teams page, shared by /teams and /fr/teams. Texts come from the "teams_page" block of the translation files.
 // The page shows a team at work, how to build one, the five ways of working, what stays in the user's hands,
-// how teams and workflows fit together, ready-made teams, questions, then the waitlist.
+// how teams and workflows fit together, ready-made teams, questions, then the free-trial call.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
-import WaitlistForm from './WaitlistForm.astro';
+import StartFree from './StartFree.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -42,7 +42,7 @@ const schema = {
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} ogImage={`/og/teams-${lang}.png`} look="editorial">
 
-<SiteHeader lang={lang} waitlistHref="#cta" />
+<SiteHeader lang={lang} />
 
 <main class="ed-page">
 
@@ -52,7 +52,7 @@ const schema = {
     <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
     <p class="tm-hero-sub">{p.hero.sub}</p>
     <div class="tm-actions">
-      <a class="ed-btn ed-btn--navy" href="#cta">{p.hero.cta}</a>
+      <a class="ed-btn ed-btn--navy" href={prefix + '/start'}>{p.hero.cta}</a>
       <a class="ed-btn ed-btn--line" href="#ready">{p.hero.cta_secondary}</a>
     </div>
     <figure class="ed-shot tm-hero-shot">
@@ -214,9 +214,7 @@ const schema = {
     <div class="ed-wrap ed-final">
       <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{p.cta.sub}</p>
-      <div class="ed-final-form">
-        <WaitlistForm lang={lang} tone="light" />
-      </div>
+      <StartFree lang={lang} />
       <p class="ed-final-fine">{p.cta.fine} <a class="tm-fine-link" href={t.site.install_href}>{p.cta.fine_link}</a></p>
     </div>
   </section>

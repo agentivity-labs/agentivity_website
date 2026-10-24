@@ -27,7 +27,7 @@ const schema = {
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} ogImage={`/og/assistant-${lang}.png`} look="editorial">
 
-<SiteHeader lang={lang} waitlistHref="#cta" />
+<SiteHeader lang={lang} />
 
 <main class="ed-page">
 
@@ -174,7 +174,7 @@ const schema = {
         <a class="ed-btn ed-btn--navy" href={t.site.install_href}>{p.cta.primary}</a>
         <a class="ed-btn ed-btn--line" href={prefix + '/use-cases'}>{p.cta.secondary}</a>
       </div>
-      <p class="ed-final-fine">{p.cta.cloud} <a class="as-fine-link" href={prefix + '/how-it-works#cta'}>{p.cta.cloud_link}</a></p>
+      <p class="ed-final-fine">{p.cta.cloud} <a class="as-fine-link" href={prefix + '/start'}>{p.cta.cloud_link}</a></p>
     </div>
   </section>
 

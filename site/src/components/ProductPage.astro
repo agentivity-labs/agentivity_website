@@ -1,12 +1,12 @@
 ---
 // A page of the Product menu (Agents, Workflows, Prompt Studio, Knowledge & Data, VibeApps), shared by the English and French routes.
 // Its texts, links and media come from "product_pages.<page>" in the translation files. The page is a hero, then a list of
-// blocks drawn in order, then questions and the waitlist. The Teams page has its own component, for its five ways of working.
+// blocks drawn in order, then questions and the free-trial call. The Teams page has its own component, for its five ways of working.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
-import WaitlistForm from './WaitlistForm.astro';
+import StartFree from './StartFree.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -41,7 +41,7 @@ const schema = {
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} ogImage={ogImage} look="editorial">
 
-<SiteHeader lang={lang} waitlistHref="#cta" />
+<SiteHeader lang={lang} />
 
 <main class="ed-page">
 
@@ -51,7 +51,7 @@ const schema = {
     <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
     <p class="pp-hero-sub">{p.hero.sub}</p>
     <div class="pp-actions">
-      <a class="ed-btn ed-btn--navy" href="#cta">{all.waitlist}</a>
+      <a class="ed-btn ed-btn--navy" href={prefix + '/start'}>{all.start}</a>
       <a class="ed-btn ed-btn--line" href={p.hero.secondary.href}>{p.hero.secondary.label}</a>
     </div>
     <figure class="ed-shot pp-hero-shot" style={p.hero.media.kind === 'image' ? `max-width: ${p.hero.media.width}px` : undefined}>
@@ -193,9 +193,7 @@ const schema = {
     <div class="ed-wrap ed-final">
       <h2>{all.cta.h2} <em>{all.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{all.cta.sub}</p>
-      <div class="ed-final-form">
-        <WaitlistForm lang={lang} tone="light" />
-      </div>
+      <StartFree lang={lang} />
       <p class="ed-final-fine">{all.cta.fine} <a class="pp-fine-link" href={t.site.install_href}>{all.cta.fine_link}</a></p>
     </div>
   </section>

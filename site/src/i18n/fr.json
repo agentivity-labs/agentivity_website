@@ -87,7 +87,7 @@
       ]
     },
     "github": "Star on GitHub",
-    "cta": "Rejoindre la liste d'attente"
+    "cta": "Commencer gratuitement"
   },
   "waitlist": {
     "email_label": "Adresse e-mail",
@@ -188,7 +188,7 @@
       "h1": "Votre prochaine recrue,",
       "h1_accent": "c'est une équipe IA.",
       "sub": "Composez des agents qui collaborent, délèguent et livrent, avec la structure d'autorité d'une vraie équipe. Vous restez aux commandes. Votre équipe IA fait le travail.",
-      "cta_waitlist": "Rejoindre la liste d'attente",
+      "cta_start": "Commencer gratuitement",
       "film_alt": "Un court film : d'un assistant à une équipe, puis une équipe par département et une entreprise agentique, avec les heures rendues à chaque étape. On y voit l'Assistant construire une équipe, un workflow, et une application où un voyageur doit choisir un hôtel.",
       "visual_label": "Une équipe marketing au travail sur le canevas Agentivity : un manager et cinq spécialistes",
       "teams": [
@@ -417,7 +417,7 @@
       "eyebrow": "Bientôt",
       "h2": "Des équipes prêtes à l'emploi.",
       "h2_accent": "Démarrez en quelques minutes.",
-      "link": "Me prévenir à la sortie",
+      "link": "Commencer gratuitement",
       "soon": "Bientôt",
       "cards": [
         {
@@ -456,22 +456,22 @@
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hébergé pour vous. Aucune installation : connectez-vous et créez votre première équipe.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#cta"
+          "cta": "Commencer gratuitement",
+          "href": "/fr/start?plan=personal"
         },
         {
           "name": "Pro",
           "badge": "Cloud",
           "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#cta"
+          "cta": "Commencer gratuitement",
+          "href": "/fr/start?plan=pro"
         },
         {
           "name": "Business",
           "badge": "Équipes",
           "desc": "Espaces de travail partagés. Tout le monde construit, tout le monde en profite.",
-          "cta": "Rejoindre la liste d'attente",
-          "href": "#cta"
+          "cta": "Commencer gratuitement",
+          "href": "/fr/start?plan=business"
         },
         {
           "name": "Enterprise",
@@ -487,7 +487,7 @@
     "cta": {
       "h2": "Votre équipe est prête",
       "h2_accent": "à travailler.",
-      "sub": "Commencez gratuitement, ou rejoignez la liste d'attente pour être parmi les premiers sur le cloud.",
+      "sub": "Commencez gratuitement dans le cloud, ou installez l'édition Community sur votre propre serveur.",
       "fine": "Pas de spam. Premier accès à l'ouverture du cloud.",
       "github_line": "Vous hébergez vous-même ? L'édition Community est gratuite."
     }
@@ -612,10 +612,10 @@
         "github": "Star on GitHub"
       },
       "cloud": {
-        "name": "Attendre le cloud",
-        "badge": "Bientôt",
+        "name": "Utiliser le cloud",
+        "badge": "14 jours gratuits",
         "body": "Rien à installer : connectez-vous et créez votre première équipe.",
-        "link": "Rejoindre la liste d'attente"
+        "link": "Commencer gratuitement"
       }
     },
     "faq": {
@@ -648,7 +648,7 @@
     "cta": {
       "h2": "Prêt à construire",
       "h2_accent": "votre première équipe ?",
-      "sub": "Rejoignez la liste d'attente pour être parmi les premiers sur le cloud.",
+      "sub": "Rien à installer : commencez gratuitement dans le cloud.",
       "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
     },
     "assistant": {
@@ -700,7 +700,7 @@
       "github": "Star on GitHub",
       "hub": "Voir l'image sur Docker Hub",
       "not_technical": "Pas technicien ? La version cloud ne demande aucune installation.",
-      "waitlist": "Rejoindre la liste d'attente"
+      "start": "Commencer gratuitement"
     },
     "install": {
       "eyebrow": "Installation",
@@ -1217,8 +1217,8 @@
     },
     "cta": {
       "h2": "Commencez gratuitement,",
-      "h2_accent": "ou soyez les premiers sur le cloud.",
-      "sub": "Laissez votre e-mail, nous vous écrirons à l'ouverture des offres hébergées.",
+      "h2_accent": "dans le cloud ou sur votre serveur.",
+      "sub": "Essayez une offre hébergée gratuitement pendant 14 jours, ou installez l'édition Community dès aujourd'hui.",
       "fine": "Pas de spam. Un message quand cela compte.",
       "github_line": "À l'aise avec Docker ? Community est prête dès aujourd'hui."
     }
@@ -1359,7 +1359,7 @@
           "body": "Une application personnelle : entraînements et repas organisés autour de vos objectifs, et ajustés semaine après semaine."
         }
       ],
-      "link": "Me prévenir à leur sortie"
+      "link": "Commencer gratuitement"
     },
     "cases": [
       {
@@ -1648,11 +1648,11 @@
     "cta": {
       "h2": "Un cas en tête ?",
       "h2_accent": "Construisez-le.",
-      "sub": "Voyez comment une équipe se monte dans le Studio, ou soyez prévenu à l'ouverture du cloud.",
+      "sub": "Voyez comment une équipe se monte dans le Studio, ou commencez gratuitement dans le cloud.",
       "primary": "Voir comment ça marche",
       "primary_href": "/fr/how-it-works",
-      "secondary": "Rejoindre la liste d'attente",
-      "secondary_href": "/fr/pricing#waitlist",
+      "secondary": "Commencer gratuitement",
+      "secondary_href": "/fr/start",
       "services": "Un projet plus large dans votre organisation ?",
       "services_link": "Découvrir nos services",
       "services_href": "/fr/services"
@@ -1845,7 +1845,7 @@
       "primary": "Installer l'édition Community",
       "secondary": "Voir les cas d'usage",
       "cloud": "Vous préférez ne rien installer ?",
-      "cloud_link": "Rejoindre la liste d'attente du cloud"
+      "cloud_link": "Commencer gratuitement dans le cloud"
     }
   },
   "teams_page": {
@@ -1859,7 +1859,7 @@
       "h1": "Un chatbot répond.",
       "h1_accent": "Une équipe fait le travail.",
       "sub": "Réunissez des spécialistes IA, choisissez comment ils travaillent en équipe et confiez-leur le travail avec vos mots. Ils se répartissent le travail et reviennent vers vous pour chaque décision qui vous revient.",
-      "cta": "Rejoindre la liste d'attente",
+      "cta": "Commencer gratuitement",
       "cta_secondary": "Voir des équipes prêtes à l'emploi",
       "caption": "L'équipe Trip Manager au travail dans le Studio. Enregistré depuis le produit, accéléré.",
       "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur valide chaque étape dans le chat"
@@ -2026,21 +2026,21 @@
     "cta": {
       "h2": "Votre prochaine recrue,",
       "h2_accent": "c'est une équipe IA.",
-      "sub": "Rejoignez la liste d'attente de l'édition cloud.",
+      "sub": "Commencez gratuitement dans le cloud : rien à installer.",
       "fine": "Vous hébergez vous-même ? L'édition Community est gratuite.",
       "fine_link": "Installer Community"
     }
   },
   "product_pages": {
     "crumb": "Produit",
-    "waitlist": "Rejoindre la liste d'attente",
+    "start": "Commencer gratuitement",
     "faq_eyebrow": "Questions",
     "faq_h2": "Ce que",
     "faq_h2_accent": "l'on nous demande.",
     "cta": {
       "h2": "Votre prochaine recrue,",
       "h2_accent": "c'est une équipe IA.",
-      "sub": "Rejoignez la liste d'attente de l'édition cloud.",
+      "sub": "Commencez gratuitement dans le cloud : rien à installer.",
       "fine": "Vous hébergez vous-même ? L'édition Community est gratuite.",
       "fine_link": "Installer Community"
     },
@@ -2875,8 +2875,8 @@
       "email_invalid": "Vérifiez votre adresse e-mail.",
       "plan_invalid": "Choisissez un plan.",
       "email_has_trial": "Un essai est déjà en cours pour cette adresse. Le lien pour l'ouvrir est dans votre boîte de réception.",
-      "trials_full": "Les essais sont complets pour le moment. Inscrivez-vous sur la liste d'attente de la page tarifs : nous vous écrirons dès qu'une place se libère.",
-      "signups_closed": "Les essais ne sont pas encore ouverts. Inscrivez-vous sur la liste d'attente de la page tarifs pour être prévenu en premier.",
+      "trials_full": "Trop d'essais démarrent en ce moment. Réessayez dans quelques heures, ou écrivez à hello@agentivity.io.",
+      "signups_closed": "Les inscriptions sont suspendues pour un moment. Réessayez plus tard, ou écrivez à hello@agentivity.io.",
       "rate": "Trop d'essais. Attendez quelques minutes, puis réessayez.",
       "generic": "Un problème est survenu de notre côté. Réessayez dans un instant.",
       "consent": "Acceptez les conditions d'utilisation pour continuer.",
@@ -2903,9 +2903,9 @@
       "delayed_body": "Nous nous en occupons. Le lien arrivera à {email} dès que votre espace sera prêt."
     },
     "closed": {
-      "title": "Les essais ouvrent bientôt.",
-      "body": "Inscrivez-vous sur la liste d'attente : nous vous écrirons à l'ouverture.",
-      "link": "Aller à la liste d'attente"
+      "title": "Les inscriptions sont suspendues pour un moment.",
+      "body": "Réessayez plus tard, ou écrivez à hello@agentivity.io.",
+      "link": "Voir les offres"
     }
   },
   "find_page": {
@@ -2999,5 +2999,9 @@
       "primary_href": "/fr/pricing",
       "secondary": "Installer Community"
     }
+  },
+  "start_cta": {
+    "label": "Commencer gratuitement",
+    "note": "14 jours gratuits · sans carte"
   }
 }

@@ -3,7 +3,7 @@
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
-import WaitlistForm from './WaitlistForm.astro';
+import StartFree from './StartFree.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import GitHubIcon from './GitHubIcon.astro';
 import type { Lang } from '../i18n/utils';
@@ -74,7 +74,7 @@ const schema = {
       <p class="hp-hero-sub">{h.hero.sub}</p>
       <div class="hp-hero-cta">
         <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
-        <a class="ed-btn ed-btn--line" href="#cta">{h.hero.cta_waitlist}</a>
+        <a class="ed-btn ed-btn--line" href={lang === 'fr' ? '/fr/start' : '/start'}>{h.hero.cta_start}</a>
       </div>
     </div>
 
@@ -306,7 +306,7 @@ const schema = {
         <p class="ed-eyebrow">{h.ready.eyebrow}</p>
         <h2 class="ed-h2 ed-h2--md">{h.ready.h2} <em>{h.ready.h2_accent}</em></h2>
       </div>
-      <a class="ed-link" href="#cta">{h.ready.link}</a>
+      <a class="ed-link" href={lang === 'fr' ? '/fr/start' : '/start'}>{h.ready.link}</a>
     </header>
     <ul class="hp-ready">
       {h.ready.cards.map((card) => (
@@ -355,10 +355,7 @@ const schema = {
     <div class="ed-wrap ed-final">
       <h2>{h.cta.h2} <em>{h.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{h.cta.sub}</p>
-      <div class="ed-final-form">
-        <WaitlistForm lang={lang} tone="light" />
-      </div>
-      <p class="ed-final-fine">{h.cta.fine}</p>
+      <StartFree lang={lang} />
       <p class="hp-final-github">
         <span>{h.cta.github_line}</span>
         <a class="ed-link" href={t.site.install_href}>{t.site.install}</a>

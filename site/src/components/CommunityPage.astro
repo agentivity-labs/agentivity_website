@@ -28,7 +28,7 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
       <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{p.hero.github}</a>
       <a class="ed-btn ed-btn--line" href={t.site.docker_hub_href} target="_blank" rel="noopener noreferrer">{p.hero.hub}</a>
     </div>
-    <p class="cm-hero-aside">{p.hero.not_technical} <a href={home + '#cta'}>{p.hero.waitlist}</a></p>
+    <p class="cm-hero-aside">{p.hero.not_technical} <a href={lang === 'fr' ? '/fr/start' : '/start'}>{p.hero.start}</a></p>
   </section>
 
   <section class="ed-band--mist" id="install">

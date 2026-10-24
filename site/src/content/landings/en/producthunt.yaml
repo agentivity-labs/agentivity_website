@@ -1,13 +1,13 @@
 # Landing page for the Product Hunt launch: https://www.agentivity.io/lp/producthunt
-# Sign-ups made here reach Brevo with SOURCE = landing-page, LANDING = producthunt, CAMPAIGN = ref=producthunt (added by
-# Product Hunt to its links). Wording taken from the home page wherever it exists; only the welcome and the offer are new.
+# Its buttons lead to the free trial (/start). Wording taken from the home page wherever it exists; only the welcome and the
+# offer are new.
 title: Agentivity on Product Hunt — Your Next Hire Is an AI Team
-description: Build AI teams without code, with you in charge. For Product Hunt, skip the waitlist and the first 20 get an AI team built for them.
+description: Build AI teams without code, with you in charge. Start free for 14 days, and for Product Hunt the first 20 get an AI team built for them.
 noindex: true
 ogImage: /og/producthunt.png
 header:
-  label: Get early access
-  href: "#get-access"
+  label: Start free
+  href: /start
 
 sections:
   - type: banner
@@ -20,8 +20,8 @@ sections:
     accent: an AI team.
     sub: Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.
     form:
-      submit: Get early access
-      fine: "Free. For Product Hunt: you skip the waitlist, and the first 20 get an AI team built for them."
+      submit: Start free
+      fine: "For Product Hunt: the first 20 get an AI team built for them."
     secondary:
       label: Install the Community edition
       href: /community
@@ -39,11 +39,11 @@ sections:
     title: Two things,
     accent: just for you.
     items:
-      - title: Skip the waitlist
-        body: Join from this page and you are first in line when the hosted plans open. Nothing to install, nothing to run.
+      - title: Start free today
+        body: Your hosted workspace, free for 14 days, no credit card. Nothing to install, nothing to run.
         action:
-          label: Get early access
-          href: "#get-access"
+          label: Start free
+          href: /start
       - title: Your first AI team, built for you
         body: "The first 20: tell us what you want an AI team to do. Within 48 hours, we send you a ready-made team for it, as a Template you import in one click in the Community edition."
         action:
@@ -107,7 +107,7 @@ sections:
     title: Questions
     items:
       - q: Is it free?
-        a: The Community edition is free forever and runs on your own machine or server. You pay your AI model provider directly. Hosted plans are on the way.
+        a: The Community edition is free forever and runs on your own machine or server. You pay your AI model provider directly. The hosted plans start with a 14-day free trial.
       - q: Do I need to code?
         a: No. You describe a role in plain words, as you would for a new colleague, and you drag specialists into a team. Or you tell the Assistant what you need.
       - q: Where does my data go?
@@ -118,9 +118,8 @@ sections:
   - type: cta
     title: Your team is ready
     accent: to work.
-    sub: Be first in line when the hosted plans open. The first 20 also get an AI team built for them.
-    submit: Get early access
-    fine: No spam. First access when the cloud launches.
+    sub: Start free in the cloud, nothing to install. The first 20 from Product Hunt also get an AI team built for them.
+    submit: Start free
     secondary:
       label: Self-hosting? The Community edition is free.
       href: /community

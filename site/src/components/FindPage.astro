@@ -13,7 +13,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const f = t.find_page;
 const start = lang === 'fr' ? '/fr/start/' : '/start/';
-const pricing = lang === 'fr' ? '/fr/pricing/#waitlist' : '/pricing/#waitlist';
+const pricing = lang === 'fr' ? '/fr/pricing/' : '/pricing/';
 
 const accountsUrl = (import.meta.env.PUBLIC_ACCOUNTS_URL || 'https://agentivity-accounts-service.fly.dev').replace(/\/$/, '');
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || (import.meta.env.DEV ? '1x00000000000000000000AA' : '');
@@ -21,7 +21,7 @@ const config = { api: accountsUrl, lang, messages: { ...f, ...f.errors } };
 ---
 <Base title={f.meta.title} description={f.meta.description} lang={lang} look="editorial" noindex>
 
-<SiteHeader lang={lang} waitlistHref={pricing} />
+<SiteHeader lang={lang} />
 
 <main class="ed-page">
   <section class="ed-wrap fd-hero">

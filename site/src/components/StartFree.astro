@@ -1,0 +1,27 @@
+---
+// The call to start the free trial: a button to the sign-up page, and the terms of the trial in small under it.
+// Used where the waitlist form was (the end of most pages, the landing pages).
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  /** Replaces the label of the button. */
+  label?: string;
+  /** 'start' to align on the left (a landing page's hero); centred by default. */
+  align?: 'center' | 'start';
+}
+const { lang, label, align = 'center' } = Astro.props;
+const t = useTranslations(lang);
+const href = lang === 'fr' ? '/fr/start' : '/start';
+---
+<div class:list={['start-free', { 'start-free--start': align === 'start' }]}>
+  <a class="ed-btn ed-btn--navy" href={href}>{label ?? t.start_cta.label}</a>
+  <p class="start-free-note">{t.start_cta.note}</p>
+</div>
+
+<style>
+.start-free { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.start-free--start { align-items: flex-start; }
+.start-free-note { font-size: 15px; font-weight: 600; color: var(--ed-ink-2); }
+</style>

@@ -4,7 +4,7 @@
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
-import WaitlistForm from './WaitlistForm.astro';
+import StartFree from './StartFree.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import GitHubIcon from './GitHubIcon.astro';
 import type { Lang } from '../i18n/utils';
@@ -32,7 +32,7 @@ const schema = {
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} schema={schema} ogImage={`/og/how-it-works-${lang}.png`} look="editorial">
 
-<SiteHeader lang={lang} waitlistHref="#cta" />
+<SiteHeader lang={lang} />
 
 <main class="ed-page">
 
@@ -43,7 +43,7 @@ const schema = {
     <p class="hw-hero-sub">{p.hero.sub}</p>
     <div class="hw-hero-cta">
       <a class="ed-btn ed-btn--navy" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
-      <a class="ed-btn ed-btn--line" href="#cta">{t.nav.cta}</a>
+      <a class="ed-btn ed-btn--line" href={lang === 'fr' ? '/fr/start' : '/start'}>{t.nav.cta}</a>
     </div>
     <figure class="ed-shot hw-hero-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
@@ -201,7 +201,7 @@ const schema = {
         </div>
         <p>{p.start.cloud.body}</p>
         <div class="hw-path-actions">
-          <a class="ed-btn ed-btn--sm ed-btn--navy" href="#cta">{p.start.cloud.link}</a>
+          <a class="ed-btn ed-btn--sm ed-btn--navy" href={lang === 'fr' ? '/fr/start' : '/start'}>{p.start.cloud.link}</a>
         </div>
       </article>
     </div>
@@ -230,10 +230,7 @@ const schema = {
     <div class="ed-wrap ed-final">
       <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{p.cta.sub}</p>
-      <div class="ed-final-form">
-        <WaitlistForm lang={lang} tone="light" />
-      </div>
-      <p class="ed-final-fine">{p.cta.fine}</p>
+      <StartFree lang={lang} />
     </div>
   </section>
 
