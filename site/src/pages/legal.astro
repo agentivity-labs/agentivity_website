@@ -6,7 +6,9 @@ import SiteFooter from '../components/SiteFooter.astro';
 const lang = 'en';
 const docs = [
   { tag: 'Terms of Use', title: 'Terms of Use', desc: 'The rules governing your use of Agentivity — platform access, licences, prohibited activities, liability and termination.', href: '/legal/terms' },
+  { tag: 'Terms of Sale', title: 'Terms of Sale', desc: 'The terms of the hosted plans — free trial, prices and payment, changing plan, cancelling, and what happens to a workspace after its plan ends.', href: '/legal/terms-of-sale' },
   { tag: 'Privacy Policy', title: 'Privacy Policy', desc: 'What personal data we collect, how we use it, who we share it with, and your rights under the GDPR.', href: '/legal/privacy' },
+  { tag: 'DPA', title: 'Data Processing Agreement', desc: 'How we process the data of your hosted workspace on your behalf — security measures, sub-processors, international transfers and breaches.', href: '/legal/dpa' },
   { tag: 'Disclaimer', title: 'Disclaimer of Liability', desc: 'Limitations on warranties, AI output accuracy, professional advice, and our liability for damages and losses.', href: '/legal/disclaimer' },
   { tag: 'AI & Automation', title: 'AI & Automation Policy', desc: 'Specific rules for building and operating AI agents — human oversight, prohibited uses, LLM data, autonomous workflows.', href: '/legal/ai-policy' },
 ];
@@ -20,12 +22,14 @@ const docs = [
       <nav class="legal-sidebar-links">
         <a href="/legal" class="active">Overview</a>
         <a href="/legal/terms">Terms of Use</a>
+        <a href="/legal/terms-of-sale">Terms of Sale</a>
         <a href="/legal/privacy">Privacy Policy</a>
+        <a href="/legal/dpa">Data Processing Agreement</a>
         <a href="/legal/disclaimer">Disclaimer</a>
         <a href="/legal/ai-policy">AI &amp; Automation</a>
       </nav>
       <div class="legal-sidebar-meta">
-        Questions? <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Governed by Belgian law.
+        Questions? <a href="mailto:security@agentivity.io">security@agentivity.io</a><br/>Governed by Belgian law.
       </div>
     </aside>
     <main class="legal-content">
@@ -35,12 +39,12 @@ const docs = [
         <div class="legal-meta-bar">
           <span>Effective: June 2026</span>
           <span>·</span>
-          <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>
+          <a href="mailto:security@agentivity.io">security@agentivity.io</a>
         </div>
       </header>
       <div class="legal-section">
         <p>This page provides an overview of Agentivity's legal documents. Please read each document carefully before using the platform. By accessing or using Agentivity, you agree to be bound by all applicable terms and policies.</p>
-        <p>If you have any questions about these documents, contact us at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. We are committed to responding within 5 business days.</p>
+        <p>If you have any questions about these documents, contact us at <a href="mailto:security@agentivity.io">security@agentivity.io</a>. We are committed to responding within 5 business days.</p>
         <div class="legal-index-grid">
           {docs.map(d => (
             <a class="legal-index-card" href={d.href}>

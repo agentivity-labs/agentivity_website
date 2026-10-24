@@ -3,6 +3,7 @@ title: "What the Community edition includes"
 description: "What you get in the free Agentivity Community edition, what is not in it, what is planned, and what the licence allows."
 sidebar:
   order: 7
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -32,11 +33,16 @@ The four showcase solutions are offered as Templates. They are downloaded from t
 
 - **Versions.** Keeping earlier versions of a workflow, a table or a Knowledge Base, and going back to one, is not in the Community edition.
 - **Plugins.**
-- **Login, accounts and roles.** There is no login. One installation is one shared workspace: anyone who can reach the server can use everything on it.
+- **Login, accounts and roles.** There is no login. One installation is one shared workspace: anyone who can reach the server can use everything on it. So there are no people, groups, roles or spaces, no Administration panes for them, and no audit journal.
+- **Keys for a website** (publishable keys) and **Monitoring** to your own collector.
+- **Limits.** The Community edition has no cap on executions, but it is for one person and one space.
+
+## Hosted workspaces
+
+If you do not want to install anything, a hosted workspace has sign-in, people, roles, spaces and an area of Administration, with the plan you choose. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/) and [Plans and their limits](/docs/hosted/plans-and-limits/).
 
 ## What is planned
 
-- **Hosted editions**, where there is nothing to install.
 - **Starting executions on a schedule.**
 
 For the other editions and what each one is for, see [pricing and editions](/pricing).

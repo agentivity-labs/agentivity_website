@@ -156,6 +156,7 @@ const schema = [
           ))}
         </ul>
         <p class="pr-notes">{billing.vat} {fill(billing.trial)}</p>
+        <p class="pr-sale">{billing.sale_before} <a href={billing.sale_href}>{billing.sale_link}</a></p>
 
         <!-- Every limit of the hosted plans, side by side -->
         <div class="pr-compare">
@@ -329,6 +330,8 @@ const schema = [
 .pr-limits li::before { content: ""; position: absolute; left: 3px; top: 13px; width: 10px; height: 6px; border-left: 2px solid var(--ed-navy); border-bottom: 2px solid var(--ed-navy); transform: rotate(-45deg); }
 .pr-plan-start { margin-top: auto; align-self: stretch; }
 .pr-notes { margin-top: 18px; text-align: center; font-size: 15px; color: var(--ed-ink-3); }
+.pr-sale { margin-top: 6px; text-align: center; font-size: 14.5px; color: var(--ed-ink-3); }
+.pr-sale a { color: var(--ed-ink-2); text-decoration: underline; text-underline-offset: 2px; }
 
 /* every limit side by side */
 .pr-compare { margin-top: 36px; padding: clamp(22px, 3vw, 34px); border-radius: 24px; background: #fff; }

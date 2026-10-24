@@ -1,0 +1,136 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+const lang = 'fr';
+---
+<Base look="editorial" title="Accord de sous-traitance — Agentivity" description="L'accord de sous-traitance (article 28 du RGPD) des offres hébergées d'Agentivity : rôles, mesures de sécurité, sous-traitants ultérieurs, transferts, violations et fin du traitement.">
+<SiteHeader lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Documents légaux</p>
+    <nav class="legal-sidebar-links">
+      <a href="/fr/legal">Vue d'ensemble</a>
+      <a href="/fr/legal/terms">CGU</a>
+      <a href="/fr/legal/terms-of-sale">Conditions de vente</a>
+      <a href="/fr/legal/privacy">Confidentialité</a>
+      <a href="/fr/legal/dpa" class="active">Sous-traitance (DPA)</a>
+      <a href="/fr/legal/disclaimer">Disclaimer</a>
+      <a href="/fr/legal/ai-policy">IA &amp; Automatisation</a>
+    </nav>
+    <div class="legal-sidebar-meta">En vigueur : octobre 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Légal</span>
+      <h1>Accord de sous-traitance</h1>
+      <div class="legal-meta-bar"><span>Offres hébergées d'Agentivity</span><span>·</span><span>En vigueur : octobre 2026</span><span>·</span><span>Dernière mise à jour : octobre 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <p>La version anglaise de ce document fait foi en cas de litige. <a href="/legal/dpa">Lire la version anglaise</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Parties et rôles</h2>
+      <ul>
+        <li><strong>Le Client</strong> (le responsable du traitement) : l'entreprise qui souscrit une offre hébergée d'Agentivity.</li>
+        <li><strong>SMART PIXEL BV</strong>, numéro d'entreprise BE 0731.739.690, siège social à Wasseiges, Belgique (« <strong>Agentivity</strong> », le sous-traitant).</li>
+      </ul>
+      <p>Agentivity traite des données à caractère personnel pour le compte du Client uniquement pour fournir l'espace de travail hébergé décrit dans les <a href="/fr/legal/terms-of-sale">Conditions de vente</a>. Pour les données qu'elle traite au sujet du Client en tant que client (compte, facturation), Agentivity est responsable du traitement au titre de sa <a href="/fr/legal/privacy">Politique de confidentialité</a>, et non sous-traitant.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Objet, nature et durée</h2>
+      <div class="legal-table-scroll">
+        <table>
+          <tbody>
+            <tr><th scope="row">Objet</th><td>Hébergement et fonctionnement de l'espace de travail Agentivity du Client : ses agents, équipes, workflows, exécutions, Data Tables, Knowledge Bases, fichiers et les comptes de ses personnes.</td></tr>
+            <tr><th scope="row">Nature du traitement</th><td>Stockage, sauvegarde, exécution des workflows et des agents du Client, transmission aux services que le Client connecte.</td></tr>
+            <tr><th scope="row">Durée</th><td>La durée de l'abonnement, puis jusqu'à la suppression décrite à l'article 9 (au plus 120 jours après la fin de l'offre, sauvegardes comprises).</td></tr>
+            <tr><th scope="row">Catégories de personnes concernées</th><td>Déterminées par le Client : ses personnes (utilisateurs de l'espace de travail) et toute personne dont le Client traite les données au moyen de ses workflows (clients, prospects, employés, contacts).</td></tr>
+            <tr><th scope="row">Catégories de données</th><td>Déterminées par le Client. Pour les utilisateurs de l'espace de travail : nom, e-mail, rôle, historique de connexion, journal d'audit (Business). Des catégories particulières de données ne peuvent être traitées que si le Client dispose d'une base légale et de garanties appropriées (<a href="/fr/legal/terms">Conditions générales d'utilisation</a>, article 7).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Instructions</h2>
+      <p>Agentivity ne traite les données que sur les instructions documentées du Client, à savoir les présentes conditions, la configuration de son espace de travail par le Client (ses workflows, agents, connexions) et toute autre instruction écrite. Agentivity informe le Client si elle estime qu'une instruction enfreint le droit de la protection des données.</p>
+      <p>Ce que le Client décide seul : les fournisseurs d'IA et les services tiers que ses workflows appellent, avec ses propres identifiants. Les données envoyées à ces services sont traitées par eux selon leurs propres conditions, en tant que sous-traitants ou responsables du traitement du Client, et non en tant que sous-traitants ultérieurs d'Agentivity.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Confidentialité</h2>
+      <p>Les personnes autorisées par Agentivity à accéder aux données sont tenues à la confidentialité. Agentivity n'examine pas le contenu d'un espace de travail, sauf lorsque cela est nécessaire pour fournir l'assistance demandée par le Client, pour assurer la sécurité, ou lorsque la loi l'exige.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Mesures de sécurité (article 32)</h2>
+      <ul>
+        <li>Chaque espace de travail fonctionne sur sa propre machine et son propre volume de stockage, isolés des autres clients.</li>
+        <li>Chiffrement en transit (TLS) pour chaque connexion ; le volume de stockage de chaque espace de travail est chiffré au repos.</li>
+        <li>Les secrets des connexions (identifiants auprès des fournisseurs d'IA et d'autres services) sont chiffrés en AES-256-GCM, avec une clé propre à chaque espace de travail ; les mots de passe ne sont conservés que sous forme d'empreinte PBKDF2 et les clés API que sous forme d'empreinte SHA-256, jamais en clair.</li>
+        <li>Connexion par e-mail et mot de passe, rôles et permissions par personne, espaces pour séparer les données au sein d'un espace de travail ; clés API par personne, avec des portées ; journal d'audit sur Business.</li>
+        <li>Sauvegardes quotidiennes du volume de stockage, conservées 7, 14 ou 30 jours selon l'offre.</li>
+        <li>Accès à la production limité au personnel autorisé, via les consoles des prestataires avec authentification multifacteur ; la console d'exploitation est protégée par Cloudflare Access.</li>
+        <li>Mises à jour installées par Agentivity, sans interrompre les exécutions en cours.</li>
+        <li>Détection et traitement des incidents de sécurité (article 8).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Sous-traitants ultérieurs</h2>
+      <p>Le Client donne une autorisation générale aux sous-traitants ultérieurs suivants. Agentivity informe le Client au moins 30 jours avant d'en ajouter ou d'en remplacer un ; le Client peut s'y opposer pour des motifs raisonnables et, si aucune solution n'est trouvée, résilier.</p>
+      <div class="legal-table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Sous-traitant ultérieur</th><th scope="col">Service</th><th scope="col">Lieu du traitement</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fly.io, Inc.</td><td>Machines et stockage des espaces de travail, sauvegardes</td><td>Union européenne (Francfort, Allemagne) ; société établie aux États-Unis</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>Passerelle devant les espaces de travail (TLS, routage), DNS</td><td>Réseau mondial ; société établie aux États-Unis</td></tr>
+            <tr><td>Brevo (Sendinblue SAS)</td><td>E-mails transactionnels envoyés pour l'espace de travail (invitations, réinitialisations de mot de passe)</td><td>UE (France)</td></tr>
+            <tr><td>Stripe Payments Europe, Ltd.</td><td>Paiement de l'abonnement (le Client en tant que client, pas le contenu de l'espace de travail)</td><td>UE (Irlande), États-Unis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Stripe ne traite que les données du Client en tant que client (facturation), jamais le contenu de l'espace de travail. Agentivity impose à chaque sous-traitant ultérieur des obligations équivalentes à celles du présent Accord.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Transferts internationaux</h2>
+      <p>Les données des espaces de travail sont stockées dans l'Union européenne. Lorsqu'un sous-traitant ultérieur établi hors de l'EEE peut y accéder, le transfert repose sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) lorsque le sous-traitant ultérieur est certifié, ou sur les Clauses contractuelles types adoptées par la Commission européenne, comme le prévoient les conditions de traitement des données de chaque sous-traitant ultérieur.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Violations de données à caractère personnel</h2>
+      <p>Agentivity notifie le Client dans les meilleurs délais, et au plus tard dans les 48 heures après avoir pris connaissance d'une violation affectant les données du Client, avec les informations disponibles (nature, catégories et nombre approximatif de personnes concernées et d'enregistrements, conséquences probables, mesures prises), afin que le Client puisse remplir ses propres obligations.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Fin du traitement</h2>
+      <p>Lorsque l'offre prend fin, l'espace de travail suit les étapes des <a href="/fr/legal/terms-of-sale">Conditions de vente</a> (lecture seule 30 jours, en pause jusqu'au 90e jour, corbeille 30 jours). Pendant ce temps, le Client peut le rétablir ou en exporter le contenu (« Administration › Data »). Au 120e jour, l'espace de travail, ses données et ses sauvegardes sont supprimés, sauf si la loi impose à Agentivity de les conserver. Sur demande, Agentivity supprime l'espace de travail plus tôt.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Assistance et droits des personnes concernées</h2>
+      <p>Agentivity aide le Client, par des moyens techniques appropriés, à répondre aux demandes des personnes concernées : le Client peut lui-même retrouver, modifier, exporter et supprimer les données de son espace de travail. Agentivity assiste également le Client, dans une mesure raisonnable, pour les analyses d'impact et les consultations préalables.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Audits</h2>
+      <p>Agentivity met à disposition les informations nécessaires pour démontrer le respect du présent Accord et répond aux questionnaires raisonnables. Des audits sur place, aux frais du Client et moyennant un préavis raisonnable, sont possibles au plus une fois par an, sauf si une violation justifie davantage.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Préséance</h2>
+      <p>En cas de conflit, le présent Accord prévaut sur les <a href="/fr/legal/terms-of-sale">Conditions de vente</a> et les <a href="/fr/legal/terms">Conditions générales d'utilisation</a> pour le traitement des données à caractère personnel.</p>
+    </div>
+  </main>
+</div>
+</div>
+<SiteFooter lang={lang} />
+</Base>

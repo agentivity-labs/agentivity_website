@@ -3,6 +3,7 @@ title: "Common questions about Agentivity"
 description: "Short answers to the first questions people ask. What Agentivity is, who it is for, what you need, what you pay, and where your data goes."
 sidebar:
   order: 1
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -39,7 +40,7 @@ Two things need a technical colleague: installing the Community edition on a ser
 
 ### I am not technical. Can I install it?
 
-If you can copy a command into a terminal, yes: the install is one command, once Docker is on your machine. See [Install Agentivity with Docker](/docs/getting-started/install-community/). If that is not for you, hosted editions with nothing to install are planned.
+If you can copy a command into a terminal, yes: the install is one command, once Docker is on your machine. See [Install Agentivity with Docker](/docs/getting-started/install-community/). If that is not for you, a hosted workspace has nothing to install: see [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/).
 
 ### Is the Studio in my language?
 
@@ -50,6 +51,14 @@ The Studio is in English. Your agents can work in any language that your AI mode
 ### What do I need to start?
 
 A computer or a server that runs Docker, and an account with an AI model provider.
+
+### Is there a free trial of a hosted workspace?
+
+Yes. It lasts 14 days, needs no card, and has every feature of the plan you choose, with up to 200 executions. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/). The prices are on [the pricing page](/pricing).
+
+### Why did my execution not start?
+
+The workspace says why: no plan in force, an update under way, or a limit of the plan reached. See [Why did my execution not start?](/docs/hosted/why-did-my-execution-not-start/).
 
 ### Is the Community edition free?
 
@@ -71,11 +80,11 @@ It depends on your provider and on the model. As a rule: each agent that works c
 
 ### Where is my data kept?
 
-On the machine where you installed Agentivity, in one Docker volume. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
+With the Community edition, on the machine where you installed Agentivity, in one Docker volume. With a hosted workspace, in your workspace, which Agentivity runs; the owner can export everything in one file from **Administration** > **Data**. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
 
 ### Is what I write sent to Agentivity?
 
-No. With the Community edition, everything you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity. The image sends no telemetry, unless you give it the address of a collector of your own. See [Telemetry](/docs/reference/configuration/).
+With the Community edition, no. Everything you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity. The image sends no telemetry, unless you give it the address of a collector of your own. See [Telemetry](/docs/reference/configuration/).
 
 ### What goes to the AI model provider?
 

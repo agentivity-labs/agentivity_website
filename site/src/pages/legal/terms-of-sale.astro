@@ -1,0 +1,146 @@
+---
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+const lang = 'en';
+---
+<Base look="editorial" title="Terms of Sale — Agentivity" description="The terms of sale of the Agentivity hosted plans (Personal, Pro, Business): free trial, prices and payment, changing plan, cancelling, your data.">
+<SiteHeader lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Legal documents</p>
+    <nav class="legal-sidebar-links">
+      <a href="/legal">Overview</a>
+      <a href="/legal/terms">Terms of Use</a>
+      <a href="/legal/terms-of-sale" class="active">Terms of Sale</a>
+      <a href="/legal/privacy">Privacy Policy</a>
+      <a href="/legal/dpa">Data Processing Agreement</a>
+      <a href="/legal/disclaimer">Disclaimer</a>
+      <a href="/legal/ai-policy">AI &amp; Automation</a>
+    </nav>
+    <div class="legal-sidebar-meta">Effective: October 2026<br/>Governed by Belgian law.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Legal</span>
+      <h1>Terms of Sale</h1>
+      <div class="legal-meta-bar"><span>Agentivity hosted plans</span><span>·</span><span>Effective: October 2026</span><span>·</span><span>Last updated: October 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <h2>1. Who we are</h2>
+      <p>These Terms of Sale are an agreement between you and SMART PIXEL BV, a company registered in Belgium under enterprise number BE 0731.739.690, with its registered office in Wasseiges, Belgium ("<strong>Agentivity</strong>", "<strong>we</strong>", "<strong>us</strong>"). Contact: <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</p>
+      <p>They apply to the hosted plans of Agentivity (Personal, Pro, Business), to the execution packs, and to the free trial. They do not apply to the Community edition you install yourself, which is governed by the Elastic License 2.0 and the <a href="/legal/terms">Terms of Use</a>, nor to Enterprise, which is the subject of a separate written agreement.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. The service</h2>
+      <p>A hosted plan gives you a workspace: an Agentivity instance run by us for you, reachable at <code>&lt;name&gt;.agentivity.app</code>, with its own data storage. The features and limits of each plan (people, spaces, executions per month, executions at the same time, longest execution, disk, API keys, backups kept, support) are those published on <a href="/pricing">agentivity.io/pricing</a> on the day you subscribe or change plan.</p>
+      <p>AI models are not included. You connect the AI provider of your choice with your own credentials and pay that provider directly. We neither resell nor mark up AI usage (see the <a href="/legal/terms">Terms of Use</a>, section 10).</p>
+      <p>A workspace that nobody uses is put to sleep and wakes up at the next visit or call; this may take a few seconds.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Free trial</h2>
+      <ul>
+        <li>A trial lasts 14 days, without a payment card, with the features of the plan chosen at sign-up. During the trial, executions are limited to 200 in total.</li>
+        <li>One trial per e-mail address. A trial workspace that is not claimed by its owner within 48 hours of its creation is deleted.</li>
+        <li>Choosing a paid plan ends the trial: the plan starts and the first payment is taken at once; the days of trial left are not carried over.</li>
+        <li>At the end of a trial without a paid plan, the workspace has no plan in force (section 9).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Prices and payment</h2>
+      <ul>
+        <li>Prices are shown on <a href="/pricing">agentivity.io/pricing</a> and in your workspace, excluding VAT. VAT is added where applicable, according to your country and status (business or consumer).</li>
+        <li>Plans are billed monthly or yearly, in advance, at the start of each period. The yearly price is lower than twelve monthly payments.</li>
+        <li>Payment is taken by card (including Apple Pay and Google Pay where offered) through our payment provider, Stripe. We never see or store your full card details.</li>
+        <li>Your subscription renews automatically at the end of each period, at the price in force for your plan, unless you cancel it (section 7). We will tell you at least 30 days in advance of any change of price that applies to your renewal.</li>
+        <li>An invoice is issued for each payment and is available in your workspace (Administration › Subscription › Payment and invoices).</li>
+        <li>If a payment fails, we will try again and tell you; your workspace keeps working while our payment provider tries again, so that you can update your card. Without payment, the subscription ends and section 9 applies.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Execution packs and automatic recharge</h2>
+      <ul>
+        <li>An execution pack is a quantity of executions bought once. It is used only when the executions included in your plan for the month are used up, and is kept until used: it does not expire.</li>
+        <li>A pack is invoiced on the day of purchase and is not refundable, whether used or not.</li>
+        <li>Automatic recharge: when enabled, a pack of the size you chose is bought by itself, with the card of your subscription, when your month is about to run out; at most the number of times per month you set (3 by default). Each recharge is invoiced and confirmed by e-mail. It is on when you subscribe; you can turn it off or change it at any time in Administration › Subscription.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Changing plan</h2>
+      <ul>
+        <li>You can move to another plan, or from monthly to yearly, at any time. The change takes effect at once and is prorated: you pay the difference for the rest of the current period, or receive a credit applied to your next invoices.</li>
+        <li>Moving to a smaller plan: what is in use keeps working; nothing new can be added beyond the limits of the new plan. After 14 days, the people, keys or spaces added last beyond those limits are held out (deactivated, not deleted) until you make room or choose a bigger plan.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Cancelling</h2>
+      <ul>
+        <li>You can cancel at any time, in one step, from your workspace (Administration › Subscription › Cancel subscription).</li>
+        <li>Cancelling takes effect at the end of the period already paid: until then everything works. You may take the cancellation back before that date (Keep my subscription).</li>
+        <li>Periods already paid are not refunded, in full or in part, except where the law requires it (section 8).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Right of withdrawal (consumers only)</h2>
+      <p>If you are a consumer in the European Union, you have a right of withdrawal of 14 days from the conclusion of the contract. Because the service starts at once at your express request, you acknowledge, when subscribing, that if you withdraw within these 14 days you pay for the service provided until the day you withdraw, in proportion to the period paid, and that you lose the right of withdrawal for an execution pack once it has started to be used. To withdraw, write to <a href="mailto:security@agentivity.io">security@agentivity.io</a> within the 14 days; we refund the rest within 14 days of your message, by the means of payment you used.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. After a plan ends</h2>
+      <p>When a workspace has no plan in force (a trial ended, a subscription cancelled or unpaid):</p>
+      <ul>
+        <li>For 30 days, it is read only: everyone still signs in and sees everything; nothing new runs.</li>
+        <li>It is then paused until day 90: it can no longer be opened; its data is kept.</li>
+        <li>It then goes to the trash for 30 days.</li>
+        <li>At day 120, it is deleted, with all its data and backups; its name becomes free again.</li>
+      </ul>
+      <p>The owner is told by e-mail before each step. Choosing a plan at any time before day 120 brings the workspace back as it was. The owner can export the content of the workspace at any time while it can be opened (Administration › Data).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Availability, maintenance and backups</h2>
+      <ul>
+        <li>We take care to keep your workspace available, but we do not guarantee uninterrupted availability on these plans; a commitment of availability is offered only with Enterprise.</li>
+        <li>New versions are installed by us. A running workspace is told in advance; executions going on are left to finish; the workspace restarts in a few minutes. We may also have to restart it at short notice for security reasons.</li>
+        <li>Your workspace's storage is backed up daily and backups are kept for the number of days of your plan (7, 14 or 30 days). To restore your workspace from a backup, write to <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Your data</h2>
+      <p>You remain the owner of everything you put in your workspace. We process it only to provide the service, as your processor, under the Data Processing Agreement (<a href="/legal/dpa">agentivity.io/legal/dpa</a>), which forms part of these Terms for business customers. Our <a href="/legal/privacy">Privacy Policy</a> describes the data we process about you as a customer.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Suspension</h2>
+      <p>We may suspend a workspace without notice in case of serious breach of the <a href="/legal/terms">Terms of Use</a> (prohibited activities, security threat, abuse of resources) or at the request of a competent authority, and will tell you why unless the law forbids it.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. Liability</h2>
+      <p>Section 15 of the <a href="/legal/terms">Terms of Use</a> applies to the hosted plans. In particular, for business customers, our total liability is limited to the greater of the amounts you paid us in the 12 months before the claim or €100, and excludes indirect damages (loss of profit, data, business). Nothing in these Terms limits liability that cannot be limited by law, or the rights of consumers under mandatory law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>14. Changes to these Terms</h2>
+      <p>We may change these Terms of Sale. We will tell you at least 30 days before a change that affects your current subscription; if you do not accept it, you may cancel before it applies.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>15. Law and disputes</h2>
+      <p>These Terms are governed by Belgian law. Disputes fall under the courts of the judicial district of Liège (Belgium), without prejudice to the mandatory rights of consumers to bring proceedings in their own country. Consumers may also use the <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">European Online Dispute Resolution platform</a>.</p>
+    </div>
+  </main>
+</div>
+</div>
+<SiteFooter lang={lang} />
+</Base>

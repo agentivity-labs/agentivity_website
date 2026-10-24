@@ -136,6 +136,7 @@
           { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
           { "label": "Privacy Policy",  "href": "/legal/privacy" },
           { "label": "Terms of Use",   "href": "/legal/terms" },
+          { "label": "Terms of Sale",  "href": "/legal/terms-of-sale" },
           { "label": "Disclaimer",     "href": "/legal/disclaimer" },
           { "label": "Brand Kit",      "href": "/brand" }
         ]
@@ -1007,7 +1008,10 @@
         "billed_yearly": "Billed yearly: {price}",
         "billed_monthly": "Billed monthly",
         "vat": "Prices excluding VAT: VAT is added according to your country.",
-        "trial": "{trial_days}-day free trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial)."
+        "trial": "{trial_days}-day free trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial).",
+        "sale_before": "Subject to our",
+        "sale_link": "Terms of Sale",
+        "sale_href": "/legal/terms-of-sale"
       },
       "limits": {
         "users": [
@@ -2838,8 +2842,9 @@
       "slug_address": "Its address",
       "slug_checking": "Checking…",
       "slug_free": "Available",
-      "consent": "I accept the {terms} and have read the {privacy}.",
+      "consent": "I accept the {terms} and the {sale}, and have read the {privacy}.",
       "terms_link": "terms of use",
+      "sale_link": "terms of sale",
       "privacy_link": "privacy policy",
       "submit": "Start my trial",
       "submitting": "Starting…",

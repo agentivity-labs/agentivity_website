@@ -147,6 +147,7 @@
           { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
           { "label": "Confidentialité", "href": "/fr/legal/privacy" },
           { "label": "CGU",            "href": "/fr/legal/terms" },
+          { "label": "Conditions de vente", "href": "/fr/legal/terms-of-sale" },
           { "label": "Disclaimer",     "href": "/fr/legal/disclaimer" },
           { "label": "Brand Kit",      "href": "/fr/brand" }
         ]
@@ -1018,7 +1019,10 @@
         "billed_yearly": "Facturé annuellement : {price}",
         "billed_monthly": "Facturé mensuellement",
         "vat": "Prix hors TVA : la TVA s'ajoute selon votre pays.",
-        "trial": "Essai gratuit de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai)."
+        "trial": "Essai gratuit de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai).",
+        "sale_before": "Soumis à nos",
+        "sale_link": "conditions de vente",
+        "sale_href": "/fr/legal/terms-of-sale"
       },
       "limits": {
         "users": [
@@ -2850,8 +2854,9 @@
       "slug_address": "Son adresse",
       "slug_checking": "Vérification…",
       "slug_free": "Disponible",
-      "consent": "J'accepte les {terms} et j'ai lu la {privacy}.",
+      "consent": "J'accepte les {terms} et les {sale}, et j'ai lu la {privacy}.",
       "terms_link": "conditions d'utilisation",
+      "sale_link": "conditions de vente",
       "privacy_link": "politique de confidentialité",
       "submit": "Démarrer mon essai",
       "submitting": "Démarrage…",

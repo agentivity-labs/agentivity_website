@@ -3,6 +3,7 @@ title: "Ce qu'est Agentivity"
 description: "Agentivity est une plateforme pour construire et faire tourner des agents IA, des équipes d'IA et des workflows sans code, sur votre machine ou serveur."
 sidebar:
   order: 1
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -34,20 +35,25 @@ Pour choisir entre les trois, lisez [Choisir entre un agent, une équipe et un w
 - **L'Assistant.** Une partie du Studio qui construit pour vous. Vous décrivez votre besoin avec vos mots ; il pose des questions, montre un plan et construit un brouillon que vous vérifiez et enregistrez.
 - **Des Solutions toutes prêtes.** Quatre Solutions de démonstration que vous pouvez importer et ouvrir, pour voir comment une solution terminée est construite.
 
+## Deux façons de l'avoir
+
+- **L'installer vous-même.** L'édition Community est gratuite. Elle tourne sur votre propre machine ou serveur, avec Docker. Voyez [Installer Agentivity avec Docker](/fr/docs/getting-started/install-community/).
+- **Utiliser un espace de travail hébergé.** Vous vous inscrivez sur le site, vous obtenez une adresse comme `votrenom.agentivity.app`, et vous travaillez dans votre navigateur. Il n'y a rien à installer. Il commence par un essai de 14 jours, sans carte. Il comprend la connexion, les personnes, les rôles et une zone Administration.
+
 ## Ce que vous apportez
 
-- **Une machine qui fait tourner Docker.** Votre propre ordinateur, ou un serveur.
+- **Une machine qui fait tourner Docker**, si vous l'installez vous-même. Votre propre ordinateur, ou un serveur. Un espace hébergé n'en demande pas.
 - **Un modèle d'IA.** Agentivity n'en fournit pas. Vous connectez le fournisseur que vous utilisez, par exemple Anthropic, OpenAI ou Google, avec votre propre clé API. Le fournisseur vous facture directement.
 
 ## Où sont vos données
 
-Vos agents, équipes, workflows, tables et réglages sont stockés sur votre machine. Ce qu'un agent envoie au modèle d'IA va chez le fournisseur que vous avez choisi, selon les conditions de ce fournisseur.
+Avec l'édition Community, vos agents, équipes, workflows, tables et réglages sont stockés sur votre machine. Avec un espace hébergé, ils sont stockés dans votre espace, qu'Agentivity fait tourner, et vous pouvez tout exporter dans un seul fichier. Ce qu'un agent envoie au modèle d'IA va chez le fournisseur que vous avez choisi, selon les conditions de ce fournisseur.
 
 ## Ce qu'Agentivity n'est pas
 
 - **Pas un chatbot.** Vous ne parlez pas à un assistant généraliste. Vous construisez des spécialistes qui ont chacun un rôle, et vous les organisez.
 - **Pas un fournisseur de modèles.** Vous apportez votre propre modèle.
-- **Pas un service hébergé, aujourd'hui.** L'édition Community est celle que vous installez vous-même. Des éditions hébergées sont prévues. Voyez [Ce que comprend l'édition Community](/fr/docs/introduction/what-the-community-edition-includes/).
+- **Pas seulement un service.** Vous pouvez utiliser un espace hébergé, ou installer vous-même l'édition Community. Voyez [Ce que comprend l'édition Community](/fr/docs/introduction/what-the-community-edition-includes/).
 
 ## Étape suivante
 

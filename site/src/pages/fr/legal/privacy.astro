@@ -13,11 +13,13 @@ const lang = 'fr';
     <nav class="legal-sidebar-links">
       <a href="/fr/legal">Vue d'ensemble</a>
       <a href="/fr/legal/terms">CGU</a>
+      <a href="/fr/legal/terms-of-sale">Conditions de vente</a>
       <a href="/fr/legal/privacy" class="active">Confidentialité</a>
+      <a href="/fr/legal/dpa">Sous-traitance (DPA)</a>
       <a href="/fr/legal/disclaimer">Disclaimer</a>
       <a href="/fr/legal/ai-policy">IA &amp; Automatisation</a>
     </nav>
-    <div class="legal-sidebar-meta">En vigueur : juin 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+    <div class="legal-sidebar-meta">En vigueur : juin 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
   </aside>
   <main class="legal-content">
     <header class="legal-hero">
@@ -32,7 +34,8 @@ const lang = 'fr';
 
     <div class="legal-section">
       <h2>1. Responsable du traitement</h2>
-      <p>Agentivity ("<strong>nous</strong>") est le responsable du traitement des données personnelles collectées via notre site web (<a href="https://www.agentivity.io">agentivity.io</a>) et nos services cloud hébergés. Contact pour toutes questions relatives à la protection des données : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+      <p>SMART PIXEL BV, société immatriculée en Belgique sous le numéro d'entreprise BE 0731.739.690, dont le siège social est établi à Wasseiges, Belgique, exerçant sous le nom d'Agentivity ("<strong>nous</strong>"), est le responsable du traitement des données à caractère personnel décrites dans la présente Politique. Contact pour toutes questions relatives à la protection des données : <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</p>
+      <p>Pour le contenu d'un espace de travail hébergé, nous agissons en tant que sous-traitant de notre client, conformément à notre Accord de sous-traitance (<a href="/fr/legal/dpa">agentivity.io/legal/dpa</a>).</p>
       <p>Cette Politique de confidentialité s'applique aux données personnelles que nous collectons dans le cadre du site web et du service cloud Agentivity. Elle ne s'applique pas aux données traitées dans des déploiements auto-hébergés du logiciel, que vous exploitez en tant que responsable de traitement indépendant.</p>
     </div>
 
@@ -45,11 +48,15 @@ const lang = 'fr';
         <li><strong>Informations de compte</strong> — nom, nom de l'organisation (si fourni lors de l'inscription).</li>
         <li><strong>Communications</strong> — contenu des e-mails ou messages que vous nous adressez.</li>
         <li><strong>Informations de paiement</strong> — pour les abonnements payants, le traitement est effectué par un prestataire tiers (ex. Stripe). Nous ne stockons pas vos données de carte bancaire complètes.</li>
+        <li><strong>Inscription</strong> — votre e-mail, l'adresse choisie pour votre espace de travail (<code>&lt;nom&gt;.agentivity.app</code>), l'offre choisie, votre langue.</li>
+        <li><strong>Comptes de l'espace de travail</strong> — le nom, l'e-mail et un mot de passe (conservé sous forme hachée) de chaque personne d'un espace de travail ; son rôle ; les invitations envoyées.</li>
+        <li><strong>Facturation</strong> — nom de facturation, adresse, numéro de TVA s'il est fourni, l'offre et sa période, les factures, les packs d'exécutions achetés. Les données de carte sont traitées par Stripe.</li>
       </ul>
       <h3>2.2 Données collectées automatiquement</h3>
       <ul>
         <li><strong>Données techniques</strong> — adresse IP, type et version de navigateur, système d'exploitation, URL de référence, horodatages d'accès.</li>
         <li><strong>Données d'utilisation</strong> — pages visitées, fonctionnalités utilisées, actions effectuées dans la Plateforme (service cloud uniquement), collectées sous forme anonymisée ou pseudonymisée dans la mesure du possible.</li>
+        <li><strong>Utilisation du service hébergé</strong> — le nombre d'exécutions par mois, le disque utilisé, la version en fonctionnement et le fait que l'espace de travail soit utilisé ou non, afin d'appliquer les limites de votre offre, d'envoyer les alertes de consommation que vous avez demandées, de mettre à jour l'espace de travail et de dimensionner sa machine. Nous ne lisons pas le contenu de vos workflows ou de vos exécutions à cette fin.</li>
         <li><strong>Données d'audience</strong> — uniquement si vous acceptez le bandeau : pages visitées, site d'origine, localisation approximative, type d'appareil et de navigateur (voir section 9).</li>
       </ul>
       <h3>2.3 Données traitées via vos agents</h3>
@@ -73,6 +80,8 @@ const lang = 'fr';
       <ul>
         <li>Vous envoyer une confirmation d'accès, des mises à jour lors du lancement du service cloud Agentivity et des actualités du produit (abonnés à la liste de diffusion).</li>
         <li>Gérer votre compte et vous fournir les services auxquels vous avez souscrit.</li>
+        <li>Créer et faire fonctionner votre espace de travail, le réveiller lorsqu'il est utilisé et installer les nouvelles versions.</li>
+        <li>Envoyer les e-mails du service : le lien pour réclamer votre espace de travail, les invitations, les réinitialisations de mot de passe, les alertes lorsque votre mois d'exécutions est épuisé, les avis avant chaque étape lorsqu'une offre a pris fin.</li>
         <li>Traiter les paiements et émettre des factures (abonnés payants).</li>
         <li>Répondre à vos demandes et assurer le support client.</li>
         <li>Améliorer la Plateforme en analysant des patterns d'utilisation anonymisés.</li>
@@ -86,11 +95,12 @@ const lang = 'fr';
       <h2>5. Partage des données et tiers</h2>
       <h3>5.1 Prestataires de services (sous-traitants)</h3>
       <ul>
+        <li><strong>Fly.io</strong> — fait fonctionner les espaces de travail hébergés (machines, stockage, sauvegardes), dans l'Union européenne (Francfort, Allemagne).</li>
+        <li><strong>Cloudflare</strong> — passerelle devant les espaces de travail et les noms de domaine du site (routage, TLS) ; l'interface d'administration de notre équipe est protégée par Cloudflare Access.</li>
+        <li><strong>Stripe</strong> (Stripe Payments Europe, Ltd., Irlande) — paiement des abonnements et des packs, factures, TVA. Stripe est responsable de traitement indépendant pour certains traitements (prévention de la fraude), selon sa propre politique de confidentialité.</li>
+        <li><strong>Brevo</strong> (France) — la liste de diffusion et les e-mails du service.</li>
         <li><strong>Vercel</strong> — hébergement du site web et du point d'accès serveur qui reçoit les inscriptions à la liste de diffusion et les transmet à Brevo.</li>
-        <li><strong>Brevo</strong> (société française) — héberge notre liste de diffusion et envoie nos e-mails de confirmation et de communication. Voir la section 13.</li>
         <li><strong>Google</strong> (Google Ireland Limited) — Google Tag Manager et Google Analytics 4, pour la mesure d'audience, uniquement si vous acceptez le bandeau des cookies. Voir la section 9.</li>
-        <li><strong>Prestataires de paiement</strong> — pour les abonnements payants (prestataire spécifique à annoncer).</li>
-        <li><strong>Fournisseurs d'infrastructure cloud</strong> — pour l'hébergement du service cloud.</li>
       </ul>
       <p>Tous les prestataires sont contractuellement tenus de traiter vos données uniquement selon nos instructions et conformément au droit applicable en matière de protection des données.</p>
       <h3>5.2 Obligations légales</h3>
@@ -102,13 +112,18 @@ const lang = 'fr';
     <div class="legal-section">
       <h2>6. Transferts internationaux de données</h2>
       <p>Nous sommes basés en Belgique et traitons principalement les données au sein de l'Espace économique européen (EEE). Certains de nos prestataires peuvent traiter des données en dehors de l'EEE (notamment aux États-Unis). Dans ce cas, nous veillons à ce que des garanties appropriées soient en place, notamment des Clauses contractuelles types (CCT) approuvées par la Commission européenne.</p>
+      <p>Le contenu des espaces de travail hébergés est stocké dans l'Union européenne. Certains de nos prestataires sont établis aux États-Unis (Fly.io, Cloudflare, Stripe pour certains traitements, Vercel, Google) ; les transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) ou sur des Clauses contractuelles types, comme le prévoient les conditions de traitement des données de chaque prestataire.</p>
     </div>
 
     <div class="legal-section">
       <h2>7. Durée de conservation</h2>
       <ul>
-        <li><strong>Adresses e-mail (liste de diffusion : liste d'attente et newsletter) :</strong> Conservées jusqu'à votre désinscription ou votre demande de suppression, ou 24 mois après la date de votre consentement si le service cloud n'a pas encore été lancé.</li>
+        <li><strong>Adresses e-mail (liste de diffusion : liste d'attente et newsletter) :</strong> Conservées jusqu'à votre désinscription ou votre demande de suppression.</li>
         <li><strong>Données de compte :</strong> Conservées pendant la durée de votre compte, plus une période raisonnable pour la conformité légale (généralement jusqu'à 3 ans après la clôture du compte).</li>
+        <li><strong>Données de compte d'un client :</strong> aussi longtemps que le client a un espace de travail, puis 3 ans après sa suppression (actions en justice).</li>
+        <li><strong>Espaces de travail d'essai non réclamés :</strong> supprimés 48 heures après leur création.</li>
+        <li><strong>Espaces de travail sans offre :</strong> en lecture seule pendant 30 jours, en pause jusqu'au 90e jour, à la corbeille jusqu'au 120e jour, puis supprimés avec leurs sauvegardes. Des avis sont envoyés avant chaque étape.</li>
+        <li><strong>Sauvegardes d'un espace de travail :</strong> conservées 7, 14 ou 30 jours selon l'offre.</li>
         <li><strong>Dossiers de transactions :</strong> Conservés 7 ans à des fins comptables et fiscales.</li>
         <li><strong>Journaux d'utilisation :</strong> Conservés sous forme anonymisée pendant 13 mois maximum.</li>
         <li><strong>Données d'audience (Google Analytics) :</strong> Conservées 14 mois, puis supprimées automatiquement.</li>
@@ -125,6 +140,7 @@ const lang = 'fr';
       <h2>9. Cookies et technologies de traçage</h2>
       <h3>9.1 Stockage strictement nécessaire</h3>
       <p>Le site mémorise votre choix concernant les cookies dans votre navigateur (une petite entrée nommée <code>ag_cookie_consent</code>, conservée localement et jamais envoyée vers nos serveurs). Nous pouvons aussi utiliser des cookies strictement nécessaires pour maintenir la session des utilisateurs connectés au service cloud hébergé. Ils sont essentiels au fonctionnement du service et ne nécessitent pas de consentement au sens de la directive ePrivacy.</p>
+      <p>Le Studio hébergé conserve un cookie de session (<code>agentivity_session</code>, SameSite=Strict) tant que vous êtes connecté, l'apparence que vous avez choisie (thème), ainsi qu'un cookie de la console d'exploitation (<code>ops-lang</code>, la langue) réservé à notre équipe.</p>
       <h3>9.2 Mesure d'audience (uniquement avec votre consentement)</h3>
       <p>Si vous cliquez sur « Accepter » dans le bandeau, nous chargeons Google Tag Manager, qui fait fonctionner Google Analytics 4 pour notre compte. Cet outil nous indique, de façon agrégée, quelles pages sont consultées et comment les visiteurs arrivent sur le site, afin de l'améliorer. Il dépose des cookies dans votre navigateur (<code>_ga</code> et <code>_ga_</code> suivi d'un identifiant, d'une durée pouvant aller jusqu'à deux ans) et transmet à Google des données : pages consultées, site d'origine, localisation approximative, type d'appareil et de navigateur, identifiant pseudonymisé. Google reçoit aussi votre adresse IP, comme tout site que vous visitez.</p>
       <p>Si vous cliquez sur « Refuser », ou si vous ne faites aucun choix, rien de tout cela n'est chargé : votre navigateur n'envoie rien à Google et aucun cookie d'analyse n'est déposé.</p>
@@ -146,13 +162,14 @@ const lang = 'fr';
         <li><strong>Droit d'opposition (Art. 21) :</strong> Vous opposer au traitement fondé sur l'intérêt légitime ou à des fins de prospection directe.</li>
         <li><strong>Droit de retrait du consentement :</strong> Retirer votre consentement à tout moment lorsque le traitement est fondé sur le consentement.</li>
       </ul>
-      <p>Pour exercer l'un de ces droits, écrivez-nous à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. Nous répondrons dans les <strong>30 jours</strong>. Nous pourrons vous demander de vérifier votre identité avant de traiter votre demande.</p>
+      <p>Pour exercer l'un de ces droits, écrivez-nous à <a href="mailto:security@agentivity.io">security@agentivity.io</a>. Nous répondrons dans les <strong>30 jours</strong>. Nous pourrons vous demander de vérifier votre identité avant de traiter votre demande.</p>
+      <p>Si vous êtes une personne d'un espace de travail exploité par l'un de nos clients, vos données dans cet espace de travail sont sous le contrôle de ce client : adressez-lui votre demande ; nous l'aiderons à y répondre.</p>
       <p>Vous avez également le droit d'introduire une réclamation auprès de l'Autorité de protection des données belge (<a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer">dataprotectionauthority.be</a>) ou de l'autorité de contrôle de votre pays de résidence.</p>
     </div>
 
     <div class="legal-section">
       <h2>11. Protection des mineurs</h2>
-      <p>Agentivity ne s'adresse pas aux personnes âgées de moins de 18 ans. Nous ne collectons pas sciemment de données personnelles de mineurs. Si vous estimez que nous avons collecté des données d'un mineur sans consentement approprié, contactez-nous immédiatement à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+      <p>Agentivity ne s'adresse pas aux personnes âgées de moins de 18 ans. Nous ne collectons pas sciemment de données personnelles de mineurs. Si vous estimez que nous avons collecté des données d'un mineur sans consentement approprié, contactez-nous immédiatement à <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</p>
     </div>
 
     <div class="legal-section">
@@ -178,12 +195,12 @@ const lang = 'fr';
       <h3>13.5 Durée de conservation</h3>
       <p>Nous conservons votre inscription jusqu'à votre désinscription ou votre demande de suppression ou, si le service cloud n'a pas été lancé, pendant 24 mois à compter de la date de votre consentement, selon ce qui survient en premier.</p>
       <h3>13.6 Retrait du consentement et suppression</h3>
-      <p>Chaque e-mail que nous envoyons contient un lien de désinscription, et vous pouvez retirer votre consentement à tout moment en un clic. Vous pouvez aussi écrire à <a href="mailto:hello@agentivity.io">hello@agentivity.io</a> pour vous désinscrire ou demander la suppression de vos données. Le retrait du consentement ne remet pas en cause la licéité du traitement effectué avant ce retrait. Vos autres droits sont décrits à la section 10.</p>
+      <p>Chaque e-mail que nous envoyons contient un lien de désinscription, et vous pouvez retirer votre consentement à tout moment en un clic. Vous pouvez aussi écrire à <a href="mailto:security@agentivity.io">security@agentivity.io</a> pour vous désinscrire ou demander la suppression de vos données. Le retrait du consentement ne remet pas en cause la licéité du traitement effectué avant ce retrait. Vos autres droits sont décrits à la section 10.</p>
     </div>
 
     <div class="legal-section">
       <h2>14. Contact</h2>
-      <p>Pour toute question relative à cette politique :<br/><strong>Agentivity</strong><br/>E-mail : <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Délai de réponse : 30 jours (demandes RGPD), 5 jours ouvrables (demandes générales)</p>
+      <p>Pour toute question relative à cette politique :<br/><strong>Agentivity</strong><br/>E-mail : <a href="mailto:security@agentivity.io">security@agentivity.io</a><br/>Délai de réponse : 30 jours (demandes RGPD), 5 jours ouvrables (demandes générales)</p>
     </div>
   </main>
 </div>

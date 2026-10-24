@@ -3,6 +3,7 @@ title: "Keep a Knowledge Base up to date"
 description: "A Knowledge Base reads its source again by hand, after a delay, or when the source changes. How each way works, and how to synchronise a base now."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -52,6 +53,8 @@ The state goes to **Synchronising…**, then to **Synchronised**, or to **Failed
 | **Synchronising…** | The base is reading its source. |
 | **Synchronised** | The last reading went well. |
 | **Failed** | The last reading failed. Open the base: **What could not be read** says why. |
+
+If the server stopped in the middle of a reading, the base does not stay at **Synchronising…** for ever. It shows **Failed**, and **What could not be read** says: "The synchronisation was cut off when the server stopped. What it had read is kept; synchronise it again to finish." Select **Synchronise** to finish. A search on such a base does it for you.
 
 ## How to know it worked
 

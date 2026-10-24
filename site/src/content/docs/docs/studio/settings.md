@@ -3,13 +3,14 @@ title: "The Settings screen"
 description: "The two parts of Settings in the Agentivity Studio. Credentials, for the keys and accounts your agents use, and Configurations."
 sidebar:
   order: 8
+draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/studio/settings.md. Do not edit here: edit the source and publish again. -->
 
-**Settings** has two parts: **Credentials** and **Configurations**.
+**Settings** opens with two panes, **Credentials** and **Configurations**. On a workspace with sign-in, they are in the group **Workspace** of **Administration**, with **Data** and **Network**: see [Workspace panes](/docs/administration/workspace-panes/).
 
 ## Credentials
 
@@ -38,7 +39,9 @@ To add the connection of an AI model, see [Connect an AI model](/docs/guides/con
 
 ## Good to know
 
-Agentivity has no login. Anyone who can open the Studio can open **Settings**, and can add, change or delete connections. A secret that is already saved is not shown to them.
+- **Settings** is now part of **Administration**, which also holds the panes for people, roles, spaces, usage and, on a hosted workspace, the subscription: see [Administration, who sees what](/docs/administration/what-administration-is/).
+- In the Community edition there is no login. Anyone who can open the Studio can open these panes, and can add, change or delete connections. A secret that is already saved is not shown to them.
+- On a workspace with sign-in, a person sees a pane only if their role allows it.
 
 ## Next step
 

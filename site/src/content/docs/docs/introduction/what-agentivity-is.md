@@ -1,8 +1,9 @@
 ---
 title: "What Agentivity is"
-description: "Agentivity is a platform to build and run AI agents, AI teams and workflows without writing code, on your own machine or server."
+description: "Agentivity is a platform to build and run AI agents, AI teams and workflows without writing code, on your own server or in a hosted workspace."
 sidebar:
   order: 1
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -34,20 +35,25 @@ To choose between them, read [Choose between an agent, a team and a workflow](/d
 - **The Assistant.** A part of the Studio that builds for you. You describe what you need in your own words; it asks questions, shows a plan and builds a draft that you check and save.
 - **Ready-made solutions.** Four showcases that you can import and open, to see how a finished solution is built.
 
+## Two ways to have it
+
+- **Install it yourself.** The Community edition is free. It runs on your own machine or server, with Docker. See [Install Agentivity with Docker](/docs/getting-started/install-community/).
+- **Use a hosted workspace.** You sign up on the site, you get an address such as `yourname.agentivity.app`, and you work in your browser. There is nothing to install. It starts with a 14-day trial, without a card. It comes with sign-in, people, roles and an area of Administration. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/).
+
 ## What you bring
 
-- **A machine that runs Docker.** Your own computer, or a server.
+- **A machine that runs Docker** if you install it yourself. Your own computer, or a server. A hosted workspace needs none.
 - **An AI model.** Agentivity does not provide one. You connect the provider you use, for example Anthropic, OpenAI or Google, with your own API key. The provider bills you directly.
 
 ## Where your data is
 
-Your agents, teams, workflows, tables and settings are stored on your machine. What an agent sends to the AI model goes to the provider you chose, under that provider's terms.
+With the Community edition, your agents, teams, workflows, tables and settings are stored on your machine. With a hosted workspace, they are stored in your workspace, which Agentivity runs, and you can export everything in one file. What an agent sends to the AI model goes to the provider you chose, under that provider's terms.
 
 ## What Agentivity is not
 
 - **Not a chatbot.** You do not talk to one general assistant. You build specialists with a role, and you organise them.
 - **Not a model provider.** You bring your own model.
-- **Not a hosted service today.** The Community edition is the one you install yourself. Hosted editions are planned. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
+- **Not only a service.** You may use a hosted workspace, or install the Community edition yourself. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/) and [Plans and their limits](/docs/hosted/plans-and-limits/).
 
 ## Next step
 

@@ -3,6 +3,7 @@ title: "Look inside a Knowledge Base and try a search"
 description: "Open a Knowledge Base to see its state, what it holds, what could not be read, and which agents use it. Try a search as an agent would."
 sidebar:
   order: 4
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -74,6 +75,7 @@ After a synchronisation, **State** says **Synchronised** and **Holds** is not ze
 
 ## If it does not work
 
+- **The state is Failed after the server stopped.** The red frame says the synchronisation was cut off when the server stopped. What it had read is kept: select **Synchronise** to finish.
 - **The state is Failed, and a red frame shows.** Read **What could not be read**. For example, a Files base fails when its path is inside the installation of Agentivity (use a folder mounted outside `/app`), and a base on the web fails when an address does not answer.
 - **"Nothing found."** The base holds nothing that is close to the question, or it is empty. Check **Holds**.
 - **The search takes long the first time.** The base was due, and the search synchronised it first. See [Keep a Knowledge Base up to date](/docs/knowledge-bases/keep-a-knowledge-base-up-to-date/).

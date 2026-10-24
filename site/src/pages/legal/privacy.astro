@@ -13,11 +13,13 @@ const lang = 'en';
     <nav class="legal-sidebar-links">
       <a href="/legal">Overview</a>
       <a href="/legal/terms">Terms of Use</a>
+      <a href="/legal/terms-of-sale">Terms of Sale</a>
       <a href="/legal/privacy" class="active">Privacy Policy</a>
+      <a href="/legal/dpa">Data Processing Agreement</a>
       <a href="/legal/disclaimer">Disclaimer</a>
       <a href="/legal/ai-policy">AI &amp; Automation</a>
     </nav>
-    <div class="legal-sidebar-meta">Effective: June 2026<br/>Governed by Belgian law.<br/><br/><a href="mailto:hello@agentivity.io">hello@agentivity.io</a></div>
+    <div class="legal-sidebar-meta">Effective: June 2026<br/>Governed by Belgian law.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
   </aside>
   <main class="legal-content">
     <header class="legal-hero">
@@ -28,8 +30,9 @@ const lang = 'en';
 
     <div class="legal-section">
       <h2>1. Data Controller</h2>
-      <p>Agentivity ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") is the data controller responsible for the personal data collected through our website (<a href="https://www.agentivity.io">agentivity.io</a>) and hosted cloud services.</p>
-      <p>Contact for all data protection enquiries: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
+      <p>SMART PIXEL BV, a company registered in Belgium under enterprise number BE 0731.739.690, with its registered office in Wasseiges, Belgium, trading as Agentivity ("<strong>we</strong>"), is the controller of the personal data described in this Policy.</p>
+      <p>For the content of a hosted workspace, we act as the processor of our customer, under our Data Processing Agreement (<a href="/legal/dpa">agentivity.io/legal/dpa</a>).</p>
+      <p>Contact for all data protection enquiries: <a href="mailto:security@agentivity.io">security@agentivity.io</a></p>
       <p>This Privacy Policy applies to all personal data we collect in connection with the Agentivity website and cloud services. It does not apply to data processed within self-hosted deployments of the software, which you operate as an independent data controller.</p>
     </div>
 
@@ -42,11 +45,15 @@ const lang = 'en';
         <li><strong>Account information</strong> — name, organisation name (if provided during registration).</li>
         <li><strong>Communications</strong> — content of emails or messages you send to us.</li>
         <li><strong>Payment information</strong> — when you subscribe to a paid plan, payment processing is handled by a third-party provider (e.g. Stripe). We do not store your full payment card details.</li>
+        <li><strong>Sign-up</strong> — your e-mail, the address chosen for your workspace (<code>&lt;name&gt;.agentivity.app</code>), the plan chosen, your language.</li>
+        <li><strong>Workspace accounts</strong> — name, e-mail and a password (stored hashed) of each person of a workspace; their role; the invitations sent.</li>
+        <li><strong>Billing</strong> — billing name, address, VAT number if given, the plan and its period, invoices, the execution packs bought. Card details are handled by Stripe.</li>
       </ul>
       <h3>2.2 Data collected automatically</h3>
       <ul>
         <li><strong>Technical data</strong> — IP address, browser type and version, operating system, referring URL, and timestamps of access.</li>
         <li><strong>Usage data</strong> — pages visited, features used, actions taken within the Platform (for the hosted cloud service only). This data is collected in anonymised or pseudonymised form where possible.</li>
+        <li><strong>Usage of the hosted service</strong> — the number of executions per month, the disk used, the version running and whether the workspace is in use, so that we can apply the limits of your plan, send the alerts of consumption you asked for, update the workspace and size its machine. We do not read the content of your workflows or executions for this.</li>
         <li><strong>Audience data</strong> — only if you accept the cookie banner: pages visited, referring site, approximate location, device and browser type (see section 9).</li>
       </ul>
       <h3>2.3 Data processed through your agents</h3>
@@ -70,6 +77,8 @@ const lang = 'en';
       <ul>
         <li>To send you access confirmation, updates when the Agentivity cloud service launches and product news (mailing-list subscribers).</li>
         <li>To manage your account and provide you with the services you have subscribed to.</li>
+        <li>To create and run your workspace, wake it up when it is used, and install new versions.</li>
+        <li>To send the e-mails of the service: the link to claim your workspace, invitations, password resets, alerts when your month of executions runs out, notices before each step when a plan has ended.</li>
         <li>To process payments and issue invoices (paid subscribers).</li>
         <li>To respond to your enquiries and provide customer support.</li>
         <li>To improve the Platform by analysing anonymised usage patterns.</li>
@@ -84,11 +93,12 @@ const lang = 'en';
       <p>We share your personal data only in the following circumstances:</p>
       <h3>5.1 Service providers (processors)</h3>
       <ul>
+        <li><strong>Fly.io</strong> — runs the hosted workspaces (machines, storage, backups), in the European Union (Frankfurt, Germany).</li>
+        <li><strong>Cloudflare</strong> — gateway in front of the workspaces and the website's domain names (routing, TLS); the back-office of our team is protected by Cloudflare Access.</li>
+        <li><strong>Stripe</strong> (Stripe Payments Europe, Ltd., Ireland) — payment of subscriptions and packs, invoices, VAT. Stripe is an independent controller for some processing (fraud prevention), under its own privacy policy.</li>
+        <li><strong>Brevo</strong> (France) — the mailing list and the e-mails of the service.</li>
         <li><strong>Vercel</strong> — website hosting and the serverless endpoint that receives mailing-list subscriptions and passes them on to Brevo.</li>
-        <li><strong>Brevo</strong> (a French company) — hosts our mailing list and sends our confirmation and marketing emails. See section 14.</li>
         <li><strong>Google</strong> (Google Ireland Limited) — Google Tag Manager and Google Analytics 4, for audience measurement, only if you accept the cookie banner. See section 9.</li>
-        <li><strong>Payment processors</strong> — for paid subscriptions (specific provider to be announced). Payment processing is conducted under PCI DSS compliance.</li>
-        <li><strong>Cloud infrastructure providers</strong> — for hosting the cloud service.</li>
       </ul>
       <p>All service providers are contractually bound to process your data only on our instructions and in accordance with applicable data protection law.</p>
       <h3>5.2 Legal requirements</h3>
@@ -100,14 +110,19 @@ const lang = 'en';
     <div class="legal-section">
       <h2>6. International Data Transfers</h2>
       <p>We are based in Belgium and primarily process data within the European Economic Area (EEA). Some of our third-party service providers may process data outside the EEA (for example, in the United States).</p>
-      <p>Where data is transferred outside the EEA, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission, or we rely on an adequacy decision. You may request information about the specific safeguards applied to international transfers by contacting us at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>.</p>
+      <p>Where data is transferred outside the EEA, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission, or we rely on an adequacy decision. You may request information about the specific safeguards applied to international transfers by contacting us at <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</p>
+      <p>The content of hosted workspaces is stored in the European Union. Some of our providers are established in the United States (Fly.io, Cloudflare, Stripe for some processing, Vercel, Google); transfers rely on the EU–US Data Privacy Framework or on Standard Contractual Clauses, as provided in each provider's data processing terms.</p>
     </div>
 
     <div class="legal-section">
       <h2>7. Data Retention</h2>
       <ul>
-        <li><strong>Mailing-list email addresses (waitlist and newsletter):</strong> Retained until you unsubscribe or request deletion, or for 24 months from the date of your consent if no cloud service has launched, whichever comes first.</li>
+        <li><strong>Mailing-list email addresses (waitlist and newsletter):</strong> Retained until you unsubscribe or request deletion.</li>
         <li><strong>Account data:</strong> Retained for the duration of your account plus a reasonable period thereafter for legal compliance purposes (typically up to 3 years after account closure).</li>
+        <li><strong>Account data of a customer:</strong> as long as the customer has a workspace, then 3 years after its deletion (legal claims).</li>
+        <li><strong>Trial workspaces not claimed:</strong> deleted 48 hours after their creation.</li>
+        <li><strong>Workspaces without a plan:</strong> read only for 30 days, paused until day 90, in the trash until day 120, then deleted with their backups. Notices are sent before each step.</li>
+        <li><strong>Backups of a workspace:</strong> kept 7, 14 or 30 days according to the plan.</li>
         <li><strong>Transaction records:</strong> Retained for 7 years for accounting and tax compliance purposes.</li>
         <li><strong>Support communications:</strong> Retained for up to 3 years from the date of the last communication.</li>
         <li><strong>Usage logs:</strong> Retained in anonymised form for up to 13 months.</li>
@@ -133,6 +148,7 @@ const lang = 'en';
       <h2>9. Cookies and Tracking Technologies</h2>
       <h3>9.1 Strictly necessary storage</h3>
       <p>The website remembers your cookie choice in your browser (a small entry named <code>ag_cookie_consent</code>, kept locally and never sent to us). We may also use strictly necessary cookies to maintain session state for logged-in users of the hosted cloud service. These are essential for the service to function and do not require consent under the ePrivacy Directive.</p>
+      <p>The hosted Studio keeps a session cookie (<code>agentivity_session</code>, SameSite=Strict) while you are signed in, the appearance you chose (theme), and a cookie of the operator console (<code>ops-lang</code>, the language) for our team only.</p>
       <h3>9.2 Audience measurement (only with your consent)</h3>
       <p>If you click "Accept" on the cookie banner, we load Google Tag Manager, which runs Google Analytics 4 on our behalf. It tells us, in aggregate, which pages are visited and how visitors arrive, so that we can improve the website. It sets cookies in your browser (<code>_ga</code> and <code>_ga_</code> followed by an identifier, lasting up to two years) and sends data to Google: pages visited, referring site, approximate location, device and browser type, and a pseudonymous identifier. Google also receives your IP address, as any website you visit does.</p>
       <p>If you click "Decline", or if you make no choice, none of this is loaded: your browser sends nothing to Google and no analytics cookie is set.</p>
@@ -154,13 +170,14 @@ const lang = 'en';
         <li><strong>Right to object (Art. 21):</strong> To object to processing based on legitimate interests or for direct marketing purposes.</li>
         <li><strong>Right to withdraw consent:</strong> To withdraw consent at any time where processing is based on consent, without affecting the lawfulness of prior processing.</li>
       </ul>
-      <p>To exercise any of these rights, please email us at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a>. We will respond within <strong>30 days</strong>. We may need to verify your identity before processing your request.</p>
+      <p>To exercise any of these rights, please email us at <a href="mailto:security@agentivity.io">security@agentivity.io</a>. We will respond within <strong>30 days</strong>. We may need to verify your identity before processing your request.</p>
+      <p>If you are a person of a workspace run by one of our customers, your data in that workspace is under the control of that customer: address your request to them; we will help them answer it.</p>
       <p>You also have the right to lodge a complaint with the Belgian Data Protection Authority (<a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer">dataprotectionauthority.be</a>) or the supervisory authority in your country of residence.</p>
     </div>
 
     <div class="legal-section">
       <h2>11. Children's Privacy</h2>
-      <p>Agentivity is not directed at children under the age of 18. We do not knowingly collect personal data from anyone under 18. If you believe we have collected data from a minor without appropriate consent, please contact us immediately at <a href="mailto:hello@agentivity.io">hello@agentivity.io</a> and we will take steps to delete that data promptly.</p>
+      <p>Agentivity is not directed at children under the age of 18. We do not knowingly collect personal data from anyone under 18. If you believe we have collected data from a minor without appropriate consent, please contact us immediately at <a href="mailto:security@agentivity.io">security@agentivity.io</a> and we will take steps to delete that data promptly.</p>
     </div>
 
     <div class="legal-section">
@@ -192,13 +209,13 @@ const lang = 'en';
       <h3>14.5 Retention</h3>
       <p>We keep your subscription until you unsubscribe or ask us to delete it or, if the cloud service has not launched, for 24 months from the date of your consent, whichever comes first.</p>
       <h3>14.6 Withdrawing consent and deletion</h3>
-      <p>Every email we send contains an unsubscribe link, and you can withdraw your consent at any time with one click. You can also email <a href="mailto:hello@agentivity.io">hello@agentivity.io</a> to unsubscribe or to have your data deleted. Withdrawing consent does not affect the lawfulness of the processing carried out before. Your other rights are described in section 10.</p>
+      <p>Every email we send contains an unsubscribe link, and you can withdraw your consent at any time with one click. You can also email <a href="mailto:security@agentivity.io">security@agentivity.io</a> to unsubscribe or to have your data deleted. Withdrawing consent does not affect the lawfulness of the processing carried out before. Your other rights are described in section 10.</p>
     </div>
 
     <div class="legal-section">
       <h2>15. Contact</h2>
       <p>For any privacy-related questions, requests, or complaints:</p>
-      <p><strong>Agentivity</strong><br/>Email: <a href="mailto:hello@agentivity.io">hello@agentivity.io</a><br/>Response time: within 30 days (GDPR requests), within 5 business days (general enquiries)</p>
+      <p><strong>Agentivity</strong><br/>Email: <a href="mailto:security@agentivity.io">security@agentivity.io</a><br/>Response time: within 30 days (GDPR requests), within 5 business days (general enquiries)</p>
     </div>
   </main>
 </div>

@@ -3,6 +3,7 @@ title: "The Executions screen"
 description: "The history of the executions of your workspace. Read the state of an execution, open its details, and stop or delete several executions at once."
 sidebar:
   order: 6
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -57,6 +58,20 @@ To answer, open the execution in its editor and use the panel **Chat** of the ta
 1. Tick the box of each execution. **Select page** ticks all the executions of the page, **Clear selection** unticks them.
 2. Choose an action in the list **Batch action**: stop the executions, or delete them.
 3. Select **Apply**.
+
+## When a new execution is refused
+
+On a hosted workspace, an execution can be refused with a message that says why: no plan in force, an update under way, or a limit of the plan reached. See [Why did my execution not start?](/docs/hosted/why-did-my-execution-not-start/).
+
+## When the server stops
+
+If the server stops or restarts while executions are going on, those executions are cut off. What happens next depends on where they were:
+
+- **An execution that waits for a person** (an approval, a form, a question) keeps its place. After the restart, it is still there and you can answer it.
+- **A workflow cut off in the middle of a step** cannot go on from where it was. Run it again. Asked to go on, the workspace answers: "This workflow cannot go on from where it was cut off: it keeps its place only where it waits for a person. Run it again."
+- **An agent or a team** keeps its last saved point and can be taken up again from there. The Studio has no button for it: it is done through the API.
+
+On a hosted workspace this rarely happens, because an update lets executions finish first: see [When your workspace sleeps or is updated](/docs/hosted/sleeping-and-updates/). It can still happen when a machine fails.
 
 ## Good to know
 

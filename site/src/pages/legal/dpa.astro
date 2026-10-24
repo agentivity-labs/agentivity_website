@@ -1,0 +1,132 @@
+---
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+const lang = 'en';
+---
+<Base look="editorial" title="Data Processing Agreement — Agentivity" description="The data processing agreement (GDPR Article 28) of the Agentivity hosted plans: roles, security measures, sub-processors, transfers, breaches and end of processing.">
+<SiteHeader lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Legal documents</p>
+    <nav class="legal-sidebar-links">
+      <a href="/legal">Overview</a>
+      <a href="/legal/terms">Terms of Use</a>
+      <a href="/legal/terms-of-sale">Terms of Sale</a>
+      <a href="/legal/privacy">Privacy Policy</a>
+      <a href="/legal/dpa" class="active">Data Processing Agreement</a>
+      <a href="/legal/disclaimer">Disclaimer</a>
+      <a href="/legal/ai-policy">AI &amp; Automation</a>
+    </nav>
+    <div class="legal-sidebar-meta">Effective: October 2026<br/>Governed by Belgian law.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Legal</span>
+      <h1>Data Processing Agreement</h1>
+      <div class="legal-meta-bar"><span>Agentivity hosted plans</span><span>·</span><span>Effective: October 2026</span><span>·</span><span>Last updated: October 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <h2>1. Parties and roles</h2>
+      <ul>
+        <li><strong>The Customer</strong> (the controller): the business that subscribes to a hosted plan of Agentivity.</li>
+        <li><strong>SMART PIXEL BV</strong>, enterprise number BE 0731.739.690, registered office in Wasseiges, Belgium ("<strong>Agentivity</strong>", the processor).</li>
+      </ul>
+      <p>Agentivity processes personal data on behalf of the Customer only to provide the hosted workspace described in the <a href="/legal/terms-of-sale">Terms of Sale</a>. For the data it processes about the Customer as its client (account, billing), Agentivity is a controller under its <a href="/legal/privacy">Privacy Policy</a>, not a processor.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Subject matter, nature and duration</h2>
+      <div class="legal-table-scroll">
+        <table>
+          <tbody>
+            <tr><th scope="row">Subject matter</th><td>Hosting and running the Customer's Agentivity workspace: its agents, teams, workflows, executions, data tables, knowledge bases, files and the accounts of its people.</td></tr>
+            <tr><th scope="row">Nature of processing</th><td>Storage, backup, execution of the Customer's workflows and agents, transmission to the services the Customer connects.</td></tr>
+            <tr><th scope="row">Duration</th><td>The term of the subscription, then until deletion as described in section 9 (at most 120 days after the plan ends, backups included).</td></tr>
+            <tr><th scope="row">Categories of data subjects</th><td>Determined by the Customer: its people (users of the workspace) and any person whose data the Customer processes through its workflows (customers, prospects, employees, contacts).</td></tr>
+            <tr><th scope="row">Categories of data</th><td>Determined by the Customer. For the users of the workspace: name, e-mail, role, sign-in history, audit journal (Business). Special categories of data may be processed only if the Customer has a lawful basis and appropriate safeguards (<a href="/legal/terms">Terms of Use</a>, section 7).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Instructions</h2>
+      <p>Agentivity processes the data only on the documented instructions of the Customer, which are these Terms, the Customer's configuration of its workspace (its workflows, agents, connections), and any further written instruction. Agentivity tells the Customer if it believes an instruction infringes data protection law.</p>
+      <p>What the Customer decides alone: which AI providers and third-party services its workflows call, with its own credentials. Data sent to those services is processed by them under their own terms, as processors or controllers of the Customer, not as sub-processors of Agentivity.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Confidentiality</h2>
+      <p>Persons authorised by Agentivity to access the data are bound by confidentiality. Agentivity does not look into the content of a workspace except where needed to provide support requested by the Customer, to ensure security, or where the law requires it.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Security measures (Article 32)</h2>
+      <ul>
+        <li>Each workspace runs on its own machine and its own storage volume, isolated from other customers.</li>
+        <li>Encryption in transit (TLS) for every connection; the storage volume of each workspace is encrypted at rest.</li>
+        <li>The secrets of the connections (credentials to AI providers and other services) are encrypted with AES-256-GCM, with a key of each workspace; passwords are kept only as a PBKDF2 hash and API keys only as a SHA-256 hash, never in clear.</li>
+        <li>Sign-in by e-mail and password, roles and permissions per person, spaces to separate data inside a workspace; API keys per person with scopes; audit journal on Business.</li>
+        <li>Daily backups of the storage volume, kept 7, 14 or 30 days according to the plan.</li>
+        <li>Access to production restricted to authorised personnel, through the providers' consoles with multi-factor authentication; the operator console is behind Cloudflare Access.</li>
+        <li>Updates installed by Agentivity, without cutting executions in progress.</li>
+        <li>Detection and handling of security incidents (section 8).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Sub-processors</h2>
+      <p>The Customer gives a general authorisation to the following sub-processors. Agentivity tells the Customer at least 30 days before adding or replacing one; the Customer may object on reasonable grounds and, if no solution is found, cancel.</p>
+      <div class="legal-table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Sub-processor</th><th scope="col">Service</th><th scope="col">Location of processing</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fly.io, Inc.</td><td>Machines and storage of the workspaces, backups</td><td>European Union (Frankfurt, Germany); company in the USA</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>Gateway in front of the workspaces (TLS, routing), DNS</td><td>Global network; company in the USA</td></tr>
+            <tr><td>Brevo (Sendinblue SAS)</td><td>Transactional e-mails sent for the workspace (invitations, password resets)</td><td>EU (France)</td></tr>
+            <tr><td>Stripe Payments Europe, Ltd.</td><td>Payment of the subscription (Customer as client, not workspace content)</td><td>EU (Ireland), USA</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Stripe processes only the data of the Customer as a client (billing), never the content of the workspace. Agentivity imposes on each sub-processor obligations equivalent to those of this Agreement.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. International transfers</h2>
+      <p>Workspace data is stored in the European Union. Where a sub-processor established outside the EEA may access it, the transfer relies on the EU–US Data Privacy Framework where the sub-processor is certified, or on the Standard Contractual Clauses adopted by the European Commission, as provided in the data processing terms of each sub-processor.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Personal data breaches</h2>
+      <p>Agentivity notifies the Customer without undue delay, and at the latest within 48 hours after becoming aware of a breach affecting the Customer's data, with the information available (nature, categories and approximate number of data subjects and records, likely consequences, measures taken), so that the Customer can meet its own obligations.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. End of processing</h2>
+      <p>When the plan ends, the workspace follows the steps of the <a href="/legal/terms-of-sale">Terms of Sale</a> (read only 30 days, paused until day 90, trash 30 days). During that time the Customer can bring it back or export its content (Administration › Data). At day 120 the workspace, its data and its backups are deleted, unless the law requires Agentivity to keep them. On request, Agentivity deletes the workspace earlier.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Assistance and rights of data subjects</h2>
+      <p>Agentivity helps the Customer, by appropriate technical means, to answer requests of data subjects: the Customer can find, change, export and delete the data in its workspace itself. Agentivity also assists the Customer, to the extent reasonable, with impact assessments and prior consultations.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Audits</h2>
+      <p>Agentivity makes available the information necessary to demonstrate compliance with this Agreement and answers reasonable questionnaires. On-site audits, at the Customer's expense and with reasonable notice, are possible at most once a year, unless a breach justifies more.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Precedence</h2>
+      <p>In case of conflict, this Agreement prevails over the <a href="/legal/terms-of-sale">Terms of Sale</a> and the <a href="/legal/terms">Terms of Use</a> for the processing of personal data.</p>
+    </div>
+  </main>
+</div>
+</div>
+<SiteFooter lang={lang} />
+</Base>

@@ -1,0 +1,150 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+const lang = 'fr';
+---
+<Base look="editorial" title="Conditions de vente — Agentivity" description="Les conditions de vente des offres hébergées d'Agentivity (Personal, Pro, Business) : essai gratuit, prix et paiement, changement d'offre, résiliation, vos données.">
+<SiteHeader lang={lang} />
+<div class="legal-page">
+<div class="legal-layout">
+  <aside class="legal-sidebar">
+    <p class="legal-sidebar-label">Documents légaux</p>
+    <nav class="legal-sidebar-links">
+      <a href="/fr/legal">Vue d'ensemble</a>
+      <a href="/fr/legal/terms">CGU</a>
+      <a href="/fr/legal/terms-of-sale" class="active">Conditions de vente</a>
+      <a href="/fr/legal/privacy">Confidentialité</a>
+      <a href="/fr/legal/dpa">Sous-traitance (DPA)</a>
+      <a href="/fr/legal/disclaimer">Disclaimer</a>
+      <a href="/fr/legal/ai-policy">IA &amp; Automatisation</a>
+    </nav>
+    <div class="legal-sidebar-meta">En vigueur : octobre 2026<br/>Droit belge applicable.<br/><br/><a href="mailto:security@agentivity.io">security@agentivity.io</a></div>
+  </aside>
+  <main class="legal-content">
+    <header class="legal-hero">
+      <span class="eyebrow" style="color:var(--violet)">Légal</span>
+      <h1>Conditions de vente</h1>
+      <div class="legal-meta-bar"><span>Offres hébergées d'Agentivity</span><span>·</span><span>En vigueur : octobre 2026</span><span>·</span><span>Dernière mise à jour : octobre 2026</span></div>
+    </header>
+
+    <div class="legal-section">
+      <p>La version anglaise de ce document fait foi en cas de litige. <a href="/legal/terms-of-sale">Lire la version anglaise</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Qui nous sommes</h2>
+      <p>Les présentes Conditions de vente constituent un accord entre vous et SMART PIXEL BV, société immatriculée en Belgique sous le numéro d'entreprise BE 0731.739.690, dont le siège social est établi à Wasseiges, Belgique (« <strong>Agentivity</strong> », « <strong>nous</strong> »). Contact : <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</p>
+      <p>Elles s'appliquent aux offres hébergées d'Agentivity (Personal, Pro, Business), aux packs d'exécutions et à l'essai gratuit. Elles ne s'appliquent ni à l'édition Community que vous installez vous-même, régie par l'Elastic License 2.0 et les <a href="/fr/legal/terms">Conditions générales d'utilisation</a>, ni à Enterprise, qui fait l'objet d'un accord écrit distinct.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Le service</h2>
+      <p>Une offre hébergée vous donne un espace de travail : une instance d'Agentivity que nous faisons fonctionner pour vous, accessible à l'adresse <code>&lt;nom&gt;.agentivity.app</code>, avec son propre stockage de données. Les fonctionnalités et les limites de chaque offre (personnes, espaces, exécutions par mois, exécutions simultanées, durée maximale d'une exécution, disque, clés API, sauvegardes conservées, support) sont celles publiées sur <a href="/fr/pricing">agentivity.io/pricing</a> le jour de votre souscription ou de votre changement d'offre.</p>
+      <p>Les modèles d'IA ne sont pas inclus. Vous connectez le fournisseur d'IA de votre choix avec vos propres identifiants et payez ce fournisseur directement. Nous ne revendons pas l'usage de l'IA et n'y appliquons aucune marge (voir les <a href="/fr/legal/terms">Conditions générales d'utilisation</a>, article 10).</p>
+      <p>Un espace de travail que personne n'utilise est mis en veille et se réveille à la visite ou à l'appel suivant ; cela peut prendre quelques secondes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Essai gratuit</h2>
+      <ul>
+        <li>Un essai dure 14 jours, sans carte de paiement, avec les fonctionnalités de l'offre choisie lors de l'inscription. Pendant l'essai, les exécutions sont limitées à 200 au total.</li>
+        <li>Un essai par adresse e-mail. Un espace de travail d'essai qui n'est pas réclamé par son propriétaire dans les 48 heures suivant sa création est supprimé.</li>
+        <li>Choisir une offre payante met fin à l'essai : l'offre démarre et le premier paiement est prélevé immédiatement ; les jours d'essai restants ne sont pas reportés.</li>
+        <li>À la fin d'un essai sans offre payante, l'espace de travail n'a plus d'offre en vigueur (article 9).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Prix et paiement</h2>
+      <ul>
+        <li>Les prix sont indiqués sur <a href="/fr/pricing">agentivity.io/pricing</a> et dans votre espace de travail, hors TVA. La TVA s'ajoute le cas échéant, selon votre pays et votre statut (professionnel ou consommateur).</li>
+        <li>Les offres sont facturées mensuellement ou annuellement, à l'avance, au début de chaque période. Le prix annuel est inférieur à douze paiements mensuels.</li>
+        <li>Le paiement est effectué par carte (y compris Apple Pay et Google Pay lorsqu'ils sont proposés) par l'intermédiaire de notre prestataire de paiement, Stripe. Nous ne voyons ni ne conservons jamais l'intégralité des données de votre carte.</li>
+        <li>Votre abonnement se renouvelle automatiquement à la fin de chaque période, au prix en vigueur pour votre offre, sauf si vous le résiliez (article 7). Nous vous informerons au moins 30 jours à l'avance de tout changement de prix applicable à votre renouvellement.</li>
+        <li>Une facture est émise pour chaque paiement et est disponible dans votre espace de travail (« Administration › Subscription › Payment and invoices »).</li>
+        <li>Si un paiement échoue, nous réessayons et vous en informons ; votre espace de travail continue de fonctionner pendant que notre prestataire de paiement réessaie, afin que vous puissiez mettre à jour votre carte. À défaut de paiement, l'abonnement prend fin et l'article 9 s'applique.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Packs d'exécutions et recharge automatique</h2>
+      <ul>
+        <li>Un pack d'exécutions est une quantité d'exécutions achetée en une fois. Il n'est utilisé que lorsque les exécutions comprises dans votre offre pour le mois sont épuisées, et il est conservé jusqu'à son utilisation : il n'expire pas.</li>
+        <li>Un pack est facturé le jour de l'achat et n'est pas remboursable, qu'il soit utilisé ou non.</li>
+        <li>Recharge automatique : lorsqu'elle est activée, un pack de la taille que vous avez choisie est acheté automatiquement, avec la carte de votre abonnement, lorsque votre mois est sur le point d'être épuisé ; au plus le nombre de fois par mois que vous avez fixé (3 par défaut). Chaque recharge est facturée et confirmée par e-mail. Elle est activée lors de votre souscription ; vous pouvez la désactiver ou la modifier à tout moment dans « Administration › Subscription ».</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Changement d'offre</h2>
+      <ul>
+        <li>Vous pouvez passer à une autre offre, ou de la facturation mensuelle à la facturation annuelle, à tout moment. Le changement prend effet immédiatement et est calculé au prorata : vous payez la différence pour le reste de la période en cours, ou recevez un crédit imputé sur vos prochaines factures.</li>
+        <li>Passage à une offre inférieure : ce qui est en cours d'utilisation continue de fonctionner ; rien de nouveau ne peut être ajouté au-delà des limites de la nouvelle offre. Au bout de 14 jours, les personnes, clés ou espaces ajoutés en dernier au-delà de ces limites sont mis à l'écart (désactivés, non supprimés) jusqu'à ce que vous libériez de la place ou choisissiez une offre supérieure.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Résiliation</h2>
+      <ul>
+        <li>Vous pouvez résilier à tout moment, en une seule étape, depuis votre espace de travail (« Administration › Subscription › Cancel subscription »).</li>
+        <li>La résiliation prend effet à la fin de la période déjà payée : jusque-là, tout fonctionne. Vous pouvez revenir sur la résiliation avant cette date (« Keep my subscription »).</li>
+        <li>Les périodes déjà payées ne sont pas remboursées, en tout ou en partie, sauf lorsque la loi l'exige (article 8).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Droit de rétractation (consommateurs uniquement)</h2>
+      <p>Si vous êtes un consommateur dans l'Union européenne, vous disposez d'un droit de rétractation de 14 jours à compter de la conclusion du contrat. Le service commençant immédiatement à votre demande expresse, vous reconnaissez, lors de la souscription, que si vous vous rétractez dans ces 14 jours, vous payez le service fourni jusqu'au jour de votre rétractation, au prorata de la période payée, et que vous perdez le droit de rétractation pour un pack d'exécutions dès qu'il a commencé à être utilisé. Pour vous rétracter, écrivez à <a href="mailto:security@agentivity.io">security@agentivity.io</a> dans les 14 jours ; nous vous remboursons le solde dans les 14 jours suivant votre message, par le moyen de paiement que vous avez utilisé.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Après la fin d'une offre</h2>
+      <p>Lorsqu'un espace de travail n'a plus d'offre en vigueur (essai terminé, abonnement résilié ou impayé) :</p>
+      <ul>
+        <li>Pendant 30 jours, il est en lecture seule : chacun peut toujours se connecter et tout voir ; plus rien de nouveau ne s'exécute.</li>
+        <li>Il est ensuite mis en pause jusqu'au 90e jour : il ne peut plus être ouvert ; ses données sont conservées.</li>
+        <li>Il passe ensuite à la corbeille pendant 30 jours.</li>
+        <li>Au 120e jour, il est supprimé, avec toutes ses données et ses sauvegardes ; son nom redevient disponible.</li>
+      </ul>
+      <p>Le propriétaire est informé par e-mail avant chaque étape. Choisir une offre à tout moment avant le 120e jour rétablit l'espace de travail tel qu'il était. Le propriétaire peut exporter le contenu de l'espace de travail à tout moment tant qu'il peut être ouvert (« Administration › Data »).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Disponibilité, maintenance et sauvegardes</h2>
+      <ul>
+        <li>Nous veillons à maintenir la disponibilité de votre espace de travail, mais nous ne garantissons pas une disponibilité ininterrompue sur ces offres ; un engagement de disponibilité n'est proposé qu'avec Enterprise.</li>
+        <li>Les nouvelles versions sont installées par nous. Un espace de travail en fonctionnement est prévenu à l'avance ; les exécutions en cours peuvent se terminer ; l'espace de travail redémarre en quelques minutes. Nous pouvons aussi devoir le redémarrer à bref délai pour des raisons de sécurité.</li>
+        <li>Le stockage de votre espace de travail est sauvegardé chaque jour et les sauvegardes sont conservées pendant le nombre de jours de votre offre (7, 14 ou 30 jours). Pour restaurer votre espace de travail à partir d'une sauvegarde, écrivez à <a href="mailto:security@agentivity.io">security@agentivity.io</a>.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Vos données</h2>
+      <p>Vous restez propriétaire de tout ce que vous mettez dans votre espace de travail. Nous ne le traitons que pour fournir le service, en tant que votre sous-traitant, conformément à l'Accord de sous-traitance (<a href="/fr/legal/dpa">agentivity.io/legal/dpa</a>), qui fait partie des présentes Conditions pour les clients professionnels. Notre <a href="/fr/legal/privacy">Politique de confidentialité</a> décrit les données que nous traitons à votre sujet en tant que client.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Suspension</h2>
+      <p>Nous pouvons suspendre un espace de travail sans préavis en cas de manquement grave aux <a href="/fr/legal/terms">Conditions générales d'utilisation</a> (activités interdites, menace pour la sécurité, usage abusif des ressources) ou à la demande d'une autorité compétente, et nous vous en indiquerons la raison sauf si la loi l'interdit.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. Responsabilité</h2>
+      <p>L'article 15 des <a href="/fr/legal/terms">Conditions générales d'utilisation</a> s'applique aux offres hébergées. En particulier, pour les clients professionnels, notre responsabilité totale est limitée au plus élevé des deux montants suivants : les sommes que vous nous avez payées au cours des 12 mois précédant la réclamation, ou 100 €, et exclut les dommages indirects (perte de bénéfices, de données, d'activité). Rien dans les présentes Conditions ne limite une responsabilité qui ne peut être limitée par la loi, ni les droits que les consommateurs tiennent de dispositions impératives.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>14. Modifications des présentes Conditions</h2>
+      <p>Nous pouvons modifier les présentes Conditions de vente. Nous vous informerons au moins 30 jours avant toute modification qui affecte votre abonnement en cours ; si vous ne l'acceptez pas, vous pouvez résilier avant son entrée en application.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>15. Droit applicable et litiges</h2>
+      <p>Les présentes Conditions sont régies par le droit belge. Les litiges relèvent des tribunaux de l'arrondissement judiciaire de Liège (Belgique), sans préjudice du droit impératif des consommateurs d'agir devant les juridictions de leur propre pays. Les consommateurs peuvent également recourir à la <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">plateforme européenne de règlement en ligne des litiges</a>.</p>
+    </div>
+  </main>
+</div>
+</div>
+<SiteFooter lang={lang} />
+</Base>

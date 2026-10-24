@@ -3,6 +3,7 @@ title: "Questions about licence, security and editions"
 description: "Short answers about what the licence allows, the missing login, backups, the editions of Agentivity, and the SDKs."
 sidebar:
   order: 3
+draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -52,7 +53,7 @@ Yes, together with an Agentivity server, under the same conditions as the server
 
 ### Is there a login?
 
-No, not today. Anyone who can reach the address of your server can open the Studio and use everything. See [Keep your Agentivity server private](/docs/guides/keep-your-server-private/).
+In a hosted workspace, yes: people sign in with their e-mail address and a password, and the owner gives them roles. In the Community edition, no: anyone who can reach the address of your server can open the Studio and use everything. See [Keep your Agentivity server private](/docs/guides/keep-your-server-private/).
 
 ### Can I put it on the internet?
 
@@ -64,11 +65,11 @@ They are stored on your server. Once saved, a key is shown as dots and is never 
 
 ### Does Agentivity record who did what?
 
-No. It has no accounts, so it does not know who built, ran or approved something.
+In a hosted workspace on the Business plan, yes: the audit journal says who came in and what changed, and keeps each entry 365 days. See [Usage, monitoring and the audit journal](/docs/administration/usage-monitoring-and-audit-journal/). In the Community edition, no: it has no accounts, so it does not know who built, ran or approved something.
 
 ### How do I back up?
 
-Copy the Docker volume into a file. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/). The backup holds your credentials: keep it safe.
+In the Community edition, copy the Docker volume into a file. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/). The backup holds your credentials: keep it safe.
 
 ## Editions
 
@@ -78,15 +79,15 @@ The Studio, the Assistant, agents, teams with the five ways of working, workflow
 
 ### What is not in it?
 
-Keeping earlier versions of your work and going back to one, plugins, and accounts with roles and rights.
+Keeping earlier versions of your work and going back to one, plugins, and accounts with roles and rights, which a hosted workspace has.
 
 ### Is there a hosted edition, with nothing to install?
 
-Not yet. Hosted editions are planned. See [pricing and editions](/pricing).
+Yes: Personal, Pro and Business, with a 14-day trial. See [Plans and their limits](/docs/hosted/plans-and-limits/) and [pricing](/pricing).
 
 ### What is planned?
 
-Hosted editions, starting executions on a schedule, and accounts with roles and rights. These pages describe only what works today.
+Starting executions on a schedule. These pages describe only what works today.
 
 ## More questions
 

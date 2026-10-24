@@ -16,6 +16,7 @@ const s = t.start_page;
 const pricing = lang === 'fr' ? '/fr/pricing/#waitlist' : '/pricing/#waitlist';
 const termsHref = lang === 'fr' ? '/fr/legal/terms' : '/legal/terms';
 const privacyHref = lang === 'fr' ? '/fr/legal/privacy' : '/legal/privacy';
+const termsOfSaleHref = lang === 'fr' ? '/fr/legal/terms-of-sale' : '/legal/terms-of-sale';
 
 const accountsUrl = (import.meta.env.PUBLIC_ACCOUNTS_URL || 'https://agentivity-accounts-service.fly.dev').replace(/\/$/, '');
 // Cloudflare's test key (always passes) while developing; the real key comes with the build of the site.
@@ -25,7 +26,13 @@ const plans = t.pricing_page.editions.plans
   .filter((plan: any) => ['Personal', 'Pro', 'Business'].includes(plan.name))
   .map((plan: any) => ({ code: plan.name.toLowerCase(), name: plan.name, for: plan.for }));
 
-const [consentBefore, consentMiddle, consentAfter] = s.form.consent.split(/\{terms\}|\{privacy\}/);
+// The sentence of agreement, with a link in the page's language for each of its markers.
+const consentLinks: Record<string, { href: string; label: string }> = {
+  '{terms}': { href: termsHref, label: s.form.terms_link },
+  '{sale}': { href: termsOfSaleHref, label: s.form.sale_link },
+  '{privacy}': { href: privacyHref, label: s.form.privacy_link },
+};
+const consentParts = s.form.consent.split(/(\{terms\}|\{sale\}|\{privacy\})/);
 const config = {
   api: accountsUrl,
   lang,
@@ -77,7 +84,7 @@ const config = {
 
             <label class="st-consent">
               <input type="checkbox" name="consent" required />
-              <span>{consentBefore}<a href={termsHref} target="_blank" rel="noopener">{s.form.terms_link}</a>{consentMiddle}<a href={privacyHref} target="_blank" rel="noopener">{s.form.privacy_link}</a>{consentAfter}</span>
+              <span>{consentParts.map((part) => consentLinks[part] ? <a href={consentLinks[part].href} target="_blank" rel="noopener">{consentLinks[part].label}</a> : part)}</span>
             </label>
 
             <div class="st-turnstile" data-turnstile data-sitekey={siteKey} data-language={lang}></div>

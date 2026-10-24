@@ -44,6 +44,11 @@ body.ed .legal-section strong { color: var(--ed-ink); }
 body.ed .legal-section table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 16px; }
 body.ed .legal-section th { text-align: left; padding: 10px 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); border-bottom: 2px solid var(--ed-ink); }
 body.ed .legal-section td { padding: 12px 14px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); vertical-align: top; }
+/* A wide table (the DPA) scrolls in its own frame on a phone, instead of the page. */
+body.ed .legal-table-scroll { overflow-x: auto; margin: 0 0 16px; }
+body.ed .legal-content { min-width: 0; }   /* lets that frame scroll instead of widening the column */
+body.ed .legal-table-scroll table { min-width: 560px; margin: 0; }
+body.ed .legal-section tbody th { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--ed-line-2); font-size: 15px; letter-spacing: 0; text-transform: none; width: 28%; }
 body.ed .legal-alert { border-radius: 16px; padding: 18px 22px; background: var(--ed-mist); border: 0; border-left: 4px solid var(--ed-navy); }
 body.ed .legal-alert.red { border-left-color: #B3261E; }
 body.ed .legal-alert.amber { border-left-color: var(--ed-yellow); }
