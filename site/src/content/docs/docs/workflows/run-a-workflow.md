@@ -22,7 +22,7 @@ An execution is one time that a workflow works, from its first step to its last.
 2. Select the tab **Execution**, at the top. When the workflow can run, you read **Ready to run** at the top right.
 3. In the bar above the canvas, select the first button, **Run**.
 
-The same bar has **Pause**, **Resume** and **Stop run**.
+The same bar has **Pause**, **Resume** and **Stop run**. **Pause** shows while the execution runs, and **Resume** only once you paused it: it undoes your pause. An execution that waits for a person is not paused: you answer it, there is no **Resume** to select.
 
 ![The tab Execution of a workflow during an execution: the bar with the buttons Run, Pause, Resume and Stop, the state at the top right, and the tab Logs with one line per event](images/run-in-progress.jpg)
 

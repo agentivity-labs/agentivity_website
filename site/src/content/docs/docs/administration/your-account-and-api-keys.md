@@ -3,7 +3,6 @@ title: "Your account and API keys"
 description: "Change your password, see what you may do, and make the API keys that let a program, an AI assistant or a website call your workspace."
 sidebar:
   order: 5
-draft: true
 editUrl: false
 lastUpdated: false
 ---

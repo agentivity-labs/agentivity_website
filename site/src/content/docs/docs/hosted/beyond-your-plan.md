@@ -3,7 +3,6 @@ title: "If you go beyond your plan"
 description: "What happens when you move to a smaller plan, or hold more people, spaces or API keys than it allows, and how to put it right in 14 days."
 sidebar:
   order: 5
-draft: true
 editUrl: false
 lastUpdated: false
 ---

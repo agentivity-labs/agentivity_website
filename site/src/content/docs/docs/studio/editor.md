@@ -40,7 +40,7 @@ In the agent and workflow editors, a small map at the bottom right shows the who
 
 ## The bar of execution buttons
 
-Above the canvas, a small bar has four buttons: **Run**, **Pause**, **Resume** and **Stop**.
+Above the canvas, a small bar has four buttons: **Run**, **Pause**, **Resume** and **Stop**. **Pause** shows while the execution runs, and **Resume** only once you paused it: it undoes your pause. An execution that waits for a person is not paused: you answer it, there is no **Resume** to select.
 
 ## The two buttons next to the panel
 

@@ -3,7 +3,6 @@ title: "Usage, monitoring and the audit journal"
 description: "Follow what the workspace uses of its plan, send its traces to your own tool, and read who came in and what changed."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

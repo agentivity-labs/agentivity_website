@@ -3,7 +3,6 @@ title: "Common questions about Agentivity"
 description: "Short answers to the first questions people ask. What Agentivity is, who it is for, what you need, what you pay, and where your data goes."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -80,11 +79,11 @@ It depends on your provider and on the model. As a rule: each agent that works c
 
 ### Where is my data kept?
 
-With the Community edition, on the machine where you installed Agentivity, in one Docker volume. With a hosted workspace, in your workspace, which Agentivity runs; the owner can export everything in one file from **Administration** > **Data**. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
+With the Community edition, on the machine where you installed Agentivity, in one Docker volume. With a hosted workspace, in your workspace, which Agentivity runs, in the European Union; the owner can export everything in one file from **Administration** > **Data**. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
 
 ### Is what I write sent to Agentivity?
 
-With the Community edition, no. Everything you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity. The image sends no telemetry, unless you give it the address of a collector of your own. See [Telemetry](/docs/reference/configuration/).
+With the Community edition, no. Everything you build stays on your server: agents, teams, workflows, tables and credentials are not sent to Agentivity. The image sends no telemetry, unless you give it the address of a collector of your own. With a hosted workspace, your content is stored in your workspace and processed only to provide the service, as your processor: see the [Data Processing Agreement](/legal/dpa). See [Telemetry](/docs/reference/configuration/).
 
 ### What goes to the AI model provider?
 

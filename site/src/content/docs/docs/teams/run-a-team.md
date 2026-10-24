@@ -38,7 +38,7 @@ Below the drawing, three tabs show what happens:
 | **Errors** | What went wrong. When all is well, it says "No runtime errors detected." |
 | **Logs** | The technical record of the execution. |
 
-The buttons above the drawing control the execution: **Run**, **Pause**, **Resume** and **Stop**.
+The buttons above the drawing control the execution: **Run**, **Pause**, **Resume** and **Stop**. **Pause** shows while the execution runs, and **Resume** only once you paused it: it undoes your pause. An execution that waits for a person is not paused: you answer it, there is no **Resume** to select.
 
 ## Answer when the team asks
 

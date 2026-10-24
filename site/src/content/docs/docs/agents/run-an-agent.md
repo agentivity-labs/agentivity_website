@@ -36,7 +36,7 @@ If the agent has a channel, it can stop and ask you something. The field at the 
 
 ## Control the execution
 
-The panel has buttons to **Pause run**, **Resume run** and **Cancel run**. After an execution, it also has **Run again** and **Reset**.
+The panel has buttons to **Pause run**, **Resume run** and **Cancel run**. **Pause run** shows while the execution runs, and **Resume run** only once you paused it: it undoes your pause. An execution that waits for a person is not paused: you answer it, there is no **Resume run** to select. After an execution, it also has **Run again** and **Reset**.
 
 ## Read what happened
 

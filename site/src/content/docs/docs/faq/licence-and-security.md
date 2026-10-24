@@ -3,7 +3,6 @@ title: "Questions about licence, security and editions"
 description: "Short answers about what the licence allows, the missing login, backups, the editions of Agentivity, and the SDKs."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -57,7 +56,7 @@ In a hosted workspace, yes: people sign in with their e-mail address and a passw
 
 ### Can I put it on the internet?
 
-Not directly. Keep it on a private network, or put your own access control in front.
+With the Community edition, not directly. Keep it on a private network, or put your own access control in front.
 
 ### Are my API keys safe?
 
@@ -69,7 +68,11 @@ In a hosted workspace on the Business plan, yes: the audit journal says who came
 
 ### How do I back up?
 
-In the Community edition, copy the Docker volume into a file. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/). The backup holds your credentials: keep it safe.
+In the Community edition, copy the Docker volume into a file. A hosted workspace is backed up every day by Agentivity: see [Plans and their limits](/docs/hosted/plans-and-limits/). See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/). The backup holds your credentials: keep it safe.
+
+### Where are the terms of the hosted plans?
+
+The [Terms of Sale](/legal/terms-of-sale) cover the trial, payment, changing plan, cancelling and what happens after a plan ends. The [Data Processing Agreement](/legal/dpa) covers the data in your workspace.
 
 ## Editions
 

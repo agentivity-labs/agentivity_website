@@ -3,14 +3,13 @@ title: "Update Agentivity and back up your data"
 description: "Keep a copy of your Agentivity data in one file, restore it, and move to a newer version of the Docker image without losing anything."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---
 
 <!-- GENERATED from agentivity_docs/en/guides/update-and-back-up.md. Do not edit here: edit the source and publish again. -->
 
-This page is for the Community edition, which you install yourself. In a hosted workspace Agentivity updates the product for you, and announces it in the Studio: see [When your workspace sleeps or is updated](/docs/hosted/sleeping-and-updates/). To keep a copy of a hosted workspace, the owner uses **Administration** > **Data** > **Export**: see [Workspace panes](/docs/administration/workspace-panes/).
+This page is for the Community edition, which you install yourself. In a hosted workspace Agentivity updates the product for you, and announces it in the Studio: see [When your workspace sleeps or is updated](/docs/hosted/sleeping-and-updates/). Agentivity backs up a hosted workspace every day and keeps the backups for 7, 14 or 30 days, according to the plan: to restore one, write to security@agentivity.io. To keep a copy of your own, the owner uses **Administration** > **Data** > **Export**: see [Workspace panes](/docs/administration/workspace-panes/).
 
 Everything you build in Agentivity is kept in one Docker volume. This page shows how to copy it to a file, how to bring it back, and how to update Agentivity.
 

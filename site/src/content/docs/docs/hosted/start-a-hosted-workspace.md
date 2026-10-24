@@ -3,7 +3,6 @@ title: "Start a hosted workspace"
 description: "Sign up for the 14-day trial, open the link from your e-mail, choose your password and become the owner of your workspace. No card, nothing to install."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -27,12 +26,12 @@ You do not need a card.
 2. Under **Plan to try**, choose Personal, Pro or Business.
 3. Give **Your email**.
 4. Give the **Name of your workspace**. Use 3 to 30 lowercase letters, digits and hyphens, with no hyphen at either end. The page shows the address it makes, for example `yourname.agentivity.app`.
-5. Accept the terms of use and the privacy policy, and pass the anti-robot check.
+5. Accept the terms of use, the terms of sale and the privacy policy, and pass the anti-robot check.
 6. Select **Start my trial**.
 
 The page then prepares your workspace: it reserves your address, then starts your workspace for the first time. It takes 2 to 5 minutes. Keep the page open.
 
-If the name is already taken, the page says so: choose another. If a trial is already running for your e-mail address, it says so too.
+If the name is already taken, the page says so: choose another. There is one trial for each e-mail address: if one is already running for yours, the page says so.
 
 ## Open the link and choose your password
 

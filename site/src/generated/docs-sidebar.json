@@ -14,7 +14,7 @@
         "fr": "Introduction"
       },
       "total": 9,
-      "published": 7
+      "published": 9
     },
     {
       "id": "getting-started",
@@ -68,7 +68,7 @@
         "fr": "Knowledge Bases"
       },
       "total": 6,
-      "published": 4
+      "published": 6
     },
     {
       "id": "prompts",
@@ -104,7 +104,7 @@
         "fr": "Le Studio, écran par écran"
       },
       "total": 9,
-      "published": 7
+      "published": 9
     },
     {
       "id": "hosted",
@@ -113,7 +113,7 @@
         "fr": "Espaces hébergés"
       },
       "total": 6,
-      "published": 0
+      "published": 6
     },
     {
       "id": "administration",
@@ -122,7 +122,7 @@
         "fr": "Administration"
       },
       "total": 6,
-      "published": 0
+      "published": 6
     },
     {
       "id": "guides",
@@ -131,7 +131,7 @@
         "fr": "Espace de travail"
       },
       "total": 8,
-      "published": 7
+      "published": 8
     },
     {
       "id": "reference",
@@ -149,7 +149,7 @@
         "fr": "Questions fréquentes"
       },
       "total": 3,
-      "published": 1
+      "published": 3
     }
   ]
 }

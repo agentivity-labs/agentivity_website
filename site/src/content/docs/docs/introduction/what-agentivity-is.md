@@ -3,7 +3,6 @@ title: "What Agentivity is"
 description: "Agentivity is a platform to build and run AI agents, AI teams and workflows without writing code, on your own server or in a hosted workspace."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

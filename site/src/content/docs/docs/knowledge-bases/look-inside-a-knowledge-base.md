@@ -3,7 +3,6 @@ title: "Look inside a Knowledge Base and try a search"
 description: "Open a Knowledge Base to see its state, what it holds, what could not be read, and which agents use it. Try a search as an agent would."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---

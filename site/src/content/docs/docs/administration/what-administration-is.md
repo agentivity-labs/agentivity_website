@@ -3,7 +3,6 @@ title: "Administration, who sees what"
 description: "The Administration area of the Studio groups the panes that run a workspace. What each pane is for, and who sees it, by role and by plan."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -38,7 +37,7 @@ Your own **Profile** and your own **API keys** are not in this list. They are un
 
 A pane shows only when three things are true:
 
-1. **The workspace asks for a sign-in.** Without it there are no people to manage, so **People** and **Network** are not shown. The Community edition has no sign-in, so it shows only the panes that do not need one: see [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
+1. **The workspace asks for a sign-in.** Without it there are no people to manage, so **People** and **Network** are not shown. The Community edition has no sign-in, so it shows only the panes that do not need one: **Credentials**, **Configurations** and **Data**. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
 2. **Your role allows it.** The panes follow the rights of the roles. The default **Administrator** role sees them all.
 3. **The plan has the feature.** **Groups**, **Audit journal** and **Monitoring** come with the Business plan. **Spaces** come with Pro and Business. **Subscription** exists only on a hosted workspace.
 
@@ -46,14 +45,14 @@ A pane shows only when three things are true:
 |---|---|---|
 | **Credentials** | Manage credentials | all |
 | **Configurations** | Manage settings | all |
-| **Data** | Being the owner | all |
+| **Data** | Being the owner (without sign-in, everyone) | all |
 | **Network** | Manage settings | all, with a sign-in |
 | **People** | Manage people | all, with a sign-in |
 | **Groups** | Manage people | Business |
 | **Roles** | Manage roles | all, with a sign-in |
 | **Spaces** | Manage spaces | Pro, Business |
-| **API keys** (everyone's) | Manage API keys | all |
-| **Usage** | Manage settings | all |
+| **API keys** (everyone's) | Manage API keys | all, with a sign-in |
+| **Usage** | Manage settings | all, with a sign-in |
 | **Monitoring** | Manage settings | Business |
 | **Audit journal** | Read the audit journal | Business |
 | **Subscription** | Manage billing | hosted workspaces |
@@ -62,7 +61,7 @@ If a pane you expect is missing, ask the owner or an administrator of your works
 
 ## Good to know
 
-- The **owner** is the person who made the workspace, or whom the previous owner chose. The owner can do everything, and is the only one who sees **Data**.
+- The **owner** is the person who made the workspace, or whom the previous owner chose. The owner can do everything. When the workspace asks for a sign-in, the owner is the only one who sees **Data**.
 - Nothing here is shown to a person who cannot use it: a missing pane is not an error.
 
 ## Next step

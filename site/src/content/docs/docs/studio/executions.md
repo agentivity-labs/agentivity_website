@@ -3,7 +3,6 @@ title: "The Executions screen"
 description: "The history of the executions of your workspace. Read the state of an execution, open its details, and stop or delete several executions at once."
 sidebar:
   order: 6
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -67,9 +66,9 @@ On a hosted workspace, an execution can be refused with a message that says why:
 
 If the server stops or restarts while executions are going on, those executions are cut off. What happens next depends on where they were:
 
-- **An execution that waits for a person** (an approval, a form, a question) keeps its place. After the restart, it is still there and you can answer it.
+- **An execution that waits for a person** (an approval, a form, a question) keeps its place. After the restart, it is still there and you can answer it. It is waiting, not paused: you answer it, you do not select **Resume**.
 - **A workflow cut off in the middle of a step** cannot go on from where it was. Run it again. Asked to go on, the workspace answers: "This workflow cannot go on from where it was cut off: it keeps its place only where it waits for a person. Run it again."
-- **An agent or a team** keeps its last saved point and can be taken up again from there. The Studio has no button for it: it is done through the API.
+- **An agent or a team** keeps its last saved point and can be taken up again from there. The Studio has no button for it: it is done through the API. The button **Resume** of the bar above the canvas is not that: it only undoes a **Pause** you made.
 
 On a hosted workspace this rarely happens, because an update lets executions finish first: see [When your workspace sleeps or is updated](/docs/hosted/sleeping-and-updates/). It can still happen when a machine fails.
 

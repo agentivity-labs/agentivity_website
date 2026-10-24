@@ -3,7 +3,6 @@ title: "Workspace panes: credentials, data and network"
 description: "The four panes of the group Workspace. Credentials, Configurations, Data to export or import a whole workspace, and Network to allow or refuse addresses."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---

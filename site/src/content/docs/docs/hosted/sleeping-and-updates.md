@@ -3,7 +3,6 @@ title: "When your workspace sleeps or is updated"
 description: "Why a hosted workspace can take a few seconds to open, what the yellow update banner and the update screen mean, and what happens to your executions."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

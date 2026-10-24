@@ -3,7 +3,6 @@ title: "What the Community edition includes"
 description: "What you get in the free Agentivity Community edition, what is not in it, what is planned, and what the licence allows."
 sidebar:
   order: 7
-draft: true
 editUrl: false
 lastUpdated: false
 ---

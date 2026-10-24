@@ -3,7 +3,6 @@ title: "People, groups, roles and spaces"
 description: "Invite people with a link, give them roles directly or through a group, and use spaces to keep the work of different teams apart."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---

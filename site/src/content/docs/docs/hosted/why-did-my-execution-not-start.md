@@ -3,7 +3,6 @@ title: "Why did my execution not start?"
 description: "The reasons a hosted workspace refuses a new execution, the message you get for each, and what to do: wait, free something, or choose a bigger plan."
 sidebar:
   order: 6
-draft: true
 editUrl: false
 lastUpdated: false
 ---

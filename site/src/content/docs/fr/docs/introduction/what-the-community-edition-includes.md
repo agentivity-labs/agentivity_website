@@ -3,7 +3,6 @@ title: "Ce que comprend l'édition Community"
 description: "Ce que vous obtenez dans l'édition Community gratuite d'Agentivity, ce qu'elle ne contient pas, ce qui est prévu, et ce que permet la licence."
 sidebar:
   order: 7
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "Keep a Knowledge Base up to date"
 description: "A Knowledge Base reads its source again by hand, after a delay, or when the source changes. How each way works, and how to synchronise a base now."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---

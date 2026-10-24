@@ -3,7 +3,6 @@ title: "Ce qu'est Agentivity"
 description: "Agentivity est une plateforme pour construire et faire tourner des agents IA, des équipes d'IA et des workflows sans code, sur votre machine ou serveur."
 sidebar:
   order: 1
-draft: true
 editUrl: false
 lastUpdated: false
 ---

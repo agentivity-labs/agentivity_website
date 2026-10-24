@@ -3,7 +3,6 @@ title: "Plans and their limits"
 description: "What Personal, Pro and Business include, and the limits of each: people, spaces, executions, keys, disk. How the Community edition differs."
 sidebar:
   order: 2
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -23,6 +22,8 @@ A hosted workspace has a plan. This page says what each plan includes and where 
 | Longest execution | 15 minutes | 60 minutes | 240 minutes |
 | Disk | 2 GB | 10 GB | 50 GB |
 | API keys | 5 | 20 | 100 |
+| Backups kept | 7 days | 14 days | 30 days |
+| Support | E-mail | Priority e-mail | Priority e-mail and a kick-off video call |
 | Several spaces | no | yes | yes |
 | Groups | no | no | yes |
 | Audit journal | no | no | yes |
@@ -46,7 +47,11 @@ A feature a plan does not include is not shown in the Studio. If something calls
 
 ## The trial
 
-The trial has the features of the plan you chose, for 14 days, and is limited to 200 executions in all.
+The trial has the features of the plan you chose, for 14 days, and is limited to 200 executions in all. There is one trial for each e-mail address. Choosing a paid plan ends the trial: the days left are not carried over.
+
+## Backups
+
+The storage of your workspace is backed up every day, and the backups are kept for the number of days of your plan. To restore your workspace from a backup, write to security@agentivity.io.
 
 ## What the Community edition has
 

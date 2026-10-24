@@ -3,7 +3,6 @@ title: "A workspace without a plan"
 description: "What happens when a trial ends or a subscription stops: read-only, then paused, then trash, then deletion. The e-mails you get and how to come back."
 sidebar:
   order: 4
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -17,7 +16,7 @@ A workspace has no plan when its 14-day trial ended without a choice, or when it
 | Stage | When | What it means |
 |---|---|---|
 | **Read-only** | From the day the plan ends, for 30 days | Everything is visible and people can sign in. Nothing new runs. |
-| **Paused** | After 30 days | The workspace is stopped. Your data is kept. |
+| **Paused** | From day 30 until day 90 | The workspace is stopped and can no longer be opened. Your data is kept. |
 | **Trash** | After 90 days without a plan | The workspace is put in the trash. It can still be restored. |
 | **Deleted** | 30 days later, so 120 days without a plan | The workspace and its data are deleted for good. The address becomes free. |
 
