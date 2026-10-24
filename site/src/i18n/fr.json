@@ -144,6 +144,7 @@
           { "label": "Licence",        "href": "https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md", "external": true },
           { "label": "Blog",           "href": "/fr/blog" },
           { "label": "Services",       "href": "/fr/services" },
+          { "label": "Climat", "href": "/fr/climate" },
           { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
           { "label": "Confidentialité", "href": "/fr/legal/privacy" },
           { "label": "CGU",            "href": "/fr/legal/terms" },
@@ -1022,7 +1023,10 @@
         "trial": "Essai gratuit de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai).",
         "sale_before": "Soumis à nos",
         "sale_link": "conditions de vente",
-        "sale_href": "/fr/legal/terms-of-sale"
+        "sale_href": "/fr/legal/terms-of-sale",
+        "climate": "1 % de notre chiffre d'affaires finance le retrait de carbone.",
+        "climate_link": "Notre engagement climat",
+        "climate_href": "/fr/climate"
       },
       "limits": {
         "users": [
@@ -2927,5 +2931,73 @@
       "generic": "Un problème est survenu de notre côté. Réessayez dans un instant."
     },
     "start": "Pas encore d'espace ? Démarrez un essai de 14 jours"
+  },
+  "climate_page": {
+    "meta": {
+      "title": "Notre engagement climat : 1 % du chiffre d'affaires pour le retrait de carbone | Agentivity",
+      "description": "Agentivity consacre 1 % de son chiffre d'affaires au retrait de carbone de l'atmosphère. Un premier pas, ce que nous faisons déjà, et ce que nous ne prétendons pas."
+    },
+    "hero": {
+      "eyebrow": "Climat",
+      "h1": "1 % de notre chiffre d'affaires",
+      "h1_accent": "finance le retrait de carbone.",
+      "sub": "Nous consacrons 1 % de notre chiffre d'affaires au retrait de dioxyde de carbone de l'atmosphère. C'est un premier pas, pas une ligne d'arrivée."
+    },
+    "already": {
+      "eyebrow": "Ce que nous faisons déjà",
+      "h2": "Sobre par conception,",
+      "h2_accent": "là où nous pouvons agir.",
+      "items": [
+        {
+          "title": "Les espaces inutilisés se mettent en veille",
+          "body": "Un espace de travail hébergé que personne n'utilise est mis en veille, et se réveille à la visite suivante."
+        },
+        {
+          "title": "L'IA seulement là où elle aide",
+          "body": "Dans un workflow, les étapes fixes (formulaires, règles, validations) tournent sans modèle d'IA. L'IA travaille seulement dans les étapes que vous choisissez."
+        },
+        {
+          "title": "Le bon modèle pour chaque tâche",
+          "body": "Chaque agent tourne sur le modèle que vous connectez : un modèle plus petit pour les étapes simples, un plus grand là où il faut raisonner."
+        },
+        {
+          "title": "Hébergé dans l'UE, ou sur votre machine",
+          "body": "Les espaces de travail hébergés tournent dans l'Union européenne. L'édition Community tourne sur votre propre machine ou serveur."
+        }
+      ]
+    },
+    "claim": {
+      "eyebrow": "Ce que nous ne prétendons pas",
+      "h2": "L'IA consomme de l'énergie.",
+      "h2_accent": "Nous le disons.",
+      "points": [
+        {
+          "title": "Pas neutre en carbone",
+          "body": "Nous ne prétendons pas qu'Agentivity, ni les modèles d'IA qu'il appelle, soient neutres en carbone."
+        },
+        {
+          "title": "Votre modèle, votre fournisseur",
+          "body": "L'énergie de vos appels aux modèles dépend du fournisseur et du modèle que vous choisissez. Nous ne revendons pas d'IA, et nous ne pouvons pas la mesurer pour vous."
+        },
+        {
+          "title": "Un premier pas",
+          "body": "1 % est notre point de départ. Nous en dirons plus quand nous en ferons plus."
+        }
+      ]
+    },
+    "guide": {
+      "eyebrow": "Sur le blog",
+      "title": "Comment faire consommer moins d'énergie à vos agents IA",
+      "body": "Six habitudes concrètes : la bonne taille de modèle, l'IA seulement là où elle aide, un contexte court, un travail gardé plutôt que refait.",
+      "link": "Lire le guide",
+      "href": "/fr/blog/how-to-make-ai-agents-use-less-energy"
+    },
+    "cta": {
+      "h2": "Des équipes IA sobres,",
+      "h2_accent": "sans code.",
+      "primary": "Voir les offres",
+      "primary_href": "/fr/pricing",
+      "secondary": "Installer Community"
+    }
   }
 }

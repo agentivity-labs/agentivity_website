@@ -133,6 +133,7 @@
           { "label": "Licence",        "href": "https://github.com/agentivity-labs/agentivity/blob/main/LICENCE.md", "external": true },
           { "label": "Blog",           "href": "/blog" },
           { "label": "Services",       "href": "/services" },
+          { "label": "Climate", "href": "/climate" },
           { "label": "Contact",        "href": "mailto:hello@agentivity.io" },
           { "label": "Privacy Policy",  "href": "/legal/privacy" },
           { "label": "Terms of Use",   "href": "/legal/terms" },
@@ -1011,7 +1012,10 @@
         "trial": "{trial_days}-day free trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial).",
         "sale_before": "Subject to our",
         "sale_link": "Terms of Sale",
-        "sale_href": "/legal/terms-of-sale"
+        "sale_href": "/legal/terms-of-sale",
+        "climate": "1% of our revenue goes to carbon removal.",
+        "climate_link": "Our climate commitment",
+        "climate_href": "/climate"
       },
       "limits": {
         "users": [
@@ -2915,5 +2919,73 @@
       "generic": "Something went wrong on our side. Try again in a moment."
     },
     "start": "No workspace yet? Start a 14-day trial"
+  },
+  "climate_page": {
+    "meta": {
+      "title": "Our Climate Commitment: 1% of Revenue for Carbon Removal | Agentivity",
+      "description": "Agentivity puts 1% of its revenue toward removing carbon from the atmosphere. A first step, what we already do to keep AI work lean, and what we do not claim."
+    },
+    "hero": {
+      "eyebrow": "Climate",
+      "h1": "1% of our revenue",
+      "h1_accent": "goes to carbon removal.",
+      "sub": "We put 1% of our revenue toward removing carbon dioxide from the atmosphere. It is a first step, not a finish line."
+    },
+    "already": {
+      "eyebrow": "What we already do",
+      "h2": "Lean by design,",
+      "h2_accent": "where we can act.",
+      "items": [
+        {
+          "title": "Workspaces sleep when unused",
+          "body": "A hosted workspace that nobody uses is put to sleep, and wakes up at the next visit."
+        },
+        {
+          "title": "AI only where it helps",
+          "body": "In a workflow, the fixed steps (forms, rules, approvals) run without an AI model. AI works only in the steps you choose."
+        },
+        {
+          "title": "The right model for each job",
+          "body": "Each agent runs on the model you connect: a smaller model for simple steps, a larger one where reasoning is needed."
+        },
+        {
+          "title": "Hosted in the EU, or on your machine",
+          "body": "Hosted workspaces run in the European Union. The Community edition runs on your own machine or server."
+        }
+      ]
+    },
+    "claim": {
+      "eyebrow": "What we do not claim",
+      "h2": "AI uses energy.",
+      "h2_accent": "We say so.",
+      "points": [
+        {
+          "title": "Not carbon neutral",
+          "body": "We do not claim that Agentivity, or the AI models it calls, is carbon neutral."
+        },
+        {
+          "title": "Your model, your provider",
+          "body": "The energy of your model calls depends on the provider and the model you choose. We do not resell AI, and we cannot measure it for you."
+        },
+        {
+          "title": "A first step",
+          "body": "1% is where we start. We will say more when we do more."
+        }
+      ]
+    },
+    "guide": {
+      "eyebrow": "On the blog",
+      "title": "How to make your AI agents use less energy",
+      "body": "Six practical habits: the right model size, AI only where it helps, short context, work kept instead of redone.",
+      "link": "Read the guide",
+      "href": "/blog/how-to-make-ai-agents-use-less-energy"
+    },
+    "cta": {
+      "h2": "Build lean AI teams,",
+      "h2_accent": "without code.",
+      "primary": "See the plans",
+      "primary_href": "/pricing",
+      "secondary": "Install Community"
+    }
   }
 }
