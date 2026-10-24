@@ -1,6 +1,6 @@
 # Agentivity
 
-> Agentivity is a platform to build teams of AI agents, without code. You describe each AI specialist in plain words, choose how they work together, and hand them the job. The team does the work and comes back to a person for every decision that is theirs. The Community edition is free forever and runs on your own server (Docker), with your own key from your AI model provider (bring your own key). A cloud edition is coming; there is a waitlist.
+> Agentivity is a platform to build teams of AI agents, without code. You describe each AI specialist in plain words, choose how they work together, and hand them the job. The team does the work and comes back to a person for every decision that is theirs. The Community edition is free forever and runs on your own server (Docker), with your own key from your AI model provider (bring your own key). The hosted cloud edition starts with a 14-day free trial, no credit card.
 
 Key facts:
 
@@ -25,7 +25,8 @@ Key facts:
 - [VibeApps](https://www.agentivity.io/vibeapps/): applications that adapt to the person, with an AI team behind them
 - [Assistant](https://www.agentivity.io/assistant/): build an agent, a team or a workflow by describing it
 - [Use cases](https://www.agentivity.io/use-cases/): Trip Planner, Shopping Lab, CV Screening
-- [Pricing](https://www.agentivity.io/pricing/): the Community edition is free forever
+- [Pricing](https://www.agentivity.io/pricing/): the Community edition is free forever, the hosted plans start with a 14-day free trial
+- [Start free](https://www.agentivity.io/start/): a hosted workspace of your own, 14 days free, no credit card
 - [Install the Community edition](https://www.agentivity.io/community/): Docker, on your own server
 
 ## Documentation

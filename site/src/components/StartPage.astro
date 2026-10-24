@@ -2,7 +2,7 @@
 // The trial sign-up, shared by /start and /fr/start. Texts come from the "start_page" block of the translation files.
 // The form calls accounts_service from the browser (its address in PUBLIC_ACCOUNTS_URL), protected by Cloudflare Turnstile
 // (PUBLIC_TURNSTILE_SITE_KEY), then follows the creation of the workspace. The link to open the workspace only leaves by
-// e-mail. Not indexed; every "Start free" button of the site leads here.
+// e-mail. Every "Start free" button of the site leads here.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
@@ -39,7 +39,7 @@ const config = {
   messages: { ...s.form, ...s.errors, ...s.progress },
 };
 ---
-<Base title={s.meta.title} description={s.meta.description} lang={lang} look="editorial" noindex>
+<Base title={s.meta.title} description={s.meta.description} lang={lang} look="editorial">
 
 <SiteHeader lang={lang} />
 

@@ -58,7 +58,7 @@ export default defineConfig({
     sitemap({
       // Landing pages under /lp/ are campaign pages, the pages shown after a sign-up are thank-you pages, and the trial
       // sign-up (/start) and "find my workspace" (/find) are not for search: none is indexed (noindex), so they stay out of the sitemap too.
-      filter: (page) => !/^\/(lp\/|thank-you\/|fr\/merci\/|start\/|fr\/start\/|find\/|fr\/find\/)/.test(new URL(page).pathname),
+      filter: (page) => !/^\/(lp\/|thank-you\/|fr\/merci\/|find\/|fr\/find\/)/.test(new URL(page).pathname),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en-US', fr: 'fr-FR' },
