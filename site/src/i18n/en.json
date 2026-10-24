@@ -451,7 +451,7 @@
         {
           "name": "Pro",
           "badge": "Cloud",
-          "desc": "More agents, longer runs and priority execution.",
+          "desc": "More agents, longer executions and priority execution.",
           "cta": "Start free",
           "href": "/start?plan=pro"
         },

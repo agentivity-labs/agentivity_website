@@ -6,8 +6,8 @@ import SiteFooter from '../components/SiteFooter.astro';
 const lang = 'en';
 ---
 <Base look="editorial"
-  title="You're on the list — Agentivity"
-  description="Thanks for joining the Agentivity waitlist. We'll reach out when the cloud launches."
+  title="Thank you — Agentivity"
+  description="Thank you. We'll be in touch."
   noindex
 >
   <SiteHeader lang={lang} />
@@ -31,10 +31,10 @@ const lang = 'en';
         </svg>
       </div>
 
-      <span class="eyebrow" style="color:var(--mint)">You're in</span>
-      <h1 class="h1 ty-h1">You're on the list.</h1>
+      <span class="eyebrow" style="color:var(--mint)">Thank you</span>
+      <h1 class="h1 ty-h1">It's done.</h1>
       <p class="ty-sub">
-        We'll write to you when the cloud launches, and you'll be the first to know.<br class="br-md" />
+        We'll be in touch, only with what matters.<br class="br-md" />
         No spam. Just the signal.
       </p>
 
@@ -49,8 +49,15 @@ const lang = 'en';
       <div class="ty-divider" aria-hidden="true"></div>
 
       <div class="ty-while-wait">
-        <p class="ty-while-label">In the meantime —</p>
+        <p class="ty-while-label">While you are here —</p>
         <div class="ty-links">
+          <a href="/start" class="ty-link">
+            <span class="ty-link-icon">🚀</span>
+            <span>
+              <strong>Start free in the cloud</strong>
+              <span>14 days free · No credit card · Nothing to install</span>
+            </span>
+          </a>
           <a href="/how-it-works" class="ty-link">
             <span class="ty-link-icon">⚡</span>
             <span>
@@ -69,7 +76,7 @@ const lang = 'en';
             <span class="ty-link-icon">🛠</span>
             <span>
               <strong>Install the Community edition</strong>
-              <span>Free · On your own server · No waiting</span>
+              <span>Free · On your own server</span>
             </span>
           </a>
         </div>
