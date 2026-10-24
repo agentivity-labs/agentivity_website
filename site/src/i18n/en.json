@@ -89,22 +89,6 @@
     "github": "Star on GitHub",
     "cta": "Start free"
   },
-  "waitlist": {
-    "email_label": "Email address",
-    "email_placeholder": "your@email.com",
-    "submit": "Join the waitlist",
-    "submitting": "Sending…",
-    "consent": "I agree to receive emails from Agentivity about the cloud launch and product news. I have read the {privacy}.",
-    "privacy_link": "privacy policy",
-    "success": "Check your inbox to confirm",
-    "success_detail": "We've just sent you an email. Click the link inside to confirm your subscription.",
-    "already": "You're already on the list",
-    "already_detail": "Nothing more to do — we'll write when the cloud launches.",
-    "error_generic": "Something went wrong. Please try again in a moment.",
-    "error_email": "That email address doesn't look valid.",
-    "error_consent": "Please tick the box to agree to receive emails.",
-    "error_rate": "Too many attempts. Please wait a few minutes and try again."
-  },
   "footer": {
     "cols": [
       {
@@ -1211,46 +1195,6 @@
       "fine": "No spam. One message when it matters.",
       "github_line": "Comfortable with Docker? Community is ready today."
     }
-  },
-  "docs_page": {
-    "meta": {
-      "title": "Agentivity Documentation — Coming Soon",
-      "description": "The Agentivity documentation is being written. In the meantime: see how it works, install the Community edition, or ask us a question."
-    },
-    "hero": {
-      "eyebrow": "Documentation",
-      "h1": "The documentation",
-      "h1_accent": "is on its way.",
-      "sub": "We are writing it now. Until it is here, these pages answer most first questions."
-    },
-    "links": [
-      {
-        "title": "How it works",
-        "body": "Build an agent, a team and a workflow in the Studio, in three short clips.",
-        "href": "/how-it-works"
-      },
-      {
-        "title": "Install the Community edition",
-        "body": "The steps to run Agentivity on your own machine, with Docker.",
-        "href": "/community"
-      },
-      {
-        "title": "Pricing and editions",
-        "body": "What each edition is for, and what you actually pay.",
-        "href": "/pricing"
-      },
-      {
-        "title": "GitHub",
-        "body": "The source of the core, and the place to report a problem.",
-        "github": true
-      }
-    ],
-    "notify": {
-      "text": "Want to know when the documentation is published?",
-      "link": "Join the waitlist",
-      "href": "/pricing#waitlist"
-    },
-    "contact": "A question in the meantime? Write to"
   },
   "use_cases_page": {
     "meta": {

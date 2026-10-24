@@ -321,7 +321,6 @@ section{position:relative}
 .tier.feat .ta{color:var(--red)}
 .pr-foot{margin-top:30px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;
   padding-top:26px;border-top:1px solid rgba(255,255,255,.2)}
-.pr-foot .wl{font-size:15px;color:rgba(255,255,255,.78)}
 
 /* ============ FINAL CTA + FOOTER (black) ============ */
 .cta{text-align:center;padding-block:clamp(100px,13vw,190px) clamp(70px,8vw,110px);overflow:hidden}

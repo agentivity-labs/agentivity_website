@@ -89,33 +89,6 @@
     "github": "Star on GitHub",
     "cta": "Commencer gratuitement"
   },
-  "waitlist": {
-    "email_label": "Adresse e-mail",
-    "email_placeholder": "votre@email.com",
-    "submit": "Rejoindre la liste d'attente",
-    "submitting": "Envoi…",
-    "consent": "J'accepte de recevoir des e-mails d'Agentivity au sujet du lancement du cloud et des actualités du produit. J'ai lu la {privacy}.",
-    "privacy_link": "politique de confidentialité",
-    "success": "Vérifiez votre boîte mail pour confirmer",
-    "success_detail": "Nous venons de vous envoyer un e-mail. Cliquez sur le lien qu'il contient pour confirmer votre inscription.",
-    "already": "Vous êtes déjà sur la liste",
-    "already_detail": "Rien de plus à faire — nous vous écrirons à l'ouverture du cloud.",
-    "error_generic": "Une erreur est survenue. Veuillez réessayer dans un instant.",
-    "error_email": "Cette adresse e-mail ne semble pas valide.",
-    "error_consent": "Veuillez cocher la case pour accepter de recevoir des e-mails.",
-    "error_rate": "Trop de tentatives. Veuillez patienter quelques minutes puis réessayer."
-  },
-  "waitlist_informal": {
-    "email_placeholder": "ton@email.com",
-    "submit": "Rejoindre la liste",
-    "success": "Vérifie ta boîte mail pour confirmer",
-    "success_detail": "On vient de t'envoyer un e-mail. Clique sur le lien qu'il contient pour confirmer ton inscription.",
-    "already": "Tu es déjà sur la liste",
-    "already_detail": "Rien de plus à faire — on t'écrira à l'ouverture du cloud.",
-    "error_generic": "Une erreur est survenue. Réessaie dans un instant.",
-    "error_consent": "Coche la case pour accepter de recevoir des e-mails.",
-    "error_rate": "Trop de tentatives. Attends quelques minutes puis réessaie."
-  },
   "footer": {
     "cols": [
       {
@@ -1222,46 +1195,6 @@
       "fine": "Pas de spam. Un message quand cela compte.",
       "github_line": "À l'aise avec Docker ? Community est prête dès aujourd'hui."
     }
-  },
-  "docs_page": {
-    "meta": {
-      "title": "Documentation Agentivity — bientôt disponible",
-      "description": "La documentation d'Agentivity est en cours de rédaction. En attendant : voyez comment ça marche, installez l'édition Community ou posez-nous votre question."
-    },
-    "hero": {
-      "eyebrow": "Documentation",
-      "h1": "La documentation",
-      "h1_accent": "arrive.",
-      "sub": "Nous l'écrivons en ce moment. En attendant, ces pages répondent à la plupart des premières questions."
-    },
-    "links": [
-      {
-        "title": "Comment ça marche",
-        "body": "Créer un agent, une équipe et un workflow dans le Studio, en trois courts clips.",
-        "href": "/fr/how-it-works"
-      },
-      {
-        "title": "Installer l'édition Community",
-        "body": "Les étapes pour faire tourner Agentivity sur votre propre machine, avec Docker.",
-        "href": "/fr/community"
-      },
-      {
-        "title": "Tarifs et éditions",
-        "body": "À qui chaque édition est destinée, et ce que vous payez vraiment.",
-        "href": "/fr/pricing"
-      },
-      {
-        "title": "GitHub",
-        "body": "Le code source du cœur, et le lieu où signaler un problème.",
-        "github": true
-      }
-    ],
-    "notify": {
-      "text": "Envie de savoir quand la documentation sera publiée ?",
-      "link": "Rejoindre la liste d'attente",
-      "href": "/fr/pricing#waitlist"
-    },
-    "contact": "Une question en attendant ? Écrivez à"
   },
   "use_cases_page": {
     "meta": {
