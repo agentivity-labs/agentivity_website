@@ -13,7 +13,7 @@ You have built an agent or a team, and it works. To use it inside a workflow, yo
 
 ## Three steps, one for each kind
 
-| Step | What it calls | Where it is in the **Node Catalog** |
+| Step | What it calls | Where it is in the **Nodes catalog** |
 |---|---|---|
 | **Agent** | An agent of your library. | **AI** > **Agents** |
 | **Team** | A team of your library. | **AI** > **Agents** |
@@ -37,7 +37,7 @@ See [Add an AI step to a workflow](/docs/workflows/add-an-ai-step/) for the firs
 
 ## Add the step
 
-1. Open the **Node Catalog** and search for `Agent`, `Team` or `Workflow`.
+1. Open the **Nodes catalog** and search for `Agent`, `Team` or `Workflow`.
 2. Drag the step onto the canvas.
 3. Link the step before it to its left dot.
 4. Right-click the step and select **Edit**.
@@ -140,7 +140,7 @@ The library of agents and teams can be turned off on a server, with the setting 
 
 ## How to know it worked
 
-Run the workflow. In the tab **Execution**, the step turns to completed, and the next step receives the answer. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
+Run the workflow. In the **Execution** view, the step turns to completed, and the next step receives the answer. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
 
 ## If it does not work
 

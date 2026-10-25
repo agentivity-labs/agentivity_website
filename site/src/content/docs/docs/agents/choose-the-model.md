@@ -18,7 +18,7 @@ Each agent runs on an AI model. The model is a node, linked to the first diamond
 
 ## The model nodes
 
-They are in the **Node Catalog**, under **AI** > **Models**.
+They are in the **Nodes catalog**, under **AI** > **Models**.
 
 | Node | Provider |
 |---|---|
@@ -80,7 +80,7 @@ For a team, this applies to its agents.
 
 ## If it does not work
 
-- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Settings** > **Credentials**.
+- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Administration** > **Credentials**.
 - **The agent fails at its first execution after an import.** It still points to the connection of its author. Use **Use my default model**.
 
 ## Next step

@@ -45,7 +45,7 @@ Six things are plugged into the agent:
 ## Try it
 
 1. Open **Studio** > **Agents** and open **Invoice Clerk**.
-2. Select the tab **Execution**.
+2. In the switch at the top, select **Execution**.
 3. Send a first message. The agent shows a box: upload an invoice as a PDF or Word file, or paste its text. Use an invoice with fictitious data for a first try.
 4. Open the table `invoices`: the invoice has its row.
 

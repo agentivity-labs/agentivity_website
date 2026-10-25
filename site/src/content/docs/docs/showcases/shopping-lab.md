@@ -19,7 +19,7 @@ Shopping Lab helps a shopper choose a product. It clarifies the need, reads the 
 | Nine agents | One per step of the work. |
 | Five data tables | Where the agents keep and pass their results. |
 
-![The team Shopping Lab in its editor: nine hexagons in a row, one per member, and the pattern Sequential at the top right](images/shopping-lab.jpg)
+![The team Shopping Lab in its editor: nine hexagons in a row, one per member, gathered in four tinted groups (Intake, Stores, Analysis and Report), and the pill Sequential beside the name](images/shopping-lab.jpg)
 
 ## The nine members, in order
 
@@ -47,7 +47,7 @@ Shopping Lab helps a shopper choose a product. It clarifies the need, reads the 
 ## Try it
 
 1. Open **Studio** > **Agents** and open the team **Shopping Lab**.
-2. Select the tab **Execution**.
+2. In the switch at the top, select **Execution**.
 3. Ask for a product, with a budget. The **Needs Analyst** asks you questions first.
 
 See [Run a team and read its work](/docs/teams/run-a-team/).

@@ -19,7 +19,7 @@ Some decisions must stay with a person. This page adds a step that stops the wor
 
 The step needs two nodes: the question, and the channel that carries it to the person.
 
-1. In the **Node Catalog**, open **Interactions** and drag **Human Interaction** onto the canvas.
+1. In the **Nodes catalog**, open **Interactions** and drag **Human Interaction** onto the canvas.
 2. Open **AI**, then **Interactions**, and drag **Chat Channel** onto the canvas, below the first node. **Chat Channel** is the chat inside the Studio. It appears as a circle.
 3. Drag from the diamond of **Chat Channel** to the diamond under **Human Interaction**. A dotted line links them, with the label **Channel**.
 4. Link **Human Interaction** to the step that must run after the answer.
@@ -43,8 +43,8 @@ The step needs two nodes: the question, and the channel that carries it to the p
 
 ## What happens when the workflow runs
 
-1. The workflow reaches the step and stops. At the top of the tab **Execution**, the state is **Waiting for human input**.
-2. The question is sent to the chat of the execution. In the tab **Execution**, open the panel **Chat**, on the right.
+1. The workflow reaches the step and stops. At the top right of the **Execution** view, the state is **Waiting for input**, followed by the name of the step, for example **Waiting for input: ask**.
+2. The question is sent to the chat of the execution. In the **Execution** view, open the tab **Chat**, in the panel on the right.
 3. Type the answer in the field **Type your response…** and select **Send response**.
 4. The workflow continues with the next step.
 
@@ -64,10 +64,10 @@ For example, link an **If** step after it to take one path when the answer is ye
 
 ## How to know it worked
 
-- When you run the workflow, the state becomes **Waiting for human input**.
+- When you run the workflow, the state becomes **Waiting for input**.
 - In the section **Executions**, the execution has the label **ACTION REQUIRED**.
 
-![The section Executions: one execution of the workflow Reminder Approval, with the label ACTION REQUIRED and the buttons Open workflow and Details](images/executions.jpg)
+![The section Executions: four executions, one of them of the workflow Reminder Approval with the label ACTION REQUIRED and the buttons Open workflow and Details](images/executions.jpg)
 
 - After the answer, the execution continues and reaches the state completed.
 

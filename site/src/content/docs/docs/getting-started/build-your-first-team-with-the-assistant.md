@@ -58,7 +58,7 @@ You can keep talking in the same conversation: ask for a change, add a member, o
 
 ## If it does not work
 
-- **"The model did not answer."** The Assistant could not reach the AI model. Check your model connection in **Settings** > **Credentials**: the key, and the credit on the provider's side. Also check that the machine where Agentivity runs can reach the internet.
+- **"The model did not answer."** The Assistant could not reach the AI model. Check your model connection in **Administration** > **Credentials**: the key, and the credit on the provider's side. Also check that the machine where Agentivity runs can reach the internet.
 - **"The assistant is not available: its module is not loaded in this platform."** This installation does not include the Assistant. Install the current image again: see [Install Agentivity with Docker](/docs/getting-started/install-community/).
 - **You do not like the draft.** Ask for a change, or remove the conversation. Removing a draft changes nothing in your workspace.
 

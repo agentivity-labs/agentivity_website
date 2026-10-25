@@ -37,7 +37,7 @@ Members of a group are drawn together and share a colour. Use groups to show the
 3. Select **Save**.
 4. Do the same for each member of the group, with exactly the same name.
 
-![The window of the member Reminder Writer: under Group, the name Writing and a row of colours; under Icon, the button Change](images/member-window.jpg)
+![The window of the member Reminder Writer: under Group, the name Writers and a row of colours with the colour chosen; under Icon, the button Change](images/member-window.jpg)
 
 Leave **Name** empty for a member that belongs to no group.
 
@@ -62,9 +62,9 @@ Select **Publish**, at the top right.
 
 ## How to know it worked
 
-On the canvas, the symbol of each member takes the colour of its group, and each member shows its icon.
+On the canvas, the hexagons of a group take its colour, and the members of a group are drawn together on a soft tint, with the name of the group. Each member shows its icon.
 
-![The team on the canvas: the symbol of Reminder Writer is orange, the colour of its group, and the symbol of Reminder Reviewer keeps the default colour](images/member-group.jpg)
+![The team on the canvas: the hexagon of Reminder Writer is orange, the colour of its group, and the hexagon of Reminder Reviewer keeps the default colour](images/member-group.jpg)
 
 ## Next step
 

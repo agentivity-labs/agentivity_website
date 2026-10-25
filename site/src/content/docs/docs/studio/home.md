@@ -9,18 +9,25 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/studio/home.md. Do not edit here: edit the source and publish again. -->
 
-The Home page is the first screen of the Studio. It is titled **Welcome back**. It lets you start something new, and it shows what your workspace did recently.
+The Home page is the first screen of the Studio. It greets you by your first name, for example "Good morning, Alex", and says in one sentence what the week looked like. It lets you start something new, and it shows what your workspace did recently.
 
-![The Home page of the Studio: the menu on the left, four shortcuts at the top, the counters, the recent activity and the panel Active and needs attention](images/home.jpg)
+![The Home page of the Studio: the greeting, the buttons Ask the Assistant and New, four cards, the counters, the recent activity and the block Active and needs attention with one execution that waits for an answer](images/home.jpg)
 
-## The four shortcuts
+## The two buttons
 
-| Shortcut | What it does |
+At the top right:
+
+- **Ask the Assistant** opens the Assistant, to build from a description. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+- **New** opens a menu: **Agent**, **Team** or **Workflow**. Each one asks for a name.
+
+## The four cards
+
+| Card | What it does |
 |---|---|
-| **Create new workflow** | Asks for a name, then opens a new workflow in its editor. See [Create a workflow](/docs/workflows/create-a-workflow/). |
-| **Create new agent** | Asks for a name, then opens a new agent in its editor. See [Create an agent](/docs/agents/create-an-agent/). |
-| **Create new team** | Asks for a name, then asks how the members work together. See [Create a team of agents](/docs/teams/create-a-team/). |
-| **Browse templates** | Opens the [Templates screen](/docs/studio/templates/). |
+| **A workflow** | Asks for a name, then opens a new workflow in its editor. See [Create a workflow](/docs/workflows/create-a-workflow/). |
+| **An agent** | Asks for a name, then opens a new agent in its editor. See [Create an agent](/docs/agents/create-an-agent/). |
+| **A team** | Asks for a name, then asks how the members work together. See [Create a team of agents](/docs/teams/create-a-team/). |
+| **From a template** | Opens the [Templates screen](/docs/studio/templates/). |
 
 ## The counters
 
@@ -32,11 +39,11 @@ The Home page is the first screen of the Studio. It is titled **Welcome back**. 
 ## The recent activity
 
 - **Recent activity · last 14d** is a chart with one bar per day, for the last fourteen days.
-- The grid next to it shows the activity over a longer period, one square per day. Move the pointer over a square to read the date and the time saved.
+- The grid next to it shows the activity over a longer period, one square per day. Move the pointer over a square to read the date and the time saved. The small **i** at its corner explains the grid.
 
 ## Active & needs attention
 
-This panel lists the executions that are in progress and the executions that need you, with a label: **Running**, **Needs input** or **Failed**. When there is nothing, it says "Nothing running and nothing waiting on you right now."
+This block lists the executions that are in progress and the executions that need you. A running execution and a failed one carry a label, **Running** or **Failed**. An execution that waits for a person has the button **Answer**, which opens it so that you can reply. When there is nothing, it says "Nothing running and nothing waiting on you right now."
 
 For the complete list of executions and their state, open the [Executions screen](/docs/studio/executions/).
 

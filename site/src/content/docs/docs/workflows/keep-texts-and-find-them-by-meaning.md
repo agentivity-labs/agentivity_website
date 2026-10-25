@@ -19,7 +19,7 @@ It is not the way to give an agent its knowledge. For what an agent must know (d
 
 ## Choose a Vector Store
 
-The four stores are under **AI** > **Vector Stores** in the **Node Catalog**. They are circles: you plug one into the steps and tools that use it.
+The four stores are under **AI** > **Vector Stores** in the **Nodes catalog**. They are circles: you plug one into the steps and tools that use it.
 
 | Store | Kept for | What it needs |
 |---|---|---|

@@ -48,7 +48,7 @@ A field can hold:
 
 ## The kinds of steps
 
-The **Node Catalog** sorts the steps by category.
+The **Nodes catalog** sorts the steps by category.
 
 | You want to | Look in | Page |
 |---|---|---|

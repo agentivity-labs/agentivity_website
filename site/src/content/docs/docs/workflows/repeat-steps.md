@@ -29,7 +29,7 @@ A **For Each** step has two exits on its right side:
 
 ## Add the loop
 
-1. Open the **Node Catalog** and search for `For Each`. It is in **Core** > **Control Flow**.
+1. Open the **Nodes catalog** and search for `For Each`. It is in **Core** > **Control Flow**.
 2. Drag **For Each** onto the canvas, and link the step before it to its left dot.
 3. Right-click the step and select **Edit**.
 4. In **Node name**, type a short name, for example `each`. You use this name to read the current item.
@@ -85,7 +85,7 @@ The loop itself does not give back what each item produced. Two ways to keep it:
 
 Put a **Collect** step in the loop, after the steps that work on the item. Each time it runs, it adds one item to a list.
 
-1. In the **Node Catalog**, search for `Collect`. It is in **Core** > **Data**.
+1. In the **Nodes catalog**, search for `Collect`. It is in **Core** > **Data**.
 2. Link the **Loop** exit of **For Each** to it, or to the last step of the loop and then to **Collect**.
 3. In its field **item**, write what to keep for this turn: a reference to an output, or a text built from the current item.
 4. After the loop, from the lower dot of **For Each**, use the outputs of **Collect**: `items` is the whole list, written as JSON, and `count` is the number of items.

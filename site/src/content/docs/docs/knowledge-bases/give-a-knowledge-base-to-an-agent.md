@@ -21,7 +21,7 @@ An agent does not know your documents unless you give it a Knowledge Base. You g
 In our example, the `Reminder Writer` must follow the payment terms of the company, kept in the base `Payment terms`.
 
 1. Open the agent in its editor.
-2. In the **Node Catalog**, search for `Knowledge Base`. It is under **AI** > **Knowledge**.
+2. In the **Nodes catalog**, search for `Knowledge Base`. It is under **AI** > **Knowledge**.
 3. Drag **Knowledge Base** onto the canvas, below the agent.
 4. Drag from its diamond to the diamond of the agent named **Knowledge Bases**. It is the second one from the left.
 5. Right-click the step and select **Edit**.
@@ -69,7 +69,7 @@ The base is not searched by the model here. It is searched once, with the text o
 
 1. In the window of the base, tab **Used by**: the agent is listed. See [Look inside a Knowledge Base](/docs/knowledge-bases/look-inside-a-knowledge-base/).
 2. Run the agent with a request whose answer is only in the base. The e-mail must give your payment terms, as written. See [Run an agent and read its answer](/docs/agents/run-an-agent/).
-3. In the tab **Execution**, the **Inspector** shows the steps of the execution.
+3. In the **Execution** view, the **Inspector** shows the steps of the execution.
 
 ## If it does not work
 

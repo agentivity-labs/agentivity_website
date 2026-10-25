@@ -24,14 +24,24 @@ While the bar says **Realtime reconnecting**, the screens do not update by thems
 
 A security program or a company proxy that inspects the traffic of your machine can block this connection.
 
-## At the bottom of the menu
+## In your account menu
+
+At the bottom of the menu on the left, select the card with your name. The account menu opens.
 
 | Control | What it does |
 |---|---|
-| The sun | Switches to the light theme. |
-| The moon | Switches to the dark theme. |
-| The list with a coloured dot | Changes the accent colour of the Studio. |
+| **Appearance**: the sun | Switches to the light theme. |
+| **Appearance**: the moon | Switches to the dark theme. |
+| **Appearance**: the list with a coloured dot | Changes the accent colour of the Studio. |
 | **Getting started** | Opens the [welcome guide](/docs/getting-started/welcome-guide/) again. |
+
+## The menu on the left can fold
+
+The two small arrows at the top of the menu fold it into a column of icons, and open it again. **Ctrl+B** (**Cmd+B** on a Mac) does the same. The Studio remembers your choice.
+
+## Messages
+
+When something went well or not, a message appears at the bottom of the screen, on a floating white card with a coloured mark: a green tick when it went well, an amber **!** for a warning, a red cross for an error. For example, "Workflow published".
 
 ## Next step
 

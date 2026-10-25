@@ -1,6 +1,6 @@
 ---
 title: "Look at a Data Table and change its columns"
-description: "Open a Data Table in the Studio, sort and filter its rows, add, change or delete a column, rename the table or delete it."
+description: "Open a Data Table in the Studio, sort and search its rows, add, change or delete a column, rename the table or delete it."
 sidebar:
   order: 3
 editUrl: false
@@ -20,27 +20,18 @@ This page shows what you can do with a Data Table in the Studio.
 1. In the menu on the left, open **Resources** > **Data Tables**.
 2. Double-click the table.
 
-![An open Data Table: its name, the number of rows and fields, the button Add column, and the rows](images/table-open.jpg)
+![An open Data Table: its name, the number of rows and fields, the button Add column, the field Search rows, and the rows](images/table-open.jpg)
 
 At the top you read the name of the table, and how many rows and fields it has. The arrow at the top left goes back to the list.
 
-## Sort and filter the rows
+## Sort and search the rows
 
-Each column has two small buttons next to its name.
+Each column has two small buttons next to its name: **the arrows**, which sort the rows by this column, and **the three dots**, the menu of the column.
 
-- **The arrows** sort the rows by this column.
-- **The funnel** opens the filter of the column.
+- Select the arrows, or the name of the column, to sort the rows by this column. Select again to sort the other way, and a third time to go back to the order of the table.
+- Type in **Search rows**, above the columns, to find the rows that hold a word.
 
-![The filter of the column status: Sort A to Z, Sort Z to A, Text Filters, a search field, and one box per value](images/column-filter.jpg)
-
-In the filter:
-
-1. Untick the values you do not want to see, or type in **Search** to find a value.
-2. Select **OK**.
-
-To see every row again, open the filter and select **Clear Filter**.
-
-Sorting and filtering change only what you see. They do not change the table.
+Sorting and searching change only what you see. They do not change the table.
 
 ## Add a column
 

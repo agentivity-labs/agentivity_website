@@ -21,7 +21,7 @@ A Template is one file that holds a solution and everything it needs: the agent,
 2. On the line of what you want to share, select the three dots, then **Create Template...** You can also select the box button in its editor.
 3. The window **Create a Template** opens.
 
-![The window Create a Template: what goes in the file, then the name, the tagline, the description, the language, the tags and the author](images/create-a-template.jpg)
+![The window Create a Template: the box "What goes in the file" (here 1 agent and 1 knowledge base, with Show the list), then About with the name, the tagline and the description, In the catalog with the language and the tags, and the buttons Cancel and Create Template](images/create-a-template.jpg)
 
 4. Check **What goes in the file**. **Show the list** shows every element that is packed.
 5. Fill in the form.
@@ -75,9 +75,9 @@ On the other side:
 3. The window **Import a Template** shows what the Template is and what it will create.
 4. Select **Import**.
 
-![The window Import a Template: the name and description of the Template, a picture of what it holds, the line Will create: 1 agent · 2 knowledge bases, the folder where it goes, and the buttons Import and Choose another file.](images/import-a-template-window.jpg)
+![The window Import a Template: the picture, the name, the version and the author of the Template, its description, "What you get" with one tile per kind of thing (here 1 team, 13 agents, 2 data tables), "Where it goes" with the folder Top level, and the buttons Choose another file, Cancel and Import.](images/import-a-template-window.jpg)
 
-The window counts what it will create, for example "Will create: 1 agent · 2 knowledge bases". The Knowledge Bases go in the folder you chose for the import, like the rest.
+The window counts what you get, one tile per kind of thing, for example "1 Team", "13 Agents" and "2 Data tables". The Knowledge Bases go in the folder you chose under **Where it goes**, like the rest.
 
 ![The window Template imported: what was created, the model connection the agent now uses, and the list To set up before it reads its documents, with the base Product manuals, its Path to fill in and a button Set up.](images/template-imported-with-a-base-to-set-up.jpg)
 
@@ -88,7 +88,7 @@ The import creates new copies: nothing they already have is changed. When you al
 ## How to know it worked
 
 - The file is in the downloads folder of your browser.
-- After the import, the message **Template imported** lists what was created, and the solution opens in its editor.
+- After the import, the message **Template imported** says what was created. Select the button **Open** with the name of the solution to open it in its editor.
 
 ## If it does not work
 

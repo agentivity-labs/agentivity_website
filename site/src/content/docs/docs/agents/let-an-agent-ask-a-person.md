@@ -17,7 +17,7 @@ An agent can stop in the middle of its work and ask a person: a missing detail, 
 
 ## Give the agent a channel
 
-The channels are in the **Node Catalog**, under **AI** > **Interactions**.
+The channels are in the **Nodes catalog**, under **AI** > **Interactions**.
 
 | Channel | Where the person answers |
 |---|---|

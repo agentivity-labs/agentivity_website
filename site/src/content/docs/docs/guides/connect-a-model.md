@@ -38,7 +38,7 @@ Agents need an AI model to think with. Agentivity does not provide one: you brin
 
 **How to know it worked:** the connection is saved, and the guide lets you continue.
 
-You can change the model later, in **Settings** > **Credentials**.
+You can change the model later, in **Administration** > **Credentials**.
 
 ## Add another connection later
 
@@ -46,8 +46,8 @@ You can add or change a connection at any time:
 
 ![The screen Credentials, with one connection to an AI model: its name, its provider, and its key shown as dots](images/credentials.jpg)
 
-1. In the Studio, open **Settings**, then **Credentials**.
-2. Select **New credentials**. The window **New connection** asks "What do you want to connect to?"
+1. In the Studio, open **Administration**, then **Credentials**.
+2. Select **New credentials**. The window **New credentials** asks "Which service are they for?"
 3. Select **AI models**, then your provider.
 4. Fill in the form and save. The form is the same everywhere: here, when you copy a connection, and when the Assistant asks you for one.
 

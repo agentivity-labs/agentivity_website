@@ -11,7 +11,7 @@ lastUpdated: false
 
 **Studio** > **Workflows** lists your workflows. It works like [the list of agents and teams](/docs/studio/agents-list/).
 
-![The list of workflows, with the menu of one line open: Create Template, Use my default model, Rename and Delete](images/workflows-list-menu.jpg)
+![The list of workflows, with the menu of one line open: Mark as solution, Create Template, Use my default model, Rename and Delete](images/workflows-list-menu.jpg)
 
 ## The list
 
@@ -21,8 +21,8 @@ Each line is a workflow, with its **Name**, its **Type** and its **Description**
 
 | Control | What it does |
 |---|---|
-| The search field | Finds a workflow by its name. |
-| **New workflow** | Creates a workflow. See [Create a workflow](/docs/workflows/create-a-workflow/). |
+| **New workflow** | Creates a workflow, at the top right of the first row. See [Create a workflow](/docs/workflows/create-a-workflow/). |
+| The search field | Finds a workflow by its name, on the second row. |
 | The folder button | Creates a folder. |
 | The refresh button | Loads the list again. |
 | **Name (A-Z)** | Changes the order of the list. |
@@ -31,6 +31,7 @@ Each line is a workflow, with its **Name**, its **Type** and its **Description**
 
 | Entry | What it does |
 |---|---|
+| **Mark as solution** | Marks the workflow as a Solution. The entry then reads **No longer a solution**. See [What a Solution is](/docs/introduction/what-a-solution-is/). |
 | **Create Template...** | Packs the workflow, with everything it uses, into one file that you can share. |
 | **Use my default model** | Makes the workflow use your own model connection. |
 | **Rename** | Changes the name of the workflow. |

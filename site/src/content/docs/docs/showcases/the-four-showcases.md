@@ -11,7 +11,7 @@ lastUpdated: false
 
 A showcase is a finished solution that you can import and open. It is the fastest way to see how something real is built. Agentivity offers four.
 
-![The step Try a solution of the welcome guide, with the four showcase cards: CV Screening, Invoice Clerk, Shopping Lab and Trip Manager Team, each with what it contains](images/four-showcases.jpg)
+![The step "Start with a ready-made team" of the welcome guide, with the showcase cards: CV Screening and Invoice Clerk, each with what it contains and the link Add it; scroll to see Shopping Lab and Trip Manager Team](images/four-showcases.jpg)
 
 ## The four showcases
 

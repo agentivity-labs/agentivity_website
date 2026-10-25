@@ -51,11 +51,11 @@ To create one, see [Create a Knowledge Base](/docs/knowledge-bases/create-a-know
 
 In the menu on the left, open **Resources** > **Knowledge Bases**. It is the same kind of screen as **Data Tables**: folders on the left, a list of bases, a button **New Knowledge Base**.
 
-![The list Resources > Knowledge Bases: three bases shown as cards, with a search box, the New Knowledge Base button and a folder column on the left.](images/list-of-knowledge-bases.jpg)
+![The list Resources > Knowledge Bases: three bases, each with its name and what it holds, the search field, the tools, the New Knowledge Base button and a folder column on the left.](images/list-of-knowledge-bases.jpg)
 
-The list shows the bases as cards. The button at the top right switches to the **Table** view, which has four columns:
+The list shows each base with its name and what it holds. The two view buttons, next to the order list, switch to the **Table** view, which has four columns after the name:
 
-![The same list in the table view: columns Data source, Synchronisation, Documents and Used by.](images/list-table-view.jpg)
+![The same list in the table view: the columns Name, Data source, Synchronisation, Documents and Used by.](images/list-table-view.jpg)
 
 | Column | What it says |
 |---|---|

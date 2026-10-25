@@ -19,7 +19,7 @@ For one question and one answer, use the simpler step: [Ask a person to approve 
 
 ## Add the step and its channel
 
-1. In the **Node Catalog**, open **Interactions** and drag **Form Interaction** onto the canvas.
+1. In the **Nodes catalog**, open **Interactions** and drag **Form Interaction** onto the canvas.
 2. Open **AI** > **Interactions** and drag **Forms Channel** onto the canvas, below the step. It appears as a circle.
 3. Drag from the diamond of **Forms Channel** to the diamond under **Form Interaction**.
 4. Link **Form Interaction** to the step that must run after the form.
@@ -27,16 +27,18 @@ For one question and one answer, use the simpler step: [Ask a person to approve 
 ## Describe the form
 
 1. Right-click **Form Interaction** and select **Edit**.
-2. In **Title shown to the user**, type the title of the form.
-3. In **Description/instructions**, say what the person must do.
-4. In **JSON array of field definitions**, describe the fields. See the next section.
+2. In **Title**, type the title of the form.
+3. In **Description**, say what the person must do.
+4. Under **Fields**, describe the fields: one block for each field. See the next section.
 5. Select **Apply**, then **Publish**.
 
-![The window of the Form Interaction node: the title, the instructions, and the list of fields written in the field JSON array of field definitions](images/form-window.jpg)
+![The window of the Form Interaction node: the title, the description, and under Fields one block for each field, with its Name, its Label, its Type, the switch Required and its Hint, and the button Add a field](images/form-window.jpg)
 
-## Write the fields
+## Describe the fields
 
-The fields are written as a list, in a format named JSON. Each field is one block between curly braces, and the blocks are separated by commas. Copy this example and change the names:
+Under **Fields**, each field is a block with its **Name**, its **Label**, its **Type** (chosen in a list), the switch **Required** and a **Hint**. Select **Add a field** to add one, and the bin at the top right of a block to remove it.
+
+Behind the window, the fields are saved as a list in a format named JSON, which is also the form of an API call. This example shows the same three fields as such a list:
 
 ```json
 [
@@ -50,11 +52,11 @@ What each part means:
 
 | Part | What it is |
 |---|---|
-| `name` | The name of the field for the workflow. Lower case, no space. The next steps use this name. |
-| `label` | What the person reads next to the field. |
-| `type` | The kind of value. See the list below. |
-| `required` | `true` if the person must fill in the field. A field with no `required` is required. |
-| `hint` | A short help text. It is optional. |
+| `name` (**Name**) | The name of the field for the workflow. Lower case, no space. The next steps use this name. |
+| `label` (**Label**) | What the person reads next to the field. |
+| `type` (**Type**) | The kind of value. See the list below. |
+| `required` (**Required**) | `true` if the person must fill in the field. A field with no `required` is required. |
+| `hint` (**Hint**) | A short help text. It is optional. |
 | `defaultValue` | A value already filled in, which the person can keep or change. It is optional. |
 | `options` | For a field of type `Choice`: the list of choices, each between quotation marks. |
 
@@ -70,7 +72,7 @@ The types:
 | `Date` | A date. |
 | `File` | A file. |
 
-Write the types exactly as shown, with their capital letters.
+In an API call, write the types exactly as shown, with their capital letters.
 
 ## Use the values in the next steps
 
@@ -89,19 +91,19 @@ For example, link an **If** step after the form, and test the output `send`. See
 
 1. Run the workflow. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
 2. The workflow stops at the form. In the section **Executions**, the execution has the label **ACTION REQUIRED**.
-3. In the tab **Execution** of the workflow, open the forms panel on the right, fill in the form and submit it.
+3. In the **Execution** view of the workflow, open the tab **Forms** in the panel on the right, fill in the form and submit it.
 4. The execution continues and reaches the state completed.
 
 ## If it does not work
 
-- **The step fails, or the form has no field.** The list of fields is probably not valid. Check the commas, the quotation marks and the curly braces, and the spelling of each `type`.
+- **The step fails, or the form has no field.** Check that each field has a **Name** and a **Type**. In an API call, check the commas, the quotation marks and the curly braces of the list, and the spelling of each `type`.
 - **The workflow does not stop.** Check that **Forms Channel** is plugged into the diamond of the step.
 - **A field cannot be left empty.** A field is required unless you write `"required": false`.
 
 ## Good to know
 
 - An agent can ask for a form too, by itself, when it has a **Forms Channel**. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
-- Agentivity has no login, so it does not check who fills in the form.
+- In the Community edition there is no login, so Agentivity does not check who fills in the form.
 
 ## Next step
 

@@ -18,13 +18,13 @@ In a workflow, AI works only in the steps you choose. This page adds one such st
 
 ## Add the AI Agent node
 
-1. In the **Node Catalog**, open **AI**, then **Agents**.
+1. In the **Nodes catalog**, open **AI**, then **Agents**.
 2. Drag **AI Agent** onto the canvas.
 3. Link it to the step before it: drag from the dot on the right of that step to the dot on the left of **AI Agent**.
 
 ## Give it a model
 
-1. In the **Node Catalog**, open **AI**, then **Models**.
+1. In the **Nodes catalog**, open **AI**, then **Models**.
 2. Drag the model of your provider onto the canvas, below the **AI Agent** node. It appears as a circle.
 3. Drag from the diamond of the model to the first diamond under **AI Agent**. A dotted line links them.
 4. Right-click the model and select **Edit**.
@@ -57,7 +57,7 @@ In this step, the fields of the format are not separate outputs. To have each fi
 
 ## If it does not work
 
-- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Settings** > **Credentials**.
+- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Administration** > **Credentials**.
 - **The panel Outputs says "No outputs available yet."** The node is not linked to an earlier step, or no earlier step produces an output.
 - **The step fails when the workflow runs.** Check that the model is linked, that its credentials are chosen, and that **User prompt** is not empty.
 

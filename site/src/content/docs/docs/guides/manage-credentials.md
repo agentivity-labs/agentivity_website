@@ -20,7 +20,7 @@ For the first connection to an AI model, the shorter page is [Connect an AI mode
 
 ## Open the screen
 
-In the menu on the left, open **Settings**, then **Credentials**.
+In the menu on the left, open **Administration**, then **Credentials**.
 
 ![The screen Credentials, with one connection to an AI model: its name, its provider, and its key shown as dots](images/credentials.jpg)
 
@@ -28,9 +28,9 @@ The connections are sorted by what they are for. Each line shows the name, the s
 
 ## Add a connection
 
-1. Select **New credentials**. The window **New connection** asks "What do you want to connect to?"
+1. Select **New credentials**. The window **New credentials** asks "Which service are they for?"
 
-   ![The window New connection: a search field, the kinds of services on the left, and the list of services on the right](images/new-connection.jpg)
+   ![The window New credentials, "Which service are they for?": a search field, the kinds of services on the left (All, AI models, Email & messaging, Web search & scraping, Data & vector stores, Publishing, Other), and the list of services on the right](images/new-connection.jpg)
 
 2. Choose a kind on the left, or type the name of the service in the search field.
 
@@ -41,6 +41,7 @@ The connections are sorted by what they are for. Each line shows the name, the s
    | **Web search & scraping** | A web search service |
    | **Data & vector stores** | A database for documents |
    | **Publishing** | A website to publish to |
+   | **Other** | Any other service |
 
 3. Select the service. The window **New credentials** opens.
 
@@ -90,7 +91,7 @@ To ask which models a key can use, call `POST /api/v1/credentials/models` with `
 ## Good to know
 
 - A saved secret is never shown again, in the Studio or elsewhere. If you lost a key, create a new one at your provider and replace it here.
-- Agentivity has no login. Anyone who can open the Studio can add, change and delete connections. See [Keep your Agentivity server private](/docs/guides/keep-your-server-private/).
+- In the Community edition there is no login: anyone who can open the Studio can add, change and delete connections. See [Keep your Agentivity server private](/docs/guides/keep-your-server-private/). On a workspace that asks for a sign-in, only the people whose role allows it see **Credentials**: see [Administration, who sees what](/docs/administration/what-administration-is/).
 - The credentials are in your backup file. Keep that file safe. See [Update Agentivity and back up your data](/docs/guides/update-and-back-up/).
 
 ## Next step

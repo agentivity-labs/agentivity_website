@@ -26,7 +26,7 @@ An AI team does the repetitive work. The decisions stay with you. This page list
 ## After an execution
 
 - **Every execution is listed.** The section **Executions** shows the executions of your workspace and their state. An execution that waits for a person has the label **ACTION REQUIRED**.
-- **Every step can be read.** In the tab **Execution** of an editor, the **Inspector** shows, for each step, what it received and what it produced.
+- **Every step can be read.** In the **Execution** view of an editor, the **Inspector** shows, for each step, what it received and what it produced.
 
 ## Fixed rules where you need them
 

@@ -29,9 +29,11 @@ The window **New Knowledge Base** opens. A line under the title says: "What it r
 
 Choose the kind of source: **Text**, **Files**, **Web pages**, **Sitemap**, **RSS/Atom feed**, **API**, **PostgreSQL** or **SQLite**. Each choice says in a line what it reads. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/) for the list.
 
-![The window New Knowledge Base, step 1: eight cards, one per kind of source (API, Files, PostgreSQL, RSS/Atom feed, Sitemap, SQLite, Text, Web pages).](images/new-kb-what-it-reads.jpg)
+![The window New Knowledge Base, step 1, "What will it read?": one card for each kind of source offered by a hosted workspace (API, PostgreSQL, RSS/Atom feed, Sitemap, Text, Web pages), each with a line that says what it reads.](images/new-kb-what-it-reads.jpg)
 
-Select **Continue**. You can come back with **Back**, or with **Change** on the next step.
+Select a card: the window goes to the next step. You can come back with **Back**, or with **Change** on the next step.
+
+A hosted workspace does not offer **Files** and **SQLite**, because they read the server itself: its window shows six cards. The Community edition shows all eight.
 
 ## Step 2: where it reads from
 
@@ -52,7 +54,7 @@ The settings that matter least, such as delays and options for reading pages, wa
 | **PostgreSQL** | **Connection string**, **Query** | The database is your own, an outside connection. The query returns one row per document. **Content column** names the column that holds the text. |
 | **SQLite** | **Database path**, **Query** | A SQLite file on the server. Same query rule. |
 
-A setting with a drop-down list of credentials, such as the Firecrawl key, says "No credentials of this kind yet" if you have none. Create one in **Settings** > **Credentials**.
+A setting with a drop-down list of credentials, such as the Firecrawl key, says "No credentials of this kind yet" if you have none. Create one in **Administration** > **Credentials**.
 
 ### Type your texts (kind Text)
 
@@ -88,7 +90,7 @@ A path inside `/app` is refused: it is the installation of Agentivity, with its 
 | **Synchronised** | How the base stays up to date: **By hand**, **After a delay** or **When the source changes**. See [Keep a Knowledge Base up to date](/docs/knowledge-bases/keep-a-knowledge-base-up-to-date/). |
 | **Delay (hours)** | Only with **After a delay**: a number of hours, at least 1. |
 
-![Step 3 of the window: the fields Name, What it holds and Synchronised, and the Create button.](images/new-kb-about-it.jpg)
+![Step 3 of the window, "About this base": the fields Name, What it holds and Synchronised, the line "It is synchronised once created", and the buttons Cancel, Back and Create.](images/new-kb-about-it.jpg)
 
 A line says: "It is synchronised once created."
 

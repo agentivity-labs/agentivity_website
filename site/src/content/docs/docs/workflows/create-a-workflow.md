@@ -1,6 +1,6 @@
 ---
 title: "Create a workflow"
-description: "Draw a workflow in the Studio. Name it, drag steps from the Node Catalog onto the canvas, link them, set them up and publish."
+description: "Draw a workflow in the Studio. Name it, drag steps from the Nodes catalog onto the canvas, link them, set them up and publish."
 sidebar:
   order: 2
 editUrl: false
@@ -11,7 +11,7 @@ lastUpdated: false
 
 A workflow is a set of steps that you draw in advance. The steps run in the order you drew, the same way every time. This page shows the gestures you use for every workflow. The pages that follow add the steps one kind at a time.
 
-<video controls muted playsinline preload="metadata" src="/docs-media/en/workflows/images/create-a-workflow.mp4" aria-label="A recording of the Studio: a workflow named Reminder Approval is created, three nodes are dragged from the Node Catalog onto the canvas, they are linked, and the workflow is published"></video>
+<video controls muted playsinline preload="metadata" src="/docs-media/en/workflows/images/create-a-workflow.mp4" aria-label="A recording of the Studio: a workflow named Reminder Approval is created, three nodes are dragged from the Nodes catalog onto the canvas, they are linked, and the workflow is published"></video>
 
 Recorded from the product, played faster.
 
@@ -21,7 +21,7 @@ Recorded from the product, played faster.
 
 ## Create the workflow
 
-1. On the home page, select **Create new workflow**. You can also open **Studio** > **Workflows** and select **New workflow**.
+1. On the home page, select **New**, then **Workflow**, or the card **A workflow**. You can also open **Studio** > **Workflows** and select **New workflow**.
 2. In the window **New workflow**, type the **Workflow name**, for example `Reminder Approval`. The name needs at least 3 characters.
 3. Select **Create**.
 
@@ -35,7 +35,7 @@ In the panel **Info**, on the right, fill in **Role**: one or two sentences on w
 
 Another workflow, or a team, can call this workflow. What it gives to whoever calls it is what you declare, and nothing else: what happens inside stays inside.
 
-![The panel Info of the workflow Reminder Approval: Name, Role, the box Solution, Tags, then the section Outputs with its sentence and two lines, output and subject, each with a Name and a Value](images/workflow-outputs-section.jpg)
+![The panel Info of the workflow Reminder Approval: Name, Role, the box Solution, Tags, then the section Outputs with its sentence and two lines, output and subject, each with a Name, a Value and the buttons that take the value from a step and remove the line](images/workflow-outputs-section.jpg)
 
 1. In the panel **Info**, under **Tags**, find **Outputs**. The Studio says what it is for: what this workflow gives to a workflow or a team that calls it; each value is taken from a step, written between two pairs of curly braces; the output named `output` is its answer, and without it, the answer is what the last step produced.
 2. Select **Add its answer**. A first line appears, with a **Name** and a **Value**. The name of the answer is `output`.
@@ -51,14 +51,14 @@ A step that calls this workflow reads the answer as `output`, and each other out
 
 A workflow that declares nothing still has an answer: the text of its last step that produced one. But it gives nothing else, and what its steps hold cannot be read from outside. Declare what the callers need.
 
-## Find a step in the Node Catalog
+## Find a step in the Nodes catalog
 
-A step of a workflow is called a node. The **Node Catalog** holds all the nodes you can use.
+A step of a workflow is called a node. The **Nodes catalog** holds all the nodes you can use.
 
-1. In the panel on the right, select the second tab. The **Node Catalog** opens.
+1. In the panel on the right, select the second tab. The **Nodes catalog** opens.
 2. Open a category, or type a name in the search field and press Enter.
 
-![The workflow editor with the Node Catalog open on the right: the categories AI, Applications, Communication, Content, Core, Interactions, SEO, Storage and Web](images/node-catalog.jpg)
+![The workflow editor with the Nodes catalog open on the right: the field Search the steps, the categories AI, Applications, Communication, Content, Core, Documents, Interactions, SEO, Storage and Web, and the box that says what a category is for](images/node-catalog.jpg)
 
 | Category | What you find there |
 |---|---|
@@ -67,6 +67,7 @@ A step of a workflow is called a node. The **Node Catalog** holds all the nodes 
 | **Communication** | Steps that send messages. |
 | **Content** | Steps that build and change content. |
 | **Core** | Conditions, loops, variables, data tables, code, display. |
+| **Documents** | Steps that read the text of documents (PDF, Word, text). |
 | **Interactions** | Steps that ask a person something. |
 | **SEO** | Steps for search engine work. |
 | **Storage** | Steps that read and write stored values. |
@@ -101,7 +102,7 @@ The same menu has **Duplicate**, **Copy** and **Delete**.
 
 1. Select **Publish**, at the top right.
 
-When you have changes that are not saved, a star follows the name of the workflow at the top, and **Publish** is highlighted. After you publish, the Studio shows "Workflow published".
+When you have changes that are not saved, the state at the top says **Changed**, and **Publish** is highlighted. After you publish, the state says **Published** and a message appears at the bottom of the screen: "Workflow published".
 
 If you leave the editor with changes that are not saved, the Studio asks what to do: **Keep editing**, **Discard** or **Publish**.
 

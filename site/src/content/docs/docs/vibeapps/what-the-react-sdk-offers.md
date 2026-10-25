@@ -47,7 +47,7 @@ The two example applications are the best starting point. Each is small: a handf
 
 ## A way of working
 
-1. **Build the solution in the Studio first.** Make the agent or the team work in the tab **Execution** before you write any code. An application cannot fix a team that does not work.
+1. **Build the solution in the Studio first.** Make the agent or the team work in the **Execution** view before you write any code. An application cannot fix a team that does not work.
 2. **Start from an example application.** Copy the portal, or the Trip Planner if your application does one job. See [Start a VibeApp with the React SDK](/docs/vibeapps/start-with-the-react-sdk/).
 3. **Point it at your server and your solution.** Check that the conversation works with the ready-made pieces.
 4. **Change what the person sees.** Your layout, your brand, then your own widgets where the ready-made ones do not fit.

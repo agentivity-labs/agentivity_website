@@ -19,7 +19,7 @@ Running an agent alone is the fastest way to test it: you give it a task, you re
 ## Give a task
 
 1. Open **Studio** > **Agents** and open the agent.
-2. Select the tab **Execution**, at the top. The panel on the right asks "What would you like the agent to do?"
+2. In the switch at the top, select **Execution**. The panel on the right asks "What would you like the agent to do?"
 3. In the field **Describe the task for the agent…**, type the task. For the `Reminder Writer`:
 
    ```text
@@ -51,9 +51,9 @@ Below the canvas, three tabs show the execution:
 ## Improve and try again
 
 1. Read the answer as the person who will receive it.
-2. Go back to the tab **Editor** and change the instructions.
+2. Go back to **Editor**, in the switch at the top, and change the instructions.
 3. Select **Publish**.
-4. Go to the tab **Execution** and give the same task again.
+4. Go to **Execution** and give the same task again.
 
 Change one thing at a time. You then know which change improved the answer.
 

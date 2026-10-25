@@ -17,7 +17,7 @@ A condition lets a workflow take one path or another. The rule is fixed: the sam
 
 ## Add the If step
 
-1. In the **Node Catalog**, open **Core**, then **Control Flow**.
+1. In the **Nodes catalog**, open **Core**, then **Control Flow**.
 2. Drag **If** onto the canvas.
 3. Link the step before it to **If**: drag from the dot on the right of that step to the dot on the left of **If**.
 
@@ -51,7 +51,7 @@ Until you add a row, the window says: "No conditions yet — this node will alwa
 
 ## How to know it worked
 
-When you [run the workflow](/docs/workflows/run-a-workflow/), only one of the two paths runs. In the tab **Execution**, the steps of the other path stay not started.
+When you [run the workflow](/docs/workflows/run-a-workflow/), only one of the two paths runs. In the **Execution** view, the steps of the other path stay not started.
 
 ## If it does not work
 

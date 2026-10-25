@@ -18,7 +18,7 @@ A workflow can keep what it did in a Data Table, and read from it. In our exampl
 
 ## The two nodes
 
-Both are in the **Node Catalog**, under **Core** > **Data**.
+Both are in the **Nodes catalog**, under **Core** > **Data**.
 
 | Node | Shape | What it is |
 |---|---|---|

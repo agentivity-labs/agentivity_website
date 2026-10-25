@@ -22,7 +22,7 @@ Everything is simulated. No real booking is made and no real payment is taken: e
 | The table `trips` | One row per trip: destination, dates, travellers, budget, itinerary. |
 | The table `trip_bookings` | One row per booking of a trip: its kind, its label, its status. |
 
-![The team Trip Manager Team in its editor: the manager at the top, twelve specialists in a row below, and the pattern Manager-led at the top right](images/trip-manager-team.jpg)
+![The team Trip Manager Team in its editor: the manager, a dark hexagon, at the top, the twelve specialists below in tinted groups, and the pill Manager-led beside the name](images/trip-manager-team.jpg)
 
 ## The members
 
@@ -46,7 +46,7 @@ Everything is simulated. No real booking is made and no real payment is taken: e
 ## Try it
 
 1. Open **Studio** > **Agents** and open **Trip Manager Team**.
-2. Select the tab **Execution**.
+2. In the switch at the top, select **Execution**.
 3. Ask for a trip in one sentence: a city, the dates, the number of travellers and a budget.
 4. Answer when a specialist shows options.
 

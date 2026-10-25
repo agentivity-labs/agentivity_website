@@ -25,7 +25,7 @@ The portal does not list everything in your workspace. It lists only what you ma
 
 The tag appears under **Tags**. To remove it, select the cross on the tag, then **Publish**.
 
-![The editor of the team Trip Manager Team: in the panel Info on the right, under Tags, the tag solution](images/solution-tag.jpg)
+![The editor of the team Trip Manager Team: in the panel Info on the right, the box Solution switched on, and under Tags the tag solution](images/solution-tag.jpg)
 
 The same works for an agent and for a workflow: their panel **Info** has the same **Tags**.
 

@@ -9,17 +9,17 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/studio/executions.md. Do not edit here: edit the source and publish again. -->
 
-**Executions** lists the executions of your whole workspace: each time a workflow, an agent or a team worked on a request. The page is titled **Execution history**.
+**Executions** lists the executions of your whole workspace: each time a workflow, an agent or a team worked on a request. The page is titled **Executions**.
 
-![The Executions screen: one execution of the workflow Reminder Approval, with the label ACTION REQUIRED and the buttons Open workflow and Details](images/executions.jpg)
+![The Executions screen: four executions, one of them of the workflow Reminder Approval with the label ACTION REQUIRED and the buttons Open workflow and Details, and the others COMPLETED](images/executions.jpg)
 
 ## The list
 
-Under the title, a line says how many executions are listed. Each line of the list is one execution:
+Under the title, a line says how many executions are listed, for example "4 executions · Latest executions". Each line of the list is one execution:
 
-- the name of what ran;
-- the identifier of the execution, its date and its time;
-- a label when the execution needs you: **ACTION REQUIRED** means the execution waits for the answer of a person.
+- the name of what ran (an agent called by a workflow shows as **Agent** and its identifier);
+- the identifier of the execution, its date, its time and, when it is over, how long it took;
+- its state, as a label on the right: **COMPLETED**, or **ACTION REQUIRED** when the execution waits for the answer of a person.
 
 ## Filter and refresh
 

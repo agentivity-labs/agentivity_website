@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/teams/choose-how-a-team-works.md. Do not edit here: edit the source and publish again. -->
 
-When you create a team, the Studio asks you to **Choose an Orchestration Pattern**. The pattern is the way the members of the team work together. There are five.
+When you create a team, the Studio asks **How will this team work?** The pattern, which the Studio also calls the mode of the team, is the way the members of the team work together. There are five.
 
 ## The five patterns
 
@@ -43,6 +43,20 @@ When you create a team, the Studio asks you to **Choose an Orchestration Pattern
 | **Group Chat** | At least two | They speak in the order in which you added them | No | None |
 | **Manager-led** | At least two: the manager and one other | The manager decides | Yes: the member at the top position | None |
 
+## How the canvas shows each pattern
+
+The drawing of a team follows the pattern you chose. Each member is a hexagon with its name under it.
+
+| Pattern | What you see |
+|---|---|
+| **Sequential** | A line joins each member to the next one, in the order of the work. |
+| **Concurrent** | A dark hexagon on the left, **The brief**, sends the request to every member, who stand in a column. A dark hexagon on the right, **Merged**, gathers the results into one report. |
+| **Handoff** | No line at all: anyone can hand the work to anyone. The member that starts is marked **Starts here**. |
+| **Group Chat** | The members hang under one shared bar: they share one conversation. |
+| **Manager-led** | The manager, a larger dark hexagon, is on top, and lines go down to the members it sends work to. |
+
+Members that you put in a group are drawn together on a soft tint, with the name of the group: see [Name, group and give an icon to team members](/docs/teams/set-up-a-member/).
+
 In every pattern, give each member a clear role. In **Handoff** and **Manager-led**, the choice of who works next is made from the roles.
 
 ## When not to use a pattern
@@ -70,7 +84,7 @@ A team also gives the named outputs of the member whose answer is its answer, th
 
 In a team, each place on the canvas is a position, and the pattern gives each position its meaning. In a **Manager-led** team, the position at the top is the manager, and the positions below are the members it sends work to. In a **Sequential** team, the positions follow the order of the work.
 
-- To put a member at a position, drag it from the list **Members** onto the canvas. In a **Manager-led** team, the first member you add takes the top position.
+- To put a member at a position, drag it from the list of members (the tab **Add member**) onto the canvas. In a **Manager-led** team, the first member you add takes the top position.
 - To exchange two members, drag one onto the other: they swap places.
 
 ## What a Manager-led team needs

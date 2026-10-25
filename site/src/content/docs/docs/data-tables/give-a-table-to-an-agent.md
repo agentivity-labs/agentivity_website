@@ -31,7 +31,7 @@ When a row must be written every time, use a workflow step. See [Read and write 
 ## Give the tool to the agent
 
 1. Open the agent in its editor.
-2. In the **Node Catalog**, open **AI** > **Tools**, or search for `Data Table`.
+2. In the **Nodes catalog**, open **AI** > **Tools**, or search for `Data Table`.
 3. Drag **AI Agent Data Table Tool** onto the canvas, below the agent.
 4. Drag from the diamond of the tool to the sixth diamond of the agent, **AI Agent Tools**.
 

@@ -108,7 +108,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Add, change or remove credentials](/docs/guides/manage-credentials/)
 - [Share your work as a Template](/docs/guides/share-a-template/)
 - [Organise your work in folders](/docs/guides/organise-with-folders/)
-- Reference: [every node of the Node Catalog](/docs/reference/nodes/), [the routes of the API](/docs/reference/api/), and [the settings of the server](/docs/reference/configuration/)
+- Reference: [every node of the Nodes catalog](/docs/reference/nodes/), [the routes of the API](/docs/reference/api/), and [the settings of the server](/docs/reference/configuration/)
 
 ## Run it day to day
 

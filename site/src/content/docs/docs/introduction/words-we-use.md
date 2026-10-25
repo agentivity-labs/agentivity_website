@@ -24,7 +24,7 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | **Pattern** | The way the members of a team work together. There are five: Sequential, Concurrent, Handoff, Group Chat and Manager-led. |
 | **Workflow** | Steps drawn in advance, run the same way every time. |
 | **Node** | One element of a workflow or of an agent, drawn on the canvas: a step, a model, a channel, a tool. |
-| **Node Catalog** | The list of all the nodes you can add. |
+| **Nodes catalog** | The list of all the nodes you can add. |
 | **Prompt** | The text of a request that is sent to an AI model. |
 | **Data Table** | A table of data that agents and workflows can read and fill. |
 | **Knowledge Base** | Your documents, pages or feeds, read from a source and kept cut into passages, so that an agent finds the right passage by meaning. |
@@ -59,7 +59,7 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | **AI model** | The program, run by a provider, that an agent thinks with. Agentivity does not provide one. |
 | **Provider** | The company that runs the model, for example Anthropic, OpenAI or Google. |
 | **API key** | A secret code that lets Agentivity use your account with a provider. |
-| **Credentials** | The keys and accounts that your agents, teams and workflows connect with. They are kept in **Settings** > **Credentials**. |
+| **Credentials** | The keys and accounts that your agents, teams and workflows connect with. They are kept in **Administration** > **Credentials**. |
 | **Model connection** | The credentials of an AI model. |
 
 ## Sharing

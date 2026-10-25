@@ -19,7 +19,7 @@ An execution is one request handled by a team, from the task you give to the fin
 ## Give a task to the team
 
 1. Open **Studio** > **Agents** and open the team.
-2. Select the tab **Execution**, at the top. The team is drawn in the middle. The panel **Chat**, on the right, asks "What task would you like the team to perform?"
+2. In the switch at the top, select **Execution**. The team is drawn in the middle. The panel **Chat**, on the right, asks "What task would you like the team to perform?"
 3. In the field **Describe the task for the team…**, type the request. For example, for a team that writes notes:
 
    ```text
@@ -29,6 +29,8 @@ An execution is one request handled by a team, from the task you give to the fin
 4. Send your message.
 
 ## Follow the work
+
+On the drawing, you see who works. The member at work is filled in the accent colour, and a ring around it grows and fades, as if it breathed. The path that leads to it is drawn in the accent colour, with a light that runs along it. A member that waits for a person is drawn in yellow. A member that failed has a red outline.
 
 Below the drawing, three tabs show what happens:
 
@@ -52,7 +54,7 @@ An execution that waits for you is listed in the section **Executions**, with th
 
 ## Find an execution again
 
-In the tab **Execution**, the panel on the right has a list **Executions**. Each execution has a state:
+In **Execution**, the panel on the right has three tabs: **Executions**, **Chat** and **Forms**. The tab **Executions** lists the executions of the team. Each execution has a state:
 
 | State | What it means |
 |---|---|

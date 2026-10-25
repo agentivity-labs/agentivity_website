@@ -11,7 +11,7 @@ lastUpdated: false
 
 A team is several agents that work together on one request. This page builds a team by hand: a writer and a reviewer, who prepare payment reminders one after the other.
 
-<video controls muted playsinline preload="metadata" src="/docs-media/en/teams/images/create-a-team.mp4" aria-label="A recording of the Studio: a team named Payment Reminders is created, the Sequential pattern is chosen, two agents are dragged onto the canvas, and the team is published"></video>
+<video controls muted playsinline preload="metadata" src="/docs-media/en/teams/images/create-a-team.mp4" aria-label="A recording of the Studio: a team named Payment Reminders is created, Use Sequential is chosen, two agents are found with Add member and dragged onto the canvas, and the team is published"></video>
 
 Recorded from the product, played faster. To have a team built from a description instead, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
@@ -22,23 +22,22 @@ Recorded from the product, played faster. To have a team built from a descriptio
 
 ## Create the team
 
-1. On the home page, select **Create new team**. You can also open **Studio** > **Agents** and select **New team**.
+1. On the home page, select **New**, then **Team**, or the card **A team**. You can also open **Studio** > **Agents** and select **New team**.
 2. In the window **New team**, type the **Team name**, for example `Payment Reminders`.
 3. Select **Create**.
 
 ## Choose how the members work together
 
-The Studio asks you to **Choose an Orchestration Pattern**. The pattern is the way the members of the team work together.
+The Studio asks **How will this team work?** The pattern, which the Studio also calls the mode of the team, is the way the members of the team work together: who acts, in what order, and who decides that the work is done. The Studio says that you choose it once, when the team starts.
 
-![The screen Choose an Orchestration Pattern, with five cards: Sequential, Concurrent, Handoff, Group Chat and Manager-led](images/choose-a-pattern.jpg)
+![The screen "How will this team work?": the five modes in a list on the left (Sequential, Concurrent, Handoff, Group Chat and Manager-led), and on the right a picture of the selected one, what it means, when to use it, and the button Use Sequential](images/choose-a-pattern.jpg)
 
-1. Select one of the five patterns: **Sequential**, **Concurrent**, **Handoff**, **Group Chat** or **Manager-led**.
+1. Select one of the five patterns in the list: **Sequential**, **Concurrent**, **Handoff**, **Group Chat** or **Manager-led**. The right side shows how it works and **When to use it**.
+2. Select the button of the pattern, for example **Use Sequential**.
 
 For this team, select **Sequential**: the writer works first, then the reviewer receives what the writer produced. The page [Choose how a team works together](/docs/teams/choose-how-a-team-works/) explains the five patterns.
 
-The editor of the team opens. The pattern you chose is shown at the top right, next to **Publish**.
-
-The pattern is saved only when you publish. If you leave before, the Studio asks for the pattern again the next time you open the team.
+The editor of the team opens. The pattern you chose is shown as a small pill beside the name of the team, and the state at the top says **Published**: the pattern is saved.
 
 ## Describe the team
 
@@ -49,27 +48,27 @@ In the panel **Info**, on the right:
 
 ## Add the members
 
-1. In the panel on the right, select the second tab. The list **Members** opens. It shows what you can add: your agents, your teams and your workflows. Use **Agents**, **Teams** and **Workflows** to filter the list, or the search field to find a name.
-2. Drag `Reminder Writer` from the list onto the canvas. It appears as a hexagon with its name.
+1. In the panel on the right, select the second tab, **Add member**. It lists what you can add: your agents, your teams and your workflows, grouped by folder. Use **All**, **Agents**, **Teams** and **Workflows** to filter the list, or the search field to find a name.
+2. Drag `Reminder Writer` from the list onto the canvas. It appears as a hexagon with its name under it.
 3. Drag `Reminder Reviewer` onto the canvas.
 
 In a **Sequential** team, the members work in the order of their positions. To exchange two members, drag one onto the other: they swap places.
 
-![The team editor with two hexagons, Reminder Writer and Reminder Reviewer, and the list Members on the right with a check mark next to each](images/team-with-members.jpg)
+![The team editor with two hexagons, Reminder Writer and Reminder Reviewer, joined by a line, the pill Sequential beside the name of the team, and the panel Info on the right](images/team-with-members.jpg)
 
-A member that is already in the team has a check mark in the list. The same member cannot be added twice.
+In a **Sequential** team, a line joins each member to the next one, in the order of the work. A member that is already in the team has a check mark in the list. The same member cannot be added twice.
 
 A long list of members is hard to follow and to check. Start with a few members, each with a clear role, and add more only when you need them.
 
 ## Save
 
-1. Select **Publish**, at the top right. This saves your changes.
+1. Select **Publish**, at the top right. This saves your changes. The state beside it says **Changed** while there is something to save, and **Published** once it is saved.
 
 Publish before you leave the editor. The team editor does not ask you to save when you go to another section, and changes that are not published are lost.
 
 ## How to know it worked
 
-- The canvas shows one hexagon per member.
+- The canvas shows one hexagon per member, with its name under it.
 - In **Studio** > **Agents**, the team is in the list, with **Team** in the column **Type**.
 
 ## If it does not work
@@ -77,7 +76,7 @@ Publish before you leave the editor. The team editor does not ask you to save wh
 - **"Team name is required."** The name field is empty.
 - **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with the Assistant.
 - **Publish cannot be selected.** There is nothing new to save.
-- **The menu entry Agents does nothing.** You are in an editor of that section. Select **Home** first, then **Studio** > **Agents**.
+- **The menu entry Agents does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents**.
 - **A Manager-led team refuses to run.** It needs a member at the top position, which is the manager, and at least one worker below. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
 
 ## Go further

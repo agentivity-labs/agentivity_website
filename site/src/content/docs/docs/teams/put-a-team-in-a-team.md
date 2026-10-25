@@ -18,7 +18,7 @@ A member of a team does not have to be an agent. It can be another team, or a wo
 
 ## Add a team or a workflow as a member
 
-1. In the panel on the right, select the second tab. The list **Members** opens.
+1. In the panel on the right, select the second tab, **Add member**. The list of members opens.
 2. Select **Teams** or **Workflows** to see only those. The list is sorted by folder.
 3. Drag the team or the workflow onto the canvas.
 4. Select **Publish**.
@@ -79,13 +79,13 @@ A member that fails makes the team fail. The message says that the team failed, 
 ## Good to know
 
 - A team inside a team makes more calls to the AI model for one request. Keep the levels few.
-- Do not add a team to itself. The list **Members** shows every team of your workspace, including the one you are editing.
+- Do not add a team to itself. The list of members shows every team of your workspace, including the one you are editing.
 - Test each part alone before you put it in a larger team. A problem is easier to find in a small team.
 
 ## How to know it worked
 
 - On the canvas, the team or the workflow is a hexagon among the other members.
-- In the list **Members**, it has a check mark.
+- In the list of members, it has a check mark.
 
 ## Next step
 

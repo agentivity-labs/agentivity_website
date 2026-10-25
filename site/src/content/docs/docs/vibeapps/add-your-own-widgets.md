@@ -47,7 +47,7 @@ The example below adds a widget named `ReminderPreview` to the agent `Reminder W
 2. Right-click its **Chat Channel** and select **Edit**.
 3. Select the tab **App Widgets**, then **Add widget**.
 
-![The window Chat Channel, tab App Widgets: the widget HotelChoice with its type key, its description and its parameters schema](images/app-widgets.jpg)
+![The window Chat Channel, tab App Widgets: the widget TripCover, declared on the agent Trip Manager, with its type key, its description and its parameters schema, and the button Add widget](images/app-widgets.jpg)
 
 4. Fill in the three fields:
 
@@ -159,7 +159,7 @@ Register your component under the name of a ready-made widget, for example `Choi
 
 - **A widget is declared per agent.** In a team, each member has its own Chat Channel, and its own widgets. In the Trip Planner, `HotelChoice` belongs to the Hotel Specialist, and `PaymentCard` to the Payment Agent.
 - **The answer is a text.** Write it as a person would: "I choose: Hotel du Parc, 140 euros a night." The agent reads it like a typed message.
-- **The Studio does not draw your widget.** In the tab **Execution** of the Studio, only your application knows the component. Test a custom widget from your application.
+- **The Studio does not draw your widget.** In the **Execution** view of the Studio, only your application knows the component. Test a custom widget from your application.
 - **Do not put a secret or a real payment in a widget.** The Trip Planner payment is a simulation. A real payment belongs to a payment provider, on your own server.
 
 ## Where to read more

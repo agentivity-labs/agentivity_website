@@ -17,7 +17,7 @@ By itself, an agent can only read and write text. A tool lets it do something mo
 
 ## The tools that need nothing more
 
-These tools work without an account at another service. They are in the **Node Catalog**, under **AI** > **Tools**, grouped in sub-categories such as **Data**, **Documents** and **Search**.
+These tools work without an account at another service. They are in the **Nodes catalog**, under **AI** > **Tools**, grouped in sub-categories such as **Data**, **Documents** and **Search**.
 
 | Tool | What the agent can do with it |
 |---|---|
@@ -45,7 +45,7 @@ The catalogue also has tools for web search and web reading that use services yo
 
 In our example, the `Reminder Writer` must know today's date, to say how many days an invoice is late.
 
-1. In the **Node Catalog**, open **AI** > **Tools**, or type the name of the tool in the search field and press Enter.
+1. In the **Nodes catalog**, open **AI** > **Tools**, or type the name of the tool in the search field and press Enter.
 2. Drag **AI Agent Date & Time Tool** onto the canvas, below the agent.
 3. Drag from the diamond of the tool to the diamond of the agent named **AI Agent Tools**.
 4. Select **Publish**.
@@ -81,7 +81,7 @@ A step can require the model to call a tool. The models Claude Opus 5.5, Claude 
 
 ## How to know it worked
 
-Run the agent with a request that needs the tool. The answer must contain what only the tool could give: here, the number of days the invoice is late. In the tab **Execution**, the **Inspector** shows the steps of the execution. See [Run an agent and read its answer](/docs/agents/run-an-agent/).
+Run the agent with a request that needs the tool. The answer must contain what only the tool could give: here, the number of days the invoice is late. In **Execution**, the **Inspector** shows the steps of the execution. See [Run an agent and read its answer](/docs/agents/run-an-agent/).
 
 ## Good to know
 

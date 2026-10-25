@@ -79,11 +79,11 @@ Not today. An execution starts from the Studio or from an application.
 
 ### Where do I see what happened?
 
-In the tab **Execution** of the editor, and in the section **Executions** for the whole workspace. See [The Executions screen](/docs/studio/executions/).
+In the **Execution** view of the editor, and in the section **Executions** for the whole workspace. See [The Executions screen](/docs/studio/executions/).
 
 ### An execution is waiting. What do I do?
 
-It waits for the answer of a person. In **Executions** it has the label **ACTION REQUIRED**. Open it in its editor and answer in the tab **Execution**.
+It waits for the answer of a person. In **Executions** it has the label **ACTION REQUIRED**. Select **Answer** on the home page, or open it in its editor, and answer in the **Execution** view.
 
 ### The screens do not update, and the bar at the bottom says Realtime reconnecting.
 

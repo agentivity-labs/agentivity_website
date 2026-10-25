@@ -30,13 +30,13 @@ In our example, a table `reminders` keeps one row for each payment reminder: the
 | **Rows** | The entries. One row is one reminder, one invoice, one trip. |
 | **id**, **CreatedAt**, **UpdatedAt** | Three columns that every table has. Agentivity fills them itself. |
 
-![An open Data Table named trips: its 57 rows and 16 fields, the button Add column, and one column per field with buttons to sort and to filter](images/table-open.jpg)
+![An open Data Table named trips: its 57 rows and 16 fields, the button Add column, and one column per field with buttons to sort](images/table-open.jpg)
 
 ## Who can use a table
 
 | Who | How |
 |---|---|
-| **You, in the Studio** | Open the table, sort and filter its rows, change its columns. See [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/). |
+| **You, in the Studio** | Open the table, sort and search its rows, change its columns. See [Look at a Data Table and change its columns](/docs/data-tables/view-and-change-a-table/). |
 | **A workflow** | A step reads, adds, changes or deletes rows. See [Read and write a Data Table from a workflow](/docs/data-tables/use-a-table-in-a-workflow/). |
 | **An agent** | A tool lets the agent read and fill the table, within the limits you set. See [Let an agent read and fill a Data Table](/docs/data-tables/give-a-table-to-an-agent/). |
 | **An application** | It reads and writes rows. It cannot change the columns. See [List solutions and start an execution from your app](/docs/vibeapps/run-a-solution-from-your-app/). |

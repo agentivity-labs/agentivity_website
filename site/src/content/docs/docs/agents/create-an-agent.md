@@ -11,7 +11,7 @@ lastUpdated: false
 
 An agent is one AI specialist with a role. To see what an agent is made of first, read [What an agent is made of](/docs/agents/what-an-agent-is/). This page builds an agent by hand. It takes more steps than the Assistant: to have an agent built from a description, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
-<video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: on the home page, Create new agent is selected, the name Reminder Writer is typed, the role is written, an Anthropic Model is dragged from the Node Catalog onto the canvas and linked to the first diamond of the agent"></video>
+<video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: in Agents, New agent is selected, the name Reminder Writer is typed, the role is written, an Anthropic Model is dragged from the Nodes catalog onto the canvas and linked to the first diamond of the agent"></video>
 
 Recorded from the product. It stops before the agent is published and before the credentials of the model are chosen.
 
@@ -22,7 +22,7 @@ Recorded from the product. It stops before the agent is published and before the
 
 ## Create the agent
 
-1. On the home page, select **Create new agent**. You can also open **Studio** > **Agents** and select **New agent**. From the list, the new agent is added to the list and its editor does not open by itself: double-click it.
+1. On the home page, select **New**, then **Agent**, or the card **An agent**. You can also open **Studio** > **Agents** and select **New agent**. From the list, the new agent is added to the list and its editor does not open by itself: double-click it.
 2. In the window **New agent**, type the **Agent name**, for example `Reminder Writer`.
 3. Select **Create**.
 
@@ -40,7 +40,7 @@ In the panel **Info**, on the right:
 
 A new agent has no AI model. You add one and link it.
 
-1. In the panel on the right, select the second tab. The **Node Catalog** opens.
+1. In the panel on the right, select the second tab. The **Nodes catalog** opens.
 2. Open **AI**, then **Models**. You can also type the name of your provider in the search field and press Enter.
 3. Drag the model of your provider onto the canvas, below the agent. For example **Anthropic Model**, **OpenAI Model** or **Google Gemini Model**. It appears as a circle with a diamond on top.
 4. Drag from the diamond of the model to the first diamond of the agent, on the left. A dotted line links them.
@@ -75,19 +75,19 @@ Leave **Model override** empty to use the default model of the connection.
 
 ## Try it
 
-1. Select the tab **Execution**.
+1. In the switch at the top, select **Execution**.
 2. Type a task for the agent and send it.
 
 ## How to know it worked
 
 - On the canvas, a dotted line goes from the model to the agent.
 - In **Studio** > **Agents**, the agent is in the list, with **Agent** in the column **Type**.
-- In the tab **Execution**, the agent answers your task.
+- In **Execution**, the agent answers your task.
 
 ## If it does not work
 
 - **"Agent name is required."** The name field is empty.
-- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Settings** > **Credentials**, or choose the model of a provider you have a connection for.
+- **The list Provider credentials is empty.** You have no connection for this provider. Add one in **Administration** > **Credentials**, or choose the model of a provider you have a connection for.
 - **Apply cannot be selected.** Nothing changed in the window yet.
 - **The agent fails when it runs.** Check that the model is linked to the first diamond of the agent, and that its credentials are chosen.
 
