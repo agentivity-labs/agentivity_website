@@ -516,7 +516,7 @@
             "body": "un manager planifie et répartit le travail"
           }
         ],
-        "alt": "Un enregistrement du Studio : une équipe est nommée, le mode mené par un manager est choisi parmi cinq, puis un manager et trois spécialistes sont glissés sur le canevas"
+        "alt": "Un enregistrement du Studio : une équipe est nommée, le mode mené par un manager est choisi parmi cinq, puis un manager et quatre spécialistes sont glissés sur le canevas"
       },
       {
         "title": "Ou dessinez un workflow",
@@ -1809,7 +1809,7 @@
         "Demandez avec vos mots, et décidez quand ils vous le demandent"
       ],
       "caption": "Enregistré dans le Studio, accéléré.",
-      "alt": "Un enregistrement du Studio : une équipe reçoit un nom, le mode dirigé par un manager est choisi parmi cinq, puis un manager et trois spécialistes sont glissés sur le canevas"
+      "alt": "Un enregistrement du Studio : une équipe reçoit un nom, le mode dirigé par un manager est choisi parmi cinq, puis un manager et quatre spécialistes sont glissés sur le canevas"
     },
     "ways": {
       "eyebrow": "Modes de travail",
