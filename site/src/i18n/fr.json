@@ -2362,7 +2362,7 @@
             "src": "/media/product/prompt-studio-screen.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "Prompt Studio : les onglets Playground et Test Cases, les boutons Run Prompt et Analyze, l'éditeur du prompt, un panneau à droite avec Details, Settings et Inputs, et la Debug console en bas",
+            "alt": "Prompt Studio : les onglets Playground et Test Cases, les boutons Run et Analyze, le prompt amélioré dans l'éditeur, ses entrées à droite, et les exécutions en bas, notées 2,2 puis 10",
             "caption": "Prompt Studio, dans le Studio : le prompt au centre, ses réglages à droite, chaque essai dans la console en dessous."
           }
         },

@@ -2361,7 +2361,7 @@
             "src": "/media/product/prompt-studio-screen.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "Prompt Studio: the tabs Playground and Test Cases, the buttons Run Prompt and Analyze, the editor of the prompt, a panel on the right with Details, Settings and Inputs, and the Debug console at the bottom",
+            "alt": "Prompt Studio: the tabs Playground and Test Cases, the buttons Run and Analyze, the improved prompt in the editor, its inputs on the right, and the executions at the bottom, scored 2.2 then 10",
             "caption": "Prompt Studio, in the Studio: the prompt in the middle, its settings on the right, every try in the console below."
           }
         },
