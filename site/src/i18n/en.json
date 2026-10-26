@@ -315,13 +315,13 @@
           "label": "Trip Planner · real capture",
           "title": "An app built for one job",
           "body": "One sentence in. Flights, a hotel to choose, a dinner to book: each screen arrives when it is needed.",
-          "alt": "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then a hotel card with a photo, a payment step and a dinner choice appear in the conversation"
+          "alt": "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then the flight to approve, the hotels with their photos, the payment and the recap of the bookings appear in the conversation"
         },
         {
           "label": "Shopping Lab · real capture",
           "title": "Or one portal for all your teams",
           "body": "Publish a team and it appears in the portal, under your brand. No app to build.",
-          "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears"
+          "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, confirms the brief, then nine specialists work in turn"
         }
       ],
       "points": [
@@ -535,7 +535,7 @@
       "lead": "They ask in their own words, and the team stops when a decision is theirs. Pick a moment to jump to it.",
       "decision": "Their decision",
       "caption": "Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster.",
-      "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+      "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to approve the flight and choose the hotel, then takes the payment and shows the recap of the bookings",
       "chapters": [
         {
           "t": 0.4,
@@ -1305,7 +1305,7 @@
         "title": "Trip Planner",
         "for": "a travel agency",
         "summary": "One sentence in. A manager and twelve specialists plan the trip, and the traveller chooses the flights, the hotel and the dinner.",
-        "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+        "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to approve the flight and choose the hotel, then takes the payment and shows the recap of the bookings",
         "h1": "A whole trip,",
         "h1_accent": "from one sentence.",
         "lead": "The traveller writes what they want. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
@@ -1418,7 +1418,7 @@
         "title": "Shopping Lab",
         "for": "a shop, a buyer, a comparison service",
         "summary": "A shopper describes what they need. Nine specialists read the stores’ own pages, compare, score and write an illustrated report.",
-        "alt": "A recording of the Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears",
+        "alt": "A recording of the Shopping Lab demo in the portal: a shopper asks for headphones, confirms the brief, then nine specialists work in turn",
         "h1": "A buying advice",
         "h1_accent": "you can check.",
         "lead": "The shopper describes a need in their own words. The team reads what the stores really publish, compares like with like, and hands back a report with its sources.",
@@ -2259,7 +2259,7 @@
                 "src": "/media/product/workflow-run.jpg",
                 "width": 1600,
                 "height": 904,
-                "alt": "A workflow while it runs: the step that asks a person is active on the canvas, with the chat on the right and the logs at the bottom"
+                "alt": "A workflow while it runs: the steps already done are green, the step where Finance approves the invoice waits for its answer, with its form on the right and what the AI read at the bottom"
               },
               "title": "Follow each step",
               "body": "While it runs, the active step lights up, and every step is kept with its logs."
@@ -2631,7 +2631,7 @@
           "poster": "/media/trip-planner.jpg",
           "width": 1024,
           "height": 768,
-          "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to choose the flights, the hotel, the transfers and the dinner",
+          "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to approve the flight and choose the hotel, then takes the payment and shows the recap of the bookings",
           "caption": "Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster."
         }
       },
@@ -2707,7 +2707,7 @@
                 "poster": "/media/shopping-lab.jpg",
                 "width": 1024,
                 "height": 768,
-                "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, nine specialists work in turn, then a report with product cards and photos appears"
+                "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, confirms the brief, then nine specialists work in turn"
               },
               "title": "Shopping Lab, in the portal",
               "body": "A shopper asks for headphones. Nine specialists work in turn, and a report appears with product cards and photos."

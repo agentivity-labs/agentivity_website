@@ -315,13 +315,13 @@
           "label": "Trip Planner · capture réelle",
           "title": "Une application conçue pour un métier",
           "body": "Une phrase suffit. Des vols, un hôtel à choisir, un dîner à réserver : chaque écran arrive quand il sert.",
-          "alt": "L'application de démonstration Trip Planner : un voyageur décrit son voyage, l'équipe de spécialistes s'active, puis une fiche d'hôtel avec photo, une étape de paiement et un choix de dîner apparaissent dans la conversation"
+          "alt": "L'application de démonstration Trip Planner : un voyageur décrit son voyage, l'équipe de spécialistes s'active, puis le vol à valider, les hôtels avec leurs photos, le paiement et le récapitulatif des réservations apparaissent dans la conversation"
         },
         {
           "label": "Shopping Lab · capture réelle",
           "title": "Ou un portail pour toutes vos équipes",
           "body": "Publiez une équipe, elle apparaît dans le portail, à vos couleurs. Aucune application à développer.",
-          "alt": "La démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, neuf spécialistes travaillent tour à tour, puis un rapport avec des fiches produits et des photos apparaît"
+          "alt": "La démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour"
         }
       ],
       "points": [
@@ -535,7 +535,7 @@
       "lead": "Ils demandent avec leurs mots, et l'équipe s'arrête quand une décision leur revient. Choisissez un moment pour y aller.",
       "decision": "Leur décision",
       "caption": "Trip Planner, une VibeApp construite avec Agentivity. Enregistré depuis le produit, accéléré.",
-      "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un manager confie le travail à des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
+      "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un manager confie le travail à des spécialistes, et l'application demande au voyageur de valider le vol et de choisir l'hôtel, puis prend le paiement et affiche le récapitulatif des réservations",
       "chapters": [
         {
           "t": 0.4,
@@ -1305,7 +1305,7 @@
         "title": "Trip Planner",
         "for": "une agence de voyages",
         "summary": "Une phrase suffit. Un manager et douze spécialistes organisent le voyage, et le voyageur choisit les vols, l'hôtel et le dîner.",
-        "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un séjour à Lisbonne, un manager répartit le travail entre des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
+        "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un séjour à Lisbonne, un manager répartit le travail entre des spécialistes, et l'application demande au voyageur de valider le vol et de choisir l'hôtel, puis prend le paiement et affiche le récapitulatif des réservations",
         "h1": "Tout un voyage,",
         "h1_accent": "à partir d'une phrase.",
         "lead": "Le voyageur écrit ce qu'il veut. Un manager confie chaque partie au bon spécialiste, et l'application affiche un choix chaque fois qu'une décision revient au voyageur.",
@@ -1418,7 +1418,7 @@
         "title": "Shopping Lab",
         "for": "un magasin, un acheteur, un service de comparaison",
         "summary": "Un acheteur décrit son besoin. Neuf spécialistes lisent les pages des magasins, comparent, notent et rédigent un rapport illustré.",
-        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, neuf spécialistes travaillent tour à tour, puis un rapport avec des fiches produits et des photos apparaît",
+        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour",
         "h1": "Un conseil d'achat",
         "h1_accent": "que vous pouvez vérifier.",
         "lead": "L'acheteur décrit son besoin avec ses mots. L'équipe lit ce que les magasins publient réellement, compare ce qui est comparable, et remet un rapport avec ses sources.",
@@ -2260,7 +2260,7 @@
                 "src": "/media/product/workflow-run.jpg",
                 "width": 1600,
                 "height": 904,
-                "alt": "Un workflow pendant son exécution : l'étape qui demande à une personne est active sur le canevas, avec le chat à droite et les journaux en bas"
+                "alt": "Un workflow pendant son exécution : les étapes déjà faites sont en vert, l'étape où la Finance approuve la facture attend sa réponse, avec son formulaire à droite et ce que l'IA a lu en bas"
               },
               "title": "Suivez chaque étape",
               "body": "Pendant l'exécution, l'étape active s'allume, et chaque étape est gardée avec ses journaux."
@@ -2632,7 +2632,7 @@
           "poster": "/media/trip-planner.jpg",
           "width": 1024,
           "height": 768,
-          "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un manager confie le travail à des spécialistes, et l'application demande au voyageur de choisir les vols, l'hôtel, les transferts et le dîner",
+          "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un voyage à Lisbonne, un manager confie le travail à des spécialistes, et l'application demande au voyageur de valider le vol et de choisir l'hôtel, puis prend le paiement et affiche le récapitulatif des réservations",
           "caption": "Trip Planner, une VibeApp construite avec Agentivity. Enregistré depuis le produit, accéléré."
         }
       },
@@ -2708,7 +2708,7 @@
                 "poster": "/media/shopping-lab.jpg",
                 "width": 1024,
                 "height": 768,
-                "alt": "La démo Shopping Lab dans le portail : un client demande un casque audio, neuf spécialistes travaillent à tour de rôle, puis un rapport avec des fiches produits et des photos apparaît"
+                "alt": "La démo Shopping Lab dans le portail : un client demande un casque audio, valide le brief, puis neuf spécialistes travaillent à tour de rôle"
               },
               "title": "Shopping Lab, dans le portail",
               "body": "Un client demande un casque audio. Neuf spécialistes travaillent à tour de rôle, et un rapport apparaît avec des fiches produits et des photos."

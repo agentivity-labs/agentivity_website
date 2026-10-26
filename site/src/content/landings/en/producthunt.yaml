@@ -72,7 +72,7 @@ sections:
         body: "One sentence in. Flights, a hotel to choose, a dinner to book: each screen arrives when it is needed."
         video: /media/trip-planner.mp4
         poster: /media/trip-planner.jpg
-        alt: "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then a hotel card with a photo, a payment step and a dinner choice appear in the conversation"
+        alt: "The Trip Planner demo app: a traveller describes a trip, the team of specialists lights up, then the flight to approve, the hotels with their photos, the payment and the recap of the bookings appear in the conversation"
         width: 1024
         height: 768
       - title: For AI engineers, the Prompt Studio
