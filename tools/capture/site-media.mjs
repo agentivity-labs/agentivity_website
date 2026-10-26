@@ -54,9 +54,3 @@ for (const job of jobs) {
   await sharp(`${dir}/${String(picked.length - 1).padStart(4, '0')}.png`).jpeg({ quality: 84, mozjpeg: true }).toFile(`${OUT}${job.out}.jpg`);
   console.log(job.out, picked.length, 'frames');
 }
-
-// 3. Studio captures already in the site, lighter.
-const sc = `${W}/site/public/studio-canvas.png`;
-const m = await sharp(sc).metadata();
-await sharp(sc).extract({ left: 118, top: 40, width: m.width - 138, height: m.height - 60 }).webp({ quality: 82 }).toFile(OUT + 'studio-workflow.webp');
-await sharp(`${W}/site/public/team-canvas.png`).webp({ quality: 86 }).toFile(OUT + 'team-canvas.webp');
