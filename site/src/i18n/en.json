@@ -1627,7 +1627,7 @@
       "sub": "You say what you need, in your own words. The Assistant asks what it needs to know, shows a plan, then builds a draft you can look at, change and save. No technical knowledge needed.",
       "cta": "Install the Community edition",
       "cta_secondary": "See how it works",
-      "note": "Included in the Community edition, free forever.",
+      "note": "In every hosted plan, and in the Community edition, free forever.",
       "alt": "The Assistant in the Agentivity Studio: a conversation in the middle, and on the right the team it has just built, a researcher, a writer, a reviewer and a translator",
       "caption": "A team built by the Assistant, drawn on the right as it is built."
     },
@@ -2796,7 +2796,7 @@
       "privacy_link": "privacy policy",
       "submit": "Start my trial",
       "submitting": "Starting…",
-      "fine": "14 days with every feature of the plan and up to 200 runs. No card, nothing to cancel.",
+      "fine": "14 days with every feature of the plan and up to 200 executions. No card, nothing to cancel.",
       "find": "Already have a workspace? Find it"
     },
     "errors": {
