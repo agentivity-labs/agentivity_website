@@ -1674,7 +1674,7 @@
             "Your choice: rebuild with some of it, all of it, or none"
           ],
           "clip": "assistant-challenge",
-          "alt": "A recording of the Assistant: it answers with five things that could go wrong in the team and four changes it would make, then asks which matter most"
+          "alt": "A recording of the Assistant: it answers with seven things that could go wrong in the team, then the six changes it would make"
         }
       ]
     },
