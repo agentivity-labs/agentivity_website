@@ -266,7 +266,7 @@
           "tag": "La suite",
           "title": "Une entreprise agentique",
           "body": "Des équipes qui se passent le travail d'un département à l'autre, avec une personne qui décide à chaque étape importante.",
-          "note": "Les équipes imbriquées fonctionnent déjà. L'exécution planifiée arrive avec les offres cloud."
+          "note": "Les équipes imbriquées fonctionnent déjà. Sur les offres hébergées, elles démarrent aussi toutes seules, à heure fixe."
         }
       ]
     },
@@ -1049,7 +1049,7 @@
         },
         "none": "—"
       },
-      "cloud_note": "À venir avec les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
+      "cloud_note": "Inclus dans les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
       "community": {
         "name": "Community",
         "status": "Disponible",
@@ -2309,7 +2309,7 @@
           },
           {
             "q": "Un workflow peut-il démarrer à heure fixe ?",
-            "a": "Pas encore. Aujourd'hui, une personne le lance dans le Studio, ou une application le demande."
+            "a": "Sur les offres hébergées et Enterprise, oui : choisissez ses heures dans une planification, et il démarre tout seul. Dans l'édition Community, une personne le lance dans le Studio, ou une application le demande."
           },
           {
             "q": "Est-ce gratuit ?",

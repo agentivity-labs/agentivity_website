@@ -266,7 +266,7 @@
           "tag": "Where this goes",
           "title": "An AI company",
           "body": "Teams that hand work to each other across departments, with a person deciding at every step that matters.",
-          "note": "Teams inside teams work today. Running on a schedule comes with the cloud plans."
+          "note": "Teams inside teams work today. On the hosted plans, they also start on their own, on a schedule."
         }
       ]
     },
@@ -1049,7 +1049,7 @@
         },
         "none": "—"
       },
-      "cloud_note": "Coming with the hosted plans: automatic scheduling. Your teams start on their own, every morning or every Monday.",
+      "cloud_note": "Included in the hosted plans: scheduling. Your teams start on their own, every morning or every Monday.",
       "community": {
         "name": "Community",
         "status": "Available now",
@@ -2308,7 +2308,7 @@
           },
           {
             "q": "Can a workflow start on a schedule?",
-            "a": "Not yet. Today a person starts it in the Studio, or an application asks for it."
+            "a": "On the hosted plans and Enterprise, yes: choose its times in a schedule, and it starts on its own. In the Community edition, a person starts it in the Studio, or an application asks for it."
           },
           {
             "q": "Is it free?",
