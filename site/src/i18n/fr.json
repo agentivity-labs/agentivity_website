@@ -2338,7 +2338,7 @@
           "poster": "/media/prompt-studio.jpg",
           "width": 1280,
           "height": 640,
-          "alt": "Un enregistrement de Prompt Studio : un prompt d'une ligne pour une relance de paiement est amélioré en plusieurs essais, chaque essai reçoit une note, et la meilleure version remplace le prompt",
+          "alt": "Un enregistrement de Prompt Studio : un prompt d'une ligne pour une relance de paiement est amélioré en plusieurs essais, chaque essai reçoit une note, la meilleure version remplace le prompt, puis ses cas de test sont exécutés",
           "caption": "Un prompt d'une ligne, amélioré essai après essai : chaque version reçoit une note, et la meilleure le remplace. Enregistré dans le Studio, accéléré."
         }
       },
@@ -2362,7 +2362,7 @@
             "src": "/media/product/prompt-studio-screen.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "Prompt Studio : les onglets Playground et Test Cases, les boutons Run et Analyze, le prompt amélioré dans l'éditeur, ses entrées à droite, et les exécutions en bas, notées 2,2 puis 10",
+            "alt": "Prompt Studio : les onglets Playground et Test Cases, les boutons Run et Analyze, le prompt amélioré dans l'éditeur, l'optimisation à droite avec la note de chaque tour, et les exécutions en bas, notées 2,4 puis 10",
             "caption": "Prompt Studio, dans le Studio : le prompt au centre, ses réglages à droite, chaque essai dans la console en dessous."
           }
         },

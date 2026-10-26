@@ -2337,7 +2337,7 @@
           "poster": "/media/prompt-studio.jpg",
           "width": 1280,
           "height": 640,
-          "alt": "A recording of Prompt Studio: a one-line prompt for a payment reminder is improved over several tries, each try gets a score, and the best version replaces the prompt",
+          "alt": "A recording of Prompt Studio: a one-line prompt for a payment reminder is improved over several tries, each try gets a score, the best version replaces the prompt, then its test cases run",
           "caption": "A one-line prompt, improved try after try: each version gets a score, and the best one replaces it. Recorded in the Studio, played faster."
         }
       },
@@ -2361,7 +2361,7 @@
             "src": "/media/product/prompt-studio-screen.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "Prompt Studio: the tabs Playground and Test Cases, the buttons Run and Analyze, the improved prompt in the editor, its inputs on the right, and the executions at the bottom, scored 2.2 then 10",
+            "alt": "Prompt Studio: the tabs Playground and Test Cases, the buttons Run and Analyze, the improved prompt in the editor, the optimization on the right with its score for each round, and the executions at the bottom, scored 2.4 then 10",
             "caption": "Prompt Studio, in the Studio: the prompt in the middle, its settings on the right, every try in the console below."
           }
         },

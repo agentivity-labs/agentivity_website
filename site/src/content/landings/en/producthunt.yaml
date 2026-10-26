@@ -76,10 +76,10 @@ sections:
         width: 1024
         height: 768
       - title: For AI engineers, the Prompt Studio
-        body: A one-line prompt scores 2.2 out of 10. An optimization rewrites it, and the new prompt scores 10. Then its test cases run.
+        body: A one-line prompt scores 2.4 out of 10. An optimization rewrites it in three rounds, and the new prompt scores 10. Then its test cases run.
         video: /media/prompt-studio.mp4
         poster: /media/prompt-studio.jpg
-        alt: "A recording of the Prompt Studio: a one-line prompt scores 2.2 out of 10, an optimization rewrites it, and the new prompt scores 10"
+        alt: "A recording of the Prompt Studio: a one-line prompt scores 2.4 out of 10, an optimization rewrites it in three rounds, the new prompt scores 10, then its test cases run"
     note: Recorded from the product, played faster.
 
   - type: home
