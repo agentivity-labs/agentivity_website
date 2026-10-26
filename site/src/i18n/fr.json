@@ -526,8 +526,8 @@
           "Des étapes où une personne valide",
           "Une équipe peut utiliser un workflow, un workflow peut appeler une équipe"
         ],
-        "caption": "Trois étapes pour commencer : un formulaire, une équipe, une personne qui valide. Puis un vrai workflow : le tri de CV.",
-        "alt": "Un enregistrement du Studio : un workflow est nommé, trois étapes sont glissées sur le canevas et reliées (un formulaire, une équipe, une personne qui valide), puis un vrai workflow de tri de CV est montré, de près puis en entier"
+        "caption": "Trois étapes pour commencer : un formulaire, un agent IA, une personne qui valide. Puis un vrai workflow : le tri de CV.",
+        "alt": "Un enregistrement du Studio : un workflow est nommé, trois étapes sont glissées sur le canevas et reliées (un formulaire, un agent IA, une personne qui valide), puis un vrai workflow de tri de CV est montré, de près puis en entier"
       }
     ],
     "result": {
@@ -2165,8 +2165,8 @@
           "poster": "/media/studio-workflow.jpg",
           "width": 1418,
           "height": 770,
-          "alt": "Un enregistrement du Studio : un workflow reçoit un nom, trois étapes sont glissées sur le canevas et reliées (un formulaire, une équipe, une personne qui valide), puis un vrai workflow de CV screening est montré, d'abord de près puis en entier",
-          "caption": "Trois étapes pour commencer : un formulaire, une équipe, une personne qui valide. Puis un vrai : le CV screening."
+          "alt": "Un enregistrement du Studio : un workflow reçoit un nom, trois étapes sont glissées sur le canevas et reliées (un formulaire, un agent IA, une personne qui valide), puis un vrai workflow de CV screening est montré, d'abord de près puis en entier",
+          "caption": "Trois étapes pour commencer : un formulaire, un agent IA, une personne qui valide. Puis un vrai : le CV screening."
         }
       },
       "blocks": [
@@ -2561,8 +2561,8 @@
             "src": "/media/product/data-table.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "Une Data Table nommée trips ouverte dans le Studio : 57 lignes et 16 champs, avec des boutons pour trier et filtrer chaque colonne",
-            "caption": "Une Data Table dans le Studio : les voyages réservés par l'équipe Trip Manager."
+            "alt": "Une Data Table nommée trips ouverte dans le Studio : 31 lignes et 16 champs, avec des boutons pour trier et filtrer chaque colonne",
+            "caption": "Une Data Table dans le Studio : la table des voyages de l'équipe Trip Manager."
           }
         },
         {

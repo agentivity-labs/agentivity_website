@@ -526,8 +526,8 @@
           "Steps where a person approves",
           "A team can use a workflow, a workflow can call a team"
         ],
-        "caption": "Three steps to start: a form, a team, a person who approves. Then a real one: CV screening.",
-        "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, a team, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole"
+        "caption": "Three steps to start: a form, an AI agent, a person who approves. Then a real one: CV screening.",
+        "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, an AI agent, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole"
       }
     ],
     "result": {
@@ -2164,8 +2164,8 @@
           "poster": "/media/studio-workflow.jpg",
           "width": 1418,
           "height": 770,
-          "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, a team, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole",
-          "caption": "Three steps to start: a form, a team, a person who approves. Then a real one: CV screening."
+          "alt": "A recording of the Studio: a workflow is named, three steps are dragged onto the canvas and linked (a form, an AI agent, a person who approves), then a real CV screening workflow is shown, first up close and then as a whole",
+          "caption": "Three steps to start: a form, an AI agent, a person who approves. Then a real one: CV screening."
         }
       },
       "blocks": [
@@ -2560,8 +2560,8 @@
             "src": "/media/product/data-table.jpg",
             "width": 1600,
             "height": 904,
-            "alt": "A Data Table named trips open in the Studio: 57 rows and 16 fields, with buttons to sort and filter each column",
-            "caption": "A Data Table in the Studio: the trips booked by the Trip Manager Team."
+            "alt": "A Data Table named trips open in the Studio: 31 rows and 16 fields, with buttons to sort and filter each column",
+            "caption": "A Data Table in the Studio: the trips table of the Trip Manager Team."
           }
         },
         {
