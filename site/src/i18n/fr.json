@@ -123,7 +123,8 @@
           { "label": "CGU",            "href": "/fr/legal/terms" },
           { "label": "Conditions de vente", "href": "/fr/legal/terms-of-sale" },
           { "label": "Disclaimer",     "href": "/fr/legal/disclaimer" },
-          { "label": "Brand Kit",      "href": "/fr/brand" }
+          { "label": "Brand Kit",      "href": "/fr/brand" },
+          { "label": "Référencé sur", "href": "/fr/featured" }
         ]
       },
       {
@@ -2931,6 +2932,16 @@
       "primary": "Voir les offres",
       "primary_href": "/fr/pricing",
       "secondary": "Installer Community"
+    }
+  },
+  "featured_page": {
+    "meta": {
+      "title": "Référencé sur | Agentivity",
+      "description": "Les annuaires et les listes où vous trouverez Agentivity."
+    },
+    "hero": {
+      "h1": "Référencé sur",
+      "sub": "Les annuaires et les listes où vous trouverez Agentivity."
     }
   },
   "start_cta": {

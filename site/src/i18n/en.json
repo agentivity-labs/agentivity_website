@@ -123,7 +123,8 @@
           { "label": "Terms of Use",   "href": "/legal/terms" },
           { "label": "Terms of Sale",  "href": "/legal/terms-of-sale" },
           { "label": "Disclaimer",     "href": "/legal/disclaimer" },
-          { "label": "Brand Kit",      "href": "/brand" }
+          { "label": "Brand Kit",      "href": "/brand" },
+          { "label": "Featured on",    "href": "/featured" }
         ]
       },
       {
@@ -2930,6 +2931,16 @@
       "primary": "See the plans",
       "primary_href": "/pricing",
       "secondary": "Install Community"
+    }
+  },
+  "featured_page": {
+    "meta": {
+      "title": "Featured on | Agentivity",
+      "description": "Directories and lists where you can find Agentivity."
+    },
+    "hero": {
+      "h1": "Featured on",
+      "sub": "Directories and lists where you can find Agentivity."
     }
   },
   "start_cta": {

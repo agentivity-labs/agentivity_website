@@ -70,6 +70,8 @@ export default defineConfig({
       Image: false, // handled separately (real images not yet in place)
       JavaScript: true,
       SVG: true,
+      // The /featured pages keep the directories' badge snippets exactly as given: some directories check for them.
+      Exclude: [(file) => /[\\/]featured[\\/]index\.html$/.test(file)],
     }),
   ],
 
