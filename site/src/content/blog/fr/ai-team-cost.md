@@ -7,7 +7,7 @@ tags: ["cost", "AI agents", "explainer"]
 lang: fr
 faq:
   - q: "Agentivity est-il gratuit ?"
-    a: "L'édition Community est gratuite, sans limite de durée, et tourne sur votre propre serveur. Des offres hébergées arrivent, et leurs prix seront annoncés à leur ouverture. Dans les deux cas, les modèles d'IA se paient à part, au fournisseur que vous choisissez."
+    a: "L'édition Community est gratuite, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai gratuit de 14 jours, sans carte. Dans les deux cas, les modèles d'IA se paient à part, au fournisseur que vous choisissez."
   - q: "Pourquoi les modèles d'IA sont-ils facturés à part ?"
     a: "Parce qu'Agentivity ne revend pas d'IA. Vous connectez votre propre compte chez le fournisseur de votre choix et vous le payez directement, à son prix, sans marge ajoutée. Vous voyez exactement ce que vous dépensez, et vous pouvez changer de fournisseur."
   - q: "Comment connaître le coût avant de commencer ?"
@@ -34,7 +34,7 @@ Ce guide passe en revue chaque coût, montre ce qui fait monter la facture, et d
 
 C'est la plateforme : l'endroit où vous créez des agents, les réunissez en équipes, dessinez des workflows et suivez ce qu'ils font.
 
-Avec Agentivity, l'édition Community ne coûte rien, sans limite de durée, et tourne sur votre propre serveur. Des offres hébergées, sans rien à installer, sont en préparation, et leurs prix seront annoncés à leur ouverture. La [page des tarifs](/fr/pricing) présente les éditions.
+Avec Agentivity, l'édition Community ne coûte rien, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées, sans rien à installer, commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai gratuit de 14 jours, sans carte. La [page des tarifs](/fr/pricing) présente les éditions.
 
 ## 2. Les modèles d'IA
 
@@ -51,7 +51,7 @@ Avec Agentivity, vous connectez votre propre compte chez le fournisseur de votre
 
 La plateforme doit bien tourner quelque part.
 
-Avec l'édition Community, c'est sur votre machine : votre propre ordinateur pour l'essayer, un serveur pour la partager avec vos collègues. Les modèles d'IA ne tournent pas dessus, ils tournent chez le fournisseur : une machine ordinaire suffit donc. Avec une offre hébergée, on s'occupe pour vous de faire tourner la plateforme.
+Avec l'édition Community, c'est sur votre machine : votre propre ordinateur ou votre propre serveur. Les modèles d'IA ne tournent pas dessus, ils tournent chez le fournisseur : une machine ordinaire suffit donc. Avec une offre hébergée, on s'occupe pour vous de faire tourner la plateforme.
 
 ## Qu'est-ce qui fait monter la facture ?
 

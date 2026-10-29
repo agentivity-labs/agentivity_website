@@ -6,6 +6,7 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import GitHubIcon from './GitHubIcon.astro';
+import StartFree from './StartFree.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -171,11 +172,8 @@ const schema = {
     <div class="ed-wrap ed-final">
       <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{p.cta.sub}</p>
-      <div class="as-final-actions">
-        <a class="ed-btn ed-btn--navy" href={t.site.install_href}>{p.cta.primary}</a>
-        <a class="ed-btn ed-btn--line" href={prefix + '/use-cases'}>{p.cta.secondary}</a>
-      </div>
-      <p class="ed-final-fine">{p.cta.cloud} <a class="as-fine-link" href={prefix + '/start'}>{p.cta.cloud_link}</a></p>
+      <StartFree lang={lang} label={p.cta.trial} />
+      <p class="ed-final-fine"><a class="as-fine-link" href={t.site.install_href}>{p.cta.community}</a></p>
     </div>
   </section>
 
@@ -240,7 +238,6 @@ const schema = {
 .as-faq details p { padding-bottom: 22px; max-width: 46em; color: var(--ed-ink-2); }
 
 /* ---------- final call ---------- */
-.as-final-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
 .as-fine-link { font-weight: 700; border-bottom: 1.5px solid currentColor; }
 
 #cta, #asks, #by-hand, #control, #know, #faq, #ask-1, #ask-2, #ask-3 { scroll-margin-top: 78px; }

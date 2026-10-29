@@ -462,7 +462,6 @@
       "h2": "Votre équipe est prête",
       "h2_accent": "à travailler.",
       "sub": "Commencez gratuitement dans le cloud, ou installez l'édition Community sur votre propre serveur.",
-      "fine": "Pas de spam. Premier accès à l'ouverture du cloud.",
       "github_line": "Vous hébergez vous-même ? L'édition Community est gratuite."
     }
   },
@@ -622,8 +621,7 @@
     "cta": {
       "h2": "Prêt à construire",
       "h2_accent": "votre première équipe ?",
-      "sub": "Rien à installer : commencez gratuitement dans le cloud.",
-      "fine": "Pas de spam. Premier accès à l'ouverture du cloud."
+      "sub": "Rien à installer : commencez gratuitement dans le cloud."
     },
     "assistant": {
       "eyebrow": "La voie rapide",
@@ -1118,7 +1116,7 @@
         },
         {
           "title": "La machine",
-          "body": "Avec Community, c'est la vôtre : votre ordinateur pour essayer, un serveur pour la partager avec des collègues. Avec les offres hébergées, nous nous en occupons."
+          "body": "Avec Community, c'est la vôtre : votre ordinateur ou votre serveur. Avec les offres hébergées, nous nous en occupons."
         }
       ]
     },
@@ -1583,10 +1581,10 @@
       "h2": "Un cas en tête ?",
       "h2_accent": "Construisez-le.",
       "sub": "Voyez comment une équipe se monte dans le Studio, ou commencez gratuitement dans le cloud.",
-      "primary": "Voir comment ça marche",
-      "primary_href": "/fr/how-it-works",
-      "secondary": "Commencer gratuitement",
-      "secondary_href": "/fr/start",
+      "primary": "Commencer gratuitement",
+      "primary_href": "/fr/start",
+      "secondary": "Voir comment ça marche",
+      "secondary_href": "/fr/how-it-works",
       "services": "Un projet plus large dans votre organisation ?",
       "services_link": "Découvrir nos services",
       "services_href": "/fr/services"
@@ -1773,13 +1771,11 @@
       ]
     },
     "cta": {
-      "h2": "Essayez-le sur votre",
-      "h2_accent": "propre serveur.",
+      "h2": "Décrivez-le.",
+      "h2_accent": "L'Assistant prépare votre équipe.",
       "sub": "L'édition Community est gratuite pour toujours, et l'Assistant en fait partie.",
-      "primary": "Installer l'édition Community",
-      "secondary": "Voir les cas d'usage",
-      "cloud": "Vous préférez ne rien installer ?",
-      "cloud_link": "Commencer gratuitement dans le cloud"
+      "trial": "Essayer gratuitement",
+      "community": "Ou installez l'édition Community gratuite sur votre serveur"
     }
   },
   "teams_page": {

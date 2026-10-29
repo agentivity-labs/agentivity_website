@@ -7,7 +7,7 @@ tags: ["cost", "AI agents", "explainer"]
 lang: en
 faq:
   - q: "Is Agentivity free?"
-    a: "The Community edition is free, with no time limit, and runs on your own server. Hosted plans are coming, and their prices will be announced when they open. In both cases the AI models are paid separately, to the provider you choose."
+    a: "The Community edition is free, with no time limit, and runs on your own server. The hosted plans start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day free trial and no card. In both cases the AI models are paid separately, to the provider you choose."
   - q: "Why are AI models billed separately?"
     a: "Because Agentivity does not resell AI. You connect your own account with the provider you choose and pay them directly, at their price, with no margin added. You see exactly what you spend, and you can change provider."
   - q: "How can I know the cost before I start?"
@@ -34,7 +34,7 @@ This guide goes through each cost, shows what makes the bill go up, and gives si
 
 This is the platform: the place where you create agents, put them in teams, draw workflows and follow what they do.
 
-With Agentivity, the Community edition costs nothing, with no time limit, and runs on your own server. Hosted plans, where nothing has to be installed, are on the way, and their prices will be announced when they open. The [pricing page](/pricing) lists the editions.
+With Agentivity, the Community edition costs nothing, with no time limit, and runs on your own server. The hosted plans, where nothing has to be installed, start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day free trial and no card. The [pricing page](/pricing) lists the editions.
 
 ## 2. The AI models
 
@@ -51,7 +51,7 @@ With Agentivity you connect your own account with the provider you choose (OpenA
 
 The platform has to run somewhere.
 
-With the Community edition, that is your machine: your own computer to try it, a server to share it with colleagues. The AI models do not run on it, they run at the provider's, so an ordinary machine is enough. With a hosted plan, running the platform is taken care of for you.
+With the Community edition, that is your machine: your own computer or your own server. The AI models do not run on it, they run at the provider's, so an ordinary machine is enough. With a hosted plan, running the platform is taken care of for you.
 
 ## What makes the bill go up?
 

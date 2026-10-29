@@ -462,7 +462,6 @@
       "h2": "Your team is ready",
       "h2_accent": "to work.",
       "sub": "Start free in the cloud, or install the Community edition on your own server.",
-      "fine": "No spam. First access when the cloud launches.",
       "github_line": "Self-hosting? The Community edition is free."
     }
   },
@@ -622,8 +621,7 @@
     "cta": {
       "h2": "Ready to build",
       "h2_accent": "your first team?",
-      "sub": "Nothing to install: start free in the cloud.",
-      "fine": "No spam. First access when the cloud launches."
+      "sub": "Nothing to install: start free in the cloud."
     },
     "assistant": {
       "eyebrow": "The fast way",
@@ -1118,7 +1116,7 @@
         },
         {
           "title": "The machine",
-          "body": "With Community, it is yours: your own computer to try, a server to share it with colleagues. With the hosted plans, we run it for you."
+          "body": "With Community, it is yours: your own computer or your own server. With the hosted plans, we run it for you."
         }
       ]
     },
@@ -1583,10 +1581,10 @@
       "h2": "A case in mind?",
       "h2_accent": "Build it.",
       "sub": "See how a team is put together in the Studio, or start free in the cloud.",
-      "primary": "See how it works",
-      "primary_href": "/how-it-works",
-      "secondary": "Start free",
-      "secondary_href": "/start",
+      "primary": "Start free",
+      "primary_href": "/start",
+      "secondary": "See how it works",
+      "secondary_href": "/how-it-works",
       "services": "A larger project in your organisation?",
       "services_link": "About our services",
       "services_href": "/services"
@@ -1772,13 +1770,11 @@
       ]
     },
     "cta": {
-      "h2": "Try it on your",
-      "h2_accent": "own server.",
+      "h2": "Describe it.",
+      "h2_accent": "The Assistant drafts your team.",
       "sub": "The Community edition is free forever, and the Assistant is part of it.",
-      "primary": "Install the Community edition",
-      "secondary": "See the use cases",
-      "cloud": "Rather not install anything?",
-      "cloud_link": "Start free in the cloud"
+      "trial": "Start a free trial",
+      "community": "Or install the free Community edition on your own server"
     }
   },
   "teams_page": {
