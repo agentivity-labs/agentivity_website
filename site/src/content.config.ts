@@ -9,6 +9,8 @@ const blog = defineCollection({
     title:       z.string(),
     description: z.string(),
     pubDate:     z.coerce.date(),
+    // Set when an article is rewritten: shown next to the date and given to search engines as dateModified.
+    updated:     z.coerce.date().optional(),
     author:      z.string().default('Agentivity Team'),
     tags:        z.array(z.string()).default([]),
     image:       z.string().optional(),

@@ -1,6 +1,6 @@
 ---
-title: "Sequential, Group Chat, Concurrent: the 3 AI team topologies you need to know"
-description: "How you structure your AI agents matters as much as what they do. Here's a practical guide to the three collaboration topologies and when to use each one."
+title: "Sequential, Group Chat, Concurrent: 3 of the 5 AI team topologies to know"
+description: "How you structure your AI agents matters as much as what they do. Here's a practical guide to three of the five collaboration topologies and when to use each one."
 pubDate: 2026-06-04
 author: "Agentivity Team"
 tags: ["AI agents", "topology", "architecture", "how-to"]
@@ -11,7 +11,7 @@ When you build a team of AI agents, the first question isn't "which agents do I 
 
 The answer — the *topology* — determines whether your agents collaborate efficiently or create a tangled mess. Get it right and the team hums. Get it wrong and agents produce contradictory outputs, loop indefinitely, or deliver results that none of them actually owns.
 
-Here are the three topologies that cover the vast majority of real-world multi-agent workflows, with concrete guidance on when to use each.
+Here are three of the five topologies, with concrete guidance on when to use each. The other two, Handoff (the request is passed to the right specialist) and Manager-led (a manager decides who works next), are explained with all five in [5 ways AI agents work together](/blog/how-ai-agents-work-together).
 
 ---
 
@@ -45,7 +45,7 @@ Each agent builds on the last. The Report Writer can't do its job without the Ri
 
 ## 2. Group Chat
 
-**What it is:** Multiple agents share a conversation context and reason together. Each agent can read what others have said, respond, challenge, and build on the emerging answer. A designated synthesiser (or a manager agent) drives the conversation to a conclusion.
+**What it is:** Multiple agents share a conversation context and reason together. Each agent can read what others have said, respond, challenge, and build on the emerging answer. They take turns in the order of the team, up to a maximum number of turns, and the team's answer is the last answer of the discussion.
 
 **Mental model:** A meeting. Everyone is in the room, everyone can speak, and the goal is a shared decision — not a relay race.
 
@@ -65,15 +65,15 @@ Strategist:          → synthesises into positioning recommendation
 
 No single agent has the full picture. The Group Chat lets them surface and reconcile their views before the Strategist commits to a direction.
 
-**Tradeoffs:** Group Chat produces richer, more nuanced outputs than sequential. It also takes longer and is harder to control — agents can go in circles without a strong manager or termination condition. Set a clear goal for the synthesiser and a maximum number of rounds.
+**Tradeoffs:** Group Chat produces richer, more nuanced outputs than sequential. It also takes longer and is harder to control — agents can go in circles. Give each agent a clear role and set a maximum number of turns.
 
 ---
 
 ## 3. Concurrent
 
-**What it is:** Multiple agents run simultaneously, each working on an independent subtask. When all have finished, a synthesiser agent merges their outputs into a single coherent result.
+**What it is:** Multiple agents run simultaneously, each working on an independent subtask. When all have finished, the team gathers their answers, each one after the name of its agent.
 
-**Mental model:** A parallel research sprint. Three people go research three different topics at the same time, then one person assembles the findings into a single report.
+**Mental model:** A parallel research sprint. Three people go research three different topics at the same time, then their findings are put side by side in one report.
 
 **When to use it:**
 - The task has clearly independent subtasks that don't depend on each other
@@ -83,13 +83,13 @@ No single agent has the full picture. The Group Chat lets them surface and recon
 **Example — Candidate Screening Pipeline:**
 ```
 CV Parser        ──┐
-Skills Matcher   ──┤ → Culture Fit Agent → Ranking Report
+Skills Matcher   ──┤ → answers gathered → Ranking Report
 Culture Fit      ──┘
 ```
 
-The CV Parser, Skills Matcher, and Culture Fit agents can all analyse the candidate simultaneously. The Ranking Report agent then synthesises their scores into a final recommendation. Same quality, fraction of the time.
+The CV Parser, Skills Matcher, and Culture Fit agents can all analyse the candidate simultaneously. If you want one recommendation rather than three answers, add a Ranking Report agent after the team, for example as the next member of a sequential team that contains it. Same quality, fraction of the time.
 
-**Tradeoffs:** Concurrent is the fastest topology for parallelisable tasks. The complexity is in the synthesiser — it needs to handle outputs of varying quality, resolve contradictions, and produce a coherent result. Design the synthesiser's prompt carefully.
+**Tradeoffs:** Concurrent is the fastest topology for parallelisable tasks. The team gives every answer as it is: nobody inside it resolves contradictions. If you need one coherent result, the agent that comes after it does that work, so write its instructions carefully.
 
 ---
 
@@ -111,4 +111,4 @@ Start with Sequential — it's the easiest to build, debug, and explain. Add Gro
 
 ---
 
-*All three topologies are available in Agentivity. [See how it works →](/how-it-works)*
+*These three, and Handoff and Manager-led, are all available in Agentivity. Read [5 ways AI agents work together](/blog/how-ai-agents-work-together) for all five, or [see how it works →](/how-it-works)*

@@ -1,6 +1,6 @@
 ---
-title: "Sequential, Group Chat, Concurrent : les 3 topologies d'équipe IA à connaître"
-description: "La façon dont vous organisez vos agents d'IA compte autant que ce qu'ils font. Voici un guide pratique des trois topologies de collaboration, et quand utiliser chacune."
+title: "Sequential, Group Chat, Concurrent : 3 des 5 topologies d'équipe IA à connaître"
+description: "La façon dont vous organisez vos agents d'IA compte autant que ce qu'ils font. Voici un guide pratique de trois des cinq topologies de collaboration, et quand utiliser chacune."
 pubDate: 2026-06-04
 author: "Agentivity Team"
 tags: ["AI agents", "topology", "architecture", "how-to"]
@@ -11,7 +11,7 @@ Quand vous construisez une équipe d'agents d'IA, la première question n'est pa
 
 La réponse, c'est-à-dire la *topologie*, détermine si vos agents collaborent efficacement ou s'emmêlent les uns dans les autres. Si vous visez juste, l'équipe tourne rond. Si vous vous trompez, les agents produisent des résultats contradictoires, tournent en boucle sans fin, ou livrent un résultat dont aucun d'eux n'est vraiment responsable.
 
-Voici les trois topologies qui couvrent la grande majorité des processus multi-agents réels, avec des repères concrets pour savoir quand utiliser chacune.
+Voici trois des cinq topologies, avec des repères concrets pour savoir quand utiliser chacune. Les deux autres, Handoff (la demande passe au bon spécialiste) et Manager-led (un manager décide qui travaille ensuite), sont expliquées avec les cinq dans [5 façons dont les agents d'IA travaillent ensemble](/fr/blog/how-ai-agents-work-together).
 
 ---
 
@@ -45,7 +45,7 @@ Chaque agent s'appuie sur le précédent. Le Report Writer ne peut pas faire son
 
 ## 2. Group Chat
 
-**Ce que c'est :** plusieurs agents partagent le même fil de conversation et réfléchissent ensemble. Chaque agent peut lire ce que les autres ont dit, répondre, contester et enrichir la réponse qui se dessine. Un agent chargé de la synthèse (ou un agent manager) mène la conversation jusqu'à une conclusion.
+**Ce que c'est :** plusieurs agents partagent le même fil de conversation et réfléchissent ensemble. Chaque agent peut lire ce que les autres ont dit, répondre, contester et enrichir la réponse qui se dessine. Ils parlent à tour de rôle dans l'ordre de l'équipe, jusqu'à un nombre maximum de tours, et la réponse de l'équipe est la dernière réponse de la discussion.
 
 **Image mentale :** une réunion. Tout le monde est dans la salle, tout le monde peut parler, et le but est une décision commune, pas une course de relais.
 
@@ -65,15 +65,15 @@ Strategist:          → synthesises into positioning recommendation
 
 Aucun agent n'a seul la vue d'ensemble. Le Group Chat leur permet d'exprimer et de concilier leurs points de vue avant que le Strategist ne fixe une direction.
 
-**Compromis :** le Group Chat donne des résultats plus riches et plus nuancés que le mode Sequential. Il prend aussi plus de temps et se contrôle moins bien : sans manager solide ni condition d'arrêt, les agents peuvent tourner en rond. Donnez un objectif clair à l'agent de synthèse et un nombre maximal de tours.
+**Compromis :** le Group Chat donne des résultats plus riches et plus nuancés que le mode Sequential. Il prend aussi plus de temps et se contrôle moins bien : les agents peuvent tourner en rond. Donnez à chaque agent un rôle clair et fixez un nombre maximum de tours.
 
 ---
 
 ## 3. Concurrent
 
-**Ce que c'est :** plusieurs agents travaillent en même temps, chacun sur une sous-tâche indépendante. Quand tous ont fini, un agent de synthèse fusionne leurs résultats en un seul résultat cohérent.
+**Ce que c'est :** plusieurs agents travaillent en même temps, chacun sur une sous-tâche indépendante. Quand tous ont fini, l'équipe rassemble leurs réponses, chacune après le nom de son agent.
 
-**Image mentale :** un sprint de recherche en parallèle. Trois personnes étudient trois sujets différents en même temps, puis une personne rassemble leurs conclusions dans un seul rapport.
+**Image mentale :** un sprint de recherche en parallèle. Trois personnes étudient trois sujets différents en même temps, puis leurs conclusions sont mises côte à côte dans un seul rapport.
 
 **Quand l'utiliser :**
 - La tâche se découpe en sous-tâches clairement indépendantes, qui ne dépendent pas les unes des autres
@@ -83,13 +83,13 @@ Aucun agent n'a seul la vue d'ensemble. Le Group Chat leur permet d'exprimer et 
 **Exemple — chaîne de présélection de candidats :**
 ```
 CV Parser        ──┐
-Skills Matcher   ──┤ → Culture Fit Agent → Ranking Report
+Skills Matcher   ──┤ → réponses rassemblées → Ranking Report
 Culture Fit      ──┘
 ```
 
-Les agents CV Parser, Skills Matcher et Culture Fit peuvent tous analyser le candidat en même temps. L'agent Ranking Report synthétise ensuite leurs notes en une recommandation finale. Même qualité, pour une fraction du temps.
+Les agents CV Parser, Skills Matcher et Culture Fit peuvent tous analyser le candidat en même temps. Si vous voulez une seule recommandation plutôt que trois réponses, ajoutez un agent Ranking Report après l'équipe, par exemple comme membre suivant d'une équipe Sequential qui la contient. Même qualité, pour une fraction du temps.
 
-**Compromis :** Concurrent est la topologie la plus rapide pour les tâches parallélisables. La difficulté se trouve dans l'agent de synthèse : il doit gérer des résultats de qualité inégale, trancher les contradictions et produire un résultat cohérent. Rédigez ses instructions avec soin.
+**Compromis :** Concurrent est la topologie la plus rapide pour les tâches parallélisables. L'équipe rend chaque réponse telle quelle : personne, à l'intérieur, ne tranche les contradictions. Si vous avez besoin d'un résultat cohérent, c'est l'agent placé après elle qui fait ce travail : rédigez ses instructions avec soin.
 
 ---
 
@@ -111,4 +111,4 @@ Commencez par Sequential : c'est le plus simple à construire, à dépanner et �
 
 ---
 
-*Les trois topologies sont disponibles dans Agentivity. [Voir comment ça marche →](/fr/how-it-works)*
+*Ces trois topologies, ainsi que Handoff et Manager-led, sont toutes disponibles dans Agentivity. Lisez [5 façons dont les agents d'IA travaillent ensemble](/fr/blog/how-ai-agents-work-together) pour les cinq, ou [voyez comment ça marche →](/fr/how-it-works)*
