@@ -13,7 +13,8 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = t.featured_page;
 ---
-<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
+<!-- Not for search (a list of badges), but the links stay followed: the directories check their link. -->
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial" noindex="follow">
 
 <SiteHeader lang={lang} />
 

@@ -172,21 +172,13 @@ const schema = {
         <a class="ed-link" href={p.ready.href}>{p.ready.link}</a>
       </header>
       <ul class="tm-ready">
-        {p.ready.cards.map((card: { tag: string; title: string; body: string; href?: string }) => (
+        {p.ready.cards.map((card: { tag: string; title: string; body: string; href: string }) => (
           <li>
-            {card.href ? (
-              <a class="tm-card tm-card--link" href={card.href}>
-                <span class="tm-tag">{card.tag}</span>
-                <strong>{card.title}</strong>
-                <span>{card.body}</span>
-              </a>
-            ) : (
-              <div class="tm-card">
-                <span class="tm-tag tm-tag--soon">{card.tag}</span>
-                <strong>{card.title}</strong>
-                <span>{card.body}</span>
-              </div>
-            )}
+            <a class="tm-card tm-card--link" href={card.href}>
+              <span class="tm-tag">{card.tag}</span>
+              <strong>{card.title}</strong>
+              <span>{card.body}</span>
+            </a>
           </li>
         ))}
       </ul>
@@ -289,7 +281,6 @@ const schema = {
 .tm-card--link { transition: border-color .15s ease, transform .15s ease; }
 .tm-card--link:hover { border-color: var(--ed-ink); transform: translateY(-2px); }
 .tm-tag { align-self: flex-start; padding: 5px 9px; border-radius: 6px; background: var(--ed-mist); color: var(--ed-navy); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.tm-tag--soon { background: var(--ed-yellow); color: var(--ed-ink); }
 .tm-card strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
 .tm-card span:not(.tm-tag) { color: var(--ed-ink-2); }
 

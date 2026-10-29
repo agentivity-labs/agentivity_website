@@ -1,7 +1,28 @@
 ---
 // Head of the documentation pages: the Starlight head, the fonts of the website, and the id of Tag Manager.
 // Nothing is requested from Google here: the loading happens only after the visitor accepts (see ConsentBanner).
+import { getCollection } from 'astro:content';
 import Default from '@astrojs/starlight/components/Head.astro';
+
+// A French page that has no translation yet shows the English text (a Starlight fallback). Such a page is a copy of the
+// English one, so it names the English page as canonical, and the sitemap leaves it out (astro.config.mjs); neither
+// language version points to it as the French alternate. Search engines then index one page, not two identical ones.
+const route = Astro.locals.starlightRoute;
+const frenchIds = new Set((await getCollection('docs', ({ id }) => id.startsWith('fr/'))).map(({ id }) => id));
+const englishId = route.id.replace(/^fr\//, '');
+if (!frenchIds.has('fr/' + englishId)) {
+  route.head = route.head.filter((entry) => !(entry.tag === 'link' && entry.attrs?.rel === 'alternate' && entry.attrs?.hreflang === 'fr'));
+}
+if (route.isFallback) {
+  for (const entry of route.head) {
+    if (entry.tag === 'link' && entry.attrs?.rel === 'canonical' && typeof entry.attrs.href === 'string') {
+      entry.attrs.href = entry.attrs.href.replace('/fr/docs/', '/docs/');
+    }
+    if (entry.tag === 'meta' && entry.attrs?.property === 'og:url' && typeof entry.attrs.content === 'string') {
+      entry.attrs.content = entry.attrs.content.replace('/fr/docs/', '/docs/');
+    }
+  }
+}
 
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID ?? '';
 const fontsHref = 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap';

@@ -16,14 +16,6 @@ const p = t.services_page;
 const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 const numerals = ['I', 'II', 'III'];
 
-// The contact form posts to Formspree only when the form ID is set at build time (PUBLIC_FORMSPREE_SERVICES); without it
-// the page offers the e-mail address instead, so that no message is ever sent to a form that does not exist.
-const formspreeId = (import.meta.env.PUBLIC_FORMSPREE_SERVICES ?? '').trim();
-if (!formspreeId && !(globalThis as any).__warnedFormspree) {
-  (globalThis as any).__warnedFormspree = true;
-  console.warn('[services] PUBLIC_FORMSPREE_SERVICES is not set: the /services contact form is replaced by an e-mail link.');
-}
-
 // A former client shows as its logo when public/media/logos/<slug>.svg exists, and as its name in plain type otherwise.
 const slug = (name: string) => name.toLowerCase().split('(')[0].trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const clients = (p.experience.names as string[]).map((name) => {
@@ -185,7 +177,7 @@ const schema = {
     </ul>
   </section>
 
-  <!-- Contact. The form posts to Formspree (same field names as before); without a form ID, an e-mail link takes its place. -->
+  <!-- Contact. -->
   <section class="ed-band--mist" id="contact">
     <div class="ed-wrap ed-sec sv-contact">
       <div class="sv-contact-text">
@@ -198,14 +190,10 @@ const schema = {
         <p class="sv-email">{p.contact.email_line} <a href="mailto:hello@agentivity.io">hello@agentivity.io</a></p>
       </div>
 
-      {formspreeId ? (
-      <form
-        method="POST"
-        action={`https://formspree.io/f/${formspreeId}`}
-        class="sv-form"
-      >
-        <input type="hidden" name="_next" value={p.contact.form.next} />
-        <input type="hidden" name="_gotcha" style="display:none" />
+      <!-- Sent by the relay /api/contact (api/contact.js) as an e-mail to hello@agentivity.io; when the relay fails, the
+           visitor is offered the same message as an e-mail of their own. -->
+      <form class="sv-form" data-contact data-lang={lang}>
+        <input class="sv-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="sv-form-row">
           <div class="sv-field">
@@ -231,15 +219,11 @@ const schema = {
           <textarea id="svc-message" name="message" placeholder={p.contact.form.message_ph} rows="5"></textarea>
         </div>
 
-        <button type="submit" class="ed-btn ed-btn--navy sv-submit">{p.contact.form.submit}</button>
+        <button type="submit" class="ed-btn ed-btn--navy sv-submit" data-sending={p.contact.form.sending}>{p.contact.form.submit}</button>
+        <p class="sv-form-failed" role="alert" hidden>{p.contact.form.failed} <a href="mailto:hello@agentivity.io" data-mailto>hello@agentivity.io</a></p>
         <p class="sv-form-note">{p.contact.form.note}</p>
+        <p class="sv-form-sent" role="status" hidden>{p.contact.form.sent}</p>
       </form>
-      ) : (
-      <div class="sv-form sv-form--mail">
-        <a class="ed-btn ed-btn--navy sv-submit" href="mailto:hello@agentivity.io?subject=Agentivity%20Services">hello@agentivity.io</a>
-        <p class="sv-form-note">{p.contact.form.note}</p>
-      </div>
-      )}
     </div>
   </section>
 
@@ -348,7 +332,11 @@ const schema = {
 .sv-field input:focus, .sv-field select:focus, .sv-field textarea:focus { outline: none; border-color: var(--ed-navy); box-shadow: 0 0 0 3px rgba(21, 40, 68, .18); }
 .sv-submit { align-self: flex-start; border: 0; }
 .sv-form-note { font-size: 14.5px; color: var(--ed-ink-3); }
-.sv-form--mail { justify-content: center; align-items: flex-start; }
+.sv-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.sv-form-failed { padding: 14px 16px; border-radius: 12px; background: var(--ed-mist); color: var(--ed-ink); font-weight: 600; }
+.sv-form-failed a { border-bottom: 1.5px solid currentColor; }
+.sv-form-sent { font-family: var(--ed-serif); font-size: 30px; line-height: 1.15; color: var(--ed-ink); }
+.sv-form.is-sent > :not(.sv-form-sent) { display: none; }
 
 @media (max-width: 900px) {
   .sv-experience { grid-template-columns: minmax(0, 1fr); }
@@ -363,3 +351,57 @@ const schema = {
   .sv-hero-line a { padding: 16px 0 14px; }
 }
 </style>
+
+<script>
+  // The enquiry goes to the relay /api/contact. If the relay cannot send it, the visitor gets an e-mail link that carries the
+  // same message, so nothing they wrote is lost.
+  const MAILTO_BODY_MAX = 1500;
+
+  for (const form of document.querySelectorAll<HTMLFormElement>('form[data-contact]')) {
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const failed = form.querySelector<HTMLElement>('.sv-form-failed')!;
+    const sent = form.querySelector<HTMLElement>('.sv-form-sent')!;
+    const mailto = form.querySelector<HTMLAnchorElement>('[data-mailto]')!;
+    const label = button.textContent;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const field = (name: string) => String(data.get(name) ?? '');
+      const body = {
+        name: field('name'),
+        email: field('email'),
+        service: field('service'),
+        message: field('message'),
+        language: form.dataset.lang,
+        website: field('website'),
+      };
+
+      failed.hidden = true;
+      button.disabled = true;
+      button.textContent = button.dataset.sending ?? label;
+      let ok = false;
+      try {
+        const answer = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        ok = answer.ok;
+      } catch {
+        ok = false;
+      }
+      button.disabled = false;
+      button.textContent = label;
+
+      if (ok) {
+        form.classList.add('is-sent');
+        sent.hidden = false;
+        return;
+      }
+      const text = `${body.message}\n\n${body.name}`.slice(0, MAILTO_BODY_MAX);
+      mailto.href = `mailto:hello@agentivity.io?subject=${encodeURIComponent('Agentivity Services')}&body=${encodeURIComponent(text)}`;
+      failed.hidden = false;
+    });
+  }
+</script>

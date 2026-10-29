@@ -155,13 +155,13 @@
   "home": {
     "meta": {
       "title": "Construisez votre équipe IA — des spécialistes IA aux côtés de vos équipes | Agentivity",
-      "description": "Ajoutez une équipe d'IA à votre équipe. Créez sans code des équipes de spécialistes IA : elles prennent le travail répétitif, vous gardez les décisions. Édition Community gratuite."
+      "description": "Ajoutez une équipe d'IA à votre équipe. Créez sans code des équipes de spécialistes IA : elles prennent le travail répétitif, vous gardez les décisions. Essai gratuit de 14 jours, sans carte, ou édition Community gratuite."
     },
     "hero": {
       "eyebrow": "Des équipes d'IA pour votre entreprise, sans code",
       "h1": "Votre prochaine recrue,",
       "h1_accent": "c'est une équipe IA.",
-      "sub": "Composez des agents qui collaborent, délèguent et livrent, avec la structure d'autorité d'une vraie équipe. Vous restez aux commandes. Votre équipe IA fait le travail.",
+      "sub": "Une équipe d'experts d'IA, chacun avec ses connaissances et ses outils, qui travaillent ensemble comme une équipe humaine. Elle fait le travail. Vous restez aux commandes.",
       "cta_start": "Commencer gratuitement",
       "film_alt": "Un court film : d'un assistant à une équipe, puis une équipe par département et une entreprise agentique, avec les heures rendues à chaque étape. On y voit l'Assistant construire une équipe, un workflow, et une application où un voyageur doit choisir un hôtel.",
       "visual_label": "Une équipe marketing au travail sur le canevas Agentivity : un manager et cinq spécialistes",
@@ -198,16 +198,16 @@
         "body": "L'équipe demande avant tout envoi important"
       },
       {
-        "title": "Gratuit pour toujours",
-        "body": "L'édition Community ne coûte rien"
+        "title": "Essai gratuit de 14 jours",
+        "body": "Sans carte. Ou l'édition Community gratuite."
       }
     ],
     "why": {
-      "eyebrow": "Pas un chatbot de plus",
-      "h2": "Un chatbot répond.",
-      "h2_accent": "Une équipe fait le travail.",
+      "eyebrow": "Plus qu'un assistant d'IA",
+      "h2": "Un assistant d'IA vous aide.",
+      "h2_accent": "Une équipe d'IA travaille pour tout le monde.",
       "chat": {
-        "title": "Avec un chatbot, c'est vous qui gérez",
+        "title": "Avec un assistant d'IA, c'est vous qui gérez",
         "points": [
           "Vous demandez, vérifiez, corrigez et redemandez",
           "Un généraliste pour tous les métiers",
@@ -388,26 +388,34 @@
       "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et l'équipe attend la réponse du voyageur à chaque étape"
     },
     "ready": {
-      "eyebrow": "Bientôt",
-      "h2": "Des équipes prêtes à l'emploi.",
+      "eyebrow": "Prêtes à l'emploi",
+      "h2": "Des solutions prêtes à l'emploi.",
       "h2_accent": "Démarrez en quelques minutes.",
       "link": "Commencer gratuitement",
-      "soon": "Bientôt",
       "cards": [
         {
-          "title": "Pipeline de recrutement",
-          "body": "De l'offre d'emploi aux candidats retenus.",
-          "meta": "RH · équipe de 3"
+          "title": "Invoice Clerk",
+          "body": "Lit les factures fournisseurs que vous déposez, classe chacune, vérifie ses chiffres et trace les totaux.",
+          "meta": "Finance · un agent",
+          "href": "/fr/docs/showcases/invoice-clerk"
         },
         {
-          "title": "Moteur de contenu",
-          "body": "Recherche, rédaction et préparation des articles, de bout en bout.",
-          "meta": "Marketing · équipe de 5"
+          "title": "Shopping Lab",
+          "body": "Compare un produit dans deux magasins et rédige un rapport avec les meilleurs choix.",
+          "meta": "Achats · équipe de 9",
+          "href": "/fr/docs/showcases/shopping-lab"
         },
         {
-          "title": "Veille concurrentielle",
-          "body": "Une veille de marché sourcée et résumée.",
-          "meta": "Finance · équipe de 3"
+          "title": "Trip Manager Team",
+          "body": "Planifie un voyage complet avec le voyageur, qui décide à chaque étape. Les réservations et le paiement sont simulés.",
+          "meta": "Voyage · un manager et 12 spécialistes",
+          "href": "/fr/docs/showcases/trip-manager-team"
+        },
+        {
+          "title": "CV Screening",
+          "body": "Compare un CV à une offre d'emploi et propose la suite à donner.",
+          "meta": "RH · un workflow",
+          "href": "/fr/use-cases/cv-screening"
         }
       ]
     },
@@ -415,7 +423,7 @@
       "eyebrow": "Tarifs",
       "price": "0€",
       "rest": "pour commencer.",
-      "sub": "Commencez gratuitement sur votre propre serveur. Passez au cloud quand vous êtes prêt.",
+      "sub": "Essayez les offres hébergées gratuitement pendant 14 jours, sans carte. Ou installez l'édition Community gratuite sur votre serveur.",
       "link": "Voir tous les tarifs",
       "tiers": [
         {
@@ -423,15 +431,15 @@
           "badge": "Gratuit pour toujours",
           "desc": "Agents, équipes et Studio, sur votre propre serveur.",
           "cta": "L'installer",
-          "href": "/fr/community",
-          "featured": true
+          "href": "/fr/community"
         },
         {
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hébergé pour vous. Aucune installation : connectez-vous et créez votre première équipe.",
           "cta": "Commencer gratuitement",
-          "href": "/fr/start?plan=personal"
+          "href": "/fr/start?plan=personal",
+          "featured": true
         },
         {
           "name": "Pro",
@@ -959,7 +967,9 @@
         "message_ph": "Votre organisation, ce que vous voulez accomplir, et les contraintes à connaître : calendrier, infrastructure, réglementation.",
         "submit": "Envoyer",
         "note": "Vos informations restent confidentielles et ne sont jamais partagées.",
-        "next": "https://www.agentivity.io/fr/merci"
+        "sending": "Envoi…",
+        "sent": "Merci. Nous vous répondons sous 48 heures.",
+        "failed": "Votre message n'a pas pu être envoyé. Écrivez-nous à"
       }
     }
   },
@@ -1787,8 +1797,8 @@
     "hero": {
       "crumb": "Produit",
       "name": "Équipes",
-      "h1": "Un chatbot répond.",
-      "h1_accent": "Une équipe fait le travail.",
+      "h1": "Un assistant d'IA vous aide.",
+      "h1_accent": "Une équipe d'IA travaille pour tout le monde.",
       "sub": "Réunissez des spécialistes IA, choisissez comment ils travaillent en équipe et confiez-leur le travail avec vos mots. Ils se répartissent le travail et reviennent vers vous pour chaque décision qui vous revient.",
       "cta": "Commencer gratuitement",
       "cta_secondary": "Voir des équipes prêtes à l'emploi",
@@ -1908,26 +1918,34 @@
     },
     "ready": {
       "eyebrow": "Démarrez en quelques minutes",
-      "h2": "Des équipes prêtes à l'emploi.",
+      "h2": "Des solutions prêtes à l'emploi.",
       "h2_accent": "Changez ce que vous voulez.",
       "link": "Les parcourir sur Synergi",
       "href": "https://synergi.agentivity.io",
       "cards": [
         {
+          "tag": "Un agent",
+          "title": "Invoice Clerk",
+          "body": "Un agent équipé de trois outils lit les factures fournisseurs que vous déposez, classe chacune, vérifie ses chiffres et trace les totaux.",
+          "href": "/fr/docs/showcases/invoice-clerk"
+        },
+        {
+          "tag": "Sequential",
+          "title": "Shopping Lab",
+          "body": "Neuf spécialistes, l'un après l'autre, comparent un produit dans deux magasins et rédigent un rapport avec les meilleurs choix.",
+          "href": "/fr/docs/showcases/shopping-lab"
+        },
+        {
           "tag": "Manager-led",
           "title": "Trip Manager",
           "body": "Un manager et douze spécialistes planifient, réservent et paient un voyage, et demandent au voyageur à chaque décision.",
-          "href": "https://synergi.agentivity.io"
+          "href": "/fr/docs/showcases/trip-manager-team"
         },
         {
-          "tag": "Bientôt",
-          "title": "Pipeline de recrutement",
-          "body": "De l'offre d'emploi aux candidats retenus. RH · équipe de 3."
-        },
-        {
-          "tag": "Bientôt",
-          "title": "Veille concurrentielle",
-          "body": "Une veille de marché sourcée et résumée. Finance · équipe de 3."
+          "tag": "Workflow",
+          "title": "CV Screening",
+          "body": "Des étapes fixes, des étapes d'IA et une validation comparent un CV à une offre d'emploi et proposent la suite à donner.",
+          "href": "/fr/use-cases/cv-screening"
         }
       ]
     },

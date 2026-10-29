@@ -299,7 +299,7 @@ const schema = {
     </div>
   </section>
 
-  <!-- 9. Ready-made teams -->
+  <!-- 9. Ready-made solutions -->
   <section class="ed-wrap ed-sec ed-sec--tight-bottom" id="ready">
     <header class="ed-sec-head ed-sec-head--row">
       <div>
@@ -311,12 +311,13 @@ const schema = {
     <ul class="hp-ready">
       {h.ready.cards.map((card) => (
         <li>
-          <h3>{card.title}</h3>
-          <p>{card.body}</p>
-          <div class="hp-ready-tags">
-            <span>{card.meta}</span>
-            <span class="hp-ready-soon">{h.ready.soon}</span>
-          </div>
+          <a class="hp-ready-card" href={card.href}>
+            <h3>{card.title}</h3>
+            <p>{card.body}</p>
+            <div class="hp-ready-tags">
+              <span>{card.meta}</span>
+            </div>
+          </a>
         </li>
       ))}
     </ul>
@@ -496,11 +497,11 @@ const schema = {
 
 /* ---------- 9. ready-made teams ---------- */
 .hp-ready { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
-.hp-ready li { display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--ed-line); border-radius: 20px; padding: 24px; color: var(--ed-ink-2); }
+.hp-ready-card { display: flex; flex-direction: column; gap: 10px; height: 100%; border: 1px solid var(--ed-line); border-radius: 20px; padding: 24px; color: var(--ed-ink-2); transition: border-color .15s ease, transform .15s ease; }
+.hp-ready-card:hover { border-color: var(--ed-ink); transform: translateY(-2px); }
 .hp-ready h3 { font-family: var(--ed-serif); font-size: 28px; line-height: 1.1; color: var(--ed-ink); }
 .hp-ready-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
 .hp-ready-tags span { padding: 5px 12px; border-radius: 999px; background: var(--ed-mist); font-size: 14px; font-weight: 600; color: var(--ed-ink); }
-.hp-ready-tags .hp-ready-soon { background: var(--ed-yellow); }
 
 /* ---------- 10. pricing ---------- */
 .hp-price-title { font-family: var(--ed-serif); font-size: clamp(72px, 11vw, 168px); line-height: .92; letter-spacing: -.02em; }

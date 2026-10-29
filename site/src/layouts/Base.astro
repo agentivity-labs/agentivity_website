@@ -10,7 +10,8 @@ export interface Props {
   lang?: string;
   ogImage?: string;
   schema?: object | object[];
-  noindex?: boolean;
+  /** Kept out of search engines. 'follow': still let them follow the links of the page (the badges of /featured). */
+  noindex?: boolean | 'follow';
   /** 'editorial' = navy, yellow and serif display (new pages); 'classic' = the first design. */
   look?: 'classic' | 'editorial';
   /** false for a page that exists in one language only (a landing page): no hreflang to a page that does not exist. */
@@ -67,7 +68,7 @@ const INDEXNOW_KEY = import.meta.env.PUBLIC_INDEXNOW_KEY ?? '';
   <!-- Primary meta -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  {noindex && <meta name="robots" content={noindex === 'follow' ? 'noindex, follow' : 'noindex, nofollow'} />}
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />

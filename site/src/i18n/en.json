@@ -155,13 +155,13 @@
   "home": {
     "meta": {
       "title": "Build Your AI Team — AI Specialists That Work Alongside Your People | Agentivity",
-      "description": "Add an AI team to your team. Build teams of AI specialists without code: they take on the repetitive work, you keep the decisions. Free Community edition."
+      "description": "Add an AI team to your team. Build teams of AI specialists without code: they take on the repetitive work, you keep the decisions. Free 14-day trial, no card, or the free Community edition."
     },
     "hero": {
       "eyebrow": "AI teams for your business, no code",
       "h1": "Your next hire is",
       "h1_accent": "an AI team.",
-      "sub": "Compose agents that collaborate, delegate and deliver, with the authority structure of a real team. You stay in charge. Your AI team does the work.",
+      "sub": "A team of AI experts, each with its own knowledge and tools, working together like a human team. It does the work. You stay in charge.",
       "cta_start": "Start free",
       "film_alt": "A short film: from one helper to a team, then a team in every department and an AI company, with the hours each step gives back. It shows the Assistant building a team, a workflow, and an app where a traveller is asked to choose a hotel.",
       "visual_label": "A marketing team at work on the Agentivity canvas: a manager and five specialists",
@@ -198,16 +198,16 @@
         "body": "The team asks before anything important goes out"
       },
       {
-        "title": "Free forever",
-        "body": "The Community edition costs nothing"
+        "title": "Free 14-day trial",
+        "body": "No card. Or the free Community edition."
       }
     ],
     "why": {
-      "eyebrow": "Not another chatbot",
-      "h2": "A chatbot answers.",
-      "h2_accent": "A team gets the work done.",
+      "eyebrow": "More than an AI assistant",
+      "h2": "An AI assistant helps you.",
+      "h2_accent": "An AI team works for everyone.",
       "chat": {
-        "title": "With a chatbot, you do the managing",
+        "title": "With an AI assistant, you do the managing",
         "points": [
           "You ask, check, correct and ask again",
           "One generalist for every job",
@@ -388,26 +388,34 @@
       "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the team waits for the traveller's answer at each step"
     },
     "ready": {
-      "eyebrow": "Coming soon",
-      "h2": "Ready-made teams.",
+      "eyebrow": "Ready to use",
+      "h2": "Ready-made solutions.",
       "h2_accent": "Start in minutes.",
       "link": "Start free",
-      "soon": "Coming soon",
       "cards": [
         {
-          "title": "Hiring Pipeline",
-          "body": "From job post to shortlisted candidates.",
-          "meta": "HR · team of 3"
+          "title": "Invoice Clerk",
+          "body": "Reads the supplier invoices you upload, files each one, checks its figures and charts the totals.",
+          "meta": "Finance · one agent",
+          "href": "/docs/showcases/invoice-clerk"
         },
         {
-          "title": "Content Engine",
-          "body": "Research, draft and prepare articles end to end.",
-          "meta": "Marketing · team of 5"
+          "title": "Shopping Lab",
+          "body": "Compares a product across two stores and writes a report with the best picks.",
+          "meta": "Shopping · team of 9",
+          "href": "/use-cases/shopping-lab"
         },
         {
-          "title": "Competitor Briefing",
-          "body": "Market intelligence, sourced and summarised.",
-          "meta": "Finance · team of 3"
+          "title": "Trip Manager Team",
+          "body": "Plans a full trip with the traveller, who decides at each step. Bookings and payment are simulated.",
+          "meta": "Travel · a manager and 12 specialists",
+          "href": "/use-cases/trip-planner"
+        },
+        {
+          "title": "CV Screening",
+          "body": "Compares a CV with a job description and proposes what to do with it.",
+          "meta": "HR · one workflow",
+          "href": "/use-cases/cv-screening"
         }
       ]
     },
@@ -415,7 +423,7 @@
       "eyebrow": "Pricing",
       "price": "0€",
       "rest": "to start.",
-      "sub": "Start free on your own server. Move to the cloud when you are ready.",
+      "sub": "Try the hosted plans free for 14 days, no card. Or install the free Community edition on your own server.",
       "link": "See full pricing",
       "tiers": [
         {
@@ -423,15 +431,15 @@
           "badge": "Free forever",
           "desc": "Agents, teams and the Studio, on your own server.",
           "cta": "Install it",
-          "href": "/community",
-          "featured": true
+          "href": "/community"
         },
         {
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hosted for you. No setup: sign in and build your first team.",
           "cta": "Start free",
-          "href": "/start?plan=personal"
+          "href": "/start?plan=personal",
+          "featured": true
         },
         {
           "name": "Pro",
@@ -959,7 +967,9 @@
         "message_ph": "Your organisation, what you want to achieve, and any constraint we should know: timing, infrastructure, regulation.",
         "submit": "Send",
         "note": "Your information stays confidential and is never shared.",
-        "next": "https://www.agentivity.io/thank-you"
+        "sending": "Sending…",
+        "sent": "Thank you. We will answer within 48 hours.",
+        "failed": "Your message could not be sent. Please write to us at"
       }
     }
   },
@@ -1786,8 +1796,8 @@
     "hero": {
       "crumb": "Product",
       "name": "Teams",
-      "h1": "A chatbot answers.",
-      "h1_accent": "A team does the work.",
+      "h1": "An AI assistant helps you.",
+      "h1_accent": "An AI team works for everyone.",
       "sub": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. They share the work, and come back to you for every decision that is yours.",
       "cta": "Start free",
       "cta_secondary": "See ready-made teams",
@@ -1907,26 +1917,34 @@
     },
     "ready": {
       "eyebrow": "Start in minutes",
-      "h2": "Ready-made teams.",
+      "h2": "Ready-made solutions.",
       "h2_accent": "Change what you want.",
       "link": "Browse them on Synergi",
       "href": "https://synergi.agentivity.io",
       "cards": [
         {
+          "tag": "One agent",
+          "title": "Invoice Clerk",
+          "body": "One agent with three tools reads the supplier invoices you upload, files each one, checks its figures and charts the totals.",
+          "href": "/docs/showcases/invoice-clerk"
+        },
+        {
+          "tag": "Sequential",
+          "title": "Shopping Lab",
+          "body": "Nine specialists, one after another, compare a product across two stores and write a report with the best picks.",
+          "href": "/use-cases/shopping-lab"
+        },
+        {
           "tag": "Manager-led",
           "title": "Trip Manager",
           "body": "A manager and twelve specialists plan, book and pay for a trip, and ask the traveller at each decision.",
-          "href": "https://synergi.agentivity.io"
+          "href": "/use-cases/trip-planner"
         },
         {
-          "tag": "Coming soon",
-          "title": "Hiring Pipeline",
-          "body": "From job post to shortlisted candidates. HR · team of 3."
-        },
-        {
-          "tag": "Coming soon",
-          "title": "Competitor Briefing",
-          "body": "Market intelligence, sourced and summarised. Finance · team of 3."
+          "tag": "Workflow",
+          "title": "CV Screening",
+          "body": "Fixed steps, AI steps and an approval compare a CV with a job description and propose what to do with it.",
+          "href": "/use-cases/cv-screening"
         }
       ]
     },

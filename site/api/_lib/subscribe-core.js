@@ -29,7 +29,7 @@ const EMAIL_PATTERN =
 const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
 const RATE_LIMIT_MAX_ENTRIES = 10_000;
 
-const BASE_HEADERS = {
+export const BASE_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
@@ -68,14 +68,14 @@ export function createRateLimiter({
   };
 }
 
-function clientIp(req) {
+export function clientIp(req) {
   const headers = req.headers ?? {};
   const forwarded = headers['x-forwarded-for'];
   const firstForwarded = (Array.isArray(forwarded) ? forwarded[0] : forwarded)?.split(',')[0].trim();
   return headers['x-real-ip'] || firstForwarded || req.socket?.remoteAddress || 'unknown';
 }
 
-function readBody(req) {
+export function readBody(req) {
   let body;
   try {
     body = req.body;
@@ -97,11 +97,11 @@ function readBody(req) {
   return { body };
 }
 
-function isHoneypotFilled(value) {
+export function isHoneypotFilled(value) {
   return value !== undefined && value !== null && String(value).trim() !== '';
 }
 
-function isValidEmail(email) {
+export function isValidEmail(email) {
   if (email.length === 0 || email.length > MAX_EMAIL_LENGTH || !EMAIL_PATTERN.test(email)) {
     return false;
   }
@@ -140,7 +140,7 @@ function validate(body) {
 }
 
 // Brevo's wording is only ever written to our own logs, never returned to the client.
-function redactForLog(text, secrets) {
+export function redactForLog(text, secrets) {
   let redacted = text;
   for (const secret of secrets) {
     if (secret) redacted = redacted.split(secret).join('[redacted]');
@@ -196,7 +196,7 @@ async function callBrevo({ fetchImpl, apiKey, email, source, language, today, la
   return { outcome: 'upstream_error', ...failure };
 }
 
-function send(res, status, payload, extraHeaders = {}) {
+export function send(res, status, payload, extraHeaders = {}) {
   for (const [name, value] of Object.entries({ ...BASE_HEADERS, ...extraHeaders })) {
     res.setHeader(name, value);
   }

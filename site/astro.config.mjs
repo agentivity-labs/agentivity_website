@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import compress from 'astro-compress';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 // The menu of the documentation comes from agentivity_docs (docs.json), through tools/docs.mjs.
@@ -25,6 +25,18 @@ const docsSidebar = [
     items: [{ autogenerate: { directory: `docs/${section.id}` } }],
   })),
 ];
+// The French documentation pages that exist in French. The others are shown in English under /fr/docs/ (Starlight's
+// fallback): they name the English page as canonical (DocsHead.astro) and stay out of the sitemap.
+const frDocsDir = fileURLToPath(new URL('./src/content/docs/fr/docs/', import.meta.url));
+const frDocsPaths = new Set(
+  (existsSync(frDocsDir) ? readdirSync(frDocsDir, { recursive: true }) : [])
+    .map((file) => String(file).replace(/\\/g, '/'))
+    .filter((file) => /\.mdx?$/.test(file))
+    .map((file) => '/fr/docs/' + file.replace(/\.mdx?$/, '').replace(/(^|\/)index$/, '') + '/')
+    .map((path) => path.replace(/\/+$/, '/')),
+);
+const isFrenchFallbackDoc = (pathname) => pathname.startsWith('/fr/docs/') && !frDocsPaths.has(pathname);
+
 // Until the documentation has a published home page, the Docs link of the website must not end on a 404.
 const docsRedirects = isDev || nav.home.published ? {} : { '/docs': '/how-it-works', '/fr/docs': '/fr/how-it-works' };
 
@@ -56,9 +68,13 @@ export default defineConfig({
       },
     }),
     sitemap({
-      // Landing pages under /lp/ are campaign pages, the pages shown after a sign-up are thank-you pages, and the trial
-      // sign-up (/start) and "find my workspace" (/find) are not for search: none is indexed (noindex), so they stay out of the sitemap too.
-      filter: (page) => !/^\/(lp\/|thank-you\/|fr\/merci\/|find\/|fr\/find\/)/.test(new URL(page).pathname),
+      // Landing pages under /lp/ are campaign pages, the pages shown after a sign-up are thank-you pages, and "find my
+      // workspace" (/find) and the badges of /featured are not for search (noindex): they stay out of the sitemap too.
+      // The trial sign-up (/start) is indexed on purpose: it is the main door, and people search for the trial.
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !/^\/(lp\/|thank-you\/|fr\/merci\/|find\/|fr\/find\/|featured\/|fr\/featured\/)/.test(pathname) && !isFrenchFallbackDoc(pathname);
+      },
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en-US', fr: 'fr-FR' },
