@@ -60,7 +60,7 @@ For a connection to an AI model, two fields need your attention:
 
 Each field is checked while you type, and the problem is shown under the field: an address must start with `https://` or `http://`, and a numeric field must hold a number. Without a model, the Studio refuses to save, and names the missing field. See [Connect an AI model](/docs/guides/connect-a-model/) for the details.
 
-The Assistant opens this same form when it needs a connection. It no longer creates an empty connection to fill in later.
+The Assistant opens this same form when it needs a connection.
 
 ## Change a connection or replace a key
 

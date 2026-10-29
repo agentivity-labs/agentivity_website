@@ -55,7 +55,7 @@ The storage of your workspace is backed up every day, and the backups are kept f
 
 ## What the Community edition has
 
-The Community edition is the one you install yourself, free of charge. It has one person and one space, and no sign-in: anyone who reaches the server uses everything. It has no groups, audit journal, monitoring or keys for a website. It has no cap on executions. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
+The Community edition is the one you install yourself, free of charge. It has no sign-in: anyone who reaches the server uses everything. It has no groups, audit journal, monitoring or keys for a website. It has no cap on executions. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
 
 ## If you go beyond a plan
 

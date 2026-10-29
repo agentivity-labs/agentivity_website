@@ -70,7 +70,7 @@ To stop or delete several executions at once, tick them, choose the action in th
 
 ## Good to know
 
-Executions start when a person starts them. Starting executions on a schedule is planned, and it is not available yet.
+Executions start when a person starts them, or on a schedule on the hosted plans.
 
 ## Next step
 

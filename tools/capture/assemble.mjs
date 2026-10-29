@@ -45,6 +45,9 @@ const edit = {
   endAfter: null,
   // The last picture is held this long before the loop restarts.
   endHoldMs: 1400,
+  // From this marker on, the clip plays at real speed and is left out of the speed-up to targetMs: the result
+  // (product cards, a report) is read at leisure, however long the rest was.
+  realFrom: null,
   stills: [],
   ...scenario.edit,
 };
@@ -61,6 +64,7 @@ for (const marker of markers) {
 }
 const fastBefore = edit.fastUntil ? (markers.find((m) => m.name === edit.fastUntil[0])?.t ?? 0) : 0;
 const endAt = edit.endAfter ? (markers.find((m) => m.name === edit.endAfter[0])?.t ?? Infinity) + edit.endAfter[1] : Infinity;
+const realAt = edit.realFrom ? (markers.find((m) => m.name === edit.realFrom)?.t ?? Infinity) : Infinity;
 const dwelling = (t) => markers.some((m) => edit.dwell.some(([prefix, ms]) => m.name.startsWith(prefix) && t >= m.t && t < m.t + ms));
 const isWaiting = (t) => !dwelling(t) && waits.some((w) => t >= w.from && t < w.to);
 
@@ -79,7 +83,7 @@ for (let i = 0; i < frames.length; i += 1) {
   if (frames[i].t < startAt || frames[i].t > endAt) continue;
   const real = i + 1 < frames.length ? frames[i + 1].t - frames[i].t : 120;
   const rush = frames[i].t < fastBefore ? edit.fastUntil[1] : 1;
-  const duration = real / ((isWaiting(frames[i].t) ? edit.waitSpeed : edit.actSpeed) * rush);
+  const duration = frames[i].t >= realAt ? real : real / ((isWaiting(frames[i].t) ? edit.waitSpeed : edit.actSpeed) * rush);
   const moving = i === 0 || difference(thumbnails[i], thumbnails[i - 1]) >= SAME_PICTURE;
   if (moving || !isWaiting(frames[i].t)) stillFor = 0;
   else stillFor += real;
@@ -91,8 +95,9 @@ for (let i = 0; i < frames.length; i += 1) {
 }
 
 timeline.at(-1).delay += edit.endHoldMs;
-const edited = timeline.reduce((sum, f) => sum + f.delay, 0);
-if (edited > edit.targetMs) for (const f of timeline) f.delay *= edit.targetMs / edited;
+const fitted = timeline.filter((f) => f.t < realAt);
+const edited = fitted.reduce((sum, f) => sum + f.delay, 0);
+if (edited > edit.targetMs) for (const f of fitted) f.delay *= edit.targetMs / edited;
 const total = timeline.reduce((sum, f) => sum + f.delay, 0);
 
 // Where each recorded moment lands in the edited clip, to check the pacing without watching it.

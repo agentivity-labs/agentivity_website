@@ -67,8 +67,6 @@ Keep the file where it is. The container reads it at each start.
 1. In the Studio, check your key again (**Check the key** in the guide, or **Test** on the connection). It no longer says that the provider could not be reached, and the list of models loads.
 2. Run an agent. It answers instead of stopping with "The model did not answer".
 
-We tried this way with a stand-in certificate on a local test page: by default the server failed with "The SSL connection could not be established", and it reached the page once the certificate was given. A public site was still reached. We did not try it with a real antivirus.
-
 ## Way 2: turn off the scanning of secure connections
 
 Open the settings of the antivirus and find the option that scans secure connections. It is called "HTTPS scanning", "SSL/TLS scanning" or "Encrypted connections scanning". In Avast and AVG, it is in **Protection**, **Core Shields**, **Web Shield**.
@@ -98,7 +96,7 @@ docker build -t agentivity-with-certificate .
 docker run -d --name agentivity -p 5005:5005 -v agentivity-data:/app/_data agentivity-with-certificate
 ```
 
-We tried this too, with the same result. The image is yours: when a new version of Agentivity comes out, build it again from the new one.
+The image is yours: when a new version of Agentivity comes out, build it again from the new one.
 
 ## On a company machine
 

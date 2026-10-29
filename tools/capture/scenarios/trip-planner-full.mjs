@@ -10,8 +10,18 @@ export default {
     ...base.end,
     // Never "far enough" by count: the recording ends when the screen has been still for stalledMs, or at timeoutMs.
     specialists: 99,
-    stalledMs: 60_000,
+    stalledMs: 120_000,
     timeoutMs: 720_000,
     maxAnswers: 24,
+  },
+  // The clip of the website (2026-10-29): about 22 seconds up to the recap, each card held a moment once chosen, then the
+  // recap of the bookings at real speed, which the loop ends on.
+  edit: {
+    ...base.edit,
+    targetMs: 22_000,
+    dwell: [['lead:', 1200], ['specialist:', 1000], ['form:', 1200]],
+    realFrom: 'end',
+    endHoldMs: 3500,
+    stills: [...base.edit.stills, ['recap', 'end', 1500]],
   },
 };

@@ -4,8 +4,8 @@ description: "A trip means flights, a hotel, transfers, a dinner and a budget th
 pubDate: 2026-10-29
 author: "Agentivity Team"
 tags: ["AI agents", "teams", "use case"]
-image: "/media/studio-team-trip-run.jpg"
-imageAlt: "Demo of the Trip Manager Team in the Agentivity Studio: the manager at the top hands the work to one specialist at a time."
+image: "/media/blog/trip-manager/cover.jpg"
+imageAlt: "Demo of the Trip Planner app: the hotel specialist proposes a hotel in Lisbon with its photo and price, and the team of thirteen is shown beside the chat."
 lang: en
 faq:
   - q: "Are the bookings and the payment real?"
@@ -21,10 +21,10 @@ faq:
 ---
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/studio-team-trip-run.jpg" width="1600" height="900">
-<source src="/media/studio-team-trip-run.mp4" type="video/mp4" />
+<video controls muted loop playsinline preload="none" poster="/media/blog/trip-manager/cover.jpg" width="1024" height="768">
+<source src="/media/trip-planner.mp4" type="video/mp4" />
 </video>
-<figcaption>Demo: Trip Manager Team at work in the Agentivity Studio. The manager, at the top, hands each part of the trip to one specialist at a time. Recorded from the product.</figcaption>
+<figcaption>Demo: one request, a manager and its specialists, one trip. The specialists propose the flight, the hotel and the dinner, the traveller chooses each one, and the team lights up beside the chat as it works. Recorded from Trip Planner, an app built on this team. Bookings and payment are simulated.</figcaption>
 </figure>
 
 Three days in a city for two, in June, with a budget of 1,500 euros. That means flights at the right times, a hotel in the right district, a way from the airport, a dinner worth the trip, perhaps insurance. Five websites, a dozen tabs, and every new choice moves the total.

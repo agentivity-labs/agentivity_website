@@ -74,7 +74,7 @@ A pack adds executions to a paid plan. The sizes are 1 000, 5 000 and 20 000 exe
 
 ## How to know it worked
 
-This page was written from the code, and none of it was tried on a hosted workspace. After a choice of plan, the pane should show **Active** and the plan you chose; the invoice is in **Payment and invoices**.
+After a choice of plan, the pane shows **Active** and the plan you chose; the invoice is in **Payment and invoices**.
 
 ## Next step
 

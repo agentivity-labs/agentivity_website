@@ -90,7 +90,7 @@ Yes: Personal, Pro and Business, with a 14-day trial. See [Plans and their limit
 
 ### What is planned?
 
-Starting executions on a schedule. These pages describe only what works today.
+These pages describe only what works today, and announce nothing.
 
 ## More questions
 

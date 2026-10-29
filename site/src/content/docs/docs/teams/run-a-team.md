@@ -80,7 +80,7 @@ The section **Executions**, in the menu on the left, lists the executions of you
 
 ## Good to know
 
-Executions start when a person starts them. Starting executions on a schedule is planned, and it is not available yet.
+Executions start when a person starts them, or on a schedule on the hosted plans.
 
 ## Next step
 

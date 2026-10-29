@@ -61,7 +61,8 @@ window.__cap = (() => {
       const speakers = [...document.querySelectorAll('${SDK.speaker}')].map((el) => el.textContent.trim());
       const widgets = document.querySelectorAll('${SDK.widget}').length;
       const last = lastWidget();
-      const liveButtons = !!last && [...last.querySelectorAll('button')].some((b) => !b.disabled);
+      // A choice list (options to pick, then a submit that stays disabled until one is picked) counts as live too.
+      const liveButtons = !!last && ([...last.querySelectorAll('button')].some((b) => !b.disabled) || !!last.querySelector('[role="button"]'));
       const awaiting = (document.querySelector('textarea')?.placeholder ?? '').toLowerCase().startsWith('${SDK.awaiting}');
       const nodes = [...document.querySelectorAll('${SDK.graphNode}')];
       // A node's title reads "Quill Scout — working now": keep the name, or every change of status looks like a new member.
@@ -93,6 +94,36 @@ window.__cap = (() => {
       return { from, to: box.scrollHeight - box.clientHeight, page: box.clientHeight };
     },
     finaleScroll(top) { __cap.chat.scrollTo({ top, behavior: 'smooth' }); },
+    // The closing hold: bring the last line of text that matches (a report's heading above its product cards) to the
+    // top of the chat. The last match, because the same words can appear earlier in the conversation.
+    finaleFocus(source, flags) {
+      const pattern = new RegExp(source, flags);
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let hit = null;
+      while (walker.nextNode()) if (pattern.test(walker.currentNode.textContent.trim())) hit = walker.currentNode.parentElement;
+      let box = hit?.parentElement;
+      while (box && !(box.scrollHeight > box.clientHeight + 40 && /auto|scroll/.test(getComputedStyle(box).overflowY))) box = box.parentElement;
+      if (!box) return false;
+      __cap.chat = box;
+      const top = Math.max(0, hit.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop - 12);
+      box.scrollTo({ top, behavior: 'smooth' });
+      return true;
+    },
+    // Where the card titled by the last line that matches starts and ends in the chat (after finaleFocus): the card is the
+    // first block around that title that holds a picture, e.g. the "Top picks" card and its product sheets.
+    finaleCard(source, flags) {
+      const pattern = new RegExp(source, flags);
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let hit = null;
+      while (walker.nextNode()) if (pattern.test(walker.currentNode.textContent.trim())) hit = walker.currentNode.parentElement;
+      let card = hit;
+      while (card && !(card.querySelector('img') && card.getBoundingClientRect().height > 200)) card = card.parentElement;
+      const box = __cap.chat;
+      if (!card || !box) return null;
+      const r = card.getBoundingClientRect();
+      const offset = box.scrollTop - box.getBoundingClientRect().top;
+      return { from: Math.max(0, r.top + offset - 12), to: Math.min(box.scrollHeight - box.clientHeight, r.bottom + offset - box.clientHeight + 16), page: box.clientHeight };
+    },
     press(i) { const el = __cap.targets[i]; el.focus?.(); el.click(); },
     // The pictures of the last widget that are on screen: 'none' while there is no image yet, then whether
     // they have all arrived. Off-screen ones are ignored: lazy images only load once scrolled to.
@@ -119,7 +150,9 @@ window.__cap = (() => {
             el.parentElement?.previousElementSibling?.textContent, el.placeholder].filter(Boolean).join(' '),
         }));
       const buttons = [...block.querySelectorAll('button')].filter((b) => !b.disabled).map((b) => ({ index: remember(b), text: text(b) }));
-      return { fields, buttons };
+      // The options of a choice list: rows to click, not buttons.
+      const options = [...block.querySelectorAll('[role="button"]')].map((el) => ({ index: remember(el), text: text(el) }));
+      return { fields, buttons, options };
     },
   };
 })();
@@ -280,6 +313,11 @@ async function converse() {
         await type(answerFor(field.label), 22);
         await sleep(200);
       }
+      // A choice list: pick its first option, which enables its submit button.
+      if (form.options.length) {
+        await revealAndPress(form.options[0].index);
+        await sleep(700);
+      }
       // Re-read: filling the fields can enable the submit button. The first "go ahead" button is the first
       // option offered, which is also the one on screen.
       const ready = await evaluate(`__cap.form(${dates})`);
@@ -318,8 +356,29 @@ async function converse() {
 }
 
 // Reads down the final message at a steady pace, so that a long result (a report with product cards) is seen.
-async function finale({ holdMs = 1800, stepMs = 1300, maxSteps = 8 }) {
+// With `focus` (a pattern), it goes instead to the last line that matches and holds there for `focusHoldMs`, marked
+// "focus": a result whose best part is at its top, with its method and sources below, ends on that best part.
+// With `card` too (a pattern for a card's title), it then reads down that card from its top to its end, `stepMs` per step,
+// and holds `cardHoldMs` on its last part, marked "card-end": every product sheet of a "Top picks" card is seen.
+async function finale({ holdMs = 1800, stepMs = 1300, maxSteps = 8, focus = null, focusHoldMs = 6000, card = null, cardHoldMs = 3000 }) {
   await evaluate(`__cap.moveTo(${width / 2}, ${height + 40})`);
+  if (focus && (await evaluate(`__cap.finaleFocus(${JSON.stringify(focus.source)}, ${JSON.stringify(focus.flags)})`))) {
+    mark('finale');
+    await sleep(900);
+    mark('focus');
+    await sleep(focusHoldMs);
+    const range = card ? await evaluate(`__cap.finaleCard(${JSON.stringify(card.source)}, ${JSON.stringify(card.flags)})`) : null;
+    if (range && range.to > range.from) {
+      const steps = Math.min(maxSteps, Math.max(1, Math.ceil((range.to - range.from) / (range.page * 0.55))));
+      for (let i = 0; i <= steps; i += 1) {
+        await evaluate(`__cap.finaleScroll(${Math.round(range.from + ((range.to - range.from) * i) / steps)})`);
+        await sleep(stepMs);
+      }
+      mark('card-end');
+      await sleep(cardHoldMs);
+    }
+    return;
+  }
   const range = await evaluate('__cap.finaleStart()');
   if (!range) return;
   mark('finale');

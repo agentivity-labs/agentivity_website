@@ -21,7 +21,7 @@ An AI team does the repetitive work. The decisions stay with you. This page list
 - **A step can wait for a person.** In a workflow, you add a step that sends a question and stops. The workflow continues only when someone has answered. See [Ask a person to approve or answer](/docs/workflows/ask-a-person-to-decide/).
 - **An agent can ask before it decides.** An agent that has a channel to reach a person can stop and ask for a choice or an approval.
 - **You can stop an execution.** The bar above the canvas has **Pause**, **Resume** and **Stop**. The section **Executions** can stop several executions at once.
-- **An execution starts when a person starts it.** Nothing starts by itself. Starting executions on a schedule is planned, and it is not available yet.
+- **An execution starts when a person starts it.** Nothing starts by itself, except on a schedule that a person has set up on a hosted plan. The Community edition has no schedules.
 
 ## After an execution
 

@@ -101,7 +101,7 @@ The option **reset** of **Collect** clears the list before adding. Leave it off 
 3. Run the workflow.
 4. The execution ends as completed, and the second **Console** shows the number of items.
 
-We ran this with the list above. The steps in the loop received each customer in turn, and the step after the loop showed 3.
+With the list above, the steps in the loop receive each customer in turn, and the step after the loop shows 3.
 
 ## Limits to know today
 

@@ -43,7 +43,7 @@ Vous n'avez pas besoin d'un grand projet pour commencer.
 
 ## Ce qu'il ne fait pas aujourd'hui
 
-- **Il ne démarre pas tout seul.** Une exécution démarre quand une personne la lance dans le Studio, ou quand une application la demande. Le lancement d'exécutions selon un planning est prévu, mais pas encore disponible.
+- **Il ne démarre pas tout seul.** Une exécution démarre quand une personne la lance dans le Studio, ou quand une application la demande. Sur les plans hébergés, elle peut aussi démarrer selon un planning qu'une personne a réglé. Elle ne démarre pas sur un événement d'une autre application.
 - **Il n'a pas d'écran de connexion.** Agentivity ne sait pas qui l'utilise. Toute personne qui peut joindre votre serveur peut tout y utiliser. Gardez-le sur un réseau de confiance.
 - **Il ne fournit pas le modèle d'IA.** Vous connectez le vôtre.
 

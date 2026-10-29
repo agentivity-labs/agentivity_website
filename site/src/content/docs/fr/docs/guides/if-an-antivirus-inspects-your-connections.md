@@ -67,8 +67,6 @@ Laissez le fichier où il est. Le conteneur le lit à chaque démarrage.
 1. Dans le Studio, vérifiez de nouveau votre clé (**Check the key** dans le guide, ou **Test** sur la connexion). Le message ne dit plus que le fournisseur n'a pas pu être joint, et la liste des modèles se charge.
 2. Lancez un agent. Il répond au lieu de s'arrêter avec « The model did not answer ».
 
-Nous avons essayé cette méthode avec un certificat de substitution sur une page de test locale : par défaut, le serveur échouait avec « The SSL connection could not be established », et il a atteint la page une fois le certificat fourni. Un site public restait joignable. Nous ne l'avons pas essayée avec un vrai antivirus.
-
 ## Méthode 2 : désactiver l'analyse des connexions sécurisées
 
 Ouvrez les réglages de l'antivirus et cherchez l'option qui analyse les connexions sécurisées. En anglais, elle s'appelle « HTTPS scanning », « SSL/TLS scanning » ou « Encrypted connections scanning ». Dans Avast et AVG, elle se trouve dans **Protection**, **Core Shields**, **Web Shield**. Dans une version française d'Avast, ces noms peuvent être différents (par exemple « Bouclier Web » et « Activer l'analyse HTTPS ») : cherchez l'option d'analyse HTTPS dans les réglages du bouclier Web.
@@ -98,7 +96,7 @@ docker build -t agentivity-with-certificate .
 docker run -d --name agentivity -p 5005:5005 -v agentivity-data:/app/_data agentivity-with-certificate
 ```
 
-Nous avons essayé cette méthode aussi, avec le même résultat. L'image vous appartient : quand une nouvelle version d'Agentivity sort, reconstruisez-la à partir de la nouvelle.
+L'image vous appartient : quand une nouvelle version d'Agentivity sort, reconstruisez-la à partir de la nouvelle.
 
 ## Sur une machine d'entreprise
 

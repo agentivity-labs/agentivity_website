@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes-content-and-web.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+<!-- Written from a running server by tools/reference.mjs. Do not edit this page by hand. -->
 
 The steps that read the web and documents, and the steps that build content.
 

@@ -322,7 +322,7 @@
           "label": "Shopping Lab · capture réelle",
           "title": "Ou un portail pour toutes vos équipes",
           "body": "Publiez une équipe, elle apparaît dans le portail, à vos couleurs. Aucune application à développer.",
-          "alt": "La démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour"
+          "alt": "La démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour, et le rapport montre le meilleur choix et chaque fiche produit"
         }
       ],
       "points": [
@@ -1427,7 +1427,7 @@
         "title": "Shopping Lab",
         "for": "un magasin, un acheteur, un service de comparaison",
         "summary": "Un acheteur décrit son besoin. Neuf spécialistes lisent les pages des magasins, comparent, notent et rédigent un rapport illustré.",
-        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour",
+        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour, et le rapport montre le meilleur choix et chaque fiche produit",
         "h1": "Un conseil d'achat",
         "h1_accent": "que vous pouvez vérifier.",
         "lead": "L'acheteur décrit son besoin avec ses mots. L'équipe lit ce que les magasins publient réellement, compare ce qui est comparable, et remet un rapport avec ses sources.",
@@ -2724,7 +2724,7 @@
                 "poster": "/media/shopping-lab.jpg",
                 "width": 1024,
                 "height": 768,
-                "alt": "La démo Shopping Lab dans le portail : un client demande un casque audio, valide le brief, puis neuf spécialistes travaillent à tour de rôle"
+                "alt": "La démo Shopping Lab dans le portail : un client demande un casque audio, valide le brief, puis neuf spécialistes travaillent à tour de rôle, et le rapport montre le meilleur choix et chaque fiche produit"
               },
               "title": "Shopping Lab, dans le portail",
               "body": "Un client demande un casque audio. Neuf spécialistes travaillent à tour de rôle, et un rapport apparaît avec des fiches produits et des photos."

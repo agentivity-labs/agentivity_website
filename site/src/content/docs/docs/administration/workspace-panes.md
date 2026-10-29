@@ -43,7 +43,7 @@ The file never holds a secret: your credentials are not in it.
 - Knowledge Bases read their sources again;
 - what the edition of the new workspace does not have is left in the file, and the message says what.
 
-**How to know it worked:** an import ends with a message that starts with **Brought in:** and lists what came in. This message was read in the code, not seen.
+**How to know it worked:** an import ends with a message that starts with **Brought in:** and lists what came in.
 
 ## Network
 

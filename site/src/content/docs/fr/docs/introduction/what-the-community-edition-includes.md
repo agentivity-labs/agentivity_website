@@ -1,6 +1,6 @@
 ---
 title: "Ce que comprend l'édition Community"
-description: "Ce que vous obtenez dans l'édition Community gratuite d'Agentivity, ce qu'elle ne contient pas, ce qui est prévu, et ce que permet la licence."
+description: "Ce que vous obtenez dans l'édition Community gratuite d'Agentivity, ce qu'elle ne contient pas, et ce que permet la licence."
 sidebar:
   order: 7
 editUrl: false
@@ -31,18 +31,15 @@ Les quatre Solutions de démonstration sont proposées sous forme de Templates. 
 ## Ce qui n'est pas inclus
 
 - **Les versions.** Conserver les versions précédentes d'un workflow, d'une table ou d'une Knowledge Base, et revenir à l'une d'elles, ne fait pas partie de l'édition Community.
+- **Les plannings.** Le lancement d'exécutions selon un planning est dans les plans hébergés. L'édition Community n'a pas de planning.
 - **Les plugins.**
 - **La connexion, les comptes et les rôles.** Il n'y a pas d'écran de connexion. Une installation est un seul espace de travail partagé : toute personne qui peut joindre le serveur peut tout y utiliser. Il n'y a donc ni personnes, ni groupes, ni rôles, ni Spaces, pas de panneaux d'Administration pour eux, et pas de journal d'audit.
 - **Les clés pour un site web** (clés publiables) et **Monitoring** vers votre propre collecteur.
-- **Des limites.** L'édition Community ne plafonne pas les exécutions, mais elle est pour une personne et un espace.
+- **Des limites.** L'édition Community ne plafonne pas les exécutions.
 
 ## Les espaces hébergés
 
 Si vous ne voulez rien installer, un espace de travail hébergé comprend la connexion, les personnes, les rôles, les Spaces et une zone Administration, avec le plan que vous choisissez.
-
-## Ce qui est prévu
-
-- **Le lancement d'exécutions selon un planning.**
 
 Pour les autres éditions et ce à quoi chacune sert, voyez [tarifs et éditions](/fr/pricing).
 

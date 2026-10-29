@@ -61,7 +61,7 @@ The **Nodes catalog** sorts the steps by category.
 
 ## How a workflow starts
 
-A workflow starts when a person starts it in the Studio, or when an application asks for it. Starting a workflow on a schedule is planned, and it is not available yet.
+A workflow starts when a person starts it in the Studio, or when an application asks for it. On the hosted plans, it can also start on a schedule. It does not start on an event in another app.
 
 ## Next step
 

@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/nodes.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+<!-- Written from a running server by tools/reference.mjs. Do not edit this page by hand. -->
 
 The Nodes catalog of the Studio holds 98 nodes. This reference lists each one with its fields, its outputs and its exits. It is read from the product itself.
 

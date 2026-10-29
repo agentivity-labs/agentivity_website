@@ -68,7 +68,7 @@ Outputs:
 
 When the answer already holds them, as for an agent that answers in JSON, nothing is repeated. So the next members and the manager read the named outputs of a member, whatever it is.
 
-What we saw: a team whose first member is a workflow that declares the output `city`, and whose answer, `Plan ready.`, does not name the city. The second member is an agent, asked to write about the city chosen. It named the right city.
+For example, a team whose first member is a workflow that declares the output `city`, and whose answer, `Plan ready.`, does not name the city. The second member is an agent, asked to write about the city chosen. It names the right city.
 
 This is why a workflow used as a member should declare what it gives. What is not declared stays inside the workflow, and the other members do not see it.
 

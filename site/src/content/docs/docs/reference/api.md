@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/reference/api.md. Do not edit here: edit the source and publish again. -->
 
-Generated on 2026-10-20 from a running server by `tools/reference.mjs`. Do not edit this page by hand.
+<!-- Written from a running server by tools/reference.mjs. Do not edit this page by hand. -->
 
 The Studio, the SDKs and your own applications talk to an Agentivity server through these routes. Each path starts after the address of your server, for example `http://localhost:5005`.
 

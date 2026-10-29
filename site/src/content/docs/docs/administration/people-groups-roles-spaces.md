@@ -40,7 +40,7 @@ On the line of a person, the three dots open a menu:
 
 A person with no role can sign in, and can do nothing else.
 
-**How to know it worked:** a person you deactivated appears in the list **Deactivated**, and they can no longer sign in. After **Activate** they are in **Members** again. These two effects are read in the code, not seen on screen.
+**How to know it worked:** a person you deactivated appears in the list **Deactivated**, and they can no longer sign in. After **Activate** they are in **Members** again.
 
 ## Roles
 

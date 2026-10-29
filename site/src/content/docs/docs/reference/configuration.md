@@ -31,7 +31,7 @@ To change a setting on a server that already runs, remove the container and crea
 | `/app/_data/_cache` | What the executions leave: the execution history, the executions that wait for a person, the conversations with agents and teams, the uploaded files, pictures and sounds. | Yes, it is inside `/app/_data` |
 | `/app/_logs` | The log files of the server. | No |
 
-The execution history is in the volume. An update that replaces the container keeps it: the screen **Executions** and the executions that wait for a person are still there. We tested it on the image of 2026-10-15.
+The execution history is in the volume. An update that replaces the container keeps it: the screen **Executions** and the executions that wait for a person are still there.
 
 Only the log files are lost when the container is removed. To keep them, add a volume on `/app/_logs`, or read them with `docker logs agentivity`.
 

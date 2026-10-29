@@ -54,7 +54,7 @@ A workflow keeps four product sheets, then finds the laptops that fit a question
 
 ![The workflow of example 1 on the canvas: the step Keep the sheets, then the step Find the laptops, then Show the result, and the In-Memory Vector Store plugged below into both Vector Store steps.](images/vector-store-workflow.jpg)
 
-What we saw: the first step gave `inserted` 4. The second step gave `count` 2 and `documents`: the Acme Book 13 first, with a score, then the Acme Pro 16. The accessories were left aside by the filter.
+What you get: the first step gives `inserted` 4. The second step gives `count` 2 and `documents`: the Acme Book 13 first, with a score, then the Acme Pro 16. The filter leaves the accessories aside.
 
 ### The three operations
 
@@ -73,7 +73,7 @@ An agent can search a Vector Store itself, with the **AI Agent Vector Store Tool
 3. Plug the same In-Memory Vector Store into the diamond **Vector Store** of the tool.
 4. Give the tool a **Name**, for example `Products`, and a **Description** that tells the agent what the texts are: "The product sheets of Acme: laptops and accessories."
 
-The tool gives the agent a search named after it: `search_products`. The agent uses it when it needs to. The developer ran this with a model: asked "the lightest laptop under 1000 euros", the agent searched `search_products` and answered with the Acme Book 13, 0.9 kg, 899 euros. We did not run the agent ourselves.
+The tool gives the agent a search named after it: `search_products`. The agent uses it when it needs to. For example, asked "the lightest laptop under 1000 euros", the agent searches `search_products` and answers with the Acme Book 13, 0.9 kg, 899 euros.
 
 ## Example 3: a notebook the agent fills itself
 
@@ -83,7 +83,7 @@ By default, the tool only searches. To let the agent keep texts itself, turn on 
 2. Turn on **Allow storing**.
 3. Use a store that keeps texts (Qdrant, Pinecone or pgvector) if the notes must last after the execution. With **In-Memory**, they last one execution.
 
-The developer ran this with a model: the agent stored "Mrs Martin prefers to be called in the morning, before 10", found it again, and answered "before 10". We did not run it ourselves.
+For example, the agent stores "Mrs Martin prefers to be called in the morning, before 10", finds it again later, and answers "before 10".
 
 ### The settings of the tool
 

@@ -21,7 +21,7 @@ Une équipe IA fait le travail répétitif. Les décisions restent les vôtres. 
 - **Une étape peut attendre une personne.** Dans un workflow, vous ajoutez une étape qui envoie une question et s'arrête. Le workflow ne continue que lorsque quelqu'un a répondu. Voyez [Demander à une personne de valider ou de répondre](/fr/docs/workflows/ask-a-person-to-decide/).
 - **Un agent peut demander avant de décider.** Un agent qui dispose d'un canal pour joindre une personne peut s'arrêter et demander un choix ou une validation.
 - **Vous pouvez arrêter une exécution.** La barre au-dessus du canevas propose **Pause**, **Resume** et **Stop**. La section **Executions** peut arrêter plusieurs exécutions à la fois.
-- **Une exécution démarre quand une personne la lance.** Rien ne démarre tout seul. Le lancement d'exécutions selon un planning est prévu, mais pas encore disponible.
+- **Une exécution démarre quand une personne la lance.** Rien ne démarre tout seul, sauf selon un planning qu'une personne a réglé sur un plan hébergé. L'édition Community n'a pas de planning.
 
 ## Après une exécution
 

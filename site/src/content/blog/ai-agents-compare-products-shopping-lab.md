@@ -5,7 +5,7 @@ pubDate: 2026-10-29
 author: "Agentivity Team"
 tags: ["AI agents", "teams", "use case"]
 image: "/media/shopping-lab.jpg"
-imageAlt: "Demo of the Shopping Lab team: the shopper's brief on the left, the nine members of the team on the right."
+imageAlt: "Demo of the Shopping Lab team: the report's best pick and its first product sheet on the left, the nine members of the team on the right."
 lang: en
 faq:
   - q: "Are the prices and products real?"
@@ -22,7 +22,7 @@ faq:
 <video controls muted loop playsinline preload="none" poster="/media/shopping-lab.jpg" width="1024" height="768">
 <source src="/media/shopping-lab.mp4" type="video/mp4" />
 </video>
-<figcaption>Demo: a shopper asks for headphones, confirms the brief, then the nine members of Shopping Lab work in turn. Recorded from the product, played faster.</figcaption>
+<figcaption>Demo: a shopper asks for headphones, confirms the brief, then the nine members of Shopping Lab work in turn, and the report shows the best pick and each product sheet. Recorded from the product, played faster.</figcaption>
 </figure>
 
 You want a pair of wireless headphones under a budget. Two online stores sell dozens of them. Each product page lists its specs in its own way, the battery in hours here and "all day" there, the reviews say different things, and the same model appears under two names. An evening goes by, and you still have tabs open.

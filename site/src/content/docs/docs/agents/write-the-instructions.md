@@ -97,7 +97,7 @@ What it gives:
 
 In the window of a later step, the panel **Outputs** lists these named outputs under the step **Agent** that calls the agent, with their type and their description. Write a clear `description` for each field: the model reads it. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
 
-What we saw: an agent with a format of four fields, called by a step **Agent**. The step gave the outputs `city` as a text, `nights` as a whole number, `tips` as a list, and `hotel` as a JSON text; `hotel.name` gave the name of the hotel.
+For example, an agent with a format of four fields, called by a step **Agent**, gives the outputs `city` as a text, `nights` as a whole number, `tips` as a list, and `hotel` as a JSON text; `hotel.name` gives the name of the hotel.
 
 When the agent is a member of a team, its named outputs are seen by the next members and by the manager. See [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/).
 

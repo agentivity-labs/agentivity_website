@@ -43,7 +43,7 @@ You do not need a large project to begin.
 
 ## What it does not do today
 
-- **It does not start by itself.** An execution starts when a person starts it in the Studio, or when an application asks for it. Starting executions on a schedule is planned, and it is not available yet.
+- **It does not start by itself.** An execution starts when a person starts it in the Studio, or when an application asks for it. On the hosted plans it can also start on a schedule that a person has set up. It does not start on an event in another app.
 - **It has no login.** Agentivity does not know who is using it. Anyone who can reach your server can use everything on it. Keep it on a network you trust.
 - **It does not provide the AI model.** You connect your own.
 

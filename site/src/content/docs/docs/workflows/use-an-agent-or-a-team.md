@@ -108,7 +108,7 @@ A called workflow gives only what it says it gives: its answer, and the outputs 
 - **Its answer** is its output named `output`. A workflow that declares none answers with the text of its last step that produced one: the engine looks, from the last step that ran back to the first, for an output named `output`, `result`, `response` or `content`.
 - **The outputs of its steps are not given.** A value that belongs to a step of the called workflow, such as `line.value`, cannot be read from the workflow that calls it. If you need that value, declare it as an output of the called workflow.
 
-What we saw: a called workflow that declared `output` and `city` gave both, and the calling step read `call.city`. The value of one of its inner steps, `call.a.value`, was empty. A called workflow that declared nothing and ended on a **Console** step gave an empty answer, because the output of a **Console** is named `value`.
+For example, a called workflow that declares `output` and `city` gives both, and the calling step reads `call.city`. The value of one of its inner steps, `call.a.value`, is empty. A called workflow that declares nothing and ends on a **Console** step gives an empty answer, because the output of a **Console** is named `value`.
 
 ### When what you call fails
 
@@ -119,13 +119,13 @@ The step has two exits on its right side: **Out**, where the workflow goes on, a
 - If **Error** is linked, the workflow goes on from there, and the output `error` holds the message. Link it to a step that handles the failure.
 - If **Error** is not linked, the execution fails, and the whole execution with it. No later step runs.
 
-A team whose model does not answer, refuses, or cannot choose which member answers first fails too: the message says that the team could not choose which member answers first. It no longer goes on with a member chosen by default.
+A team whose model does not answer, refuses, or cannot choose which member answers first fails too: the message says that the team could not choose which member answers first.
 
 ## When what you call waits
 
 What you call may stop to wait: an agent that asks a person a question, a workflow with an approval step. Your workflow then waits with it, and goes on when what you called has finished.
 
-What we saw with a workflow that asks a person: the calling step showed the state "waiting for input", and the execution stayed in that state. We did not see the question in the list of pending questions of the calling execution (`/executions/{executionId}/hil/pending`), so we could not answer it through the API. We did not try to answer it in the Studio. Until this is checked, test a call that waits in the Studio before you rely on it.
+While it waits, the calling step shows the state "waiting for input".
 
 This is not possible inside a loop. If a step of a **For Each** loop calls something that waits, the execution fails, and the message says that a loop cannot wait. See [Repeat steps for each item of a list](/docs/workflows/repeat-steps/).
 
@@ -146,7 +146,7 @@ Run the workflow. In the **Execution** view, the step turns to completed, and th
 
 - **The execution fails at this step, and the message says what the chosen item is.** The step and what it calls are not of the same kind. Use the step that matches.
 - **The answer is empty, and the step called a workflow.** The called workflow declares no output named `output`, and none of its steps produced an output named `output`, `result`, `response` or `content`. Declare its answer. See "What a workflow gives back".
-- **A value from inside the called workflow is empty.** A called workflow no longer gives the outputs of its own steps. Declare that value as an output of the called workflow, then read it by the name of the step and the name of the output, between two pairs of curly braces.
+- **A value from inside the called workflow is empty.** A called workflow does not give the outputs of its own steps. Declare that value as an output of the called workflow, then read it by the name of the step and the name of the output, between two pairs of curly braces.
 - **The whole execution fails at this step.** What you called failed, and the exit **Error** of the step is not linked. The message says what failed, and why. Fix it, or link a step to **Error** to go on.
 - **A named output of an agent is empty.** The agent has no format for its answer, or its answer does not hold that field. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 - **The agent answers beside the point.** The step sends only the message. Put the facts the agent needs in it.

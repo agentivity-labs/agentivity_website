@@ -38,8 +38,9 @@ export default {
     specialists: 4,
     quietMs: 3000,
     // Give up when nothing at all has happened for this long, or after this long in total.
-    stalledMs: 45_000,
-    timeoutMs: 330_000,
+    // A specialist can think for a minute or more before its card appears (a hosted model, a busy hour).
+    stalledMs: 120_000,
+    timeoutMs: 540_000,
     maxAnswers: 14,
   },
 

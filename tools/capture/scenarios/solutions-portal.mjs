@@ -32,8 +32,11 @@ export default {
     timeoutMs: 840_000,
     maxAnswers: 10,
   },
-  // The report with its product cards is the point of this demo: the clip closes by reading down it.
-  finale: { holdMs: 2000, stepMs: 1400, maxSteps: 7 },
+  // The report with its product cards is the point of this demo. Its heading "Best pick for…" sits just above the
+  // cards (photo, price, store, the "Best overall" badge); its method and sources come last. The clip closes by going
+  // back up to that heading, holds on the verdict, then reads down the whole "Top picks" card, one product sheet after the
+  // other, and holds on the last one (founder, 2026-10-29: every sheet, a complete result, not too fast).
+  finale: { focus: /^best pick/i, focusHoldMs: 4000, card: /^top picks$/i, stepMs: 2800, maxSteps: 6, cardHoldMs: 3500 },
 
   edit: {
     // Unlike Trip Planner, the clip opens on the home screen: picking a Solution is part of the story.
@@ -41,10 +44,15 @@ export default {
     // The first agent asks several questions before the chain starts: that part is played faster.
     fastUntil: ['member:Query Planner', 2.2],
     // Each agent of the chain lighting up gets its moment at real speed.
-    dwell: [['lead:', 1000], ['member:', 800]],
-    targetMs: 27_000,
-    // The report ends with its method and sources: the clip stops earlier, on the product cards.
-    endAfter: ['finale', 9200],
-    stills: [['report', 'finale', 1500], ['products', 'finale', 9000]],
+    dwell: [['lead:', 1500], ['member:', 1600]],
+    // Slower than the defaults (founder, 2026-10-29: "un peu trop rapide"): the gestures at real speed, the team's writing
+    // a little slower.
+    actSpeed: 1,
+    waitSpeed: 3.5,
+    // About 30 seconds up to the report, then the verdict and the product sheets at real speed.
+    targetMs: 30_000,
+    realFrom: 'focus',
+    endAfter: ['card-end', 3200],
+    stills: [['report', 'focus', 300], ['products', 'card-end', 1500]],
   },
 };
