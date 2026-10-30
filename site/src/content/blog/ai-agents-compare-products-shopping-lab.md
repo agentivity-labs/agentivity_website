@@ -61,6 +61,13 @@ Each member has a role of one sentence, its own instructions and only the tools 
 
 The team is **Sequential**: each member works after the one before, and builds on what it produced. That is one of the [five ways AI experts work together](/blog/how-ai-agents-work-together), the simplest one, and a good fit when the steps always come in the same order.
 
+<figure>
+<video controls muted loop playsinline preload="none" poster="/media/studio-shopping-lab-run.jpg" width="1920" height="1080">
+<source src="/media/studio-shopping-lab-run.mp4" type="video/mp4" />
+</video>
+<figcaption>The same team, seen in the Studio during a real execution: the needs analyst asks its questions in the chat, the nine members light up one after another on the canvas, and the report ends on the best pick. Recorded from the product, played faster. Verdict in this run: Treblab U5, $94.33 at Staples (prices read on 2026-10-30).</figcaption>
+</figure>
+
 The members also keep their results in **five data tables**. The scouts write what they found, the matcher reads it and writes the matched products, the normalizer reads those, and so on to the report. The tables make the work visible: after an execution, you can open them and see exactly what each member found, matched and scored.
 
 A person decides twice: when the shopper confirms the brief, and when they read the report and choose what to buy. Where a person should stay in charge is its own question, covered in [human in the loop](/blog/human-in-the-loop-ai).
