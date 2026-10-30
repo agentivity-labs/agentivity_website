@@ -396,8 +396,23 @@ async function converse() {
 // "focus": a result whose best part is at its top, with its method and sources below, ends on that best part.
 // With `card` too (a pattern for a card's title), it then reads down that card from its top to its end, `stepMs` per step,
 // and holds `cardHoldMs` on its last part, marked "card-end": every product sheet of a "Top picks" card is seen.
-async function finale({ holdMs = 1800, stepMs = 1300, maxSteps = 8, focus = null, focusHoldMs = 6000, card = null, cardHoldMs = 3000 }) {
+// With `stops` (a list of [pattern, holdMs]), it goes back to each of these lines in turn and holds on each, the first
+// marked "focus" and every one "stop:<n>": a result spread over the conversation (a warning earlier, the last card now).
+async function finale({ holdMs = 1800, stepMs = 1300, maxSteps = 8, focus = null, focusHoldMs = 6000, card = null, cardHoldMs = 3000, stops = null }) {
   await evaluate(`__cap.moveTo(${width / 2}, ${height + 40})`);
+  if (stops) {
+    mark('finale');
+    let first = true;
+    for (const [i, [pattern, hold]] of stops.entries()) {
+      if (!(await evaluate(`__cap.finaleFocus(${JSON.stringify(pattern.source)}, ${JSON.stringify(pattern.flags)})`))) continue;
+      await sleep(900);
+      if (first) mark('focus');
+      first = false;
+      mark(`stop:${i + 1}`);
+      await sleep(hold);
+    }
+    return;
+  }
   if (focus && (await evaluate(`__cap.finaleFocus(${JSON.stringify(focus.source)}, ${JSON.stringify(focus.flags)})`))) {
     mark('finale');
     await sleep(900);
