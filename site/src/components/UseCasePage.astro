@@ -90,6 +90,16 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
         <li><strong>{member.name}</strong><span>{member.role}</span></li>
       ))}
     </ul>
+    {item.studio && (
+      <figure class="ed-shot ux-studio">
+        <div class="ed-shot-frame">
+          <video muted loop playsinline controls preload="none" poster={'/media/' + item.studio.media + '.jpg'} width={item.studio.width} height={item.studio.height} aria-label={item.studio.alt} data-autoplay>
+            <source src={'/media/' + item.studio.media + '.mp4'} type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>{item.studio.caption}</figcaption>
+      </figure>
+    )}
     <div class="ux-get">
       <p><strong>{l.get}</strong> {item.get.body}</p>
       {item.get.external
@@ -174,6 +184,8 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
 .ux-members { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 0 clamp(20px, 3vw, 40px); border-top: 2px solid var(--ed-ink); }
 .ux-members li { display: flex; flex-direction: column; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); color: var(--ed-ink-2); font-size: 16.5px; }
 .ux-members strong { font-size: 18px; font-weight: 700; color: var(--ed-ink); }
+.ux-studio { margin-top: clamp(32px, 4vw, 48px); }
+.ux-studio video { display: block; width: 100%; height: auto; }
 .ux-get { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: clamp(32px, 4vw, 48px); padding: 22px 26px; border-radius: 20px; background: var(--ed-mist); font-size: 17px; color: var(--ed-ink-2); }
 .ux-get strong { display: block; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); margin-bottom: 4px; }
 

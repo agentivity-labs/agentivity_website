@@ -1300,14 +1300,14 @@
     "soon": {
       "eyebrow": "Bientôt",
       "h2": "Les prochaines.",
-      "h2_accent": "Deux d'entre elles se passent d'application.",
-      "sub": "Elles tournent sur le serveur et vous joignent là où vous travaillez déjà.",
+      "h2_accent": "Construites de la même façon.",
+      "sub": "Des solutions prêtes à l'emploi en préparation, construites comme celles ci-dessus.",
       "items": [
         {
-          "tag": "Sans application",
-          "title": "Factures fournisseurs",
-          "for": "un service comptable",
-          "body": "L'équipe lit la boîte e-mail des factures, vérifie chaque montant, repère les doublons et les relances, et demande au comptable de valider les cas douteux par e-mail ou sur Slack."
+          "tag": "Portail",
+          "title": "Support d'une boutique informatique",
+          "for": "le service client d'une boutique",
+          "body": "Trois spécialistes répondent aux clients à partir des données de la boutique : ses commandes, ses produits et ses articles d'aide. Ils consultent la commande avant de répondre et signalent ce qui demande une personne."
         },
         {
           "tag": "Sans application",
@@ -1430,6 +1430,7 @@
             }
           ]
         },
+        "studio": {"media": "studio-team-trip-run", "width": 1600, "height": 900, "alt": "Trip Manager Team au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et l'équipe attend la réponse du voyageur à chaque étape", "caption": "La même équipe, vue dans le Studio, là où elle est construite et lancée. Filmé dans le produit, en accéléré."},
         "article": "/blog/ai-trip-planner-manager-and-specialists",
         "qa": [
           { "q": "Que fait Trip Planner ?", "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient : les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations." },

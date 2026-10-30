@@ -1300,14 +1300,14 @@
     "soon": {
       "eyebrow": "Coming soon",
       "h2": "Next on the list.",
-      "h2_accent": "Two of them need no app.",
-      "sub": "They run on the server and reach you where you already work.",
+      "h2_accent": "Built the same way.",
+      "sub": "Ready-made solutions on the way, built like the ones above.",
       "items": [
         {
-          "tag": "No app",
-          "title": "Supplier invoices",
-          "for": "an accounting team",
-          "body": "The team reads the invoice mailbox, checks every figure, spots duplicates and reminders, and asks the accountant to validate the doubtful ones by email or Slack."
+          "tag": "Portal",
+          "title": "Computer shop support",
+          "for": "a shop's customer service",
+          "body": "Three specialists answer customers from the shop's own data: its orders, its products and its help articles. They look up the order before they answer, and flag what needs a person."
         },
         {
           "tag": "No app",
@@ -1430,6 +1430,7 @@
             }
           ]
         },
+        "studio": {"media": "studio-team-trip-run", "width": 1600, "height": 900, "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the team waits for the traveller's answer at each step", "caption": "The same team, seen in the Studio, where it is built and run. Recorded from the product, played faster."},
         "article": "/blog/ai-trip-planner-manager-and-specialists",
         "qa": [
           { "q": "What does Trip Planner do?", "a": "A traveller writes the trip they want in one sentence. A manager agent hands each part to the right specialist, and the app asks the traveller to choose each time a decision is theirs: the flights, the hotel, how to get there, the table for dinner. At the end, it takes the payment and shows the recap of the bookings." },
