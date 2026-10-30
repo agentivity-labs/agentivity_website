@@ -1205,10 +1205,28 @@
       "github_line": "Comfortable with Docker? Community is ready today."
     }
   },
+  "solutions_signup": {
+    "title": "Get the new solutions by email",
+    "body": "When a new ready-made solution is out: what it does, a short clip and how to try it. At most one email a month.",
+    "email_label": "Email address",
+    "email_placeholder": "you@company.com",
+    "submit": "Sign up",
+    "submitting": "Sending…",
+    "consent": "I agree to receive emails from Agentivity about new solutions and product news. I can unsubscribe at any time with the link in each email. I have read the {privacy}.",
+    "privacy_link": "privacy policy",
+    "success": "Check your inbox to confirm.",
+    "success_detail": "We have just sent you an email. Click the link inside: you are on the list only once you confirm.",
+    "already": "You are already on the list.",
+    "already_detail": "Nothing more to do.",
+    "error_generic": "Something went wrong. Please try again in a moment.",
+    "error_email": "That email address does not look valid.",
+    "error_consent": "Please tick the box to agree to receive emails.",
+    "error_rate": "Too many attempts. Please wait a few minutes and try again."
+  },
   "use_cases_page": {
     "meta": {
       "title": "Agentivity Use Cases — Real Examples of AI Teams at Work",
-      "description": "Real examples built with Agentivity and recorded from the product: a trip planner, a shopping comparison, a CV screening. With an app, with the portal, or with no app at all."
+      "description": "Real examples built with Agentivity and recorded from the product: a trip planner, a shopping comparison, a CV screening, an invoice clerk. With an app, with the portal, or with no app at all."
     },
     "labels": {
       "for": "For",
@@ -1225,7 +1243,10 @@
       "decisions": "Where a person decides",
       "note": "Good to know",
       "get": "Get it",
-      "others": "Other use cases"
+      "others": "Other use cases",
+      "qa": "In plain words",
+      "read": "Read the full story",
+      "read_en": "Read the full story"
     },
     "hero": {
       "eyebrow": "Use cases",
@@ -1409,6 +1430,13 @@
             }
           ]
         },
+        "article": "/blog/ai-trip-planner-manager-and-specialists",
+        "qa": [
+          { "q": "What does Trip Planner do?", "a": "A traveller writes the trip they want in one sentence. A manager agent hands each part to the right specialist, and the app asks the traveller to choose each time a decision is theirs: the flights, the hotel, how to get there, the table for dinner. At the end, it takes the payment and shows the recap of the bookings." },
+          { "q": "Who is it for?", "a": "A travel agency, or any business that sells something with many parts and one person who decides: an event, an offer for a client, the arrival of a new employee." },
+          { "q": "What is real and what is simulated?", "a": "Everything that would cost money is simulated: no flight, hotel or table is booked, no payment is charged, and the confirmation codes are invented. The names of the airlines, hotels and restaurants are invented too. The cities and their places are real." },
+          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Trip Manager Team from the welcome guide, open it in Studio > Agents, switch to Execution and ask for a trip in one sentence. The Trip Planner app itself is a public example on GitHub, for a developer." }
+        ],
         "note": "This is a demonstration. Flights, hotels and payment are simulated: nothing is really booked or charged.",
         "get": {
           "body": "The code of the app is public. It needs the AI teams of the Community edition.",
@@ -1500,6 +1528,13 @@
             }
           ]
         },
+        "article": "/blog/ai-agents-compare-products-shopping-lab",
+        "qa": [
+          { "q": "What does Shopping Lab do?", "a": "A shopper describes what they need and a budget. Nine AI specialists confirm the brief with the shopper, read two online stores, match the same product in both, compare the specifications in the same units, score each product with a script and write a report: a verdict, the top picks and the sources." },
+          { "q": "Who is it for?", "a": "A shop, a purchasing department or a comparison service. The same shape fits other comparisons: suppliers' offers, software plans, training courses." },
+          { "q": "What is real and what is simulated?", "a": "Nothing is simulated. The scouts read the stores' own public pages at the moment of the execution, so the prices and products are the ones published then. The demonstration is written for two stores in the United States and works in English. If a store changes its pages, a scout can find nothing." },
+          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Shopping Lab from the welcome guide, open it in the Studio, switch to Execution and ask for a product with a budget. Nine members work one after another, so an execution takes several minutes and uses more model calls than one question." }
+        ],
         "note": "The demonstration reads two online stores. Add a scout, and the team covers another one.",
         "get": {
           "body": "The code of the portal is public. It needs the AI teams of the Community edition.",
@@ -1579,11 +1614,112 @@
             }
           ]
         },
+        "article": "/blog/ai-cv-screening",
+        "qa": [
+          { "q": "What does CV Screening do?", "a": "It reads a CV and a job description, each given as a file, a link or pasted text. AI assesses the fit and explains it, a program computes one score, and fixed rules choose the route: shortlist, rejection, or review by a recruiter. It writes a report with the reasons." },
+          { "q": "Who is it for?", "a": "A recruiter or an HR team that reads many applications and wants every doubtful case seen by a person." },
+          { "q": "What is real and what is simulated?", "a": "The reading and the scoring are real. Nothing is sent to a candidate: the report is a recommendation for the recruiter. Try it with fictitious CVs. As delivered, a very low score is written as a rejection without review: before any real use, change it so that a recruiter confirms every rejection." },
+          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add CV Screening from the welcome guide, open it in Studio > Workflows and run it on a CV and a job description. It also comes with the ready-made examples of the Community edition." }
+        ],
         "note": "A workflow follows the path you drew, the same way every time. A team decides its own path. You can mix both.",
         "get": {
           "body": "It comes with the ready-made examples of the Community edition.",
           "link": "Install Community",
           "href": "/community"
+        }
+      },
+      {
+        "slug": "invoice-clerk",
+        "media": "invoice-clerk",
+        "width": 1024,
+        "height": 768,
+        "tag": "Portal",
+        "size": "One agent",
+        "title": "Invoice Clerk",
+        "for": "an accounting team, an office manager",
+        "summary": "Upload a supplier invoice. One agent reads it, files it, checks every total with a calculator, spots duplicates and charts the spending.",
+        "alt": "A recording of Invoice Clerk in the portal: supplier invoices uploaded one by one, each filed with its total and category, a warning when a total does not add up, a reminder recognised as a duplicate, and a chart of the spending by category",
+        "h1": "Every invoice filed,",
+        "h1_accent": "every total checked.",
+        "lead": "Upload a supplier invoice. The agent reads it, files it in a table, checks the figures with a calculator, and flags what does not add up instead of correcting it.",
+        "facts": {
+          "for": "An accounting team, an office manager, a small business",
+          "use": "The ready-made portal, with no app to build",
+          "behind": "One agent with three tools and one table"
+        },
+        "steps": [
+          {
+            "title": "The invoice",
+            "body": "A PDF, a Word file or pasted text, uploaded in the chat."
+          },
+          {
+            "title": "The reading",
+            "body": "Supplier, number, dates, amounts, a category and a one-line summary. A missing value stays empty."
+          },
+          {
+            "title": "The check",
+            "body": "The lines and the totals are added up with a calculator, never estimated."
+          },
+          {
+            "title": "The filing",
+            "body": "One row per invoice in a table, unless the same invoice is already there."
+          },
+          {
+            "title": "The result",
+            "body": "A summary card, a warning when a total does not add up, and the spending by category."
+          }
+        ],
+        "decisions": [
+          "Decide what to do when a total does not add up",
+          "Say when you are done"
+        ],
+        "team": {
+          "title": "The agent and its tools",
+          "lead": "One agent is enough for one person's job. The parts that must be exact are given to tools.",
+          "members": [
+            {
+              "name": "Invoice Clerk",
+              "role": "The agent: reads each invoice, follows its numbered steps and talks to you."
+            },
+            {
+              "name": "Document reader",
+              "role": "Reads the text of the PDF or Word file you upload."
+            },
+            {
+              "name": "Calculator",
+              "role": "Adds up the lines and the totals, so every figure is exact."
+            },
+            {
+              "name": "The invoices table",
+              "role": "One row per invoice: what was printed, what the agent computed, and the result of the check."
+            }
+          ]
+        },
+        "article": "/blog/ai-invoice-processing-one-agent",
+        "qa": [
+          {
+            "q": "What does Invoice Clerk do?",
+            "a": "You upload a supplier invoice. The agent reads it, extracts the supplier, the number, the dates and the amounts, checks the figures with a calculator, files it in a table unless it is already there, and shows a summary with a chart of the spending by category."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "An accounting team, an office manager or a small business that types supplier invoices into a spreadsheet today. The same shape fits receipts, expense notes and delivery notes."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The reading, the check and the filing are real. The demo invoices are fictitious: the suppliers, the buyer and the people do not exist. The agent pays nothing and sends nothing; when a total does not add up, it records the printed total, flags it, and leaves the decision to a person."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Invoice Clerk from the welcome guide, open it in Studio > Agents, switch to Execution and upload an invoice with fictitious data. Then open Data Tables > invoices: the invoice has its row."
+          }
+        ],
+        "note": "One agent is the right shape when the job is one person's job done the same way every time. When invoices need an approval before payment, put the agent in a workflow with an approval step.",
+        "get": {
+          "body": "The code of the portal is public. It needs the AI teams of the Community edition.",
+          "link": "The portal on GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+          "external": true
         }
       }
     ],

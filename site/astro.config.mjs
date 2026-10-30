@@ -69,11 +69,12 @@ export default defineConfig({
     }),
     sitemap({
       // Landing pages under /lp/ are campaign pages, the pages shown after a sign-up are thank-you pages, and "find my
-      // workspace" (/find) and the badges of /featured are not for search (noindex): they stay out of the sitemap too.
+      // workspace" (/find), the badges of /featured and the press kit of /brand are not for search (noindex): they stay
+      // out of the sitemap too.
       // The trial sign-up (/start) is indexed on purpose: it is the main door, and people search for the trial.
       filter: (page) => {
         const { pathname } = new URL(page);
-        return !/^\/(lp\/|thank-you\/|fr\/merci\/|find\/|fr\/find\/|featured\/|fr\/featured\/)/.test(pathname) && !isFrenchFallbackDoc(pathname);
+        return !/^\/(lp\/|thank-you\/|fr\/merci\/|find\/|fr\/find\/|featured\/|fr\/featured\/|brand\/|fr\/brand\/)/.test(pathname) && !isFrenchFallbackDoc(pathname);
       },
       i18n: {
         defaultLocale: 'en',

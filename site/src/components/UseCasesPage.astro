@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
+import SolutionsSignup from './SolutionsSignup.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -116,6 +117,11 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
       </ul>
       <a class="uc-soon-link" href={p.cta.secondary_href}>{p.soon.link}</a>
     </div>
+  </section>
+
+  <!-- The new solutions by email -->
+  <section class="ed-wrap ed-sec">
+    <SolutionsSignup lang={lang} />
   </section>
 
   <!-- Final call -->

@@ -7,7 +7,7 @@
 // <scenario> is a file in ./scenarios. Prerequisites: the Agentivity API and the showcase are running.
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { launchChrome, sleep } from './cdp.mjs';
 
@@ -150,10 +150,17 @@ window.__cap = (() => {
             el.parentElement?.previousElementSibling?.textContent, el.placeholder].filter(Boolean).join(' '),
         }));
       const buttons = [...block.querySelectorAll('button')].filter((b) => !b.disabled).map((b) => ({ index: remember(b), text: text(b) }));
+      // A document box (upload, then a submit): its drop zone is pointed at, never clicked (that opens the system's
+      // file chooser); the file is handed to its hidden input instead.
+      const fileInput = block.querySelector('input[type="file"]');
+      const upload = fileInput ? remember(fileInput.closest('[role="button"]') ?? fileInput) : null;
       // The options of a choice list: rows to click, not buttons.
-      const options = [...block.querySelectorAll('[role="button"]')].map((el) => ({ index: remember(el), text: text(el) }));
-      return { fields, buttons, options };
+      const options = [...block.querySelectorAll('[role="button"]')]
+        .filter((el) => !el.querySelector('input[type="file"]'))
+        .map((el) => ({ index: remember(el), text: text(el) }));
+      return { fields, buttons, options, upload };
     },
+    fileInput() { return lastWidget()?.querySelector('input[type="file"]') ?? null; },
   };
 })();
 `;
@@ -206,15 +213,26 @@ async function pointAndClick(target) {
 }
 
 // A form element may sit below the visible part of the chat: scroll to it, then point at it and press it.
-async function revealAndPress(index) {
+async function revealAndPoint(index) {
   await evaluate(`__cap.reveal(${index})`);
   await sleep(650);
   const target = await evaluate(`__cap.pointOf(${index})`);
   await evaluate(`__cap.moveTo(${target.x}, ${target.y})`);
   await sleep(560);
   await evaluate('__cap.pulse()');
+}
+
+async function revealAndPress(index) {
+  await revealAndPoint(index);
   await evaluate(`__cap.press(${index})`);
   await sleep(220);
+}
+
+// Hands a file to the document box of the last widget, as if it had been dropped there.
+async function dropFile(path) {
+  const { result } = await send('Runtime.evaluate', { expression: '__cap.fileInput()' });
+  if (!result?.objectId) throw new Error('No file input in the last widget');
+  await send('DOM.setFileInputFiles', { objectId: result.objectId, files: [path] });
 }
 
 const locate = (selector, pattern) =>
@@ -242,6 +260,10 @@ async function converse() {
   let answers = 0;
   let awaitingSince = 0;
   let lastChange = Date.now();
+  // Documents to hand over, one per document box the agent shows (scenario.files: absolute paths).
+  const files = scenario.files ?? [];
+  let filesSent = 0;
+  let filesDone = false;
   const deadline = Date.now() + timeoutMs;
 
   // "waiting" … "acting" brackets the time spent waiting for the team: the only time the edit shortens.
@@ -269,7 +291,9 @@ async function converse() {
     const reached =
       (wantedSpecialists && seenSpeakers.size - 1 >= wantedSpecialists) ||
       // A chain is finished when every member has started and none is still working: the last one's output is in.
-      (wantedMembers && engagedMembers.size >= wantedMembers && !state.busy);
+      (wantedMembers && engagedMembers.size >= wantedMembers && !state.busy) ||
+      // A document job is finished when every file has been handed over and the agent asks for one more.
+      (scenario.end.files && filesDone);
     // Once far enough, the clip ends as soon as the screen has settled.
     if (reached && Date.now() - lastChange > quietMs) break;
     if (Date.now() - lastChange > stalledMs) break;
@@ -293,6 +317,11 @@ async function converse() {
       lastChange = Date.now();
       const dates = JSON.stringify(scenario.dates ?? []);
       const form = await evaluate(`__cap.form(${dates})`);
+      // A document box once every file is handed over: the job is done, the box is left as it is.
+      if (form.upload !== null && filesSent >= files.length) {
+        filesDone = true;
+        continue;
+      }
       const firstChoice = form.buttons.find((b) => GO_AHEAD.test(b.text)) ?? form.buttons.at(-1);
       if (firstChoice) await evaluate(`__cap.reveal(${firstChoice.index})`);
       await sleep(700);
@@ -313,8 +342,15 @@ async function converse() {
         await type(answerFor(field.label), 22);
         await sleep(200);
       }
-      // A choice list: pick its first option, which enables its submit button.
-      if (form.options.length) {
+      // A document box: point at its drop zone and hand it the next file, which enables its submit button.
+      if (form.upload !== null) {
+        await revealAndPoint(form.upload);
+        await dropFile(files[filesSent]);
+        mark(`file:${basename(files[filesSent])}`);
+        filesSent += 1;
+        await sleep(1100);
+      } else if (form.options.length) {
+        // A choice list: pick its first option, which enables its submit button.
         await revealAndPress(form.options[0].index);
         await sleep(700);
       }

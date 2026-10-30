@@ -130,9 +130,9 @@
       {
         "title": "Comparer",
         "links": [
-          { "label": "vs n8n",    "href": "/compare/agentivity-vs-n8n" },
-          { "label": "vs Dify",   "href": "/compare/agentivity-vs-dify" },
-          { "label": "vs Make",   "href": "/compare/agentivity-vs-make" }
+          { "label": "vs n8n",    "href": "/fr/compare/agentivity-vs-n8n" },
+          { "label": "vs Dify",   "href": "/fr/compare/agentivity-vs-dify" },
+          { "label": "vs Make",   "href": "/fr/compare/agentivity-vs-make" }
         ]
       }
     ],
@@ -1205,10 +1205,28 @@
       "github_line": "À l'aise avec Docker ? Community est prête dès aujourd'hui."
     }
   },
+  "solutions_signup": {
+    "title": "Recevez les nouvelles solutions par e-mail",
+    "body": "Quand une nouvelle solution prête à l'emploi sort : ce qu'elle fait, un court clip et comment l'essayer. Un e-mail par mois au plus.",
+    "email_label": "Adresse e-mail",
+    "email_placeholder": "vous@entreprise.com",
+    "submit": "S'inscrire",
+    "submitting": "Envoi…",
+    "consent": "J'accepte de recevoir des e-mails d'Agentivity sur les nouvelles solutions et l'actualité du produit. Je peux me désinscrire à tout moment avec le lien présent dans chaque e-mail. J'ai lu la {privacy}.",
+    "privacy_link": "politique de confidentialité",
+    "success": "Confirmez dans votre boîte de réception.",
+    "success_detail": "Nous venons de vous envoyer un e-mail. Cliquez sur le lien qu'il contient : vous n'êtes inscrit qu'une fois la confirmation faite.",
+    "already": "Vous êtes déjà inscrit.",
+    "already_detail": "Rien d'autre à faire.",
+    "error_generic": "Un problème est survenu. Réessayez dans un instant.",
+    "error_email": "Cette adresse e-mail ne semble pas valide.",
+    "error_consent": "Cochez la case pour accepter de recevoir des e-mails.",
+    "error_rate": "Trop de tentatives. Patientez quelques minutes et réessayez."
+  },
   "use_cases_page": {
     "meta": {
       "title": "Cas d'usage Agentivity — des exemples réels d'équipes d'IA au travail",
-      "description": "Des exemples réels, construits avec Agentivity et filmés dans le produit : un organisateur de voyage, un comparateur d'achats, un tri de CV. Avec une application, avec le portail, ou sans application du tout."
+      "description": "Des exemples réels, construits avec Agentivity et filmés dans le produit : un organisateur de voyage, un comparateur d'achats, un tri de CV, un agent qui classe les factures. Avec une application, avec le portail, ou sans application du tout."
     },
     "labels": {
       "for": "Pour",
@@ -1225,7 +1243,10 @@
       "decisions": "Là où quelqu'un décide",
       "note": "Bon à savoir",
       "get": "L'obtenir",
-      "others": "D'autres cas d'usage"
+      "others": "D'autres cas d'usage",
+      "qa": "En clair",
+      "read": "Lire l'article complet",
+      "read_en": "Lire l'article complet (en anglais)"
     },
     "hero": {
       "eyebrow": "Cas d'usage",
@@ -1409,6 +1430,13 @@
             }
           ]
         },
+        "article": "/blog/ai-trip-planner-manager-and-specialists",
+        "qa": [
+          { "q": "Que fait Trip Planner ?", "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient : les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations." },
+          { "q": "Pour qui ?", "a": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties avec une personne qui décide : un événement, une offre pour un client, l'arrivée d'un nouvel employé." },
+          { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "Tout ce qui coûterait de l'argent est simulé : aucun vol, aucun hôtel ni aucune table n'est réservé, aucun paiement n'est débité, et les codes de confirmation sont inventés. Les noms des compagnies aériennes, des hôtels et des restaurants sont inventés aussi. Les villes et leurs lieux sont réels." },
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur." }
+        ],
         "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés : rien n'est réellement réservé ni débité.",
         "get": {
           "body": "Le code de l'application est public. Il lui faut les équipes d'IA de l'édition Community.",
@@ -1500,6 +1528,13 @@
             }
           ]
         },
+        "article": "/blog/ai-agents-compare-products-shopping-lab",
+        "qa": [
+          { "q": "Que fait Shopping Lab ?", "a": "Un acheteur décrit son besoin et son budget. Neuf spécialistes IA valident le brief avec lui, lisent deux boutiques en ligne, retrouvent le même produit dans les deux, comparent les caractéristiques dans les mêmes unités, notent chaque produit avec un script et rédigent un rapport : un verdict, les meilleurs choix et les sources." },
+          { "q": "Pour qui ?", "a": "Une boutique, un service achats ou un comparateur. La même forme convient à d'autres comparaisons : des offres de fournisseurs, des abonnements logiciels, des formations." },
+          { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "Rien n'est simulé. Les éclaireurs lisent les pages publiques des boutiques au moment de l'exécution : les prix et les produits sont ceux publiés à cet instant. La démonstration est écrite pour deux boutiques des États-Unis et fonctionne en anglais. Si une boutique change ses pages, un éclaireur peut ne rien trouver." },
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Shopping Lab depuis le guide de bienvenue, ouvrez-le dans le Studio, passez en Exécution et demandez un produit avec un budget. Neuf membres travaillent l'un après l'autre : une exécution dure plusieurs minutes et fait plus d'appels au modèle qu'une simple question." }
+        ],
         "note": "La démonstration lit deux magasins en ligne. Ajoutez un éclaireur, et l'équipe en couvre un de plus.",
         "get": {
           "body": "Le code du portail est public. Il lui faut les équipes d'IA de l'édition Community.",
@@ -1579,11 +1614,112 @@
             }
           ]
         },
+        "article": "/fr/blog/ai-cv-screening",
+        "qa": [
+          { "q": "Que fait CV Screening ?", "a": "Il lit un CV et une offre d'emploi, donnés chacun en fichier, en lien ou en texte collé. L'IA évalue l'adéquation et l'explique, un programme calcule un score unique, et des règles fixes choisissent la suite : présélection, refus, ou examen par un recruteur. Il rédige un rapport avec les raisons." },
+          { "q": "Pour qui ?", "a": "Un recruteur ou une équipe RH qui lit beaucoup de candidatures et veut que chaque cas douteux soit vu par une personne." },
+          { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "La lecture et la notation sont réelles. Rien n'est envoyé au candidat : le rapport est une recommandation pour le recruteur. Essayez-le avec des CV fictifs. Tel qu'il est livré, un score très bas donne un refus sans examen : avant tout usage réel, modifiez-le pour qu'un recruteur confirme chaque refus." },
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez CV Screening depuis le guide de bienvenue, ouvrez-le dans Studio > Workflows et lancez-le sur un CV et une offre d'emploi. Il fait aussi partie des exemples prêts à l'emploi de l'édition Community." }
+        ],
         "note": "Un workflow suit le chemin que vous avez dessiné, de la même façon à chaque fois. Une équipe décide elle-même de son chemin. Vous pouvez mélanger les deux.",
         "get": {
           "body": "Il est fourni avec les exemples prêts à l'emploi de l'édition Community.",
           "link": "Installer Community",
           "href": "/fr/community"
+        }
+      },
+      {
+        "slug": "invoice-clerk",
+        "media": "invoice-clerk",
+        "width": 1024,
+        "height": 768,
+        "tag": "Portal",
+        "size": "Un agent",
+        "title": "Invoice Clerk",
+        "for": "une équipe comptable, un office manager",
+        "summary": "Déposez une facture fournisseur. Un agent la lit, la classe, vérifie chaque total avec une calculatrice, repère les doublons et trace les dépenses.",
+        "alt": "Un enregistrement d'Invoice Clerk dans le portail : des factures fournisseurs déposées une à une, chacune classée avec son total et sa catégorie, un avertissement quand un total ne tombe pas juste, une relance reconnue comme doublon, et un graphique des dépenses par catégorie",
+        "h1": "Chaque facture classée,",
+        "h1_accent": "chaque total vérifié.",
+        "lead": "Déposez une facture fournisseur. L'agent la lit, la range dans une table, vérifie les montants avec une calculatrice, et signale ce qui ne tombe pas juste au lieu de le corriger.",
+        "facts": {
+          "for": "Une équipe comptable, un office manager, une petite entreprise",
+          "use": "Le portail prêt à l'emploi, sans application à construire",
+          "behind": "Un agent, trois outils et une table"
+        },
+        "steps": [
+          {
+            "title": "La facture",
+            "body": "Un PDF, un fichier Word ou du texte collé, déposé dans la conversation."
+          },
+          {
+            "title": "La lecture",
+            "body": "Fournisseur, numéro, dates, montants, une catégorie et un résumé d'une ligne. Une valeur absente reste vide."
+          },
+          {
+            "title": "La vérification",
+            "body": "Les lignes et les totaux sont additionnés avec une calculatrice, jamais estimés."
+          },
+          {
+            "title": "Le classement",
+            "body": "Une ligne par facture dans une table, sauf si la même facture y est déjà."
+          },
+          {
+            "title": "Le résultat",
+            "body": "Une fiche de synthèse, un avertissement quand un total ne tombe pas juste, et les dépenses par catégorie."
+          }
+        ],
+        "decisions": [
+          "Décider quoi faire quand un total ne tombe pas juste",
+          "Dire quand vous avez fini"
+        ],
+        "team": {
+          "title": "L'agent et ses outils",
+          "lead": "Un seul agent suffit pour le travail d'une personne. Ce qui doit être exact est confié à des outils.",
+          "members": [
+            {
+              "name": "Invoice Clerk",
+              "role": "L'agent : il lit chaque facture, suit ses étapes numérotées et vous répond."
+            },
+            {
+              "name": "Lecteur de documents",
+              "role": "Lit le texte du PDF ou du fichier Word que vous déposez."
+            },
+            {
+              "name": "Calculatrice",
+              "role": "Additionne les lignes et les totaux, pour que chaque montant soit exact."
+            },
+            {
+              "name": "La table des factures",
+              "role": "Une ligne par facture : ce qui était imprimé, ce que l'agent a calculé, et le résultat de la vérification."
+            }
+          ]
+        },
+        "article": "/blog/ai-invoice-processing-one-agent",
+        "qa": [
+          {
+            "q": "Que fait Invoice Clerk ?",
+            "a": "Vous déposez une facture fournisseur. L'agent la lit, relève le fournisseur, le numéro, les dates et les montants, vérifie les chiffres avec une calculatrice, la range dans une table si elle n'y est pas déjà, et affiche une synthèse avec un graphique des dépenses par catégorie."
+          },
+          {
+            "q": "Pour qui ?",
+            "a": "Une équipe comptable, un office manager ou une petite entreprise qui recopie aujourd'hui ses factures fournisseurs dans un tableur. La même forme convient aux tickets de caisse, aux notes de frais et aux bons de livraison."
+          },
+          {
+            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
+            "a": "La lecture, la vérification et le classement sont réels. Les factures de démonstration sont fictives : les fournisseurs, l'acheteur et les personnes n'existent pas. L'agent ne paie rien et n'envoie rien ; quand un total ne tombe pas juste, il enregistre le total imprimé, le signale, et laisse la décision à une personne."
+          },
+          {
+            "q": "Comment l'essayer ?",
+            "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Invoice Clerk depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et déposez une facture aux données fictives. Ouvrez ensuite Data Tables > invoices : la facture a sa ligne."
+          }
+        ],
+        "note": "Un seul agent est la bonne forme quand le travail est celui d'une personne, fait de la même façon à chaque fois. Si les factures doivent être validées avant paiement, placez l'agent dans un workflow avec une étape de validation.",
+        "get": {
+          "body": "Le code du portail est public. Il a besoin des équipes d'IA de l'édition Community.",
+          "link": "Le portail sur GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+          "external": true
         }
       }
     ],

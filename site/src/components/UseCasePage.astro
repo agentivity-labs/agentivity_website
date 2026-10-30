@@ -16,8 +16,16 @@ const l = p.labels;
 const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 const item: any = p.cases.find((entry: any) => entry.slug === slug);
 const others = p.cases.filter((entry: any) => entry.slug !== slug);
+// The questions in plain words are also given to search and answer engines as an FAQ.
+const faq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: item.qa.map((entry: any) => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })),
+};
+// An article only in English is announced as such on a French page.
+const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en : l.read;
 ---
-<Base title={item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} lang={lang} look="editorial">
+<Base title={item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang={lang} look="editorial">
 
 <SiteHeader lang={lang} />
 
@@ -90,6 +98,17 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
     </div>
   </section>
 
+  <!-- The questions a visitor asks, answered in plain sentences -->
+  <section class="ed-wrap ed-sec ux-qa">
+    <h2 class="ed-h2 ed-h2--md">{l.qa}</h2>
+    <dl>
+      {item.qa.map((entry: any) => (
+        <div><dt>{entry.q}</dt><dd>{entry.a}</dd></div>
+      ))}
+    </dl>
+    <a class="ed-link" href={item.article}>{readLabel}</a>
+  </section>
+
   <!-- Other use cases -->
   <section class="ed-band--yellow">
     <div class="ed-wrap ed-sec">
@@ -158,6 +177,13 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
 .ux-get { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: clamp(32px, 4vw, 48px); padding: 22px 26px; border-radius: 20px; background: var(--ed-mist); font-size: 17px; color: var(--ed-ink-2); }
 .ux-get strong { display: block; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); margin-bottom: 4px; }
 
+/* ---------- in plain words ---------- */
+.ux-qa { padding-top: 0; }
+.ux-qa dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 56px); margin-block: clamp(24px, 3vw, 36px); border-top: 2px solid var(--ed-ink); }
+.ux-qa dl div { display: flex; flex-direction: column; gap: 8px; padding-block: 22px; border-bottom: 1px solid var(--ed-line-2); }
+.ux-qa dt { font-size: 18px; font-weight: 700; color: var(--ed-ink); }
+.ux-qa dd { font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+
 /* ---------- other use cases ---------- */
 .ux-others-title { margin-bottom: clamp(24px, 3vw, 36px); }
 .ux-others { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
@@ -168,7 +194,7 @@ const others = p.cases.filter((entry: any) => entry.slug !== slug);
 .ux-others strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
 
 @media (max-width: 900px) {
-  .ux-clip, .ux-flow, .ux-others { grid-template-columns: minmax(0, 1fr); }
+  .ux-clip, .ux-flow, .ux-others, .ux-qa dl { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
   .ux-others a { grid-template-columns: minmax(0, 1fr); }
