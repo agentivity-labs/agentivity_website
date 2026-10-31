@@ -14,4 +14,8 @@ export const featuredBadges: { name: string; html: string }[] = [
   <img src="https://launchnest.io/badge/agentivity.svg?variant=featured" alt="Agentivity on LaunchNest" width="220" height="56" />
 </a>`,
   },
+  {
+    name: 'Dang.ai',
+    html: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
+  },
 ];
