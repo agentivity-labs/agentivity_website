@@ -3,7 +3,6 @@ title: "Organise a team or a workflow with groups"
 description: "Sort the members of a team or the steps of a workflow into named groups, so anyone can see who does what at a glance, in the Studio and in your VibeApps."
 sidebar:
   order: 5
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -64,7 +63,7 @@ A recruiter who never saw the workflow understands these four words.
 
 ## Do it in a team
 
-Each member picks its group in its own window. Members of a group are drawn together on a coloured background, with the name of the group and how many members it has. The manager sits inside the background of its group.
+Each member picks its group in its own window. Members of a group are drawn together on a coloured background, with the name of the group and how many members it has. If the manager has a group, it sits inside the background of that group.
 
 See [Put members in a group](/docs/teams/set-up-a-member/#put-members-in-a-group).
 

@@ -3,7 +3,6 @@ title: "See the colour palettes on real teams"
 description: "The 24 palettes of the Studio, each shown on two real teams, Trip Manager Team and Shopping Lab, to help you choose the colours of your groups."
 sidebar:
   order: 6
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -18,7 +17,7 @@ In each picture, the first group takes the first colour of the palette, the seco
 
 - **A palette is a help to choose.** It lists colours in the Studio. It is not saved: each group keeps the colour you selected, and you can mix colours from several palettes. See [Choose a colour](/docs/teams/set-up-a-member/#choose-a-colour).
 - **The first palette is the default one**: Modern — Red Blue Mauve.
-- **The background comes from the theme, not from the palette.** Five palettes are shown on a dark background because they hold white or very light colours, which do not read on white: Electric, Ultraviolet, Terminal, Night and Night Red Blue Mauve.
+- **The background comes from the theme, not from the palette.** Five palettes are shown on a dark background because they hold white or very light colours, which do not read on white: Electric, Ultraviolet, Terminal, Neon Night and Modern Night Red Blue Mauve.
 - **The manager has no group** in Trip Manager Team, so its colour does not change from one palette to the next.
 - **To reuse a colour**, copy its code from the line above the pictures into the field **Hex**.
 

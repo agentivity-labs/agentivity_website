@@ -3,7 +3,6 @@ title: "Connect a VibeApp to a hosted workspace"
 description: "For developers. A VibeApp runs on your side and calls your hosted workspace. The address to give it, the key it sends, and the two kinds of key to choose between."
 sidebar:
   order: 8
-draft: true
 editUrl: false
 lastUpdated: false
 ---

@@ -3,7 +3,6 @@ title: "Connect an AI assistant (MCP)"
 description: "Let an AI assistant such as Claude Code or Cursor run your agents, teams and workflows as tools, with a key made for it and the address of your workspace."
 sidebar:
   order: 8
-draft: true
 editUrl: false
 lastUpdated: false
 ---
