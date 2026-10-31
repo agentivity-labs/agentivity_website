@@ -1,12 +1,10 @@
 import {
-  BASE_HEADERS,
   clientIp,
   createRateLimiter,
   isHoneypotFilled,
   isValidEmail,
   readBody,
   redactForLog,
-  send,
 } from './subscribe-core.js';
 
 // The enquiry of the /services form, sent to us as a Brevo transactional e-mail. The sender must be a verified sender of the
@@ -29,6 +27,14 @@ const LANGUAGES = ['en', 'fr'];
 const ALLOWED_FIELDS = new Set(['name', 'email', 'service', 'message', 'language', 'website']);
 const MAX_NAME_LENGTH = 100;
 const MAX_MESSAGE_LENGTH = 5000;
+
+// Only the /services page of this site calls it: unlike the subscription, it answers no other origin.
+function send(res, status, payload, extraHeaders = {}) {
+  for (const [name, value] of Object.entries({ 'Cache-Control': 'no-store', ...extraHeaders })) {
+    res.setHeader(name, value);
+  }
+  res.status(status).json(payload);
+}
 
 function oneLine(text) {
   return text.replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -115,16 +121,8 @@ export function createHandler({
   const log = (level, event, fields = {}) => logger[level](JSON.stringify({ event, ...fields }));
 
   return async function handler(req, res) {
-    if (req.method === 'OPTIONS') {
-      for (const [name, value] of Object.entries({ ...BASE_HEADERS, 'Access-Control-Max-Age': '86400' })) {
-        res.setHeader(name, value);
-      }
-      res.status(204).end();
-      return;
-    }
-
     if (req.method !== 'POST') {
-      return send(res, 405, { error: 'method_not_allowed' }, { Allow: 'POST, OPTIONS' });
+      return send(res, 405, { error: 'method_not_allowed' }, { Allow: 'POST' });
     }
 
     const limit = rateLimiter(clientIp(req));

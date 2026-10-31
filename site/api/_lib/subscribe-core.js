@@ -29,7 +29,8 @@ const EMAIL_PATTERN =
 const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
 const RATE_LIMIT_MAX_ENTRIES = 10_000;
 
-export const BASE_HEADERS = {
+// The Studio of every instance signs up to the newsletter from its own address: this endpoint answers any origin, on purpose.
+const BASE_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',

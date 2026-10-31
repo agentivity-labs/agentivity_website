@@ -1,0 +1,18 @@
+# Pull requests that update the packages and the actions, once a month and grouped; nothing is merged on its own.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      packages:
+        patterns: ['*']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']

@@ -135,13 +135,14 @@ test('a JSON body sent as text is read, a broken one is refused', async () => {
   assert.deepEqual(broken.payload, { error: 'invalid_json' });
 });
 
-test('only POST and OPTIONS are accepted', async () => {
+test('only POST is accepted, and no other origin is answered', async () => {
   const { handler } = setup();
   const get = await call(handler, { method: 'GET' });
   assert.equal(get.statusCode, 405);
-  assert.equal(get.headers.allow, 'POST, OPTIONS');
+  assert.equal(get.headers.allow, 'POST');
   const options = await call(handler, { method: 'OPTIONS' });
-  assert.equal(options.statusCode, 204);
+  assert.equal(options.statusCode, 405);
+  assert.equal(options.headers['access-control-allow-origin'], undefined);
 });
 
 test('too many enquiries from one address are refused', async () => {

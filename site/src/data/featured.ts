@@ -8,4 +8,10 @@ export const featuredBadges: { name: string; html: string }[] = [
   <img src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Agentivity - Featured on AI Agents Directory" width="200" height="50" />
 </a>`,
   },
+  {
+    name: 'LaunchNest',
+    html: `<a href="https://launchnest.io/p/agentivity" target="_blank">
+  <img src="https://launchnest.io/badge/agentivity.svg?variant=featured" alt="Agentivity on LaunchNest" width="220" height="56" />
+</a>`,
+  },
 ];

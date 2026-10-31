@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
-import compress from 'astro-compress';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -80,15 +79,6 @@ export default defineConfig({
         defaultLocale: 'en',
         locales: { en: 'en-US', fr: 'fr-FR' },
       },
-    }),
-    compress({
-      CSS: true,
-      HTML: true,
-      Image: false, // handled separately (real images not yet in place)
-      JavaScript: true,
-      SVG: true,
-      // The /featured pages keep the directories' badge snippets exactly as given: some directories check for them.
-      Exclude: [(file) => /[\\/]featured[\\/]index\.html$/.test(file)],
     }),
   ],
 
