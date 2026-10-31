@@ -1053,7 +1053,7 @@
         },
         "extras": {
           "observation": "Observation",
-          "groups": "Groups",
+          "groups": "Permissions",
           "audit": "Audit log",
           "monitoring": "Monitoring hook-up (OpenTelemetry)"
         },

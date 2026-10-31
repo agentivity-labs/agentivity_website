@@ -1053,7 +1053,7 @@
         },
         "extras": {
           "observation": "Observation",
-          "groups": "Groupes",
+          "groups": "Permissions",
           "audit": "Journal d'activité",
           "monitoring": "Surveillance branchée (OpenTelemetry)"
         },
