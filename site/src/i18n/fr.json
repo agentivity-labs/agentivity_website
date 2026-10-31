@@ -1052,6 +1052,7 @@
           "priority_call": "E-mail prioritaire et visio de démarrage"
         },
         "extras": {
+          "observation": "Observation",
           "groups": "Groupes",
           "audit": "Journal d'activité",
           "monitoring": "Surveillance branchée (OpenTelemetry)"
@@ -1088,7 +1089,7 @@
           "name": "Pro",
           "status": "Essai gratuit de {trial_days} jours",
           "for": "un professionnel qui s'en sert tous les jours",
-          "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
+          "desc": "Plus d'agents, des exécutions plus longues, une exécution prioritaire et l'Observation, pour voir où vont vos tokens.",
           "cta": "Commencer l'essai gratuit",
           "href": "/fr/start?plan=pro"
         },

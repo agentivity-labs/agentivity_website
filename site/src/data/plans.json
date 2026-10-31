@@ -31,7 +31,7 @@
       "diskGb": 10,
       "backupDays": 14,
       "support": "priority",
-      "extras": []
+      "extras": ["observation"]
     },
     {
       "code": "business",
@@ -46,7 +46,7 @@
       "diskGb": 50,
       "backupDays": 30,
       "support": "priority_call",
-      "extras": ["groups", "audit", "monitoring"]
+      "extras": ["observation", "groups", "audit", "monitoring"]
     }
   ]
 }

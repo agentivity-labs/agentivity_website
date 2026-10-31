@@ -1052,6 +1052,7 @@
           "priority_call": "Priority e-mail and a kick-off video call"
         },
         "extras": {
+          "observation": "Observation",
           "groups": "Groups",
           "audit": "Audit log",
           "monitoring": "Monitoring hook-up (OpenTelemetry)"
@@ -1088,7 +1089,7 @@
           "name": "Pro",
           "status": "{trial_days}-day free trial",
           "for": "a professional who relies on it every day",
-          "desc": "More agents, longer executions and priority execution.",
+          "desc": "More agents, longer executions, priority execution and Observation, to see where your tokens go.",
           "cta": "Start a free trial",
           "href": "/start?plan=pro"
         },
