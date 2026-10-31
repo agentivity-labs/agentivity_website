@@ -163,7 +163,7 @@
       "h1_accent": "c'est une équipe IA.",
       "sub": "Une équipe d'experts d'IA, chacun avec ses connaissances et ses outils, qui travaillent ensemble comme une équipe humaine. Elle fait le travail. Vous restez aux commandes.",
       "cta_start": "Commencer gratuitement",
-      "film_alt": "Un court film : d'un assistant à une équipe, puis une équipe par département et une entreprise agentique, avec les heures rendues à chaque étape. On y voit l'Assistant construire une équipe, un workflow, et une application où un voyageur doit choisir un hôtel.",
+      "film_alt": "Un court film : un agent devient une équipe, puis une entreprise agentique. On y voit les façons de travailler d'une équipe, une équipe au travail dans le Studio, une application à qui l'on parle, l'Assistant qui construit une équipe à partir d'une phrase, un workflow au travail et les applications auxquelles il se connecte.",
       "visual_label": "Une équipe marketing au travail sur le canevas Agentivity : un manager et cinq spécialistes",
       "teams": [
         {
@@ -385,7 +385,7 @@
       ],
       "link": "Voir comment ça marche",
       "caption": "L'équipe Trip Manager au travail dans le Studio. Enregistré depuis le produit, accéléré.",
-      "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et l'équipe attend la réponse du voyageur à chaque étape"
+      "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape"
     },
     "ready": {
       "eyebrow": "Prêtes à l'emploi",
@@ -1430,7 +1430,7 @@
             }
           ]
         },
-        "studio": {"media": "studio-team-trip-run", "width": 1600, "height": 900, "alt": "Trip Manager Team au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et l'équipe attend la réponse du voyageur à chaque étape", "caption": "La même équipe, vue dans le Studio, là où elle est construite et lancée. Filmé dans le produit, en accéléré."},
+        "studio": {"media": "studio-trip-run", "width": 1600, "height": 900, "alt": "Trip Manager Team au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape", "caption": "La même équipe, vue dans le Studio, là où elle est construite et lancée. Filmé dans le produit, en accéléré."},
         "article": "/blog/ai-trip-planner-manager-and-specialists",
         "qa": [
           { "q": "Que fait Trip Planner ?", "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient : les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations." },
@@ -1940,7 +1940,7 @@
       "cta": "Commencer gratuitement",
       "cta_secondary": "Voir des équipes prêtes à l'emploi",
       "caption": "L'équipe Trip Manager au travail dans le Studio. Enregistré depuis le produit, accéléré.",
-      "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et l'équipe attend la réponse du voyageur à chaque étape"
+      "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape"
     },
     "build": {
       "eyebrow": "Comment vous la construisez",

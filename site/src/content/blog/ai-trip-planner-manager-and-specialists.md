@@ -82,10 +82,10 @@ Each member has a role of one sentence and its own instructions. The manager cho
 The team is **Manager-led**: the manager sends the request to one specialist at a time, reads what comes back, then decides who works next or gives the final answer. It is one of the [five ways AI experts work together](/blog/how-ai-agents-work-together), and the right one when no two requests need the same steps.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/studio-team-trip-run.jpg" width="1600" height="900">
-<source src="/media/studio-team-trip-run.mp4" type="video/mp4" />
+<video controls muted loop playsinline preload="none" poster="/media/studio-trip-run.jpg" width="1600" height="900">
+<source src="/media/studio-trip-run.mp4" type="video/mp4" />
 </video>
-<figcaption>The same team, seen in the Studio: the manager hands the trip to each specialist in turn, and the team waits for the traveller's answer at each step. Recorded from the product, played faster.</figcaption>
+<figcaption>The same team, seen in the Studio: the manager hands the trip to each specialist in turn, and the traveller answers in the chat beside it at each step. Recorded from the product, played faster.</figcaption>
 </figure>
 
 That is the difference with [Shopping Lab](/blog/ai-agents-compare-products-shopping-lab), whose nine experts always work in the same order: the comparison of a product always has the same steps, a trip does not. A weekend away and a month abroad do not call on the same specialists, and the manager adapts the plan to each request.

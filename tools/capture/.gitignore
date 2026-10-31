@@ -2,3 +2,13 @@ out/
 .chrome-profile/
 # The tool that composes the hero film: kept in the private agentivity_media repo, not in this public one.
 hero-film/
+# Studio recordings made with studio/live.mjs: about 1 GB of frames each; the edited clip goes to site/public/media.
+studio/trip-live/
+studio/v10-assist/
+studio/v10-flow/
+studio/v10-*.png
+studio/v10-*.jpg
+studio/v10-*.mp4
+studio/v11-*
+studio/rec-v11-*
+studio/v12-*
