@@ -3,7 +3,8 @@ title: "Automatiser votre recrutement avec des agents d'IA (sans lire un seul CV
 description: "De la fiche de poste à la liste des candidats retenus : comment construire une équipe d'agents d'IA qui gère tout le recrutement pendant la nuit, et à quoi faire attention."
 pubDate: 2026-06-06
 author: "Agentivity Team"
-tags: ["HR", "automation", "use case", "how-to"]
+tags: ["use-cases", "workflows"]
+thumb: "/media/blog/thumbs/how-to-automate-hr-pipeline-ai-agents.jpg"
 lang: fr
 ---
 

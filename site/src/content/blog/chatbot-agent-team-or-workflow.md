@@ -3,7 +3,8 @@ title: "Chatbot, agent, team or workflow: which one do you need?"
 description: "A chatbot answers, an agent does a task, a team shares a job, a workflow follows a fixed path. How to tell them apart and choose the right one for your work."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["AI agents", "chatbot", "workflow", "explainer"]
+tags: ["basics", "workflows"]
+thumb: "/media/blog/thumbs/chatbot-agent-team-or-workflow.jpg"
 lang: en
 faq:
   - q: "What is the difference between a chatbot and an AI agent?"

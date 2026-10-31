@@ -3,7 +3,8 @@ title: "Comment faire consommer moins d'énergie à vos agents IA : 6 habitudes 
 description: "Chaque appel à un modèle d'IA consomme de l'énergie. Six habitudes pour supprimer les appels inutiles : la bonne taille de modèle, l'IA seulement là où elle aide, un contexte court, un travail gardé plutôt que refait."
 pubDate: 2026-10-24
 author: "Agentivity Team"
-tags: ["climate", "AI agents", "workflows", "best practices"]
+tags: ["misc"]
+thumb: "/media/blog/thumbs/how-to-make-ai-agents-use-less-energy.jpg"
 lang: fr
 ---
 

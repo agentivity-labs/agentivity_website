@@ -3,7 +3,8 @@ title: "What does an AI team really cost?"
 description: "The three costs of an AI team: the software, the AI models and the machine. What makes the bill go up, how to keep it under control, and what to compare it with."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["cost", "AI agents", "explainer"]
+tags: ["cost-privacy", "teams"]
+thumb: "/media/blog/thumbs/ai-team-cost.jpg"
 lang: en
 faq:
   - q: "Is Agentivity free?"

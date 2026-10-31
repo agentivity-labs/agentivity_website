@@ -3,7 +3,8 @@ title: "Human in the loop: where a person should stay in charge"
 description: "Human in the loop means AI stops and asks a person before certain steps. Where to put those stops, how to ask well, and the mistakes that make approval useless."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["human in the loop", "AI agents", "governance"]
+tags: ["features", "workflows"]
+thumb: "/media/blog/thumbs/human-in-the-loop-ai.jpg"
 lang: en
 faq:
   - q: "What does human in the loop mean?"

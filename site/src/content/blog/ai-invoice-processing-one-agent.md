@@ -3,7 +3,9 @@ title: "AI invoice processing with one agent: read, file and check every supplie
 description: "Supplier invoices arrive as PDFs and someone types them into a spreadsheet. Here is how one AI agent reads each invoice, files it, checks its figures with a calculator and spots duplicates, and why one agent is enough for this job."
 pubDate: 2026-10-30
 author: "Agentivity Team"
-tags: ["AI agents", "invoices", "use case"]
+tags: ["use-cases"]
+thumb: "/media/blog/thumbs/ai-invoice-processing-one-agent.jpg"
+template: "invoice-clerk"
 image: "/media/invoice-clerk.jpg"
 imageAlt: "Demo of Invoice Clerk: an invoice filed with its total and category, a warning that a total does not add up, and a chart of the spending by category."
 lang: en

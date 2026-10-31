@@ -4,7 +4,9 @@ description: "How AI CV screening works, step by step: AI reads the CV, a progra
 pubDate: 2026-10-10
 updated: 2026-10-29
 author: "Agentivity Team"
-tags: ["HR", "CV screening", "use case", "how-to"]
+tags: ["use-cases", "workflows"]
+thumb: "/media/blog/thumbs/ai-cv-screening.jpg"
+template: "cv-screening"
 lang: en
 faq:
   - q: "Does the AI reject candidates on its own?"

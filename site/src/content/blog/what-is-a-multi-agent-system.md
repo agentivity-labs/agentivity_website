@@ -3,7 +3,8 @@ title: "What is a multi-agent system? (And why it matters for your business)"
 description: "Single AI agents are useful. Teams of AI agents are transformative. Here's what a multi-agent system actually is, how it works, and when to use one."
 pubDate: 2026-06-01
 author: "Agentivity Team"
-tags: ["AI agents", "multi-agent", "explainer"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/what-is-a-multi-agent-system.jpg"
 lang: en
 ---
 

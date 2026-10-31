@@ -3,7 +3,8 @@ title: "Qu'est-ce qu'un système multi-agents ? (Et pourquoi c'est important pou
 description: "Un agent d'IA seul est utile. Une équipe d'agents d'IA change la donne. Ce qu'est vraiment un système multi-agents, comment il fonctionne, et quand l'utiliser."
 pubDate: 2026-06-01
 author: "Agentivity Team"
-tags: ["AI agents", "multi-agent", "explainer"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/what-is-a-multi-agent-system.jpg"
 lang: fr
 ---
 

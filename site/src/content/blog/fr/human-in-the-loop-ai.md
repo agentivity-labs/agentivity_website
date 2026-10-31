@@ -3,7 +3,8 @@ title: "L'humain dans la boucle : là où une personne doit garder la main"
 description: "L'humain dans la boucle, c'est une IA qui s'arrête et demande à une personne avant certaines étapes. Où placer ces arrêts, comment bien demander, et les erreurs à éviter."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["human in the loop", "AI agents", "governance"]
+tags: ["features", "workflows"]
+thumb: "/media/blog/thumbs/human-in-the-loop-ai.jpg"
 lang: fr
 faq:
   - q: "Que veut dire l'humain dans la boucle ?"

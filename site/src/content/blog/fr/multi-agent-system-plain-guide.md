@@ -3,7 +3,8 @@ title: "Qu'est-ce qu'un système multi-agents ? Un guide en mots simples"
 description: "Un système multi-agents, c'est une équipe de spécialistes de l'IA qui se partagent un travail. Comment ça marche, les cinq façons de collaborer, et quand un seul agent suffit."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["AI agents", "multi-agent", "explainer"]
+tags: ["basics"]
+thumb: "/media/blog/thumbs/multi-agent-system-plain-guide.jpg"
 lang: fr
 draft: true
 faq:

@@ -3,7 +3,8 @@ title: "Combien coûte vraiment une équipe IA ?"
 description: "Les trois coûts d'une équipe IA : le logiciel, les modèles d'IA et la machine. Ce qui fait monter la facture, comment la maîtriser, et à quoi la comparer."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["cost", "AI agents", "explainer"]
+tags: ["cost-privacy", "teams"]
+thumb: "/media/blog/thumbs/ai-team-cost.jpg"
 lang: fr
 faq:
   - q: "Agentivity est-il gratuit ?"

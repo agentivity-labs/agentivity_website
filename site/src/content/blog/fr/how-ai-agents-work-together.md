@@ -4,7 +4,8 @@ description: "Une équipe d'experts d'IA travaille comme une équipe humaine. L'
 pubDate: 2026-10-10
 updated: 2026-10-29
 author: "Agentivity Team"
-tags: ["AI agents", "teams", "how-to"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/fr-how-ai-agents-work-together.jpg"
 image: "/media/blog/five-ways/fr-cover.png"
 imageAlt: "Experts d'IA, cinq façons de travailler en équipe : un manager et cinq experts dessinés en hexagones, l'un d'eux au travail."
 lang: fr

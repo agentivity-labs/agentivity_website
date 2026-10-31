@@ -3,7 +3,9 @@ title: "How a team of nine AI agents compares a product across two stores"
 description: "Choosing a product means reading two shops, dozens of pages, reviews and specs in different units. Here is how a team of nine AI experts does it, one job each, and how to make it yours."
 pubDate: 2026-10-29
 author: "Agentivity Team"
-tags: ["AI agents", "teams", "use case"]
+tags: ["use-cases", "teams"]
+thumb: "/media/blog/thumbs/ai-agents-compare-products-shopping-lab.jpg"
+template: "shopping-lab"
 image: "/media/shopping-lab.jpg"
 imageAlt: "Demo of the Shopping Lab team: the report's best pick and its first product sheet on the left, the nine members of the team on the right."
 lang: en

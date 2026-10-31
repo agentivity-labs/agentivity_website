@@ -1755,6 +1755,27 @@
     "updated": "Updated",
     "faq_title": "Questions people ask",
     "keep_reading": "Keep reading",
+    "filter_label": "Filter by topic",
+    "all_topics": "All",
+    "start_here": "Start here",
+    "toc": "In this article",
+    "rss": "RSS feed",
+    "template": {
+      "label": "Ready-made",
+      "title": "This solution is a Template.",
+      "body": "See what is inside, then add it to your workspace.",
+      "cta": "See the Template"
+    },
+    "tags": {
+      "basics": "Basics",
+      "use-cases": "Use cases",
+      "teams": "Teams",
+      "workflows": "Workflows",
+      "vibeapps": "VibeApps",
+      "features": "Features",
+      "cost-privacy": "Cost & privacy",
+      "misc": "Misc"
+    },
     "aside": {
       "label": "About Agentivity",
       "body": "A no-code platform to build teams of AI specialists that work alongside your people.",

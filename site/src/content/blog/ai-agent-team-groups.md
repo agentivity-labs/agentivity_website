@@ -3,7 +3,9 @@ title: "Groups in an AI team: how to keep a dozen agents readable"
 description: "A team of thirteen AI agents is hard to read and harder to discuss. Groups give it a shape: what they are, what they are for, why they change nothing in how the team runs, and how to name them well."
 pubDate: 2026-10-31
 author: "Agentivity Team"
-tags: ["AI agents", "teams", "guide"]
+tags: ["features", "teams"]
+thumb: "/media/blog/thumbs/ai-agent-team-groups.jpg"
+template: "trip-manager-team"
 image: "/media/blog/groups/after.jpg"
 imageAlt: "The Trip Manager Team drawn with its groups: a manager in the centre and twelve specialists in four colored zones named Booking, Advice, Money and Support."
 lang: en

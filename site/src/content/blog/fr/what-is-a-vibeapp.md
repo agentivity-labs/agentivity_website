@@ -3,7 +3,8 @@ title: "Qu'est-ce qu'une VibeApp ? L'application qui s'adapte à chacun"
 description: "Une VibeApp est une application avec une équipe de spécialistes de l'IA derrière elle. Vous fixez l'objectif, elle s'adapte et avance avec vous. Définition et exemples."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["VibeApp", "AI apps", "explainer"]
+tags: ["vibeapps"]
+thumb: "/media/blog/thumbs/what-is-a-vibeapp.jpg"
 lang: fr
 faq:
   - q: "Une VibeApp a-t-elle un rapport avec le vibe coding ?"

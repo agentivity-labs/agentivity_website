@@ -3,7 +3,9 @@ title: "AI trip planner: how a manager and twelve AI agents plan a whole trip wi
 description: "A trip means flights, a hotel, transfers, a dinner and a budget that holds. Here is how a manager and twelve AI experts plan it together, while the traveller decides at each step."
 pubDate: 2026-10-29
 author: "Agentivity Team"
-tags: ["AI agents", "teams", "use case"]
+tags: ["use-cases", "teams"]
+thumb: "/media/blog/thumbs/ai-trip-planner-manager-and-specialists.jpg"
+template: "trip-manager-team"
 image: "/media/blog/trip-manager/cover.jpg"
 imageAlt: "Demo of the Trip Planner app: the hotel specialist proposes a hotel in Lisbon with its photo and price, and the team of thirteen is shown beside the chat."
 lang: en

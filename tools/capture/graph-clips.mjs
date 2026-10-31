@@ -5,7 +5,7 @@
 // --ms is one turn of the playback, (members + 2) x step: the clip then loops without a jump. --at takes the still that long
 // into the playback, the steps lit; without it the graph is at rest.
 // Output in out/graph-clips: <name>.mp4 and <name>.jpg, or <name>.png with --still. Needs ffmpeg.
-import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -25,11 +25,6 @@ if (!name || !sourceFile) { console.error('Usage: node graph-clips.mjs <name> <s
 
 mkdirSync(OUT, { recursive: true });
 const page = join(OUT, 'page.html');
-// The workflow graph names its icons with Google's code points while its font is Flutter's, where they are other icons (a bed, a
-// snowflake): the right ones are set in a copy, until the SDK has them.
-const graph = join(OUT, 'agentivity-graph.js');
-writeFileSync(graph, readFileSync(GRAPH, 'utf8').replace('start:"E037",decision:"E254",human:"E0B7",ai:"E322",end:"E5CA",action:"E8B8"', 'start:"E4CB",decision:"E12D",human:"E153",ai:"E3DB",end:"E156",action:"E57F"'));
-copyFileSync(join(dirname(GRAPH), 'material-icons.woff2'), join(OUT, 'material-icons.woff2'));
 // The colors and the font are those of the Synergi pages.
 writeFileSync(page, `<!doctype html><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +33,7 @@ html,body{margin:0;background:#fff;font-family:'Hanken Grotesk',sans-serif}
 :root{--ag-surface:#fff;--ag-surface-container-low:#F1F3F8;--ag-surface-container-highest:#DDE1EA;--ag-on-surface:#101A2E;--ag-outline:#5B6B85;--ag-outline-variant:#C9D0DD;--ag-primary:#152844;--ag-on-primary:#fff;--ag-tertiary:#B7791F}
 #g{display:block;width:${width}px;margin:0 auto}
 </style><agentivity-graph id="g" theme="light" ${still && !at ? '' : `autoplay step-ms="${stepMs}"`}></agentivity-graph>
-<script src="${pathToFileURL(graph).href}"></script>`);
+<script src="${pathToFileURL(GRAPH).href}"></script>`);
 
 const chrome = await launchChrome({ profileDir: join(OUT, '.profile'), width: width + 20, height: still ? 1000 : 2000, scale: still ? 2 : 1, port: PORT });
 try {

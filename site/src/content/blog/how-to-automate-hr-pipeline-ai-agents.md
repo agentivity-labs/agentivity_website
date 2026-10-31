@@ -3,7 +3,8 @@ title: "How to automate your HR pipeline with AI agents (without reading a singl
 description: "From job description to shortlisted candidates — here's how to build an AI agent team that handles the full hiring pipeline overnight, and what to watch out for."
 pubDate: 2026-06-06
 author: "Agentivity Team"
-tags: ["HR", "automation", "use case", "how-to"]
+tags: ["use-cases", "workflows"]
+thumb: "/media/blog/thumbs/how-to-automate-hr-pipeline-ai-agents.jpg"
 lang: en
 ---
 

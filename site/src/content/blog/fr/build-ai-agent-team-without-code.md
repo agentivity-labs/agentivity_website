@@ -3,7 +3,8 @@ title: "Comment construire votre première équipe d'agents d'IA sans code"
 description: "Un guide pas à pas pour construire une équipe d'agents d'IA sans code : choisir un travail, décrire chaque rôle en mots simples, choisir comment ils travaillent ensemble, tester et ajuster."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["no-code", "AI agents", "how-to"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/build-ai-agent-team-without-code.jpg"
 lang: fr
 faq:
   - q: "Dois-je savoir coder ?"

@@ -3,7 +3,8 @@ title: "How to make your AI agents use less energy: 6 practical habits"
 description: "Every call to an AI model uses energy. Six habits that cut the calls you do not need: the right model size, AI only where it helps, short context, work kept instead of redone."
 pubDate: 2026-10-24
 author: "Agentivity Team"
-tags: ["climate", "AI agents", "workflows", "best practices"]
+tags: ["misc"]
+thumb: "/media/blog/thumbs/how-to-make-ai-agents-use-less-energy.jpg"
 lang: en
 ---
 

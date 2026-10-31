@@ -3,7 +3,9 @@ title: "CV screening par l'IA : comment le recruteur garde la main"
 description: "Comment fonctionne le CV screening par l'IA, étape par étape : lire le CV, évaluer l'adéquation, expliquer pourquoi, et envoyer les cas douteux à un recruteur. Avec les risques à surveiller."
 pubDate: 2026-10-10
 author: "Agentivity Team"
-tags: ["HR", "CV screening", "use case", "how-to"]
+tags: ["use-cases", "workflows"]
+thumb: "/media/blog/thumbs/ai-cv-screening.jpg"
+template: "cv-screening"
 lang: fr
 faq:
   - q: "L'IA écarte-t-elle des candidats toute seule ?"

@@ -2,6 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { docsLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
+import { BLOG_TAGS } from './lib/blog';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
@@ -12,7 +13,11 @@ const blog = defineCollection({
     // Set when an article is rewritten: shown next to the date and given to search engines as dateModified.
     updated:     z.coerce.date().optional(),
     author:      z.string().default('Agentivity Team'),
-    tags:        z.array(z.string()).default([]),
+    tags:        z.array(z.enum(BLOG_TAGS)).default([]),
+    // The small image of the article in the blog index, 800 x 500; also its preview when shared, without an image of its own.
+    thumb:       z.string().optional(),
+    // The id of its Template on Synergi, when there is one: the article then links to it.
+    template:    z.string().optional(),
     image:       z.string().optional(),
     imageAlt:    z.string().optional(),
     lang:        z.enum(['en', 'fr']).default('en'),

@@ -1755,6 +1755,27 @@
     "updated": "Mis à jour le",
     "faq_title": "Les questions que vous vous posez",
     "keep_reading": "À lire aussi",
+    "filter_label": "Filtrer par sujet",
+    "all_topics": "Tous",
+    "start_here": "Pour commencer",
+    "toc": "Dans cet article",
+    "rss": "Flux RSS",
+    "template": {
+      "label": "Prêt à l'emploi",
+      "title": "Cette solution existe en Template.",
+      "body": "Voyez ce qu'elle contient, puis ajoutez-la à votre espace.",
+      "cta": "Voir le Template"
+    },
+    "tags": {
+      "basics": "Les bases",
+      "use-cases": "Cas d'usage",
+      "teams": "Équipes",
+      "workflows": "Workflows",
+      "vibeapps": "VibeApps",
+      "features": "Fonctionnalités",
+      "cost-privacy": "Coûts et confidentialité",
+      "misc": "Divers"
+    },
     "aside": {
       "label": "À propos d'Agentivity",
       "body": "Une plateforme sans code pour construire des équipes de spécialistes IA qui travaillent avec vos équipes.",

@@ -3,7 +3,8 @@ title: "BYOK : pourquoi votre plateforme d'IA ne devrait pas toucher à vos toke
 description: "La plupart des plateformes d'IA se placent entre vous et votre fournisseur de LLM, prennent une marge sur votre usage et enregistrent vos prompts. Voici pourquoi c'est important, et ce que BYOK veut dire en pratique."
 pubDate: 2026-06-05
 author: "Agentivity Team"
-tags: ["BYOK", "privacy", "architecture", "self-hosted"]
+tags: ["cost-privacy"]
+thumb: "/media/blog/thumbs/byok-why-your-ai-platform-shouldnt-touch-your-tokens.jpg"
 lang: fr
 ---
 

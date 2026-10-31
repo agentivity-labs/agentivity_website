@@ -4,7 +4,8 @@ description: "A team of AI experts works like a human team. Sequential, concurre
 pubDate: 2026-10-10
 updated: 2026-10-29
 author: "Agentivity Team"
-tags: ["AI agents", "teams", "how-to"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/how-ai-agents-work-together.jpg"
 image: "/media/blog/five-ways/cover.png"
 imageAlt: "Five ways AI experts work as a team: a manager and five experts drawn as hexagons, one of them at work."
 lang: en

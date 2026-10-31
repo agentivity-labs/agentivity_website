@@ -3,7 +3,8 @@ title: "Sequential, Group Chat, Concurrent: 3 of the 5 AI team topologies to kno
 description: "How you structure your AI agents matters as much as what they do. Here's a practical guide to three of the five collaboration topologies and when to use each one."
 pubDate: 2026-06-04
 author: "Agentivity Team"
-tags: ["AI agents", "topology", "architecture", "how-to"]
+tags: ["basics", "teams"]
+thumb: "/media/blog/thumbs/ai-agent-topologies-sequential-group-chat-concurrent.jpg"
 lang: en
 ---
 
