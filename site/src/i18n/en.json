@@ -224,7 +224,7 @@
       },
       "organise": "Organise them like a real team.",
       "link": "See how it works",
-      "capture": "Real capture from the product",
+      "capture": "Drawn by the product",
       "loops": [
         {
           "title": "Led by a manager",
@@ -362,8 +362,8 @@
           "body": "Know what ran, when and why."
         }
       ],
-      "caption": "A real workflow in the Studio.",
-      "alt": "A short Agentivity workflow in the Studio: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told"
+      "caption": "A real workflow, drawn by the product.",
+      "alt": "A short Agentivity workflow: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told"
     },
     "nocode": {
       "eyebrow": "How you build it",
@@ -1993,7 +1993,7 @@
           "example": "a trip, a project, anything with many parts."
         }
       ],
-      "capture": "Captured from the product",
+      "capture": "Drawn by the product",
       "loops": [
         {
           "title": "Led by a manager",
@@ -2339,9 +2339,9 @@
           "media": {
             "kind": "image",
             "src": "/media/studio-workflow-approval.webp",
-            "width": 1400,
-            "height": 616,
-            "alt": "A short Agentivity workflow in the Studio: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told",
+            "width": 1640,
+            "height": 549,
+            "alt": "A short Agentivity workflow: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told",
             "caption": "An invoice comes in and the AI reads it. Over 1,000 €, Finance approves it first."
           }
         },

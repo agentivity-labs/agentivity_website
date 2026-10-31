@@ -40,7 +40,7 @@ Plusieurs agents, chacun avec son propre rôle, et une règle qui fixe comment i
 Prenez une équipe qui organise un voyage. Un agent seul devrait tout connaître à la fois : vols, hôtels, transferts, restaurants, visas, assurances et budgets. Une équipe répartit ce travail : un manager lit la demande et confie chaque partie à un spécialiste, et chaque spécialiste fait une seule chose et rend compte.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
 <figcaption>Un manager qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>

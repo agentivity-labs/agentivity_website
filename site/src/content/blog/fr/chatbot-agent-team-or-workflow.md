@@ -58,7 +58,7 @@ Une équipe, c'est plusieurs agents, chacun avec son propre rôle, et une règle
 Organiser un voyage en est un bon exemple. Un agent seul devrait maîtriser à la fois les vols, les hôtels, les transferts, les restaurants, les visas et les budgets. Une équipe découpe tout cela : un manager lit la demande et confie chaque partie à un spécialiste, et chaque spécialiste fait une seule chose et rend compte.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
 <figcaption>Un manager qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>

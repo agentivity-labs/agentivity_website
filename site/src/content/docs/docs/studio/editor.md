@@ -55,7 +55,7 @@ The panel has two tabs, each with an icon. The tab that is open also shows its n
 
 | Tab | Agent and workflow | Team |
 |---|---|---|
-| The first tab, **Info** | The name, the role, the box **Solution** and the tags. | The same, and **Max agent iterations**. |
+| The first tab, **Info** | The name, the role, the box **Solution** and the tags. For an agent, also **Group**. | The name, the role, the box **Solution**, the tags and **Max agent iterations**. |
 | The second tab | The **Nodes catalog**: everything you can add to the canvas. | **Members**: the agents, teams and workflows you can add to the team. |
 
 ![The editor of a workflow, with the Nodes catalog open on the right: the categories AI, Applications, Communication, Content, Core, Documents, Interactions, SEO, Storage and Web, and a search field](images/workflow-editor.jpg)
@@ -81,6 +81,7 @@ Right-click an element of the canvas. The menu has, depending on the element:
 
 **Edit** opens a window with the settings of the element.
 
+- The settings are sorted in boxes. For a step of a workflow, the box **Group**, under **Node name** and **Display name**, chooses its group: see [Group the steps](/docs/workflows/create-a-workflow/#group-the-steps).
 - Each field can hold a **Fixed value**, which you type, or an **Expression**, which is computed when it runs.
 - The panel **Outputs**, on the right, lists what the earlier steps produce, with their exact names.
 - **Apply** keeps your changes and closes the window. **Cancel** closes it without keeping them.

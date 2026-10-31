@@ -75,7 +75,7 @@ Each expert finishes its part and passes the result to the next. Research, then 
 **Example:** a researcher gathers facts on a competitor, a writer turns them into a one-page note, a reviewer checks the note against the facts.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-chain.jpg" width="456" height="560" style="max-width: 380px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-chain.jpg" width="1000" height="950" style="max-width: 380px;">
 <source src="/media/team-chain.mp4" type="video/mp4" />
 </video>
 <figcaption>A sequential team: each member works in turn and passes its result on. Recorded from the product.</figcaption>
@@ -146,7 +146,7 @@ A manager supervises the work. It sends the request to one specialist at a time,
 **Example:** the [Trip Planner team](/use-cases/trip-planner) has a manager and twelve specialists: flights, hotel, transfers and more. A weekend away and a month abroad do not call on the same ones.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
 <figcaption>A manager-led team: the manager hands out the work and collects the answers. Recorded from the product.</figcaption>

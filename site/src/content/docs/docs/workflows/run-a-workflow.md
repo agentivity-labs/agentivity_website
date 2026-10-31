@@ -30,6 +30,8 @@ The same bar has **Pause**, **Resume** and **Stop run**. **Pause** shows while t
 
 The state of the execution is shown at the top right, for example **Run in progress: write**. When a step asks a person something, the state is **Waiting for input**, followed by the name of the step, for example **Waiting for input: ask**. See [Ask a person to approve or answer](/docs/workflows/ask-a-person-to-decide/).
 
+On the canvas, a colour says the state of each step: at work, waiting, done or failed. It is the same whatever the group of the step, and the backgrounds of the groups stay, so you see which part of the workflow the execution has reached.
+
 Below the canvas, three tabs show what happens:
 
 | Tab | What it shows |

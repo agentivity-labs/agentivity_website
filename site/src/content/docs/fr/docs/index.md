@@ -103,7 +103,7 @@ Dans cette section aussi : [comment une personne garde la main](/fr/docs/introdu
 
 ## Trouver quelque chose
 
-- [Se repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/), puis chaque écran : [Home](/fr/docs/studio/home/), [agents et équipes](/fr/docs/studio/agents-list/), [workflows](/fr/docs/studio/workflows-list/), [un éditeur](/fr/docs/studio/editor/), [Executions](/fr/docs/studio/executions/), [Templates](/fr/docs/studio/templates/), [Settings](/fr/docs/studio/settings/), [barre d'état et thème](/fr/docs/studio/status-bar-and-theme/)
+- [Se repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/), puis chaque écran : [agents, équipes et workflows](/fr/docs/studio/lists-of-agents-teams-and-workflows/), [un éditeur](/fr/docs/studio/editor/), [Executions](/fr/docs/studio/executions/), [Templates](/fr/docs/studio/templates/), [réglages, thème et petits contrôles](/fr/docs/studio/settings-theme-and-controls/)
 - [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/)
 - [Ajouter, modifier ou supprimer des identifiants](/fr/docs/guides/manage-credentials/)
 - [Partager votre travail sous forme de Template](/fr/docs/guides/share-a-template/)

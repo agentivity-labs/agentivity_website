@@ -35,6 +35,8 @@ An agent or a team decides by itself how to handle a request. That is useful whe
 
 A step has a dot on its left, where the work comes in, and one or several dots on its right, where it goes out. A step with several exits, such as a condition, has one dot for each path.
 
+Steps can be sorted in groups, one for each part of the work, so the stages of a long workflow show at a glance. A step wears the colour of its group, or a neutral colour: a type of step has no colour of its own. See [Group the steps](/docs/workflows/create-a-workflow/#group-the-steps).
+
 ## How values pass from step to step
 
 Each step produces outputs: named values that the next steps can use. For example, the step that asks a person produces the answer.

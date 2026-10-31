@@ -46,6 +46,8 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 - [Choose how a team works together](/docs/teams/choose-how-a-team-works/)
 - [Create a team of agents](/docs/teams/create-a-team/)
 - [Name, group and give an icon to team members](/docs/teams/set-up-a-member/)
+- [Organise a team or a workflow with groups](/docs/teams/organise-with-groups/)
+- [See the colour palettes on real teams](/docs/teams/see-the-colour-palettes/)
 - [Use a team or a workflow as a member](/docs/teams/put-a-team-in-a-team/)
 - [Run a team and read its work](/docs/teams/run-a-team/)
 
@@ -103,7 +105,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 
 ## Find something
 
-- [Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/), then each screen: [Home](/docs/studio/home/), [agents and teams](/docs/studio/agents-list/), [workflows](/docs/studio/workflows-list/), [an editor](/docs/studio/editor/), [Executions](/docs/studio/executions/), [Templates](/docs/studio/templates/), [Settings](/docs/studio/settings/), [status bar and theme](/docs/studio/status-bar-and-theme/)
+- [Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/), then each screen: [agents, teams and workflows](/docs/studio/lists-of-agents-teams-and-workflows/), [an editor](/docs/studio/editor/), [Executions](/docs/studio/executions/), [Templates](/docs/studio/templates/), [settings, theme and small controls](/docs/studio/settings-theme-and-controls/)
 - [Connect an AI model](/docs/guides/connect-a-model/)
 - [Add, change or remove credentials](/docs/guides/manage-credentials/)
 - [Share your work as a Template](/docs/guides/share-a-template/)

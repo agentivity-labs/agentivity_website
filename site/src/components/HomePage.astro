@@ -17,8 +17,8 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 const siteUrl = lang === 'fr' ? 'https://www.agentivity.io/fr/' : 'https://www.agentivity.io';
 
 const loops = [
-  { ...h.why.loops[0], video: '/media/team-manager.mp4', poster: '/media/team-manager.jpg', width: 546, height: 680 },
-  { ...h.why.loops[1], video: '/media/team-chain.mp4', poster: '/media/team-chain.jpg', width: 456, height: 560 },
+  { ...h.why.loops[0], video: '/media/team-manager.mp4', poster: '/media/team-manager.jpg', width: 1000, height: 950 },
+  { ...h.why.loops[1], video: '/media/team-chain.mp4', poster: '/media/team-chain.jpg', width: 1000, height: 950 },
 ];
 const clips = [
   { ...h.apps.clips[0], video: '/media/trip-planner.mp4', poster: '/media/trip-planner.jpg', back: '#F3F1EC' },
@@ -265,7 +265,7 @@ const schema = {
     </div>
     <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
-        <img src="/media/studio-workflow-approval.webp" alt={h.control.alt} width="1400" height="616" loading="lazy" class="hp-shot-workflow" />
+        <img src="/media/studio-workflow-approval.webp" alt={h.control.alt} width="1640" height="549" loading="lazy" class="hp-shot-workflow" />
       </div>
       <figcaption>{h.control.caption}</figcaption>
     </figure>

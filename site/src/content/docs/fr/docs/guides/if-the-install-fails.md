@@ -105,7 +105,7 @@ Sur une machine d'entreprise, ne modifiez pas l'antivirus vous-même : demandez 
 
 ## La barre du bas indique Realtime reconnecting
 
-Le Studio fonctionne, mais ses écrans ne se mettent pas à jour tout seuls, et le chat d'une exécution reste vide. La connexion en direct entre votre navigateur et Agentivity est bloquée. La cause est souvent la même que ci-dessus : un programme de sécurité ou un proxy qui retient la connexion. Voyez [La barre d'état, le thème et le bouton du guide](/fr/docs/studio/status-bar-and-theme/).
+Le Studio fonctionne, mais ses écrans ne se mettent pas à jour tout seuls, et le chat d'une exécution reste vide. La connexion en direct entre votre navigateur et Agentivity est bloquée. La cause est souvent la même que ci-dessus : un programme de sécurité ou un proxy qui retient la connexion. Voyez [Réglages, thème et petits contrôles du Studio](/fr/docs/studio/settings-theme-and-controls/#the-status-bar).
 
 ## Les Solutions prêtes à l'emploi ne se chargent pas
 

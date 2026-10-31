@@ -30,7 +30,7 @@ An execution is one request handled by a team, from the task you give to the fin
 
 ## Follow the work
 
-On the drawing, you see who works. The member at work is filled in the accent colour, and a ring around it grows and fades, as if it breathed. The path that leads to it is drawn in the accent colour, with a light that runs along it. A member that waits for a person is drawn in yellow. A member that failed has a red outline.
+On the drawing, you see who works. The member at work is filled in the accent colour of the Studio, whatever its group, and a ring around it grows and fades, as if it breathed. The path that leads to it is drawn in the accent colour, with a light that runs along it. A member that waits for a person is drawn in yellow. A member that failed has a red outline. The other members keep the colour of their group, so you still see which part of the team is at work.
 
 Below the drawing, three tabs show what happens:
 

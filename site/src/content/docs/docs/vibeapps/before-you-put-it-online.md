@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/vibeapps/before-you-put-it-online.md. Do not edit here: edit the source and publish again. -->
 
-Agentivity has no login today. The server does not ask who is calling, and it accepts every call. This is fine on a network you trust. It needs care before people outside your team use an application.
+This page is about a server you install yourself, which has no login. It does not ask who is calling, and it accepts every call. A hosted workspace asks for a key: see [Connect a VibeApp to a hosted workspace](/docs/vibeapps/connect-a-vibeapp-to-a-hosted-workspace/). This is fine on a network you trust. It needs care before people outside your team use an application.
 
 ## What anyone who reaches the server can do
 

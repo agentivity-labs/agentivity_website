@@ -75,7 +75,7 @@ Chaque expert termine sa partie et passe le résultat au suivant. Recherche, pui
 **Exemple :** un chercheur rassemble des faits sur un concurrent, un rédacteur en fait une note d'une page, un relecteur vérifie la note par rapport aux faits.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-chain.jpg" width="456" height="560" style="max-width: 380px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-chain.jpg" width="1000" height="950" style="max-width: 380px;">
 <source src="/media/team-chain.mp4" type="video/mp4" />
 </video>
 <figcaption>Une équipe Sequential : chaque membre travaille à son tour et passe son résultat au suivant. Enregistré depuis le produit.</figcaption>
@@ -146,7 +146,7 @@ Un manager supervise le travail. Il confie la demande à un spécialiste à la f
 **Exemple :** l'[équipe Trip Planner](/fr/use-cases/trip-planner) compte un manager et douze spécialistes : vols, hôtel, transferts et d'autres. Un week-end et un mois à l'étranger ne font pas appel aux mêmes.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
 <figcaption>Une équipe Manager-led : le manager répartit le travail et rassemble les réponses. Enregistré depuis le produit.</figcaption>

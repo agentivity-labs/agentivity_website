@@ -54,4 +54,4 @@ The import creates new copies: nothing you already have is changed. See [Try a r
 
 ## Next step
 
-[The Settings screen](/docs/studio/settings/).
+[Settings, theme and the small controls of the Studio](/docs/studio/settings-theme-and-controls/).

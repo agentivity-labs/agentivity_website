@@ -22,7 +22,7 @@ This page is for developers. A person trusts a team more when they see who is wo
 | `WorkflowGraph` | The steps of a workflow and their links. The view follows the step that runs. | The same, when the solution is a workflow. |
 | `TemplateGraph` | A team or a workflow drawn from a Template file alone, with no execution. | A catalogue, a preview, a page that presents a solution. |
 
-Nothing about the team is written in your application. The members, their icons and their groups come from the team editor. Change the team in the Studio, and the drawing follows.
+Nothing about the team is written in your application. The members, their icons and their groups come from the team editor, and the groups of a workflow from its steps. Change them in the Studio, and the drawing follows. So the way you organised the work in the Studio is the way your users read it.
 
 ## What you need
 
@@ -76,6 +76,7 @@ For a workflow, the shape is the same: `client.entities.fetchWorkflowGraph(id)` 
 - **The state comes from the server, not from the stream.** `useExecutionStatuses` reads the state of the execution from the server. So the drawing is right on a new execution, after a lost connection, and when a person reopens an old conversation.
 - **The same hook says whether an execution is in progress.** It returns `running`. Give it to `ChatDiscussion` to show the stop button at the right time.
 - **The icons and colours are those of the team editor.** To use your own pictures, give a function in `resolveMemberAvatar`.
+- **A workflow shows its groups too.** A soft background is drawn behind the steps of each group, with its name. A step wears the colour of its group, or a neutral colour. See [The colours of a drawing](/docs/vibeapps/give-it-your-brand/#the-colours-of-a-drawing).
 - **The drawing takes the width you give it** and sets its own height. Put it in a column.
 
 ## Draw a solution without running it

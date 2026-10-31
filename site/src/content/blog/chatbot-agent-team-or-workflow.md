@@ -58,7 +58,7 @@ A team is several agents, each with its own role, and a rule for how they work t
 Planning a trip is a good example. One agent would have to master flights, hotels, transfers, restaurants, visas and budgets at once. A team splits that: a manager reads the request and hands each part to a specialist, and each specialist does one thing and reports back.
 
 <figure>
-<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="546" height="680" style="max-width: 440px;">
+<video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">
 <source src="/media/team-manager.mp4" type="video/mp4" />
 </video>
 <figcaption>A manager handing work to specialists and collecting their answers. Recorded from the product.</figcaption>

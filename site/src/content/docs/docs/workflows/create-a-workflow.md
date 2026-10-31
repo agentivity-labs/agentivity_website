@@ -91,12 +91,30 @@ There are two shapes on the canvas:
 ## Set up a step
 
 1. Right-click the node and select **Edit**. A window opens with the settings of this node.
-2. Fill in the fields. A field can hold a **Fixed value**, which you type, or an **Expression**, which is computed when the workflow runs.
+2. Fill in the fields. They are sorted in boxes, one per group of settings. A field can hold a **Fixed value**, which you type, or an **Expression**, which is computed when the workflow runs.
 3. Select **Apply**.
 
 The panel **Outputs**, on the right of this window, lists what the earlier steps produce. It fills in when the node is linked to the steps before it.
 
 The same menu has **Duplicate**, **Copy** and **Delete**.
+
+## Group the steps
+
+A long workflow reads like a list of technical steps. Groups turn it into a few parts that anyone can follow: `Intake`, `Analysis`, `Human review`, `Decision`. You see the big stages at once, you find a step faster, and you can walk a client through the workflow without going through each node. The same groups show in the VibeApp you deliver. To choose them, see [Organise a team or a workflow with groups](/docs/teams/organise-with-groups/).
+
+The colour follows the meaning, not the kind of step: a step wears the colour of its group, or a neutral colour when it has no group.
+
+1. Right-click a step and select **Edit**.
+2. In the box **Group**, under **Node name** and **Display name**, type the name of the group in **Name**, or select a group in the list **Groups in this workflow**. Leave **Name** empty for no group.
+3. Choose the colour of the group. See [Choose a colour](/docs/teams/set-up-a-member/#choose-a-colour).
+4. Select **Apply**.
+5. Do the same for each step of the group.
+
+A soft background is drawn behind the steps of each group, with its name. You see it in the Studio and in your apps. Keep the steps of a group next to each other: in the Studio, the background covers everything between them.
+
+The colour belongs to the group: change it from one step, and it changes for all the steps of the group. To create or delete a group, the gestures are those of a team: see [Create a group](/docs/teams/set-up-a-member/#create-a-group). Typing another name for a step moves it to that group. It does not rename the group.
+
+The colours of an execution stay: a step at work, waiting, done or failed says so, whatever its group.
 
 ## Save
 

@@ -1,6 +1,6 @@
 ---
 title: "Find your way around the Studio"
-description: "A tour of the Agentivity Studio, the visual editor in your browser. What each entry of the menu is for, and what the home page shows."
+description: "A tour of the Agentivity Studio. What each entry of the menu is for, and what the home page shows: shortcuts, counters, executions that need you."
 sidebar:
   order: 1
 editUrl: false
@@ -18,8 +18,6 @@ The Studio is the visual editor of Agentivity. It runs in your browser. This pag
 ![The home page of the Studio: the menu on the left, four shortcuts at the top, the counters, and the panel Active and needs attention](images/home.jpg)
 
 ## The menu on the left
-
-![The home page of the Studio: the menu on the left, the greeting, four cards at the top, the counters, and the panel Active and needs attention](images/home.jpg)
 
 At the top of the menu, the logo and two small arrows (**«**) fold the menu into a column of icons. Select **»**, or the logo of the folded menu, to open it again. **Ctrl+B** (**Cmd+B** on a Mac) does the same. The Studio remembers your choice.
 
@@ -49,15 +47,39 @@ At the bottom of the menu, a card shows your name and your edition (for example 
 
 ## The home page
 
-The home page greets you by your first name ("Good morning, Alex") and says in one sentence what the week looked like, for example "Your workspace ran 2 executions this week and saved about 15 minutes. One thing waits for you." It has four parts.
+The home page is the first screen of the Studio. It greets you by your first name ("Good morning, Alex") and says in one sentence what the week looked like, for example "Your workspace ran 2 executions this week and saved about 15 minutes. One thing waits for you." It lets you start something new, and it shows what your workspace did recently.
 
-**Two buttons**, at the top right: **Ask the Assistant**, and **New**, which opens a menu to create an **Agent**, a **Team** or a **Workflow**.
+### The two buttons
 
-**Four cards**: **An agent**, **A team**, **A workflow** and **From a template** start the same things.
+At the top right:
 
-**Counters**: **Executions this week** and **Executions this year** count the executions. **Saved this week** and **Saved this year** show an estimate of the time saved by these executions.
+- **Ask the Assistant** opens the Assistant, to build from a description. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+- **New** opens a menu: **Agent**, **Team** or **Workflow**. Each one asks for a name.
 
-**Active & needs attention**: the executions that are in progress, the executions that failed, and the executions that wait for an answer from a person, each with the button **Answer**. When there is nothing, you read "Nothing running and nothing waiting on you right now."
+### The four cards
+
+| Card | What it does |
+|---|---|
+| **A workflow** | Asks for a name, then opens a new workflow in its editor. See [Create a workflow](/docs/workflows/create-a-workflow/). |
+| **An agent** | Asks for a name, then opens a new agent in its editor. See [Create an agent](/docs/agents/create-an-agent/). |
+| **A team** | Asks for a name, then asks how the members work together. See [Create a team of agents](/docs/teams/create-a-team/). |
+| **From a template** | Opens the [Templates screen](/docs/studio/templates/). |
+
+### The counters
+
+| Counter | What it counts |
+|---|---|
+| **Executions this week**, **Executions this year** | The number of executions of your agents, teams and workflows. |
+| **Saved this week**, **Saved this year** | An estimate of the time these executions saved, in minutes. |
+
+### The recent activity
+
+- **Recent activity · last 14d** is a chart with one bar per day, for the last fourteen days.
+- The grid next to it shows the activity over a longer period, one square per day. Move the pointer over a square to read the date and the time saved. The small **i** at its corner explains the grid.
+
+### Active & needs attention
+
+This block lists the executions that are in progress and the executions that need you. A running execution and a failed one carry a label, **Running** or **Failed**. An execution that waits for a person has the button **Answer**, which opens it so that you can reply. When there is nothing, it says "Nothing running and nothing waiting on you right now." For the complete list, open the [Executions screen](/docs/studio/executions/).
 
 ## The list of agents and teams
 
@@ -79,14 +101,11 @@ When you open an agent or a team, its editor takes the place of the list. Every 
 
 ## Each screen in detail
 
-- [The Home page of the Studio](/docs/studio/home/)
-- [The list of agents and teams](/docs/studio/agents-list/)
-- [The list of workflows](/docs/studio/workflows-list/)
+- [The lists of agents, teams and workflows](/docs/studio/lists-of-agents-teams-and-workflows/)
 - [An editor, its canvas, panels and buttons](/docs/studio/editor/)
 - [The Executions screen](/docs/studio/executions/)
 - [The Templates screen](/docs/studio/templates/)
-- [The Settings screen](/docs/studio/settings/), now part of Administration
-- [The status bar, the theme and the guide button](/docs/studio/status-bar-and-theme/)
+- [Settings, theme and the small controls of the Studio](/docs/studio/settings-theme-and-controls/)
 
 ## How to know it worked
 

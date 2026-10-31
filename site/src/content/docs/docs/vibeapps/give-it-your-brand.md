@@ -67,6 +67,24 @@ The theme covers the pieces of the SDK. Your own screens, your header and your b
 
 To keep both in step, read the same colours. The provider publishes each colour as a CSS variable whose name starts with `--ag-`, for example `--ag-primary` and `--ag-surface`. Use them in your own style sheet.
 
+## The colours of a drawing
+
+The groups you chose in the Studio reach your application with no code: the people who use it see the same parts of the work, with the same names and colours. See [Organise a team or a workflow with groups](/docs/teams/organise-with-groups/).
+
+The theme and the colours of a team, a workflow or an agent are independent. The theme gives the background, the text and the shape. The colours of the drawing come from its groups.
+
+The SDK has no list of palettes: the palettes exist only in the Studio, to help choose. The SDK shows the colours that are stored. A group with no colour chosen takes a default colour.
+
+| Where | What is stored |
+|---|---|
+| A step of a workflow | `node.metadata.group`: the name of its group. |
+| A workflow | `workflow.metadata.groupColors`: the colour of each group, as `#RRGGBB`. The key is the name of the group in lower case. |
+| An agent | `graph.metadata.group` and `graph.metadata.groupColor`. |
+
+A type of step has no colour. A step without a group takes the neutral colour: `--ag-workflow-node` in React, `AgUiWorkflowPalette.node` in Flutter. The variables `--ag-workflow-start`, `--ag-workflow-decision`, `--ag-workflow-human`, `--ag-workflow-ai`, `--ag-workflow-action` and `--ag-workflow-end` no longer exist: remove them from your style sheets.
+
+The colours of the states stay: `--ag-workflow-working`, `--ag-workflow-waiting`, `--ag-workflow-done` and `--ag-workflow-failed` in React, and the fields `working`, `waiting`, `done` and `failed` of `AgUiWorkflowPalette` in Flutter.
+
 ## Light and dark, or several looks
 
 A theme is an object, so changing the look is changing the object you give to the provider. The two example applications have a theme switcher built this way: see `src/theme` in `agentivity_sdk_showcase_tripagency`.

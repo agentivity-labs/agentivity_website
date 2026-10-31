@@ -2,6 +2,56 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/docs/studio/home{/}?",
+      "destination": "/docs/studio/find-your-way-in-the-studio/#the-home-page",
+      "permanent": true
+    },
+    {
+      "source": "/docs/studio/agents-list{/}?",
+      "destination": "/docs/studio/lists-of-agents-teams-and-workflows/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/studio/workflows-list{/}?",
+      "destination": "/docs/studio/lists-of-agents-teams-and-workflows/#the-list-of-workflows",
+      "permanent": true
+    },
+    {
+      "source": "/docs/studio/settings{/}?",
+      "destination": "/docs/studio/settings-theme-and-controls/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/studio/status-bar-and-theme{/}?",
+      "destination": "/docs/studio/settings-theme-and-controls/#the-status-bar",
+      "permanent": true
+    },
+    {
+      "source": "/fr/docs/studio/home{/}?",
+      "destination": "/fr/docs/studio/find-your-way-in-the-studio/#the-home-page",
+      "permanent": true
+    },
+    {
+      "source": "/fr/docs/studio/agents-list{/}?",
+      "destination": "/fr/docs/studio/lists-of-agents-teams-and-workflows/",
+      "permanent": true
+    },
+    {
+      "source": "/fr/docs/studio/workflows-list{/}?",
+      "destination": "/fr/docs/studio/lists-of-agents-teams-and-workflows/#the-list-of-workflows",
+      "permanent": true
+    },
+    {
+      "source": "/fr/docs/studio/settings{/}?",
+      "destination": "/fr/docs/studio/settings-theme-and-controls/",
+      "permanent": true
+    },
+    {
+      "source": "/fr/docs/studio/status-bar-and-theme{/}?",
+      "destination": "/fr/docs/studio/settings-theme-and-controls/#the-status-bar",
+      "permanent": true
+    },
+    {
       "source": "/:path((?!api(?:/|$))(?!.*\\.)(?!.*/$).+)",
       "destination": "/:path/",
       "permanent": true

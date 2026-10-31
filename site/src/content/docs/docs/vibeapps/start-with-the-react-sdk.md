@@ -13,7 +13,7 @@ This page is for developers. The fastest way to start is to run the portal examp
 
 ## What you need
 
-- Agentivity running. See [Install Agentivity with Docker](/docs/getting-started/install-community/).
+- Agentivity running. See [Install Agentivity with Docker](/docs/getting-started/install-community/). For a hosted workspace, read [Connect a VibeApp to a hosted workspace](/docs/vibeapps/connect-a-vibeapp-to-a-hosted-workspace/) after this page.
 - At least one solution with the tag `solution`. See [Show a team in the portal](/docs/vibeapps/show-a-solution-in-the-portal/).
 - Node.js and git on your machine.
 

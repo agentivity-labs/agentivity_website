@@ -224,7 +224,7 @@
       },
       "organise": "Organisez-les comme une vraie équipe.",
       "link": "Voir comment ça marche",
-      "capture": "Capture réelle du produit",
+      "capture": "Dessiné par le produit",
       "loops": [
         {
           "title": "Menée par un manager",
@@ -362,8 +362,8 @@
           "body": "Vous savez ce qui a tourné, quand et pourquoi."
         }
       ],
-      "caption": "Un vrai workflow dans le Studio.",
-      "alt": "Un workflow court dans le Studio : une facture arrive et l'IA la lit ; au-delà de 1 000 €, Finance la valide avant que le demandeur soit prévenu"
+      "caption": "Un vrai workflow, dessiné par le produit.",
+      "alt": "Un workflow court : une facture arrive et l'IA la lit ; au-delà de 1 000 €, Finance la valide avant que le demandeur soit prévenu"
     },
     "nocode": {
       "eyebrow": "Comment vous la construisez",
@@ -1994,7 +1994,7 @@
           "example": "un voyage, un projet, tout ce qui a beaucoup de parties."
         }
       ],
-      "capture": "Capture réelle du produit",
+      "capture": "Dessiné par le produit",
       "loops": [
         {
           "title": "Dirigée par un manager",
@@ -2340,9 +2340,9 @@
           "media": {
             "kind": "image",
             "src": "/media/studio-workflow-approval.webp",
-            "width": 1400,
-            "height": 616,
-            "alt": "Un court workflow Agentivity dans le Studio : une facture arrive et l'IA la lit ; au-delà de 1 000 €, la Finance la valide avant que le demandeur soit prévenu",
+            "width": 1640,
+            "height": 549,
+            "alt": "Un court workflow Agentivity : une facture arrive et l'IA la lit ; au-delà de 1 000 €, la Finance la valide avant que le demandeur soit prévenu",
             "caption": "Une facture arrive et l'IA la lit. Au-delà de 1 000 €, la Finance la valide d'abord."
           }
         },

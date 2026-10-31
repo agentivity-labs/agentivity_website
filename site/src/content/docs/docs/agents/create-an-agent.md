@@ -36,6 +36,16 @@ In the panel **Info**, on the right:
 
 1. Fill in **Role**: one or two sentences on what this agent is good at. When the agent is a member of a team, the team reads the role to decide when to use this agent.
 
+## Give it a group
+
+This is optional. A group says which part of your work this agent belongs to, for example `Support` or `Finance`. In a VibeApp, the graph of the agent wears the colour of its group, so a person sees at a glance where this agent stands among the others.
+
+1. In the panel **Info**, under **Tags**, find **Group**.
+2. Type the name of the group in **Name**. Leave it empty for no group.
+3. Choose the colour. See [Choose a colour](/docs/teams/set-up-a-member/#choose-a-colour).
+
+An agent has one group of its own. If you change the name later, you rename this group, and it keeps its colour. The canvas of the Studio does not show this colour: you see it in your VibeApps.
+
 ## Give it a model
 
 A new agent has no AI model. You add one and link it.

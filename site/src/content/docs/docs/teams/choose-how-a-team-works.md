@@ -55,7 +55,7 @@ The drawing of a team follows the pattern you chose. Each member is a hexagon wi
 | **Group Chat** | The members hang under one shared bar: they share one conversation. |
 | **Manager-led** | The manager, a larger dark hexagon, is on top, and lines go down to the members it sends work to. |
 
-Members that you put in a group are drawn together on a soft tint, with the name of the group: see [Name, group and give an icon to team members](/docs/teams/set-up-a-member/).
+Members that you put in a group are drawn together on a soft tint, with the name of the group, so the parts of the team show whatever the pattern: see [Organise a team or a workflow with groups](/docs/teams/organise-with-groups/).
 
 In every pattern, give each member a clear role. In **Handoff** and **Manager-led**, the choice of who works next is made from the roles.
 

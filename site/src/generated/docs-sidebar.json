@@ -40,7 +40,7 @@
         "en": "Teams",
         "fr": "Équipes"
       },
-      "total": 5,
+      "total": 7,
       "published": 5
     },
     {
@@ -85,7 +85,7 @@
         "en": "VibeApps",
         "fr": "VibeApps"
       },
-      "total": 13,
+      "total": 14,
       "published": 13
     },
     {
@@ -103,8 +103,8 @@
         "en": "The Studio, screen by screen",
         "fr": "Le Studio, écran par écran"
       },
-      "total": 9,
-      "published": 9
+      "total": 6,
+      "published": 6
     },
     {
       "id": "hosted",

@@ -48,9 +48,9 @@ This is made to be easy while you build. It is not secure, because there is no l
 
 The Studio is not concerned: the server delivers it itself.
 
-## There is no login
+## There is no login, on a server you install
 
-The server does not ask who is calling. Every call is accepted, from a browser or not. Limiting the pages that may call it does not replace a sign-in: a script is not a page. See [Before you put a VibeApp online](/docs/vibeapps/before-you-put-it-online/).
+On a hosted workspace, an application sends a key: see [Connect a VibeApp to a hosted workspace](/docs/vibeapps/connect-a-vibeapp-to-a-hosted-workspace/). The rest of this section is about a server you install yourself. It does not ask who is calling. Every call is accepted, from a browser or not. Limiting the pages that may call it does not replace a sign-in: a script is not a page. See [Before you put a VibeApp online](/docs/vibeapps/before-you-put-it-online/).
 
 ## The SDKs
 
