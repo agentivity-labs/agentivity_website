@@ -61,7 +61,7 @@ Leave **Model override** empty to use the model of the connection.
 
 Agents that you imported in a Template were set up with the connection of their author. To make an agent or a team use your own connection:
 
-1. Open **Studio** > **Agents**.
+1. Open **Studio** > **Agents & Workflows**.
 2. Open the menu of the agent or of the team, at the end of its line.
 3. Select **Use my default model**.
 

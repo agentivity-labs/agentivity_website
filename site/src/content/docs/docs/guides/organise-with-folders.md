@@ -19,9 +19,8 @@ After a few weeks, a workspace holds many agents, teams and workflows. Folders k
 
 Three lists have folders, each with its own:
 
-- **Studio** > **Agents**, for agents and teams;
-- **Studio** > **Workflows**, for workflows;
-- **Resources** > **Data Tables**, for data tables.
+- **Studio** > **Agents & Workflows**, for agents, teams and workflows, which share the same folders;
+- **Resources** > **Data Tables**, for data tables;
 - **Resources** > **Knowledge Bases**, for Knowledge Bases.
 
 In each list, the panel on the left shows the folders. A folder also appears as a line of the list, with **Folder** in the column **Type**.

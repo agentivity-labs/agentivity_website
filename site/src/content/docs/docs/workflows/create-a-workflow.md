@@ -21,7 +21,7 @@ Recorded from the product, played faster.
 
 ## Create the workflow
 
-1. On the home page, select **New**, then **Workflow**, or the card **A workflow**. You can also open **Studio** > **Workflows** and select **New workflow**.
+1. On the home page, select **New**, then **Workflow**, or the card **A workflow**. You can also open **Studio** > **Agents & Workflows**, select **New**, then **Workflow**.
 2. In the window **New workflow**, type the **Workflow name**, for example `Reminder Approval`. The name needs at least 3 characters.
 3. Select **Create**.
 
@@ -127,7 +127,7 @@ If you leave the editor with changes that are not saved, the Studio asks what to
 ## How to know it worked
 
 - The canvas shows your steps, linked by arrows.
-- In **Studio** > **Workflows**, the workflow is in the list.
+- In **Studio** > **Agents & Workflows**, the workflow is in the list.
 
 ## The buttons under the canvas
 

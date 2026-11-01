@@ -76,6 +76,7 @@ On a hosted workspace this rarely happens, because an update lets executions fin
 
 - To answer an execution that waits for a person, open it in its editor and use the panel **Chat** of the tab **Execution**. See [Ask a person to approve or answer](/docs/workflows/ask-a-person-to-decide/).
 - Deleting an execution removes it from the history. It does not change the workflow, the agent or the team.
+- To read a team or a workflow over a whole period, not one execution, see [The Observation tab](/docs/studio/observation/).
 
 ## Next step
 

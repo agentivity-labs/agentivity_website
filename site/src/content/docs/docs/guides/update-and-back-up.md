@@ -24,8 +24,7 @@ A Docker volume is a storage space that Docker keeps apart from the container. I
 
 | In the volume | What it is |
 |---|---|
-| Agents and teams | What you see in **Studio** > **Agents**. |
-| Workflows | What you see in **Studio** > **Workflows**. |
+| Agents, teams and workflows | What you see in **Studio** > **Agents & Workflows**. |
 | Data Tables and their rows | What you see in **Resources** > **Data Tables**. |
 | Knowledge Bases | What you see in **Resources** > **Knowledge Bases**: their source and their settings, and what they hold. |
 | Prompts | What you see in **Studio** > **Prompts**. |
@@ -113,6 +112,8 @@ If the volume already holds data, the files of the backup replace the files that
 ## Good to know
 
 - Removing the container does not remove your data. Removing the volume does.
+- An update can change how your data is kept. An older image then refuses to start on that volume: to go back, restore the backup you made before the update. Saved work done since is lost, so back up first.
+- The version that brings agents, teams and workflows together gives them one set of folders. Folders with the same name, at the same place and in the same space, become one, with everything they held.
 - What is not in the volume is not kept across an update: the log files. The execution history, the conversations of past executions and the uploaded files are in the volume. See [Configuration reference of the server](/docs/reference/configuration/).
 
 ## Next step

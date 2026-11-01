@@ -44,7 +44,7 @@ To use the result of an earlier step in the prompt, look at the panel **Outputs*
 
 The tab **General** of **AI Agent** has the field **JSON Schema for the final response (optional)**, in the group **Response**. When you fill it in, the model is asked to answer in that format, and the output `response` holds the answer, as a text, in that format.
 
-In this step, the fields of the format are not separate outputs. To have each field as an output, save the agent in **Studio** > **Agents** and call it with the step **Agent**. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
+In this step, the fields of the format are not separate outputs. To have each field as an output, save the agent in **Studio** > **Agents & Workflows** and call it with the step **Agent**. See [Write the role and the instructions of an agent](/docs/agents/write-the-instructions/).
 
 ## Save
 
@@ -68,7 +68,7 @@ In this step, the fields of the format are not separate outputs. To have each fi
 
 ## Reuse an agent you already built
 
-If the agent exists already in **Studio** > **Agents**, or if you want a whole team, call it with one step. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
+If the agent exists already in **Studio** > **Agents & Workflows**, or if you want a whole team, call it with one step. See [Use an agent or a team as a step](/docs/workflows/use-an-agent-or-a-team/).
 
 ## Next step
 

@@ -49,7 +49,7 @@ One workflow, **CV Screening**, with thirty-four elements.
 
 ## Try it
 
-1. Open **Studio** > **Workflows** and open **CV Screening**.
+1. Open **Studio** > **Agents & Workflows** and open **CV Screening**.
 2. Select the tab **Execution**, then **Run**.
 3. Give a CV, then a job description, when the workflow asks. Use fictitious ones.
 

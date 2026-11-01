@@ -54,7 +54,7 @@ Vous pouvez continuer dans la même conversation : demander une modification, aj
 
 - L'Assistant affiche **Saved to your workspace**.
 - Sélectionnez **Open in the editor**. L'équipe s'ouvre dans son éditeur, avec ses trois membres sur le canevas.
-- L'équipe et ses agents se trouvent dans **Studio** > **Agents**.
+- L'équipe et ses agents se trouvent dans **Studio** > **Agents & Workflows**.
 
 ## Si ça ne marche pas
 

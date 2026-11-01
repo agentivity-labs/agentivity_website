@@ -22,7 +22,7 @@ Recorded from the product. It stops before the agent is published and before the
 
 ## Create the agent
 
-1. On the home page, select **New**, then **Agent**, or the card **An agent**. You can also open **Studio** > **Agents** and select **New agent**. From the list, the new agent is added to the list and its editor does not open by itself: double-click it.
+1. On the home page, select **New**, then **Agent**, or the card **An agent**. You can also open **Studio** > **Agents & Workflows**, select **New**, then **Agent**. From the list, the new agent is added to the list and its editor does not open by itself: double-click it.
 2. In the window **New agent**, type the **Agent name**, for example `Reminder Writer`.
 3. Select **Create**.
 
@@ -91,7 +91,7 @@ Leave **Model override** empty to use the default model of the connection.
 ## How to know it worked
 
 - On the canvas, a dotted line goes from the model to the agent.
-- In **Studio** > **Agents**, the agent is in the list, with **Agent** in the column **Type**.
+- In **Studio** > **Agents & Workflows**, the agent is in the list, with **Agent** in the column **Type**.
 - In **Execution**, the agent answers your task.
 
 ## If it does not work

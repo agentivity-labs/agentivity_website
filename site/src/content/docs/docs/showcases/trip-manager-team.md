@@ -38,14 +38,14 @@ Everything is simulated. No real booking is made and no real payment is taken: e
 ## What to look at
 
 - **The manager at the top position.** In a Manager-led team, the member at the top is the manager. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
-- **The roles decide who works.** The manager chooses a specialist from its role. Read the roles in **Studio** > **Agents**: each one says what the agent handles, and what it does not do. "Proposals only" and "Never used during initial planning" are instructions for the manager.
+- **The roles decide who works.** The manager chooses a specialist from its role. Read the roles in **Studio** > **Agents & Workflows**: each one says what the agent handles, and what it does not do. "Proposals only" and "Never used during initial planning" are instructions for the manager.
 - **Every member has a chat channel.** Each of the thirteen agents can show something to the traveller or ask a question.
 - **A gate before the bookings.** The **Reservation Agent** records the reservations only after the **Payment Agent** reports an authorised payment. The order is written in the roles and the instructions.
 - **Groups and icons.** The members are sorted in four groups: Booking, Advice, Money and Support. Each member has an icon. See [Name, group and give an icon to team members](/docs/teams/set-up-a-member/).
 
 ## Try it
 
-1. Open **Studio** > **Agents** and open **Trip Manager Team**.
+1. Open **Studio** > **Agents & Workflows** and open **Trip Manager Team**.
 2. In the switch at the top, select **Execution**.
 3. Ask for a trip in one sentence: a city, the dates, the number of travellers and a budget.
 4. Answer when a specialist shows options.

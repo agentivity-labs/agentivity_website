@@ -22,7 +22,7 @@ Recorded from the product, played faster. To have a team built from a descriptio
 
 ## Create the team
 
-1. On the home page, select **New**, then **Team**, or the card **A team**. You can also open **Studio** > **Agents** and select **New team**.
+1. On the home page, select **New**, then **Team**, or the card **A team**. You can also open **Studio** > **Agents & Workflows**, select **New**, then **Team**.
 2. In the window **New team**, type the **Team name**, for example `Payment Reminders`.
 3. Select **Create**.
 
@@ -69,14 +69,14 @@ Publish before you leave the editor. The team editor does not ask you to save wh
 ## How to know it worked
 
 - The canvas shows one hexagon per member, with its name under it.
-- In **Studio** > **Agents**, the team is in the list, with **Team** in the column **Type**.
+- In **Studio** > **Agents & Workflows**, the team is in the list, with **Team** in the column **Type**.
 
 ## If it does not work
 
 - **"Team name is required."** The name field is empty.
 - **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with the Assistant.
 - **Publish cannot be selected.** There is nothing new to save.
-- **The menu entry Agents does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents**.
+- **The menu entry Agents does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents & Workflows**.
 - **A Manager-led team refuses to run.** It needs a member at the top position, which is the manager, and at least one worker below. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
 
 ## Go further

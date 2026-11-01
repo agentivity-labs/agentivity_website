@@ -46,7 +46,7 @@ Shopping Lab helps a shopper choose a product. It clarifies the need, reads the 
 
 ## Try it
 
-1. Open **Studio** > **Agents** and open the team **Shopping Lab**.
+1. Open **Studio** > **Agents & Workflows** and open the team **Shopping Lab**.
 2. In the switch at the top, select **Execution**.
 3. Ask for a product, with a budget. The **Needs Analyst** asks you questions first.
 

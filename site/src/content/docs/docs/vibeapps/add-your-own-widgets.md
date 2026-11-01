@@ -43,7 +43,7 @@ The example below adds a widget named `ReminderPreview` to the agent `Reminder W
 
 ## 1. Declare the widget in the Studio
 
-1. Open the agent in **Studio** > **Agents**.
+1. Open the agent in **Studio** > **Agents & Workflows**.
 2. Right-click its **Chat Channel** and select **Edit**.
 3. Select the tab **App Widgets**, then **Add widget**.
 

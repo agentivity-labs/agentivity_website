@@ -53,7 +53,7 @@ Vous pouvez aussi partir du Studio : sur la page d'accueil, sélectionnez **Brow
 Les agents d'un Template ont été configurés avec la connexion au modèle de leur auteur. Cette connexion n'existe pas sur votre serveur. L'import la remplace donc :
 
 - **Si vous avez une connexion à un modèle**, les agents importés utilisent la vôtre. Le message **Template imported** indique laquelle, par exemple « 13 model connections now use » suivi du nom de votre connexion.
-- **Si vous n'avez pas encore de connexion à un modèle**, l'import fonctionne quand même, mais les agents échouent à leur premier lancement. Ajoutez une connexion dans **Settings** > **Credentials**. Allez ensuite dans **Studio** > **Agents**, ouvrez le menu de l'élément importé et sélectionnez **Use my default model**.
+- **Si vous n'avez pas encore de connexion à un modèle**, l'import fonctionne quand même, mais les agents échouent à leur premier lancement. Ajoutez une connexion dans **Settings** > **Credentials**. Allez ensuite dans **Studio** > **Agents & Workflows**, ouvrez le menu de l'élément importé et sélectionnez **Use my default model**.
 
 ## Comment savoir que ça marche
 
@@ -61,7 +61,7 @@ La Solution s'ouvre dans son éditeur et vous la voyez dessinée sur le canevas.
 
 ![L'équipe Trip Manager Team dans son éditeur : le manager en haut, douze spécialistes alignés en dessous, et le panneau Info à droite](images/showcase-opened.jpg)
 
-Pour **Trip Manager Team**, vous voyez le manager en haut et ses spécialistes en dessous. Les agents importés et l'équipe se trouvent aussi dans **Studio** > **Agents**.
+Pour **Trip Manager Team**, vous voyez le manager en haut et ses spécialistes en dessous. Les agents importés et l'équipe se trouvent aussi dans **Studio** > **Agents & Workflows**.
 
 ## Si ça ne marche pas
 

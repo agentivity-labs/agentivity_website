@@ -18,7 +18,7 @@ An execution is one request handled by a team, from the task you give to the fin
 
 ## Give a task to the team
 
-1. Open **Studio** > **Agents** and open the team.
+1. Open **Studio** > **Agents & Workflows** and open the team.
 2. In the switch at the top, select **Execution**. The team is drawn in the middle. The panel **Chat**, on the right, asks "What task would you like the team to perform?"
 3. In the field **Describe the task for the team…**, type the request. For example, for a team that writes notes:
 
@@ -65,6 +65,8 @@ In **Execution**, the panel on the right has three tabs: **Executions**, **Chat*
 | **Cancelled** | The execution was stopped by a person. |
 
 The section **Executions**, in the menu on the left, lists the executions of your whole workspace.
+
+To read the team over a period, not one execution, select **Observation** in the switch at the top: see [The Observation tab](/docs/studio/observation/).
 
 ## How to know it worked
 

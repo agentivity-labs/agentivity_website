@@ -39,9 +39,9 @@ Vous pouvez le faire depuis une bibliothèque ou depuis un éditeur.
 
 ### Depuis une bibliothèque
 
-![La liste des agents : Reminder Writer porte la marque Solution à côté de son nom, et le menu de sa ligne propose Open, No longer a solution, Create Template, Use my default model et Delete](images/solution-library-menu.jpg)
+![La liste Agents & Workflows : l'équipe Weekly Competitor Note porte la marque Solution à côté de son nom, et le menu de sa ligne propose Open, No longer a solution, Create Template, Use my default model et Delete](images/solution-library-menu.jpg)
 
-1. Ouvrez **Studio** > **Agents** pour un agent ou une équipe, ou **Studio** > **Workflows** pour un workflow.
+1. Ouvrez **Studio** > **Agents & Workflows** pour un agent ou une équipe, ou **Studio** > **Agents & Workflows** pour un workflow.
 2. Sur la ligne de l'agent, de l'équipe ou du workflow, sélectionnez les trois points.
 3. Sélectionnez **Mark as solution**.
 

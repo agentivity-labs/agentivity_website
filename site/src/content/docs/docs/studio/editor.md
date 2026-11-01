@@ -15,8 +15,8 @@ Agents, teams and workflows each open in an editor. The three editors are built 
 
 ## At the top
 
-- **The path**, on the left. It shows where you are: the house, then the section (**Agents** or **Workflows**), then the name of what you edit. The house and the section name take you back to the list.
-- **The switch Editor | Execution**, in the middle. **Editor** is where you build. **Execution** is where you run and see what happened.
+- **The path**, on the left. It shows where you are: the house, then the section (**Agents & Workflows**), then the name of what you edit. The house and the section name take you back to the list.
+- **The switch Editor | Execution**, in the middle. **Editor** is where you build. **Execution** is where you run and see what happened. A team and a workflow have a third tab, **Observation**, to read a whole period. An agent has none.
 - **The state and Publish**, on the right. A dot says **Published** when everything is saved, and **Changed** when there are changes that are not saved. **Publish** saves your changes: it is light when there is nothing to save and highlighted when there is.
 - In a team, the way the team works (**Manager-led**, **Sequential**, and so on) is shown as a small pill beside the name.
 
@@ -96,6 +96,10 @@ Changes are saved in your workspace only when you select **Publish**. A message,
 ## In the tab Execution
 
 Below the canvas, three tabs show an execution: **Inspector**, **Errors** and **Logs**. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
+
+## In the tab Observation
+
+In a team and a workflow, **Observation** shows a period as a whole, on the same drawing: **Groups**, **Errors**, **Tokens** and **Latency**. **Execution** is one execution in detail. See [The Observation tab](/docs/studio/observation/).
 
 ## Next step
 

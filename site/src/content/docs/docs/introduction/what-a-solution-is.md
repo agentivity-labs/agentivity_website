@@ -37,9 +37,9 @@ You can do it from a library or from an editor.
 
 ### From a library
 
-![The list of agents: Reminder Writer carries the mark Solution beside its name, and the menu of its row offers Open, No longer a solution, Create Template, Use my default model and Delete](images/solution-library-menu.jpg)
+![The list Agents & Workflows: the team Weekly Competitor Note carries the mark Solution beside its name, and the menu of its row offers Open, No longer a solution, Create Template, Use my default model and Delete](images/solution-library-menu.jpg)
 
-1. Open **Studio** > **Agents** for an agent or a team, or **Studio** > **Workflows** for a workflow.
+1. Open **Studio** > **Agents & Workflows**.
 2. On the row of the agent, the team or the workflow, select the three dots.
 3. Select **Mark as solution**.
 
@@ -62,7 +62,7 @@ You can also type the tag `solution` by hand in **Tags**. It is the same thing: 
 
 ## How a Solution shows in the Studio
 
-In **Agents** and in **Workflows**, a Solution is told apart from the rest:
+In **Agents & Workflows**, a Solution is told apart from the rest:
 
 - a small mark **Solution** stands beside its name;
 - its icon takes the accent colour.

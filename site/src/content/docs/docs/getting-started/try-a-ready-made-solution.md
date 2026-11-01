@@ -54,7 +54,7 @@ You can also start from the Studio: in the menu on the left, select **Templates*
 The agents of a Template were set up with the model connection of their author. That connection does not exist on your server. So the import replaces it:
 
 - **If you have a model connection**, the imported agents use yours. The message **Template imported** says which one, for example "13 model credentials now use" followed by the name of your connection.
-- **If you have no model connection yet**, the import still works, but the agents fail at their first execution. Add a connection in **Administration** > **Credentials**. Then go to **Studio** > **Agents**, open the menu of the imported item and select **Use my default model**.
+- **If you have no model connection yet**, the import still works, but the agents fail at their first execution. Add a connection in **Administration** > **Credentials**. Then go to **Studio** > **Agents & Workflows**, open the menu of the imported item and select **Use my default model**.
 
 ## How to know it worked
 
@@ -62,7 +62,7 @@ The solution opens in its editor and you see it drawn on the canvas.
 
 ![The team Trip Manager Team in its editor: the dark hexagon of the manager at the top, its specialists below in tinted groups, the pill Manager-led beside the name, and the panel Info on the right](images/showcase-opened.jpg)
 
-For **Trip Manager Team**, you see the manager, a larger dark hexagon, at the top and its specialists below, gathered in groups. The imported agents and the team are also in **Studio** > **Agents**.
+For **Trip Manager Team**, you see the manager, a larger dark hexagon, at the top and its specialists below, gathered in groups. The imported agents and the team are also in **Studio** > **Agents & Workflows**.
 
 ## If it does not work
 

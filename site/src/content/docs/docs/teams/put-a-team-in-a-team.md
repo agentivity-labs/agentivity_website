@@ -81,6 +81,7 @@ A member that fails makes the team fail. The message says that the team failed, 
 - A team inside a team makes more calls to the AI model for one request. Keep the levels few.
 - Do not add a team to itself. The list of members shows every team of your workspace, including the one you are editing.
 - Test each part alone before you put it in a larger team. A problem is easier to find in a small team.
+- A team that holds other teams or workflows opens as one organisation in the tab **Observation**: see [Read a whole AI Company](/docs/teams/read-an-ai-company/).
 
 ## How to know it worked
 

@@ -28,8 +28,7 @@ Under the logo, the **Space** switcher says which space you work in: see [People
 | **Home** | See what is running and what is waiting for you, and start something new. |
 | **Assistant** | Describe what you need in your own words. The Assistant builds an agent, a team or a workflow as a draft. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/). |
 | **Templates** | Ready-made solutions to import, and **Import from file** for a Template you received. |
-| **Studio** > **Agents** | The list of your agents and your teams. Open one to change it or to run it. |
-| **Studio** > **Workflows** | The list of your workflows. |
+| **Studio** > **Agents & Workflows** | The list of your agents, your teams and your workflows. Open one to change it or to run it. |
 | **Studio** > **Prompts** | The prompts you write and test. A prompt is the text of instructions that is sent to an AI model. |
 | **Studio** > **Executions** | The executions: each time an agent, a team or a workflow worked on a request. |
 | **Resources** > **Data Tables** | Tables of data that your agents and workflows can read and fill. |
@@ -83,19 +82,20 @@ This block lists the executions that are in progress and the executions that nee
 
 ## The list of agents and teams
 
-![The list of agents and teams: the title and the buttons New agent and New team on the first row, the search field and the tools on the second, and one line per agent or team with its type and its description](images/agents-list.jpg)
+![The list Agents & Workflows: the title, the button New and the filter All types on the first row, the search field and the tools on the second, and one line per agent, team or workflow with its type and its description](images/agents-list.jpg)
 
-**Studio** > **Agents** shows agents and teams in the same list. The column **Type** says which one each line is.
+**Studio** > **Agents & Workflows** shows agents, teams and workflows in the same list. The column **Type** says which one each line is.
 
-- **New agent** and **New team** create one, at the top right.
-- The search field, on the second row, finds an agent or a team by its name.
+- **New** creates one, at the top right. It asks which: agent, team or workflow.
+- The type filter beside it shows one type only.
+- The search field, on the second row, finds an item by its name.
 - The panel on the left holds folders, to keep your work in order.
 
 ## An editor
 
 When you open an agent or a team, its editor takes the place of the list. Every editor has the same parts:
 
-- a bar at the top: on the left, the path (for example **Workflows** > the name), in the middle a switch **Editor** | **Execution** (**Editor** to build, **Execution** to run and to see what happened), and on the right the state of the work and **Publish**, which saves your changes;
+- a bar at the top: on the left, the path (for example **Agents & Workflows** > the name), in the middle a switch **Editor** | **Execution** (**Editor** to build, **Execution** to run and to see what happened, and in a team or a workflow **Observation** to read a whole period), and on the right the state of the work and **Publish**, which saves your changes;
 - a canvas in the middle, a white box where the agent, the team or the workflow is drawn;
 - a panel on the right, with icon tabs: **Info** has the name and the role.
 
@@ -109,7 +109,7 @@ When you open an agent or a team, its editor takes the place of the list. Every 
 
 ## How to know it worked
 
-You can open **Home**, **Assistant**, **Studio** > **Agents** and **Administration** from the menu, and each one shows the screen described above.
+You can open **Home**, **Assistant**, **Studio** > **Agents & Workflows** and **Administration** from the menu, and each one shows the screen described above.
 
 ## Next step
 

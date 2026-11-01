@@ -25,7 +25,7 @@ The three work the same way. You choose what the step calls, you write the messa
 
 | | **AI Agent** step | **Agent** step |
 |---|---|---|
-| Where the agent is defined | In the workflow. You write its instructions and plug its model there. | In **Studio** > **Agents**. The workflow only calls it. |
+| Where the agent is defined | In the workflow. You write its instructions and plug its model there. | In **Studio** > **Agents & Workflows**. The workflow only calls it. |
 | Use it when | The agent serves this workflow only. | The agent exists already, or serves several workflows. |
 
 See [Add an AI step to a workflow](/docs/workflows/add-an-ai-step/) for the first one. This page is about the steps that call your library.

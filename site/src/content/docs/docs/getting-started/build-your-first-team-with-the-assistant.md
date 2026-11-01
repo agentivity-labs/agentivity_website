@@ -54,7 +54,7 @@ You can keep talking in the same conversation: ask for a change, add a member, o
 
 - The Assistant shows **Saved to your workspace**.
 - Select **Open in the editor**. The team opens in its editor, with its three members on the canvas.
-- The team and its agents are in **Studio** > **Agents**.
+- The team and its agents are in **Studio** > **Agents & Workflows**.
 
 ## If it does not work
 

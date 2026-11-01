@@ -17,7 +17,7 @@ A Template is one file that holds a solution and everything it needs: the agent,
 
 ## Create the Template
 
-1. Open **Studio** > **Agents** or **Studio** > **Workflows**.
+1. Open **Studio** > **Agents & Workflows**.
 2. On the line of what you want to share, select the three dots, then **Create Template...** You can also select the box button in its editor.
 3. The window **Create a Template** opens.
 

@@ -20,11 +20,13 @@ The group **Activity** of [Administration](/docs/administration/what-administrat
 - **Executions started** in the current month, against the number your plan allows, with a line such as "At this pace, about N by the end of the month, within the 25 000 your edition allows", and a chart **Completed, day by day**.
 - **Limits of the edition**, one card for each limit: **People** (active people and invitations not yet accepted), **Spaces** (archived ones are not counted), **API keys in use** (keys neither revoked nor ended, of everyone), **Executions at the same time** (running now) and **Disk (GB)**.
 - **The last 14 days**: executions of agents, teams and workflows.
-- **Models this month**: which models were used.
+- **Models this month**: which models were used, with the executions and the tokens of each one.
 
 A line under the limits reminds you that an execution runs at most for the length your plan allows without a break, and that a longer one is stopped. An execution that waits for a person does not count. See [Plans and their limits](/docs/hosted/plans-and-limits/).
 
 The month is the calendar month.
+
+**Usage** is about the whole workspace. To see where the tokens go inside one team or one workflow, see [The Observation tab](/docs/studio/observation/).
 
 ## Monitoring
 

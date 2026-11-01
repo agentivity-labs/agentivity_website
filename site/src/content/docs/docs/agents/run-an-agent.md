@@ -18,7 +18,7 @@ Running an agent alone is the fastest way to test it: you give it a task, you re
 
 ## Give a task
 
-1. Open **Studio** > **Agents** and open the agent.
+1. Open **Studio** > **Agents & Workflows** and open the agent.
 2. In the switch at the top, select **Execution**. The panel on the right asks "What would you like the agent to do?"
 3. In the field **Describe the task for the agent…**, type the task. For the `Reminder Writer`:
 

@@ -91,6 +91,10 @@ Details are in [Create a group](/docs/teams/set-up-a-member/#create-a-group) and
 
 The theme has no link with these colours, and a palette is only a help to choose: it is not saved.
 
+## Read the groups in Observation
+
+The reading **Groups** of the tab **Observation** shows the groups of a published team or workflow, and the measures keep the same drawing. See [The Observation tab](/docs/studio/observation/).
+
 ## Next step
 
 [See the colour palettes on real teams](/docs/teams/see-the-colour-palettes/).

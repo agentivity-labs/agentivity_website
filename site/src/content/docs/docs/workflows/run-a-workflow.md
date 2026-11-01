@@ -18,7 +18,7 @@ An execution is one time that a workflow works, from its first step to its last.
 
 ## Start an execution
 
-1. Open **Studio** > **Workflows** and open the workflow.
+1. Open **Studio** > **Agents & Workflows** and open the workflow.
 2. In the switch at the top, select **Execution**. If the workflow has changes that are not published, the Studio first says **Publish before leaving the editor**: select **Publish**. When the workflow can run, you read **Ready to run** at the top right.
 3. In the bar above the canvas, select the first button, **Run**.
 
@@ -59,6 +59,8 @@ To see a value without opening the **Inspector**, add a **Console** node at the 
 An execution that waits for a person has the label **ACTION REQUIRED**.
 
 To stop or delete several executions at once, tick them, choose the action in the list **Batch action**, then select **Apply**.
+
+To read the workflow over a period, not one execution, select **Observation** in the switch at the top: see [The Observation tab](/docs/studio/observation/).
 
 ## How to know it worked
 

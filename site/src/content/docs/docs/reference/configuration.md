@@ -89,6 +89,8 @@ The server removes old runs by itself.
 | `WorkflowRunRetention__MaxRunsToKeep` | `1000` | The largest number of runs kept. |
 | `WorkflowRunRetention__CleanupIntervalMinutes` | `60` | How often the old runs are removed. |
 
+The server keeps every finished execution for the longest of the three numbers of days, so 30 days by default. It keeps the calls to models 365 days. On a hosted workspace, the plan says how long all of this is kept, and also the pictures, the sounds and the uploaded files: see [Plans and their limits](/docs/hosted/plans-and-limits/#how-long-the-history-is-kept).
+
 ## Pictures and sounds made by the executions
 
 | Setting | Default | What it is |

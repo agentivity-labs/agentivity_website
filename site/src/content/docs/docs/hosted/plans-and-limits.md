@@ -23,11 +23,14 @@ A hosted workspace has a plan. This page says what each plan includes and where 
 | Disk | 2 GB | 10 GB | 50 GB |
 | API keys | 5 | 20 | 100 |
 | Backups kept | 7 days | 14 days | 30 days |
+| History kept | 7 days | 14 days | 30 days |
 | Support | E-mail | Priority e-mail | Priority e-mail and a kick-off video call |
 | Several spaces | no | yes | yes |
-| Groups | no | no | yes |
+| Permissions (groups of people) | no | no | yes |
 | Audit journal | no | no | yes |
 | Monitoring | no | no | yes |
+
+[Observation](/docs/studio/observation/), the tab that reads a team or a workflow over a period, comes with the Pro, Business and Enterprise plans.
 
 Every plan includes sign-in with roles, API keys, keys for a website and the connection of AI assistants. A larger plan is available on request: see [pricing](/pricing). On a hosted workspace, the kinds of Knowledge Base source that read the server itself (Files and SQLite) are not offered.
 
@@ -53,9 +56,22 @@ The trial has the features of the plan you chose, for 14 days, and is limited to
 
 The storage of your workspace is backed up every day, and the backups are kept for the number of days of your plan. To restore your workspace from a backup, write to security@agentivity.io.
 
+## How long the history is kept
+
+The history is what the workspace keeps of its past work: the calls to models, the executions, and the images, audio and uploaded files. Older items are removed by themselves. The time depends on the contract:
+
+| Contract | History kept |
+|---|---|
+| Personal | 7 days |
+| Pro | 14 days |
+| Business | 30 days |
+| Enterprise | No limit |
+
+The history is not the same thing as the backups, and it does not touch what you built: agents, teams, workflows, Data Tables and Knowledge Bases stay.
+
 ## What the Community edition has
 
-The Community edition is the one you install yourself, free of charge. It has no sign-in: anyone who reaches the server uses everything. It has no groups, audit journal, monitoring or keys for a website. It has no cap on executions. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
+The Community edition is the one you install yourself, free of charge. It has no sign-in: anyone who reaches the server uses everything. It has no groups of people, audit journal, monitoring or keys for a website. It has no [Observation](/docs/studio/observation/) tab. It has no cap on executions. By default it keeps the calls to models 365 days, the executions 30 days, and images, audio and uploaded files 7 days: see [Configuration reference of the server](/docs/reference/configuration/). See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
 
 ## If you go beyond a plan
 

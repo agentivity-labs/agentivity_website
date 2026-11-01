@@ -50,8 +50,7 @@ You do not have to choose alone. The [Assistant](/docs/getting-started/build-you
 
 ## In the Studio
 
-- Agents and teams are in **Studio** > **Agents**.
-- Workflows are in **Studio** > **Workflows**.
+Agents, teams and workflows are together in **Studio** > **Agents & Workflows**.
 
 To see the three blocks in real examples, read the [use cases](/use-cases) and [how it works](/how-it-works).
 

@@ -27,6 +27,19 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 | GET | `/api/v1/ag-ui/bundles` | Returns all registered AG-UI widget bundles |
 | GET | `/api/v1/ag-ui/bundles/{bundleId}` | Returns the full widget descriptor list for a specific bundle |
 
+## Library
+
+Agents, teams and workflows share one tree of folders. The routes under `/api/v1/agentic` and `/api/v1/workflows` that read and change folders work on the same tree.
+
+| Method | Path | What it does |
+|---|---|---|
+| GET | `/api/v1/library/browse` | Browse the agents, teams and workflows of the library |
+| GET | `/api/v1/library/folders` | List folders in the library |
+| POST | `/api/v1/library/folders` | Create a folder in the library |
+| DELETE | `/api/v1/library/folders/{folderId}` | Delete a folder |
+| POST | `/api/v1/library/folders/{folderId}/move` | Move a folder to another parent |
+| POST | `/api/v1/library/folders/{folderId}/rename` | Rename a folder |
+
 ## Agentic Library
 
 | Method | Path | What it does |
