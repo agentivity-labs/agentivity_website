@@ -22,7 +22,7 @@ You read all this on the drawing you already know. There is no table to learn an
 
 ## Open it
 
-1. Open **Studio** > **Agents & Workflows** or **Studio** > **Agents & Workflows**, then open the team or the workflow.
+1. Open **Studio** > **Agents & Workflows**, then open the team or the workflow.
 2. In the switch at the top, select **Observation**.
 
 The bar below the switch has four readings: **Groups**, **Errors**, **Tokens** and **Latency**. The drawing does not move between them, so your eye stays on the same place when you change reading.

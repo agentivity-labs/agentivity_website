@@ -14,7 +14,7 @@ Cette page vous permet de faire tourner Agentivity sur votre propre machine ou s
 ## Ce dont vous avez besoin
 
 - Un ordinateur ou un serveur qui peut faire tourner Docker : Docker Desktop sous Windows ou macOS, Docker Engine sous Linux. Si vous ne l'avez pas encore, [installez Docker](https://docs.docker.com/get-started/get-docker/).
-- Une clé API d'un fournisseur de modèles d'IA. Vous pouvez l'ajouter après l'installation : voyez [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/).
+- Un modèle d'IA pour vos agents : un compte OpenRouter, ou une clé API d'un fournisseur de modèles d'IA. Vous pouvez le connecter après l'installation : voyez [Connect with OpenRouter](/fr/docs/guides/connect-with-openrouter/) (en anglais) et [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/).
 
 ## Démarrer Agentivity
 

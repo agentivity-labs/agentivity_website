@@ -41,7 +41,7 @@ Vous pouvez le faire depuis une bibliothèque ou depuis un éditeur.
 
 ![La liste Agents & Workflows : l'équipe Weekly Competitor Note porte la marque Solution à côté de son nom, et le menu de sa ligne propose Open, No longer a solution, Create Template, Use my default model et Delete](images/solution-library-menu.jpg)
 
-1. Ouvrez **Studio** > **Agents & Workflows** pour un agent ou une équipe, ou **Studio** > **Agents & Workflows** pour un workflow.
+1. Ouvrez **Studio** > **Agents & Workflows**.
 2. Sur la ligne de l'agent, de l'équipe ou du workflow, sélectionnez les trois points.
 3. Sélectionnez **Mark as solution**.
 
@@ -64,7 +64,7 @@ Vous pouvez aussi taper le tag `solution` à la main dans **Tags**. C'est la mê
 
 ## Comment une Solution apparaît dans le Studio
 
-Dans **Agents** et dans **Workflows**, une Solution se distingue du reste :
+Dans **Agents & Workflows**, une Solution se distingue du reste :
 
 - une petite marque **Solution** figure à côté de son nom ;
 - son icône prend la couleur d'accent.

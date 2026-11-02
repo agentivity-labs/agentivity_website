@@ -14,7 +14,7 @@ The first time you open the Studio, a welcome guide appears. At the top, five st
 ## What you need
 
 - Agentivity running, with the Studio open in your browser. If it is not, start with [Install Agentivity with Docker](/docs/getting-started/install-community/).
-- For step 1, an API key from an AI model provider. An API key is a secret code that lets Agentivity use your account with that provider.
+- For step 1, an OpenRouter account, which you can create on the way, or an API key from an AI model provider if you prefer to use your own. An API key is a secret code that lets Agentivity use your account with that provider.
 - For step 2, an internet connection on the machine where Agentivity runs.
 
 ## Start the guide
@@ -29,11 +29,26 @@ If you prefer to look around first, select **Not now**, or **Skip the guide** at
 
 ## Step 1: give your team a brain
 
-Your agents need an AI model to think with.
+Your agents need an AI model to think with. The step offers two ways, in two boxes:
 
-![Step 1 of the welcome guide: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a green line that says a model connection already exists, the field Claude API key, and the buttons Continue and Skip for now](images/guide-step1.jpg)
+- **One OpenRouter account**, marked **Recommended**: no key to copy, models from several providers, and you pay for what you use. If you already have an account, you just sign in.
+- **Use my own key**: for someone who already pays an AI provider, such as Anthropic or OpenAI. You paste a key, and Agentivity checks it at once.
 
-1. Choose your provider: **Claude**, **GPT**, **Gemini**, **Grok** or **DeepSeek**.
+![Step 1 of the welcome guide: the two boxes One OpenRouter account, marked Recommended, and Use my own key, the button Connect with OpenRouter and the button Skip for now](images/guide-step1-choices.png)
+
+### With an OpenRouter account
+
+1. Keep the first box and select **Connect with OpenRouter**. A window opens at OpenRouter: sign up or sign in, then select **Authorize**.
+2. A new account has no credit, so the guide then says "One step left: add credit". Select **Add credit**, pay at OpenRouter, and come back. The guide notices the credit by itself, or you can select **I've added credit**.
+3. When the guide says "Connected to OpenRouter. You are ready.", select **Continue**.
+
+You can change the model later, in **Administration** > **Credentials**. Everything about this way, including what happens when credit runs out, is in [Connect with OpenRouter](/docs/guides/connect-with-openrouter/).
+
+### With your own key
+
+![Step 1 of the welcome guide with your own key: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a green line that says a model connection already exists, the field Claude API key, and the buttons Continue and Skip for now](images/guide-step1.jpg)
+
+1. Select **Use my own key**, then choose your provider: **Claude**, **GPT**, **Gemini**, **Grok** or **DeepSeek**. **Back to the choices** goes back to the two boxes.
 2. Paste your API key in the field **API key**, then select **Check the key**. Agentivity asks the provider whether the key works, at no cost. Nothing is saved yet. A key that the provider refuses shows the message of the provider.
 3. Choose the **Model**. It is required. The list holds the models that your key can use. If the list is not available, type the ID of the model.
 4. Select **Save**. The connection is saved with its key and its model, and the guide says "Connected to" your provider. Select **Continue**. You can change the model later, in **Administration** > **Credentials**.
@@ -42,7 +57,7 @@ The key is stored in your workspace and is never shown again.
 
 If a model connection already exists, a green line says so ("You already have a model connection") and you can select **Continue**, or add another one.
 
-To do this later, select **Skip for now**. The page [Connect an AI model](/docs/guides/connect-a-model/) explains this step in detail.
+To do this later, select **Skip for now**. If you start a chat or a run with no model connected, the Studio offers the same two choices in a window, so nothing is lost. The page [Connect an AI model](/docs/guides/connect-a-model/) explains the own-key step in detail.
 
 ## Step 2: start with a ready-made team
 
@@ -83,6 +98,7 @@ What you skipped is not lost. In the Studio, open your account menu, at the bott
 
 ## If it does not work
 
+- **The window of OpenRouter did not open.** Your browser blocked the pop-up. Allow pop-ups for this page and select **Try again**.
 - **"Paste your API key first."** The key field is empty.
 - **"This key was refused by" your provider.** The Studio shows the message of your provider.
 - **"Choose the model your agents will use."** Choose a model in the list before you select **Save**.

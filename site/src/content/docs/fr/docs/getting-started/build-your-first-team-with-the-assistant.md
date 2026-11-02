@@ -58,7 +58,7 @@ Vous pouvez continuer dans la même conversation : demander une modification, aj
 
 ## Si ça ne marche pas
 
-- **« The model did not answer. »** L'Assistant n'a pas pu joindre le modèle d'IA. Vérifiez votre connexion au modèle dans **Settings** > **Credentials** : la clé, et le crédit chez le fournisseur. Vérifiez aussi que la machine où tourne Agentivity accède à Internet.
+- **« The model did not answer. »** L'Assistant n'a pas pu joindre le modèle d'IA. Vérifiez votre connexion au modèle dans **Administration** > **Credentials** : la clé, et le crédit chez le fournisseur. Vérifiez aussi que la machine où tourne Agentivity accède à Internet.
 - **« The assistant is not available: its module is not loaded in this platform. »** Cette installation ne contient pas l'Assistant. Réinstallez l'image actuelle : voyez [Installer Agentivity avec Docker](/fr/docs/getting-started/install-community/).
 - **Le brouillon ne vous plaît pas.** Demandez une modification, ou supprimez la conversation. Supprimer un brouillon ne change rien dans votre espace de travail.
 

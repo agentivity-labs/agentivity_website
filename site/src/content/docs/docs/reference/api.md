@@ -132,6 +132,11 @@ Agents, teams and workflows share one tree of folders. The routes under `/api/v1
 | POST | `/api/v1/credentials/{id}/test` | Test a model credential against its provider |
 | POST | `/api/v1/credentials/models` | List the models a connection being typed can use |
 | GET | `/api/v1/credentials/templates` | List the available credential templates |
+| GET | `/api/v1/credentials/openrouter` | Say whether an OpenRouter account is connected, its model, whether it has credit and the models offered |
+| POST | `/api/v1/credentials/openrouter/connect` | Connect an OpenRouter account: the body holds `code` and `codeVerifier` from the sign-in, and the server keeps the key as a model connection |
+| PUT | `/api/v1/credentials/openrouter/model` | Choose the model of the connected OpenRouter account, among the models offered |
+
+The OpenRouter routes never return the key. Disconnecting an account is deleting its credential with `DELETE /api/v1/credentials/{id}`. See [Connect with OpenRouter](/docs/guides/connect-with-openrouter/).
 
 ## Datatables
 

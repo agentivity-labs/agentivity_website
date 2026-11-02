@@ -53,7 +53,7 @@ Vous pouvez aussi partir du Studio : sur la page d'accueil, sélectionnez **Brow
 Les agents d'un Template ont été configurés avec la connexion au modèle de leur auteur. Cette connexion n'existe pas sur votre serveur. L'import la remplace donc :
 
 - **Si vous avez une connexion à un modèle**, les agents importés utilisent la vôtre. Le message **Template imported** indique laquelle, par exemple « 13 model connections now use » suivi du nom de votre connexion.
-- **Si vous n'avez pas encore de connexion à un modèle**, l'import fonctionne quand même, mais les agents échouent à leur premier lancement. Ajoutez une connexion dans **Settings** > **Credentials**. Allez ensuite dans **Studio** > **Agents & Workflows**, ouvrez le menu de l'élément importé et sélectionnez **Use my default model**.
+- **Si vous n'avez pas encore de connexion à un modèle**, l'import fonctionne quand même, mais les agents échouent à leur premier lancement. Ajoutez une connexion dans **Administration** > **Credentials**. Allez ensuite dans **Studio** > **Agents & Workflows**, ouvrez le menu de l'élément importé et sélectionnez **Use my default model**.
 
 ## Comment savoir que ça marche
 

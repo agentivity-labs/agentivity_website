@@ -76,7 +76,7 @@ Publish before you leave the editor. The team editor does not ask you to save wh
 - **"Team name is required."** The name field is empty.
 - **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with the Assistant.
 - **Publish cannot be selected.** There is nothing new to save.
-- **The menu entry Agents does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents & Workflows**.
+- **The menu entry Agents & Workflows does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents & Workflows**.
 - **A Manager-led team refuses to run.** It needs a member at the top position, which is the manager, and at least one worker below. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).
 
 ## Go further

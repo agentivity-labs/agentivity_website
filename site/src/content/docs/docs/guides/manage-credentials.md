@@ -11,7 +11,7 @@ lastUpdated: false
 
 Credentials are the keys and the accounts that your agents, teams and workflows connect with. Agentivity also calls one of them a connection. This page shows how to manage them.
 
-For the first connection to an AI model, the shorter page is [Connect an AI model](/docs/guides/connect-a-model/).
+For the first connection to an AI model, the shorter pages are [Connect with OpenRouter](/docs/guides/connect-with-openrouter/), for one account and no key to copy, and [Connect an AI model](/docs/guides/connect-a-model/), for a key of your own. An OpenRouter account has its own card at the top of **Credentials**, with its model, **Add credit**, **Change account** and **Disconnect**.
 
 ## What you need
 

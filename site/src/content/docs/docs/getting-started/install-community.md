@@ -14,7 +14,7 @@ This page gets Agentivity running on your own machine or server. It takes a few 
 ## What you need
 
 - A computer or a server that can run Docker: Docker Desktop on Windows or macOS, Docker Engine on Linux. If you do not have it yet, [get Docker](https://docs.docker.com/get-started/get-docker/).
-- An API key from an AI model provider. You can add it after the install: see [Connect an AI model](/docs/guides/connect-a-model/).
+- An AI model for your agents: an OpenRouter account, or an API key from an AI model provider. You can connect it after the install: see [Connect with OpenRouter](/docs/guides/connect-with-openrouter/) and [Connect an AI model](/docs/guides/connect-a-model/).
 
 ## Start Agentivity
 
@@ -86,4 +86,4 @@ See [Fix a failed installation](/docs/guides/if-the-install-fails/). To keep you
 
 ## Next step
 
-[Connect an AI model](/docs/guides/connect-a-model/), so that your agents have something to think with.
+Follow the welcome guide, or [connect with OpenRouter](/docs/guides/connect-with-openrouter/) or [connect an AI model of your own](/docs/guides/connect-a-model/), so that your agents have something to think with.

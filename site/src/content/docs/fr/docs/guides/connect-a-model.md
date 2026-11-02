@@ -9,7 +9,10 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/fr/guides/connect-a-model.md. Do not edit here: edit the source and publish again. -->
 
-Les agents ont besoin d'un modèle d'IA pour réfléchir. Agentivity n'en fournit pas : vous apportez le vôtre. Vous ajoutez la clé API du fournisseur que vous utilisez, et vos agents tournent sur ce modèle.
+Les agents ont besoin d'un modèle d'IA pour réfléchir. Agentivity n'en fournit pas. Vous avez deux voies pour en avoir un :
+
+- **Un compte OpenRouter** : la voie la plus simple, sans clé à copier. Voyez [Connect with OpenRouter](/fr/docs/guides/connect-with-openrouter/) (page en anglais).
+- **Une clé à vous**, d'un fournisseur que vous payez déjà. C'est l'objet de cette page. Vous ajoutez la clé API du fournisseur que vous utilisez, et vos agents tournent sur ce modèle.
 
 ## Ce dont vous avez besoin
 
@@ -32,7 +35,7 @@ Le Studio est en anglais : les noms ci-dessous sont ceux de l'écran.
 
 ![L'étape 1 du guide de bienvenue, Connect your AI model : cinq fournisseurs au choix (Claude, GPT, Gemini, Grok, DeepSeek), un champ pour la clé API, et les boutons Check the key et Skip for now](images/guide-step1.jpg)
 
-1. Ouvrez le Studio. Dans le guide de bienvenue, choisissez **Get started**, puis l'étape **Connect your AI model**.
+1. Ouvrez le Studio. Dans le guide de bienvenue, à l'**étape 1**, sélectionnez **Use my own key** (l'autre case est **One OpenRouter account**).
 2. Choisissez votre fournisseur.
 3. Collez votre clé API, puis sélectionnez **Check the key**. Agentivity demande au fournisseur si la clé fonctionne. C'est gratuit, et rien n'est encore enregistré. Si le fournisseur refuse la clé, son message s'affiche.
 4. Choisissez le modèle (**Model**). C'est obligatoire. La liste contient les modèles que votre clé peut utiliser, et vous pouvez taper dedans pour la filtrer. Si la liste n'a pas pu être chargée (un problème de réseau, ou une limite de votre fournisseur), tapez vous-même l'ID du modèle.
@@ -40,7 +43,7 @@ Le Studio est en anglais : les noms ci-dessous sont ceux de l'écran.
 
 **Comment savoir que ça marche :** la connexion est enregistrée, et le guide vous laisse continuer.
 
-Vous pourrez changer de modèle plus tard, dans **Settings** > **Credentials**.
+Vous pourrez changer de modèle plus tard, dans **Administration** > **Credentials**.
 
 ## Ajouter une autre connexion plus tard
 

@@ -59,7 +59,7 @@ Voici les mots que vous rencontrez dans le Studio et dans ces pages, expliqués 
 | **AI model** (modèle d'IA) | Le programme, géré par un fournisseur, avec lequel un agent réfléchit. Agentivity n'en fournit pas. |
 | **Provider** (fournisseur) | L'entreprise qui fait tourner le modèle, par exemple Anthropic, OpenAI ou Google. |
 | **API key** (clé API) | Un code secret qui permet à Agentivity d'utiliser votre compte chez un fournisseur. |
-| **Credentials** (identifiants) | Les clés et les comptes avec lesquels vos agents, équipes et workflows se connectent. Ils sont conservés dans **Settings** > **Credentials**. |
+| **Credentials** (identifiants) | Les clés et les comptes avec lesquels vos agents, équipes et workflows se connectent. Ils sont conservés dans **Administration** > **Credentials**. |
 | **Model connection** (connexion à un modèle) | Les identifiants d'un modèle d'IA. |
 
 ## Partager

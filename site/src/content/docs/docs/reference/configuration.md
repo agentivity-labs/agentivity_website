@@ -133,6 +133,18 @@ The engine slows itself down when the machine is under load.
 | `WorkflowEngine__ThrottleMemoryPercent` | `80` | The memory use from which the engine slows down. |
 | `LlmRecovery__MaxRetries` | `2` | How many times a call to an AI model is tried again after a failure. |
 
+## The OpenRouter account
+
+The models offered to someone who connects an OpenRouter account are data, so you can change them without a new version. See [Connect with OpenRouter](/docs/guides/connect-with-openrouter/).
+
+| Setting | Default | What it is |
+|---|---|---|
+| `OpenRouter__BaseUrl` | `https://openrouter.ai/api/v1` | The address of the OpenRouter API. |
+| `OpenRouter__DefaultModel` | the first model of the list | The model an account starts with. |
+| `OpenRouter__Models__0__Id`, `__1__Id`… | a short built-in list | The models offered, one group of settings for each. Each one has an `Id` (the name of the model at OpenRouter), a `Label` (what the Studio shows) and a `Description` (one line that says what it is good for). With no model set, the built-in list is used. |
+
+A model that is not in the list cannot be chosen: the route that chooses a model refuses it.
+
 ## What is not a setting
 
 - **A login.** The server has none. See [Keep your server private](/docs/guides/keep-your-server-private/).

@@ -69,7 +69,7 @@ Yes, separately. You connect your own account with the provider you choose, and 
 
 ### Which AI models can I use?
 
-Models from Anthropic, OpenAI, Google, xAI and DeepSeek, and Claude models through AWS Bedrock. You can connect several and choose which one each agent uses. See [Connect an AI model](/docs/guides/connect-a-model/).
+Models from Anthropic, OpenAI, Google, xAI and DeepSeek, and Claude models through AWS Bedrock. With one OpenRouter account you reach models from several providers without a key to copy. You can connect several and choose which one each agent uses. See [Connect with OpenRouter](/docs/guides/connect-with-openrouter/) and [Connect an AI model](/docs/guides/connect-a-model/).
 
 ### What does a request cost me?
 

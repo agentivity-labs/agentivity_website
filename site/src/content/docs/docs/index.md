@@ -107,7 +107,8 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 ## Find something
 
 - [Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/), then each screen: [agents, teams and workflows](/docs/studio/lists-of-agents-teams-and-workflows/), [an editor](/docs/studio/editor/), [the Observation tab](/docs/studio/observation/), [Executions](/docs/studio/executions/), [Templates](/docs/studio/templates/), [settings, theme and small controls](/docs/studio/settings-theme-and-controls/)
-- [Connect an AI model](/docs/guides/connect-a-model/)
+- [Connect with OpenRouter](/docs/guides/connect-with-openrouter/), one account and no key to copy
+- [Connect an AI model](/docs/guides/connect-a-model/), with a key of your own
 - [Add, change or remove credentials](/docs/guides/manage-credentials/)
 - [Share your work as a Template](/docs/guides/share-a-template/)
 - [Organise your work in folders](/docs/guides/organise-with-folders/)

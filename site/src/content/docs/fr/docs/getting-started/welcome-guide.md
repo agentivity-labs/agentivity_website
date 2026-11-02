@@ -14,7 +14,7 @@ La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. Il
 ## Ce dont vous avez besoin
 
 - Agentivity qui tourne, avec le Studio ouvert dans votre navigateur. Sinon, commencez par [Installer Agentivity avec Docker](/fr/docs/getting-started/install-community/).
-- Pour l'étape 1, une clé API d'un fournisseur de modèles d'IA. Une clé API est un code secret qui permet à Agentivity d'utiliser votre compte chez ce fournisseur.
+- Pour l'étape 1, un compte OpenRouter, que vous pouvez créer en chemin, ou une clé API d'un fournisseur de modèles d'IA si vous préférez la vôtre. Une clé API est un code secret qui permet à Agentivity d'utiliser votre compte chez ce fournisseur.
 - Pour l'étape 2, une connexion Internet sur la machine où tourne Agentivity.
 
 ## Lancer le guide
@@ -29,18 +29,33 @@ Si vous préférez d'abord jeter un œil, sélectionnez **Not now** ou **Skip th
 
 ## Étape 1 : connecter votre modèle d'IA
 
-Vos agents ont besoin d'un modèle d'IA pour réfléchir.
+Vos agents ont besoin d'un modèle d'IA pour réfléchir. L'étape propose deux voies, dans deux cases :
 
-![L'étape 1 du guide de bienvenue, Connect your AI model : cinq fournisseurs au choix (Claude, GPT, Gemini, Grok, DeepSeek), un champ pour la clé API, et les boutons Check the key et Skip for now](images/guide-step1.jpg)
+- **One OpenRouter account**, marquée **Recommended** : pas de clé à copier, des modèles de plusieurs fournisseurs, et vous payez ce que vous utilisez. Si vous avez déjà un compte, vous vous connectez simplement.
+- **Use my own key** : pour qui paye déjà un fournisseur d'IA, comme Anthropic ou OpenAI. Vous collez une clé, et Agentivity la vérifie aussitôt.
 
-1. Choisissez votre fournisseur : **Claude**, **GPT**, **Gemini**, **Grok** ou **DeepSeek**.
+![L'étape 1 du guide de bienvenue : les deux cases One OpenRouter account, marquée Recommended, et Use my own key, le bouton Connect with OpenRouter et le bouton Skip for now](images/guide-step1-choices.png)
+
+### Avec un compte OpenRouter
+
+1. Gardez la première case et sélectionnez **Connect with OpenRouter**. Une fenêtre s'ouvre chez OpenRouter : créez un compte ou connectez-vous, puis sélectionnez **Authorize**.
+2. Un nouveau compte n'a pas de crédit : le guide dit alors « One step left: add credit ». Sélectionnez **Add credit**, payez chez OpenRouter, puis revenez. Le guide voit le crédit tout seul, ou vous pouvez sélectionner **I've added credit**.
+3. Quand le guide dit « Connected to OpenRouter. You are ready. », sélectionnez **Continue**.
+
+Vous pourrez changer de modèle plus tard, dans **Administration** > **Credentials**. Tout ce qui concerne cette voie, y compris ce qui se passe quand le crédit s'épuise, est dans [Connect with OpenRouter](/fr/docs/guides/connect-with-openrouter/) (page en anglais).
+
+### Avec votre propre clé
+
+![L'étape 1 du guide de bienvenue avec votre propre clé : cinq fournisseurs au choix (Claude, GPT, Gemini, Grok, DeepSeek), un champ pour la clé API, et les boutons Check the key et Skip for now](images/guide-step1.jpg)
+
+1. Sélectionnez **Use my own key**, puis choisissez votre fournisseur : **Claude**, **GPT**, **Gemini**, **Grok** ou **DeepSeek**. **Back to the choices** revient aux deux cases.
 2. Collez votre clé API dans le champ, puis sélectionnez **Check the key**. Agentivity demande au fournisseur si la clé fonctionne. Rien n'est encore enregistré. Si le fournisseur refuse la clé, son message s'affiche.
 3. Choisissez le modèle. C'est obligatoire. La liste contient les modèles que votre clé peut utiliser. Si la liste n'est pas disponible, tapez l'ID du modèle.
-4. Sélectionnez **Save**. La connexion est enregistrée avec sa clé et son modèle. Vous pourrez changer de modèle plus tard, dans **Credentials**.
+4. Sélectionnez **Save**. La connexion est enregistrée avec sa clé et son modèle. Vous pourrez changer de modèle plus tard, dans **Administration** > **Credentials**.
 
 La clé est stockée sur votre serveur et n'est plus jamais affichée.
 
-Pour le faire plus tard, sélectionnez **Skip for now**. La page [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/) explique cette étape en détail.
+Pour le faire plus tard, sélectionnez **Skip for now**. Si vous lancez un chat ou une exécution sans modèle connecté, le Studio propose les deux mêmes choix dans une fenêtre : rien n'est perdu. La page [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/) explique la voie de la clé personnelle en détail.
 
 ## Étape 2 : essayer une première Solution
 
@@ -76,6 +91,7 @@ Ce que vous avez passé n'est pas perdu. Dans le Studio, sélectionnez **Getting
 
 ## Si ça ne marche pas
 
+- **La fenêtre d'OpenRouter ne s'ouvre pas.** Votre navigateur a bloqué la fenêtre. Autorisez les fenêtres pour cette page, puis sélectionnez **Try again**.
 - **« Paste your API key first. »** Le champ de la clé est vide.
 - **La clé est refusée.** Le Studio affiche le message de votre fournisseur.
 - **« The marketplace could not be reached. »** La machine où tourne Agentivity n'a pas accès au catalogue de Templates. Vérifiez sa connexion Internet, ou passez l'étape et importez un Template plus tard à partir d'un fichier.

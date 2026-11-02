@@ -1,6 +1,6 @@
 ---
 title: "Connect an AI model to Agentivity"
-description: "Add the API key and choose the model of OpenAI, Anthropic, Google Gemini, xAI or DeepSeek so your agents can run. Your key stays on your server."
+description: "Add your own API key and choose the model of OpenAI, Anthropic, Google Gemini, xAI or DeepSeek so your agents can run. Your key stays on your server."
 sidebar:
   order: 1
 editUrl: false
@@ -9,7 +9,10 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/guides/connect-a-model.md. Do not edit here: edit the source and publish again. -->
 
-Agents need an AI model to think with. Agentivity does not provide one: you bring your own. You add the API key of the provider you use, and your agents run on that model.
+Agents need an AI model to think with. Agentivity does not provide one. You have two ways to get one:
+
+- **One OpenRouter account**: the simplest way, with no key to copy. See [Connect with OpenRouter](/docs/guides/connect-with-openrouter/).
+- **A key of your own**, from a provider you already pay. This page explains it. You add the API key of the provider you use, and your agents run on that model.
 
 ## What you need
 
@@ -30,7 +33,7 @@ Agents need an AI model to think with. Agentivity does not provide one: you brin
 
 ![Step 1 of the welcome guide, Connect your AI model: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a field for the API key, and the buttons Check the key and Skip for now](images/guide-step1.jpg)
 
-1. Open the Studio. In the welcome guide, choose **Get started**, then the step **Connect your AI model**.
+1. Open the Studio. In the welcome guide, go to **Step 1 of 3** and select **Use my own key** (the other box is **One OpenRouter account**).
 2. Choose your provider.
 3. Paste your API key, then select **Check the key**. Agentivity asks the provider whether the key works. This costs nothing, and nothing is saved yet. A key that the provider refuses shows the message of the provider.
 4. Choose the **model**. It is required. The list holds the models that your key can use, and you can type in it to filter it. If the list could not be loaded (a network problem, or a limit of your provider), type the ID of the model yourself.

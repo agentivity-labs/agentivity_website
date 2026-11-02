@@ -50,8 +50,7 @@ Vous n'avez pas à choisir seul. L'[Assistant](/fr/docs/getting-started/build-yo
 
 ## Dans le Studio
 
-- Les agents et les équipes sont dans **Studio** > **Agents & Workflows**.
-- Les workflows sont dans **Studio** > **Agents & Workflows**.
+- Les agents, les équipes et les workflows sont dans **Studio** > **Agents & Workflows**.
 
 Pour voir les trois briques dans des exemples réels, lisez les [cas d'usage](/fr/use-cases) et [comment ça marche](/fr/how-it-works).
 
