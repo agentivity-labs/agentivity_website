@@ -3,7 +3,6 @@ title: "Read a whole AI Company in Observation"
 description: "A team that holds other teams and workflows opens as one organisation. How to read it, open and close its levels, and find where the work goes."
 sidebar:
   order: 8
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -36,7 +35,7 @@ In **Groups**, everything is open at the start. Zoom out and levels close by the
 
 Each team and each workflow has a small **+** or **-** button at its corner. **-** closes it, and **+** opens it.
 
-Three buttons at the top right act on the whole drawing:
+Three icon buttons at the top right act on the whole drawing. Point at one to read its name:
 
 | Button | What it does |
 |---|---|

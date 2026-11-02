@@ -3,7 +3,6 @@ title: "The Observation tab of a team or a workflow"
 description: "Read a team or a workflow over a period, on its own drawing. Groups, Errors, Tokens and Latency, with a value on each step or member."
 sidebar:
   order: 5.5
-draft: true
 editUrl: false
 lastUpdated: false
 ---
