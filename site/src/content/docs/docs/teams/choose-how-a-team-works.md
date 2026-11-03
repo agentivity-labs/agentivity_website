@@ -94,6 +94,20 @@ In a team, each place on the canvas is a position, and the pattern gives each po
 
 A team that has only a manager, or no member at the top, is refused when you run it.
 
+## Who says a job is finished
+
+An execution counts jobs, not messages: see [What counts as one execution](/docs/studio/executions/#what-counts-as-one-execution). Who says a job is finished depends on the pattern. You set nothing: the model is told through the choices it is given at the end of each turn.
+
+| What runs | Who says the job is finished |
+|---|---|
+| An agent alone | The agent itself. It separates the end of a turn from the end of the work. |
+| Manager-led | The manager. The workers never say it. |
+| Handoff | The agent that stops handing over. If it only answers, no job is finished yet. |
+| Sequential, Concurrent, Group Chat | Nobody: the end of the run is the end of the job. Group Chat ends after its turns. |
+| Workflow, or a run with no person (a schedule, an assistant, a script) | Nobody: its end is the end of the job. |
+
+A question to the person is never the end of a job. If a team fails or is stopped, no job is finished. With no job declared, 20 messages of the person count as one job.
+
 ## Good to know
 
 - The pattern of a team is shown at the top right of its editor.

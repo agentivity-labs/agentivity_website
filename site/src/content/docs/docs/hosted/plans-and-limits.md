@@ -38,7 +38,7 @@ Every plan includes sign-in with roles, API keys, keys for a website and the con
 
 - **People** counts the active people and the invitations not yet accepted. A person you deactivate no longer counts.
 - **Spaces** counts the spaces in use. An archived space does not count.
-- **Executions a month** counts the executions started in the calendar month. When it is reached, a new execution is refused until the month starts again, unless you buy a pack: see [Subscription](/docs/administration/subscription/).
+- **Executions a month** counts the jobs of the calendar month: each conversation started, and each further job finished in it. See [What counts as one execution](/docs/studio/executions/#what-counts-as-one-execution). When it is reached, a new execution is refused until the month starts again, unless you buy a pack: see [Subscription](/docs/administration/subscription/).
 - **Executions at the same time** counts the executions running now. One that waits for a person does not count.
 - **Longest execution**: a longer execution is stopped, as if you had selected **Cancel**. Waiting for a person does not count.
 - **Disk**: what the workspace holds, in GB. When it is full, a new execution is refused.

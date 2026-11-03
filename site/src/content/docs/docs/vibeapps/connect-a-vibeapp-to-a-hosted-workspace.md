@@ -21,6 +21,23 @@ VITE_AGENTIVITY_BASE_URL=https://yourname.agentivity.app
 
 `yourname` is the name you chose when you started the workspace. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/).
 
+## The ID of what the app starts
+
+An application that starts one agent, one team or one workflow needs its ID: it tells the app which one to start. The ID stays the same when you rename the agent, the team or the workflow, or move it to another folder.
+
+You find it in two places:
+
+- In the editor, in the **Info** panel: the ID is at the top, in full, with a copy button. The button shows a tick for two seconds once it has copied.
+- In **Studio** > **Agents & Workflows**, in the menu of the line: **Copy ID** copies it and says "ID copied".
+
+Under the ID, the link **Use it in a VibeApp** (and **Use in a VibeApp...** in the menu of the line) opens a window that explains the same steps, with a button **Read the guide** that opens this page.
+
+Paste the ID where your app names what to start. In the example app of the coach team, it goes in the file `.env.local`:
+
+```text
+VITE_COACH_TEAM_ID=<the ID you copied>
+```
+
 ## The key
 
 A server that you install yourself has no sign-in, so the application sends nothing. A hosted workspace asks for a key with every call. Without one, it answers `sign_in_required`. The key goes in the header `Authorization: Bearer <key>`, and the SDK does that for you when you give it the key. There are two kinds of key for an application, and you make both under your name, in **Your API keys**.

@@ -47,7 +47,8 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 | Word | Meaning |
 |---|---|
 | **Request** | What a person asks a solution to do. |
-| **Execution** | One request handled from start to finish. |
+| **Execution** | One conversation with an agent, a team or a workflow. It holds one job or several, and stays open until someone closes it. |
+| **Job** | One piece of work delivered in an execution. Jobs are what the month counts: see [What counts as one execution](/docs/studio/executions/#what-counts-as-one-execution). |
 | **Finished work** | What the person receives at the end of an execution. |
 | **Human interaction** | A moment where an execution stops and waits for the answer of a person. |
 | **Channel** | The way a question reaches a person, for example the chat of the Studio. |

@@ -95,6 +95,10 @@ export function App() {
 
 The SDK needs React 18 or later.
 
+## Start one solution from your own application
+
+An application that starts a given agent, team or workflow needs its ID. Open it in the Studio, copy the ID at the top of the **Info** panel (or **Copy ID** in the menu of its line in **Studio** > **Agents & Workflows**), and paste it where your application names what to start. The ID does not change when you rename it or move it to another folder. See [The ID of what the app starts](/docs/vibeapps/connect-a-vibeapp-to-a-hosted-workspace/#the-id-of-what-the-app-starts).
+
 ## If it does not work
 
 - **The welcome screen is empty.** No entity carries the tag the portal looks for. Check `solutionTags` and the tags in the Studio.

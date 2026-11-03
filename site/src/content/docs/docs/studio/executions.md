@@ -62,6 +62,23 @@ To answer, open the execution in its editor and use the panel **Chat** of the ta
 
 On a hosted workspace, an execution can be refused with a message that says why: no plan in force, an update under way, or a limit of the plan reached. See [Why did my execution not start?](/docs/hosted/why-did-my-execution-not-start/).
 
+## What counts as one execution
+
+An execution is one conversation with an agent, a team or a workflow. It holds one job or several, and it stays open: a person can go on writing in it without limit. When a run ends, the conversation does not. It ends only when someone closes it.
+
+The month counts jobs, not messages:
+
+- Starting a conversation counts 1, even if nothing is delivered. Its first job is included.
+- Each job after the first counts 1 when it finishes. A thank-you or a quick question after a finished job costs nothing.
+- A question from the agent, an answer from a person, and a turn of a member do not count.
+- With no job declared finished, 20 messages of the person count as one job. A long conversation is counted even if nobody says a job is finished.
+
+A job is finished when the agent or the manager says so, or when the work simply ends, depending on what runs. See [Who says a job is finished](/docs/teams/choose-how-a-team-works/#who-says-a-job-is-finished).
+
+Once a job is finished, a chat offers three choices: go on, close, or start another. Going on keeps the conversation and what was said. Starting another begins from zero: nothing is carried over, not even a summary.
+
+A workflow is one job from start to end. It is never run a second time by a message: a message after its end is refused.
+
 ## When the server stops
 
 If the server stops or restarts while executions are going on, those executions are cut off. What happens next depends on where they were:

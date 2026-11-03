@@ -18,6 +18,8 @@ A workspace can refuse to start a new execution, and always says why. The messag
 | "The Pro edition runs 5 executions at the same time: wait for one to finish, or choose a bigger plan." | Your plan's limit of simultaneous executions is reached. | Wait for one to finish, or choose a bigger plan. |
 | "The Pro edition holds 10 GB, and the workspace holds 10.2 GB: delete what you no longer need, or choose a bigger plan." | The disk is full. | Delete data you no longer need, or choose a bigger plan. |
 | "The Pro edition allows 5000 executions a month: this would be one more." | The executions of the month are used. | Buy a pack, choose a bigger plan, or wait for the next month: see [Subscription](/docs/administration/subscription/). |
+| "This conversation has ended." | The conversation was closed, or the message follows the end of a workflow, which never runs twice. | Start a new conversation. |
+| "This conversation is still working, or waits for an answer." | A turn is going on, or a question waits for its answer. Nothing starts, and the chat keeps your text. | Send it once the turn has ended, stop the turn, or answer the question. |
 | "The Pro edition does not include" something | The plan does not have a feature that was asked for. | Choose a plan that has it: see [Plans and their limits](/docs/hosted/plans-and-limits/). |
 
 The edition and the figures in the messages above are examples. The message names your own.
@@ -26,6 +28,7 @@ The edition and the figures in the messages above are examples. The message name
 
 - An execution that waits for a person does not count as running.
 - Answering an execution that waits for a person is never refused by these limits.
+- A message that goes on in a conversation is new work: these limits can refuse it. The month is checked if a job was finished before it, and the job counts when it finishes: see [What counts as one execution](/docs/studio/executions/#what-counts-as-one-execution).
 - An execution that goes on too long is not refused but stopped, as if you had selected **Cancel**: see [Plans and their limits](/docs/hosted/plans-and-limits/).
 - **Administration** > **Usage** shows where you stand against each limit: see [Usage, monitoring and the audit journal](/docs/administration/usage-monitoring-and-audit-journal/).
 

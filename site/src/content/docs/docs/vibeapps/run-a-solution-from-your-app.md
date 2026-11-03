@@ -87,7 +87,7 @@ What each part does:
 
 | Part | Role |
 |---|---|
-| `entityId` | The identifier of the agent, the team or the workflow to run. |
+| `entityId` | The ID of the agent, the team or the workflow to run. Copy it from the **Info** panel of its editor: see [The ID of what the app starts](/docs/vibeapps/connect-a-vibeapp-to-a-hosted-workspace/#the-id-of-what-the-app-starts). |
 | `input` | The request of the person. |
 | `executionId` | Give the one you received to continue the same conversation. Leave it empty to start a new one. |
 | `enableHil` | Lets the execution stop and ask the person. HIL stands for "human in the loop". |
