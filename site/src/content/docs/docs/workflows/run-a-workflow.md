@@ -40,7 +40,7 @@ Below the canvas, three tabs show what happens:
 | **Errors** | What went wrong. When all is well, it says "No runtime errors detected." |
 | **Logs** | One line for each event, with the time: the execution started, the execution waits for a person, and so on. |
 
-On the right, a panel has three tabs: the earlier executions of this workflow, the forms that wait for an answer, and the **Chat** of the execution.
+On the right, a panel has two tabs: the earlier executions of this workflow, and the **Chat** of the execution.
 
 ## See a value on the canvas
 

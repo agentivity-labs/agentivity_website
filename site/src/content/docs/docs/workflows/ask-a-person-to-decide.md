@@ -78,8 +78,8 @@ For example, link an **If** step after it to take one path when the answer is ye
 
 ## Good to know
 
-- Other channels exist in the catalogue: **Forms Channel**, **Email Channel** and **Slack Channel**. This page covers the chat of the Studio only.
-- **Form Interaction** asks for several fields at once instead of one free answer.
+- Other channels exist in the catalogue: **Email Channel** and **Slack Channel**. This page covers the chat of the Studio only.
+- **Form Interaction** asks for several fields at once, in the chat, instead of one free answer: see [Ask a person to fill in a form](/docs/workflows/ask-with-a-form/).
 - Agentivity has no login yet, so it does not check who answers. Anyone who can open the Studio can answer.
 
 ## Next step

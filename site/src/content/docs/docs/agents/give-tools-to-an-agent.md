@@ -35,9 +35,10 @@ These tools work without an account at another service. They are in the **Nodes 
 
 | Tool | What it needs |
 |---|---|
-| **AI Agent Email Tool** | A mailbox: credentials to read e-mails, and credentials to send them. |
 | **AI Agent Web Search Tool (SearXNG)** | The address of a SearXNG search service, as credentials. |
 | **MCP Server** | The address of an MCP server. MCP is a standard way to give tools to AI agents. |
+
+E-mail and Slack are not tools you plug in: they come with a channel. **Email Channel** gives an agent a mailbox to search, read, answer, write and file e-mails, and **Slack Channel** gives it the Slack tools, next to the questions it asks a person. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/#email-and-slack-give-an-agent-its-tools).
 
 The catalogue also has tools for web search and web reading that use services you pay for separately. These pages do not cover them.
 
@@ -61,7 +62,7 @@ The picture shows the agent of the showcase [Invoice Clerk](/docs/showcases/invo
 Some tools have settings. Right-click the tool and select **Edit**.
 
 - **AI Agent Data Table Tool**: choose the table, then say what the agent may do with it: read rows, add rows, change rows, delete rows. Give it only what the job needs.
-- **AI Agent Email Tool**: choose the mailbox, then say whether the agent may read, send, and file e-mails. You can limit who the agent may write to.
+- **Email Channel**: choose the mailbox, then say whether the agent may read, send, and file e-mails. You can limit who the agent may write to.
 
 ## Tell the agent when to use the tool
 

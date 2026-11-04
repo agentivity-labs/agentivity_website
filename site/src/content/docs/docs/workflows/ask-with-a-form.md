@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/workflows/ask-with-a-form.md. Do not edit here: edit the source and publish again. -->
 
-A question with one free answer is sometimes not enough. A form asks for several values at once, each in its own field. The workflow stops, a person fills in the form, and the workflow continues with the values.
+A question with one free answer is sometimes not enough. A form asks for several values at once, each in its own field. The workflow stops, the form appears in the chat, a person fills it in, and the workflow continues with the values.
 
 For one question and one answer, use the simpler step: [Ask a person to approve or answer](/docs/workflows/ask-a-person-to-decide/).
 
@@ -19,9 +19,11 @@ For one question and one answer, use the simpler step: [Ask a person to approve 
 
 ## Add the step and its channel
 
+The form is asked in the chat, so the step needs **Chat Channel**.
+
 1. In the **Nodes catalog**, open **Interactions** and drag **Form Interaction** onto the canvas.
-2. Open **AI** > **Interactions** and drag **Forms Channel** onto the canvas, below the step. It appears as a circle.
-3. Drag from the diamond of **Forms Channel** to the diamond under **Form Interaction**.
+2. Open **AI** > **Interactions** and drag **Chat Channel** onto the canvas, below the step. It appears as a circle.
+3. Drag from the diamond of **Chat Channel** to the diamond under **Form Interaction**.
 4. Link **Form Interaction** to the step that must run after the form.
 
 ## Describe the form
@@ -58,7 +60,7 @@ What each part means:
 | `required` (**Required**) | `true` if the person must fill in the field. A field with no `required` is required. |
 | `hint` (**Hint**) | A short help text. It is optional. |
 | `defaultValue` | A value already filled in, which the person can keep or change. It is optional. |
-| `options` | For a field of type `Choice`: the list of choices, each between quotation marks. |
+| `options` | For a field of type `Choice`: the list of choices, each between quotation marks. The person sees them as buttons. |
 
 The types:
 
@@ -69,8 +71,7 @@ The types:
 | `Number` | A number. |
 | `Boolean` | Yes or no. |
 | `Choice` | One of the choices you listed in `options`. |
-| `Date` | A date. |
-| `File` | A file. |
+| `Date` | A date, with a date picker. |
 
 In an API call, write the types exactly as shown, with their capital letters.
 
@@ -91,18 +92,18 @@ For example, link an **If** step after the form, and test the output `send`. See
 
 1. Run the workflow. See [Run a workflow and follow each step](/docs/workflows/run-a-workflow/).
 2. The workflow stops at the form. In the section **Executions**, the execution has the label **ACTION REQUIRED**.
-3. In the **Execution** view of the workflow, open the tab **Forms** in the panel on the right, fill in the form and submit it.
+3. In the **Execution** view of the workflow, open the tab **Chat** in the panel on the right. The form is there: fill it in and submit it.
 4. The execution continues and reaches the state completed.
 
 ## If it does not work
 
 - **The step fails, or the form has no field.** Check that each field has a **Name** and a **Type**. In an API call, check the commas, the quotation marks and the curly braces of the list, and the spelling of each `type`.
-- **The workflow does not stop.** Check that **Forms Channel** is plugged into the diamond of the step.
+- **The workflow does not stop.** Check that **Chat Channel** is plugged into the diamond of the step.
 - **A field cannot be left empty.** A field is required unless you write `"required": false`.
 
 ## Good to know
 
-- An agent can ask for a form too, by itself, when it has a **Forms Channel**. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
+- An agent can ask a person too, in the chat, when it has a **Chat Channel**. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/).
 - In the Community edition there is no login, so Agentivity does not check who fills in the form.
 
 ## Next step

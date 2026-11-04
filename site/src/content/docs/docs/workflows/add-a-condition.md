@@ -49,6 +49,17 @@ Until you add a row, the window says: "No conditions yet — this node will alwa
 2. Link the exit **False** to the step that runs when it is not.
 3. Select **Publish**.
 
+## Go back to an earlier step
+
+A link from **If** (or **Switch**) back to a step that already ran makes a loop. The Studio runs that step again, and everything after it, round after round, until the condition sends the workflow another way. Nothing else is needed: no special step, only the link. A question to a person in the chat is repeated too, each round.
+
+For example, a workflow writes a text and asks a person to review it. If the person asks for a change, **False** goes back to the step that writes, and the review starts again. When the person approves, **True** goes on.
+
+- A loop runs at most 25 rounds. Beyond that, the execution fails and says that the workflow went back too many times: check the condition that ends the loop.
+- A loop must hold an **If** or a **Switch**. A loop without one cannot stop, and the validator refuses it.
+- With **First Of** in a loop, only the branch that arrived during the current round counts.
+- Do not go back while another branch of the same round is still running: the two rounds would mix. Join the branches first.
+
 ## How to know it worked
 
 When you [run the workflow](/docs/workflows/run-a-workflow/), only one of the two paths runs. In the **Execution** view, the steps of the other path stay not started.

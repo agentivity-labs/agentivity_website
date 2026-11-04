@@ -27,7 +27,7 @@ The header has two rows. The first holds the title, the button **New** and the t
 |---|---|
 | **New** | Asks what you want to create: **Agent**, **Team** or **Workflow**. Then asks for its name. It is created in the folder you are in. |
 | **All types** | Shows one type only. Each press moves to the next: **Agents**, **Teams**, **Workflows**, then **All types** again. |
-| **Search agents, teams & workflows** | Finds an item by its name. |
+| **Search agents, teams & workflows** | Finds an item by its name, in every folder, not only the one you are in. Each item found shows the folders it is in. |
 | The folder button | Creates a folder. |
 | The refresh button | Loads the list again. |
 | **Name (A–Z)** | Changes the order of the list: by name, in either direction, folders first, or by type. |

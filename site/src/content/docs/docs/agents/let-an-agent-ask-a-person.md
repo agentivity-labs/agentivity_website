@@ -22,11 +22,17 @@ The channels are in the **Nodes catalog**, under **AI** > **Interactions**.
 | Channel | Where the person answers |
 |---|---|
 | **Chat Channel** | In the chat of the execution, inside the Studio or inside an application built on Agentivity. |
-| **Forms Channel** | In a form. |
 | **Email Channel** | By e-mail. |
 | **Slack Channel** | In Slack. |
 
 This page uses **Chat Channel**, which needs no account elsewhere.
+
+### Email and Slack give an agent its tools
+
+**Email Channel** and **Slack Channel** do two things. They carry the agent's questions to a person, and they give the agent the tools of that service on the same channel, so there is nothing else to plug in:
+
+- **Email Channel**: the agent can search and read e-mails, answer, write new ones and file them, within the permissions you allow on the channel: read, send, file, and who it may write to. An answer to an e-mail it read is always allowed. The earlier separate e-mail tool no longer exists: an agent that used it was moved to an **Email Channel** with the same settings.
+- **Slack Channel**: the agent can use the Slack tools, next to its questions to a person. The earlier separate Slack tool no longer exists. A reply in the thread of a question answers that question; when several questions are open in a channel, a reply outside any thread cannot be matched to one.
 
 1. Drag **Chat Channel** onto the canvas, below the agent.
 2. Drag from its diamond to the diamond of the agent named **Human Loop Channel**.
