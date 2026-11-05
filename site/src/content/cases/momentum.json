@@ -135,19 +135,23 @@
     "decisions": [
       {
         "title": "During a session",
-        "text": "Buttons to tick or close an exercise; anything else, such as a machine taken, opens the chat."
+        "text": "Buttons to tick or close an exercise; anything else, such as a machine taken, opens the chat.",
+        "mode": "Session"
       },
       {
         "title": "Moving a session",
-        "text": "Through the chat."
+        "text": "Through the chat.",
+        "mode": "Chat"
       },
       {
         "title": "Shopping list",
-        "text": "Ticking an item is a classic screen."
+        "text": "Ticking an item is a classic screen.",
+        "mode": "App"
       },
       {
         "title": "Several plans",
-        "text": "One active plan; past plans are kept."
+        "text": "One active plan; past plans are kept.",
+        "mode": "App"
       }
     ]
   },

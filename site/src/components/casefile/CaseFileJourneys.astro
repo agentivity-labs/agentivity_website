@@ -1,10 +1,10 @@
 ---
-// The kinds of step (modes) and the decisions that follow, the home screen by moment, and the user journeys step by step, each
-// step with the screen it happens on, and what was tested.
+// The kinds of step (modes) and the decisions that follow, the home screen by moment, and the journey map: one lane per journey,
+// its steps left to right as cards tinted by their mode, each with the screen it happens on, and what was tested.
 type Titled = { title: string; lead?: string };
 interface Props {
   journeys: Titled & { items: { name: string; when: string; steps: { mode: string; text: string; screen?: string }[]; tested?: string }[] };
-  modes?: Titled & { items: { label: string; meaning: string; ink: string; tint: string }[]; decisions_title?: string; decisions: { title: string; text: string }[] };
+  modes?: Titled & { items: { label: string; meaning: string; ink: string; tint: string }[]; decisions_title?: string; decisions: { title: string; text: string; mode?: string }[] };
   moments?: Titled & { cards_title?: string; cards: { title: string; text: string }[]; head: [string, string]; rows: [string, string][] };
   screens?: { id: string; name: string }[];
 }
@@ -21,13 +21,19 @@ const screenName = new Map(screens.map((screen) => [screen.id, screen.name]));
       </header>
       <ul class="jm-modes">
         {modes.items.map((mode) => (
-          <li style={colour.get(mode.label)}><span class="jm-chip">{mode.label}</span><span>{mode.meaning}</span></li>
+          <li style={colour.get(mode.label)}><strong>{mode.label}</strong><span>{mode.meaning}</span></li>
         ))}
       </ul>
       {modes.decisions_title && modes.decisions.length > 0 && <h3 class="jm-decisions-title">{modes.decisions_title}</h3>}
       {modes.decisions.length > 0 && (
         <dl class="jm-decisions">
-          {modes.decisions.map((decision) => <div><dt>{decision.title}</dt><dd>{decision.text}</dd></div>)}
+          {modes.decisions.map((decision) => (
+            <div style={decision.mode ? colour.get(decision.mode) : undefined}>
+              {decision.mode && <span class="jm-decision-mode">{decision.mode}</span>}
+              <dt>{decision.title}</dt>
+              <dd>{decision.text}</dd>
+            </div>
+          ))}
         </dl>
       )}
       {moments && (
@@ -55,16 +61,22 @@ const screenName = new Map(screens.map((screen) => [screen.id, screen.name]));
     <h2 class="ed-h2 ed-h2--md">{journeys.title}</h2>
     {journeys.lead && <p class="ed-sec-sub">{journeys.lead}</p>}
   </header>
-  <ol class="jm-journeys">
+  {modes && (
+    <p class="jm-key">{modes.items.map((mode) => <span class="jm-chip" style={colour.get(mode.label)}>{mode.label}</span>)}</p>
+  )}
+  <ol class="jm-lanes">
     {journeys.items.map((journey, i) => (
-      <li>
-        <p class="jm-when"><span>{String(i + 1).padStart(2, '0')}</span>{journey.when}</p>
-        <h3>{journey.name}</h3>
-        <ol class="jm-steps">
+      <li class="jm-lane">
+        <header class="jm-lane-head">
+          <h3><span>{i + 1}.</span> {journey.name}</h3>
+          <p class="jm-when">{journey.when}</p>
+        </header>
+        <ol class="jm-flow">
           {journey.steps.map((step) => (
             <li style={colour.get(step.mode)}>
-              <span class="jm-chip">{step.mode}</span>
-              <span>{step.text}{step.screen && screenName.has(step.screen) && <small class="jm-screen">{screenName.get(step.screen)}</small>}</span>
+              <b>{step.mode}</b>
+              <span>{step.text}</span>
+              {step.screen && screenName.has(step.screen) && <small>{screenName.get(step.screen)}</small>}
             </li>
           ))}
         </ol>
@@ -77,12 +89,16 @@ const screenName = new Map(screens.map((screen) => [screen.id, screen.name]));
 <style>
 .jm-chip { flex: none; align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: var(--jm-tint, var(--ed-mist)); color: var(--jm-ink, var(--ed-ink)); font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .jm-modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.jm-modes li { display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 22px; background: #fff; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.jm-modes li { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; border-radius: 22px; background: var(--jm-tint, #fff); font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); }
+.jm-modes strong { font-size: 18px; color: var(--jm-ink, var(--ed-ink)); }
 .jm-decisions-title { margin-top: 32px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
-.jm-decisions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 0 24px; margin-top: 12px; border-top: 2px solid var(--ed-ink); }
-.jm-decisions div { display: flex; flex-direction: column; gap: 4px; padding-block: 14px; border-bottom: 1px solid var(--ed-line-2); }
-.jm-decisions dt { font-size: 15.5px; font-weight: 700; color: var(--ed-ink); }
-.jm-decisions dd { font-size: 15px; line-height: 1.45; color: var(--ed-ink-2); }
+.jm-decisions { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.jm-decisions div { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 16px; background: var(--jm-tint, #fff); }
+.jm-decision-mode { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--jm-ink, var(--ed-ink-3)); }
+.jm-decisions dt { font-size: 16px; font-weight: 700; color: var(--ed-ink); }
+.jm-decisions dd { font-size: 14.5px; line-height: 1.45; color: var(--ed-ink-2); }
+@media (max-width: 960px) { .jm-decisions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .jm-decisions { grid-template-columns: minmax(0, 1fr); } }
 .jm-moments { display: flex; flex-direction: column; gap: 10px; margin-top: clamp(40px, 5vw, 64px); }
 .jm-moments h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; color: var(--ed-ink); }
 .jm-moments h4 { margin-top: 10px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
@@ -98,17 +114,26 @@ const screenName = new Map(screens.map((screen) => [screen.id, screen.name]));
 .jm-moments tbody th { font-weight: 700; color: var(--ed-ink); width: 38%; }
 .jm-moments td { color: var(--ed-ink-2); }
 
-.jm-journeys { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 16px; }
-.jm-journeys > li { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 22px; border: 1px solid var(--ed-line-2); background: #fff; }
-.jm-when { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
-.jm-when span { font-family: var(--ed-serif); font-size: 24px; font-weight: 400; letter-spacing: 0; color: var(--ed-ink); }
-.jm-journeys h3 { font-family: var(--ed-serif); font-weight: 400; font-size: 27px; line-height: 1.1; color: var(--ed-ink); }
-.jm-steps { display: flex; flex-direction: column; gap: 8px; }
-.jm-steps li { display: flex; gap: 10px; font-size: 15.5px; line-height: 1.45; color: var(--ed-ink-2); }
-.jm-screen { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 600; color: var(--ed-ink-3); }
-.jm-screen::before { content: "Screen: "; font-weight: 400; }
-.jm-tested { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--ed-line-2); font-size: 15px; line-height: 1.5; color: var(--ed-ink-2); }
-.jm-tested strong { display: block; margin-bottom: 2px; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: #1F6B4A; }
+.jm-key { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.jm-key .jm-chip { background: var(--jm-ink, var(--ed-ink)); color: #fff; }
+.jm-lanes { display: flex; flex-direction: column; gap: 14px; }
+.jm-lane { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--ed-line-2); background: #fff; }
+.jm-lane-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.jm-lane-head h3 { font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--ed-navy); }
+.jm-lane-head h3 span { color: var(--ed-ink-3); }
+.jm-when { font-size: 14px; color: var(--ed-ink-3); }
+.jm-flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: stretch; }
+.jm-flow li { flex: 1 1 150px; min-width: 140px; display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; border-radius: 13px; background: var(--jm-tint, var(--ed-mist)); font-size: 14.5px; line-height: 1.35; color: var(--ed-ink); }
+.jm-flow b { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--jm-ink, var(--ed-ink)); }
+.jm-flow small { margin-top: auto; padding-top: 4px; font-size: 12px; color: var(--ed-ink-3); }
+.jm-tested { font-size: 14.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.jm-tested strong { margin-right: 6px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #1F6B4A; }
 @media (max-width: 860px) { .jm-modes { grid-template-columns: minmax(0, 1fr); } }
+/* On a phone a lane stacks its steps, one under the other, joined by a thin line. */
+@media (max-width: 600px) {
+  .jm-flow { flex-direction: column; gap: 14px; }
+  .jm-flow li { flex: none; min-width: 0; position: relative; }
+  .jm-flow li + li::before { content: ""; position: absolute; left: 22px; top: -14px; width: 2px; height: 14px; background: var(--ed-line-2); }
+}
 @media (max-width: 520px) { .jm-moments tbody th { width: auto; } }
 </style>

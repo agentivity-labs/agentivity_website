@@ -147,7 +147,8 @@ const cases = defineCollection({
       items: z.array(z.object({ label: z.string(), meaning: z.string(), ink: z.string(), tint: z.string() })),
       // Design decisions that follow from the modes, under their own small heading.
       decisions_title: z.string().optional(),
-      decisions: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+      // `mode`, when one applies, is a label of `items`: the decision's card takes its tint.
+      decisions: z.array(z.object({ title: z.string(), text: z.string(), mode: z.string().optional() })).default([]),
     }).optional(),
     moments: z.object({
       ...titled,
