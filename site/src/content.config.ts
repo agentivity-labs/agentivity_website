@@ -142,12 +142,35 @@ const cases = defineCollection({
       height: z.number(),
       screens: z.array(z.object({ label: z.string(), query: z.string() })).default([]),
     }).optional(),
-    modes: z.object({ ...titled, items: z.array(z.object({ label: z.string(), meaning: z.string(), ink: z.string(), tint: z.string() })) }).optional(),
-    moments: z.object({ ...titled, head: z.tuple([z.string(), z.string()]), rows: z.array(z.tuple([z.string(), z.string()])) }).optional(),
+    modes: z.object({
+      ...titled,
+      items: z.array(z.object({ label: z.string(), meaning: z.string(), ink: z.string(), tint: z.string() })),
+      // Design decisions that follow from the modes, under their own small heading.
+      decisions_title: z.string().optional(),
+      decisions: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+    }).optional(),
+    moments: z.object({
+      ...titled,
+      cards_title: z.string().optional(),
+      cards: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+      head: z.tuple([z.string(), z.string()]),
+      rows: z.array(z.tuple([z.string(), z.string()])),
+    }).optional(),
     journeys: z.object({
       ...titled,
-      // Each step is [mode label, text]; the mode label is one of the labels in `modes`.
-      items: z.array(z.object({ name: z.string(), when: z.string(), steps: z.array(z.tuple([z.string(), z.string()])), tested: z.string().optional() })),
+      // A step's mode is one of the labels in `modes`; its screen, one of the ids in `canvas.screens`.
+      items: z.array(z.object({
+        name: z.string(),
+        when: z.string(),
+        steps: z.array(z.object({ mode: z.string(), text: z.string(), screen: z.string().optional() })),
+        tested: z.string().optional(),
+      })),
+    }).optional(),
+    // The map of the app's screens: each a live miniature of the mockup (its `src` with ?screen=<id>&embed=1), placed at x, y.
+    // The arrows come from the journeys: one step's screen to the next one's.
+    canvas: z.object({
+      ...titled,
+      screens: z.array(z.object({ id: z.string(), name: z.string(), mode: z.string(), x: z.number(), y: z.number() })),
     }).optional(),
     team: z.object({ ...titled, members: z.array(z.object({ name: z.string(), role: z.string() })), rules: z.array(z.string()).default([]) }).optional(),
     widgets: z.object({ ...titled, items: z.array(z.object({ name: z.string(), body: z.string() })) }).optional(),

@@ -8,6 +8,7 @@ import SiteFooter from '../SiteFooter.astro';
 import CaseFileStages from './CaseFileStages.astro';
 import CaseFileMockup from './CaseFileMockup.astro';
 import CaseFileJourneys from './CaseFileJourneys.astro';
+import CaseFileCanvas from './CaseFileCanvas.astro';
 import CaseFileTeam from './CaseFileTeam.astro';
 import CaseFileCatalogue from './CaseFileCatalogue.astro';
 import CaseFileTests from './CaseFileTests.astro';
@@ -71,7 +72,8 @@ const schema = [{
 
   {s.stages && <CaseFileStages stages={s.stages} />}
   {s.mockup && <CaseFileMockup mockup={s.mockup} />}
-  {s.journeys && <CaseFileJourneys journeys={s.journeys} modes={s.modes} moments={s.moments} />}
+  {s.journeys && <CaseFileJourneys journeys={s.journeys} modes={s.modes} moments={s.moments} screens={s.canvas?.screens} />}
+  {s.canvas && <CaseFileCanvas canvas={s.canvas} journeys={s.journeys} modes={s.modes} mockup={s.mockup} />}
   {s.team && <CaseFileTeam team={s.team} widgets={s.widgets} />}
   {s.catalogue && <CaseFileCatalogue catalogue={s.catalogue} />}
   {s.tests && <CaseFileTests tests={s.tests} />}

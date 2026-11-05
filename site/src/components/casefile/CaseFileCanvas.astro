@@ -1,0 +1,240 @@
+---
+// The map of an app's screens: each screen a live miniature of the mockup, placed where the data file says, with the arrows the
+// journeys draw from one step's screen to the next. Read only: click a screen to see its links, drag to move, zoom.
+// The map and its arrows are drawn here at build time; the script only fits it, moves it and loads the miniatures, one at a
+// time and only once the map is in view. On a phone it gives way to a list of the screens and their links.
+interface Screen { id: string; name: string; mode: string; x: number; y: number }
+interface Props {
+  canvas: { title: string; lead?: string; screens: Screen[] };
+  journeys?: { items: { steps: { screen?: string }[] }[] };
+  modes?: { items: { label: string; ink: string; tint: string }[] };
+  mockup?: { src: string; label: string };
+}
+const { canvas, journeys, modes, mockup } = Astro.props;
+
+const FRAME_W = 386, FRAME_H = 816, TITLE_H = 40, PAD = 60, BEND = 170;
+const known = new Set(canvas.screens.map((screen) => screen.id));
+const links: [string, string][] = [];
+for (const journey of journeys?.items ?? []) {
+  journey.steps.forEach((step, i) => {
+    const next = journey.steps[i + 1];
+    if (!next || !step.screen || !next.screen || step.screen === next.screen) return;
+    if (!known.has(step.screen) || !known.has(next.screen)) return;
+    if (!links.some(([a, b]) => a === step.screen && b === next.screen)) links.push([step.screen, next.screen]);
+  });
+}
+
+// Screens in world coordinates, the top left corner of the map at (PAD, PAD).
+const minX = Math.min(...canvas.screens.map((s) => s.x)), minY = Math.min(...canvas.screens.map((s) => s.y));
+const nodes = new Map(canvas.screens.map((s) => [s.id, { ...s, left: s.x - minX + PAD, top: s.y - minY + PAD }]));
+const width = Math.max(...[...nodes.values()].map((n) => n.left + FRAME_W)) + PAD;
+const height = Math.max(...[...nodes.values()].map((n) => n.top + TITLE_H + FRAME_H)) + PAD;
+
+// Each arrow leaves and enters by the side that faces the other screen; arrows sharing a side are spread along it.
+type Side = 'left' | 'right' | 'top' | 'bottom';
+const centre = (id: string) => { const n = nodes.get(id)!; return { x: n.left + FRAME_W / 2, y: n.top + TITLE_H + FRAME_H / 2 }; };
+const sidesOf = (a: string, b: string): [Side, Side] => {
+  const p = centre(a), q = centre(b), dx = q.x - p.x, dy = q.y - p.y;
+  return Math.abs(dx) * FRAME_H > Math.abs(dy) * FRAME_W ? (dx > 0 ? ['right', 'left'] : ['left', 'right']) : (dy > 0 ? ['bottom', 'top'] : ['top', 'bottom']);
+};
+const ends = new Map<string, { link: number; other: string }[]>();
+links.forEach(([a, b], i) => {
+  const [sa, sb] = sidesOf(a, b);
+  for (const [id, side, other] of [[a, sa, b], [b, sb, a]] as [string, Side, string][]) {
+    const key = `${id}|${side}`;
+    ends.set(key, [...(ends.get(key) ?? []), { link: i, other }]);
+  }
+});
+for (const [key, list] of ends) {
+  const vertical = key.endsWith('left') || key.endsWith('right');
+  list.sort((p, q) => (vertical ? centre(p.other).y - centre(q.other).y : centre(p.other).x - centre(q.other).x));
+}
+const port = (id: string, side: Side, link: number) => {
+  const n = nodes.get(id)!, list = ends.get(`${id}|${side}`)!, share = (list.findIndex((e) => e.link === link) + 1) / (list.length + 1);
+  const top = n.top + TITLE_H;
+  if (side === 'left') return { x: n.left, y: top + FRAME_H * share, nx: -1, ny: 0 };
+  if (side === 'right') return { x: n.left + FRAME_W, y: top + FRAME_H * share, nx: 1, ny: 0 };
+  if (side === 'top') return { x: n.left + FRAME_W * share, y: top, nx: 0, ny: -1 };
+  return { x: n.left + FRAME_W * share, y: top + FRAME_H, nx: 0, ny: 1 };
+};
+const arrows = links.map(([a, b], i) => {
+  const [sa, sb] = sidesOf(a, b), p = port(a, sa, i), q = port(b, sb, i);
+  const d = `M${p.x} ${p.y} C${p.x + p.nx * BEND} ${p.y + p.ny * BEND} ${q.x + q.nx * (BEND + 30)} ${q.y + q.ny * (BEND + 30)} ${q.x + q.nx * 30} ${q.y + q.ny * 30}`;
+  return { from: a, to: b, d };
+});
+
+const colour = new Map((modes?.items ?? []).map((mode) => [mode.label, `--cv-ink: ${mode.ink}; --cv-tint: ${mode.tint}`]));
+const name = (id: string) => nodes.get(id)?.name ?? id;
+---
+<section class="ed-wrap ed-sec cv-sec">
+  <header class="ed-sec-head">
+    <h2 class="ed-h2 ed-h2--md">{canvas.title}</h2>
+    {canvas.lead && <p class="ed-sec-sub">{canvas.lead}</p>}
+  </header>
+
+  {mockup && (
+    <div class="cv" data-canvas data-width={width} data-height={height}>
+      <div class="cv-bar">
+        <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+        <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+        <button type="button" data-zoom="fit">Fit</button>
+        <span>Drag to move. Ctrl and scroll to zoom. Click a screen to see only its links: navy where it leads, gold what leads to it.</span>
+      </div>
+      <div class="cv-vp">
+        <div class="cv-world" style={`width: ${width}px; height: ${height}px`}>
+          <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
+            <defs>
+              <marker id="cv-out" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" class="out" /></marker>
+              <marker id="cv-in" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" class="in" /></marker>
+            </defs>
+            {arrows.map((arrow) => <path d={arrow.d} data-from={arrow.from} data-to={arrow.to} class="out" marker-end="url(#cv-out)" />)}
+          </svg>
+          {[...nodes.values()].map((n) => (
+            <div class="cv-node" data-id={n.id} style={`left: ${n.left}px; top: ${n.top}px; ${colour.get(n.mode) ?? ''}`}>
+              <p class="cv-title"><i></i>{n.name}</p>
+              <div class="cv-phone"><iframe title={`${mockup.label}: ${n.name}`} data-src={`${mockup.src}?screen=${n.id}&embed=1`} tabindex="-1"></iframe></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <ul class="cv-list">
+    {[...nodes.values()].map((n) => {
+      const to = links.filter(([a]) => a === n.id).map(([, b]) => name(b));
+      const from = links.filter(([, b]) => b === n.id).map(([a]) => name(a));
+      return (
+        <li style={colour.get(n.mode)}>
+          <p><span class="cv-chip">{n.mode}</span><strong>{n.name}</strong></p>
+          {to.length > 0 && <p class="cv-links"><b>Leads to</b> {to.join(', ')}</p>}
+          {from.length > 0 && <p class="cv-links"><b>Reached from</b> {from.join(', ')}</p>}
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<script>
+  const wide = matchMedia('(min-width: 860px)');
+  document.querySelectorAll<HTMLElement>('[data-canvas]').forEach((root) => {
+    const vp = root.querySelector<HTMLElement>('.cv-vp')!;
+    const world = root.querySelector<HTMLElement>('.cv-world')!;
+    const W = Number(root.dataset.width), H = Number(root.dataset.height);
+    const cam = { x: 0, y: 0, z: 0.2 };
+    const apply = () => { world.style.transform = `translate(${cam.x}px, ${cam.y}px) scale(${cam.z})`; };
+    const fit = () => {
+      const r = vp.getBoundingClientRect();
+      if (!r.width) return;
+      cam.z = Math.min(r.width / W, r.height / H);
+      cam.x = (r.width - W * cam.z) / 2; cam.y = (r.height - H * cam.z) / 2;
+      apply();
+    };
+    const zoomAt = (px: number, py: number, factor: number) => {
+      const z = Math.min(1.2, Math.max(0.05, cam.z * factor));
+      cam.x = px - (px - cam.x) * (z / cam.z); cam.y = py - (py - cam.y) * (z / cam.z); cam.z = z; apply();
+    };
+
+    // A click on a screen keeps only its links: navy where it leads, gold what leads to it. A click elsewhere shows them all.
+    const focus = (id: string | null) => {
+      const related = new Set<string>(id ? [id] : []);
+      world.querySelectorAll<SVGPathElement>('path[data-from]').forEach((path) => {
+        const out = path.dataset.from === id, into = path.dataset.to === id, shown = !id || out || into;
+        path.style.display = shown ? '' : 'none';
+        path.setAttribute('class', into ? 'in' : 'out');
+        path.setAttribute('marker-end', into ? 'url(#cv-in)' : 'url(#cv-out)');
+        if (id && shown) { related.add(path.dataset.from!); related.add(path.dataset.to!); }
+      });
+      world.querySelectorAll<HTMLElement>('.cv-node').forEach((node) => {
+        node.classList.toggle('is-focus', node.dataset.id === id);
+        node.classList.toggle('is-dim', !!id && !related.has(node.dataset.id!));
+      });
+    };
+
+    vp.addEventListener('pointerdown', (e) => {
+      const sx = e.clientX, sy = e.clientY, ox = cam.x, oy = cam.y;
+      let moved = false;
+      vp.classList.add('is-panning');
+      const move = (ev: PointerEvent) => {
+        if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) > 4) moved = true;
+        cam.x = ox + ev.clientX - sx; cam.y = oy + ev.clientY - sy; apply();
+      };
+      const up = () => {
+        vp.classList.remove('is-panning');
+        removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+        if (!moved) focus((e.target as Element).closest<HTMLElement>('.cv-node')?.dataset.id ?? null);
+      };
+      addEventListener('pointermove', move); addEventListener('pointerup', up);
+    });
+    // Ctrl and scroll zooms; a plain scroll keeps scrolling the page.
+    vp.addEventListener('wheel', (e) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const r = vp.getBoundingClientRect();
+      zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.12 : 0.89);
+    }, { passive: false });
+    root.querySelector('.cv-bar')!.addEventListener('click', (e) => {
+      const zoom = (e.target as HTMLElement).dataset.zoom;
+      if (!zoom) return;
+      const r = vp.getBoundingClientRect();
+      if (zoom === 'fit') fit(); else zoomAt(r.width / 2, r.height / 2, zoom === 'in' ? 1.25 : 0.8);
+    });
+
+    // The miniatures load one after another, once the map is in view and only on a screen wide enough to show it.
+    const load = () => {
+      const next = world.querySelector<HTMLIFrameElement>('iframe[data-src]');
+      if (!next) return;
+      let done = false;
+      const go = () => { if (!done) { done = true; load(); } };
+      next.onload = go;
+      setTimeout(go, 4000);
+      next.src = next.dataset.src!;
+      next.removeAttribute('data-src');
+    };
+    let started = false;
+    const start = () => { if (started || !wide.matches) return; started = true; fit(); load(); };
+    new IntersectionObserver((entries, observer) => {
+      if (entries.some((entry) => entry.isIntersecting)) { start(); if (started) observer.disconnect(); }
+    }, { rootMargin: '200px' }).observe(vp);
+    wide.addEventListener('change', () => { fit(); start(); });
+    addEventListener('resize', fit);
+    fit();
+  });
+</script>
+
+<style>
+.cv { display: flex; flex-direction: column; gap: 10px; }
+.cv-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cv-bar button { min-width: 40px; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); background: #fff; font: inherit; font-size: 15px; font-weight: 600; color: var(--ed-ink); cursor: pointer; }
+.cv-bar button:hover { border-color: var(--ed-ink); }
+.cv-bar span { margin-left: 6px; font-size: 14px; color: var(--ed-ink-3); }
+.cv-vp { position: relative; height: clamp(480px, 70vh, 720px); overflow: hidden; border: 1px solid var(--ed-line-2); border-radius: 22px; background-color: var(--ed-mist); background-image: radial-gradient(var(--ed-line-2) 1px, transparent 1px); background-size: 22px 22px; cursor: grab; touch-action: none; }
+.cv-vp.is-panning { cursor: grabbing; }
+.cv-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.cv-world svg { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 2; }
+.cv-world svg path[data-from] { fill: none; stroke-width: 6; stroke-linecap: round; }
+.cv-world svg .out { stroke: var(--ed-navy); fill: var(--ed-navy); }
+.cv-world svg .in { stroke: #D9980A; fill: #D9980A; }
+.cv-world svg path[data-from].out, .cv-world svg path[data-from].in { fill: none; }
+.cv-node { position: absolute; width: 386px; display: flex; flex-direction: column; gap: 8px; transition: opacity .15s ease; }
+.cv-node.is-dim { opacity: .3; }
+.cv-title { display: flex; align-items: center; gap: 10px; height: 32px; font-size: 24px; font-weight: 700; color: var(--ed-ink); white-space: nowrap; }
+.cv-title i { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--cv-ink, var(--ed-ink)); }
+.cv-phone { width: 386px; height: 816px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(21, 40, 68, .16); }
+.cv-node.is-focus .cv-phone { outline: 8px solid var(--ed-yellow); }
+.cv-phone iframe { display: block; width: 100%; height: 100%; border: 0; pointer-events: none; }
+
+.cv-list { display: none; }
+.cv-list li { display: flex; flex-direction: column; gap: 6px; padding-block: 14px; border-bottom: 1px solid var(--ed-line-2); font-size: 15.5px; line-height: 1.45; color: var(--ed-ink-2); }
+.cv-list li:first-child { border-top: 2px solid var(--ed-ink); }
+.cv-list p { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.cv-list strong { font-size: 17px; color: var(--ed-ink); }
+.cv-chip { padding: 3px 10px; border-radius: 999px; background: var(--cv-tint, var(--ed-mist)); color: var(--cv-ink, var(--ed-ink)); font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.cv-links { display: block !important; }
+.cv-links b { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); margin-right: 6px; }
+
+@media (max-width: 859px) {
+  .cv { display: none; }
+  .cv-list { display: block; }
+}
+</style>
