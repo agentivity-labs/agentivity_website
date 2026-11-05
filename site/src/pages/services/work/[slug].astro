@@ -1,0 +1,11 @@
+---
+// One page per case file: adding a file to src/content/cases adds a page here and a card on /services/work.
+import { getCollection } from 'astro:content';
+import CaseFilePage from '../../../components/casefile/CaseFilePage.astro';
+
+export async function getStaticPaths() {
+  return (await getCollection('cases')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<CaseFilePage entry={entry} />

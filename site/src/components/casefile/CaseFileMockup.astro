@@ -1,0 +1,53 @@
+---
+// The approved mockup, inside the page: its own page under public/ shown in a phone frame, never as a link to follow.
+// The buttons open a screen of it; without JavaScript the mockup still works from its first screen.
+interface Props {
+  mockup: { title: string; lead?: string; src: string; label: string; width: number; height: number; screens: { label: string; query: string }[] };
+}
+const { mockup } = Astro.props;
+const first = mockup.screens[0]?.query ?? 'embed=1';
+---
+<section class="ed-wrap ed-sec mk">
+  <div class="mk-phone" style={`--mk-w: ${mockup.width}px; --mk-h: ${mockup.height}px`}>
+    <iframe src={`${mockup.src}?${first}`} title={mockup.label} width={mockup.width} height={mockup.height} loading="lazy" data-mockup></iframe>
+  </div>
+  <div class="mk-side">
+    <h2 class="ed-h2 ed-h2--md">{mockup.title}</h2>
+    {mockup.lead && <p class="ed-sec-sub">{mockup.lead}</p>}
+    {mockup.screens.length > 1 && (
+      <div class="mk-screens" role="group" aria-label="Open a screen of the mockup">
+        {mockup.screens.map((screen, i) => (
+          <button type="button" data-src={`${mockup.src}?${screen.query}`} aria-pressed={i === 0 ? 'true' : 'false'}>{screen.label}</button>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.mk').forEach((section) => {
+    const frame = section.querySelector<HTMLIFrameElement>('[data-mockup]');
+    const buttons = section.querySelectorAll<HTMLButtonElement>('.mk-screens button');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      if (!frame || !button.dataset.src) return;
+      frame.src = button.dataset.src;
+      buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+    }));
+  });
+</script>
+
+<style>
+.mk { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.mk-phone { width: min(calc(var(--mk-w) + 20px), 100%); border: 10px solid #fff; border-radius: 54px; overflow: hidden; background: #fff; box-shadow: 0 30px 70px -30px rgba(16, 26, 46, .55), 0 0 0 1px var(--ed-line-2); }
+.mk-phone iframe { display: block; width: 100%; height: var(--mk-h); max-height: 82vh; border: 0; }
+.mk-side { display: flex; flex-direction: column; gap: 20px; }
+.mk-screens { display: flex; flex-wrap: wrap; gap: 8px; }
+.mk-screens button { min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); background: #fff; font: inherit; font-size: 15px; font-weight: 600; color: var(--ed-ink-2); cursor: pointer; }
+.mk-screens button:hover { border-color: var(--ed-ink); color: var(--ed-ink); }
+.mk-screens button[aria-pressed='true'] { background: var(--ed-navy); border-color: var(--ed-navy); color: #fff; }
+@media (max-width: 860px) {
+  .mk { grid-template-columns: minmax(0, 1fr); }
+  .mk-phone { justify-self: center; }
+  .mk-side { order: -1; }
+}
+</style>

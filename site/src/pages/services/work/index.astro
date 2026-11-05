@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+import CaseFileList from '../../../components/casefile/CaseFileList.astro';
+
+const entries = await getCollection('cases');
+---
+<CaseFileList entries={entries} />

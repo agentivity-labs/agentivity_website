@@ -110,4 +110,69 @@ const landings = defineCollection({
   }),
 });
 
-export const collections = { blog, docs, landings };
+// A case file of the Services section, shown at /services/work/<file name>: a concept or a client mission, how it was designed,
+// its mockup, its team and its tests. One JSON file per case; the pages and their components are the same for all. Every
+// section but the hero is optional.
+const titled = { title: z.string(), lead: z.string().optional() };
+const link = z.object({ label: z.string(), href: z.string() });
+const cases = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/cases' }),
+  schema: z.object({
+    title: z.string().max(70),
+    description: z.string().min(50).max(160),
+    ogImage: z.string().optional(),
+    // "Concept": built to show an idea; "Client mission": real work for a client, explained with its agreement.
+    type: z.enum(['Concept', 'Client mission']),
+    name: z.string(),
+    kind: z.string(),
+    // One or two sentences for the list of case files.
+    summary: z.string(),
+    h1: z.string(),
+    h1_accent: z.string(),
+    lead: z.string(),
+    facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
+    disclaimer: z.string().optional(),
+    stages: z.object({ ...titled, items: z.array(z.object({ name: z.string(), body: z.string() })) }).optional(),
+    mockup: z.object({
+      ...titled,
+      // A page of its own under public/, shown in the page in a frame; never linked as such.
+      src: z.string().startsWith('/'),
+      label: z.string(),
+      width: z.number(),
+      height: z.number(),
+      screens: z.array(z.object({ label: z.string(), query: z.string() })).default([]),
+    }).optional(),
+    modes: z.object({ ...titled, items: z.array(z.object({ label: z.string(), meaning: z.string(), ink: z.string(), tint: z.string() })) }).optional(),
+    moments: z.object({ ...titled, head: z.tuple([z.string(), z.string()]), rows: z.array(z.tuple([z.string(), z.string()])) }).optional(),
+    journeys: z.object({
+      ...titled,
+      // Each step is [mode label, text]; the mode label is one of the labels in `modes`.
+      items: z.array(z.object({ name: z.string(), when: z.string(), steps: z.array(z.tuple([z.string(), z.string()])), tested: z.string().optional() })),
+    }).optional(),
+    team: z.object({ ...titled, members: z.array(z.object({ name: z.string(), role: z.string() })), rules: z.array(z.string()).default([]) }).optional(),
+    widgets: z.object({ ...titled, items: z.array(z.object({ name: z.string(), body: z.string() })) }).optional(),
+    catalogue: z.object({
+      ...titled,
+      groups: z.array(z.object({ pattern: z.string(), exercises: z.array(z.string()) })),
+      rules_title: z.string().optional(),
+      rules_lead: z.string().optional(),
+      rules: z.array(z.object({ family: z.string(), rule: z.string() })).default([]),
+    }).optional(),
+    tests: z.object({
+      ...titled,
+      items: z.array(z.object({ case: z.string(), result: z.string() })),
+      limits_title: z.string().optional(),
+      limits: z.array(z.string()).default([]),
+    }).optional(),
+    links: z.object({
+      title: z.string(),
+      template: link.extend({ note: z.string().optional() }).optional(),
+      article: link.optional(),
+      // The code of the app, when it is public.
+      code: link.optional(),
+      more: z.array(link).default([]),
+    }).optional(),
+  }),
+});
+
+export const collections = { blog, docs, landings, cases };

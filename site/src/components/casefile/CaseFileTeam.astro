@@ -1,0 +1,53 @@
+---
+// The team behind the app, the rules it follows, and the widgets made for its answers.
+type Titled = { title: string; lead?: string };
+interface Props {
+  team: Titled & { members: { name: string; role: string }[]; rules: string[] };
+  widgets?: Titled & { items: { name: string; body: string }[] };
+}
+const { team, widgets } = Astro.props;
+---
+<section class="ed-band--mist">
+  <div class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{team.title}</h2>
+      {team.lead && <p class="ed-sec-sub">{team.lead}</p>}
+    </header>
+    <div class="tm">
+      <ul class="tm-members">
+        {team.members.map((member) => <li><strong>{member.name}</strong><span>{member.role}</span></li>)}
+      </ul>
+      {team.rules.length > 0 && (
+        <aside class="tm-rules">
+          <h3>The rules</h3>
+          <ul>{team.rules.map((rule) => <li>{rule}</li>)}</ul>
+        </aside>
+      )}
+    </div>
+    {widgets && (
+      <div class="tm-widgets">
+        <h3>{widgets.title}</h3>
+        {widgets.lead && <p class="tm-widgets-lead">{widgets.lead}</p>}
+        <ul>{widgets.items.map((widget) => <li><strong>{widget.name}</strong><span>{widget.body}</span></li>)}</ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+.tm { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.tm-members { border-top: 2px solid var(--ed-ink); }
+.tm-members li { display: flex; flex-direction: column; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.tm-members strong { font-size: 18px; color: var(--ed-ink); }
+.tm-rules { display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 36px); border-radius: 28px; background: var(--ed-navy); color: #fff; }
+.tm-rules h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; }
+.tm-rules li { display: flex; gap: 12px; padding-block: 12px; border-top: 1px solid var(--ed-navy-line); font-size: 16.5px; font-weight: 600; }
+.tm-rules li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 7px; border-radius: 999px; background: var(--ed-yellow); }
+.tm-widgets { display: flex; flex-direction: column; gap: 10px; margin-top: clamp(48px, 6vw, 80px); }
+.tm-widgets h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; color: var(--ed-ink); }
+.tm-widgets-lead { max-width: 40em; font-size: 17.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.tm-widgets ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 14px; margin-top: 12px; }
+.tm-widgets li { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 20px; background: #fff; font-size: 15.5px; line-height: 1.45; color: var(--ed-ink-2); }
+.tm-widgets li strong { font-size: 17px; color: var(--ed-ink); }
+@media (max-width: 860px) { .tm { grid-template-columns: minmax(0, 1fr); } }
+</style>

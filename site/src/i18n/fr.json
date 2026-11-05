@@ -919,6 +919,13 @@
         }
       ]
     },
+    "work": {
+      "eyebrow": "Dossiers",
+      "h2": "Notre façon de travailler,",
+      "h2_accent": "dossier par dossier.",
+      "sub": "Chaque dossier montre les étapes, la conception et les tests derrière un travail : des concepts que nous construisons pour montrer une idée et, à terme, des missions clients que nous pouvons expliquer.",
+      "link": "Voir les dossiers (en anglais)"
+    },
     "contact": {
       "eyebrow": "Contact",
       "h2": "Commençons par",

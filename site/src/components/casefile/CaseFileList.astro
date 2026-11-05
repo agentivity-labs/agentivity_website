@@ -1,0 +1,82 @@
+---
+// The case files of the Services section, at /services/work: one card per data file in src/content/cases, concepts and client
+// missions alike, each with its type. English only, like the case files.
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../SiteHeader.astro';
+import SiteFooter from '../SiteFooter.astro';
+
+interface Props { entries: CollectionEntry<'cases'>[]; }
+const { entries } = Astro.props;
+const absolute = (href: string) => new URL(href, Astro.site).href;
+const title = 'Case files: how we work, step by step | Agentivity';
+const description = 'Agentivity Services case files: the steps, the design and the tests behind our work, concepts built to show an idea and, in time, client missions.';
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Case files',
+  description,
+  url: absolute('/services/work/'),
+  inLanguage: 'en',
+  hasPart: entries.map((entry) => ({ '@type': 'CreativeWork', name: entry.data.name, url: absolute(`/services/work/${entry.id}/`) })),
+}, {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Services', item: absolute('/services/') },
+    { '@type': 'ListItem', position: 2, name: 'Case files', item: absolute('/services/work/') },
+  ],
+}];
+---
+<Base title={title} description={description} schema={schema} lang="en" look="editorial" alternates={false}>
+
+<SiteHeader lang="en" />
+
+<main class="ed-page">
+
+  <section class="ed-wrap cl-hero">
+    <a class="cl-back" href="/services/">Services</a>
+    <h1>Case <em class="ed-mark">files.</em></h1>
+    <p class="cl-lead">How we work, one case file at a time: the steps, the design and the tests behind each piece of work. Concepts are built to show an idea; client missions, in time, will show work done for a client.</p>
+  </section>
+
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <ul class="cl-list">
+        {entries.map((entry) => (
+          <li>
+            <a href={`/services/work/${entry.id}/`}>
+              <p class="cl-tags"><span class="cl-tag cl-tag--type">{entry.data.type}</span><span class="cl-tag">{entry.data.kind}</span></p>
+              <h2>{entry.data.name}</h2>
+              <p>{entry.data.summary}</p>
+              <span class="cl-open">Open the case file</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+
+</Base>
+
+<style>
+.cl-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding-block: clamp(40px, 5vw, 72px) clamp(48px, 6vw, 80px); }
+.cl-back { font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.cl-back::before { content: "← "; }
+.cl-back:hover { color: var(--ed-ink); }
+.cl-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; }
+.cl-lead { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.cl-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr)); gap: 16px; }
+.cl-list a { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: clamp(24px, 3vw, 32px); border-radius: 24px; background: #fff; color: var(--ed-ink-2); font-size: 17px; line-height: 1.5; }
+.cl-list a:hover { box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
+.cl-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.cl-tag { padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.cl-tag--type { background: var(--ed-navy); color: #fff; }
+.cl-list h2 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(34px, 3.4vw, 44px); line-height: 1.02; color: var(--ed-ink); }
+.cl-open { margin-top: auto; font-weight: 700; color: var(--ed-ink); }
+.cl-open::after { content: " →"; }
+</style>

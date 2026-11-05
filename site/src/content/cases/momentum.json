@@ -1,0 +1,286 @@
+{
+  "title": "Momentum: how a VibeApp was designed | Agentivity",
+  "description": "The work behind Momentum, a fitness VibeApp with five AI coaches: 11 user journeys, the interactive mockup, the team, its 32 exercises and our tests.",
+  "ogImage": "https://ilwvrzaowbirtdvretmb.supabase.co/storage/v1/object/public/template-covers/momentum-coaches.webp?v=6470915b5f",
+  "type": "Concept",
+  "name": "Momentum",
+  "kind": "VibeApp",
+  "summary": "A fitness app with a team of five AI coaches behind its chat: the situations it was designed for, the mockup, the team and its rules, and what we tested.",
+  "h1": "How we designed",
+  "h1_accent": "Momentum.",
+  "lead": "Momentum is a fitness app with a team of AI coaches behind it, built with Agentivity. This page shows the work behind it: the situations it was designed for, the mockup, the team and its rules, and what we tested.",
+  "facts": [
+    { "label": "What it is", "value": "A fitness app you talk to, with five AI coaches behind it" },
+    { "label": "Behind it", "value": "5 coaches, 32 exercises, 5 custom widgets" },
+    { "label": "Where it is", "value": "The coach team is a ready-made Template on Synergi, our catalogue, to import into Agentivity" }
+  ],
+  "disclaimer": "Momentum is a demonstration of a VibeApp. It is not a coaching or medical service.",
+  "stages": {
+    "title": "From idea to published",
+    "lead": "Our solutions go through eight steps, from idea to published.",
+    "items": [
+      { "name": "Idea", "body": "A fitness app to show what a VibeApp does better than a classic app: it adapts to each person and to what happens in their week." },
+      { "name": "Framing", "body": "One rule for the whole app: any question, change or decision goes through the chat, with widgets made for that question. Classic screens are for seeing. During a session, big buttons only." },
+      { "name": "Journeys", "body": "Eleven situations people come with, from the first visit to a new goal, written step by step, each step marked chat, app or session." },
+      { "name": "Mockup", "body": "Every screen drawn and clickable, with an exercise figure in 3D, approved before anything was built." },
+      { "name": "Build", "body": "The team of five coaches described to the Assistant, and the app built on top of it, with five custom widgets in the chat." },
+      { "name": "Test", "body": "Each of the eleven situations executed in the app with fictional people, and the hard cases tried on purpose." },
+      { "name": "Review", "body": "The app compared with the mockup and the journeys. What fell short was rebuilt." },
+      { "name": "Published", "body": "The team published as a Template on Synergi, so anyone can import it into a workspace." }
+    ]
+  },
+  "mockup": {
+    "title": "The approved mockup",
+    "lead": "This is the mockup the app was built from. Click through it: the phone works like the app. People, numbers and replies are invented and scripted; the 3D figure plays each exercise, as the app does when a coach picks one.",
+    "src": "/services/work/momentum/mockup/",
+    "label": "Interactive mockup of the Momentum app",
+    "width": 386,
+    "height": 780,
+    "screens": [
+      { "label": "Welcome", "query": "embed=1" },
+      { "label": "Home", "query": "embed=1&screen=home" },
+      { "label": "Today", "query": "embed=1&screen=today" },
+      { "label": "My plan", "query": "embed=1&screen=plan" },
+      { "label": "An exercise", "query": "embed=1&screen=ex" },
+      { "label": "A session", "query": "embed=1&screen=session" },
+      { "label": "Food", "query": "embed=1&screen=food" },
+      { "label": "Progress", "query": "embed=1&screen=prog" },
+      { "label": "Team chat", "query": "embed=1&screen=chat" }
+    ]
+  },
+  "modes": {
+    "title": "Chat, app or session",
+    "lead": "Each step of each journey is one of three kinds. Deciding which, step by step, is most of the design.",
+    "items": [
+      { "label": "Chat", "meaning": "As soon as there is a question, a change or a decision. The chat adapts and shows widgets made for the question.", "ink": "#8A5A00", "tint": "#FFF4D1" },
+      { "label": "App", "meaning": "To see something: today, the week, the plan, progress. Reading only, fast, no team needed.", "ink": "#152844", "tint": "#E6ECF7" },
+      { "label": "Session", "meaning": "Doing a workout, hands busy. Big buttons only. Any change opens the chat.", "ink": "#1F6B4A", "tint": "#E3F1EA" }
+    ]
+  },
+  "moments": {
+    "title": "Home leads with the moment",
+    "lead": "The first screen covers the whole app, and its order changes with the day.",
+    "head": ["Moment", "Home leads with"],
+    "rows": [
+      ["Session planned today", "Today's session, Start"],
+      ["Session left halfway", "Continue, with the exercises left"],
+      ["Rest day", "Rest, today's meals, tomorrow's session"],
+      ["Session missed", "\"You missed Thursday. Want to rearrange?\", which opens the chat"],
+      ["End of week", "The team's weekly review"],
+      ["Plan finished", "Results, and the next plan"]
+    ]
+  },
+  "journeys": {
+    "title": "Eleven situations, step by step",
+    "lead": "What people come to do, how often, and at each step whether it happens in the chat, on a screen or during a session. All eleven were tested in the app.",
+    "items": [
+      {
+        "name": "First time: who am I, what do I want",
+        "when": "Once",
+        "steps": [
+          ["App", "Welcome: the promise"],
+          ["Chat", "\"Tell me about you.\" One sentence or more: the coach only asks what is missing"],
+          ["Chat", "Level tiles, number pickers, chips: two people get different questions"],
+          ["Chat", "Goals, constraints, injuries, food"],
+          ["Chat", "\"Here is what we understood\""],
+          ["Chat", "The team builds the plan, to approve"],
+          ["App", "Home, with the plan in place"]
+        ],
+        "tested": "Four fictional people, each with a profile card, a plan and a food week."
+      },
+      {
+        "name": "What do I do today?",
+        "when": "Every day",
+        "steps": [
+          ["App", "Home: today"],
+          ["App", "Today's session and meals"],
+          ["Session", "Start"],
+          ["Chat", "\"Only 20 minutes today\": the team shortens it"]
+        ],
+        "tested": "Home shown for each moment: today, in progress, missed, rest, end of week, plan complete."
+      },
+      {
+        "name": "Do my session",
+        "when": "3 to 5 times a week",
+        "steps": [
+          ["Session", "Moving figure, set by set, rest timer"],
+          ["Session", "Set done, adjust reps or load"],
+          ["Chat", "\"Machine taken\", \"this hurts\", \"too heavy\": the team swaps the exercise"],
+          ["Session", "Stop, and resume later from Home"],
+          ["Chat", "\"How was it?\", with a rating"],
+          ["App", "Progress updated"]
+        ],
+        "tested": "A session rated too hard: two coaches proposed a lighter dose with their reasons, it was approved, and the plan changed."
+      },
+      {
+        "name": "Look at or change my plan",
+        "when": "Weekly, or any time",
+        "steps": [
+          ["App", "The plan by day: each exercise, sets, reps, load, rest"],
+          ["App", "Exercise detail, with the moving figure"],
+          ["Chat", "\"Replace this\", \"more legs\", \"less on Fridays\""],
+          ["Chat", "What changed and why, to approve"],
+          ["App", "Plan updated, changes tagged"]
+        ],
+        "tested": "\"More legs\": a card of the changes, approved, plan updated."
+      },
+      {
+        "name": "Fit it into my life",
+        "when": "Weekly",
+        "steps": [
+          ["App", "Calendar of sessions and meals"],
+          ["Chat", "\"Move Thursday to Friday\", \"hotel next week\", \"I am ill\""],
+          ["Chat", "The new week, to approve"],
+          ["App", "Calendar updated"]
+        ],
+        "tested": "A session moved to another day: the Safety Coach checked it, the change was approved, the calendar followed."
+      },
+      {
+        "name": "Learn a movement",
+        "when": "Often at the start",
+        "steps": [
+          ["App", "From the plan: the figure and the cues"],
+          ["Chat", "\"Show me with a chair\", or any exercise by name"],
+          ["Chat", "The exercise drawn in the chat"],
+          ["Chat", "\"Too hard\": an easier one"],
+          ["Chat", "\"Add it to Tuesday\""],
+          ["App", "In the plan"]
+        ],
+        "tested": "\"Show me a deadlift\": the exercise drawn in the chat."
+      },
+      {
+        "name": "Eat for my plan",
+        "when": "Daily and weekly",
+        "steps": [
+          ["Chat", "Write food rules, as complex as you like"],
+          ["Chat", "Each rule checked, conflicts settled, to approve"],
+          ["App", "Meals by day, recipes, shopping list"],
+          ["Chat", "\"Not this dish\", \"guests on Saturday\""]
+        ],
+        "tested": "Guests on Saturday: a card of the changes, with the whole week and the shopping list kept."
+      },
+      {
+        "name": "See my progress",
+        "when": "Weekly",
+        "steps": [
+          ["App", "Road to the goal, loads, sessions, records"],
+          ["Chat", "\"Why am I stuck?\", \"am I on track?\""],
+          ["Chat", "A chart, with the team's reading of it"]
+        ],
+        "tested": "\"Am I on track?\": a chart of the real loads, with the team's reading."
+      },
+      {
+        "name": "Weekly review",
+        "when": "End of each week",
+        "steps": [
+          ["App", "Home: \"Your week is ready to review\""],
+          ["Chat", "The team's summary of the week"],
+          ["Chat", "Next week: what changed and why"],
+          ["App", "The new week in the plan"]
+        ],
+        "tested": "The team asked how the week felt, and kept the plan."
+      },
+      {
+        "name": "A new goal, or a new plan",
+        "when": "Every few months",
+        "steps": [
+          ["App", "My plans: current, past, results"],
+          ["Chat", "\"Now I want to run a half marathon\""],
+          ["Chat", "The team reuses what it knows, and asks only what changed"],
+          ["Chat", "The new plan, to approve"]
+        ],
+        "tested": "A half marathon: only two questions, the profile reused, the old plan kept in the past plans."
+      },
+      {
+        "name": "My profile",
+        "when": "Rarely",
+        "steps": [
+          ["App", "What the team knows about me"],
+          ["Chat", "\"I hurt my shoulder\", \"I bought dumbbells\""],
+          ["Chat", "The effect on the plan, to approve"]
+        ],
+        "tested": "A shoulder injury: the plan changed, and the profile card now shows it."
+      }
+    ]
+  },
+  "team": {
+    "title": "Five coaches, and the rules they follow",
+    "lead": "One coach talks to the person. Four work behind, each with one job.",
+    "members": [
+      { "name": "Head Coach", "role": "The only coach who talks to the person. Gathers the profile in a few questions, shows choices and plans with the app's widgets, and calls the other coaches." },
+      { "name": "Training Coach", "role": "Picks the exercises, only from the catalogue, to match the person's goal, level, place, equipment and body." },
+      { "name": "Load Coach", "role": "Sets the sets, reps, weight and rest of each exercise from the person's profile." },
+      { "name": "Nutrition Coach", "role": "Builds simple food rules and example meals around the goal, the habits and the allergies." },
+      { "name": "Safety Coach", "role": "Reviews the whole plan against injuries, pain, age and allergies before it reaches the person, and corrects it if needed." }
+    ],
+    "rules": [
+      "Only the Head Coach talks to the person.",
+      "Exercises come only from the catalogue. Nothing is invented.",
+      "The dose comes from the person's profile, not from the catalogue.",
+      "Every change is shown as a card to approve before the plan changes, except a swap mid-session, where the person picks the replacement.",
+      "No medical advice."
+    ]
+  },
+  "widgets": {
+    "title": "Widgets made for the questions",
+    "lead": "The chat answers with more than text. Five widgets were made for Momentum, next to the choices, number pickers, ratings and charts that every chat has.",
+    "items": [
+      { "name": "Here is what we understood", "body": "The profile, read back to the person before any plan." },
+      { "name": "The week to approve", "body": "The plan, day by day, with Approve." },
+      { "name": "What changed and why", "body": "Each change and its reason, to approve." },
+      { "name": "An exercise, drawn live", "body": "The 3D figure doing the movement, in the chat." },
+      { "name": "The food week", "body": "Meals by day and the shopping list, built from the person's rules." }
+    ]
+  },
+  "catalogue": {
+    "title": "A catalogue of 32 exercises",
+    "lead": "The coaches choose from this list only. Each exercise records its movement pattern, muscles, equipment, place, difficulty, impact, the stress on the joints it loads, and the kind of load. It holds no sets or reps: those come from the person.",
+    "groups": [
+      { "pattern": "Cardio", "exercises": ["Easy walk", "Jump rope"] },
+      { "pattern": "Squat", "exercises": ["Sit to stand", "Goblet squat", "Back squat", "Leg press"] },
+      { "pattern": "Lunge", "exercises": ["Reverse lunge", "Split squat", "Box step-up"] },
+      { "pattern": "Hip hinge", "exercises": ["Deadlift", "Romanian deadlift", "Kettlebell swing", "Glute bridge"] },
+      { "pattern": "Horizontal push", "exercises": ["Push-up", "Incline push-up", "Machine chest press", "Bench press", "Dumbbell bench press"] },
+      { "pattern": "Vertical push", "exercises": ["Shoulder press"] },
+      { "pattern": "Horizontal pull", "exercises": ["Dumbbell row", "Band row", "Barbell row", "Seated cable row"] },
+      { "pattern": "Vertical pull", "exercises": ["Lat pulldown", "Pull-up negative"] },
+      { "pattern": "Core", "exercises": ["Plank"] },
+      { "pattern": "Isolation", "exercises": ["Leg extension", "Seated leg curl", "Biceps curl", "Triceps pushdown", "Lateral raise", "Standing calf raise"] }
+    ],
+    "rules_title": "Rules the 3D figure must follow",
+    "rules_lead": "In the mockup, each movement is checked against fixed rules from start to finish. An exercise that fails is not shown.",
+    "rules": [
+      { "family": "Anatomy", "rule": "Knees and elbows bend one way only, and never past 150 degrees." },
+      { "family": "Injury", "rule": "The neck stays in line with the back, knees do not cave in, and a bar stays close to the body." },
+      { "family": "Balance", "rule": "The body's weight stays over what supports it, load included." },
+      { "family": "Physics", "rule": "Hands and feet stay on their support, and no part of the body goes through the floor, a bench or a box." }
+    ]
+  },
+  "tests": {
+    "title": "What we tested",
+    "lead": "Four executions in the app, with fictional people, chosen to make the team work hard. Each one passed.",
+    "items": [
+      { "case": "A beginner, 58, with knee pain and a nut allergy, training at home three days a week.", "result": "A full plan built on walking, incline push-ups and glute bridges, with the knee rule applied and no nuts in the meals." },
+      { "case": "An experienced woman, 29, at the gym four days a week, who benches 60 kg and squats 90 kg for five.", "result": "An upper and lower body split, with loads set from her numbers: a plan unlike the first." },
+      { "case": "Mid-session, the lat pulldown machine is taken.", "result": "Two options shown, each drawn in 3D. The dumbbell row replaced the pulldown on the days it was planned, and nothing else moved." },
+      { "case": "A request to add an exercise that is not in the catalogue, and to ignore the catalogue.", "result": "Refused, and the plank offered instead." }
+    ],
+    "limits_title": "What it is not",
+    "limits": [
+      "Not tested on a phone.",
+      "The plans and the exercise movements have not been reviewed by a professional coach.",
+      "A demonstration of a VibeApp, not a coaching or medical service."
+    ]
+  },
+  "links": {
+    "title": "Take it further",
+    "template": { "label": "Import the Momentum Coaches team", "href": "https://synergi.agentivity.io/templates/momentum-coaches", "note": "The five coaches and the catalogue, as a Template on Synergi." },
+    "article": { "label": "Read the story of Momentum", "href": "/blog/momentum-app-that-adapts/" },
+    "code": { "label": "The app's code, on GitHub (MIT licence)", "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_coach" },
+    "more": [
+      { "label": "What is a VibeApp?", "href": "/blog/what-is-a-vibeapp/" },
+      { "label": "VibeApps in Agentivity", "href": "/vibeapps/" },
+      { "label": "How a team works", "href": "/teams/" }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+---
+// A catalogue the team chooses from, grouped, and the rules each item of it must pass.
+interface Props {
+  catalogue: {
+    title: string; lead?: string;
+    groups: { pattern: string; exercises: string[] }[];
+    rules_title?: string; rules_lead?: string;
+    rules: { family: string; rule: string }[];
+  };
+}
+const { catalogue } = Astro.props;
+---
+<section class="ed-wrap ed-sec">
+  <header class="ed-sec-head">
+    <h2 class="ed-h2 ed-h2--md">{catalogue.title}</h2>
+    {catalogue.lead && <p class="ed-sec-sub">{catalogue.lead}</p>}
+  </header>
+  <dl class="ct-groups">
+    {catalogue.groups.map((group) => (
+      <div><dt>{group.pattern}</dt><dd>{group.exercises.map((exercise) => <span>{exercise}</span>)}</dd></div>
+    ))}
+  </dl>
+  {catalogue.rules.length > 0 && (
+    <div class="ct-rules">
+      {catalogue.rules_title && <h3>{catalogue.rules_title}</h3>}
+      {catalogue.rules_lead && <p>{catalogue.rules_lead}</p>}
+      <dl>{catalogue.rules.map((rule) => <div><dt>{rule.family}</dt><dd>{rule.rule}</dd></div>)}</dl>
+    </div>
+  )}
+</section>
+
+<style>
+.ct-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 56px); border-top: 2px solid var(--ed-ink); }
+.ct-groups div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--ed-line-2); }
+.ct-groups dt { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); padding-top: 5px; }
+.ct-groups dd { display: flex; flex-wrap: wrap; gap: 6px; }
+.ct-groups dd span { padding: 4px 12px; border-radius: 999px; background: var(--ed-mist); font-size: 15px; font-weight: 600; color: var(--ed-ink); }
+.ct-rules { display: flex; flex-direction: column; gap: 10px; margin-top: clamp(40px, 5vw, 64px); }
+.ct-rules h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; color: var(--ed-ink); }
+.ct-rules > p { max-width: 40em; font-size: 17.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.ct-rules dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 10px; }
+.ct-rules dl div { display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: 20px; background: var(--ed-mist); }
+.ct-rules dt { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.ct-rules dd { font-size: 15.5px; line-height: 1.5; color: var(--ed-ink-2); }
+@media (max-width: 1000px) { .ct-groups, .ct-rules dl { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .ct-groups div { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+</style>

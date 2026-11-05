@@ -1,0 +1,127 @@
+---
+// One case file of the Services section, at /services/work/<id>: the work behind a concept or a client mission, for a client's
+// eyes. Everything comes from its data file (src/content/cases/<id>.json); each section shows only if the file has it.
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../SiteHeader.astro';
+import SiteFooter from '../SiteFooter.astro';
+import CaseFileStages from './CaseFileStages.astro';
+import CaseFileMockup from './CaseFileMockup.astro';
+import CaseFileJourneys from './CaseFileJourneys.astro';
+import CaseFileTeam from './CaseFileTeam.astro';
+import CaseFileCatalogue from './CaseFileCatalogue.astro';
+import CaseFileTests from './CaseFileTests.astro';
+
+interface Props { entry: CollectionEntry<'cases'>; }
+const { entry } = Astro.props;
+const s = entry.data;
+const url = new URL(`/services/work/${entry.id}/`, Astro.site).href;
+const absolute = (href: string) => new URL(href, Astro.site).href;
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: `${s.h1} ${s.h1_accent}`.replace(/\.$/, ''),
+  description: s.description,
+  url,
+  inLanguage: 'en',
+  genre: 'Case study',
+  author: { '@type': 'Organization', name: 'Agentivity', url: 'https://www.agentivity.io' },
+  about: { '@type': 'Thing', name: `${s.name}, a ${s.kind}` },
+  ...(s.links ? {
+    mentions: [
+      ...(s.links.template ? [{ '@type': 'CreativeWork', name: `${s.name}, the Template`, url: absolute(s.links.template.href) }] : []),
+      ...(s.links.article ? [{ '@type': 'BlogPosting', name: `${s.name}, the article`, url: absolute(s.links.article.href) }] : []),
+      ...(s.links.code ? [{ '@type': 'SoftwareSourceCode', name: `${s.name}, the app's code`, codeRepository: s.links.code.href, url: s.links.code.href }] : []),
+    ],
+  } : {}),
+}, {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Services', item: absolute('/services/') },
+    { '@type': 'ListItem', position: 2, name: 'Case files', item: absolute('/services/work/') },
+    { '@type': 'ListItem', position: 3, name: s.name, item: url },
+  ],
+}];
+---
+<Base title={s.title} description={s.description} ogImage={s.ogImage} schema={schema} lang="en" look="editorial" alternates={false}>
+
+<SiteHeader lang="en" />
+
+<main class="ed-page sw">
+
+  <section class="ed-wrap sw-hero">
+    <a class="sw-back" href="/services/work/">Case files</a>
+    <p class="sw-tags"><span class="sw-tag sw-tag--kind">{s.type}</span><span class="sw-tag">{s.kind}</span><span class="sw-name">{s.name}</span></p>
+    <h1>{s.h1} <em class="ed-mark">{s.h1_accent}</em></h1>
+    <p class="sw-lead">{s.lead}</p>
+    {s.links && (s.links.template || s.links.article) && (
+      <div class="sw-hero-actions">
+        {s.links.template && <a class="ed-btn ed-btn--sm ed-btn--navy" href={s.links.template.href} target="_blank" rel="noopener">{s.links.template.label}</a>}
+        {s.links.article && <a class="ed-link" href={s.links.article.href}>{s.links.article.label}</a>}
+      </div>
+    )}
+    {s.facts.length > 0 && (
+      <dl class="sw-facts">
+        {s.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+      </dl>
+    )}
+    {s.disclaimer && <p class="sw-disclaimer">{s.disclaimer}</p>}
+  </section>
+
+  {s.stages && <CaseFileStages stages={s.stages} />}
+  {s.mockup && <CaseFileMockup mockup={s.mockup} />}
+  {s.journeys && <CaseFileJourneys journeys={s.journeys} modes={s.modes} moments={s.moments} />}
+  {s.team && <CaseFileTeam team={s.team} widgets={s.widgets} />}
+  {s.catalogue && <CaseFileCatalogue catalogue={s.catalogue} />}
+  {s.tests && <CaseFileTests tests={s.tests} />}
+
+  {s.links && (
+    <section class="ed-band--yellow">
+      <div class="ed-wrap ed-sec sw-links">
+        <h2 class="ed-h2 ed-h2--md">{s.links.title}</h2>
+        {s.links.template && (
+          <div class="sw-links-main">
+            <a class="ed-btn ed-btn--navy" href={s.links.template.href} target="_blank" rel="noopener">{s.links.template.label}</a>
+            {s.links.template.note && <p>{s.links.template.note}</p>}
+          </div>
+        )}
+        <ul class="sw-links-more">
+          {s.links.article && <li><a class="ed-link" href={s.links.article.href}>{s.links.article.label}</a></li>}
+          {s.links.code && <li><a class="ed-link" href={s.links.code.href} target="_blank" rel="noopener">{s.links.code.label}</a></li>}
+          {s.links.more.map((link) => <li><a class="ed-link" href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+</main>
+
+<SiteFooter lang="en" />
+
+</Base>
+
+<style>
+.sw-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding-block: clamp(40px, 5vw, 72px) clamp(48px, 6vw, 80px); }
+.sw-back { font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.sw-back::before { content: "← "; }
+.sw-back:hover { color: var(--ed-ink); }
+.sw-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.sw-tag { padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
+.sw-tag--kind { background: var(--ed-navy); color: #fff; }
+.sw-name { margin-left: 6px; font-size: 14.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.sw-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.sw-lead { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.sw-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+.sw-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 0 clamp(20px, 3vw, 40px); width: 100%; margin-top: 8px; border-top: 2px solid var(--ed-ink); }
+.sw-facts div { display: flex; flex-direction: column; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); }
+.sw-facts dt { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.sw-facts dd { font-family: var(--ed-serif); font-size: clamp(21px, 2vw, 26px); line-height: 1.15; color: var(--ed-ink); }
+.sw-disclaimer { font-size: 15px; color: var(--ed-ink-3); }
+
+.sw-links { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.sw-links-main { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; font-size: 17px; }
+/* A long label wraps instead of running off a phone screen. */
+.sw-links-main .ed-btn { max-width: 100%; white-space: normal; text-align: center; }
+.sw-links-more { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+</style>

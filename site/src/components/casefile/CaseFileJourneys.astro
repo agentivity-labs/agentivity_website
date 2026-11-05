@@ -1,0 +1,83 @@
+---
+// The kinds of step (modes), the home screen by moment, and the user journeys with their steps and what was tested.
+type Titled = { title: string; lead?: string };
+interface Props {
+  journeys: Titled & { items: { name: string; when: string; steps: [string, string][]; tested?: string }[] };
+  modes?: Titled & { items: { label: string; meaning: string; ink: string; tint: string }[] };
+  moments?: Titled & { head: [string, string]; rows: [string, string][] };
+}
+const { journeys, modes, moments } = Astro.props;
+const colour = new Map((modes?.items ?? []).map((mode) => [mode.label, `--jm-ink: ${mode.ink}; --jm-tint: ${mode.tint}`]));
+---
+{modes && (
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec jm">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{modes.title}</h2>
+        {modes.lead && <p class="ed-sec-sub">{modes.lead}</p>}
+      </header>
+      <ul class="jm-modes">
+        {modes.items.map((mode) => (
+          <li style={colour.get(mode.label)}><span class="jm-chip">{mode.label}</span><span>{mode.meaning}</span></li>
+        ))}
+      </ul>
+      {moments && (
+        <div class="jm-moments">
+          <h3>{moments.title}</h3>
+          {moments.lead && <p>{moments.lead}</p>}
+          <table>
+            <thead><tr><th scope="col">{moments.head[0]}</th><th scope="col">{moments.head[1]}</th></tr></thead>
+            <tbody>{moments.rows.map(([moment, leads]) => <tr><th scope="row">{moment}</th><td>{leads}</td></tr>)}</tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
+<section class="ed-wrap ed-sec">
+  <header class="ed-sec-head">
+    <h2 class="ed-h2 ed-h2--md">{journeys.title}</h2>
+    {journeys.lead && <p class="ed-sec-sub">{journeys.lead}</p>}
+  </header>
+  <ol class="jm-journeys">
+    {journeys.items.map((journey, i) => (
+      <li>
+        <p class="jm-when"><span>{String(i + 1).padStart(2, '0')}</span>{journey.when}</p>
+        <h3>{journey.name}</h3>
+        <ol class="jm-steps">
+          {journey.steps.map(([mode, text]) => (
+            <li style={colour.get(mode)}><span class="jm-chip">{mode}</span><span>{text}</span></li>
+          ))}
+        </ol>
+        {journey.tested && <p class="jm-tested"><strong>Tested</strong> {journey.tested}</p>}
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+.jm-chip { flex: none; align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: var(--jm-tint, var(--ed-mist)); color: var(--jm-ink, var(--ed-ink)); font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.jm-modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.jm-modes li { display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 22px; background: #fff; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.jm-moments { display: flex; flex-direction: column; gap: 10px; margin-top: clamp(40px, 5vw, 64px); max-width: 860px; }
+.jm-moments h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; color: var(--ed-ink); }
+.jm-moments p { font-size: 17px; color: var(--ed-ink-2); }
+.jm-moments table { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 16px; }
+.jm-moments th, .jm-moments td { padding: 12px 14px; border-bottom: 1px solid var(--ed-line-2); text-align: left; vertical-align: top; }
+.jm-moments thead th { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); border-bottom: 2px solid var(--ed-ink); }
+.jm-moments tbody th { font-weight: 700; color: var(--ed-ink); width: 38%; }
+.jm-moments td { color: var(--ed-ink-2); }
+
+.jm-journeys { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 16px; }
+.jm-journeys > li { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 22px; border: 1px solid var(--ed-line-2); background: #fff; }
+.jm-when { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.jm-when span { font-family: var(--ed-serif); font-size: 24px; font-weight: 400; letter-spacing: 0; color: var(--ed-ink); }
+.jm-journeys h3 { font-family: var(--ed-serif); font-weight: 400; font-size: 27px; line-height: 1.1; color: var(--ed-ink); }
+.jm-steps { display: flex; flex-direction: column; gap: 8px; }
+.jm-steps li { display: flex; gap: 10px; font-size: 15.5px; line-height: 1.45; color: var(--ed-ink-2); }
+.jm-tested { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--ed-line-2); font-size: 15px; line-height: 1.5; color: var(--ed-ink-2); }
+.jm-tested strong { display: block; margin-bottom: 2px; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: #1F6B4A; }
+@media (max-width: 860px) { .jm-modes { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .jm-moments tbody th { width: auto; } }
+</style>

@@ -1,0 +1,31 @@
+---
+// The steps a solution went through, from idea to published, in order.
+interface Props { stages: { title: string; lead?: string; items: { name: string; body: string }[] }; }
+const { stages } = Astro.props;
+---
+<section class="ed-band--mist">
+  <div class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{stages.title}</h2>
+      {stages.lead && <p class="ed-sec-sub">{stages.lead}</p>}
+    </header>
+    <ol class="st-list">
+      {stages.items.map((stage, i) => (
+        <li>
+          <span class="st-n" aria-hidden="true">{i + 1}</span>
+          <strong>{stage.name}</strong>
+          <span>{stage.body}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+.st-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.st-list li { display: flex; flex-direction: column; gap: 8px; padding: 22px 22px 24px; border-radius: 22px; background: #fff; color: var(--ed-ink-2); font-size: 16px; line-height: 1.5; }
+.st-n { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 999px; background: var(--ed-yellow); font-weight: 700; color: var(--ed-ink); }
+.st-list strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.05; color: var(--ed-ink); }
+@media (max-width: 1000px) { .st-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .st-list { grid-template-columns: minmax(0, 1fr); } }
+</style>

@@ -919,6 +919,13 @@
         }
       ]
     },
+    "work": {
+      "eyebrow": "Case files",
+      "h2": "How we work,",
+      "h2_accent": "one case file at a time.",
+      "sub": "Each case file shows the steps, the design and the tests behind a piece of work: concepts we build to show an idea and, in time, client missions we can explain.",
+      "link": "See the case files"
+    },
     "contact": {
       "eyebrow": "Contact",
       "h2": "Start with",
