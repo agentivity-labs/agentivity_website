@@ -13,11 +13,49 @@ lastUpdated: false
 
 The steps that ask a person, send and read messages, store values, and work with outside applications.
 
-This page lists 13 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 17 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## Interactions
 
 Human-in-the-loop workflow nodes and approvals.
+
+### Card
+
+Step · in the catalogue: Interactions · type `interaction.card`
+
+Shows a card to a person through the connected channel: a title, rows of label and value, and buttons when a choice is wanted.
+
+**When to use it.** To show a recap as a clean card in the chat (what is about to be done, the settings that will be used, a result), and, with choices, wait for the button the person clicks before going on: Continue or Change, Approve or Reject. Without choices it shows the card and goes on. For an answer typed in fields, use Form Interaction; for a free message, Human Interaction.
+
+**Effects.** sends a message.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `title` | Text | yes |  | The title of the card. |
+| `message` | Text | no |  | A short text under the rows. |
+| `rows` | Structured | no |  | The rows of the card, in their order. |
+| `choices` | TextList | no |  | The choices offered, one button each (Continue, Change). None: the card is only shown and the workflow goes on. |
+| `timeout_minutes` | Number | no | `0` | How long to wait for the choice, in minutes (0 = the channel's own). |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `choice` | Text | The choice clicked, as written in choices; empty when the card offers none, or the person wrote something else. |
+| `reply` | Text | What the person answered, as given. |
+| `responded_by` | Text | Who answered. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The card was shown, and the choice made when it offers some)
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **Channel** | yes | `interaction.channel.*` | 1 |
 
 ### Form Interaction
 
@@ -35,7 +73,7 @@ Collects structured form input through the connected channel
 |---|---|---|---|---|
 | `title` | Text | no |  | Title shown to the user. |
 | `description` | Text | no |  | Description/instructions. |
-| `fields` | Text | yes |  | JSON array of field definitions. |
+| `fields` | Structured | yes |  | The fields the person fills in, in their order. |
 
 **Outputs**
 
@@ -44,6 +82,10 @@ Collects structured form input through the connected channel
 | `response_data` | Text | User response as JSON |
 | `responded_by` | Text | Who responded |
 | `outcome` | Text | Response outcome |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The answer was given)
 
 **Places for resources**
 
@@ -462,3 +504,169 @@ Publishes content as a WordPress post with optional Elementor layout.
 **Entries.** **In** (Entry point)
 
 **Exits.** **Out** (Default output port)
+
+## Applications > CRM
+
+Customer records and sales pipelines.
+
+### HubSpot
+
+Step · in the catalogue: Applications > CRM · type `app.hubspot`
+
+Creates, reads, finds and changes HubSpot contacts, companies, deals and tickets, and adds notes and tasks, with no model and no tokens spent.
+
+**When to use it.** To keep HubSpot up to date from a workflow, or to read customers and deals from it. Properties HubSpot adds or a team creates go in 'properties', by internal name.
+
+**Example.** operation: contact.upsert, email: anna@acme.co, first_name: Anna, properties: {"lifecyclestage": "lead"}
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | The HubSpot connection. Connection of type `hubspot`. |
+| `resource` | Choice | no | `contact` | What the step works on. Choices: `contact`, `company`, `deal`, `ticket`, `list`, `activity`. |
+| `operation` | Choice | yes | `contact.create` | What the step does. Choices: `contact.create`, `contact.upsert`, `contact.update`, `contact.get`, `contact.list`, `contact.search`, `contact.delete`, `company.create`, `company.update`, `company.get`, `company.list`, `company.search`, `company.delete`, `deal.create`, `deal.update`, `deal.get`, `deal.list`, `deal.search`, `deal.delete`, `ticket.create`, `ticket.update`, `ticket.get`, `ticket.list`, `ticket.search`, `ticket.delete`, `list.members`, `activity.note`, `activity.task`. |
+| `email` | Text | no |  | The email address. |
+| `first_name` | Text | no |  | The first name. |
+| `last_name` | Text | no |  | The last name. |
+| `phone` | Text | no |  | The phone number. |
+| `owner` | Text | no |  | The person who owns the record. |
+| `properties` | Structured | no |  | Any other properties, by internal name, custom ones included: {"lifecyclestage": "lead"}. |
+| `record_id` | Text | no |  | The record's ID. |
+| `properties_to_read` | Text | no |  | Which properties to read, by internal name, separated by commas. |
+| `search_text` | Text | no |  | The words to look for. |
+| `filter_groups` | Structured | no |  | HubSpot filters: [{"filters":[{"propertyName":"email","operator":"EQ","value":"anna@acme.co"}]}]. |
+| `company_name` | Text | no |  | The company's name. |
+| `domain` | Text | no |  | The company's web domain. |
+| `deal_name` | Text | no |  | The deal's name. |
+| `amount` | Text | no |  | The deal's amount. |
+| `deal_stage` | Text | no |  | The deal's stage, by internal ID. |
+| `subject` | Text | no |  | The ticket's subject. |
+| `ticket_stage` | Text | no |  | The ticket's stage, by internal ID. |
+| `description` | Text | no |  | The ticket's text. |
+| `list_id` | Text | no |  | The list's ID. |
+| `activity_text` | Text | no |  | The note, or the task's title. |
+| `attach_to` | Choice | no | `contact` | What it goes on. Choices: `contact`, `company`, `deal`, `ticket`. |
+| `attach_to_id` | Text | no |  | The ID of that record. |
+| `return_all` | Boolean | no | `false` | Read every page, up to what the service can give. |
+| `limit` | Number | no | `50` | The most items read. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `result` | Structured | What the service answered: an object, or a list for an operation that lists |
+| `count` | Number | How many items came back |
+| `has_more` | Boolean | True when more items exist than were read |
+| `status` | Number | The HTTP status of a failed call |
+| `error` | Text | Why the operation failed, when it did |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The operation succeeded), **Error** (HubSpot refused or failed — see 'error')
+
+## Applications > Messaging
+
+Team messaging applications.
+
+### Slack
+
+Step · in the catalogue: Applications > Messaging · type `app.slack`
+
+Sends, changes and reads Slack messages, shares files and reads channels and people, with no model and no tokens spent.
+
+**When to use it.** To post to Slack, read a channel or wait for someone's reply in a thread from a workflow. For an agent asking people in Slack, use a Slack Channel on the agent.
+
+**Example.** operation: message.send, channel: C0123456789, text: The report is ready
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | The Slack connection. Connection of type `slack`. |
+| `resource` | Choice | no | `message` | What the step works on. Choices: `message`, `channel`, `file`, `user`. |
+| `operation` | Choice | yes | `message.send` | What the step does. Choices: `message.send`, `message.send_and_wait`, `message.update`, `message.delete`, `message.react`, `channel.list`, `channel.history`, `file.send`, `user.get`. |
+| `channel` | Text | no |  | The channel, by name in the list or by ID. |
+| `text` | Text | no |  | The message, in Slack's own formatting. |
+| `thread_ts` | Text | no |  | Reply in this thread: the 'ts' of its first message. |
+| `timeout_minutes` | Number | no | `60` | How long to wait, in minutes (0 waits without limit). |
+| `ts` | Text | no |  | The message: the 'ts' Slack gave it. |
+| `emoji` | Text | no |  | The emoji's name, without colons: thumbsup. |
+| `channel_types` | Text | no | `public_channel,private_channel` | Which kinds, separated by commas. |
+| `oldest` | Text | no |  | Only messages after this 'ts'. |
+| `file_name` | Text | no |  | The file's name, with its extension. |
+| `file_content` | Text | no |  | The file's content, as text. Leave empty to use the address. |
+| `file_url` | Text | no |  | A public address to fetch the file from. |
+| `comment` | Text | no |  | A message posted with the file. |
+| `user` | Text | no |  | The person. |
+| `return_all` | Boolean | no | `false` | Read every page, up to what the service can give. |
+| `limit` | Number | no | `50` | The most items read. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `result` | Structured | What the service answered: an object, or a list for an operation that lists |
+| `count` | Number | How many items came back |
+| `has_more` | Boolean | True when more items exist than were read |
+| `status` | Number | The HTTP status of a failed call |
+| `error` | Text | Why the operation failed, when it did |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The operation succeeded), **Error** (Slack refused or failed — see 'error')
+
+## Applications > Notes
+
+Pages, databases and shared notes.
+
+### Notion
+
+Step · in the catalogue: Applications > Notes · type `app.notion`
+
+Creates, finds and changes Notion pages and database pages, and adds or reads their content, with no model and no tokens spent.
+
+**When to use it.** To write results into Notion or read a database from a workflow. Each page or database must be shared with the connection in Notion. Give database fields as plain values in 'values'.
+
+**Example.** operation: database_page.create, database: <data source ID>, values: {"Name": "Launch", "Status": "Done"}
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | The Notion connection. Connection of type `notion`. |
+| `resource` | Choice | no | `database_page` | What the step works on. Choices: `database_page`, `database`, `page`, `content`. |
+| `operation` | Choice | yes | `database_page.create` | What the step does. Choices: `database_page.create`, `database_page.get`, `database_page.list`, `database_page.update`, `database.fields`, `page.create`, `page.search`, `page.archive`, `content.add`, `content.read`. |
+| `database` | Text | no |  | The database, by name in the list or by its data source ID. |
+| `values` | Structured | no |  | The fields by their names, as plain values: {"Name": "Launch", "Status": "Done", "Tags": ["Q4"]}. |
+| `properties` | Structured | no |  | Fields in Notion's own format, for what plain values cannot say. |
+| `content` | Text | no |  | The text. Each line becomes a paragraph. |
+| `page_id` | Text | no |  | The page's ID. |
+| `filter` | Structured | no |  | A Notion filter, as JSON. |
+| `sorts` | Structured | no |  | Notion sorts, as JSON. |
+| `parent_page_id` | Text | no |  | The ID of the page it goes under. |
+| `title` | Text | no |  | The page's title. |
+| `search_text` | Text | no |  | The words to look for. |
+| `blocks` | Structured | no |  | Notion blocks, as JSON, for headings, lists and the like. |
+| `return_all` | Boolean | no | `false` | Read every page, up to what the service can give. |
+| `limit` | Number | no | `50` | The most items read. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `result` | Structured | What the service answered: an object, or a list for an operation that lists |
+| `count` | Number | How many items came back |
+| `has_more` | Boolean | True when more items exist than were read |
+| `status` | Number | The HTTP status of a failed call |
+| `error` | Text | Why the operation failed, when it did |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (The operation succeeded), **Error** (Notion refused or failed — see 'error')

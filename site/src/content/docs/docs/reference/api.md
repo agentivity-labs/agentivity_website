@@ -34,6 +34,7 @@ Agents, teams and workflows share one tree of folders. The routes under `/api/v1
 | Method | Path | What it does |
 |---|---|---|
 | GET | `/api/v1/library/browse` | Browse the agents, teams and workflows of the library |
+| GET | `/api/v1/library/search` | Search the library in every folder, each item found with the folders it is in |
 | GET | `/api/v1/library/folders` | List folders in the library |
 | POST | `/api/v1/library/folders` | Create a folder in the library |
 | DELETE | `/api/v1/library/folders/{folderId}` | Delete a folder |
@@ -67,16 +68,6 @@ Agents, teams and workflows share one tree of folders. The routes under `/api/v1
 | POST | `/api/v1/agentic/agents/{agentId}/versions` | Create a version snapshot of an agent |
 | GET | `/api/v1/agentic/agents/{agentId}/versions/{versionId}` | Get a version snapshot of an agent |
 | POST | `/api/v1/agentic/agents/{agentId}/versions/{versionId}/restore` | Restore an agent to a saved version snapshot |
-
-## Ai-assistant
-
-| Method | Path | What it does |
-|---|---|---|
-| POST | `/api/v1/ai-assistant/chat` | Chat with the AI assistant |
-| POST | `/api/v1/ai-assistant/chat-stream` | Stream an AI assistant reply as events |
-| POST | `/api/v1/ai-assistant/configure-node` | Configure a node from a stated intent |
-| GET | `/api/v1/ai-assistant/health` | Check that the AI assistant is up |
-| POST | `/api/v1/ai-assistant/suggest-nodes` | Suggest nodes for a task description |
 
 ## Assistant
 
@@ -312,6 +303,10 @@ The OpenRouter routes never return the key. Disconnecting an account is deleting
 |---|---|---|
 | GET | `/api/v1/settings` | Read the application settings |
 | PUT | `/api/v1/settings` | Save the application settings |
+| GET | `/api/v1/settings/assistant` | Read the model connection of the Assistant |
+| PUT | `/api/v1/settings/assistant` | Choose the model connection of the Assistant, among those that hold a key |
+| GET | `/api/v1/settings/voice` | Read whether voice dictation is on, and its OpenAI connection |
+| PUT | `/api/v1/settings/voice` | Turn voice dictation on or off and choose its OpenAI connection |
 
 ## Streams
 

@@ -55,10 +55,7 @@ A link from **If** (or **Switch**) back to a step that already ran makes a loop.
 
 For example, a workflow writes a text and asks a person to review it. If the person asks for a change, **False** goes back to the step that writes, and the review starts again. When the person approves, **True** goes on.
 
-- A loop runs at most 25 rounds. Beyond that, the execution fails and says that the workflow went back too many times: check the condition that ends the loop.
-- A loop must hold an **If** or a **Switch**. A loop without one cannot stop, and the validator refuses it.
-- With **First Of** in a loop, only the branch that arrived during the current round counts.
-- Do not go back while another branch of the same round is still running: the two rounds would mix. Join the branches first.
+A loop runs at most 25 rounds, then the execution fails and says so. A loop must hold an **If** or a **Switch**, so that it can stop.
 
 ## How to know it worked
 

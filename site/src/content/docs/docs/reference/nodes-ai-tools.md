@@ -13,7 +13,7 @@ lastUpdated: false
 
 The tools an agent can call. Each one is a resource that you plug into the place for tools of an AI Agent.
 
-This page lists 16 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 17 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## AI > Tools
 
@@ -83,33 +83,83 @@ Connects AI agents to a remote MCP server over HTTP.
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 
-## AI > Tools > Communication
+## AI > Tools > Applications
 
-AI tools that read and send messages (e-mail).
+Applications an agent can use.
 
-### AI Agent Email Tool
+### AI Agent HubSpot Tool
 
-Resource · in the catalogue: AI > Tools > Communication · type `ai.tools.communication.email`
+Resource · in the catalogue: AI > Tools > Applications · type `ai.tools.app.hubspot`
 
-Gives an agent a mailbox: search and read e-mails (IMAP), answer or write e-mails (SMTP), and mark or file what it handled. What it may do, and who it may write to, is set on the node.
+Gives an agent HubSpot: one tool per operation you allow on this node.
 
-**When to use it.** For an agent that works from a mailbox: a support desk answering requests, an assistant sorting what arrived, an agent that sends its result by e-mail. Give only the permissions the job needs.
+**When to use it.** For an agent that decides by itself when to use HubSpot. Reading is allowed by default; allow only the changes the job needs. In a fixed workflow, use the HubSpot step instead.
 
-**Effects.** reads outside, changes something outside, sends a message.
+**Effects.** reads outside, changes something outside.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `inbox` | Credentials | no |  | The mailbox the agent reads (IMAP connection). Needed for reading, answering and filing. Connection of type `imap`. |
-| `outbox` | Credentials | no |  | The connection the agent sends with (SMTP). Needed for answering and writing. Connection of type `smtp`. |
-| `folder` | Text | no | `INBOX` | The folder the agent works in. |
-| `tool_name_prefix` | Text | no | `email` | Prefix for this instance's tool names, e.g. "support" → support_search, support_read, support_reply, support_send, support_update. Required when an agent has more than one Email tool connected: tool names must be unique per agent. |
-| `allow_read` | Boolean | no | `true` | Let the agent search and read e-mails. |
-| `allow_send` | Boolean | no | `true` | Let the agent send e-mails (answers and new ones). |
-| `allow_update` | Boolean | no | `true` | Let the agent mark e-mails as read, flag them or move them to a folder. |
-| `allowed_recipients` | Text | no |  | Who the agent may write to: addresses or domains separated by commas (anna@shop.com, @shop.com). Empty = anyone. An answer to an e-mail it read is always allowed. |
-| `max_body_chars` | Number | no | `12000` | The most characters of an e-mail's text handed to the agent. |
+| `credentials` | Credentials | yes |  | The HubSpot connection. Connection of type `hubspot`. |
+| `tool_name_prefix` | Text | no | `hubspot` | Prefix of this instance's tool names. Required when an agent has more than one HubSpot tool connected. |
+| `allow_contact_create` | Boolean | no | `false` | Creates a contact. |
+| `allow_contact_upsert` | Boolean | no | `false` | Updates the contact with this email, or creates it. |
+| `allow_contact_update` | Boolean | no | `false` | Changes the properties of a contact. |
+| `allow_contact_get` | Boolean | no | `true` | Reads a contact by ID. |
+| `allow_contact_list` | Boolean | no | `true` | Lists contacts. |
+| `allow_contact_search` | Boolean | no | `true` | Finds contacts by words or by filters. HubSpot gives at most 10,000 results. |
+| `allow_contact_delete` | Boolean | no | `false` | Moves a contact to HubSpot's recycling bin. |
+| `allow_company_create` | Boolean | no | `false` | Creates a company. |
+| `allow_company_update` | Boolean | no | `false` | Changes the properties of a company. |
+| `allow_company_get` | Boolean | no | `true` | Reads a company by ID. |
+| `allow_company_list` | Boolean | no | `true` | Lists companies. |
+| `allow_company_search` | Boolean | no | `true` | Finds companies by words or by filters. HubSpot gives at most 10,000 results. |
+| `allow_company_delete` | Boolean | no | `false` | Moves a company to HubSpot's recycling bin. |
+| `allow_deal_create` | Boolean | no | `false` | Creates a deal. |
+| `allow_deal_update` | Boolean | no | `false` | Changes the properties of a deal. |
+| `allow_deal_get` | Boolean | no | `true` | Reads a deal by ID. |
+| `allow_deal_list` | Boolean | no | `true` | Lists deals. |
+| `allow_deal_search` | Boolean | no | `true` | Finds deals by words or by filters. HubSpot gives at most 10,000 results. |
+| `allow_deal_delete` | Boolean | no | `false` | Moves a deal to HubSpot's recycling bin. |
+| `allow_ticket_create` | Boolean | no | `false` | Creates a ticket. |
+| `allow_ticket_update` | Boolean | no | `false` | Changes the properties of a ticket. |
+| `allow_ticket_get` | Boolean | no | `true` | Reads a ticket by ID. |
+| `allow_ticket_list` | Boolean | no | `true` | Lists tickets. |
+| `allow_ticket_search` | Boolean | no | `true` | Finds tickets by words or by filters. HubSpot gives at most 10,000 results. |
+| `allow_ticket_delete` | Boolean | no | `false` | Moves a ticket to HubSpot's recycling bin. |
+| `allow_list_members` | Boolean | no | `true` | Lists the records in a contact list. |
+| `allow_activity_note` | Boolean | no | `false` | Adds a note to a contact, a company, a deal or a ticket. |
+| `allow_activity_task` | Boolean | no | `false` | Adds a task to a contact, a company, a deal or a ticket. |
+
+**Plugs into** a place that accepts `ai.node.tool.*`.
+
+### AI Agent Notion Tool
+
+Resource · in the catalogue: AI > Tools > Applications · type `ai.tools.app.notion`
+
+Gives an agent Notion: one tool per operation you allow on this node.
+
+**When to use it.** For an agent that decides by itself when to use Notion. Reading is allowed by default; allow only the changes the job needs. In a fixed workflow, use the Notion step instead.
+
+**Effects.** reads outside, changes something outside.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | The Notion connection. Connection of type `notion`. |
+| `tool_name_prefix` | Text | no | `notion` | Prefix of this instance's tool names. Required when an agent has more than one Notion tool connected. |
+| `allow_database_page_create` | Boolean | no | `false` | Adds a page to a database, with its fields and content. |
+| `allow_database_page_get` | Boolean | no | `true` | Reads a page and its fields. |
+| `allow_database_page_list` | Boolean | no | `false` | Lists the pages of a database, filtered and sorted if asked. |
+| `allow_database_page_update` | Boolean | no | `false` | Changes the fields of a database page. |
+| `allow_database_fields` | Boolean | no | `true` | Reads a database's fields and their types. |
+| `allow_page_create` | Boolean | no | `false` | Adds a page under another page. |
+| `allow_page_search` | Boolean | no | `true` | Finds pages shared with the connection, by title. |
+| `allow_page_archive` | Boolean | no | `false` | Moves a page to Notion's trash. It can be restored there. |
+| `allow_content_add` | Boolean | no | `false` | Adds text or blocks at the end of a page. |
+| `allow_content_read` | Boolean | no | `true` | Reads the blocks of a page. |
 
 **Plugs into** a place that accepts `ai.node.tool.*`.
 

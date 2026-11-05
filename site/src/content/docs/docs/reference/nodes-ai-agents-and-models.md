@@ -13,7 +13,7 @@ lastUpdated: false
 
 The AI steps, and the resources you plug into them: models, sessions, channels to reach a person, policies and guardrails.
 
-This page lists 23 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 25 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## AI > Agents
 
@@ -160,7 +160,7 @@ Executes a prompt using an LLM with optional structured output, answering from t
 | `images` | ImageRef | no |  | Optional image to analyze — only used by vision-capable models (GPT-4o, Claude, Gemini). Ignored by text-only models. |
 | `response_schema` | Text | no |  | JSON Schema for structured output (optional). |
 | `temperature` | Number | no | `0.7` | Creativity (0-2). |
-| `max_tokens` | Number | no | `2000` | Max response tokens. |
+| `max_tokens` | Number | no |  | Max response tokens (leave empty to let the model decide). |
 
 **Outputs**
 
@@ -195,7 +195,7 @@ Anthropic Claude models (claude-opus-4, claude-sonnet-4, etc.).
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Provider credentials. Connection of type `anthropic`. |
-| `model` | Text | no |  | Model override (leave empty to use credential default). |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
 | `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
 | `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
 | `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
@@ -240,7 +240,7 @@ DeepSeek AI models (deepseek-chat, deepseek-reasoner, etc.).
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Provider credentials. Connection of type `deepseek`. |
-| `model` | Text | no |  | Model override (leave empty to use credential default). |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
 | `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
 | `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
 | `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
@@ -264,7 +264,7 @@ Google Gemini models via AI Studio (gemini-2.0-flash, gemini-2.5-pro, etc.).
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Provider credentials. Connection of type `gemini`. |
-| `model` | Text | no |  | Model override (leave empty to use credential default). |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
 | `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
 | `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
 | `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
@@ -277,7 +277,7 @@ Google Gemini models via AI Studio (gemini-2.0-flash, gemini-2.5-pro, etc.).
 
 Resource · in the catalogue: AI > Models · type `imagegen.model`
 
-Exposes an image generation provider credential and model configuration.
+An image provider that speaks the OpenAI images API (OpenAI, Recraft…), its model and settings.
 
 **When to use it.** To choose the image provider, model, quality and style used by the AI Image Generator. Plug it into the AI Image Generator.
 
@@ -287,10 +287,11 @@ Exposes an image generation provider credential and model configuration.
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `credentials` | Credentials | yes |  | Image generation provider credentials (includes base_url). Connection of type `openai_image`. |
-| `model` | Text | no | `gpt-image-1.5` | OpenAI image model to draw with (gpt-image family). |
+| `credentials` | Credentials | yes |  | The provider's connection: its key, and its base URL for a provider other than OpenAI (Recraft: https://external.api.recraft.ai/v1). Connection of type `openai_image`. |
+| `model` | Text | no | `gpt-image-1.5` | The model to draw with: gpt-image-1.5 at OpenAI; at another provider, one of its own (Recraft: recraftv3), or empty for its default. |
 | `quality` | Choice | no | `medium` | Image quality. Choices: `low`, `medium`, `high`. |
 | `style` | Choice | no | `none` | Look of the image, said to the model with the description. Choices: `none`, `vivid`, `natural`. |
+| `extra_parameters` | Text | no |  | Parameters of the provider itself, as a JSON object put in the request as it is: e.g. {"style": "digital_illustration"} at Recraft. Over the settings above. |
 
 **Plugs into** a place that accepts `imagegen.model.*`.
 
@@ -309,7 +310,7 @@ OpenAI GPT models (and compatible: LM Studio, Ollama, Groq, Azure OpenAI…).
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Provider credentials. Connection of type `openai`. |
-| `model` | Text | no |  | Model override (leave empty to use credential default). |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
 | `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
 | `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
 | `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
@@ -317,6 +318,57 @@ OpenAI GPT models (and compatible: LM Studio, Ollama, Groq, Azure OpenAI…).
 | `context_length` | Number | no |  | Context window override in tokens (LM Studio / Ollama only). |
 
 **Plugs into** a place that accepts `llm.model.*`.
+
+### OpenRouter Model
+
+Resource · in the catalogue: AI > Models · type `ai.llm.model.openrouter`
+
+Models of many providers through one OpenRouter account.
+
+**When to use it.** To give an AI Agent, an LLM Prompt or another AI step a model through your OpenRouter account.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | Provider credentials. Connection of type `openrouter`. |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
+| `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
+| `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
+| `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
+| `presence_penalty` | Number | no | `0` | Encourage new topics –2.0 to 2.0 (default: 0.0). |
+| `context_length` | Number | no |  | Context window override in tokens (LM Studio / Ollama only). |
+
+**Plugs into** a place that accepts `llm.model.*`.
+
+### Recraft Model
+
+Resource · in the catalogue: AI > Models · type `imagegen.recraft`
+
+Recraft as the image provider of an AI Image Generator: model, style, brand style, colours, vector output.
+
+**When to use it.** To draw with Recraft: illustrations, brand-consistent images, vector art (SVG). Connect it to an AI Image Generator.
+
+**Effects.** costs.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `credentials` | Credentials | yes |  | Your Recraft API key. Connection of type `recraft`. |
+| `model` | Choice | no | `recraftv4_1` | The model. A vector one draws an SVG. Choices: `recraftv4_1`, `recraftv4_1_vector`, `recraftv4_1_pro`, `recraftv4_1_pro_vector`, `recraftv4_1_flash`, `recraftv4_styles`, `recraftv4_styles_vector`, `recraftv4_styles_pro`, `recraftv4_styles_pro_vector`, `recraftv3`, `recraftv3_vector`, `recraftv2`, `recraftv2_vector`. |
+| `aspect_ratio` | Choice | no | `auto` | Shape of the image. Over the size of the generator. Choices: `auto`, `1:1`, `16:9`, `9:16`, `3:2`, `2:3`, `4:3`, `3:4`, `5:4`, `4:5`, `2:1`, `1:2`, `14:10`, `10:14`, `6:10`. |
+| `style` | Text | no |  | A style of Recraft, for the V3 and V2 models: e.g. Photorealism, Illustration, Hand-drawn, Vector art, Line art. |
+| `style_id` | Text | no |  | Your own style, made from reference images: choose it in the list of your Recraft account, or make one there from images; an ID (36 characters) can also be typed. A style works only with the model it was made for (V4 Styles when made here without saying), and not with Flash nor together with a style. |
+| `colors` | Text | no |  | Colours to use, as hex codes separated by commas: #1B2B3C, #F5A623 (10 at most). |
+| `background_color` | Text | no |  | Background colour, as a hex code: #FFFFFF. |
+| `negative_prompt` | Text | no |  | What not to draw, for the V3 and V2 models. |
+| `image_format` | Choice | no | `png` | File format of a raster image (a vector one is SVG). Choices: `webp`, `png`. |
+| `extra_parameters` | Text | no |  | Other parameters of Recraft, as a JSON object put in the request as it is: e.g. {"controls": {"artistic_level": 2}}. Over the fields above. |
+
+**Plugs into** a place that accepts `imagegen.model.*`.
 
 ### xAI / Grok Model
 
@@ -333,7 +385,7 @@ xAI Grok models (grok-3, grok-3-mini, etc.).
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Provider credentials. Connection of type `xai`. |
-| `model` | Text | no |  | Model override (leave empty to use credential default). |
+| `model` | Text | no |  | Model override (leave empty to use credential default): chosen in the list of the models the connection can use, or typed. |
 | `max_tokens` | Number | no |  | Maximum tokens in response (leave empty to let the model decide). |
 | `top_p` | Number | no | `1` | Nucleus sampling 0.0–1.0 (default: 1.0). |
 | `frequency_penalty` | Number | no | `0` | Reduce repetition –2.0 to 2.0 (default: 0.0). |
@@ -394,6 +446,27 @@ Keeps AI agent conversations in memory until the application restarts.
 
 Human-in-the-loop channels and interaction resources.
 
+### AI Assistant Channel
+
+Resource · in the catalogue: AI > Interactions · type `ai.interactions.assistant`
+
+Lets the AI assistant that started an execution over MCP (Claude, ChatGPT…) answer its questions from the conversation it is in.
+
+**When to use it.** When an execution is started from an AI assistant and what it asks can come from there: a document, a detail. For a decision that belongs to a person, use another channel: the assistant cannot answer those.
+
+**Effects.** writes in the workspace.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `default_thread_title` | Text | no | `Main` | Default thread title for newly created workflow conversations. |
+| `workflow_author_name` | Text | no | `Workflow` | Display name used for workflow-authored messages. |
+| `timeout_minutes` | Number | no | `0` | Response timeout in minutes (0 = no timeout). |
+| `widget_bundles` | TextList | no | `["agentivity_artifacts"]` | Platform widget bundle IDs to activate for this run. |
+
+**Plugs into** a place that accepts `interaction.channel.*`.
+
 ### Chat Channel
 
 Resource · in the catalogue: AI > Interactions · type `ai.interactions.chat`
@@ -421,39 +494,28 @@ Internal local chat channel for workflow conversations, human-in-the-loop respon
 
 Resource · in the catalogue: AI > Interactions · type `ai.interactions.email`
 
-Email-based interaction channel for delivering requests and collecting responses.
+Connects an agent or an interaction step to e-mail: it tells people by e-mail that their answer is needed, and gives an agent a mailbox to search, read, answer, write and file e-mails, with the permissions you allow on this node.
 
-**When to use it.** To tell someone by e-mail that a workflow needs their answer: the e-mail only notifies, the answer is still given in the app. An AI Agent cannot ask questions through it: use the Chat, Forms or Slack channel for that.
+**When to use it.** For an agent that works from a mailbox: a support desk answering requests, an assistant sorting what arrived, an agent that sends its result by e-mail. Also to tell someone by e-mail that a workflow needs their answer: the e-mail only notifies, the answer is still given in the app. An agent does not ask questions through it: to ask a person, use the Chat, Forms or Slack channel. Give only the permissions the job needs. In a fixed workflow, use the e-mail steps instead.
 
-**Effects.** sends a message.
+**Effects.** reads outside, changes something outside, sends a message.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `credentials` | Credentials | yes |  | SMTP credentials for sending emails. Connection of type `smtp`. |
-| `to` | Text | yes |  | Recipient email address(es). |
+| `credentials` | Credentials | yes |  | The connection e-mails are sent with (SMTP): the notices of an interaction step, and the agent's answers and new e-mails. Connection of type `smtp`. |
+| `inbox` | Credentials | no |  | The mailbox the agent reads (IMAP connection). Needed for reading, answering and filing. Connection of type `imap`. |
+| `folder` | Text | no | `INBOX` | The folder the agent works in. |
+| `to` | Text | no |  | Who is told by e-mail that an interaction step needs an answer: address(es). |
 | `reply_to` | Text | no |  | Reply-to address for responses. |
 | `timeout_minutes` | Number | no | `1440` | Response timeout in minutes (0 = no timeout). |
-
-**Plugs into** a place that accepts `interaction.channel.*`.
-
-### Forms Channel
-
-Resource · in the catalogue: AI > Interactions · type `ai.interactions.forms`
-
-Web form-based interaction channel for collecting user input.
-
-**When to use it.** To collect answers from a person through a form shown in the app, with only the fields needed. Plug it into an AI Agent so it can ask for missing information as a form and wait for it.
-
-**Effects.** sends a message.
-
-**Fields**
-
-| Name | Type | Required | Default | What it is |
-|---|---|---|---|---|
-| `respondent` | Text | no |  | Name or email of the person responding (for traceability in logs). |
-| `timeout_minutes` | Number | no | `0` | Response timeout in minutes (0 = no timeout). |
+| `tool_name_prefix` | Text | no | `email` | Prefix for the names of the agent's e-mail tools, e.g. "support" → support_search, support_read, support_reply, support_send, support_update. |
+| `max_body_chars` | Number | no | `12000` | The most characters of an e-mail's text handed to the agent. |
+| `allow_read` | Boolean | no | `true` | Let the agent search and read e-mails. |
+| `allow_send` | Boolean | no | `true` | Let the agent send e-mails (answers and new ones). |
+| `allow_update` | Boolean | no | `true` | Let the agent mark e-mails as read, flag them or move them to a folder. |
+| `allowed_recipients` | Text | no |  | Who the agent may write to: addresses or domains separated by commas (anna@shop.com, @shop.com). Empty = anyone. An answer to an e-mail it read is always allowed. |
 
 **Plugs into** a place that accepts `interaction.channel.*`.
 
@@ -461,18 +523,27 @@ Web form-based interaction channel for collecting user input.
 
 Resource · in the catalogue: AI > Interactions · type `ai.interactions.slack`
 
-Slack workspace channel for delivering interaction requests and collecting responses.
+Connects an agent or an interaction step to Slack: it asks people there and takes their reply, and gives an agent the Slack operations you allow on this node.
 
-**When to use it.** To ask people in Slack and take their reply from there, for an AI Agent or an interaction step. Needs a Slack bot token and the ID of the Slack channel, copied from Slack.
+**When to use it.** To ask people in Slack and take their reply from there, for an AI Agent or an interaction step, or to let an agent read and post in Slack by itself. Reading is allowed by default; allow only the changes the job needs. In a fixed workflow, use the Slack step instead.
 
-**Effects.** sends a message.
+**Effects.** reads outside, changes something outside, sends a message.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
 | `credentials` | Credentials | yes |  | Slack API credentials (Bot token). Connection of type `slack`. |
-| `default_channel` | Text | yes |  | Default Slack channel ID for HIL interactions. |
+| `tool_name_prefix` | Text | no | `slack` | Prefix of this instance's tool names. Required when an agent has more than one Slack tool connected. |
+| `allow_message_send` | Boolean | no | `false` | Posts a message to a channel or a thread. |
+| `allow_message_update` | Boolean | no | `false` | Replaces the text of a message the bot posted. |
+| `allow_message_delete` | Boolean | no | `false` | Deletes a message the bot posted. |
+| `allow_message_react` | Boolean | no | `false` | Adds an emoji reaction to a message. |
+| `allow_channel_list` | Boolean | no | `true` | Lists the channels the bot can see. |
+| `allow_channel_history` | Boolean | no | `true` | Reads the latest messages of a channel, newest first. The bot must be a member. |
+| `allow_file_send` | Boolean | no | `false` | Shares a file in a channel, from text or from a public address. |
+| `allow_user_get` | Boolean | no | `true` | Reads a person's profile. |
+| `default_channel` | Text | yes |  | Default Slack channel for HIL interactions. |
 | `mention_users` | Text | no |  | Users to mention (@user1, @user2). |
 | `allowed_user_ids` | Text | no |  | Optional Slack user IDs allowed to answer (comma-separated). |
 | `send_initial_message` | Boolean | no | `true` | Send the initial HIL prompt to Slack before waiting for a reply. |
@@ -577,7 +648,7 @@ Generates images using AI based on prompts and config.
 | `instructions` | Text | yes |  | Description of the image to generate. |
 | `config` | Text | no |  | Article config (title, section, etc.). |
 | `size` | Choice | no | `landscape_medium` | Image size. Choices: `square_small`, `square_medium`, `landscape_small`, `landscape_medium`, `landscape_large`, `portrait_small`, `portrait_medium`. |
-| `mode` | Choice | no | `pedagogical` | Generation mode. Choices: `thumbnail`, `article`, `pedagogical`, `social`. |
+| `mode` | Choice | no | `pedagogical` | Generation mode. Choices: `thumbnail`, `article`, `pedagogical`, `social`, `as_written`. |
 
 **Outputs**
 

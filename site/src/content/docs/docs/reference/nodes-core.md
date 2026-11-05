@@ -1,6 +1,6 @@
 ---
 title: "Core nodes: conditions, loops, data and code"
-description: "Reference of the Core nodes of the Nodes catalog: If, Switch, For Each, First Of, data, variables, files, display and JavaScript."
+description: "Reference of the Core nodes of the Node Catalog: If, Switch, For Each, First Of, data, variables, files, display and JavaScript."
 sidebar:
   order: 2
 editUrl: false
@@ -13,7 +13,7 @@ lastUpdated: false
 
 The building blocks of a workflow that use no AI: conditions, loops, data, variables, files, display and code.
 
-This page lists 16 nodes. [How to read a node reference](/docs/reference/nodes/).
+This page lists 24 nodes. [How to read a node reference](/docs/reference/nodes/).
 
 ## Core > Code
 
@@ -322,15 +322,16 @@ Displays a value — text, numbers, or JSON — directly on the node.
 
 Display step · in the catalogue: Core > Display · type `core.display.image`
 
-Displays a generated or referenced image directly on the node.
+Displays a generated or referenced image directly on the node, and in the chat when a channel is connected.
 
-**When to use it.** To see an image made by an earlier step, such as an image generator, right on the canvas. It passes the image on unchanged.
+**When to use it.** To see an image made by an earlier step, such as an image generator, right on the canvas, or in the run's chat. It passes the image on unchanged.
 
 **Fields**
 
 | Name | Type | Required | Default | What it is |
 |---|---|---|---|---|
-| `value` | ImageRef | yes |  | The image to display. Bind it to an image generator's output, e.g. `some_node.image`. |
+| `value` | ImageRef | yes |  | The image to display: an image generator's output (`some_node.image`), an address (https://…), or an image in base64. |
+| `caption` | Text | no |  | Optional: the text under the image in the chat. |
 
 **Outputs**
 
@@ -341,6 +342,12 @@ Displays a generated or referenced image directly on the node.
 **Entries.** **In** (Entry point)
 
 **Exits.** **Out** (Default output port)
+
+**Places for resources**
+
+| Place | Required | Accepts | How many |
+|---|---|---|---|
+| **Channel** | yes | `interaction.channel.*` | 1 |
 
 ## Core > File
 
@@ -395,6 +402,275 @@ Checks if a file exists and was modified within the specified time window.
 | `file_path` | Text | The file path that was checked |
 | `age_minutes` | Number | Age of the file in minutes (if it exists) |
 | `last_modified` | Text | Last modification time (ISO 8601 format) |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+## Core > Image
+
+Steps that change an image on the server: crop, resize, text, logo.
+
+### Image Adjust
+
+Step · in the catalogue: Core > Image · type `core.image.adjust`
+
+Changes the brightness, contrast and saturation of an image, blurs or sharpens it, on the server.
+
+**When to use it.** To retouch an image: lighter, more contrast, black and white (saturation -100), a soft blur behind a text, a sharper photo. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `brightness` | Number | no | `0` | From -100 (darker) to 100 (lighter); 0 changes nothing. |
+| `contrast` | Number | no | `0` | From -100 to 100; 0 changes nothing. |
+| `saturation` | Number | no | `0` | From -100 (black and white) to 100 (vivid); 0 changes nothing. |
+| `blur` | Number | no | `0` | Blur radius in pixels; 0 for none. |
+| `sharpen` | Number | no | `0` | Sharpening, from 0 (none) to 100. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Crop
+
+Step · in the catalogue: Core > Image · type `core.image.crop`
+
+Crops an image to a shape around its subject, or to a rectangle in pixels, on the server.
+
+**When to use it.** To keep the part of an image that matters: a square or a portrait cut around its subject, or an exact rectangle. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `shape` | Choice | no | `1:1` | The shape kept: the largest part of it around the focus, or the rectangle below. Choices: `1:1`, `4:5`, `3:4`, `2:3`, `9:16`, `16:9`, `3:2`, `4:3`, `area`. |
+| `focus_x` | Number | no | `50` | Where the crop centres across, in percent of the width. |
+| `focus_y` | Number | no | `50` | Where the crop centres down, in percent of the height. |
+| `x` | Number | no | `0` | Left of the rectangle, in pixels. |
+| `y` | Number | no | `0` | Top of the rectangle, in pixels. |
+| `width` | Number | no |  | Width of the rectangle, in pixels; the rest of the image when empty. |
+| `height` | Number | no |  | Height of the rectangle, in pixels; the rest of the image when empty. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Edit
+
+Step · in the catalogue: Core > Image · type `core.image.edit`
+
+Crops, resizes, fits to a platform's format, adjusts, writes a text and lays a logo on an image, on the server.
+
+**When to use it.** To make an image ready to post without another tool: fit it to an Instagram post, a story or LinkedIn, crop it on its subject, add a title or a logo, change its file format. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `operations` | Text | no | `[]` | The operations, as a JSON list done in its order: crop, resize, fit, rotate, flip, adjust, blur, sharpen, text, overlay, border, round. For example [{"op": "fit", "size": "story"}, {"op": "text", "text": "5 tips", "position": "top", "size": 7}, {"op": "overlay", "image": "https://…/logo.png", "width": 15}]. Sizes: "1080x1350" or instagram_square, instagram_portrait, story, linkedin, linkedin_square, x, facebook, youtube_thumbnail, pinterest. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Fit
+
+Step · in the catalogue: Core > Image · type `core.image.fit`
+
+Puts an image to a platform's format (Instagram, story, LinkedIn, X…) or to a size, on the server.
+
+**When to use it.** To make an image the size a platform asks for: the whole image with the space left filled by itself blurred, or filling the format cropped around its subject. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `size` | Choice | no | `instagram_square` | The format: a platform's, or custom for the width and height below. Choices: `instagram_square`, `instagram_portrait`, `story`, `linkedin`, `linkedin_square`, `x`, `facebook`, `youtube_thumbnail`, `pinterest`, `custom`. |
+| `width` | Number | no |  | Width in pixels, for a custom size. |
+| `height` | Number | no |  | Height in pixels, for a custom size. |
+| `mode` | Choice | no | `pad` | How the image takes the format. Choices: `pad`, `cover`, `contain`, `stretch`. |
+| `fill` | Choice | no | `blur` | What fills the space left, in the Whole image mode. Choices: `blur`, `color`, `transparent`. |
+| `fill_color` | Text | no | `#FFFFFF` | The colour of the space left, as a hex code: #FFFFFF. |
+| `focus_x` | Number | no | `50` | Where the crop centres across, in percent of the width (Fill mode). |
+| `focus_y` | Number | no | `50` | Where the crop centres down, in percent of the height (Fill mode). |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Frame
+
+Step · in the catalogue: Core > Image · type `core.image.frame`
+
+Puts a border around an image and rounds its corners, on the server.
+
+**When to use it.** To frame an image: a white or coloured border, rounded corners as on a card. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `border_width` | Number | no | `20` | Width of the border, in pixels; 0 for none. The border makes the image larger. |
+| `border_color` | Text | no | `#FFFFFF` | Colour of the border, as a hex code: #FFFFFF. |
+| `corner_radius` | Number | no | `0` | Radius of the rounded corners, in pixels; 0 for square corners. Kept by PNG and WebP, not JPEG. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Overlay
+
+Step · in the catalogue: Core > Image · type `core.image.overlay`
+
+Lays another image over an image (a logo, a watermark), at a place and a width, on the server.
+
+**When to use it.** To put a logo or a watermark on an image. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `overlay` | ImageRef | yes |  | The image to lay: a logo's address (https://…), a step's image, or an image in base64. A PNG keeps its transparency. |
+| `position` | Choice | no | `bottom-right` | Where it goes. Choices: `top-left`, `top`, `top-right`, `left`, `center`, `right`, `bottom-left`, `bottom`, `bottom-right`. |
+| `width` | Number | no | `20` | Its width, in percent of the image's width. |
+| `margin` | Number | no | `4` | Space from the edges, in percent of the image's shorter side. |
+| `opacity` | Number | no | `100` | Its opacity, from 0 (invisible) to 100. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Text
+
+Step · in the catalogue: Core > Image · type `core.image.text`
+
+Writes a text over an image (a title, a caption), wrapped to its width, on the server.
+
+**When to use it.** To put a title or a caption on an image itself, in the words given, exactly: an image model would misspell it. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `text` | Text | yes |  | The text to write. A new line starts a new line. |
+| `position` | Choice | no | `bottom` | Where the text goes. Choices: `top-left`, `top`, `top-right`, `left`, `center`, `right`, `bottom-left`, `bottom`, `bottom-right`. |
+| `size` | Number | no | `6` | Size of the letters, in percent of the image's height. |
+| `bold` | Boolean | no | `true` | Bold letters. |
+| `color` | Text | no | `#FFFFFF` | Colour of the letters, as a hex code: #FFFFFF. |
+| `background` | Text | no |  | A band behind the text, as a hex code with its transparency last (#00000080); empty for none. |
+| `shadow` | Boolean | no | `true` | A shadow under the letters, when there is no band. |
+| `margin` | Number | no | `5` | Space from the edges, in percent of the image's shorter side. |
+| `max_width` | Number | no | `90` | Widest a line may be, in percent of the image's width. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
+
+**Entries.** **In** (Entry point)
+
+**Exits.** **Out** (Default output port)
+
+### Image Transform
+
+Step · in the catalogue: Core > Image · type `core.image.transform`
+
+Rotates an image by an angle and flips it as in a mirror, on the server.
+
+**When to use it.** To turn a photo the right way up, or mirror it. Nothing is sent to any provider.
+
+**Fields**
+
+| Name | Type | Required | Default | What it is |
+|---|---|---|---|---|
+| `image` | ImageRef | yes |  | The image: an image generator's output (`some_node.image`), another image step's, an address (https://…), or an image in base64. |
+| `rotate` | Number | no | `0` | Angle to turn, in degrees, clockwise; 0 for none. |
+| `background` | Text | no |  | Colour of the corners an angle leaves, as a hex code; empty for transparent. |
+| `flip` | Choice | no | `none` | Flips it as in a mirror, after turning it. Choices: `none`, `horizontal`, `vertical`. |
+| `format` | Choice | no | `auto` | File format of the image made. Choices: `auto`, `png`, `jpeg`, `webp`. |
+| `quality` | Number | no | `90` | Quality of a JPEG or WebP, from 1 to 100. |
+
+**Outputs**
+
+| Name | Type | What it holds |
+|---|---|---|
+| `image` | ImageRef | The edited image. |
+| `width` | Number | Its width in pixels. |
+| `height` | Number | Its height in pixels. |
 
 **Entries.** **In** (Entry point)
 

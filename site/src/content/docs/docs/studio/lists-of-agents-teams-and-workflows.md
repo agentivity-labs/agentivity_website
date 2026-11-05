@@ -25,7 +25,7 @@ The header has two rows. The first holds the title, the button **New** and the t
 
 | Control | What it does |
 |---|---|
-| **New** | Asks what you want to create: **Agent**, **Team** or **Workflow**. Then asks for its name. It is created in the folder you are in. |
+| **New** | Opens the window "What do you want to create?", with three cards that say what each one is for: **Agent** (does one job, with its own tools), **Team** (several agents share the work, led by a manager) and **Workflow** (fixed steps, in the same order every time). Then it asks for the name. It is created in the folder you are in. |
 | **All types** | Shows one type only. Each press moves to the next: **Agents**, **Teams**, **Workflows**, then **All types** again. |
 | **Search agents, teams & workflows** | Finds an item by its name, in every folder, not only the one you are in. Each item found shows the folders it is in. |
 | The folder button | Creates a folder. |
