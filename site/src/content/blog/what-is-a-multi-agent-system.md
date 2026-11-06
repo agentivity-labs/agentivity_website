@@ -46,7 +46,7 @@ Not all agent teams work the same way. There are three main topologies:
 Agents work in a chain. Agent 1 finishes, passes output to Agent 2, and so on. Predictable, auditable, great for pipelines with a clear order of operations.
 
 ### Group Chat
-Agents collaborate simultaneously — sharing context, reasoning together, challenging each other's outputs. Better for complex tasks that benefit from multiple perspectives before a conclusion is reached.
+Agents discuss in turns, like a meeting — sharing context, reasoning together, challenging each other's outputs. Better for complex tasks that benefit from multiple perspectives before a conclusion is reached.
 
 ### Concurrent
 Agents run in parallel on different subtasks, then a synthesiser agent merges their outputs into a single result. Fastest for tasks where the subtasks are independent — research on multiple topics, analysis of multiple datasets.
@@ -74,7 +74,7 @@ The ROI of multi-agent systems isn't just about speed — it's about consistency
 - **Never misses a step** — there's no "I forgot to CC finance"
 - **Scales horizontally** — run one team or a hundred
 
-A Finance team that screens market intelligence every week. An HR team that screens 200 CVs overnight. A content team that produces 10 researched articles before Monday. These aren't hypotheticals — they're what Agentivity users run today.
+Think of a Finance team that screens market intelligence every week, an HR team that screens CVs overnight, or a content team that researches next week's articles before Monday.
 
 ## Getting started
 
