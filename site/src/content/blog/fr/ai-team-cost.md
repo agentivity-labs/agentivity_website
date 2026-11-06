@@ -8,7 +8,7 @@ thumb: "/media/blog/thumbs/ai-team-cost.jpg"
 lang: fr
 faq:
   - q: "Agentivity est-il gratuit ?"
-    a: "L'édition Community est gratuite, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai gratuit de 14 jours, sans carte. Dans les deux cas, les modèles d'IA se paient à part, au fournisseur que vous choisissez."
+    a: "L'édition Community est gratuite, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai de 14 jours, sans carte. Dans les deux cas, les modèles d'IA se paient à part, au fournisseur que vous choisissez."
   - q: "Pourquoi les modèles d'IA sont-ils facturés à part ?"
     a: "Parce qu'Agentivity ne revend pas d'IA. Vous connectez votre propre compte chez le fournisseur de votre choix et vous le payez directement, à son prix, sans marge ajoutée. Vous voyez exactement ce que vous dépensez, et vous pouvez changer de fournisseur."
   - q: "Comment connaître le coût avant de commencer ?"
@@ -35,7 +35,7 @@ Ce guide passe en revue chaque coût, montre ce qui fait monter la facture, et d
 
 C'est la plateforme : l'endroit où vous créez des agents, les réunissez en équipes, dessinez des workflows et suivez ce qu'ils font.
 
-Avec Agentivity, l'édition Community ne coûte rien, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées, sans rien à installer, commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai gratuit de 14 jours, sans carte. La [page des tarifs](/fr/pricing) présente les éditions.
+Avec Agentivity, l'édition Community ne coûte rien, sans limite de durée, et tourne sur votre propre serveur. Les offres hébergées, sans rien à installer, commencent à 20 € par mois facturé annuellement (24 € facturé mensuellement), hors TVA, avec un essai de 14 jours, sans carte. La [page des tarifs](/fr/pricing) présente les éditions.
 
 ## 2. Les modèles d'IA
 

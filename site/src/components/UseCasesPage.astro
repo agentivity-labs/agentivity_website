@@ -8,6 +8,7 @@ import VideoAutoplay from './VideoAutoplay.astro';
 import SolutionsSignup from './SolutionsSignup.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import TrialNote from './TrialNote.astro';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -133,6 +134,7 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
         <a class="ed-btn ed-btn--navy" href={p.cta.primary_href}>{p.cta.primary}</a>
         <a class="ed-btn ed-btn--line" href={p.cta.secondary_href}>{p.cta.secondary}</a>
       </div>
+      <TrialNote lang={lang} />
       <p class="uc-services">{p.cta.services} <a class="ed-link" href={p.cta.services_href}>{p.cta.services_link}</a></p>
     </div>
   </section>

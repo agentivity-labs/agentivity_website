@@ -30,7 +30,7 @@ faq:
 
 Forty applications for one role, and each CV needs the same careful read against the same job description. By the twentieth, attention drops, and the fortieth does not get the read the first one got.
 
-AI CV screening hands that reading to AI, without handing over the decision. The example in this article splits the job the way a careful recruiting team would: **AI reads and judges, a program computes the score, fixed rules choose the route, and a recruiter decides** the cases that need a person. It is one of the ready-made solutions in Agentivity: you can open it, run it on fictitious CVs and change it. [Try it in a free trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=cv-screening)
+AI CV screening hands that reading to AI, without handing over the decision. The example in this article splits the job the way a careful recruiting team would: **AI reads and judges, a program computes the score, fixed rules choose the route, and a recruiter decides** the cases that need a person. It is one of the ready-made solutions in Agentivity: you can open it, run it on fictitious CVs and change it. [Try it in a 14-day trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=cv-screening)
 
 ## What AI CV screening does, and what it does not
 
@@ -147,9 +147,9 @@ The Agentivity Studio shows the time saved on its home screen, so you can check 
 
 ## How do you try it?
 
-CV Screening is one of the ready-made solutions included in the free trial.
+CV Screening is one of the ready-made solutions included in the trial.
 
-1. **[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=cv-screening)**: 14 days, no card.
+1. **[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=cv-screening)**: 14 days, no card.
 2. Add **CV Screening** from the welcome guide, then open it in **Studio** > **Workflows**.
 3. Select **Execution**, then **Run**, and give a CV and a job description when the workflow asks. Use fictitious ones.
 4. Run it on a few cases for a role you know well, and compare its routes with your own judgement.

@@ -132,4 +132,4 @@ Partez de toute l'organisation, lisez Tokens au premier niveau, ouvrez la branch
 
 Vous pouvez voir comment une équipe se construit sur [Comment ça marche](/fr/how-it-works).
 
-**[Commencer un essai gratuit](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=observation)** : 14 jours, sans carte.
+**[Commencer un essai](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=observation)** : 14 jours, sans carte.

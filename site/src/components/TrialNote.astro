@@ -1,0 +1,16 @@
+---
+// The terms of the trial in one line, under every button that leads to the trial (KB-0236): its length, no card, and the AI
+// usage billed by the person's own provider. The number of days comes from the plans.
+import plans from '../data/plans.json';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; class?: string; }
+const { lang, class: extra } = Astro.props;
+const note = useTranslations(lang).start_cta.note.replace('{trial_days}', String(plans.trial.days));
+---
+<p class:list={['trial-note', extra]}>{note}</p>
+
+<style>
+.trial-note { font-size: 15px; font-weight: 600; color: var(--ed-ink-2); }
+</style>

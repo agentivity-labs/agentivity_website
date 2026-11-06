@@ -31,7 +31,7 @@ You want a pair of wireless headphones under a budget. Two online stores sell do
 
 An AI assistant can help with one of those questions at a time. The whole job is several jobs: understanding what you need, reading two stores, matching the same product, comparing like with like, scoring, and writing it up. In a company, you would give that to a small team. **Shopping Lab** is that team, made of nine AI experts, each with one job, working one after another like a human team.
 
-It is one of the ready-made solutions in Agentivity: you can open it, run it on your own request and change it. [Try it in a free trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=shopping-lab)
+It is one of the ready-made solutions in Agentivity: you can open it, run it on your own request and change it. [Try it in a 14-day trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=shopping-lab)
 
 ## The team, member by member
 
@@ -93,6 +93,6 @@ If you are not sure whether your job needs a team at all, start with [chatbot, a
 
 ## Try it
 
-The free trial includes the ready-made solutions. Add **Shopping Lab** from the welcome guide, open it in the Studio, switch to **Execution**, and ask for a product with a budget. The needs analyst asks you a few questions first.
+The trial includes the ready-made solutions. Add **Shopping Lab** from the welcome guide, open it in the Studio, switch to **Execution**, and ask for a product with a budget. The needs analyst asks you a few questions first.
 
-**[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=shopping-lab)**: 14 days, no card.
+**[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=shopping-lab)**: 14 days, no card.

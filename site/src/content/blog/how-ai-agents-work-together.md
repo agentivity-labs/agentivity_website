@@ -30,7 +30,7 @@ A good AI answers almost any question, one question at a time. But the work of a
 
 In a company, that kind of work goes to a team. One person knows the numbers, another knows the client, a third checks. AI can work the same way: instead of one assistant that does everything, you set up a team of AI experts (what the industry calls AI agents). Each has its own role and instructions, and can have its own information and tools: your documents, a data table, a web search. Then you decide how they work together.
 
-There are five ways, much like the ways human teams work: one after another, all at the same time, by passing the case to the right colleague, by discussing in turns, or under a manager who decides who works next. The way you choose matters as much as the experts themselves, because it decides who speaks to whom, in what order, and who has the last word. [Try it on your own work: start a free trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)
+There are five ways, much like the ways human teams work: one after another, all at the same time, by passing the case to the right colleague, by discussing in turns, or under a manager who decides who works next. The way you choose matters as much as the experts themselves, because it decides who speaks to whom, in what order, and who has the last word. [Try it on your own work: start a trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)
 
 This guide explains each of the five, with an everyday comparison, what it is good at, and where it goes wrong.
 
@@ -193,4 +193,4 @@ When you create a team in Agentivity, you choose one of these five ways. You can
 
 Choose sequential for a fixed chain, concurrent for independent tasks, handoff to route requests, group chat when debate helps, and manager-led when each request needs its own plan. If you are new to the idea of AI specialists working as a team, read [what a multi-agent system is](/blog/what-is-a-multi-agent-system) first, then [see a team being built](/how-it-works).
 
-An AI assistant helps you. An AI team works for everyone. **[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)** on your own work: free for 14 days, no card.
+An AI assistant helps you. An AI team works for everyone. **[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)** on your own work: 14 days, no card.

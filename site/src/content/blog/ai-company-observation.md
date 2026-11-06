@@ -132,4 +132,4 @@ Start from the whole organisation, read Tokens on the first level, open the bran
 
 You can see how a team is built on [how it works](/how-it-works), and how groups give a graph its shape in [our article on groups](/blog/ai-agent-team-groups).
 
-**[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=observation)**: 14 days, no card.
+**[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=observation)**: 14 days, no card.

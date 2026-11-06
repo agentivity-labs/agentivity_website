@@ -8,6 +8,7 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import GitHubIcon from './GitHubIcon.astro';
 import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
 import data from '../data/plans.json';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
@@ -88,6 +89,7 @@ const schema = [
       <a class="ed-btn ed-btn--navy" href={p.hero.primary_href}>{p.hero.primary}</a>
       <a class="ed-btn ed-btn--line" href={t.site.install_href}>{p.hero.secondary}</a>
     </div>
+    <TrialNote lang={lang} />
   </section>
 
   <!-- Editions: the one you can have today first, then the ones to come -->

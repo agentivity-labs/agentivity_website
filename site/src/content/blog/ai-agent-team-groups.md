@@ -105,4 +105,4 @@ A simple test: if you only want to see the part, use a group. If you want it to 
 
 Trip Manager Team is one of the ready-made solutions. Open it and look at how its twelve specialists are divided, then try the same on a team of your own: write down its parts in the words you would use with a colleague.
 
-**[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=groups)**: 14 days, no card.
+**[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=groups)**: 14 days, no card.

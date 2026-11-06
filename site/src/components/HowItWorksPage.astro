@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import GitHubIcon from './GitHubIcon.astro';
 import type { Lang } from '../i18n/utils';
@@ -42,9 +43,10 @@ const schema = {
     <h1>{p.hero.h1} <em class="ed-mark">{p.hero.h1_accent}</em></h1>
     <p class="hw-hero-sub">{p.hero.sub}</p>
     <div class="hw-hero-cta">
-      <a class="ed-btn ed-btn--navy" href={lang === 'fr' ? '/fr/start' : '/start'}>{t.nav.cta}</a>
+      <a class="ed-btn ed-btn--navy" href={lang === 'fr' ? '/fr/start' : '/start'}>{t.start_cta.label}</a>
       <a class="ed-btn ed-btn--line" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{t.site.github}</a>
     </div>
+    <TrialNote lang={lang} />
     <figure class="ed-shot hw-hero-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
         <img src="/media/assistant-change.jpg" alt={p.hero.alt} width="1418" height="770" />
@@ -203,6 +205,7 @@ const schema = {
         <div class="hw-path-actions">
           <a class="ed-btn ed-btn--sm ed-btn--navy" href={lang === 'fr' ? '/fr/start' : '/start'}>{p.start.cloud.link}</a>
         </div>
+        <TrialNote lang={lang} />
       </article>
     </div>
   </section>

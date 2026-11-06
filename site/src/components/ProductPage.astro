@@ -7,6 +7,7 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -54,6 +55,7 @@ const schema = {
       <a class="ed-btn ed-btn--navy" href={prefix + '/start'}>{all.start}</a>
       <a class="ed-btn ed-btn--line" href={p.hero.secondary.href}>{p.hero.secondary.label}</a>
     </div>
+    <TrialNote lang={lang} />
     <figure class="ed-shot pp-hero-shot" style={p.hero.media.kind === 'image' ? `max-width: ${p.hero.media.width}px` : undefined}>
       <div class="ed-shot-frame ed-shot-frame--lift">
         {p.hero.media.kind === 'video' ? (

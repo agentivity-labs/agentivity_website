@@ -30,7 +30,7 @@ Une bonne IA répond à presque toutes les questions, une question à la fois. M
 
 Dans une entreprise, ce genre de travail est confié à une équipe. L'un connaît les chiffres, une autre connaît le client, un troisième vérifie. L'IA peut travailler de la même façon : au lieu d'un assistant qui fait tout, vous mettez en place une équipe d'experts d'IA (ce que le secteur appelle des agents d'IA). Chacun a son rôle et ses consignes, et peut avoir ses propres informations et ses outils : vos documents, une table de données, une recherche sur le web. Puis vous décidez comment ils travaillent ensemble.
 
-Il y a cinq façons, assez proches de celles des équipes humaines : l'un après l'autre, tous en même temps, en passant le cas au bon collègue, en discutant à tour de rôle, ou sous un manager qui décide qui travaille ensuite. La façon choisie compte autant que les experts eux-mêmes. C'est elle qui décide qui parle à qui, dans quel ordre, et qui a le dernier mot. [Essayez sur votre propre travail : essai gratuit, sans carte.](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)
+Il y a cinq façons, assez proches de celles des équipes humaines : l'un après l'autre, tous en même temps, en passant le cas au bon collègue, en discutant à tour de rôle, ou sous un manager qui décide qui travaille ensuite. La façon choisie compte autant que les experts eux-mêmes. C'est elle qui décide qui parle à qui, dans quel ordre, et qui a le dernier mot. [Essayez sur votre propre travail : essai sans carte.](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)
 
 Ce guide présente chacune des cinq, avec une comparaison de tous les jours, ce qu'elle fait bien et là où elle se passe mal.
 
@@ -193,4 +193,4 @@ Quand vous créez une équipe dans Agentivity, vous choisissez l'une de ces cinq
 
 Choisissez Sequential pour une chaîne fixe, Concurrent pour des tâches indépendantes, Handoff pour orienter les demandes, Group Chat quand le débat aide, et Manager-led quand chaque demande a besoin de son propre plan. Si l'idée de spécialistes de l'IA qui travaillent en équipe est nouvelle pour vous, lisez d'abord [ce qu'est un système multi-agents](/fr/blog/what-is-a-multi-agent-system), puis [regardez une équipe se construire](/fr/how-it-works).
 
-Un assistant d'IA vous aide. Une équipe d'IA travaille pour tout le monde. **[Commencez un essai gratuit](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)** sur votre propre travail : 14 jours offerts, sans carte.
+Un assistant d'IA vous aide. Une équipe d'IA travaille pour tout le monde. **[Commencez un essai](/fr/start/?utm_source=blog&utm_medium=article&utm_campaign=five-ways)** sur votre propre travail : 14 jours, sans carte.

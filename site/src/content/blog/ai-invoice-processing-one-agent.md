@@ -33,7 +33,7 @@ Supplier invoices arrive as PDFs: software, travel, office supplies, equipment. 
 
 That is a job for **one AI agent**, not a team. **Invoice Clerk** reads each invoice you upload, files it in a table, checks its figures with a calculator, spots duplicates, and shows a short summary with a chart of the spending by category.
 
-It is one of the ready-made solutions in Agentivity: you can open it, run it on fictitious invoices and change it. [Try it in a free trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=invoice-clerk)
+It is one of the ready-made solutions in Agentivity: you can open it, run it on fictitious invoices and change it. [Try it in a 14-day trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=invoice-clerk)
 
 ## One agent, three tools, one table
 
@@ -105,6 +105,6 @@ If you are not sure which shape your job needs, start with [chatbot, agent, team
 
 ## Try it
 
-The free trial includes the ready-made solutions. Connect your AI model with your own key, add **Invoice Clerk** from the welcome guide, open it in **Studio** > **Agents**, switch to **Execution**, and upload an invoice. Then open **Data Tables** > `invoices`: the invoice has its row.
+The trial includes the ready-made solutions. Connect your AI model with your own key, add **Invoice Clerk** from the welcome guide, open it in **Studio** > **Agents**, switch to **Execution**, and upload an invoice. Then open **Data Tables** > `invoices`: the invoice has its row.
 
-**[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=invoice-clerk)**: 14 days, no card.
+**[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=invoice-clerk)**: 14 days, no card.

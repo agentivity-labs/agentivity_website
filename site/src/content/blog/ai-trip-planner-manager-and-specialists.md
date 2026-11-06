@@ -33,7 +33,7 @@ Three days in a city for two, in June, with a budget of 1,500 euros. That means 
 
 A travel agent would not do all of that alone. They would hand the flights to a colleague, the hotel to another, and keep an eye on the budget. **Trip Manager Team** works like that agency: a manager and twelve AI experts, each with its own job, who plan the trip together. The specialists propose, and **the traveller decides at each step**.
 
-It is a demonstration: **bookings and payment are simulated**, and nothing is booked or charged. It is also one of the ready-made solutions in Agentivity, so you can open it, run it on your own trip and change it. [Try it in a free trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=trip-manager)
+It is a demonstration: **bookings and payment are simulated**, and nothing is booked or charged. It is also one of the ready-made solutions in Agentivity, so you can open it, run it on your own trip and change it. [Try it in a 14-day trial, no card.](/start/?utm_source=blog&utm_medium=article&utm_campaign=trip-manager)
 
 ## The team: a manager and twelve specialists
 
@@ -126,6 +126,6 @@ Keep the roles narrow and clear: the manager chooses who works from them, so a v
 
 ## Try it
 
-The free trial includes the ready-made solutions. Add **Trip Manager Team** from the welcome guide, open it in **Studio** > **Agents**, switch to **Execution**, and ask for a trip in one sentence: a city, the dates, the number of travellers and a budget. Then answer when a specialist shows you options.
+The trial includes the ready-made solutions. Add **Trip Manager Team** from the welcome guide, open it in **Studio** > **Agents**, switch to **Execution**, and ask for a trip in one sentence: a city, the dates, the number of travellers and a budget. Then answer when a specialist shows you options.
 
-**[Start a free trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=trip-manager)**: 14 days, no card.
+**[Start a trial](/start/?utm_source=blog&utm_medium=article&utm_campaign=trip-manager)**: 14 days, no card.

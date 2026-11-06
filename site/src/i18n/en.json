@@ -87,7 +87,7 @@
       ]
     },
     "github": "Star on GitHub",
-    "cta": "Start free"
+    "cta": "Start your trial"
   },
   "footer": {
     "cols": [
@@ -150,19 +150,19 @@
     "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
     "install": "Install Community",
     "install_href": "/community",
-    "footer_tagline": "Build your AI team. Free to start, yours to extend."
+    "footer_tagline": "Build your AI team. Yours to extend."
   },
   "home": {
     "meta": {
       "title": "Build Your AI Team — AI Specialists That Work Alongside Your People | Agentivity",
-      "description": "Add an AI team to your team. Build teams of AI specialists without code: they take on the repetitive work, you keep the decisions. Free 14-day trial, no card, or the free Community edition."
+      "description": "Add an AI team to your team. Build teams of AI specialists without code: they take on the repetitive work, you keep the decisions. 14-day trial, no card, or the free Community edition."
     },
     "hero": {
       "eyebrow": "AI teams for your business, no code",
       "h1": "Your next hire is",
       "h1_accent": "an AI team.",
       "sub": "A team of AI experts, each with its own knowledge and tools, working together like a human team. It does the work. You stay in charge.",
-      "cta_start": "Start free",
+      "cta_start": "Build your first team",
       "film_alt": "A short film: one agent becomes a team, then an AI company. It shows the ways a team can work, a team at work in the Studio, an app you talk to, the Assistant building a team from one sentence, a workflow at work, and the applications it connects to.",
       "visual_label": "A marketing team at work on the Agentivity canvas: a manager and five specialists",
       "teams": [
@@ -198,7 +198,7 @@
         "body": "The team asks before anything important goes out"
       },
       {
-        "title": "Free 14-day trial",
+        "title": "14-day trial",
         "body": "No card. Or the free Community edition."
       }
     ],
@@ -391,7 +391,7 @@
       "eyebrow": "Ready to use",
       "h2": "Ready-made solutions.",
       "h2_accent": "Start in minutes.",
-      "link": "Start free",
+      "link": "Build your first team",
       "cards": [
         {
           "title": "Invoice Clerk",
@@ -423,7 +423,7 @@
       "eyebrow": "Pricing",
       "price": "0€",
       "rest": "to start.",
-      "sub": "Try the hosted plans free for 14 days, no card. Or install the free Community edition on your own server.",
+      "sub": "Try the hosted plans for 14 days, no card. Or install the free Community edition on your own server.",
       "link": "See full pricing",
       "tiers": [
         {
@@ -437,7 +437,7 @@
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hosted for you. No setup: sign in and build your first team.",
-          "cta": "Start free",
+          "cta": "Build your first team",
           "href": "/start?plan=personal",
           "featured": true
         },
@@ -445,14 +445,14 @@
           "name": "Pro",
           "badge": "Cloud",
           "desc": "More agents, longer executions and priority execution.",
-          "cta": "Start free",
+          "cta": "Build your first team",
           "href": "/start?plan=pro"
         },
         {
           "name": "Business",
           "badge": "Teams",
           "desc": "Shared workspaces. Everyone builds, everyone benefits.",
-          "cta": "Start free",
+          "cta": "Build your first team",
           "href": "/start?plan=business"
         },
         {
@@ -469,7 +469,7 @@
     "cta": {
       "h2": "Your team is ready",
       "h2_accent": "to work.",
-      "sub": "Start free in the cloud, or install the Community edition on your own server.",
+      "sub": "Try it in the cloud, or install the Community edition on your own server.",
       "github_line": "Self-hosting? The Community edition is free."
     }
   },
@@ -594,9 +594,9 @@
       },
       "cloud": {
         "name": "Use the cloud",
-        "badge": "14 days free",
+        "badge": "14-day trial",
         "body": "Nothing to install: sign in and build your first team.",
-        "link": "Start free"
+        "link": "Build your first team"
       }
     },
     "faq": {
@@ -629,7 +629,7 @@
     "cta": {
       "h2": "Ready to build",
       "h2_accent": "your first team?",
-      "sub": "Nothing to install: start free in the cloud."
+      "sub": "Nothing to install: try it in the cloud."
     },
     "assistant": {
       "eyebrow": "The fast way",
@@ -680,7 +680,7 @@
       "github": "Star on GitHub",
       "hub": "See the image on Docker Hub",
       "not_technical": "Not technical? The cloud version needs no installation.",
-      "start": "Start free"
+      "start": "Build your first team"
     },
     "install": {
       "eyebrow": "Install",
@@ -983,14 +983,14 @@
   "pricing_page": {
     "meta": {
       "title": "Agentivity Pricing — Free Community Edition, Cloud Plans and Enterprise",
-      "description": "The Community edition is free forever on your own server. Hosted plans from {from} a month, with a {trial_days}-day free trial. Enterprise on request."
+      "description": "The Community edition is free forever on your own server. Hosted plans from {from} a month, with a {trial_days}-day trial. Enterprise on request."
     },
     "hero": {
       "eyebrow": "Pricing",
       "price": "0€",
       "rest": "to start.",
-      "sub": "The Community edition is free forever, on your own server. Would you rather install nothing? The hosted plans start at {from} a month, with a {trial_days}-day free trial and no card.",
-      "primary": "Start a free trial",
+      "sub": "The Community edition is free forever, on your own server. Would you rather install nothing? The hosted plans start at {from} a month, with a {trial_days}-day trial and no card.",
+      "primary": "Build your first team",
       "primary_href": "/start",
       "secondary": "Install Community"
     },
@@ -1009,7 +1009,7 @@
         "billed_yearly": "Billed yearly: {price}",
         "billed_monthly": "Billed monthly",
         "vat": "Prices excluding VAT: VAT is added according to your country.",
-        "trial": "{trial_days}-day free trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial).",
+        "trial": "{trial_days}-day trial, no card, with the features of the plan you choose ({trial_executions} executions during the trial). AI usage is billed by your provider.",
         "sale_before": "Subject to our",
         "sale_link": "Terms of Sale",
         "sale_href": "/legal/terms-of-sale",
@@ -1086,26 +1086,26 @@
       "plans": [
         {
           "name": "Personal",
-          "status": "{trial_days}-day free trial",
+          "status": "{trial_days}-day trial · no card",
           "for": "one person: an independent, a shop owner, a freelancer",
           "desc": "Hosted for you. Nothing to install: sign in and build your first team.",
-          "cta": "Start a free trial",
+          "cta": "Build your first team",
           "href": "/start?plan=personal"
         },
         {
           "name": "Pro",
-          "status": "{trial_days}-day free trial",
+          "status": "{trial_days}-day trial · no card",
           "for": "a professional who relies on it every day",
           "desc": "More agents, longer executions, priority execution and Observation, to see where your tokens go.",
-          "cta": "Start a free trial",
+          "cta": "Build your first team",
           "href": "/start?plan=pro"
         },
         {
           "name": "Business",
-          "status": "{trial_days}-day free trial",
+          "status": "{trial_days}-day trial · no card",
           "for": "a team or a department",
           "desc": "Shared workspaces: one person builds, everyone benefits.",
-          "cta": "Start a free trial",
+          "cta": "Build your first team",
           "href": "/start?plan=business"
         },
         {
@@ -1130,7 +1130,7 @@
         },
         {
           "title": "The AI models",
-          "body": "Agentivity does not resell AI. You connect the provider you choose (OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock) and pay them directly, with no margin from us."
+          "body": "Agentivity does not resell AI. You connect the provider you choose (OpenRouter, OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock) and pay them directly, with no margin from us."
         },
         {
           "title": "The machine",
@@ -1167,7 +1167,7 @@
         },
         {
           "q": "I am not technical. Which edition is for me?",
-          "a": "A hosted plan: there is nothing to install. Try one free for {trial_days} days, no card needed."
+          "a": "A hosted plan: there is nothing to install. Try one for {trial_days} days, no card needed."
         },
         {
           "q": "What do the hosted plans cost?",
@@ -1206,9 +1206,9 @@
       ]
     },
     "cta": {
-      "h2": "Start free,",
+      "h2": "Start today,",
       "h2_accent": "in the cloud or on your server.",
-      "sub": "Try a hosted plan free for 14 days, or install the Community edition today.",
+      "sub": "Try a hosted plan for 14 days, or install the Community edition today.",
       "fine": "No spam. One message when it matters.",
       "github_line": "Comfortable with Docker? Community is ready today."
     }
@@ -1330,7 +1330,7 @@
           "body": "A personal app: training and meals planned around your goals, and adjusted week after week."
         }
       ],
-      "link": "Start free"
+      "link": "Build your first team"
     },
     "cases": [
       {
@@ -1444,7 +1444,7 @@
           { "q": "What does Trip Planner do?", "a": "A traveller writes the trip they want in one sentence. A manager agent hands each part to the right specialist, and the app asks the traveller to choose each time a decision is theirs: the flights, the hotel, how to get there, the table for dinner. At the end, it takes the payment and shows the recap of the bookings." },
           { "q": "Who is it for?", "a": "A travel agency, or any business that sells something with many parts and one person who decides: an event, an offer for a client, the arrival of a new employee." },
           { "q": "What is real and what is simulated?", "a": "Everything that would cost money is simulated: no flight, hotel or table is booked, no payment is charged, and the confirmation codes are invented. The names of the airlines, hotels and restaurants are invented too. The cities and their places are real." },
-          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Trip Manager Team from the welcome guide, open it in Studio > Agents, switch to Execution and ask for a trip in one sentence. The Trip Planner app itself is a public example on GitHub, for a developer." }
+          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Trip Manager Team from the welcome guide, open it in Studio > Agents, switch to Execution and ask for a trip in one sentence. The Trip Planner app itself is a public example on GitHub, for a developer." }
         ],
         "note": "This is a demonstration. Flights, hotels and payment are simulated: nothing is really booked or charged.",
         "get": {
@@ -1542,7 +1542,7 @@
           { "q": "What does Shopping Lab do?", "a": "A shopper describes what they need and a budget. Nine AI specialists confirm the brief with the shopper, read two online stores, match the same product in both, compare the specifications in the same units, score each product with a script and write a report: a verdict, the top picks and the sources." },
           { "q": "Who is it for?", "a": "A shop, a purchasing department or a comparison service. The same shape fits other comparisons: suppliers' offers, software plans, training courses." },
           { "q": "What is real and what is simulated?", "a": "Nothing is simulated. The scouts read the stores' own public pages at the moment of the execution, so the prices and products are the ones published then. The demonstration is written for two stores in the United States and works in English. If a store changes its pages, a scout can find nothing." },
-          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Shopping Lab from the welcome guide, open it in the Studio, switch to Execution and ask for a product with a budget. Nine members work one after another, so an execution takes several minutes and uses more model calls than one question." }
+          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Shopping Lab from the welcome guide, open it in the Studio, switch to Execution and ask for a product with a budget. Nine members work one after another, so an execution takes several minutes and uses more model calls than one question." }
         ],
         "note": "The demonstration reads two online stores. Add a scout, and the team covers another one.",
         "get": {
@@ -1628,7 +1628,7 @@
           { "q": "What does CV Screening do?", "a": "It reads a CV and a job description, each given as a file, a link or pasted text. AI assesses the fit and explains it, a program computes one score, and fixed rules choose the route: shortlist, rejection, or review by a recruiter. It writes a report with the reasons." },
           { "q": "Who is it for?", "a": "A recruiter or an HR team that reads many applications and wants every doubtful case seen by a person." },
           { "q": "What is real and what is simulated?", "a": "The reading and the scoring are real. Nothing is sent to a candidate: the report is a recommendation for the recruiter. Try it with fictitious CVs. As delivered, a very low score is written as a rejection without review: before any real use, change it so that a recruiter confirms every rejection." },
-          { "q": "How can I try it?", "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add CV Screening from the welcome guide, open it in Studio > Workflows and run it on a CV and a job description. It also comes with the ready-made examples of the Community edition." }
+          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add CV Screening from the welcome guide, open it in Studio > Workflows and run it on a CV and a job description. It also comes with the ready-made examples of the Community edition." }
         ],
         "note": "A workflow follows the path you drew, the same way every time. A team decides its own path. You can mix both.",
         "get": {
@@ -1720,7 +1720,7 @@
           },
           {
             "q": "How can I try it?",
-            "a": "Start the free trial (14 days, no card) and connect your AI model with your own key. Add Invoice Clerk from the welcome guide, open it in Studio > Agents, switch to Execution and upload an invoice with fictitious data. Then open Data Tables > invoices: the invoice has its row."
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Invoice Clerk from the welcome guide, open it in Studio > Agents, switch to Execution and upload an invoice with fictitious data. Then open Data Tables > invoices: the invoice has its row."
           }
         ],
         "note": "One agent is the right shape when the job is one person's job done the same way every time. When invoices need an approval before payment, put the agent in a workflow with an approval step.",
@@ -1735,8 +1735,8 @@
     "cta": {
       "h2": "A case in mind?",
       "h2_accent": "Build it.",
-      "sub": "See how a team is put together in the Studio, or start free in the cloud.",
-      "primary": "Start free",
+      "sub": "See how a team is put together in the Studio, or try it in the cloud.",
+      "primary": "Build your first team",
       "primary_href": "/start",
       "secondary": "See how it works",
       "secondary_href": "/how-it-works",
@@ -1950,7 +1950,7 @@
       "h2": "Describe it.",
       "h2_accent": "The Assistant drafts your team.",
       "sub": "The Community edition is free forever, and the Assistant is part of it.",
-      "trial": "Start a free trial",
+      "trial": "Build your first team",
       "community": "Or install the free Community edition on your own server"
     }
   },
@@ -1965,7 +1965,7 @@
       "h1": "An AI assistant helps you.",
       "h1_accent": "An AI team works for everyone.",
       "sub": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. They share the work, and come back to you for every decision that is yours.",
-      "cta": "Start free",
+      "cta": "Build your first team",
       "cta_secondary": "See ready-made teams",
       "caption": "The Trip Manager Team at work in the Studio. Recorded from the product, played faster.",
       "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller answers in the chat beside it at each step"
@@ -2140,21 +2140,21 @@
     "cta": {
       "h2": "Your next hire",
       "h2_accent": "is an AI team.",
-      "sub": "Start free in the cloud: nothing to install.",
+      "sub": "Try it in the cloud: nothing to install.",
       "fine": "Hosting it yourself? The Community edition is free.",
       "fine_link": "Install Community"
     }
   },
   "product_pages": {
     "crumb": "Product",
-    "start": "Start free",
+    "start": "Build your first team",
     "faq_eyebrow": "Questions",
     "faq_h2": "What people",
     "faq_h2_accent": "ask us.",
     "cta": {
       "h2": "Your next hire",
       "h2_accent": "is an AI team.",
-      "sub": "Start free in the cloud: nothing to install.",
+      "sub": "Try it in the cloud: nothing to install.",
       "fine": "Hosting it yourself? The Community edition is free.",
       "fine_link": "Install Community"
     },
@@ -3125,7 +3125,7 @@
     }
   },
   "start_cta": {
-    "label": "Start free",
-    "note": "14 days free · no credit card"
+    "label": "Build your first team",
+    "note": "{trial_days}-day trial · no card · AI usage billed by your provider"
   }
 }

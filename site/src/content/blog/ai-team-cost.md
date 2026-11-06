@@ -8,7 +8,7 @@ thumb: "/media/blog/thumbs/ai-team-cost.jpg"
 lang: en
 faq:
   - q: "Is Agentivity free?"
-    a: "The Community edition is free, with no time limit, and runs on your own server. The hosted plans start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day free trial and no card. In both cases the AI models are paid separately, to the provider you choose."
+    a: "The Community edition is free, with no time limit, and runs on your own server. The hosted plans start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day trial and no card. In both cases the AI models are paid separately, to the provider you choose."
   - q: "Why are AI models billed separately?"
     a: "Because Agentivity does not resell AI. You connect your own account with the provider you choose and pay them directly, at their price, with no margin added. You see exactly what you spend, and you can change provider."
   - q: "How can I know the cost before I start?"
@@ -35,7 +35,7 @@ This guide goes through each cost, shows what makes the bill go up, and gives si
 
 This is the platform: the place where you create agents, put them in teams, draw workflows and follow what they do.
 
-With Agentivity, the Community edition costs nothing, with no time limit, and runs on your own server. The hosted plans, where nothing has to be installed, start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day free trial and no card. The [pricing page](/pricing) lists the editions.
+With Agentivity, the Community edition costs nothing, with no time limit, and runs on your own server. The hosted plans, where nothing has to be installed, start at €20 a month billed yearly (€24 billed monthly), excluding VAT, with a 14-day trial and no card. The [pricing page](/pricing) lists the editions.
 
 ## 2. The AI models
 

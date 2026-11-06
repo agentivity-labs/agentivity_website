@@ -87,7 +87,7 @@
       ]
     },
     "github": "Star on GitHub",
-    "cta": "Commencer gratuitement"
+    "cta": "Démarrer l'essai"
   },
   "footer": {
     "cols": [
@@ -150,19 +150,19 @@
     "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
     "install": "Installer Community",
     "install_href": "/fr/community",
-    "footer_tagline": "Construisez votre équipe IA. Gratuit pour démarrer, à vous de l'étendre."
+    "footer_tagline": "Construisez votre équipe IA. À vous de l'étendre."
   },
   "home": {
     "meta": {
       "title": "Construisez votre équipe IA — des spécialistes IA aux côtés de vos équipes | Agentivity",
-      "description": "Ajoutez une équipe d'IA à votre équipe. Créez sans code des équipes de spécialistes IA : elles prennent le travail répétitif, vous gardez les décisions. Essai gratuit de 14 jours, sans carte, ou édition Community gratuite."
+      "description": "Ajoutez une équipe d'IA à votre équipe. Créez sans code des équipes de spécialistes IA : elles prennent le travail répétitif, vous gardez les décisions. Essai de 14 jours, sans carte, ou édition Community gratuite."
     },
     "hero": {
       "eyebrow": "Des équipes d'IA pour votre entreprise, sans code",
       "h1": "Votre prochaine recrue,",
       "h1_accent": "c'est une équipe IA.",
       "sub": "Une équipe d'experts d'IA, chacun avec ses connaissances et ses outils, qui travaillent ensemble comme une équipe humaine. Elle fait le travail. Vous restez aux commandes.",
-      "cta_start": "Commencer gratuitement",
+      "cta_start": "Créer votre première équipe",
       "film_alt": "Un court film : un agent devient une équipe, puis une entreprise agentique. On y voit les façons de travailler d'une équipe, une équipe au travail dans le Studio, une application à qui l'on parle, l'Assistant qui construit une équipe à partir d'une phrase, un workflow au travail et les applications auxquelles il se connecte.",
       "visual_label": "Une équipe marketing au travail sur le canevas Agentivity : un manager et cinq spécialistes",
       "teams": [
@@ -198,7 +198,7 @@
         "body": "L'équipe demande avant tout envoi important"
       },
       {
-        "title": "Essai gratuit de 14 jours",
+        "title": "Essai de 14 jours",
         "body": "Sans carte. Ou l'édition Community gratuite."
       }
     ],
@@ -391,7 +391,7 @@
       "eyebrow": "Prêtes à l'emploi",
       "h2": "Des solutions prêtes à l'emploi.",
       "h2_accent": "Démarrez en quelques minutes.",
-      "link": "Commencer gratuitement",
+      "link": "Créer votre première équipe",
       "cards": [
         {
           "title": "Invoice Clerk",
@@ -423,7 +423,7 @@
       "eyebrow": "Tarifs",
       "price": "0€",
       "rest": "pour commencer.",
-      "sub": "Essayez les offres hébergées gratuitement pendant 14 jours, sans carte. Ou installez l'édition Community gratuite sur votre serveur.",
+      "sub": "Essayez les offres hébergées pendant 14 jours, sans carte. Ou installez l'édition Community gratuite sur votre serveur.",
       "link": "Voir tous les tarifs",
       "tiers": [
         {
@@ -437,7 +437,7 @@
           "name": "Personal",
           "badge": "Cloud",
           "desc": "Hébergé pour vous. Aucune installation : connectez-vous et créez votre première équipe.",
-          "cta": "Commencer gratuitement",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=personal",
           "featured": true
         },
@@ -445,14 +445,14 @@
           "name": "Pro",
           "badge": "Cloud",
           "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
-          "cta": "Commencer gratuitement",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=pro"
         },
         {
           "name": "Business",
           "badge": "Équipes",
           "desc": "Espaces de travail partagés. Tout le monde construit, tout le monde en profite.",
-          "cta": "Commencer gratuitement",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=business"
         },
         {
@@ -469,7 +469,7 @@
     "cta": {
       "h2": "Votre équipe est prête",
       "h2_accent": "à travailler.",
-      "sub": "Commencez gratuitement dans le cloud, ou installez l'édition Community sur votre propre serveur.",
+      "sub": "Essayez dans le cloud, ou installez l'édition Community sur votre propre serveur.",
       "github_line": "Vous hébergez vous-même ? L'édition Community est gratuite."
     }
   },
@@ -594,9 +594,9 @@
       },
       "cloud": {
         "name": "Utiliser le cloud",
-        "badge": "14 jours gratuits",
+        "badge": "Essai de 14 jours",
         "body": "Rien à installer : connectez-vous et créez votre première équipe.",
-        "link": "Commencer gratuitement"
+        "link": "Créer votre première équipe"
       }
     },
     "faq": {
@@ -629,7 +629,7 @@
     "cta": {
       "h2": "Prêt à construire",
       "h2_accent": "votre première équipe ?",
-      "sub": "Rien à installer : commencez gratuitement dans le cloud."
+      "sub": "Rien à installer : essayez dans le cloud."
     },
     "assistant": {
       "eyebrow": "La voie rapide",
@@ -680,7 +680,7 @@
       "github": "Star on GitHub",
       "hub": "Voir l'image sur Docker Hub",
       "not_technical": "Pas technicien ? La version cloud ne demande aucune installation.",
-      "start": "Commencer gratuitement"
+      "start": "Créer votre première équipe"
     },
     "install": {
       "eyebrow": "Installation",
@@ -983,14 +983,14 @@
   "pricing_page": {
     "meta": {
       "title": "Tarifs Agentivity — édition Community gratuite, offres cloud et Enterprise",
-      "description": "L'édition Community est gratuite pour toujours, sur votre serveur. Offres hébergées dès {from} par mois, avec un essai gratuit de {trial_days} jours. Enterprise sur devis."
+      "description": "L'édition Community est gratuite pour toujours, sur votre serveur. Offres hébergées dès {from} par mois, avec un essai de {trial_days} jours. Enterprise sur devis."
     },
     "hero": {
       "eyebrow": "Tarifs",
       "price": "0 €",
       "rest": "pour commencer.",
-      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Vous préférez ne rien installer ? Les offres hébergées commencent à {from} par mois, avec un essai gratuit de {trial_days} jours, sans carte.",
-      "primary": "Commencer l'essai gratuit",
+      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Vous préférez ne rien installer ? Les offres hébergées commencent à {from} par mois, avec un essai de {trial_days} jours, sans carte.",
+      "primary": "Créer votre première équipe",
       "primary_href": "/fr/start",
       "secondary": "Installer Community"
     },
@@ -1009,7 +1009,7 @@
         "billed_yearly": "Facturé annuellement : {price}",
         "billed_monthly": "Facturé mensuellement",
         "vat": "Prix hors TVA : la TVA s'ajoute selon votre pays.",
-        "trial": "Essai gratuit de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai).",
+        "trial": "Essai de {trial_days} jours, sans carte, avec les fonctionnalités de l'offre choisie ({trial_executions} exécutions pendant l'essai). L'usage de l'IA est facturé par votre fournisseur d'IA.",
         "sale_before": "Soumis à nos",
         "sale_link": "conditions de vente",
         "sale_href": "/fr/legal/terms-of-sale",
@@ -1086,26 +1086,26 @@
       "plans": [
         {
           "name": "Personal",
-          "status": "Essai gratuit de {trial_days} jours",
+          "status": "Essai de {trial_days} jours · sans carte bancaire",
           "for": "une personne : un indépendant, un commerçant, un freelance",
           "desc": "Hébergé pour vous. Rien à installer : connectez-vous et créez votre première équipe.",
-          "cta": "Commencer l'essai gratuit",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=personal"
         },
         {
           "name": "Pro",
-          "status": "Essai gratuit de {trial_days} jours",
+          "status": "Essai de {trial_days} jours · sans carte bancaire",
           "for": "un professionnel qui s'en sert tous les jours",
           "desc": "Plus d'agents, des exécutions plus longues, une exécution prioritaire et l'Observation, pour voir où vont vos tokens.",
-          "cta": "Commencer l'essai gratuit",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=pro"
         },
         {
           "name": "Business",
-          "status": "Essai gratuit de {trial_days} jours",
+          "status": "Essai de {trial_days} jours · sans carte bancaire",
           "for": "une équipe ou un service",
           "desc": "Des espaces de travail partagés : une personne construit, tout le monde en profite.",
-          "cta": "Commencer l'essai gratuit",
+          "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=business"
         },
         {
@@ -1130,7 +1130,7 @@
         },
         {
           "title": "Les modèles d'IA",
-          "body": "Agentivity ne revend pas d'IA. Vous connectez le fournisseur de votre choix (OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock) et vous le payez directement, sans marge de notre part."
+          "body": "Agentivity ne revend pas d'IA. Vous connectez le fournisseur de votre choix (OpenRouter, OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock) et vous le payez directement, sans marge de notre part."
         },
         {
           "title": "La machine",
@@ -1167,7 +1167,7 @@
         },
         {
           "q": "Je ne suis pas technicien. Quelle édition est faite pour moi ?",
-          "a": "Une offre hébergée : il n'y a rien à installer. Essayez-la gratuitement pendant {trial_days} jours, sans carte."
+          "a": "Une offre hébergée : il n'y a rien à installer. Essayez-la pendant {trial_days} jours, sans carte."
         },
         {
           "q": "Combien coûtent les offres hébergées ?",
@@ -1206,9 +1206,9 @@
       ]
     },
     "cta": {
-      "h2": "Commencez gratuitement,",
+      "h2": "Commencez aujourd'hui,",
       "h2_accent": "dans le cloud ou sur votre serveur.",
-      "sub": "Essayez une offre hébergée gratuitement pendant 14 jours, ou installez l'édition Community dès aujourd'hui.",
+      "sub": "Essayez une offre hébergée pendant 14 jours, ou installez l'édition Community dès aujourd'hui.",
       "fine": "Pas de spam. Un message quand cela compte.",
       "github_line": "À l'aise avec Docker ? Community est prête dès aujourd'hui."
     }
@@ -1330,7 +1330,7 @@
           "body": "Une application personnelle : entraînements et repas organisés autour de vos objectifs, et ajustés semaine après semaine."
         }
       ],
-      "link": "Commencer gratuitement"
+      "link": "Créer votre première équipe"
     },
     "cases": [
       {
@@ -1444,7 +1444,7 @@
           { "q": "Que fait Trip Planner ?", "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient : les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations." },
           { "q": "Pour qui ?", "a": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties avec une personne qui décide : un événement, une offre pour un client, l'arrivée d'un nouvel employé." },
           { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "Tout ce qui coûterait de l'argent est simulé : aucun vol, aucun hôtel ni aucune table n'est réservé, aucun paiement n'est débité, et les codes de confirmation sont inventés. Les noms des compagnies aériennes, des hôtels et des restaurants sont inventés aussi. Les villes et leurs lieux sont réels." },
-          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur." }
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur." }
         ],
         "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés : rien n'est réellement réservé ni débité.",
         "get": {
@@ -1542,7 +1542,7 @@
           { "q": "Que fait Shopping Lab ?", "a": "Un acheteur décrit son besoin et son budget. Neuf spécialistes IA valident le brief avec lui, lisent deux boutiques en ligne, retrouvent le même produit dans les deux, comparent les caractéristiques dans les mêmes unités, notent chaque produit avec un script et rédigent un rapport : un verdict, les meilleurs choix et les sources." },
           { "q": "Pour qui ?", "a": "Une boutique, un service achats ou un comparateur. La même forme convient à d'autres comparaisons : des offres de fournisseurs, des abonnements logiciels, des formations." },
           { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "Rien n'est simulé. Les éclaireurs lisent les pages publiques des boutiques au moment de l'exécution : les prix et les produits sont ceux publiés à cet instant. La démonstration est écrite pour deux boutiques des États-Unis et fonctionne en anglais. Si une boutique change ses pages, un éclaireur peut ne rien trouver." },
-          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Shopping Lab depuis le guide de bienvenue, ouvrez-le dans le Studio, passez en Exécution et demandez un produit avec un budget. Neuf membres travaillent l'un après l'autre : une exécution dure plusieurs minutes et fait plus d'appels au modèle qu'une simple question." }
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Shopping Lab depuis le guide de bienvenue, ouvrez-le dans le Studio, passez en Exécution et demandez un produit avec un budget. Neuf membres travaillent l'un après l'autre : une exécution dure plusieurs minutes et fait plus d'appels au modèle qu'une simple question." }
         ],
         "note": "La démonstration lit deux magasins en ligne. Ajoutez un éclaireur, et l'équipe en couvre un de plus.",
         "get": {
@@ -1628,7 +1628,7 @@
           { "q": "Que fait CV Screening ?", "a": "Il lit un CV et une offre d'emploi, donnés chacun en fichier, en lien ou en texte collé. L'IA évalue l'adéquation et l'explique, un programme calcule un score unique, et des règles fixes choisissent la suite : présélection, refus, ou examen par un recruteur. Il rédige un rapport avec les raisons." },
           { "q": "Pour qui ?", "a": "Un recruteur ou une équipe RH qui lit beaucoup de candidatures et veut que chaque cas douteux soit vu par une personne." },
           { "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?", "a": "La lecture et la notation sont réelles. Rien n'est envoyé au candidat : le rapport est une recommandation pour le recruteur. Essayez-le avec des CV fictifs. Tel qu'il est livré, un score très bas donne un refus sans examen : avant tout usage réel, modifiez-le pour qu'un recruteur confirme chaque refus." },
-          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez CV Screening depuis le guide de bienvenue, ouvrez-le dans Studio > Workflows et lancez-le sur un CV et une offre d'emploi. Il fait aussi partie des exemples prêts à l'emploi de l'édition Community." }
+          { "q": "Comment l'essayer ?", "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez CV Screening depuis le guide de bienvenue, ouvrez-le dans Studio > Workflows et lancez-le sur un CV et une offre d'emploi. Il fait aussi partie des exemples prêts à l'emploi de l'édition Community." }
         ],
         "note": "Un workflow suit le chemin que vous avez dessiné, de la même façon à chaque fois. Une équipe décide elle-même de son chemin. Vous pouvez mélanger les deux.",
         "get": {
@@ -1720,7 +1720,7 @@
           },
           {
             "q": "Comment l'essayer ?",
-            "a": "Démarrez l'essai gratuit (14 jours, sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Invoice Clerk depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et déposez une facture aux données fictives. Ouvrez ensuite Data Tables > invoices : la facture a sa ligne."
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Invoice Clerk depuis le guide de bienvenue, ouvrez-le dans Studio > Agents, passez en Exécution et déposez une facture aux données fictives. Ouvrez ensuite Data Tables > invoices : la facture a sa ligne."
           }
         ],
         "note": "Un seul agent est la bonne forme quand le travail est celui d'une personne, fait de la même façon à chaque fois. Si les factures doivent être validées avant paiement, placez l'agent dans un workflow avec une étape de validation.",
@@ -1735,8 +1735,8 @@
     "cta": {
       "h2": "Un cas en tête ?",
       "h2_accent": "Construisez-le.",
-      "sub": "Voyez comment une équipe se monte dans le Studio, ou commencez gratuitement dans le cloud.",
-      "primary": "Commencer gratuitement",
+      "sub": "Voyez comment une équipe se monte dans le Studio, ou essayez dans le cloud.",
+      "primary": "Créer votre première équipe",
       "primary_href": "/fr/start",
       "secondary": "Voir comment ça marche",
       "secondary_href": "/fr/how-it-works",
@@ -1951,7 +1951,7 @@
       "h2": "Décrivez-le.",
       "h2_accent": "L'Assistant prépare votre équipe.",
       "sub": "L'édition Community est gratuite pour toujours, et l'Assistant en fait partie.",
-      "trial": "Essayer gratuitement",
+      "trial": "Créer votre première équipe",
       "community": "Ou installez l'édition Community gratuite sur votre serveur"
     }
   },
@@ -1966,7 +1966,7 @@
       "h1": "Un assistant d'IA vous aide.",
       "h1_accent": "Une équipe d'IA travaille pour tout le monde.",
       "sub": "Réunissez des spécialistes IA, choisissez comment ils travaillent en équipe et confiez-leur le travail avec vos mots. Ils se répartissent le travail et reviennent vers vous pour chaque décision qui vous revient.",
-      "cta": "Commencer gratuitement",
+      "cta": "Créer votre première équipe",
       "cta_secondary": "Voir des équipes prêtes à l'emploi",
       "caption": "L'équipe Trip Manager au travail dans le Studio. Enregistré depuis le produit, accéléré.",
       "alt": "L'équipe Trip Manager au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape"
@@ -2141,21 +2141,21 @@
     "cta": {
       "h2": "Votre prochaine recrue,",
       "h2_accent": "c'est une équipe IA.",
-      "sub": "Commencez gratuitement dans le cloud : rien à installer.",
+      "sub": "Essayez dans le cloud : rien à installer.",
       "fine": "Vous hébergez vous-même ? L'édition Community est gratuite.",
       "fine_link": "Installer Community"
     }
   },
   "product_pages": {
     "crumb": "Produit",
-    "start": "Commencer gratuitement",
+    "start": "Créer votre première équipe",
     "faq_eyebrow": "Questions",
     "faq_h2": "Ce que",
     "faq_h2_accent": "l'on nous demande.",
     "cta": {
       "h2": "Votre prochaine recrue,",
       "h2_accent": "c'est une équipe IA.",
-      "sub": "Commencez gratuitement dans le cloud : rien à installer.",
+      "sub": "Essayez dans le cloud : rien à installer.",
       "fine": "Vous hébergez vous-même ? L'édition Community est gratuite.",
       "fine_link": "Installer Community"
     },
@@ -3126,7 +3126,7 @@
     }
   },
   "start_cta": {
-    "label": "Commencer gratuitement",
-    "note": "14 jours gratuits · sans carte"
+    "label": "Créer votre première équipe",
+    "note": "Essai de {trial_days} jours · sans carte bancaire · usage de l'IA facturé par votre fournisseur d'IA"
   }
 }

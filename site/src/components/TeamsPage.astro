@@ -7,6 +7,7 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -55,6 +56,7 @@ const schema = {
       <a class="ed-btn ed-btn--navy" href={prefix + '/start'}>{p.hero.cta}</a>
       <a class="ed-btn ed-btn--line" href="#ready">{p.hero.cta_secondary}</a>
     </div>
+    <TrialNote lang={lang} />
     <figure class="ed-shot tm-hero-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
         <video muted loop playsinline preload="metadata" poster="/media/studio-trip-run.jpg" width="1600" height="900" aria-label={p.hero.alt} data-autoplay>

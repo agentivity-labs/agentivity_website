@@ -9,7 +9,7 @@ export const SITE = 'https://www.agentivity.io';
 
 const intro = `# Agentivity
 
-> Agentivity is a platform to build teams of AI agents, without code. You describe each AI specialist in plain words, choose how they work together, and hand them the job. The team does the work and comes back to a person for every decision that is theirs. The Community edition is free forever and runs on your own server (Docker), with your own key from your AI model provider (bring your own key). The hosted cloud edition starts with a ${plans.trial.days}-day free trial, no credit card.`;
+> Agentivity is a platform to build teams of AI agents, without code. You describe each AI specialist in plain words, choose how they work together, and hand them the job. The team does the work and comes back to a person for every decision that is theirs. The Community edition is free forever and runs on your own server (Docker), with your own key from your AI model provider (bring your own key). The hosted cloud edition starts with a ${plans.trial.days}-day trial, no credit card.`;
 
 const facts = [
   'A chatbot answers. A team does the work. Agentivity builds teams of AI agents, workflows with human approval, and VibeApps: applications that adapt to the person who uses them, with a team behind.',
@@ -28,7 +28,7 @@ const planLines = () => [
   `Community edition: free forever, on your own server with Docker.`,
   ...plans.plans.map((plan) => `${plan.name} (hosted): ${plan.monthly} EUR a month billed monthly, or ${plan.yearly.toLocaleString('en-US')} EUR a year; ${plan.users === 1 ? '1 user' : plan.users + ' users'}, ${plan.executionsPerMonth.toLocaleString('en-US')} executions a month.`),
   `Enterprise: on request.`,
-  `Prices exclude VAT. Every hosted plan starts with a ${plans.trial.days}-day free trial, no card (${plans.trial.executions} executions during the trial). The AI model is billed by its provider, on your own key.`,
+  `Prices exclude VAT. Every hosted plan starts with a ${plans.trial.days}-day trial, no card (${plans.trial.executions} executions during the trial). The AI model is billed by its provider, on your own key.`,
 ];
 
 // The documentation pages worth reading first, in this order; a page not published is left out.
@@ -61,8 +61,8 @@ const product = [
   ['Knowledge & Data', '/knowledge-and-data/', 'Knowledge Bases and Data Tables for your agents'],
   ['VibeApps', '/vibeapps/', 'applications that adapt to the person, with an AI team behind them'],
   ['Assistant', '/assistant/', 'build an agent, a team or a workflow by describing it'],
-  ['Pricing', '/pricing/', 'the Community edition is free forever, the hosted plans start with a free trial'],
-  ['Start free', '/start/', 'a hosted workspace of your own, no credit card'],
+  ['Pricing', '/pricing/', 'the Community edition is free forever, the hosted plans start with a trial'],
+  ['Start your trial', '/start/', 'a hosted workspace of your own, no credit card'],
   ['Install the Community edition', '/community/', 'Docker, on your own server'],
 ];
 
