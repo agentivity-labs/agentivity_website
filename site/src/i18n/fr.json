@@ -987,12 +987,13 @@
     },
     "hero": {
       "eyebrow": "Tarifs",
-      "price": "0 €",
-      "rest": "pour commencer.",
-      "sub": "L'édition Community est gratuite pour toujours, sur votre propre serveur. Vous préférez ne rien installer ? Les offres hébergées commencent à {from} par mois, avec un essai de {trial_days} jours, sans carte.",
+      "price": "{from}",
+      "rest": "par mois pour commencer.",
+      "sub": "Chaque offre hébergée commence par un essai de {trial_days} jours, sans carte. Votre espace tourne dans le navigateur : rien à installer.",
       "primary": "Créer votre première équipe",
       "primary_href": "/fr/start",
-      "secondary": "Installer Community"
+      "secondary": "Voir les offres",
+      "secondary_href": "#editions"
     },
     "editions": {
       "eyebrow": "Éditions",
@@ -1077,7 +1078,7 @@
       "cloud_note": "Inclus dans les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
       "community": {
         "name": "Community",
-        "status": "Disponible",
+        "status": "Sur votre serveur",
         "price": "0 €",
         "price_note": "pour toujours",
         "for": "ceux qui sont à l'aise avec un serveur",

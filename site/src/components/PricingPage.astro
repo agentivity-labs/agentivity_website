@@ -51,14 +51,6 @@ const hosted = new Map(data.plans.map((plan) => [plan.name, plan]));
 const cards = p.editions.plans.map((plan: any) => ({ ...plan, data: hosted.get(plan.name) }));
 
 const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Offer',
-    name: 'Agentivity ' + community.name,
-    price: '0',
-    priceCurrency: 'EUR',
-    description: community.desc,
-  },
   ...data.plans.map((plan) => ({
     '@context': 'https://schema.org',
     '@type': 'Offer',
@@ -75,6 +67,14 @@ const schema = [
       valueAddedTaxIncluded: false,
     },
   })),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: 'Agentivity ' + community.name,
+    price: '0',
+    priceCurrency: 'EUR',
+    description: community.desc,
+  },
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -94,16 +94,16 @@ const schema = [
 
   <section class="ed-wrap pr-hero">
     <p class="ed-eyebrow">{p.hero.eyebrow}</p>
-    <h1><span class="ed-mark">{p.hero.price}</span> <em>{p.hero.rest}</em></h1>
+    <h1><span class="ed-mark">{fill(p.hero.price)}</span> <em>{p.hero.rest}</em></h1>
     <p class="pr-hero-sub">{fill(p.hero.sub)}</p>
     <div class="pr-actions">
       <a class="ed-btn ed-btn--navy" href={p.hero.primary_href}>{p.hero.primary}</a>
-      <a class="ed-btn ed-btn--line" href={t.site.install_href}>{p.hero.secondary}</a>
+      <a class="ed-btn ed-btn--line" href={p.hero.secondary_href}>{p.hero.secondary}</a>
     </div>
     <TrialNote lang={lang} />
   </section>
 
-  <!-- Editions: the one you can have today first, then the ones to come -->
+  <!-- Editions: the hosted plans first, then Community, for whoever runs a server -->
   <section class="ed-band--mist" id="editions">
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
@@ -111,23 +111,6 @@ const schema = [
         <h2 class="ed-h2">{p.editions.h2} <em>{p.editions.h2_accent}</em></h2>
         <p class="ed-sec-sub">{p.editions.sub}</p>
       </header>
-
-      <article class="pr-community">
-        <div class="pr-community-main">
-          <span class="pr-status pr-status--live">{community.status}</span>
-          <h3>{community.name}</h3>
-          <p class="pr-price"><strong>{community.price}</strong> <span>{community.price_note}</span></p>
-          <p class="pr-for"><span>{p.editions.for_label}</span> {community.for}</p>
-          <p class="pr-desc">{community.desc}</p>
-          <div class="pr-actions pr-actions--start">
-            <a class="ed-btn ed-btn--yellow" href={t.site.install_href}>{community.cta}</a>
-            <a class="pr-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{community.github}</a>
-          </div>
-        </div>
-        <ul class="pr-community-points">
-          {community.points.map((point: string) => <li>{point}</li>)}
-        </ul>
-      </article>
 
       <div class="pr-hosted">
         <!-- Yearly or monthly: two radio buttons, so that the switch works without JavaScript (yearly when nothing is chosen) -->
@@ -205,6 +188,22 @@ const schema = [
         </div>
       </div>
       <p class="pr-cloud-note">{p.editions.cloud_note}</p>
+
+      <article class="pr-community">
+        <div class="pr-community-main">
+          <span class="pr-status">{community.status}</span>
+          <h3>{community.name} <span class="pr-price"><strong>{community.price}</strong> <span>{community.price_note}</span></span></h3>
+          <p class="pr-for"><span>{p.editions.for_label}</span> {community.for}</p>
+          <p class="pr-desc">{community.desc}</p>
+          <div class="pr-actions pr-actions--start">
+            <a class="ed-btn ed-btn--line ed-btn--sm" href={t.site.install_href}>{community.cta}</a>
+            <a class="pr-github" href={t.site.github_href} target="_blank" rel="noopener noreferrer"><GitHubIcon />{community.github}</a>
+          </div>
+        </div>
+        <ul class="pr-community-points">
+          {community.points.map((point: string) => <li>{point}</li>)}
+        </ul>
+      </article>
     </div>
   </section>
 
@@ -350,7 +349,7 @@ const schema = [
 <style>
 /* ---------- hero ---------- */
 .pr-hero { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(56px, 7vw, 88px); }
-.pr-hero h1 { font-family: var(--ed-serif); font-size: clamp(84px, 14vw, 208px); line-height: .92; letter-spacing: -.02em; }
+.pr-hero h1 { font-family: var(--ed-serif); font-size: clamp(56px, 9vw, 136px); line-height: .92; letter-spacing: -.02em; }
 .pr-hero h1 .ed-mark { background-image: linear-gradient(transparent 62%, var(--ed-yellow) 62%, var(--ed-yellow) 90%, transparent 90%); }
 .pr-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 34em; }
 .pr-actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; justify-content: center; }
@@ -358,24 +357,24 @@ const schema = [
 
 /* ---------- editions ---------- */
 .pr-status { align-self: flex-start; padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); }
-.pr-status--live { background: var(--ed-yellow); }
 .pr-for { font-size: 16px; font-weight: 600; }
 .pr-for span { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; margin-right: 4px; }
 .pr-desc { font-size: 16.5px; }
 
-.pr-community { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; background: var(--ed-navy); color: #fff; border-radius: 28px; padding: clamp(28px, 4vw, 52px); }
-.pr-community-main { display: flex; flex-direction: column; gap: 14px; }
-.pr-community h3 { font-family: var(--ed-serif); font-size: clamp(44px, 5vw, 68px); line-height: 1; }
-.pr-price { display: flex; align-items: baseline; gap: 12px; }
-.pr-price strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(56px, 6.4vw, 88px); line-height: .95; color: var(--ed-yellow); }
-.pr-price span { font-size: 18px; color: var(--ed-on-navy); }
-.pr-community .pr-for span { color: var(--ed-yellow); }
-.pr-community .pr-desc { font-size: 18px; color: var(--ed-on-navy); max-width: 30em; }
-.pr-github { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #fff; border-bottom: 1.5px solid currentColor; }
+/* Community, after the hosted plans: a plain card for whoever would rather run a server */
+.pr-community { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 44px); align-items: center; margin-top: 36px; background: #fff; color: var(--ed-ink-2); border-radius: 24px; padding: clamp(22px, 3vw, 34px); }
+.pr-community-main { display: flex; flex-direction: column; gap: 10px; }
+.pr-community h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; font-family: var(--ed-serif); font-weight: 400; font-size: 36px; line-height: 1.05; color: var(--ed-ink); }
+.pr-price { display: inline-flex; align-items: baseline; gap: 8px; }
+.pr-price strong { font-weight: 400; font-size: 36px; }
+.pr-price span { font-family: var(--ed-sans); font-size: 16px; font-weight: 600; color: var(--ed-ink-3); }
+.pr-community .pr-for { color: var(--ed-ink); }
+.pr-community .pr-for span { color: var(--ed-ink-3); }
+.pr-github { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
 .pr-github :global(svg) { width: 18px; height: 18px; }
 .pr-github:hover { opacity: .75; }
-.pr-community-points li { padding-block: 16px; border-top: 1px solid var(--ed-navy-line); font-size: 17px; font-weight: 600; }
-.pr-community-points li:last-child { border-bottom: 1px solid var(--ed-navy-line); }
+.pr-community-points li { padding-block: 10px; border-top: 1px solid var(--ed-line); font-size: 15.5px; font-weight: 600; color: var(--ed-ink); }
+.pr-community-points li:last-child { border-bottom: 1px solid var(--ed-line); }
 
 .pr-plans { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
 .pr-plan { display: flex; flex-direction: column; gap: 12px; background: #fff; border-radius: 24px; padding: 26px 24px; color: var(--ed-ink-2); }

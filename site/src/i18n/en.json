@@ -987,12 +987,13 @@
     },
     "hero": {
       "eyebrow": "Pricing",
-      "price": "0€",
-      "rest": "to start.",
-      "sub": "The Community edition is free forever, on your own server. Would you rather install nothing? The hosted plans start at {from} a month, with a {trial_days}-day trial and no card.",
+      "price": "{from}",
+      "rest": "a month to start.",
+      "sub": "Every hosted plan starts with a {trial_days}-day trial and no card. Your workspace runs in the browser: nothing to install.",
       "primary": "Build your first team",
       "primary_href": "/start",
-      "secondary": "Install Community"
+      "secondary": "See the plans",
+      "secondary_href": "#editions"
     },
     "editions": {
       "eyebrow": "Editions",
@@ -1077,7 +1078,7 @@
       "cloud_note": "Included in the hosted plans: scheduling. Your teams start on their own, every morning or every Monday.",
       "community": {
         "name": "Community",
-        "status": "Available now",
+        "status": "On your own server",
         "price": "0€",
         "price_note": "forever",
         "for": "people at ease with a server",
