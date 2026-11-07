@@ -24,10 +24,13 @@ const facts = [
 ];
 
 // The plans as the pricing page shows them: monthly price, and the yearly price for the year (two months free).
+const seats = (n: number, kind: string) => `${n} ${kind} seat${n === 1 ? '' : 's'}`;
 const planLines = () => [
   `Community edition: free forever, on your own server with Docker.`,
-  ...plans.plans.map((plan) => `${plan.name} (hosted): ${plan.monthly} EUR a month billed monthly, or ${plan.yearly.toLocaleString('en-US')} EUR a year; ${plan.users === 1 ? '1 user' : plan.users + ' users'}, ${plan.executionsPerMonth.toLocaleString('en-US')} executions a month.`),
-  `Enterprise: on request.`,
+  ...plans.plans.map((plan) => `${plan.name} (hosted): ${plan.monthly} EUR a month billed monthly, or ${plan.yearly.toLocaleString('en-US')} EUR a year; ${seats(plan.studioSeats, 'Studio')}${plan.deskSeats ? ' and ' + seats(plan.deskSeats, 'Desk') : ''}, ${plan.executionsPerMonth.toLocaleString('en-US')} executions a month.`),
+  `Extra seats, on Business only: a Studio seat ${plans.seats.studio.monthly} EUR a month (+${plans.seats.studio.executions} executions a month, up to ${plans.seats.studio.max} in all); a Desk seat by tiers, ${plans.seats.desk.tiers.map((tier) => `seats ${tier.from} to ${tier.to} at ${tier.monthly} EUR a month`).join(', ')} (+${plans.seats.desk.executions} executions a month each, up to ${plans.seats.desk.max} in all).`,
+  `Execution packs, kept until used: ${plans.packs.map((pack) => `${pack.executions.toLocaleString('en-US')} for ${pack.price} EUR`).join(', ')}.`,
+  `Enterprise: on request, beyond ${plans.seats.studio.max} Studio or ${plans.seats.desk.max} Desk seats.`,
   `Prices exclude VAT. Every hosted plan starts with a ${plans.trial.days}-day trial, no card (${plans.trial.executions} executions during the trial). The AI model is billed by its provider, on your own key.`,
 ];
 

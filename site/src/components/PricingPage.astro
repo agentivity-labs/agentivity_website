@@ -22,6 +22,10 @@ const community = p.editions.community;
 const billing = p.editions.billing;
 const limits = p.editions.limits;
 const compare = p.editions.compare;
+const seats = p.seats;
+const packs = p.packs;
+// The Desk seats a plan with extra seats already includes: the tiers start after them.
+const deskIncluded = Math.max(...data.plans.filter((plan) => plan.extraSeats).map((plan) => plan.deskSeats));
 
 // Numbers and prices in the reader's language: "€40.83" and "1,000" in English, "40,83 €" and "1 000" in French.
 const locale = lang === 'fr' ? 'fr-FR' : 'en-IE';
@@ -29,8 +33,15 @@ const money = (v: number) => new Intl.NumberFormat(locale, { style: 'currency', 
 const num = (v: number) => new Intl.NumberFormat(locale).format(v);
 const perMonthYearly = (plan: { yearly: number }) => Math.round(plan.yearly / 12 * 100) / 100;
 const from = money(Math.min(...data.plans.map(perMonthYearly)));
+const planBy = (code: string) => data.plans.find((one) => one.code === code)!;
+// The seats the texts name: those of Pro and Business, and the most one can add before Enterprise.
+const seatCounts = {
+  pro_studio: num(planBy('pro').studioSeats), pro_desk: num(planBy('pro').deskSeats),
+  business_studio: num(planBy('business').studioSeats), business_desk: num(planBy('business').deskSeats),
+  studio_max: num(data.seats.studio.max), desk_max: num(data.seats.desk.max),
+};
 const fill = (text: string, values: Record<string, string> = {}) =>
-  Object.entries({ from, trial_days: String(data.trial.days), trial_executions: num(data.trial.executions), ...values })
+  Object.entries({ from, trial_days: String(data.trial.days), trial_executions: num(data.trial.executions), ...seatCounts, ...values })
     .reduce((s, [k, v]) => s.split('{' + k + '}').join(v), text);
 const plural = (forms: string[], n: number) => fill(forms[n === 1 ? 0 : 1], { n: num(n) });
 const duration = (minutes: number) => minutes < 60 ? fill(limits.minutes, { n: num(minutes) }) : fill(limits.hours, { n: num(minutes / 60) });
@@ -144,10 +155,11 @@ const schema = [
                 <p class="pr-plan-quote">{plan.price}</p>
               )}
               <p class="pr-for"><span>{p.editions.for_label}</span> {plan.for}</p>
-              <p class="pr-desc">{plan.desc}</p>
+              <p class="pr-desc">{fill(plan.desc)}</p>
               {plan.data && (
                 <ul class="pr-limits">
-                  <li>{plural(limits.users, plan.data.users)}</li>
+                  <li>{plural(limits.studio, plan.data.studioSeats)}</li>
+                  {plan.data.deskSeats > 0 && <li>{plural(limits.desk, plan.data.deskSeats)}</li>}
                   <li>{fill(limits.executions, { n: num(plan.data.executionsPerMonth) })}</li>
                   <li>{fill(limits.duration, { d: duration(plan.data.maxExecutionMinutes) })}</li>
                   <li>{fill(limits.disk, { n: num(plan.data.diskGb) })}</li>
@@ -157,6 +169,7 @@ const schema = [
             </li>
           ))}
         </ul>
+        <p class="pr-seats-note">{p.editions.seats_note}</p>
         <p class="pr-notes">{billing.vat} {fill(billing.trial)}</p>
         <p class="pr-sale">{billing.sale_before} <a href={billing.sale_href}>{billing.sale_link}</a></p>
         <p class="pr-sale">{billing.climate} <a href={billing.climate_href}>{billing.climate_link}</a></p>
@@ -175,7 +188,9 @@ const schema = [
               <tbody>
                 <tr><th scope="row">{compare.rows.yearly}</th>{data.plans.map((plan) => <td>{fill(compare.per_year, { price: money(plan.yearly) })}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.monthly}</th>{data.plans.map((plan) => <td>{fill(compare.per_month, { price: money(plan.monthly) })}</td>)}</tr>
-                <tr><th scope="row">{compare.rows.users}</th>{data.plans.map((plan) => <td>{num(plan.users)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.studio}</th>{data.plans.map((plan) => <td>{num(plan.studioSeats)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.desk}</th>{data.plans.map((plan) => <td>{plan.deskSeats ? num(plan.deskSeats) : compare.none}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.more_seats}</th>{data.plans.map((plan) => <td class="pr-wrap">{plan.extraSeats ? compare.more_seats : compare.none}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.spaces}</th>{data.plans.map((plan) => <td>{num(plan.spaces)}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.executions}</th>{data.plans.map((plan) => <td>{num(plan.executionsPerMonth)}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.parallel}</th>{data.plans.map((plan) => <td>{num(plan.parallelExecutions)}</td>)}</tr>
@@ -190,6 +205,67 @@ const schema = [
         </div>
       </div>
       <p class="pr-cloud-note">{p.editions.cloud_note}</p>
+    </div>
+  </section>
+
+  <!-- Seats added to Business: the Studio seat, then the Desk seat by tiers -->
+  <section class="ed-wrap ed-sec" id="seats">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{seats.eyebrow}</p>
+      <h2 class="ed-h2">{seats.h2} <em>{seats.h2_accent}</em></h2>
+      <p class="ed-sec-sub">{fill(seats.sub)}</p>
+    </header>
+    <div class="pr-seats">
+      <article class="pr-seat">
+        <h3>{seats.studio.title}</h3>
+        <p class="pr-amount"><strong>{money(data.seats.studio.monthly)}</strong> <span>{seats.studio.per_month}</span></p>
+        <p class="pr-billed">{fill(seats.studio.per_year, { price: money(data.seats.studio.yearly) })}</p>
+        <ul class="pr-limits">
+          {seats.studio.points.map((point: string) => <li>{fill(point, { n: num(data.seats.studio.executions), max: num(data.seats.studio.max) })}</li>)}
+        </ul>
+      </article>
+      <article class="pr-seat">
+        <h3>{seats.desk.title}</h3>
+        <p class="pr-seat-sub">{seats.desk.sub}</p>
+        <table class="pr-tiers">
+          <thead>
+            <tr><th scope="col">{seats.desk.col_seats}</th><th scope="col">{seats.desk.col_month}</th><th scope="col">{seats.desk.col_year}</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">{fill(seats.desk.included_range, { n: num(deskIncluded) })}</th><td colspan="2">{seats.desk.included}</td></tr>
+            {data.seats.desk.tiers.map((tier) => (
+              <tr><th scope="row">{fill(seats.desk.range, { from: num(tier.from), to: num(tier.to) })}</th><td>{money(tier.monthly)}</td><td>{money(tier.yearly)}</td></tr>
+            ))}
+          </tbody>
+        </table>
+        <ul class="pr-limits">
+          {seats.desk.points.map((point: string) => <li>{fill(point, { n: num(data.seats.desk.executions), max: num(data.seats.desk.max) })}</li>)}
+        </ul>
+      </article>
+    </div>
+    <p class="pr-notes">{seats.where}</p>
+    <p class="pr-sale">{fill(seats.enterprise)} <a href={seats.enterprise_href}>{seats.enterprise_link}</a></p>
+  </section>
+
+  <!-- Execution packs, for a month that needs more -->
+  <section class="ed-band--mist" id="packs">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{packs.eyebrow}</p>
+        <h2 class="ed-h2">{packs.h2} <em>{packs.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{packs.sub}</p>
+      </header>
+      <ul class="pr-packs">
+        {data.packs.map((pack) => (
+          <li>
+            <p class="pr-pack-n">{fill(packs.item, { n: num(pack.executions) })}</p>
+            <p class="pr-amount"><strong>{money(pack.price)}</strong></p>
+          </li>
+        ))}
+      </ul>
+      <ul class="pr-packs-points">
+        {packs.points.map((point: string) => <li>{point}</li>)}
+      </ul>
     </div>
   </section>
 
@@ -348,7 +424,25 @@ const schema = [
 .pr-plan .pr-for span { color: var(--ed-ink-3); }
 .pr-plan-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; }
 .pr-plan-cta:hover { opacity: .7; }
+.pr-seats-note { margin-top: 20px; text-align: center; font-size: 16px; font-weight: 600; color: var(--ed-ink-2); }
 .pr-cloud-note { margin-top: 20px; padding: 18px 22px; border-radius: 16px; background: #fff; font-size: 17px; font-weight: 600; color: var(--ed-ink); }
+
+/* ---------- seats added to Business ---------- */
+.pr-seats { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: start; }
+.pr-seat { display: flex; flex-direction: column; gap: 12px; background: var(--ed-mist); border-radius: 24px; padding: 26px 24px; color: var(--ed-ink-2); }
+.pr-seat h3 { font-family: var(--ed-serif); font-size: 36px; line-height: 1.05; color: var(--ed-ink); }
+.pr-seat-sub { font-size: 16.5px; }
+.pr-tiers { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+.pr-tiers th, .pr-tiers td { padding: 10px 12px; border-bottom: 1px solid var(--ed-line-2); text-align: left; }
+.pr-tiers thead th { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); border-bottom: 2px solid var(--ed-ink); }
+.pr-tiers tbody th { font-weight: 600; color: var(--ed-ink-2); }
+.pr-tiers td { font-weight: 700; color: var(--ed-ink); white-space: nowrap; }
+
+/* ---------- execution packs ---------- */
+.pr-packs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.pr-packs li { display: flex; flex-direction: column; gap: 10px; background: #fff; border-radius: 24px; padding: 26px 24px; }
+.pr-pack-n { font-size: 17px; font-weight: 700; color: var(--ed-ink); }
+.pr-packs-points { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; margin-top: 22px; font-size: 16px; font-weight: 600; color: var(--ed-ink-2); }
 
 /* ---------- what you pay ---------- */
 .pr-costs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3.5vw, 48px); }
@@ -390,9 +484,11 @@ const schema = [
 @media (max-width: 900px) {
   .pr-community, .pr-hours, .pr-licence { grid-template-columns: minmax(0, 1fr); }
   .pr-costs { grid-template-columns: minmax(0, 1fr); }
+  .pr-seats { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
-  .pr-plans { grid-template-columns: minmax(0, 1fr); }
+  .pr-plans, .pr-packs { grid-template-columns: minmax(0, 1fr); }
+  .pr-packs-points { flex-direction: column; align-items: center; text-align: center; }
   .pr-faq summary { font-size: 19px; }
 }
 </style>

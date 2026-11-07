@@ -1,5 +1,5 @@
 {
-  "_comment": "The hosted plans: their prices (euros, excluding VAT) and their limits. The only place of the site that holds them: the pricing page reads them, and its texts take the prices from here. Later, a read from accounts_service.",
+  "_comment": "The hosted plans: their prices (euros, excluding VAT) and their limits, the seats one adds to them and the execution packs. The only place of the site that holds them: the pricing page reads them, and its texts take the prices from here. Later, a read from accounts_service.",
   "currency": "EUR",
   "trial": { "days": 14, "executions": 200 },
   "plans": [
@@ -8,7 +8,9 @@
       "name": "Personal",
       "monthly": 24,
       "yearly": 240,
-      "users": 1,
+      "studioSeats": 1,
+      "deskSeats": 0,
+      "extraSeats": false,
       "spaces": 1,
       "executionsPerMonth": 1000,
       "parallelExecutions": 2,
@@ -23,7 +25,9 @@
       "name": "Pro",
       "monthly": 49,
       "yearly": 490,
-      "users": 3,
+      "studioSeats": 3,
+      "deskSeats": 5,
+      "extraSeats": false,
       "spaces": 3,
       "executionsPerMonth": 5000,
       "parallelExecutions": 5,
@@ -38,7 +42,9 @@
       "name": "Business",
       "monthly": 199,
       "yearly": 1990,
-      "users": 15,
+      "studioSeats": 5,
+      "deskSeats": 25,
+      "extraSeats": true,
       "spaces": 15,
       "executionsPerMonth": 25000,
       "parallelExecutions": 20,
@@ -48,5 +54,24 @@
       "support": "priority_call",
       "extras": ["observation", "groups", "audit", "monitoring"]
     }
+  ],
+  "_seats": "Seats added to Business, one at a time. A Desk seat is paid at the price of its tier, by its number: seats 26 to 100 at 8, and so on. Each seat added adds executions to the month of the account.",
+  "seats": {
+    "studio": { "monthly": 29, "yearly": 290, "executions": 500, "max": 25 },
+    "desk": {
+      "executions": 50,
+      "max": 500,
+      "tiers": [
+        { "from": 26, "to": 100, "monthly": 8, "yearly": 80 },
+        { "from": 101, "to": 250, "monthly": 6, "yearly": 60 },
+        { "from": 251, "to": 500, "monthly": 4, "yearly": 40 }
+      ]
+    }
+  },
+  "_packs": "Executions bought once, used when those of the month have run out, kept until used.",
+  "packs": [
+    { "executions": 1000, "price": 15 },
+    { "executions": 5000, "price": 60 },
+    { "executions": 20000, "price": 200 }
   ]
 }

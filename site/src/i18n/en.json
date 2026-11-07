@@ -1018,9 +1018,13 @@
         "climate_href": "/climate"
       },
       "limits": {
-        "users": [
-          "{n} user",
-          "{n} users"
+        "studio": [
+          "{n} Studio seat",
+          "{n} Studio seats"
+        ],
+        "desk": [
+          "{n} Desk seat",
+          "{n} Desk seats"
         ],
         "spaces": [
           "{n} space",
@@ -1041,7 +1045,9 @@
         "rows": {
           "monthly": "Billed monthly",
           "yearly": "Billed yearly",
-          "users": "Users",
+          "studio": "Studio seats",
+          "desk": "Desk seats",
+          "more_seats": "Add seats",
           "spaces": "Spaces",
           "executions": "Executions per month",
           "parallel": "Executions at the same time",
@@ -1064,8 +1070,10 @@
           "audit": "Audit log",
           "monitoring": "Monitoring hook-up (OpenTelemetry)"
         },
+        "more_seats": "Studio and Desk, one at a time",
         "none": "—"
       },
+      "seats_note": "A Studio seat is for a person who builds and looks after the workspace. A Desk seat is for a person who uses what is built, without building.",
       "cloud_note": "Included in the hosted plans: scheduling. Your teams start on their own, every morning or every Monday.",
       "community": {
         "name": "Community",
@@ -1113,10 +1121,55 @@
           "status": "On request",
           "price": "On quote",
           "for": "an organisation with several teams and departments",
-          "desc": "Single sign-on, white-label and dedicated support, on your infrastructure or ours.",
+          "desc": "Beyond {studio_max} Studio or {desk_max} Desk seats. Single sign-on, white-label and dedicated support, on your infrastructure or ours.",
           "cta": "Contact us",
           "href": "mailto:hello@agentivity.io"
         }
+      ]
+    },
+    "seats": {
+      "eyebrow": "Add seats",
+      "h2": "Grow with",
+      "h2_accent": "your team.",
+      "sub": "On Business, you add seats one at a time. Pro keeps its {pro_studio} Studio and {pro_desk} Desk seats: to add more, move to Business.",
+      "studio": {
+        "title": "Studio seat",
+        "per_month": "/ month",
+        "per_year": "or {price} a year",
+        "points": [
+          "+{n} executions a month for the account",
+          "Up to {max} Studio seats in all"
+        ]
+      },
+      "desk": {
+        "title": "Desk seat",
+        "sub": "The more Desk seats you add, the less each one costs. Each seat is paid at the price of its tier.",
+        "col_seats": "Desk seats",
+        "col_month": "Per month",
+        "col_year": "Per year",
+        "included_range": "1 to {n}",
+        "included": "Included",
+        "range": "{from} to {to}",
+        "points": [
+          "+{n} executions a month for the account, for each seat",
+          "Up to {max} Desk seats in all"
+        ]
+      },
+      "where": "You add seats in the Studio, under Administration › Subscription, once you have subscribed.",
+      "enterprise": "More than {studio_max} Studio or {desk_max} Desk seats?",
+      "enterprise_link": "Talk to us about Enterprise",
+      "enterprise_href": "mailto:hello@agentivity.io"
+    },
+    "packs": {
+      "eyebrow": "Execution packs",
+      "h2": "A busy month?",
+      "h2_accent": "Add a pack.",
+      "sub": "When the executions of the month run out, a pack takes over. It is kept until it is used, with no end date.",
+      "item": "{n} executions",
+      "points": [
+        "No end date: what you do not use this month stays for the next",
+        "Automatic recharge, if you turn it on",
+        "Bought in the Studio, under Administration › Subscription"
       ]
     },
     "costs": {
@@ -1174,12 +1227,36 @@
           "a": "From {from} a month, billed yearly, excluding VAT. Each plan and its limits are shown above."
         },
         {
+          "q": "What is a Studio seat, and a Desk seat?",
+          "a": "A Studio seat is for a person who builds: agents, teams and workflows, and the settings of the workspace. A Desk seat is for a person who uses what is built, without building. Each plan includes some of both, shown above."
+        },
+        {
+          "q": "Can I add seats on Pro?",
+          "a": "No. Pro includes {pro_studio} Studio seats and {pro_desk} Desk seats. To add seats, move to Business: it includes {business_studio} Studio and {business_desk} Desk seats, and you add more one at a time."
+        },
+        {
+          "q": "Where do I buy seats and packs?",
+          "a": "In the Studio, under Administration › Subscription, once you have subscribed. The {trial_days}-day trial starts from this site, with no card."
+        },
+        {
           "q": "Do I need a card for the trial?",
-          "a": "No. The trial lasts {trial_days} days, with the features of the plan you chose. Executions are capped at {trial_executions} during the trial."
+          "a": "No. The trial lasts {trial_days} days, with the features and the seats of the plan you chose. Executions are capped at {trial_executions} during the trial."
+        },
+        {
+          "q": "What happens at the end of the trial?",
+          "a": "Nothing is charged, since you gave no card. Your workspace stays as it is and you can still see everything in it, but nothing new runs until you choose a plan."
         },
         {
           "q": "What happens when I buy?",
           "a": "Buying ends the trial: your plan starts and the first payment is taken at once."
+        },
+        {
+          "q": "What happens when the executions of the month run out?",
+          "a": "New executions stop, with a clear message. You can add an execution pack in the Studio, or wait for the next month."
+        },
+        {
+          "q": "Do execution packs expire?",
+          "a": "No. A pack is kept until its executions are used, with no end date. It is used once the executions of the month have run out, and you can turn on an automatic recharge."
         },
         {
           "q": "Can I change plan or cancel?",

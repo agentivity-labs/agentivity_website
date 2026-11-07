@@ -1018,9 +1018,13 @@
         "climate_href": "/fr/climate"
       },
       "limits": {
-        "users": [
-          "{n} utilisateur",
-          "{n} utilisateurs"
+        "studio": [
+          "{n} siège Studio",
+          "{n} sièges Studio"
+        ],
+        "desk": [
+          "{n} siège Desk",
+          "{n} sièges Desk"
         ],
         "spaces": [
           "{n} espace",
@@ -1041,7 +1045,9 @@
         "rows": {
           "monthly": "Facturé mensuellement",
           "yearly": "Facturé annuellement",
-          "users": "Utilisateurs",
+          "studio": "Sièges Studio",
+          "desk": "Sièges Desk",
+          "more_seats": "Ajouter des sièges",
           "spaces": "Espaces",
           "executions": "Exécutions par mois",
           "parallel": "Exécutions en même temps",
@@ -1064,8 +1070,10 @@
           "audit": "Journal d'activité",
           "monitoring": "Surveillance branchée (OpenTelemetry)"
         },
+        "more_seats": "Studio et Desk, un par un",
         "none": "—"
       },
+      "seats_note": "Un siège Studio est pour une personne qui construit et s'occupe de l'espace de travail. Un siège Desk est pour une personne qui utilise ce qui est construit, sans construire.",
       "cloud_note": "Inclus dans les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
       "community": {
         "name": "Community",
@@ -1113,10 +1121,55 @@
           "status": "Sur demande",
           "price": "Sur devis",
           "for": "une organisation avec plusieurs équipes et services",
-          "desc": "Authentification unique, marque blanche et support dédié, sur votre infrastructure ou la nôtre.",
+          "desc": "Au-delà de {studio_max} sièges Studio ou {desk_max} sièges Desk. Authentification unique, marque blanche et support dédié, sur votre infrastructure ou la nôtre.",
           "cta": "Nous contacter",
           "href": "mailto:hello@agentivity.io"
         }
+      ]
+    },
+    "seats": {
+      "eyebrow": "Ajouter des sièges",
+      "h2": "Grandir avec",
+      "h2_accent": "votre équipe.",
+      "sub": "Avec Business, vous ajoutez des sièges un par un. Pro garde ses {pro_studio} sièges Studio et {pro_desk} sièges Desk : pour en ajouter, passez à Business.",
+      "studio": {
+        "title": "Siège Studio",
+        "per_month": "/ mois",
+        "per_year": "ou {price} par an",
+        "points": [
+          "+{n} exécutions par mois pour le compte",
+          "Jusqu'à {max} sièges Studio en tout"
+        ]
+      },
+      "desk": {
+        "title": "Siège Desk",
+        "sub": "Plus vous ajoutez de sièges Desk, moins chacun coûte. Chaque siège est payé au prix de sa tranche.",
+        "col_seats": "Sièges Desk",
+        "col_month": "Par mois",
+        "col_year": "Par an",
+        "included_range": "1 à {n}",
+        "included": "Inclus",
+        "range": "{from} à {to}",
+        "points": [
+          "+{n} exécutions par mois pour le compte, pour chaque siège",
+          "Jusqu'à {max} sièges Desk en tout"
+        ]
+      },
+      "where": "Vous ajoutez des sièges dans le Studio, sous Administration › Abonnement, une fois abonné.",
+      "enterprise": "Plus de {studio_max} sièges Studio ou de {desk_max} sièges Desk ?",
+      "enterprise_link": "Parlons d'Enterprise",
+      "enterprise_href": "mailto:hello@agentivity.io"
+    },
+    "packs": {
+      "eyebrow": "Packs d'exécutions",
+      "h2": "Un mois chargé ?",
+      "h2_accent": "Ajoutez un pack.",
+      "sub": "Quand les exécutions du mois sont épuisées, un pack prend le relais. Il est gardé jusqu'à ce qu'il soit utilisé, sans date de fin.",
+      "item": "{n} exécutions",
+      "points": [
+        "Sans date de fin : ce que vous n'utilisez pas ce mois-ci reste pour le suivant",
+        "Recharge automatique, si vous l'activez",
+        "S'achète dans le Studio, sous Administration › Abonnement"
       ]
     },
     "costs": {
@@ -1174,12 +1227,36 @@
           "a": "À partir de {from} par mois, facturé annuellement, hors TVA. Chaque offre et ses limites sont présentées plus haut."
         },
         {
+          "q": "Qu'est-ce qu'un siège Studio, un siège Desk ?",
+          "a": "Un siège Studio est pour une personne qui construit : les agents, les équipes et les workflows, et les réglages de l'espace de travail. Un siège Desk est pour une personne qui utilise ce qui est construit, sans construire. Chaque offre comprend les deux, comme indiqué plus haut."
+        },
+        {
+          "q": "Puis-je ajouter des sièges avec Pro ?",
+          "a": "Non. Pro comprend {pro_studio} sièges Studio et {pro_desk} sièges Desk. Pour ajouter des sièges, passez à Business : il comprend {business_studio} sièges Studio et {business_desk} sièges Desk, et vous en ajoutez un par un."
+        },
+        {
+          "q": "Où acheter des sièges et des packs ?",
+          "a": "Dans le Studio, sous Administration › Abonnement, une fois abonné. L'essai de {trial_days} jours démarre depuis ce site, sans carte bancaire."
+        },
+        {
           "q": "Faut-il une carte pour l'essai ?",
-          "a": "Non. L'essai dure {trial_days} jours, avec les fonctionnalités de l'offre choisie. Les exécutions sont plafonnées à {trial_executions} pendant l'essai."
+          "a": "Non. L'essai dure {trial_days} jours, avec les fonctionnalités et les sièges de l'offre choisie. Les exécutions sont plafonnées à {trial_executions} pendant l'essai."
+        },
+        {
+          "q": "Que se passe-t-il à la fin de l'essai ?",
+          "a": "Rien n'est facturé, puisque vous n'avez pas donné de carte. Votre espace de travail reste tel quel et vous pouvez tout y consulter, mais aucune nouvelle exécution ne démarre tant que vous n'avez pas choisi d'offre."
         },
         {
           "q": "Que se passe-t-il quand j'achète ?",
           "a": "Acheter met fin à l'essai : votre offre démarre et le premier paiement est pris tout de suite."
+        },
+        {
+          "q": "Que se passe-t-il quand les exécutions du mois sont épuisées ?",
+          "a": "Les nouvelles exécutions s'arrêtent, avec un message clair. Vous pouvez ajouter un pack d'exécutions dans le Studio, ou attendre le mois suivant."
+        },
+        {
+          "q": "Les packs d'exécutions expirent-ils ?",
+          "a": "Non. Un pack est gardé jusqu'à ce que ses exécutions soient utilisées, sans date de fin. Il sert une fois les exécutions du mois épuisées, et vous pouvez activer une recharge automatique."
         },
         {
           "q": "Puis-je changer d'offre ou résilier ?",
