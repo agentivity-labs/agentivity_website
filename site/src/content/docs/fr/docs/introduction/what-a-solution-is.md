@@ -76,6 +76,7 @@ Si vous laissez le pointeur sur la marque, elle explique ce qu'est une Solution.
 | Où | Ce qui se passe |
 |---|---|
 | **Les bibliothèques** | La marque à côté du nom, comme ci-dessus. |
+| **Agentivity Desk** | Le Desk ne montre que des Solutions, une fois publiées dans **Administration** › **Desk**. Dans **Agents & Workflows**, le menu d'une Solution propose **Open in Desk**. Voyez [Agentivity Desk](/fr/docs/desk/agentivity-desk/). |
 | **Le portail, et les apps que vous construisez** | Le portail est une application en marque blanche : les gens peuvent l'utiliser telle quelle, ou l'adapter. Il trouve les Solutions de votre espace de travail grâce à ce tag, et rien d'autre. Une app à vous peut faire de même. Voyez [Afficher une équipe dans le portail](/fr/docs/vibeapps/show-a-solution-in-the-portal/) et [Lister les solutions et lancer une exécution depuis votre app](/fr/docs/vibeapps/run-a-solution-from-your-app/). |
 | **Un Template** | Un Template a toujours une Solution en son cœur. Quand le Template est créé, son agent, son équipe ou son workflow principal porte le tag. Ce que vous importez depuis un Template apparaît donc comme une Solution dans votre bibliothèque. Voyez [Partager votre travail sous forme de Template](/fr/docs/guides/share-a-template/). |
 | **Ce que construit l'Assistant** | L'Assistant enregistre son travail avec l'agent, l'équipe ou le workflow principal marqué comme Solution. Voyez [Construire votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/). |
@@ -90,7 +91,7 @@ Un portail ou une app le liste une fois sa page rechargée.
 
 ## Bon à savoir
 
-- Marquer une Solution ne la publie pas, ne la partage pas et ne change pas sa façon de tourner. Cela ajoute un tag.
+- Marquer une Solution ne la publie pas, ne la partage pas et ne change pas sa façon de tourner. Cela ajoute un tag. Pour la montrer dans le Desk, publiez-la.
 - Une équipe est une seule Solution, quel que soit le nombre de ses membres. Marquez l'équipe, pas chaque membre.
 - Pour ne plus lister un élément dans un portail, retirez sa marque.
 

@@ -51,9 +51,9 @@ The Studio is in English. Your agents can work in any language that your AI mode
 
 A computer or a server that runs Docker, and an account with an AI model provider.
 
-### Is there a free trial of a hosted workspace?
+### Is there a trial of a hosted workspace?
 
-Yes. It lasts 14 days, needs no card, and has every feature of the plan you choose, with up to 200 executions. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/). The prices are on [the pricing page](/pricing).
+Yes. It lasts 14 days, needs no card, and has every feature of the plan you choose, with up to 200 executions. See [Start a hosted workspace](/docs/hosted/start-a-hosted-workspace/). The prices are on [the pricing page](/pricing). AI usage is billed by your provider.
 
 ### Why did my execution not start?
 

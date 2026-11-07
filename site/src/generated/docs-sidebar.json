@@ -80,6 +80,15 @@
       "published": 3
     },
     {
+      "id": "desk",
+      "label": {
+        "en": "Agentivity Desk",
+        "fr": "Agentivity Desk"
+      },
+      "total": 2,
+      "published": 2
+    },
+    {
       "id": "vibeapps",
       "label": {
         "en": "VibeApps",

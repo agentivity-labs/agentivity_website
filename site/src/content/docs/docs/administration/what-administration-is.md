@@ -21,6 +21,7 @@ lastUpdated: false
 | | **Configurations** | The settings of the server. |
 | | **Data** | Take everything the workspace holds away in one file, or bring such a file in. |
 | | **Network** | Which addresses your steps and agents may call. |
+| | **Desk** | The brand of [Agentivity Desk](/docs/desk/agentivity-desk/), the Solutions published to it, and its suggestions. The cockpits are built in the Studio, in **Cockpits**. |
 | **Access** | **People** | Who uses the workspace, and their roles. See [People, groups, roles and spaces](/docs/administration/people-groups-roles-spaces/). |
 | | **Groups** | Give roles to a whole team at once. |
 | | **Roles** | What each role lets a person do. |
@@ -39,7 +40,7 @@ A pane shows only when three things are true:
 
 1. **The workspace asks for a sign-in.** Without it there are no people to manage, so **People** and **Network** are not shown. The Community edition has no sign-in, so it shows only the panes that do not need one: **Credentials**, **Configurations** and **Data**. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
 2. **Your role allows it.** The panes follow the rights of the roles. The default **Administrator** role sees them all.
-3. **The plan has the feature.** **Groups**, **Audit journal** and **Monitoring** come with the Business plan. **Spaces** come with Pro and Business. **Subscription** exists only on a hosted workspace.
+3. **The plan has the feature.** **Desk** comes with Pro and Business: not with Personal, nor with the Community edition. **Groups**, **Audit journal** and **Monitoring** come with the Business plan. **Spaces** come with Pro and Business. **Subscription** exists only on a hosted workspace.
 
 | Pane | The right it needs | Plan |
 |---|---|---|
@@ -47,6 +48,7 @@ A pane shows only when three things are true:
 | **Configurations** | Manage settings | all |
 | **Data** | Being the owner (without sign-in, everyone) | all |
 | **Network** | Manage settings | all, with a sign-in |
+| **Desk** | Manage settings | Pro, Business |
 | **People** | Manage people | all, with a sign-in |
 | **Groups** | Manage people | Business |
 | **Roles** | Manage roles | all, with a sign-in |

@@ -1,6 +1,6 @@
 ---
 title: "Workspace panes: credentials, data and network"
-description: "The panes of the group Workspace. Credentials, AI Assistant, Voice dictation, Configurations, Data to export or import a workspace, and Network."
+description: "The panes of the group Workspace. Credentials, AI Assistant, Voice dictation, Configurations, Data to export or import, Network and Desk."
 sidebar:
   order: 4
 editUrl: false
@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/administration/workspace-panes.md. Do not edit here: edit the source and publish again. -->
 
-The group **Workspace** of [Administration](/docs/administration/what-administration-is/) has six panes.
+The group **Workspace** of [Administration](/docs/administration/what-administration-is/) has seven panes.
 
 ## Credentials
 
@@ -60,6 +60,17 @@ The file never holds a secret: your credentials are not in it.
 **Network** is about the calls that your steps and agents make to the outside. It shows the addresses your workspace refused, in a list **Calls refused**, so that you can see what an agent tried to reach. An address of the internal network is allowed only where the person who runs the workspace allows it. On a hosted workspace, the internal network is the host's: only Agentivity can allow an internal address.
 
 The pane needs a sign-in and the right to manage settings.
+
+## Desk
+
+**Desk** sets how [Agentivity Desk](/docs/desk/agentivity-desk/) looks and what it shows. The Desk is not part of the Community edition.
+
+- **Brand**: the **Name** shown at the top of the Desk (empty: Agentivity Desk), a **Logo** (PNG, JPEG, WebP or SVG, 300 KB at most, square at best), a **Colour**, and the **Welcome line** over the field of the home.
+- **Published to the Desk**: **Everything**, or **Only what I choose**. Only Solutions are published. When you choose and no Solution is chosen, the Desk shows nothing.
+- **Cockpits**: the cockpits are not set here. **Open Cockpits** takes you to **Cockpits** in the Studio. See [Build a cockpit](/docs/desk/build-a-cockpit/).
+- **Suggestions and time saved**: what the home of the Desk suggests to ask a Solution, and the **Minutes saved each time**. Empty, the time is measured from the work the Solution does.
+
+The pane needs the right to manage settings.
 
 ## Next step
 

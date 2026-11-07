@@ -21,7 +21,7 @@ The top block says which plan the workspace has, and where it stands, with a lab
 | **Active** | The plan is paid and running. The block says whether it is billed yearly or monthly. |
 | **Ends on** a date | You cancelled. Everything works as today until that date. |
 | **Trial ended**, **Ended**, **No plan** | The workspace has no plan in force. See [A workspace without a plan](/docs/hosted/a-workspace-without-a-plan/). |
-| **Payment due** | The last payment failed. The workspace keeps working while the payment is tried again: update your card in **Payment and invoices**, or the subscription ends and the workspace has no plan. |
+| **Payment due** | The last payment failed. The owner gets an e-mail with the amount, the date of the next try, and where to change the card. The workspace keeps working while the payment is tried again: update your card in **Payment and invoices**, or the subscription ends and the workspace has no plan. |
 | **Set by Agentivity** | The plan was given to the workspace by Agentivity. |
 
 A bar, **Executions this month**, shows the executions used against what the plan allows. When the pace of the month would use them all, the pane says on which day they would run out: "a pack or a bigger plan keeps you going."
