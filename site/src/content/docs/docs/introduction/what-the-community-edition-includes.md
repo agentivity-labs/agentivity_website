@@ -36,6 +36,7 @@ The four showcase solutions are offered as Templates. They are downloaded from t
 - **Login, accounts and roles.** There is no login. One installation is one shared workspace: anyone who can reach the server can use everything on it. So there are no people, groups, roles or spaces, no Administration panes for them, and no audit journal.
 - **Keys for a website** (publishable keys) and **Monitoring** to your own collector.
 - **Observation**, the tab that reads a team or a workflow over a period. See [The Observation tab](/docs/studio/observation/).
+- **[Agentivity Desk](/docs/desk/agentivity-desk/)**, where people who do not build use your Solutions.
 - **Limits.** The Community edition has no cap on executions.
 
 ## Hosted workspaces

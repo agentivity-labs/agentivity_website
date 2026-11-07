@@ -28,7 +28,7 @@ A bar, **Executions this month**, shows the executions used against what the pla
 
 ## Choose a plan
 
-Under **Plans**, a switch chooses **Monthly** or **Yearly · 2 months free**. Yearly is the choice offered first. Each card shows what the plan gives: Personal for one person, Pro for up to 3 people, Business for up to 15 and with groups and the audit journal. The full limits are in [Plans and their limits](/docs/hosted/plans-and-limits/). Prices shown are without VAT.
+Under **Plans**, a switch chooses **Monthly** or **Yearly · 2 months free**. Yearly is the choice offered first. Each card shows what the plan gives: Personal for one person, Pro for 3 people in the Studio and 5 on the Desk, Business for 5 in the Studio and 25 on the Desk, with groups and the audit journal. The full limits are in [Plans and their limits](/docs/hosted/plans-and-limits/). Prices shown are without VAT.
 
 **Choosing a plan during the trial ends the trial.** The plan starts at once, and so does its payment. Everything you built stays. You pay on a page of Stripe, by card. Payment by card is the only way today.
 
@@ -58,6 +58,17 @@ Three buttons close the window:
 | **Keep my plan** | Closes the window. Nothing happens. |
 | An offer | Goes to the page of Stripe to switch. If you pay by month, it is the same plan by year, for example **Switch to yearly · save** an amount. If you pay by year, it is the plan below yours, for example **Switch to Pro** with its price a month. On the smallest plan paid by year, there is no offer. |
 | **Cancel anyway** | Goes to the confirmation of Stripe, as before. The subscription is cancelled only there. |
+
+## Seats
+
+On Business, once subscribed, you can add seats to the plan, under **Seats**:
+
+- **Studio** seats, for the people who build, up to 25 in all;
+- **Desk** seats, for the people who use what is built on [Agentivity Desk](/docs/desk/agentivity-desk/), up to 500 in all. The more seats, the lower the price of each.
+
+Choose the number with **One seat more** and **One seat less**, then select **Update the seats**. More seats are paid now, prorated to the end of the period. Fewer seats count from now, and nothing is refunded. Each Studio seat added gives 500 more executions a month, each Desk seat 50.
+
+When every seat is taken, an invitation is refused. The person who manages the billing is offered to add seats instead; the others are asked to see that person.
 
 ## Execution packs
 

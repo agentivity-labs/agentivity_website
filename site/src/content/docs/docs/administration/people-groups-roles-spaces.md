@@ -15,12 +15,13 @@ This page covers the four panes of the group **Access** in [Administration](/doc
 
 ![The People pane: one member, the owner, and the message "You are the only one here" with the button Invite](images/people.jpg)
 
-**People** lists who uses the workspace, in three lists: **Members**, **Invitations waiting** and **Deactivated**. The counter at the top right, for example **1 of 15**, counts the people and the invitations waiting against what your plan allows. See [Plans and their limits](/docs/hosted/plans-and-limits/).
+**People** lists who uses the workspace, in three lists: **Members**, **Invitations waiting** and **Deactivated**. The counter at the top right, for example **1 of 5**, counts the people and the invitations waiting against the Studio seats of your plan. With the Desk, a second counter, for example **Desk 0 of 25**, counts the people on the Desk. See [Plans and their limits](/docs/hosted/plans-and-limits/).
 
 ### Invite someone
 
 1. Select **Invite**.
 2. Give their e-mail address and choose their roles.
+   With the Desk, choose their **Seat**: **Studio** to build, or **Desk** to use what is built. A seat that is full says **(full)**.
 3. Confirm.
 
 The person gets a link to join and to choose their password. The link works once, for 7 days. When the workspace can send e-mails, the link goes to them by e-mail. Otherwise the Studio shows you the link once, and you give it to them yourself.
@@ -37,6 +38,7 @@ On the line of a person, the three dots open a menu:
 | **Make owner** / **No longer owner** | Gives the ownership of the workspace, or takes it away. |
 | **Deactivate** | Stops the person at once. They are signed out everywhere, and their API keys are revoked. Nothing of theirs is deleted. |
 | **Activate** | Lets a deactivated person back in. |
+| **Move to Agentivity Desk** / **Move to the Studio** | Changes the seat of the person. At the Desk, they start and answer what is built and follow their conversations, whatever their roles: they no longer build nor change the settings. |
 
 A person with no role can sign in, and can do nothing else.
 
