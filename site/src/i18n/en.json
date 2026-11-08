@@ -481,8 +481,8 @@
   },
   "how_page": {
     "meta": {
-      "title": "How Agentivity Works — Describe a Team to the Assistant, or Build It by Hand",
-      "description": "Tell the Assistant what you need and watch it build a team, a workflow or an agent. Or build it by hand in the Studio, with full control. No code."
+      "title": "How to Build AI Agents and Teams Without Code | Agentivity",
+      "description": "Describe what you need to the Assistant and it builds the agent, the team or the workflow. Or build it by hand, with full control. No code."
     },
     "hero": {
       "eyebrow": "How it works",
@@ -2048,8 +2048,8 @@
   },
   "teams_page": {
     "meta": {
-      "title": "AI Agent Teams: Specialists That Work Together | Agentivity",
-      "description": "Put AI specialists together, choose how they work as a team, and hand them the job in plain words. Five ways to work together, no code."
+      "title": "Multi-Agent Teams: AI Agents That Work Together | Agentivity",
+      "description": "Build multi-agent teams without code: AI specialists that work together in five ways, from sequential to manager-led orchestration. You decide."
     },
     "hero": {
       "crumb": "Product",
@@ -2252,8 +2252,8 @@
     },
     "agents": {
       "meta": {
-        "title": "AI Agents: One Specialist, One Role | Agentivity",
-        "description": "An agent is one AI specialist with a role. Describe it in plain words, then give it the tools, the knowledge and the model the job needs. No code."
+        "title": "AI Agent Builder: Create AI Agents Without Code | Agentivity",
+        "description": "An AI agent builder without code: describe one AI specialist in plain words, then give it the tools, the knowledge and the model the job needs."
       },
       "hero": {
         "name": "Agents",
@@ -2420,8 +2420,8 @@
     },
     "workflows": {
       "meta": {
-        "title": "AI Workflows With Human Approval | Agentivity",
-        "description": "Draw the steps in advance: a form, a rule, an approval, an AI step. The same path every time, and a person decides where it matters. No code."
+        "title": "Agentic Workflows With Human Approval | Agentivity",
+        "description": "Agentic workflows with a human in the loop: draw the steps once (a form, a rule, an AI step, an approval) and a person decides where it matters. No code."
       },
       "hero": {
         "name": "Workflows",
