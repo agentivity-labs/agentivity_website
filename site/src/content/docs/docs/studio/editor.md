@@ -88,6 +88,8 @@ Right-click an element of the canvas. The menu has, depending on the element:
 
 Changes are saved in your workspace only when you select **Publish**. In the editor of a workflow, **Ctrl+S** (**Cmd+S** on a Mac) does the same. A message, "Workflow published" for example, confirms it.
 
+If someone changed the same item in the workspace while you were editing it, the Studio says what changed, by name, in a window, and offers to overwrite it.
+
 ## When you leave an editor
 
 - **A workflow with changes that are not saved**: the Studio asks what to do. **Keep editing** stays in the editor, **Discard** loses the changes, **Publish** saves them.

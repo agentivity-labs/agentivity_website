@@ -1,6 +1,6 @@
 ---
 title: "Connect a VibeApp to a hosted workspace"
-description: "For developers. A VibeApp runs on your side and calls your hosted workspace. The address to give it, the key it sends, and the two kinds of key to choose between."
+description: "For developers. A VibeApp runs on your side and calls your hosted workspace. The address to give it, and the API key that stays on your server."
 sidebar:
   order: 8
 editUrl: false
@@ -40,42 +40,15 @@ VITE_COACH_TEAM_ID=<the ID you copied>
 
 ## The key
 
-A server that you install yourself has no sign-in, so the application sends nothing. A hosted workspace asks for a key with every call. Without one, it answers `sign_in_required`. The key goes in the header `Authorization: Bearer <key>`, and the SDK does that for you when you give it the key. There are two kinds of key for an application, and you make both under your name, in **Your API keys**.
+A server that you install yourself has no sign-in, so the application sends nothing. A hosted workspace asks for an **API key** (`agv_…`) with every call. Without one, it answers `sign_in_required`. The key goes in the header `Authorization: Bearer <key>`.
 
-| | Key for a website | Secret key |
-|---|---|---|
-| Starts with | `agp_` | `agv_` |
-| Where it lives | In a web page. It is made to be seen. | On a server only: a back end, a script, a proxy. |
-| What it can do | Start **one** agent, team or workflow, and follow what it started. Nothing else. | What the person who made it can do. **Read only** keys exist. |
-| Limits | Only from the sites you list. A number of conversations a minute. | The rights of its maker. |
+The key stays on a server, never in a web page or in an app that people install: anyone can read it there. A page, a mobile app or a desktop app does not hold the key. It gets a short token for each of its users from your server, which holds the key.
 
-### A page that talks to one solution
+An administrator makes the key in **Administration** › **API keys**: see [API keys](/docs/administration/api-keys/). For an application that has users, tick the permission **Users**, and choose who they are.
 
-1. Open your name at the bottom of the left menu, then **Your API keys**, then **New key**.
-2. Choose **On a website**.
-3. Choose the agent, team or workflow the page talks to.
-4. List the sites that may use the key. Write each as the browser sends it, with the scheme and the port, for example `https://app.mydomain.com` or, while you develop, `http://localhost:5173`.
-5. Choose how many conversations a site may start in a minute: 10, 30, 60 or 120.
-6. Choose when the key ends, then create it and copy it. It is shown once.
+### Your server holds the key
 
-Give it to the provider of the SDK:
-
-```tsx
-<AgentivityProvider baseUrl="https://yourname.agentivity.app" apiKey="agp_…">
-  <YourScreens />
-</AgentivityProvider>
-```
-
-What this key allows:
-
-- It starts only the solution it was made for. Another one is refused with `publishable_scope`.
-- It follows only the executions it started.
-- It cannot list the solutions of the workspace. A page that lists solutions, like the portal of the examples, does not work with this key: give it the one solution to start.
-- A call from a site that is not on the list is refused with `origin_not_allowed`. The check uses the address the browser sends, so a program outside a browser, such as a mobile or desktop app calling the workspace directly, cannot use this key.
-
-### An application that lists solutions, or that is not in a browser
-
-Put a small server of your own between the application and the workspace. The server holds a secret key and calls the workspace for the application. In the SDK, give the key to the client of your server code:
+In the SDK, give the key to the client of your server code:
 
 ```ts
 const client = new AgentivityPlatformClient({
@@ -84,7 +57,23 @@ const client = new AgentivityPlatformClient({
 });
 ```
 
-Never put a secret key in a web page or in an app that people install: anyone can read it there, and it does what you do.
+On the server, `client.keys` asks for what the page needs:
+
+- `userToken()`: a token of fifteen minutes for one of your users, who each have their own conversations.
+- `visitor()`: a token for an anonymous visitor of a demo.
+
+### The page
+
+The page never sees the key. It gets the token from your server and gives it to the React SDK, which asks for a new one before it expires. In the page, `client.keys` has:
+
+- `signIn()` and `signOut()`: for the people of the workspace, who sign in with their account.
+- `visitDemo(getVisitor)`: for a demo. The prop `getDemoVisitor` of `AgentivityProvider` replaces `demoAppId`.
+
+What a user token allows:
+
+- It starts only the Solutions the key opens, and follows its own executions.
+- It reaches no Data Table and no Knowledge Base: the assets stay with the key, on your server.
+- A key opens only Solutions of its own space.
 
 ## When the workspace is asleep
 
@@ -94,16 +83,16 @@ A hosted workspace that has been idle goes to sleep, and the first call wakes it
 
 | Answer | What it means |
 |---|---|
-| `sign_in_required` | The workspace asks for a key and got none. |
-| `invalid_key` | The key was revoked, has ended, or has a typo. |
-| `origin_not_allowed` | A key for a website, used from a site that is not on its list. |
-| `publishable_scope` | A key for a website, used for another solution than its own. |
-| `too_many_starts` | Too many conversations started from one site. Try again in a minute. |
-| `key_scope` | The key does not cover this call, for example a key made for MCP. |
+| `sign_in_required` | The workspace asks for an API key and got none. |
+| `invalid_key` | The key was deleted or renewed, or has a typo. |
+| `key_scope` | The key does not have the permission for this call: run, assets, mcp or users. |
+| `key_in_page` | An API key was used in a page. Keep it on your server and use a user token in the page. |
+| `key_solutions` | The key can only use the Solutions it opens and the assets of its space. |
+| `key_solution` | The key does not open this Solution. Add it in **Administration** › **API keys**. |
 
 ## What was not checked
 
-This page is written from the code of the server and of the SDK. No application was run against a hosted workspace for it. In particular, nobody checked which pages a hosted address lets call it from a browser, beyond the check of the key itself, nor the exact look of the window **New key** on a hosted workspace.
+This page is written from the description of the API keys given by the developers of the server and of the SDK, not from a run: no application was run against a hosted workspace for it, nor against the image that carries the API keys. In particular, nobody checked which pages a hosted address lets call it from a browser, beyond the check of the key itself, nor the exact look of the window **New key** on a hosted workspace.
 
 ## Next step
 

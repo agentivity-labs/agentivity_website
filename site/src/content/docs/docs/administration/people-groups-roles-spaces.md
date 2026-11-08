@@ -38,7 +38,7 @@ On the line of a person, the three dots open a menu:
 | **Make owner** / **No longer owner** | Gives the ownership of the workspace, or takes it away. |
 | **Deactivate** | Stops the person at once. They are signed out everywhere, and their API keys are revoked. Nothing of theirs is deleted. |
 | **Activate** | Lets a deactivated person back in. |
-| **Move to Agentivity Desk** / **Move to the Studio** | Changes the seat of the person. At the Desk, they start and answer what is built and follow their conversations, whatever their roles: they no longer build nor change the settings. |
+| **Move to the Desk** / **Move to the Studio** | Changes the seat of the person. At the Desk, they start and answer what is built and follow their conversations, whatever their roles: they no longer build nor change the settings. |
 
 A person with no role can sign in, and can do nothing else.
 
@@ -56,6 +56,8 @@ A role is a list of rights. **Roles** shows every role and what it lets a person
 | **Editor** | Build: read and edit the library and the data, read and start executions, read the credentials, make API keys. It is a role of trust: what an editor builds uses the credentials of the workspace and may send data outside. |
 | **Operator** | Use what is built: read the library and the data, read and start executions, make API keys. |
 | **Reader** | Look: read the library, the data and the executions. |
+
+Each person sees only the executions they started, whatever their role. The right "See and act on the executions others started" lifts that: the Administrator has it, and you can give it to a role of your own.
 
 Select **New role** to make your own: give it a name and tick the rights it holds. A default role that you delete does not come back. When you delete a role that people hold, the Studio asks you to choose a role to put in its place (**Delete and replace**).
 

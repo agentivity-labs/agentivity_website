@@ -24,7 +24,7 @@ Ouvrez **Administration** › **Desk**. En haut :
 
 | Réglage | Ce qu'il fait |
 |---|---|
-| **Name** | Affiché en haut du Desk. Vide : **Agentivity Desk**. |
+| **Name** | Affiché en haut du Desk. Vide : **Desk by Agentivity**. |
 | **Colour** | La couleur du Desk. Choisissez **Agentivity**, ou une couleur de la palette. |
 | **Logo** | PNG, JPEG, WebP ou SVG, 300 Ko au plus, carré de préférence. Sélectionnez **Choose a logo**, puis **Change** pour le remplacer. |
 | **Welcome line** | La question au-dessus du champ de l'accueil. Par exemple `De quoi avez-vous besoin aujourd'hui ?`. Vide : « What do you need today, *prénom* ? ». |

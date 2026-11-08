@@ -197,6 +197,21 @@ The OpenRouter routes never return the key. Disconnecting an account is deleting
 |---|---|---|
 | POST | `/api/v1/interactions/slack/events` | Receive a Slack reply and resume the waiting run |
 
+## Keys
+
+An API key (`agv_…`) is made by an administrator and stays on a server. See [API keys](/docs/administration/api-keys/).
+
+| Method | Route | What it does |
+|---|---|---|
+| GET | `/api/v1/keys` | List the API keys |
+| POST | `/api/v1/keys` | Make an API key: it is shown once |
+| PUT | `/api/v1/keys/{id}` | Change a key: its name, space, permissions, what it opens, its limits and its owner |
+| POST | `/api/v1/keys/{id}/secret` | Renew a key |
+| DELETE | `/api/v1/keys/{id}` | Delete a key |
+| POST | `/api/v1/keys/user-tokens` | Get a token of fifteen minutes for a user of the system that holds the key |
+| POST | `/api/v1/keys/visitors` | Get a token for an anonymous visitor of a demo |
+| POST | `/api/v1/keys/{id}/sign-in` | Sign in a person of the workspace through the key |
+
 ## Knowledge-bases
 
 | Method | Path | What it does |

@@ -14,20 +14,21 @@ An AI assistant can use your agents, teams and workflows as tools. You ask the a
 ## What Agentivity offers
 
 - **One address.** The server is at `/mcp` on your workspace. On a hosted workspace that is `https://yourname.agentivity.app/mcp`, with your own workspace name. It uses streamable HTTP.
-- **A key.** On a workspace with sign-in, the assistant gives a key made for it, as `Authorization: Bearer <key>`. A key made for MCP opens this server and nothing else.
-- **Your rights.** What the assistant starts is started as the person who made the key, and it is kept in the history of executions like any other.
+- **A key.** On a workspace with sign-in, the assistant gives an API key made for it, as `Authorization: Bearer <key>`. A key with the permission **MCP** opens this server. The server shows only the Solutions the key opens, and never the tools that build.
+- **Its space.** The key belongs to a space and reaches nothing of another space.
 - **Nothing kept between two calls.** Each call is answered on its own.
 
 The MCP server is not an extra to buy. On the hosted plans it is part of the workspace. The Community edition has no sign-in, so there it asks for no key: anyone who can reach the server can use it, as with the rest of it. See [Keep your server private](/docs/guides/keep-your-server-private/).
 
 ## Make the key
 
-1. Open your name at the bottom of the left menu, then **Your API keys**.
-2. Select **New key** and choose **AI assistant (MCP)**.
-3. Choose when the key ends: **In 30 days**, **In 90 days**, **In a year** or **Never**.
-4. Create the key and copy it. It is shown once. The window also shows the address to give to the assistant, and the header to send with it.
+1. In **Administration** › **API keys**, select **New key**.
+2. Give it a **Name** and choose its **Space**.
+3. Under **What it may do**, tick **MCP**.
+4. Under **What it opens**, choose the Solutions the assistant may use, or every Solution of the space.
+5. Select **Make the key** and copy it. It is shown once. The window also shows the address to give to the assistant, and the header to send with it.
 
-**Revoke** stops a key at once. How many keys a plan allows is in [Plans and their limits](/docs/hosted/plans-and-limits/). More about keys: [Your account and API keys](/docs/administration/your-account-and-api-keys/).
+**Delete** stops a key at once, and **Renew** gives it a new key. How many keys a plan allows is in [Plans and their limits](/docs/hosted/plans-and-limits/). More about keys: [API keys](/docs/administration/api-keys/).
 
 ## Add the server to the assistant
 

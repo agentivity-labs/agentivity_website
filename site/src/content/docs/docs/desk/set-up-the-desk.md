@@ -3,7 +3,6 @@ title: "Set up the Desk"
 description: "Put Desk by Agentivity in place for your colleagues in four steps with the card Set up your Desk, then see the Desk as they will."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -31,6 +30,10 @@ The foot of the card says how many steps are left: each one is ticked as your wo
 ## See the Desk as your colleagues will
 
 Step 4 opens the Desk with a banner that says what the other person sees: only the Solutions published to the Desk, and no access to the Studio. Select **Back to my view** to go back to your own view.
+
+## The first visit of your colleagues
+
+The first time a person opens the Desk, a short tour starts with a card: **Welcome to the Desk of** *your company*. It says: "The Desk is your company's shared set of AI teams, ready to use and approved by your company.", then shows three steps: **You ask**, **They do the work**, **You follow**. Its two buttons are **Skip** and **Show me around**. The tour then stops at **Ask for work**, **Answer here**, **Your departments** (only if there are cockpits) and **Your conversations**, and counts them as "1 of 3", or of 4 with cockpits. **Skip** leaves it for good. To see it again, open the account menu and select **Getting started**.
 
 ## How to know it worked
 

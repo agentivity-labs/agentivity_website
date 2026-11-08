@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/studio/executions.md. Do not edit here: edit the source and publish again. -->
 
-**Executions** lists the executions of your whole workspace: each time a workflow, an agent or a team worked on a request. The page is titled **Executions**.
+**Executions** lists the executions you started: each time a workflow, an agent or a team worked on a request. An execution is private to the person who started it. A person with the right "See and act on the executions others started", such as an Administrator, and the owner of the workspace, see everyone's. Answering a question stays open to the person it is asked to. The page is titled **Executions**.
 
 ![The Executions screen: four executions, one of them of the workflow Reminder Approval with the label ACTION REQUIRED and the buttons Open workflow and Details, and the others COMPLETED](images/executions.jpg)
 

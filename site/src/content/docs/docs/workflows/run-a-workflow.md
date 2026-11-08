@@ -36,7 +36,7 @@ Below the canvas, three tabs show what happens:
 
 | Tab | What it shows |
 |---|---|
-| **Inspector** | The steps of the execution. Select a step to see its inputs, its outputs and its logs. |
+| **Inspector** | The steps of the execution. Select a step to see its inputs, its outputs and its logs. A tab can copy what it shows as indented JSON, and every value and error it shows can be selected and copied. |
 | **Errors** | What went wrong. When all is well, it says "No runtime errors detected." |
 | **Logs** | One line for each event, with the time: the execution started, the execution waits for a person, and so on. |
 

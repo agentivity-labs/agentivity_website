@@ -3,7 +3,6 @@ title: "Mettre le Desk en place"
 description: "Mettez Desk by Agentivity en place pour vos collègues en quatre étapes avec la carte Set up your Desk, puis voyez le Desk comme ils le verront."
 sidebar:
   order: 3
-draft: true
 editUrl: false
 lastUpdated: false
 ---
@@ -31,6 +30,10 @@ Le bas de la carte dit combien d'étapes restent : chacune se coche quand votre 
 ## Voir le Desk comme vos collègues
 
 L'étape 4 ouvre le Desk avec un bandeau qui dit ce que voit l'autre personne : seulement les Solutions publiées dans le Desk, et pas d'accès au Studio. Sélectionnez **Back to my view** pour revenir à votre vue.
+
+## La première visite de vos collègues
+
+La première fois qu'une personne ouvre le Desk, une courte visite commence par une carte : **Welcome to the Desk of** *votre entreprise*. Elle dit : « The Desk is your company's shared set of AI teams, ready to use and approved by your company. », puis montre trois étapes : **You ask**, **They do the work**, **You follow**. Ses deux boutons sont **Skip** et **Show me around**. La visite s'arrête ensuite sur **Ask for work**, **Answer here**, **Your departments** (seulement s'il y a des cockpits) et **Your conversations**, et les compte « 1 of 3 », ou sur 4 avec des cockpits. **Skip** la quitte pour de bon. Pour la revoir, ouvrez le menu du compte et sélectionnez **Getting started**.
 
 ## Comment savoir que ça marche
 

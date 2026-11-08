@@ -26,6 +26,8 @@ A line under the limits reminds you that an execution runs at most for the lengt
 
 The month is the calendar month.
 
+When you sign in, a window about the usage opens once you have used 80 % of the executions of the plan, or when, at the pace of the month, they will run out within a week. Before that, the e-mails are enough.
+
 **Usage** is about the whole workspace. To see where the tokens go inside one team or one workflow, see [The Observation tab](/docs/studio/observation/).
 
 ## Monitoring

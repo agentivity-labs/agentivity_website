@@ -39,7 +39,7 @@ The Studio shows a banner **Beyond your plan**, for those who manage it. It says
 - Archive spaces in **Spaces**.
 - Or choose a bigger plan in **Subscription**.
 
-See [People, groups, roles and spaces](/docs/administration/people-groups-roles-spaces/), [Your account and API keys](/docs/administration/your-account-and-api-keys/) and [Subscription](/docs/administration/subscription/).
+See [People, groups, roles and spaces](/docs/administration/people-groups-roles-spaces/), [API keys](/docs/administration/api-keys/) and [Subscription](/docs/administration/subscription/).
 
 ## Next step
 

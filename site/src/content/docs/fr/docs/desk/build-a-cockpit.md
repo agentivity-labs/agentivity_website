@@ -87,6 +87,10 @@ Pour retirer un cockpit du Desk sans le supprimer, sélectionnez **Take it off t
 
 Un responsable modifie et publie ce cockpit. Un cockpit a jusqu'à 20 responsables. Seule une personne qui a le droit de faire les cockpits choisit les responsables. Cela permet à la responsable d'un département de tenir sa page à jour sans aucun autre droit.
 
+## L'espace d'un cockpit
+
+Chaque cockpit appartient à un espace, **General** par défaut. Dans l'onglet **Access**, la section **Space** a une liste, **Space**, pour le changer. Tous ceux qui sont dans cet espace voient le cockpit dans le Desk. Ceux qui gèrent les cockpits de cet espace peuvent le modifier.
+
 ## Qui voit un cockpit
 
 - Une personne voit un cockpit quand elle voit au moins une de ses Solutions publiées dans le Desk.
@@ -100,6 +104,7 @@ L'onglet **Access** dit **On the Desk**, avec la date de publication. Dans le De
 
 - **Quelqu'un ne voit pas le cockpit.** Il ne voit aucune de ses Solutions. Vérifiez que les Solutions sont publiées dans le Desk et que ses droits lui permettent d'en voir une.
 - **Vos changements n'apparaissent pas dans le Desk.** Ils sont encore un brouillon. Sélectionnez **Publish changes**.
+- **Le message dit « Only people who manage cockpits can do this. »** Votre rôle n'a pas le droit de faire les cockpits, et vous n'êtes pas responsable de ce cockpit.
 - **Vous ne pouvez pas ajouter de bloc.** Le cockpit en compte déjà 40.
 
 ## Étape suivante

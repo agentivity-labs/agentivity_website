@@ -30,10 +30,11 @@ You build agents, teams and workflows in the Studio. The people who need their w
 
 ## What a builder does for the Desk
 
-1. [Publish Solutions to the Desk](/docs/desk/publish-solutions-to-the-desk/): choose what your colleagues can start.
-2. [Give the Desk your brand](/docs/desk/brand-your-desk/): name, colour, logo and a welcome line.
-3. [Invite people on a Desk seat](/docs/desk/seats-and-rights-of-the-desk/): who can do what.
-4. [Build a cockpit](/docs/desk/build-a-cockpit/) for each department, with its [blocks](/docs/desk/cockpit-blocks/) and its [layout and look](/docs/desk/lay-out-and-style-a-cockpit/). Some [ideas by department](/docs/desk/cockpit-examples/).
+1. [Set up the Desk](/docs/desk/set-up-the-desk/): one card guides you through the first steps.
+2. [Publish Solutions to the Desk](/docs/desk/publish-solutions-to-the-desk/): choose what your colleagues can start.
+3. [Give the Desk your brand](/docs/desk/brand-your-desk/): name, colour, logo and a welcome line.
+4. [Invite people on a Desk seat](/docs/desk/seats-and-rights-of-the-desk/): who can do what.
+5. [Build a cockpit](/docs/desk/build-a-cockpit/) for each department, with its [blocks](/docs/desk/cockpit-blocks/) and its [layout and look](/docs/desk/lay-out-and-style-a-cockpit/). Some [ideas by department](/docs/desk/cockpit-examples/).
 
 To understand how the pieces fit together, read [How the Desk works](/docs/desk/how-the-desk-works/) first.
 
@@ -49,6 +50,10 @@ The Desk is at the address of your workspace. The Studio is under `/studio` at t
 
 - From the Studio, the menu of a Solution in **Agents & Workflows** offers **Open in Desk**, and **Open the Desk** at the top of **Administration** › **Desk**.
 - From the Desk, a builder opens the Studio with the switch **Desk** | **Studio** at the top of the side bar, or with **Open the Studio** in the account menu at the bottom.
+
+## Spaces
+
+By default the Desk shows everything in all the spaces of the person. A person who is in more than one space has, in the selector of spaces, a first choice, **All my spaces**, and their cockpits are grouped in the side bar under the name of their space.
 
 ## Next step
 

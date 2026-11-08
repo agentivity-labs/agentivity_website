@@ -24,7 +24,7 @@ Open **Administration** › **Desk**. At the top:
 
 | Setting | What it does |
 |---|---|
-| **Name** | Shown at the top of the Desk. Empty: **Agentivity Desk**. |
+| **Name** | Shown at the top of the Desk. Empty: **Desk by Agentivity**. |
 | **Colour** | The colour of the Desk. Choose **Agentivity**, or one colour of the palette. |
 | **Logo** | PNG, JPEG, WebP or SVG, 300 KB at most, square at best. Select **Choose a logo**, then **Change** to replace it. |
 | **Welcome line** | The question over the field of the home. For example `What do you need today?`. Empty: "What do you need today, *first name*?". |

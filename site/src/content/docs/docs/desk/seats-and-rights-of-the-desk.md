@@ -44,7 +44,7 @@ Until they accept, the invitation counts in **Invitations waiting**.
 
 ## Move a person from one seat to the other
 
-In **People**, the menu of a person offers **Move to Agentivity Desk** or **Move to the Studio**. Moving to the Desk removes their ability to build and to change settings, whatever their roles.
+In **People**, the menu of a person offers **Move to the Desk** or **Move to the Studio**. Moving to the Desk removes their ability to build and to change settings, whatever their roles.
 
 ## Who builds the cockpits
 

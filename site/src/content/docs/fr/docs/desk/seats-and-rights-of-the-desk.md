@@ -44,7 +44,7 @@ Tant qu'elle n'a pas accepté, l'invitation compte dans **Invitations waiting**.
 
 ## Passer une personne d'une place à l'autre
 
-Dans **People**, le menu d'une personne propose **Move to Agentivity Desk** ou **Move to the Studio**. Passer au Desk lui retire la possibilité de construire et de changer les réglages, quels que soient ses rôles.
+Dans **People**, le menu d'une personne propose **Move to the Desk** ou **Move to the Studio**. Passer au Desk lui retire la possibilité de construire et de changer les réglages, quels que soient ses rôles.
 
 ## Qui construit les cockpits
 

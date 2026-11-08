@@ -34,7 +34,7 @@ A hosted workspace has a plan. This page says what each plan includes and where 
 
 [Observation](/docs/studio/observation/), the tab that reads a team or a workflow over a period, comes with the Pro, Business and Enterprise plans.
 
-Every plan includes sign-in with roles, API keys, keys for a website and the connection of AI assistants. A larger plan is available on request: see [pricing](/pricing). On a hosted workspace, the kinds of Knowledge Base source that read the server itself (Files and SQLite) are not offered.
+Every plan includes sign-in with roles, API keys, API keys that give your Solutions to the users of a website or a mobile app, and the connection of AI assistants. A larger plan is available on request: see [pricing](/pricing). On a hosted workspace, the kinds of Knowledge Base source that read the server itself (Files and SQLite) are not offered.
 
 ## What each limit means
 

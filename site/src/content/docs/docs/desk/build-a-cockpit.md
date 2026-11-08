@@ -87,6 +87,10 @@ To take a cockpit out of the Desk without deleting it, select **Take it off the 
 
 An owner changes and publishes this cockpit. A cockpit has up to 20 owners. Only a person with the right to make the cockpits chooses the owners. This lets the head of a department keep its page up to date without any other right.
 
+## The space of a cockpit
+
+Each cockpit belongs to a space, **General** by default. In the tab **Access**, the section **Space** has a list, **Space**, to change it. Everyone in this space sees the cockpit in the Desk. People who manage cockpits in this space can change it.
+
 ## Who sees a cockpit
 
 - A person sees a cockpit when they see at least one of its Solutions published to the Desk.
@@ -100,6 +104,7 @@ The tab **Access** says **On the Desk**, with the date it was published. In the 
 
 - **Someone does not see the cockpit.** They do not see any of its Solutions. Check that the Solutions are published to the Desk and that their rights let them see one.
 - **Your changes do not show in the Desk.** They are still a draft. Select **Publish changes**.
+- **The message says "Only people who manage cockpits can do this."** Your role does not have the right to make the cockpits, and you are not an owner of this cockpit.
 - **You cannot add a block.** The cockpit already holds 40.
 
 ## Next step

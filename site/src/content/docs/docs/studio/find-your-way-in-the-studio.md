@@ -39,7 +39,7 @@ If you do not know the difference between an agent, a team and a workflow, read 
 
 At the bottom of the menu, a card shows your name and your edition (for example **Business · Owner**). Select it to open your account menu:
 
-- **Your account** and **Your API keys**: see [Your account and API keys](/docs/administration/your-account-and-api-keys/);
+- **Your account**: see [Your account](/docs/administration/your-account-and-api-keys/);
 - **Appearance**: the sun and the moon switch between a light and a dark screen, and a list changes the accent colour;
 - **Getting started** opens the [welcome guide](/docs/getting-started/welcome-guide/) again;
 - **Sign out**, on a workspace that asks for a sign-in.

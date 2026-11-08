@@ -26,13 +26,13 @@ lastUpdated: false
 | | **Groups** | Give roles to a whole team at once. |
 | | **Roles** | What each role lets a person do. |
 | | **Spaces** | Separate the work of different teams. |
-| **Developers** | **API keys** | The keys that let a program call the workspace. See [Your account and API keys](/docs/administration/your-account-and-api-keys/). |
+| **Developers** | **API keys** | The keys that let an outside system run the Solutions of a space and use its assets. See [API keys](/docs/administration/api-keys/). |
 | **Activity** | **Usage** | What the workspace uses of its plan. See [Usage, monitoring and the audit journal](/docs/administration/usage-monitoring-and-audit-journal/). |
 | | **Monitoring** | Send traces, metrics and logs to your own tool. |
 | | **Audit journal** | Who came in and what changed. |
 | **Billing** | **Subscription** | Your plan, its payment and its invoices. Hosted workspaces only. See [Subscription](/docs/administration/subscription/). |
 
-Your own **Profile** and your own **API keys** are not in this list. They are under your name, at the bottom of the left menu.
+Your own **Profile** is not in this list. It is under your name, at the bottom of the left menu. See [Your account](/docs/administration/your-account-and-api-keys/).
 
 ## Who sees what
 
@@ -53,7 +53,7 @@ A pane shows only when three things are true:
 | **Groups** | Manage people | Business |
 | **Roles** | Manage roles | all, with a sign-in |
 | **Spaces** | Manage spaces | Pro, Business |
-| **API keys** (everyone's) | Manage API keys | all, with a sign-in |
+| **API keys** | Manage API keys | all, with a sign-in |
 | **Usage** | Manage settings | all, with a sign-in |
 | **Monitoring** | Manage settings | Business |
 | **Audit journal** | Read the audit journal | Business |

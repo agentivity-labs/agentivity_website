@@ -30,10 +30,11 @@ Vous construisez des agents, des équipes et des workflows dans le Studio. Les p
 
 ## Ce que fait une personne qui construit pour le Desk
 
-1. [Publier des Solutions dans le Desk](/fr/docs/desk/publish-solutions-to-the-desk/) : choisissez ce que vos collègues peuvent lancer.
-2. [Donner au Desk votre marque](/fr/docs/desk/brand-your-desk/) : nom, couleur, logo et mot d'accueil.
-3. [Inviter des personnes sur une place Desk](/fr/docs/desk/seats-and-rights-of-the-desk/) : qui peut faire quoi.
-4. [Construire un cockpit](/fr/docs/desk/build-a-cockpit/) pour chaque département, avec ses [blocs](/fr/docs/desk/cockpit-blocks/) et sa [mise en page et son style](/fr/docs/desk/lay-out-and-style-a-cockpit/). Quelques [idées par département](/fr/docs/desk/cockpit-examples/).
+1. [Mettre le Desk en place](/fr/docs/desk/set-up-the-desk/) : une carte vous guide dans les premiers pas.
+2. [Publier des Solutions dans le Desk](/fr/docs/desk/publish-solutions-to-the-desk/) : choisissez ce que vos collègues peuvent lancer.
+3. [Donner au Desk votre marque](/fr/docs/desk/brand-your-desk/) : nom, couleur, logo et mot d'accueil.
+4. [Inviter des personnes sur une place Desk](/fr/docs/desk/seats-and-rights-of-the-desk/) : qui peut faire quoi.
+5. [Construire un cockpit](/fr/docs/desk/build-a-cockpit/) pour chaque département, avec ses [blocs](/fr/docs/desk/cockpit-blocks/) et sa [mise en page et son style](/fr/docs/desk/lay-out-and-style-a-cockpit/). Quelques [idées par département](/fr/docs/desk/cockpit-examples/).
 
 Pour comprendre comment les pièces s'assemblent, lisez d'abord [Comment fonctionne le Desk](/fr/docs/desk/how-the-desk-works/).
 
@@ -49,6 +50,10 @@ Le Desk est à l'adresse de votre espace de travail. Le Studio est sous `/studio
 
 - Depuis le Studio, le menu d'une Solution dans **Agents & Workflows** propose **Open in Desk**, et **Open the Desk** en haut du volet **Administration** › **Desk**.
 - Depuis le Desk, une personne qui construit ouvre le Studio avec le sélecteur **Desk** | **Studio** en haut de la barre latérale, ou avec **Open the Studio** dans le menu du compte en bas.
+
+## Les espaces
+
+Par défaut, le Desk montre tout ce qui est dans tous les espaces de la personne. Une personne qui est dans plus d'un espace a, dans le sélecteur d'espaces, un premier choix, **All my spaces**, et ses cockpits sont regroupés dans la barre latérale sous le nom de leur espace.
 
 ## Étape suivante
 
