@@ -994,8 +994,8 @@
   },
   "pricing_page": {
     "meta": {
-      "title": "Agentivity Pricing — Free Community Edition, Cloud Plans and Enterprise",
-      "description": "The Community edition is free forever on your own server. Hosted plans from {from} a month, with a {trial_days}-day trial. Enterprise on request."
+      "title": "Agentivity Pricing: Plans for AI Agents, Teams and Workflows",
+      "description": "Hosted plans from {from} a month, with a {trial_days}-day trial and no card. Studio seats to build AI teams, Desk seats to use them. Or free on your own server."
     },
     "hero": {
       "eyebrow": "Pricing",
