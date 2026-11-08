@@ -64,7 +64,7 @@ Three buttons close the window:
 On Business, once subscribed, you can add seats to the plan, under **Seats**:
 
 - **Studio** seats, for the people who build, up to 25 in all;
-- **Desk** seats, for the people who use what is built on [Agentivity Desk](/docs/desk/agentivity-desk/), up to 500 in all. The more seats, the lower the price of each.
+- **Desk** seats, for the people who use what is built on [Desk by Agentivity](/docs/desk/agentivity-desk/), up to 500 in all. The more seats, the lower the price of each.
 
 Choose the number with **One seat more** and **One seat less**, then select **Update the seats**. More seats are paid now, prorated to the end of the period. Fewer seats count from now, and nothing is refunded. Each Studio seat added gives 500 more executions a month, each Desk seat 50.
 

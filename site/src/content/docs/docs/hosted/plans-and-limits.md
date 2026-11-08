@@ -16,7 +16,7 @@ A hosted workspace has a plan. This page says what each plan includes and where 
 | | Personal | Pro | Business |
 |---|---|---|---|
 | Studio seats | 1 | 3 | 5, more to add |
-| Agentivity Desk seats | none | 5 | 25, more to add |
+| Desk seats | none | 5 | 25, more to add |
 | Spaces | 1 | 3 | 15 |
 | Executions a month | 1 000 | 5 000 | 25 000 |
 | Executions at the same time | 2 | 5 | 20 |
@@ -30,7 +30,7 @@ A hosted workspace has a plan. This page says what each plan includes and where 
 | Permissions (groups of people) | no | no | yes |
 | Audit journal | no | no | yes |
 | Monitoring | no | no | yes |
-| [Agentivity Desk](/docs/desk/agentivity-desk/) | no | yes | yes |
+| [Desk by Agentivity](/docs/desk/agentivity-desk/) | no | yes | yes |
 
 [Observation](/docs/studio/observation/), the tab that reads a team or a workflow over a period, comes with the Pro, Business and Enterprise plans.
 
@@ -39,7 +39,7 @@ Every plan includes sign-in with roles, API keys, keys for a website and the con
 ## What each limit means
 
 - **Studio seats** count the people who build in the Studio, and the invitations to the Studio not yet accepted. A person you deactivate no longer counts.
-- **Agentivity Desk seats** count, apart, the people who only use what is built, on the Desk, and the invitations to it. See [Agentivity Desk](/docs/desk/agentivity-desk/).
+- **Desk seats** count, apart, the people who only use what is built, on the Desk, and the invitations to it. See [Desk by Agentivity](/docs/desk/agentivity-desk/).
 - On Business, you can add seats in [Subscription](/docs/administration/subscription/#seats): up to 25 Studio seats and 500 Desk seats in all. Each Studio seat added gives 500 more executions a month, each Desk seat 50.
 - **Spaces** counts the spaces in use. An archived space does not count.
 - **Executions a month** counts the jobs of the calendar month: each conversation started, and each further job finished in it. See [What counts as one execution](/docs/studio/executions/#what-counts-as-one-execution). When it is reached, a new execution is refused until the month starts again, unless you buy a pack: see [Subscription](/docs/administration/subscription/).

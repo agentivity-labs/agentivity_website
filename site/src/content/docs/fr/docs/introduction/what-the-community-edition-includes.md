@@ -36,7 +36,7 @@ Les quatre Solutions de démonstration sont proposées sous forme de Templates. 
 - **La connexion, les comptes et les rôles.** Il n'y a pas d'écran de connexion. Une installation est un seul espace de travail partagé : toute personne qui peut joindre le serveur peut tout y utiliser. Il n'y a donc ni personnes, ni groupes, ni rôles, ni Spaces, pas de panneaux d'Administration pour eux, et pas de journal d'audit.
 - **Les clés pour un site web** (clés publiables) et **Monitoring** vers votre propre collecteur.
 - **Observation**, l'onglet qui lit une équipe ou un workflow sur une période. Voyez [L'onglet Observation](/fr/docs/studio/observation/).
-- **[Agentivity Desk](/fr/docs/desk/agentivity-desk/)**, où les personnes qui ne construisent pas utilisent vos Solutions.
+- **[Desk by Agentivity](/fr/docs/desk/agentivity-desk/)**, où les personnes qui ne construisent pas utilisent vos Solutions.
 - **Des limites.** L'édition Community ne plafonne pas les exécutions.
 
 ## Les espaces hébergés

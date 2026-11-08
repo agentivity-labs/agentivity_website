@@ -63,7 +63,7 @@ The pane needs a sign-in and the right to manage settings.
 
 ## Desk
 
-**Desk** sets how [Agentivity Desk](/docs/desk/agentivity-desk/) looks and what it shows. The Desk comes with the Pro and Business plans: not with Personal, nor with the Community edition.
+**Desk** sets how [Desk by Agentivity](/docs/desk/agentivity-desk/) looks and what it shows. The Desk comes with the Pro and Business plans: not with Personal, nor with the Community edition.
 
 - **Brand**: the **Name** shown at the top of the Desk (empty: Agentivity Desk), a **Logo** (PNG, JPEG, WebP or SVG, 300 KB at most, square at best), a **Colour**, and the **Welcome line** over the field of the home.
 - **Published to the Desk**: **Everything**, or **Only what I choose**. Only Solutions are published. When you choose and no Solution is chosen, the Desk shows nothing.

@@ -1,6 +1,6 @@
 ---
-title: "Agentivity Desk : utiliser ce que vous avez construit"
-description: "Agentivity Desk est l'endroit où vos collègues demandent du travail à vos Solutions, répondent à leurs questions, suivent et partagent leurs conversations."
+title: "Desk by Agentivity : utiliser ce que vous avez construit"
+description: "Ce qu'est Desk by Agentivity, à qui il sert, ce qu'il change pour vos collègues, et le plan des pages qui expliquent comment le mettre en place et l'utiliser."
 sidebar:
   order: 1
 editUrl: false
@@ -9,86 +9,47 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/fr/desk/agentivity-desk.md. Do not edit here: edit the source and publish again. -->
 
-**Agentivity Desk** est pour les personnes qui utilisent ce qui est construit dans le Studio, sans rien construire. Elles demandent du travail à une Solution, répondent quand elle leur pose une question, et retrouvent leurs conversations. Cette page montre le Desk tel que le voit une personne qui l'utilise.
+Vous construisez des agents, des équipes et des workflows dans le Studio. Les personnes qui ont besoin de leur travail, à la Finance, aux Ventes ou au Support, ne veulent rien construire : elles veulent demander, répondre quand on les sollicite, et retrouver le résultat. **Desk by Agentivity** est leur endroit.
+
+![L'accueil du Desk : le champ pour demander, ce qui vous attend, et des demandes à lancer d'un clic.](images/desk-home.jpg)
+
+## Pourquoi un Desk
+
+- **Le Studio est pour ceux qui construisent.** Il montre des prompts, des nœuds, des identifiants et des réglages. La plupart des collègues n'ont pas à voir cela.
+- **Le Desk montre seulement ce qui est fait pour eux.** Les Solutions que vous publiez, les questions qu'on leur pose, leurs conversations, et le cockpit de leur département.
+- **Une personne sur une place Desk ne peut rien casser.** Elle lance des Solutions et répond. Elle ne change ni un agent, ni un workflow, ni un réglage.
+
+## Ce que fait une personne dans le Desk
+
+| Elle | Comment |
+|---|---|
+| **Demande du travail** | Elle décrit ce qu'il lui faut dans le champ de l'accueil, ou tape **@** pour choisir à qui demander. Voyez [Demander du travail et le suivre](/fr/docs/desk/ask-and-follow-in-the-desk/). |
+| **Répond** | Quand une Solution a besoin d'une décision ou d'une validation, la conversation attend sous **Waiting for you**. Voyez [Répondre à ce qui vous attend](/fr/docs/desk/answer-what-waits-for-you/). |
+| **Retrouve et range** | Elle cherche, groupe, épingle, archive et partage ses conversations. Voyez [Retrouver et gérer vos conversations](/fr/docs/desk/find-and-manage-conversations/). |
+| **Part de son département** | Le cockpit d'un département est sa page de départ. Voyez [Construire un cockpit](/fr/docs/desk/build-a-cockpit/). |
+
+## Ce que fait une personne qui construit pour le Desk
+
+1. [Publier des Solutions dans le Desk](/fr/docs/desk/publish-solutions-to-the-desk/) : choisissez ce que vos collègues peuvent lancer.
+2. [Donner au Desk votre marque](/fr/docs/desk/brand-your-desk/) : nom, couleur, logo et mot d'accueil.
+3. [Inviter des personnes sur une place Desk](/fr/docs/desk/seats-and-rights-of-the-desk/) : qui peut faire quoi.
+4. [Construire un cockpit](/fr/docs/desk/build-a-cockpit/) pour chaque département, avec ses [blocs](/fr/docs/desk/cockpit-blocks/) et sa [mise en page et son style](/fr/docs/desk/lay-out-and-style-a-cockpit/). Quelques [idées par département](/fr/docs/desk/cockpit-examples/).
+
+Pour comprendre comment les pièces s'assemblent, lisez d'abord [Comment fonctionne le Desk](/fr/docs/desk/how-the-desk-works/).
 
 ## Ce qu'il vous faut
 
-- Un espace de travail avec un écran de connexion. Le Desk est inclus dans les plans Pro et Business : ni dans Personal, ni dans l'édition Community.
-- Au moins une Solution publiée dans le Desk. Un administrateur les choisit dans **Administration** › **Desk** › **Published to the Desk**. Voyez [Ce qu'est une Solution, et comment la marquer](/fr/docs/introduction/what-a-solution-is/).
-- Un compte sur l'espace de travail, sur une place du Studio ou du Desk.
+- Un espace de travail avec un écran de connexion. Le Desk est inclus dans les plans Pro et Business : ni dans Personal, ni dans l'édition Community. Voyez [Les plans et leurs limites](/fr/docs/hosted/plans-and-limits/).
+- Au moins une Solution publiée dans le Desk.
+- Des personnes invitées sur une place Desk, ou sur une place Studio.
 
 ## Ouvrir le Desk
 
 Le Desk est à l'adresse de votre espace de travail. Le Studio est sous `/studio`, à la même adresse. Vous vous connectez une seule fois pour les deux.
 
-- Depuis le Studio, le menu d'une Solution dans **Agents & Workflows** propose **Open in Desk**.
-- Depuis une conversation du Desk, **Open in the Studio** emmène une personne qui construit dans le Studio.
-
-Une personne sur une **place Desk** ne lance que les Solutions publiées dans le Desk. Elle ne construit rien et n'ouvre pas le Studio.
-
-## L'accueil
-
-L'accueil est l'endroit où vous demandez du travail.
-
-- **Le champ pour demander.** Décrivez ce qu'il vous faut, ou tapez **@** pour choisir la Solution à qui demander. Vous pouvez aussi dicter, et ajouter une image quand vous demandez à un agent.
-- **Les suggestions.** Des demandes à lancer d'un clic.
-- **Waiting for you.** Les questions que vos Solutions vous posent, et les décisions qu'elles attendent.
-- **Le temps gagné.** Le temps que vos équipes vous ont fait gagner cette semaine et cette année.
-
-Le Desk ne montre que les Solutions qui y sont publiées, et seulement celles que vous pouvez voir. Si aucune n'est encore publiée pour vous, l'accueil le dit : demandez à la personne qui construit vos équipes.
-
-## La barre latérale
-
-| Élément | Ce qu'il montre |
-|---|---|
-| **Home** | Le champ pour demander, et ce qui est décrit ci-dessus. |
-| **Waiting for you** | Toutes les conversations qui attendent votre réponse. |
-| **Cockpits** | La page de départ de chaque département. Voyez [Construire un cockpit](/fr/docs/desk/build-a-cockpit/). |
-| **Groups** | Vos propres groupes de conversations. Faites-en un à partir des Solutions que vous choisissez : leurs conversations y entrent toutes seules. Ou remplissez-le à la main. |
-| **Recent** | Vos dernières conversations. |
-
-Sélectionnez le titre **Cockpits**, **Groups** ou **Recent** pour replier la rubrique, et à nouveau pour l'ouvrir. Votre navigateur se souvient de la façon dont vous les avez laissées. Repliée, la rubrique **Cockpits** montre encore un point quand quelque chose vous attend dans un cockpit.
-
-**All conversations** liste toutes les conversations, avec une recherche dans les titres et dans ce qui a été dit. **Group by** les range par **Solution**, **Cockpit**, **Group**, **Status** ou **Date**. Cochez plusieurs conversations pour agir sur toutes à la fois.
-
-## Agir sur une conversation
-
-| Action | Ce qu'elle fait |
-|---|---|
-| **Rename** | Donne à la conversation un titre à vous. |
-| **Pin** | La garde en haut. **Unpin** la remet à sa place. |
-| **Put in a group** | La range dans un de vos groupes. |
-| **Archive** | La déplace dans **Archived**. |
-| **Stop** | La conversation travaille encore, ou vous attend. Plus rien n'est fait, et plus rien ne vous y attend. |
-| **Close** | Le travail est fini. Vous pouvez encore la lire, mais plus y écrire. |
-| **Delete** | Supprime la conversation et ses questions, après confirmation. Elle quitte toutes les listes. C'est définitif. |
-
-Seule la personne qui a lancé une conversation peut la supprimer.
-
-## Partager une conversation
-
-1. Dans la conversation, sélectionnez **Share**.
-2. Tapez l'e-mail d'un collègue de votre espace de travail.
-3. Laissez la case **They may reply in it too** désactivée pour qu'il puisse seulement lire. Activez-la pour qu'il puisse répondre.
-4. Sélectionnez **Share**.
-
-Sous **Shared with**, chaque collègue apparaît avec **Reads** ou **Reads and replies**. Pour arrêter, sélectionnez **Stop sharing** à côté de son nom. Un collègue quitte une conversation partagée quand il le souhaite, avec **Leave this conversation**.
-
-## Chacun son Desk
-
-- Personne ne voit les conversations d'une autre personne, sauf celles partagées avec elle.
-- Les titres, les épingles, les archives et les groupes sont à vous. Sur une conversation partagée, chacun garde les siens.
-
-## Comment savoir que ça marche
-
-Demandez quelque chose à une Solution depuis l'accueil. La conversation s'ouvre, montre le travail à mesure qu'il avance, et apparaît dans **Recent**. Quand la Solution vous pose une question, la conversation apparaît dans **Waiting for you**.
-
-## Si ça ne marche pas
-
-- **L'accueil dit qu'aucune Solution n'est publiée pour vous.** Demandez à un administrateur d'en publier une dans **Administration** › **Desk**, et vérifiez que vous pouvez la voir.
-- **Une Solution manque.** Elle n'est pas publiée dans le Desk, ou vos droits ne vous permettent pas de la voir.
-- **Vous ne pouvez pas supprimer une conversation.** Quelqu'un d'autre l'a lancée. Seule cette personne le peut.
+- Depuis le Studio, le menu d'une Solution dans **Agents & Workflows** propose **Open in Desk**, et **Open the Desk** en haut du volet **Administration** › **Desk**.
+- Depuis le Desk, une personne qui construit ouvre le Studio avec le sélecteur **Desk** | **Studio** en haut de la barre latérale, ou avec **Open the Studio** dans le menu du compte en bas.
 
 ## Étape suivante
 
-[Construire un cockpit](/fr/docs/desk/build-a-cockpit/) pour un département.
+[Comment fonctionne le Desk](/fr/docs/desk/how-the-desk-works/).

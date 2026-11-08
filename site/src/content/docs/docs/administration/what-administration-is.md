@@ -21,7 +21,7 @@ lastUpdated: false
 | | **Configurations** | The settings of the server. |
 | | **Data** | Take everything the workspace holds away in one file, or bring such a file in. |
 | | **Network** | Which addresses your steps and agents may call. |
-| | **Desk** | The brand of [Agentivity Desk](/docs/desk/agentivity-desk/), the Solutions published to it, and its suggestions. The cockpits are built in the Studio, in **Cockpits**. |
+| | **Desk** | The brand of [Desk by Agentivity](/docs/desk/agentivity-desk/), the Solutions published to it, and its suggestions. The cockpits are built in the Studio, in **Cockpits**. |
 | **Access** | **People** | Who uses the workspace, and their roles. See [People, groups, roles and spaces](/docs/administration/people-groups-roles-spaces/). |
 | | **Groups** | Give roles to a whole team at once. |
 | | **Roles** | What each role lets a person do. |
