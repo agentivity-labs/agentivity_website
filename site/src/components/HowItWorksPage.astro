@@ -178,6 +178,17 @@ const schema = {
     </div>
   </section>
 
+  <!-- The Studio builds, the Desk uses: English only, like the Desk page -->
+  {'desk' in p && (
+    <section class="ed-wrap ed-sec ed-sec--tight-bottom" id="desk">
+      <div class="hw-step-intro hw-desk">
+        <h2 class="ed-h2 ed-h2--md">{p.desk.title}</h2>
+        <p class="ed-sec-sub">{p.desk.lead}</p>
+        <a class="hw-link" href={p.desk.href}>{p.desk.link} →</a>
+      </div>
+    </section>
+  )}
+
   <!-- Two ways to start -->
   <section class="ed-wrap ed-sec" id="start">
     <header class="ed-sec-head">
@@ -286,6 +297,7 @@ const schema = {
 .hw-ask-say { font-weight: 600; color: var(--ed-ink); }
 .hw-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; border-bottom: 1.5px solid currentColor; align-self: flex-start; }
 .hw-link:hover { opacity: .7; }
+.hw-desk { max-width: 900px; }
 .hw-stay { max-width: 46em; font-size: 18px; line-height: 1.5; color: var(--ed-ink-2); border-left: 5px solid var(--ed-yellow); padding-left: 18px; }
 .hw-hand-head { padding-block: clamp(56px, 7vw, 96px) clamp(16px, 2vw, 24px); }
 

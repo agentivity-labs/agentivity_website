@@ -226,6 +226,7 @@ const schema = [
       <article class="pr-seat">
         <h3>{seats.desk.title}</h3>
         <p class="pr-seat-sub">{seats.desk.sub}</p>
+        {'link' in seats.desk && <a class="pr-seat-link" href={seats.desk.link_href}>{seats.desk.link} →</a>}
         <table class="pr-tiers">
           <thead>
             <tr><th scope="col">{seats.desk.col_seats}</th><th scope="col">{seats.desk.col_month}</th><th scope="col">{seats.desk.col_year}</th></tr>
@@ -431,6 +432,8 @@ const schema = [
 .pr-seat { display: flex; flex-direction: column; gap: 12px; background: var(--ed-mist); border-radius: 24px; padding: 26px 24px; color: var(--ed-ink-2); }
 .pr-seat h3 { font-family: var(--ed-serif); font-size: 36px; line-height: 1.05; color: var(--ed-ink); }
 .pr-seat-sub { font-size: 16.5px; }
+.pr-seat-link { align-self: flex-start; font-size: 15.5px; font-weight: 600; border-bottom: 1px solid currentColor; }
+.pr-seat-link:hover { opacity: .7; }
 .pr-tiers { width: 100%; border-collapse: collapse; font-size: 15.5px; }
 .pr-tiers th, .pr-tiers td { padding: 10px 12px; border-bottom: 1px solid var(--ed-line-2); text-align: left; }
 .pr-tiers thead th { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); border-bottom: 2px solid var(--ed-ink); }

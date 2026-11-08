@@ -18,6 +18,7 @@ const facts = [
   'Workflows: fixed steps (forms, conditions, loops, approvals by a person, AI steps). AI works only in the steps you choose.',
   'Knowledge Bases (your own texts, searched by meaning) and Data Tables (rows your agents and workflows read and fill).',
   'Prompt Studio: write, test and improve the instructions of an agent.',
+  'Desk by Agentivity: where the whole team uses the AI teams built in the Studio. People ask for the work, approve where it matters and find their conversations again; an administrator chooses which AI teams each person can use. On the Pro and Business plans.',
   'AI model providers: Anthropic, OpenAI, Google Gemini, xAI, DeepSeek and AWS Bedrock, each with your own key. No markup on tokens.',
   'Licence: source-available, under the Elastic License 2.0. Code on GitHub; image on Docker Hub.',
   'Made by SMART PIXEL BV. Website in English and French.',
@@ -51,6 +52,7 @@ const keyDocs = [
   'workflows/what-a-workflow-is',
   'knowledge-bases/what-a-knowledge-base-is',
   'vibeapps/what-a-vibeapp-is',
+  'desk/agentivity-desk',
   'showcases/the-four-showcases',
   'reference/api',
 ];
@@ -64,6 +66,7 @@ const product = [
   ['Knowledge & Data', '/knowledge-and-data/', 'Knowledge Bases and Data Tables for your agents'],
   ['VibeApps', '/vibeapps/', 'applications that adapt to the person, with an AI team behind them'],
   ['Assistant', '/assistant/', 'build an agent, a team or a workflow by describing it'],
+  ['Desk by Agentivity', '/desk/', 'your builder sets up your processes once as AI teams; your whole team uses them from the Desk, with the access you choose and a person approving'],
   ['Pricing', '/pricing/', 'the Community edition is free forever, the hosted plans start with a trial'],
   ['Start your trial', '/start/', 'a hosted workspace of your own, no credit card'],
   ['Install the Community edition', '/community/', 'Docker, on your own server'],
