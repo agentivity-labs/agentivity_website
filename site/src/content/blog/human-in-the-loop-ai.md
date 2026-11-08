@@ -2,7 +2,7 @@
 title: "Human in the Loop for AI Agents: Where a Person Approves"
 description: "Human in the loop (HITL): an AI agent stops for a person to approve before it acts. Where the stops go, who approves, and how to avoid approval fatigue."
 pubDate: 2026-10-10
-updated: 2026-11-09
+updated: 2026-11-08
 author: "Agentivity Team"
 tags: ["features", "workflows"]
 thumb: "/media/blog/thumbs/human-in-the-loop-ai.jpg"
