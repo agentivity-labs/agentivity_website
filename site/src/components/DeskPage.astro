@@ -1,45 +1,26 @@
 ---
-// Desk by Agentivity (/desk), for the leader who does not build and the builder who sends them the page. English only
-// (KB-0147). Texts come from the "desk_page" block of en.json; the prices, seats and trial from src/data/plans.json,
-// through markers. The page stays out of the menu and of the sitemap until the founder puts it live.
+// Desk by Agentivity (/desk), for the leader who does not build. English only (KB-0147). Texts come from the "desk_page"
+// block of en.json. No price on this page: the seats link to /pricing.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
-import VideoAutoplay from './VideoAutoplay.astro';
-import data from '../data/plans.json';
 import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('en');
 const d = t.desk_page;
-const a = d.actions;
 
-const money = (v: number) => new Intl.NumberFormat('en-IE', { style: 'currency', currency: data.currency, maximumFractionDigits: 0 }).format(v);
-const num = (v: number) => new Intl.NumberFormat('en-IE').format(v);
-const planBy = (code: string) => data.plans.find((plan) => plan.code === code)!;
-const tiers = data.seats.desk.tiers;
-const values: Record<string, string> = {
-  trial_days: String(data.trial.days),
-  pro_price: money(planBy('pro').monthly), pro_studio: num(planBy('pro').studioSeats), pro_desk: num(planBy('pro').deskSeats),
-  business_price: money(planBy('business').monthly), business_studio: num(planBy('business').studioSeats), business_desk: num(planBy('business').deskSeats),
-  ...Object.fromEntries(tiers.flatMap((tier, i) => [
-    [`tier${i + 1}_price`, money(tier.monthly)], [`tier${i + 1}_from`, num(tier.from)], [`tier${i + 1}_to`, num(tier.to)],
-  ])),
-};
-const fill = (text: string, extra: Record<string, string> = {}) =>
-  Object.entries({ ...values, ...extra }).reduce((s, [k, v]) => s.split('{' + k + '}').join(v), text);
-
-// The FAQ links to the governance section and to the contact address; the schema gets the same answers as plain text.
+// The FAQ links to the contact address and to the seats; the schema gets the same answers as plain text.
 const email = 'hello@agentivity.io';
+const fill = (text: string, values: Record<string, string>) =>
+  Object.entries(values).reduce((s, [k, v]) => s.split('{' + k + '}').join(v), text);
 const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const answerHtml = (text: string) => fill(escape(text), {
   email: `<a href="mailto:${email}">${email}</a>`,
-  access_link: `<a href="#access">“${escape(d.access.h2)}”</a>`,
+  seats_link: `<a href="${d.seats.href}">${escape(d.seats.link)} →</a>`,
 });
-const answerText = (text: string) => fill(text, { email, access_link: `“${d.access.h2}”` });
+const answerText = (text: string) => fill(text, { email, seats_link: d.seats.link + ': ' + new URL(d.seats.href, Astro.site).href });
 
 const pageUrl = new URL('/desk/', Astro.site).href;
-const shareHref = `mailto:?subject=${encodeURIComponent(d.hero.eyebrow)}&body=${encodeURIComponent(pageUrl)}`;
-
 const schema = [
   { '@context': 'https://schema.org', '@type': 'WebPage', name: d.meta.title, description: d.meta.description, url: pageUrl },
   {
@@ -57,20 +38,10 @@ const schema = [
 
   <section class="ed-wrap desk-hero">
     <div class="desk-hero-copy">
-      <p class="ed-eyebrow">{d.hero.eyebrow}</p>
       <h1>{d.hero.h1}</h1>
-      <div class="desk-hero-side">
-        <p class="desk-hero-sub">{d.hero.sub}</p>
-        <div class="desk-actions">
-          <a class="ed-btn ed-btn--navy" href="#see-it">{a.see}</a>
-          <a class="ed-btn ed-btn--line" href={shareHref} data-share={pageUrl} data-done={a.send_done}><span>{a.send}</span></a>
-          <a class="ed-link" href="/start">{a.trial}</a>
-        </div>
-        <p class="desk-note">{fill(d.hero.note)}</p>
-        <a class="desk-small-link" href="/pricing#seats">{a.seats} →</a>
-      </div>
+      <p class="desk-hero-sub">{d.hero.sub}</p>
     </div>
-    <figure class="ed-shot desk-hero-shot">
+    <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
         <img src="/media/desk/desk-home.webp" width="2000" height="719" alt={d.hero.image_alt} fetchpriority="high" />
       </div>
@@ -78,85 +49,53 @@ const schema = [
     </figure>
   </section>
 
-  <section class="ed-band--mist" id="see-it">
-    <div class="ed-wrap ed-sec">
-      <header class="ed-sec-head desk-film-head">
-        <h2 class="ed-h2 ed-h2--md">{d.see.h2}</h2>
-        <p class="ed-sec-sub">{d.see.body}</p>
+  <section class="ed-band--navy">
+    <div class="ed-wrap ed-sec desk-contrast">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{d.contrast.h2}</h2>
+        <p class="ed-sec-sub">{d.contrast.body}</p>
       </header>
-      <figure class="ed-shot desk-film-shot">
-        <div class="ed-shot-frame ed-shot-frame--lift desk-film">
-          <video muted loop playsinline preload="metadata" poster="/media/desk/desk-loop.jpg" width="1920" height="1080" aria-label={d.see.video_alt} data-autoplay>
-            <source src="/media/desk/desk-loop.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <figcaption>{d.see.caption}</figcaption>
-      </figure>
+      <table class="desk-versus">
+        <thead>
+          <tr><th scope="col">{d.contrast.columns[0]}</th><th scope="col" class="desk-versus-us">{d.contrast.columns[1]}</th></tr>
+        </thead>
+        <tbody>
+          {d.contrast.rows.map(([personal, desk]) => (
+            <tr><td>{personal}</td><td class="desk-versus-us">{desk}</td></tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <section class="ed-wrap ed-sec">
-    <header class="ed-sec-head">
-      <h2 class="ed-h2 ed-h2--md">{d.risk.h2}</h2>
-      <p class="ed-sec-sub">{d.risk.body}</p>
-    </header>
-    <table class="desk-compare">
-      <thead>
-        <tr><td></td><th scope="col">{d.risk.columns[0]}</th><th scope="col" class="desk-compare-us">{d.risk.columns[1]}</th></tr>
-      </thead>
-      <tbody>
-        {d.risk.rows.map((row) => (
-          <tr>
-            <th scope="row">{row.label}</th>
-            <td data-label={d.risk.columns[0]}>{row.personal}</td>
-            <td data-label={d.risk.columns[1]} class="desk-compare-us">{row.desk}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </section>
-
-  <section class="ed-band--mist">
-    <div class="ed-wrap ed-sec desk-split">
-      <div>
-        <h2 class="ed-h2 ed-h2--md">{d.people.h2}</h2>
-        <p class="desk-lead">{d.people.body}</p>
-        <ul class="ed-rows">
-          {d.people.items.map((item) => <li><strong>{item.title}</strong><span>{item.body}</span></li>)}
-        </ul>
-      </div>
-      <figure class="ed-shot">
-        <div class="ed-shot-frame ed-shot-frame--lift">
-          <img src="/media/desk/desk-approval.webp" width="2000" height="1131" alt={d.people.image_alt} loading="lazy" />
-        </div>
-        <figcaption>{d.people.caption}</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="ed-wrap ed-sec desk-split desk-leader">
+  <section class="ed-wrap ed-sec desk-split" id="people">
     <div>
-      <h2 class="ed-h2 ed-h2--md">{d.leader.h2}</h2>
-      <p class="desk-lead">{d.leader.body}</p>
+      <h2 class="ed-h2 ed-h2--md">{d.people.h2}</h2>
+      <p class="desk-lead">{d.people.body}</p>
       <ul class="ed-rows">
-        {d.leader.items.map((item) => <li><strong>{item.title}</strong><span>{item.body}</span></li>)}
+        {d.people.items.map((item) => <li><strong>{item.title}</strong><span>{item.body}</span></li>)}
+      </ul>
+      <p class="desk-lead">{d.people.you_lead}</p>
+      <ul class="desk-you">
+        {d.people.you_items.map((line) => <li>{line}</li>)}
       </ul>
     </div>
     <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
-        <img src="/media/desk/desk-cockpit.webp" width="2000" height="1146" alt={d.leader.image_alt} loading="lazy" />
+        <img src="/media/desk/desk-approval.webp" width="2000" height="987" alt={d.people.image_alt} loading="lazy" />
       </div>
-      <figcaption>{d.leader.caption}</figcaption>
+      <figcaption>{d.people.caption}</figcaption>
     </figure>
   </section>
 
-  <section class="ed-band--navy" id="access">
+  <section class="ed-band--mist" id="access">
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
         <h2 class="ed-h2 ed-h2--md">{d.access.h2}</h2>
+        <p class="ed-sec-sub">{d.access.body}</p>
       </header>
       <ul class="desk-access">
-        {d.access.items.map((item) => <li><strong>{item.title}</strong><span>{item.body}</span></li>)}
+        {d.access.items.map((item) => <li><strong>{item.title}</strong> <span>{item.body}</span></li>)}
       </ul>
       <figure class="desk-access-shot">
         <img src="/media/desk/desk-governance.webp" width="1820" height="340" alt={d.access.image_alt} loading="lazy" />
@@ -164,30 +103,18 @@ const schema = [
     </div>
   </section>
 
-  <section class="ed-wrap ed-sec desk-setup">
-    <h2 class="ed-h2 ed-h2--md">{d.setup.h2}</h2>
-    <div>
-      <p class="desk-lead">{d.setup.body}</p>
-      <p class="desk-builder"><strong>{d.setup.builder_label}</strong> {d.setup.builder}</p>
-    </div>
+  <section class="ed-wrap ed-sec desk-cockpits" id="cockpits">
+    <h2 class="desk-h3">{d.cockpits.h2}</h2>
+    <p>{d.cockpits.body}</p>
   </section>
 
   <section class="ed-band--mist">
     <div class="ed-wrap ed-sec">
-      <header class="ed-sec-head">
-        <h2 class="ed-h2 ed-h2--md">{d.cost.h2}</h2>
+      <header class="ed-sec-head desk-seats">
+        <h2 class="ed-h2 ed-h2--md">{d.seats.h2}</h2>
+        <p class="ed-sec-sub">{d.seats.body}</p>
+        <a class="ed-link" href={d.seats.href}>{d.seats.link} →</a>
       </header>
-      <ul class="desk-plans">
-        {d.cost.plans.map((plan) => (
-          <li>
-            <h3>{plan.name}</h3>
-            <p class="desk-plan-price">{fill(plan.price)}</p>
-            <p>{fill(plan.seats)}</p>
-          </li>
-        ))}
-      </ul>
-      <p class="desk-cost-note">{d.cost.note}</p>
-      <a class="ed-link" href="/pricing#seats">{a.seats} →</a>
     </div>
   </section>
 
@@ -206,123 +133,57 @@ const schema = [
     <a class="ed-link desk-docs" href={d.faq.docs_href}>{d.faq.docs} →</a>
   </section>
 
-  <section class="ed-band--yellow">
-    <div class="ed-wrap ed-final">
-      <h2>{d.final.h2}</h2>
-      <p class="ed-final-sub">{d.final.body}</p>
-      <div class="desk-actions desk-actions--center">
-        <a class="ed-btn ed-btn--navy" href="#see-it">{a.see}</a>
-        <a class="ed-btn ed-btn--line" href={shareHref} data-share={pageUrl} data-done={a.send_done}><span>{a.send}</span></a>
-        <a class="ed-link" href="/start">{a.trial}</a>
-      </div>
-      <p class="ed-final-fine">{fill(d.final.note)}</p>
-      <a class="desk-small-link" href="/pricing#seats">{a.seats} →</a>
-    </div>
-  </section>
-
 </main>
 
-<p class="desk-status" role="status" aria-live="polite"></p>
-
 <SiteFooter lang="en" />
-<VideoAutoplay />
-
-<script is:inline>
-// "Send this page to your builder": the share sheet on a phone, a copied link elsewhere, the e-mail of the link without
-// JavaScript or when both fail.
-(function () {
-  const status = document.querySelector('.desk-status');
-  document.querySelectorAll('a[data-share]').forEach((link) => {
-    const label = link.querySelector('span');
-    const original = label.textContent;
-    link.addEventListener('click', async (event) => {
-      event.preventDefault();
-      const url = link.dataset.share;
-      if (navigator.share && matchMedia('(pointer: coarse)').matches) {
-        try { await navigator.share({ title: document.title, url }); return; }
-        catch (error) { if (error && error.name === 'AbortError') return; }
-      }
-      try {
-        await navigator.clipboard.writeText(url);
-        label.textContent = link.dataset.done;
-        status.textContent = link.dataset.done;
-        setTimeout(() => { label.textContent = original; status.textContent = ''; }, 2500);
-      } catch {
-        location.href = link.href;
-      }
-    });
-  });
-})();
-</script>
 
 </Base>
 
 <style>
 .desk-hero { display: flex; flex-direction: column; gap: clamp(36px, 4.5vw, 56px); padding-block: clamp(40px, 5vw, 72px) clamp(56px, 7vw, 96px); }
-.desk-hero-copy { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 20px clamp(32px, 4.5vw, 72px); align-items: start; }
-.desk-hero-copy .ed-eyebrow { grid-column: 1 / -1; }
+.desk-hero-copy { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 20px clamp(32px, 4.5vw, 72px); align-items: end; }
 .desk-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 5.6vw, 84px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
-.desk-hero-side { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
 .desk-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); }
-.desk-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
-.desk-actions--center { justify-content: center; }
-.desk-note { font-size: 15px; color: var(--ed-ink-3); }
-.desk-small-link { font-size: 15.5px; font-weight: 600; color: var(--ed-ink); border-bottom: 1px solid currentColor; }
-.desk-small-link:hover { opacity: .7; }
-.desk-hero-shot img, .ed-shot img { display: block; width: 100%; height: auto; }
+.ed-shot img { display: block; width: 100%; height: auto; }
 @media (max-width: 960px) {
   .desk-hero-copy { grid-template-columns: minmax(0, 1fr); }
 }
 
-#see-it, #access { scroll-margin-top: 72px; }
-.desk-film-head, .desk-film-shot { max-width: 1000px; margin-inline: auto; }
-.desk-film { background: #EAF8F6; }
-.desk-film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+/* The contrast: two columns, the Desk's one lit. */
+.desk-contrast .ed-sec-sub { color: var(--ed-on-navy); }
+.desk-versus { width: 100%; max-width: 980px; border-collapse: collapse; font-size: clamp(18px, 1.6vw, 21px); }
+.desk-versus th, .desk-versus td { width: 50%; text-align: left; padding: 18px 22px; border-top: 1px solid var(--ed-navy-line); color: var(--ed-on-navy); }
+.desk-versus thead th { border-top: 0; font-size: 14.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.desk-versus .desk-versus-us { color: #fff; font-weight: 700; background: var(--ed-navy-2); }
+.desk-versus thead .desk-versus-us { color: var(--ed-yellow); border-radius: 14px 14px 0 0; }
+@media (max-width: 640px) {
+  .desk-versus th, .desk-versus td { padding: 14px 12px; font-size: 16px; }
+  .desk-versus thead th { font-size: 12.5px; }
+}
 
 .desk-split { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(36px, 4.5vw, 64px); align-items: center; }
 @media (max-width: 960px) { .desk-split { grid-template-columns: minmax(0, 1fr); } }
-
 .desk-lead { margin-top: 18px; font-size: 19px; line-height: 1.5; color: var(--ed-ink-2); }
+.desk-split .ed-rows { margin-top: 10px; }
+.desk-split .ed-rows li { padding-block: 12px; }
+.desk-split .ed-rows strong { font-size: 17px; }
+.desk-you { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; color: var(--ed-ink-2); }
+.desk-you li::before { content: '—'; margin-right: 10px; color: var(--ed-ink-3); }
 
-.desk-compare { width: 100%; border-collapse: collapse; font-size: 17px; }
-.desk-compare th, .desk-compare td { text-align: left; vertical-align: top; padding: 18px 20px; border-top: 1px solid var(--ed-line-2); }
-.desk-compare thead th { border-top: 0; font-size: 14.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink-3); }
-.desk-compare thead td { border-top: 0; }
-.desk-compare tbody tr:last-child > * { border-bottom: 1px solid var(--ed-line-2); }
-.desk-compare tbody th { width: 22%; font-weight: 700; color: var(--ed-ink); }
-.desk-compare tbody td { width: 39%; color: var(--ed-ink-3); }
-.desk-compare .desk-compare-us { background: var(--ed-mist); color: var(--ed-ink); }
-.desk-compare thead .desk-compare-us { color: var(--ed-ink); border-radius: 14px 14px 0 0; }
-@media (max-width: 760px) {
-  .desk-compare thead { display: none; }
-  .desk-compare, .desk-compare tbody, .desk-compare tr, .desk-compare th, .desk-compare td { display: block; width: auto; }
-  .desk-compare tr { padding-block: 18px; border-top: 1px solid var(--ed-line-2); }
-  .desk-compare tbody tr:last-child { border-bottom: 1px solid var(--ed-line-2); }
-  .desk-compare tbody tr:last-child > * { border-bottom: 0; }
-  .desk-compare th, .desk-compare td { border-top: 0; padding: 0; }
-  .desk-compare tbody th, .desk-compare tbody td { width: auto; }
-  .desk-compare tbody th { margin-bottom: 10px; font-size: 19px; }
-  .desk-compare td { padding: 12px 14px; border-radius: 12px; }
-  .desk-compare td::before { content: attr(data-label); display: block; margin-bottom: 2px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ed-ink-3); }
-  .desk-compare td + td { margin-top: 8px; }
-}
-
+#people, #access, #cockpits { scroll-margin-top: 72px; }
 .desk-access { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 0 48px; }
-.desk-access li { display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid var(--ed-navy-line); color: var(--ed-on-navy); }
-.desk-access strong { font-size: 19px; font-weight: 700; color: #fff; }
-.desk-access-shot { margin-top: clamp(36px, 4.5vw, 56px); padding: clamp(12px, 2vw, 24px); border-radius: 18px; background: #fff; }
+.desk-access li { padding-block: 16px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-2); }
+.desk-access strong { font-weight: 700; color: var(--ed-ink); }
+.desk-access-shot { margin-top: clamp(32px, 4vw, 48px); padding: clamp(12px, 2vw, 24px); border-radius: 18px; background: #fff; }
 .desk-access-shot img { display: block; width: 100%; height: auto; }
 
-.desk-setup { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 24px clamp(36px, 5vw, 56px); align-items: start; }
-.desk-setup .desk-lead { margin-top: 0; }
-.desk-builder { margin-top: 22px; padding: 20px 22px; border-left: 4px solid var(--ed-yellow); background: var(--ed-mist); border-radius: 0 14px 14px 0; color: var(--ed-ink-2); }
-.desk-builder strong { color: var(--ed-ink); }
+/* The cockpits: a small section, text only until their stills exist. */
+.desk-cockpits { display: flex; flex-direction: column; gap: 12px; color: var(--ed-ink-2); }
+.desk-cockpits > * { max-width: 760px; }
+.desk-h3 { font-family: var(--ed-serif); font-size: clamp(32px, 3.2vw, 44px); line-height: 1.05; color: var(--ed-ink); }
 
-.desk-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; }
-.desk-plans li { display: flex; flex-direction: column; gap: 10px; padding: 26px 24px 28px; border-radius: 24px; background: #fff; color: var(--ed-ink-2); }
-.desk-plans h3 { font-family: var(--ed-serif); font-size: 34px; line-height: 1.05; color: var(--ed-ink); }
-.desk-plan-price { font-weight: 700; color: var(--ed-ink); }
-.desk-cost-note { margin-block: 26px 8px; max-width: 46em; color: var(--ed-ink-2); }
+.desk-seats { margin-bottom: 0; }
+.desk-seats .ed-link { align-self: flex-start; }
 
 .desk-faq { display: flex; flex-direction: column; max-width: 860px; }
 .desk-faq details { border-top: 1px solid var(--ed-line-2); }
@@ -334,6 +195,4 @@ const schema = [
 .desk-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
 .desk-faq details p :global(a) { color: var(--ed-ink); text-decoration: underline; }
 .desk-docs { margin-top: 28px; }
-
-.desk-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 </style>

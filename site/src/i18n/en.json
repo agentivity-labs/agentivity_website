@@ -3221,219 +3221,132 @@
     "note": "{trial_days}-day trial · no card · AI usage billed by your provider"
   },
   "desk_page": {
-    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v2.4 of marketing-content, reviewed (ACT-189). Prices, seats and the trial come from src/data/plans.json through markers.",
+    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v4.3 of marketing-content (ACT-189), reviewed, put live by the founder on 2026-11-08. No price, seat number or tier on this page: the detail stays on /pricing.",
     "meta": {
-      "title": "Desk by Agentivity: your best way of working, for everyone",
-      "description": "Your builder sets up your processes once as AI teams. Your whole team uses them from the Desk, with the access you choose and a person approving."
-    },
-    "actions": {
-      "see": "See it work in 30 seconds",
-      "send": "Send this page to your builder",
-      "send_done": "Link copied",
-      "trial": "Start your trial",
-      "seats": "See the Desk seats"
+      "title": "Desk by Agentivity: your company's AI toolbox",
+      "description": "Your company's AI agents, teams and workflows in one place, following your rules. Everyone uses the same approved tools instead of building their own."
     },
     "hero": {
-      "eyebrow": "Desk by Agentivity",
-      "h1": "Your best way of doing the work, used by everyone.",
-      "sub": "Your builder or agency sets up your processes once, as AI teams. Your whole team uses them from the Desk, and a person approves where it matters.",
-      "note": "Have your builder or agency set up your first AI team. {trial_days}-day trial · no card · AI usage billed by your provider.",
-      "image_alt": "The Desk home: a field to ask the company's AI teams, suggested requests, and one request waiting for the person's answer.",
+      "h1": "Your company's AI toolbox, ready for everyone.",
+      "sub": "Desk by Agentivity puts your company's AI agents, teams and workflows in one place, set up to follow your processes and rules. Everyone uses the same tools, approved by the company, instead of each person building their own.",
+      "image_alt": "The Desk home: one field to ask the company's AI teams, and ready requests from the support team, the sales team and the content team.",
       "caption": "Demo workspace."
     },
-    "see": {
-      "h2": "One request, start to finish",
-      "body": "A person asks for the work in plain words. The AI team does it, your way. When a decision is needed, the work stops and waits for a person to approve or decline. Then the team finishes the job.",
-      "video_alt": "In a Customer Care page, a person asks the support team about a customer's return. The AI team works on it, then stops and asks the person to decide on a refund outside the return window. The person declines, and the team returns its triage and a draft reply.",
-      "caption": "Real product, demo workspace. Some parts sped up."
-    },
-    "risk": {
-      "h2": "Personal AI accounts are a risk for your company.",
-      "body": "Your people already use AI. Each of them uses it in their own account, with their own prompts, sometimes on client documents. Nobody else can see that work or check it, and each person does the task a different way. The Desk gives AI work a home inside the company: your processes, in your company's own space, with the access you choose.",
+    "contrast": {
+      "h2": "A personal AI assistant helps one person. The Desk equips the whole company.",
+      "body": "With a personal assistant, each person builds their own prompts and their own way, and it is hard for anyone else to see or check it. With the Desk, the company sets up its AI teams once, the right way, and everyone uses them.",
       "columns": [
-        "Personal AI accounts",
+        "A personal AI assistant",
         "Desk by Agentivity"
       ],
       "rows": [
-        {
-          "label": "How a task is done",
-          "personal": "A different way for each person, every time",
-          "desk": "Your process, the same for everyone"
-        },
-        {
-          "label": "Who decides what is used",
-          "personal": "Each person, alone",
-          "desk": "You choose which AI teams your people can use"
-        },
-        {
-          "label": "Who can check the work",
-          "personal": "Only the person who did it",
-          "desk": "The work stays in your company's space; colleagues see what is shared with them, and the administrators you allow can read it"
-        },
-        {
-          "label": "Where the work is kept",
-          "personal": "In personal accounts",
-          "desk": "In your company's own space, hosted in Europe (Frankfurt), apart from every other customer"
-        },
-        {
-          "label": "Decisions",
-          "personal": "Each person judges alone",
-          "desk": "A person approves where it matters, and the approval stays in the conversation"
-        }
+        [
+          "Each person, their own way",
+          "The company's way, for everyone"
+        ],
+        [
+          "Rebuilt by everyone",
+          "Set up once, shared"
+        ],
+        [
+          "Hard for anyone else to see",
+          "Under your rules and your access"
+        ]
       ]
     },
     "people": {
       "h2": "As simple as asking a colleague",
-      "body": "There is nothing to build and no prompt to write. Your people ask for the work, and the right AI team does it.",
+      "body": "Your people have nothing to build and no prompt to write. They pick the AI team they need, ask in plain words, and the work is done the company's way.",
       "items": [
         {
           "title": "Ask.",
-          "body": "Type the request, pick the AI team with @, or dictate it, if transcription is set up. Add an image when it helps."
+          "body": "Type the request, pick the AI team with @, or dictate it if transcription is set up. Or start a ready request in one click."
         },
         {
           "title": "Approve.",
-          "body": "When a team needs a check, a choice or a sign-off, it waits for them in \"Waiting for you\"."
+          "body": "When a team needs a check, a choice or a sign-off, it waits for them in \"Waiting for you\". People keep the decisions."
         },
         {
-          "title": "Find it again.",
-          "body": "Their conversations stay, with search and filters, pins and their own groups."
-        },
-        {
-          "title": "Share on purpose.",
-          "body": "Their conversations are not open to the whole team. They share one with a colleague when they choose, to read only or to reply too."
+          "title": "Find and share.",
+          "body": "Their conversations stay, with search and filters. They share one with a colleague when they choose, to read only or to reply too."
         }
       ],
-      "image_alt": "A request waiting in the Desk: the support team asks the person to approve or refuse a customer's refund outside the return window.",
+      "you_lead": "What it changes for you:",
+      "you_items": [
+        "the same process, whoever does the task;",
+        "new people who can work your way from day one;",
+        "when an AI team is improved, everyone uses the improved one from their next request."
+      ],
+      "image_alt": "A request waiting in the Desk: the AI team asks the person to approve or refuse a refund before it goes on.",
       "caption": "Demo workspace."
     },
-    "leader": {
-      "h2": "A dashboard for each department",
-      "body": "Give Customer Service, Finance or Sales its own page on the Desk (we call it a cockpit). It holds the department's AI teams, what waits for each person, the news you want everyone to read, and figures from your own data.",
-      "items": [
-        {
-          "title": "The same process, whoever does the task.",
-          "body": "Your best person's way of working becomes the team's way."
-        },
-        {
-          "title": "New people can work your way from day one.",
-          "body": "They ask the Desk, and the process does the rest."
-        },
-        {
-          "title": "Time saved.",
-          "body": "The Desk shows each person the time their AI teams saved them this week and this year, and a department page can show what its teams saved the department this month."
-        },
-        {
-          "title": "People stay in charge.",
-          "body": "You decide where the work stops for a person to approve it."
-        },
-        {
-          "title": "It grows with the team.",
-          "body": "Start with a few people, and add seats as more of them join."
-        }
-      ],
-      "image_alt": "A Customer Care dashboard on the Desk: an announcement for the week, one request waiting, the field to ask the support team, and three figures from the team's order data.",
-      "caption": "Demo workspace; the figures are examples."
-    },
     "access": {
-      "h2": "You choose who uses what",
+      "h2": "Your rules, in your company's space",
+      "body": "When everyone uses AI in personal accounts, sometimes on client documents, nobody can see or check that work, and it leaves with the person. On the Desk, the AI work stays in your company's space, under your rules.",
       "items": [
         {
           "title": "You choose the AI teams on the Desk.",
-          "body": "An administrator decides which AI teams your people can use. Nothing appears there by accident."
+          "body": "An administrator decides which AI teams your people can use. Set it to only what you choose, and nothing else appears there."
         },
         {
           "title": "Access decides who sees what.",
-          "body": "Each person sees only the AI teams their access allows. Finance sees Finance's."
+          "body": "Finance sees Finance's AI teams."
         },
         {
           "title": "Each person has their own Desk.",
-          "body": "Colleagues do not see each other's conversations unless they share them. Only the administrators you allow can read them."
+          "body": "Colleagues see only the conversations shared with them. The administrators you allow can read them."
         },
         {
           "title": "You know who started what.",
-          "body": "Every conversation keeps who started it and which AI team did the work, and the approvals stay in the conversation."
+          "body": "Every conversation keeps who started it, which AI team did the work, and the approvals."
         },
         {
           "title": "An audit journal, on Business.",
-          "body": "Sign-ins, changes to people, roles and keys, and every share of a conversation are recorded for a year, for your administrators to read."
+          "body": "Sign-ins, changes to people, roles and keys, and every share are recorded for a year."
         },
         {
-          "title": "Each department page has owners.",
-          "body": "You choose who may change it. A change stays a draft until it goes live."
-        },
-        {
-          "title": "Your people use, your builder builds.",
-          "body": "People on a Desk seat use the AI teams. They cannot change them."
+          "title": "Hosted in Europe (Frankfurt),",
+          "body": "each company in its own space, apart from every other customer."
         },
         {
           "title": "When someone leaves, the work stays.",
-          "body": "You deactivate them: their access ends at once, and their conversations stay with the company. Nothing is deleted."
+          "body": "You deactivate them: their access ends at once, and nothing is deleted."
         }
       ],
-      "image_alt": "The Desk settings in Agentivity's administration: published to the Desk is set to Only what I choose, so the administrator picks each AI team that people can use."
+      "image_alt": "The Desk settings: published to the Desk is set to Only what I choose, so the administrator picks each AI team people can use."
     },
-    "setup": {
-      "h2": "Set up once, used every day",
-      "body": "Your processes are built as AI teams in the Agentivity Studio, by a person on your team, an automation freelancer or an agency you work with. Your people use them on the Desk. It is one account, one sign-in, one trial and one invoice.",
-      "builder_label": "For the builder reading this:",
-      "builder": "you build the AI teams once in the Studio and open them to your client's team on the Desk. Your client chooses who uses what."
+    "cockpits": {
+      "h2": "A cockpit for each department",
+      "body": "A department can also have its own page on the Desk. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it."
     },
-    "cost": {
+    "seats": {
       "h2": "Seats for the whole team",
-      "plans": [
-        {
-          "name": "Pro",
-          "price": "{pro_price} a month, excl. VAT",
-          "seats": "{pro_studio} builder seats (Studio) and {pro_desk} Desk seats."
-        },
-        {
-          "name": "Business",
-          "price": "{business_price} a month, excl. VAT",
-          "seats": "{business_studio} builder seats and {business_desk} Desk seats. Add Desk seats one at a time beyond the {business_desk}: {tier1_price} a month each for seats {tier1_from} to {tier1_to}, {tier2_price} for {tier2_from} to {tier2_to}, {tier3_price} for {tier3_from} to {tier3_to} (excl. VAT)."
-        },
-        {
-          "name": "Enterprise",
-          "price": "on quote",
-          "seats": "beyond that."
-        }
-      ],
-      "note": "AI usage is billed to you by your AI provider, on your own account. The Desk is not part of the Personal plan or of the free Community edition."
+      "body": "The Desk is included from the Pro plan.",
+      "link": "See the Desk seats",
+      "href": "/pricing#seats"
     },
     "faq": {
       "h2": "Questions leaders ask",
       "items": [
         {
-          "q": "Do I have to build anything?",
-          "a": "No. Your builder or agency sets up your processes as AI teams. You choose who uses them, and your people use them on the Desk."
-        },
-        {
-          "q": "Do my people need training?",
-          "a": "They ask for the work in plain words, as they would ask a colleague, and approve when a team asks them to. The Desk shows only what they can use."
+          "q": "Can my people still make their own AI teams?",
+          "a": "On a Desk seat, no: they use the AI teams the company chose, and they do not open the Studio."
         },
         {
           "q": "Where is our data kept, and who can see it?",
           "a": "Each company has its own space, hosted in Europe (Frankfurt), apart from every other customer. Your conversations, files and data stay in that space. Each request to an AI model goes to the provider you connected, on your own account. For any other data or access question, talk to us: {email}."
         },
         {
-          "q": "Who sees what, who did what, and what if someone leaves?",
-          "a": "All of it is under {access_link}, above. In short: each person sees what their access allows, the administrators you allow can read conversations, and on Business an audit journal keeps sign-ins, access changes and shares for a year. When someone leaves, you deactivate them and their work stays with the company."
-        },
-        {
           "q": "Which AI models does it use, and who pays for them?",
-          "a": "You connect your own AI model account. AI usage is billed to you by your provider, and your builder chooses the model for each AI team."
+          "a": "You connect your own AI model account. AI usage is billed to you by your provider."
         },
         {
           "q": "How do we start?",
-          "a": "Start a {trial_days}-day trial of Pro or Business, no card. The Desk is in the trial. Have your builder set up one AI team for a real task, then invite up to {pro_desk} people on Pro, or {business_desk} on Business, to use it on the Desk. More seats come with a Business subscription."
+          "a": "Start a trial of a plan that includes the Desk, with no card, then invite your team. The seats of each plan are on the pricing page: {seats_link}"
         }
       ],
       "docs": "How the Desk works, in the docs",
       "docs_href": "/docs/desk/agentivity-desk/"
-    },
-    "final": {
-      "h2": "Your best way of working, for the whole team",
-      "body": "Set up once by your builder. Used every day by your team. Approved by a person where it matters.",
-      "note": "{trial_days}-day trial · no card · AI usage billed by your provider"
     }
   }
 }

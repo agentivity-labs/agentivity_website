@@ -66,7 +66,7 @@ const product = [
   ['Knowledge & Data', '/knowledge-and-data/', 'Knowledge Bases and Data Tables for your agents'],
   ['VibeApps', '/vibeapps/', 'applications that adapt to the person, with an AI team behind them'],
   ['Assistant', '/assistant/', 'build an agent, a team or a workflow by describing it'],
-  ['Desk by Agentivity', '/desk/', 'your builder sets up your processes once as AI teams; your whole team uses them from the Desk, with the access you choose and a person approving'],
+  ['Desk by Agentivity', '/desk/', "your company's AI agents, teams and workflows in one place, following your rules; everyone uses the same proven tools instead of building their own"],
   ['Pricing', '/pricing/', 'the Community edition is free forever, the hosted plans start with a trial'],
   ['Start your trial', '/start/', 'a hosted workspace of your own, no credit card'],
   ['Install the Community edition', '/community/', 'Docker, on your own server'],
