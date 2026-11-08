@@ -3317,7 +3317,22 @@
     },
     "cockpits": {
       "h2": "A cockpit for each department",
-      "body": "A department can also have its own page on the Desk. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it."
+      "body": "A department can also have its own page on the Desk. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it.",
+      "items": [
+        {
+          "src": "/media/desk/cockpit-finance.webp",
+          "alt": "A Finance & Purchasing page on the Desk: the month's close notice, the field to ask, and ready requests for invoices, purchases and due diligence."
+        },
+        {
+          "src": "/media/desk/cockpit-marketing.webp",
+          "alt": "A Marketing page on the Desk: the Black Friday notice, the field to ask, and ready requests for a campaign, a blog post and a social media visual."
+        },
+        {
+          "src": "/media/desk/cockpit-travel.webp",
+          "alt": "A Travel & Events page on the Desk: the offsite notice, the field to ask, and figures for trips, approvals waiting and budget booked."
+        }
+      ],
+      "caption": "Demo workspace."
     },
     "seats": {
       "h2": "Seats for the whole team",
@@ -3330,7 +3345,7 @@
       "items": [
         {
           "q": "Can my people still make their own AI teams?",
-          "a": "On a Desk seat, no: they use the AI teams the company chose, and they do not open the Studio."
+          "a": "On a Desk seat, no: they use the AI teams the company chose."
         },
         {
           "q": "Where is our data kept, and who can see it?",

@@ -106,6 +106,14 @@ const schema = [
   <section class="ed-wrap ed-sec desk-cockpits" id="cockpits">
     <h2 class="desk-h3">{d.cockpits.h2}</h2>
     <p>{d.cockpits.body}</p>
+    <figure class="ed-shot">
+      <ul class="desk-cockpit-row">
+        {d.cockpits.items.map((item) => (
+          <li class="ed-shot-frame"><img src={item.src} width="1200" height="675" alt={item.alt} loading="lazy" /></li>
+        ))}
+      </ul>
+      <figcaption>{d.cockpits.caption}</figcaption>
+    </figure>
   </section>
 
   <section class="ed-band--mist">
@@ -177,9 +185,12 @@ const schema = [
 .desk-access-shot { margin-top: clamp(32px, 4vw, 48px); padding: clamp(12px, 2vw, 24px); border-radius: 18px; background: #fff; }
 .desk-access-shot img { display: block; width: 100%; height: auto; }
 
-/* The cockpits: a small section, text only until their stills exist. */
+/* The cockpits: a small section, a row of three. */
 .desk-cockpits { display: flex; flex-direction: column; gap: 12px; color: var(--ed-ink-2); }
-.desk-cockpits > * { max-width: 760px; }
+.desk-cockpits > h2, .desk-cockpits > p { max-width: 760px; }
+.desk-cockpits .ed-shot { margin-top: 16px; }
+.desk-cockpit-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .desk-cockpit-row { grid-template-columns: minmax(0, 1fr); } }
 .desk-h3 { font-family: var(--ed-serif); font-size: clamp(32px, 3.2vw, 44px); line-height: 1.05; color: var(--ed-ink); }
 
 .desk-seats { margin-bottom: 0; }
