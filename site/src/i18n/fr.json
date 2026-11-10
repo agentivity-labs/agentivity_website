@@ -444,7 +444,7 @@
         {
           "name": "Pro",
           "badge": "Cloud",
-          "desc": "Plus d'agents, des exécutions plus longues et une exécution prioritaire.",
+          "desc": "Des exécutions plus nombreuses et plus longues, et une exécution prioritaire.",
           "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=pro"
         },
@@ -457,8 +457,8 @@
         },
         {
           "name": "Enterprise",
-          "badge": "SSO · Marque blanche",
-          "desc": "SSO, marque blanche et support dédié.",
+          "badge": "Marque blanche",
+          "desc": "Marque blanche et support dédié.",
           "cta": "Nous contacter",
           "href": "mailto:hello@agentivity.io"
         }
@@ -1105,7 +1105,7 @@
           "name": "Pro",
           "status": "Essai de {trial_days} jours · sans carte bancaire",
           "for": "un professionnel qui s'en sert tous les jours",
-          "desc": "Plus d'agents, des exécutions plus longues, une exécution prioritaire et l'Observation, pour voir où vont vos tokens.",
+          "desc": "Des exécutions plus nombreuses et plus longues, une exécution prioritaire et l'Observation, pour voir où vont vos tokens.",
           "cta": "Créer votre première équipe",
           "href": "/fr/start?plan=pro"
         },
@@ -1122,7 +1122,7 @@
           "status": "Sur demande",
           "price": "Sur devis",
           "for": "une organisation avec plusieurs équipes et services",
-          "desc": "Au-delà de {studio_max} sièges Studio ou {desk_max} sièges Desk. Authentification unique, marque blanche et support dédié, sur votre infrastructure ou la nôtre.",
+          "desc": "Au-delà de {studio_max} sièges Studio ou {desk_max} sièges Desk. Marque blanche et support dédié, sur votre infrastructure ou la nôtre.",
           "cta": "Nous contacter",
           "href": "mailto:hello@agentivity.io"
         }

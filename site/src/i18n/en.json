@@ -463,8 +463,8 @@
         },
         {
           "name": "Enterprise",
-          "badge": "SSO · White-label",
-          "desc": "SSO, white-label and dedicated support.",
+          "badge": "White-label",
+          "desc": "White-label and dedicated support.",
           "cta": "Contact us",
           "href": "mailto:hello@agentivity.io"
         }
@@ -1117,7 +1117,7 @@
           "name": "Pro",
           "status": "{trial_days}-day trial · no card",
           "for": "a professional who relies on it every day",
-          "desc": "More agents, longer executions, priority execution and Observation, to see where your tokens go.",
+          "desc": "More and longer executions, priority execution and Observation, to see where your tokens go.",
           "cta": "Build your first team",
           "href": "/start?plan=pro"
         },
@@ -1134,7 +1134,7 @@
           "status": "On request",
           "price": "On quote",
           "for": "an organisation with several teams and departments",
-          "desc": "Beyond {studio_max} Studio or {desk_max} Desk seats. Single sign-on, white-label and dedicated support, on your infrastructure or ours.",
+          "desc": "Beyond {studio_max} Studio or {desk_max} Desk seats. White-label and dedicated support, on your infrastructure or ours.",
           "cta": "Contact us",
           "href": "mailto:hello@agentivity.io"
         }
