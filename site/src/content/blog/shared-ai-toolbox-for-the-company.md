@@ -14,11 +14,17 @@ faq:
     a: "Shadow AI is the use of AI tools at work outside anything the company has chosen or can see: personal assistant accounts, personal prompts, and sometimes company or client documents pasted into them."
   - q: "We already pay for one AI assistant for everyone. Is that not enough?"
     a: "It shares the tool, not the way of working. Each person still writes their own prompts and keeps their own habits, so the same task is done differently by each person. A shared AI team holds the company's process itself, so everyone who uses it works the same way."
+  - q: "Does a shared agent use less AI than everyone using their own AI assistant?"
+    a: "On usage-billed AI, often, for a task many people do the same way and an agent that runs it in a few fixed steps. Each person no longer rewrites the prompt and goes back and forth, and a shared agent reuses one tuned prompt from a cache and a model sized for each step. Our estimate, from public benchmarks and prices rather than our own measurement, is about 80% less on the usage part of the AI bill for one standard task used by a few hundred people, and less with only a few users."
   - q: "Should a company ban personal AI assistants?"
     a: "A ban rarely holds, because people use AI to get real work done. It works better to give them something more useful: AI teams set up once for the company's own tasks, that follow its processes and rules, and that everyone can use."
   - q: "What is Desk by Agentivity?"
     a: "Desk by Agentivity puts a company's AI teams in one place, set up to follow its processes and rules. People ask in plain words, the AI team prepares the work, and a person approves when it matters. Everyone uses the same tools, approved by the company, instead of each person building their own."
 ---
+
+<figure>
+  <img src="/media/blog/desk/cover.jpg" width="1600" height="900" alt="Two offices seen from above. On the left, people work alone at scattered desks buried in papers, notes and tangled cables. On the right, people work at tidy desks around one shared AI core, each connected to it by a line of light, while one person stands and approves on a tablet." />
+</figure>
 
 Your people already use AI at work. Some write their emails with it, some summarise documents, some prepare their replies to
 customers. Each of them has found their own way, with their own assistant, their own prompts and their own habits. Each of
@@ -82,6 +88,30 @@ Nobody intended it; it is simply the shortest way to get help.
 The best prompts in a company are small pieces of know-how. They hold how your company answers, checks and decides. When they
 live in personal accounts, they are not the company's. They are not shared, not improved together, and when the person
 leaves, they leave too.
+
+## What it costs on the AI bill
+
+Where AI is billed by use, as more and more company plans now are, every extra turn in a personal assistant sends the whole
+conversation back to the model, so the company pays again for the same text at every turn. Each person also does the
+same groundwork again: writing the prompt, trying one method and then another. A shared agent set up once for the task
+starts from a tuned prompt, reads it from a shared cache, and uses a model sized for each step. For one standard task
+used by a few hundred people, we estimate the usage part of the AI bill for that task falls by about 80%, likely
+between two-thirds and over 90%, and by less when only a few people share it. This is an estimate from public
+benchmarks and prices, not our own measurement, and it assumes an agent that does the task in one to three model
+calls; one that makes many more can cost more than the chat it replaces.
+
+<figure>
+  <picture>
+    <source media="(max-width: 640px)" srcset="/media/blog/desk/token-savings-chart-narrow.png" width="800" height="1309" />
+    <img src="/media/blog/desk/token-savings-chart.png" width="1600" height="1094" loading="lazy" alt="Column chart of the estimated share of the AI bill saved per task when people share one agent instead of each using their own chat. Median: 47% with 10 users, 79% with 100, 82% with 1,000 and 82% with 5,000; a line through the medians rises then levels off. Each column shows the low estimate and the likely range: 8-69% at 10 users, 65-90% at 100, 68-92% at 1,000 and 5,000. Estimate from public benchmarks, not a measurement." />
+  </picture>
+</figure>
+
+*How we estimated this:* we modelled one standard task with published model prices and
+[prompt caching rules](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), conversation lengths from
+[public chat datasets](https://arxiv.org/html/2405.01470v1), model routing results from
+[RouteLLM](https://lmsys.org/blog/2024-07-01-routellm/), and prompt-writing effort from an
+[IBM Research study](https://arxiv.org/html/2403.08950v1), then ran 20,000 combinations of our assumptions.
 
 ## Why banning it rarely works
 
