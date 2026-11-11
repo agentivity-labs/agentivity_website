@@ -25,7 +25,7 @@ const lang = 'en';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Legal</span>
       <h1>Privacy Policy</h1>
-      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: October 2026</span></div>
+      <div class="legal-meta-bar"><span>Effective: June 2026</span><span>·</span><span>Last updated: November 2026</span></div>
     </header>
 
     <div class="legal-section">
@@ -212,8 +212,39 @@ const lang = 'en';
       <p>Every email we send contains an unsubscribe link, and you can withdraw your consent at any time with one click. You can also email <a href="mailto:security@agentivity.io">security@agentivity.io</a> to unsubscribe or to have your data deleted. Withdrawing consent does not affect the lawfulness of the processing carried out before. Your other rights are described in section 10.</p>
     </div>
 
+    <div class="legal-section" id="google-user-data">
+      <h2>15. Google User Data</h2>
+      <p>This section explains how Agentivity treats the data it receives when you connect a Google account to your workspace, so that your workflows and agents can work with Google Sheets, Google Calendar, Google Docs, Google Drive, Google Slides, Google Forms, Google Contacts and Google Tasks. It covers the connections made through Agentivity's Google app. Agentivity does not connect to Gmail.</p>
+      <h3>15.1 Data accessed</h3>
+      <p>When you connect a Google account, you allow Agentivity to reach the following data of that account. Agentivity reads or changes only the items that a workflow or an agent you set up is told to work with, when it runs.</p>
+      <ul>
+        <li><strong>Google Sheets</strong> — all the spreadsheets of the account.</li>
+        <li><strong>Google Calendar</strong> — the events of all its calendars.</li>
+        <li><strong>Google Docs</strong> — all its documents.</li>
+        <li><strong>Google Drive</strong> — only the files that Agentivity creates or that you open with it, never the rest of your Drive.</li>
+        <li><strong>Google Slides</strong> — all its presentations.</li>
+        <li><strong>Google Forms</strong> — all its forms, which can be created and changed; their answers, which are only read.</li>
+        <li><strong>Google Contacts</strong> — all its contacts, which can be read and changed.</li>
+        <li><strong>Google Tasks</strong> — all its task lists and tasks.</li>
+        <li><strong>The e-mail address of your Google account</strong> — to name the connection in your workspace.</li>
+      </ul>
+      <p style="overflow-wrap:anywhere">The permissions requested from Google are: <code>https://www.googleapis.com/auth/spreadsheets</code>, <code>https://www.googleapis.com/auth/calendar.events</code>, <code>https://www.googleapis.com/auth/documents</code>, <code>https://www.googleapis.com/auth/drive.file</code>, <code>https://www.googleapis.com/auth/presentations</code>, <code>https://www.googleapis.com/auth/forms.body</code>, <code>https://www.googleapis.com/auth/forms.responses.readonly</code>, <code>https://www.googleapis.com/auth/contacts</code>, <code>https://www.googleapis.com/auth/tasks</code>.</p>
+      <h3>15.2 Use</h3>
+      <p>We use this data only to do what your own workflows and agents ask, when they run: for example, reading the rows of a spreadsheet or adding some, creating an event in a calendar, writing a document or reading the answers to a form. We do not use it for any other purpose.</p>
+      <h3>15.3 Storage</h3>
+      <p>The access and renewal tokens granted by Google are kept encrypted in your workspace, as secrets of the connection, until you delete the connection (see 15.7). The Google data that your workflows and agents work with is kept in your workspace where they put it: in the results, history and traces of their executions, in the conversations of the agents that keep one, and in the backups of the workspace, for as long as your workspace keeps them (see section 7). The logs of the service carry no Google data.</p>
+      <h3>15.4 Sharing</h3>
+      <p>Data received from Google is never sold, never shared with third parties and never used for advertising. It is passed to an AI model only when your own agent is built to send it, as part of its conversation: to the provider of the AI model account your workspace uses, or to Anthropic when your workspace uses the AI credits of Agentivity (see section 2.3).</p>
+      <h3>15.5 AI training</h3>
+      <p>Data received from Google is never used to train or improve AI models, ours or anyone else's.</p>
+      <h3>15.6 Limited Use</h3>
+      <p>Agentivity's use and transfer to any other app of information received from Google APIs will adhere to the Google API Services User Data Policy (<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">https://developers.google.com/terms/api-services-user-data-policy</a>), including the Limited Use requirements.</p>
+      <h3>15.7 Taking the access back</h3>
+      <p>You can take the access back at any time: delete the connection in your workspace, which also revokes it at Google, or remove Agentivity from your Google account at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.</p>
+    </div>
+
     <div class="legal-section">
-      <h2>15. Contact</h2>
+      <h2>16. Contact</h2>
       <p>For any privacy-related questions, requests, or complaints:</p>
       <p><strong>Agentivity</strong><br/>Email: <a href="mailto:security@agentivity.io">security@agentivity.io</a><br/>Response time: within 30 days (GDPR requests), within 5 business days (general enquiries)</p>
     </div>

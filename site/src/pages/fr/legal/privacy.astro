@@ -25,7 +25,7 @@ const lang = 'fr';
     <header class="legal-hero">
       <span class="eyebrow" style="color:var(--violet)">Légal</span>
       <h1>Politique de confidentialité</h1>
-      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : octobre 2026</span></div>
+      <div class="legal-meta-bar"><span>En vigueur : juin 2026</span><span>·</span><span>Dernière mise à jour : novembre 2026</span></div>
     </header>
 
     <div class="legal-section">
@@ -198,8 +198,39 @@ const lang = 'fr';
       <p>Chaque e-mail que nous envoyons contient un lien de désinscription, et vous pouvez retirer votre consentement à tout moment en un clic. Vous pouvez aussi écrire à <a href="mailto:security@agentivity.io">security@agentivity.io</a> pour vous désinscrire ou demander la suppression de vos données. Le retrait du consentement ne remet pas en cause la licéité du traitement effectué avant ce retrait. Vos autres droits sont décrits à la section 10.</p>
     </div>
 
+    <div class="legal-section" id="google-user-data">
+      <h2>14. Données des utilisateurs Google</h2>
+      <p>Cette section explique comment Agentivity traite les données qu'elle reçoit lorsque vous connectez un compte Google à votre espace de travail, pour que vos workflows et vos agents puissent travailler avec Google Sheets, Google Calendar, Google Docs, Google Drive, Google Slides, Google Forms, Google Contacts et Google Tasks. Elle couvre les connexions faites avec l'application Google d'Agentivity. Agentivity ne se connecte pas à Gmail.</p>
+      <h3>14.1 Données consultées</h3>
+      <p>Lorsque vous connectez un compte Google, vous permettez à Agentivity d'accéder aux données suivantes de ce compte. Agentivity ne lit ou ne modifie que les éléments sur lesquels un workflow ou un agent que vous avez configuré doit travailler, lorsqu'il s'exécute.</p>
+      <ul>
+        <li><strong>Google Sheets</strong> — toutes les feuilles de calcul du compte.</li>
+        <li><strong>Google Calendar</strong> — les événements de tous ses agendas.</li>
+        <li><strong>Google Docs</strong> — tous ses documents.</li>
+        <li><strong>Google Drive</strong> — uniquement les fichiers qu'Agentivity crée ou que vous ouvrez avec elle, jamais le reste de votre Drive.</li>
+        <li><strong>Google Slides</strong> — toutes ses présentations.</li>
+        <li><strong>Google Forms</strong> — tous ses formulaires, qui peuvent être créés et modifiés ; leurs réponses, qui sont seulement lues.</li>
+        <li><strong>Google Contacts</strong> — tous ses contacts, qui peuvent être lus et modifiés.</li>
+        <li><strong>Google Tasks</strong> — toutes ses listes de tâches et leurs tâches.</li>
+        <li><strong>L'adresse e-mail de votre compte Google</strong> — pour nommer la connexion dans votre espace de travail.</li>
+      </ul>
+      <p style="overflow-wrap:anywhere">Les autorisations demandées à Google sont : <code>https://www.googleapis.com/auth/spreadsheets</code>, <code>https://www.googleapis.com/auth/calendar.events</code>, <code>https://www.googleapis.com/auth/documents</code>, <code>https://www.googleapis.com/auth/drive.file</code>, <code>https://www.googleapis.com/auth/presentations</code>, <code>https://www.googleapis.com/auth/forms.body</code>, <code>https://www.googleapis.com/auth/forms.responses.readonly</code>, <code>https://www.googleapis.com/auth/contacts</code>, <code>https://www.googleapis.com/auth/tasks</code>.</p>
+      <h3>14.2 Utilisation</h3>
+      <p>Nous utilisons ces données uniquement pour faire ce que vos propres workflows et agents demandent, lorsqu'ils s'exécutent : par exemple lire les lignes d'une feuille de calcul ou en ajouter, créer un événement dans un agenda, rédiger un document ou lire les réponses à un formulaire. Nous ne les utilisons à aucune autre fin.</p>
+      <h3>14.3 Conservation</h3>
+      <p>Les jetons d'accès et de renouvellement accordés par Google sont conservés chiffrés dans votre espace de travail, comme secrets de la connexion, jusqu'à ce que vous supprimiez la connexion (voir 14.7). Les données Google sur lesquelles travaillent vos workflows et vos agents sont conservées dans votre espace de travail, là où ils les placent : dans les résultats, l'historique et les traces de leurs exécutions, dans les conversations des agents qui en gardent une, et dans les sauvegardes de l'espace, aussi longtemps que votre espace les conserve (voir la section 7). Les journaux du service ne contiennent aucune donnée Google.</p>
+      <h3>14.4 Partage</h3>
+      <p>Les données reçues de Google ne sont jamais vendues, jamais partagées avec des tiers et jamais utilisées à des fins publicitaires. Elles ne sont transmises à un modèle d'IA que lorsque votre propre agent est conçu pour les lui envoyer, dans sa conversation : au fournisseur du compte de modèles d'IA qu'utilise votre espace, ou à Anthropic lorsque votre espace utilise les crédits d'IA d'Agentivity (voir la section 2.3).</p>
+      <h3>14.5 Entraînement de l'IA</h3>
+      <p>Les données reçues de Google ne sont jamais utilisées pour entraîner ou améliorer des modèles d'IA, les nôtres comme ceux de quiconque.</p>
+      <h3>14.6 Utilisation limitée (Limited Use)</h3>
+      <p>L'utilisation et le transfert vers toute autre application, par Agentivity, des informations reçues des API Google respecteront la Google API Services User Data Policy (<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">https://developers.google.com/terms/api-services-user-data-policy</a>), y compris les exigences d'utilisation limitée (Limited Use).</p>
+      <h3>14.7 Retirer l'accès</h3>
+      <p>Vous pouvez retirer l'accès à tout moment : supprimez la connexion dans votre espace de travail, ce qui révoque aussi l'accès chez Google, ou retirez Agentivity de votre compte Google sur <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.</p>
+    </div>
+
     <div class="legal-section">
-      <h2>14. Contact</h2>
+      <h2>15. Contact</h2>
       <p>Pour toute question relative à cette politique :<br/><strong>Agentivity</strong><br/>E-mail : <a href="mailto:security@agentivity.io">security@agentivity.io</a><br/>Délai de réponse : 30 jours (demandes RGPD), 5 jours ouvrables (demandes générales)</p>
     </div>
   </main>
