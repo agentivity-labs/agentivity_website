@@ -2,6 +2,7 @@
 title: "Everyone at work has their own AI. Does your company?"
 description: "When everyone uses their own AI assistant, the company loses consistency, control and know-how. Here is what one shared toolbox of approved AI teams changes."
 pubDate: 2026-11-10
+updated: 2026-11-11
 author: "Agentivity Team"
 tags: ["features", "teams"]
 thumb: "/media/blog/thumbs/shared-ai-toolbox-for-the-company.jpg"
@@ -15,7 +16,7 @@ faq:
   - q: "We already pay for one AI assistant for everyone. Is that not enough?"
     a: "It shares the tool, not the way of working. Each person still writes their own prompts and keeps their own habits, so the same task is done differently by each person. A shared AI team holds the company's process itself, so everyone who uses it works the same way."
   - q: "Does a shared agent use less AI than everyone using their own AI assistant?"
-    a: "On usage-billed AI, often, for a task many people do the same way and an agent that runs it in a few fixed steps. Each person no longer rewrites the prompt and goes back and forth, and a shared agent reuses one tuned prompt from a cache and a model sized for each step. Our estimate, from public benchmarks and prices rather than our own measurement, is about 80% less on the usage part of the AI bill for one standard task used by a few hundred people, and less with only a few users."
+    a: "Often, on a task that many people do the same way. Nobody rewrites the prompt, pastes the document again or goes back and forth, and the shared agent reads its fixed instructions from a cache, where they cost much less. Our central estimate is that the usage part of the AI bill for that task falls by 15% to 43% for a team of 10, and by 36% to 61% from about 50 people, after which it hardly grows. Below about ten people, the saving can disappear. People's time and seats are not counted, and we assume the quality is the same. This is an estimate from simple assumptions, not a measurement."
   - q: "Should a company ban personal AI assistants?"
     a: "A ban rarely holds, because people use AI to get real work done. It works better to give them something more useful: AI teams set up once for the company's own tasks, that follow its processes and rules, and that everyone can use."
   - q: "What is Desk by Agentivity?"
@@ -91,27 +92,38 @@ leaves, they leave too.
 
 ## What it costs on the AI bill
 
-Where AI is billed by use, as more and more company plans now are, every extra turn in a personal assistant sends the whole
-conversation back to the model, so the company pays again for the same text at every turn. Each person also does the
-same groundwork again: writing the prompt, trying one method and then another. A shared agent set up once for the task
-starts from a tuned prompt, reads it from a shared cache, and uses a model sized for each step. For one standard task
-used by a few hundred people, we estimate the usage part of the AI bill for that task falls by about 80%, likely
-between two-thirds and over 90%, and by less when only a few people share it. This is an estimate from public
-benchmarks and prices, not our own measurement, and it assumes an agent that does the task in one to three model
-calls; one that makes many more can cost more than the chat it replaces.
+In a company, many tasks are done the same way by many people, again and again. Today, each person often does them in
+their own AI chat or with a personal agent, and starts over each time: they write the prompt, paste the document,
+explain what they want, then correct the answer and try again. Where AI is billed by use, the company pays for all of that text, and every new turn in a chat sends the whole conversation back to the
+model.
+
+With a shared agent, the same task goes through one agent, built once by a professional. Its instructions stay the same
+from one run to the next, so the model keeps them in its cache, where reading them costs much less. It follows a few
+fixed steps, so nobody rewrites the prompt or starts over.
+
+By our estimate, the usage part of the AI bill for that task falls by about 15% to 43% for a team of 10 who share
+it through one agent, by 29% to 55% for 20 people and by 36% to 61% for 50. The saving grows with the number of people,
+because the agent runs often enough to keep its cache in use and the cost of building it is shared over more tasks.
+Beyond about 50 people, it hardly grows any more: 39% to 63% for 500.
+
+The figure depends most on how often people correct and try again in their chats today, and on how chat apps bill the
+earlier part of a conversation, which is not published. Below about ten people, the agent runs too rarely to keep its
+cache in use, and the saving can disappear. We count only the AI bill: people's time and seats are not counted, and we
+assume the quality of the work is the same on both sides. This is an estimate from simple assumptions, not a measurement.
 
 <figure>
   <picture>
-    <source media="(max-width: 640px)" srcset="/media/blog/desk/token-savings-chart-narrow.png" width="800" height="1309" />
-    <img src="/media/blog/desk/token-savings-chart.png" width="1600" height="1094" loading="lazy" alt="Column chart of the estimated share of the AI bill saved per task when people share one agent instead of each using their own chat. Median: 47% with 10 users, 79% with 100, 82% with 1,000 and 82% with 5,000; a line through the medians rises then levels off. Each column shows the low estimate and the likely range: 8-69% at 10 users, 65-90% at 100, 68-92% at 1,000 and 5,000. Estimate from public benchmarks, not a measurement." />
+    <source media="(max-width: 640px)" srcset="/media/blog/desk/token-savings-ranges-narrow.svg" width="480" height="600" />
+    <img src="/media/blog/desk/token-savings-ranges.svg" width="960" height="560" loading="lazy" alt="Column chart of the middle of our estimate of the share of the usage AI bill saved on one task when people share one agent instead of each using their own chat or personal agent: between 15% and 43% with 10 people, between 29% and 55% with 20, between 36% and 61% with 50, and between 39% and 63% with 500. An estimate from simple assumptions, not a measurement." />
   </picture>
 </figure>
 
-*How we estimated this:* we modelled one standard task with published model prices and
-[prompt caching rules](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), conversation lengths from
-[public chat datasets](https://arxiv.org/html/2405.01470v1), model routing results from
-[RouteLLM](https://lmsys.org/blog/2024-07-01-routellm/), and prompt-writing effort from an
-[IBM Research study](https://arxiv.org/html/2403.08950v1), then ran 20,000 combinations of our assumptions.
+*How we estimated this:* we modelled one task that many people do, with published
+[model prices](https://platform.claude.com/docs/en/about-claude/pricing) and
+[prompt caching rules](https://platform.claude.com/docs/en/build-with-claude/prompt-caching). We then ran 20,000
+combinations of simple assumptions: how much text the task needs, how often people correct and try again, how much they
+paste again, how many already have a personal agent, and what it takes a professional to build and maintain the shared
+agent. Each range shows the middle 30% of the results. We counted no saving from moving steps to a smaller model.
 
 ## Why banning it rarely works
 
