@@ -1,0 +1,183 @@
+---
+// /solutions, the catalogue: the solutions by department, from the same list as the Solutions menu (nav.solutions.groups), so
+// the page and the menu never disagree. A group shows once one of its solutions is live (display rule A); a live solution with
+// a page gets a card with its clip, the others a quiet "Soon" line. Then who it is for, and the trial. English only; the French
+// page keeps its own layout (UseCasesPage).
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import TrialNote from './TrialNote.astro';
+import { useTranslations } from '../i18n/utils';
+
+const t = useTranslations('en');
+const p = t.use_cases_page as any;
+const c = p.catalogue;
+const nav = (t.nav as any).solutions;
+const cases: Record<string, any> = Object.fromEntries(p.cases.map((item: any) => [item.slug, item]));
+const groups = nav.groups
+  .filter((group: any) => group.items.some((item: any) => item.live))
+  .map((group: any) => ({
+    title: group.title,
+    line: c.groups[group.title],
+    live: group.items.filter((item: any) => item.href).map((item: any) => {
+      const slug = item.href.split('/').pop();
+      return { label: item.label, href: item.href, card: c.cards[slug], item: cases[slug] };
+    }),
+    soon: group.items.filter((item: any) => !item.href).map((item: any) => ({ label: item.label, line: c.soon[item.label] })),
+  }));
+const doors = (t as any).home_v3.built_for.cards;
+---
+<Base title={p.meta.title} description={p.meta.description} lang="en" alternates={false} look="editorial">
+
+<SiteHeader lang="en" ctaHref={p.hero.cta_href} />
+
+<main class="sc ed-page">
+
+  <section class="ed-wrap sc-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em>{p.hero.h1_accent}</em></h1>
+    <p class="sc-sub">{p.hero.sub}</p>
+    <div class="sc-act">
+      <a class="ed-btn ed-btn--navy" href={p.hero.cta_href}>{p.hero.cta}</a>
+      <TrialNote lang="en" />
+    </div>
+  </section>
+
+  <!-- The catalogue, by department -->
+  <section class="ed-band--mist" id="catalogue">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{c.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{c.h2} <em>{c.h2_accent}</em></h2>
+        <p class="ed-sec-sub">{c.sub}</p>
+      </header>
+      {groups.map((group: any) => (
+        <div class="sc-group">
+          <div class="sc-group-head">
+            <h3>{group.title}</h3>
+            <p>{group.line}</p>
+          </div>
+          <div class="sc-group-body">
+            <ul class="sc-cards">
+              {group.live.map((entry: any) => (
+                <li>
+                  <a class="sc-card" href={entry.href}>
+                    <span class="sc-card-media">
+                      {entry.item?.media
+                        ? <video muted loop playsinline preload="none" poster={'/media/' + entry.item.media + '.jpg'} width={entry.item.width} height={entry.item.height} aria-label={entry.item.alt} data-autoplay>
+                            <source src={'/media/' + entry.item.media + '.mp4'} type="video/mp4" />
+                          </video>
+                        : entry.item?.image
+                          ? <img src={entry.item.image} alt={entry.item.alt} width={entry.item.width} height={entry.item.height} loading="lazy" />
+                          : <span class="sc-card-placeholder">{p.labels.placeholder}</span>}
+                    </span>
+                    <span class="sc-card-text">
+                      <strong>{entry.label}</strong>
+                      <span>{entry.card?.line}</span>
+                      <span class="sc-type">{entry.card?.type}</span>
+                      <span class="sc-more">{p.labels.see} →</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {group.soon.length > 0 && (
+              <ul class="sc-soon">
+                {group.soon.map((entry: any) => (
+                  <li><strong>{entry.label}</strong> <span>{entry.line}</span> <span class="sc-soon-tag">{p.labels.soon}</span></li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      ))}
+      <p class="sc-all"><a class="ed-link" href={c.all.href} target="_blank" rel="noopener noreferrer">{c.all.label} →</a></p>
+    </div>
+  </section>
+
+  <!-- Built for -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.built_for.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{p.built_for.h2} <em>{p.built_for.h2_accent}</em></h2>
+    </header>
+    <ul class="sc-doors">
+      {doors.map((card: any) => (
+        <li>
+          <a href={card.href}>
+            <img src={card.photo} alt={card.photo_alt} width="800" height="450" loading="lazy" />
+            <span class="sc-door-text">
+              <strong>{card.title}</strong>
+              <span>{card.body}</span>
+              <span class="sc-more">{card.link} →</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="sc-all"><a class="ed-link" href={p.built_for.company_href}>{p.built_for.company_link}</a></p>
+  </section>
+
+  <!-- The last call -->
+  <section class="ed-band--yellow" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <a class="ed-btn ed-btn--navy" href={p.cta.primary_href}>{p.cta.primary}</a>
+      <TrialNote lang="en" />
+      <p class="sc-final-links"><a class="ed-link" href={p.cta.secondary_href}>{p.cta.secondary}</a></p>
+      <p class="sc-services">{p.cta.services} <a class="ed-link" href={p.cta.services_href}>{p.cta.services_link}</a></p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+<VideoAutoplay />
+
+</Base>
+
+<style>
+.sc-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-block: clamp(48px, 6vw, 96px) clamp(48px, 6vw, 80px); }
+.sc-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 6.4vw, 96px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.sc-hero h1 em { display: block; }
+.sc-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 38em; }
+.sc-act { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+
+.sc-group { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: clamp(20px, 3vw, 48px); padding-block: clamp(28px, 3vw, 40px); border-top: 1px solid var(--ed-line-2); }
+.sc-group-head h3 { font-family: var(--ed-serif); font-weight: 400; font-size: 34px; line-height: 1.05; color: var(--ed-ink); }
+.sc-group-head p { margin-top: 8px; font-size: 16px; line-height: 1.5; color: var(--ed-ink-3); }
+.sc-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sc-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: 18px; border: 1px solid var(--ed-line); background: #fff; transition: box-shadow .15s ease; }
+.sc-card:hover { box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
+.sc-card-media { display: block; aspect-ratio: 4 / 3; background: var(--ed-mist); overflow: hidden; }
+.sc-card-media video, .sc-card-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.sc-card-placeholder { display: grid; place-items: center; height: 100%; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+.sc-card-text { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: 18px 20px 20px; font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); }
+.sc-card-text strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.05; color: var(--ed-ink); }
+.sc-type { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.sc-more { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--ed-ink); }
+.sc-soon { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin-top: 16px; }
+.sc-soon li { padding-block: 10px; border-bottom: 1px solid var(--ed-line); font-size: 15px; line-height: 1.45; color: var(--ed-ink-3); }
+.sc-soon strong { font-weight: 700; color: var(--ed-ink-2); }
+.sc-soon-tag { display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 999px; background: #fff; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); vertical-align: 1px; }
+.sc-all { margin-top: 24px; font-size: 16.5px; }
+
+.sc-doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.sc-doors a { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: 20px; border: 1px solid var(--ed-line-2); font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.sc-doors a:hover { border-color: var(--ed-ink); }
+.sc-doors img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.sc-door-text { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 24px 26px 26px; }
+.sc-door-text strong { font-family: var(--ed-serif); font-weight: 400; font-size: 32px; line-height: 1.05; color: var(--ed-ink); }
+
+.sc-final-links { font-size: 16.5px; }
+.sc-services { font-size: 16px; color: var(--ed-ink-2); }
+
+@media (max-width: 900px) {
+  .sc-group, .sc-doors { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .sc-cards, .sc-soon { grid-template-columns: minmax(0, 1fr); }
+}
+</style>

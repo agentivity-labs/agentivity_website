@@ -42,7 +42,7 @@ In a VibeApp you write one sentence: Lisbon for two, in May, with a budget. A ma
 <figcaption>Trip Planner, a VibeApp built with Agentivity. Recorded from the product, played faster. Flights, hotels and payment are simulated in this demonstration.</figcaption>
 </figure>
 
-You can read the full walk-through, member by member, on the [Trip Planner page](/use-cases/trip-planner).
+You can read the full walk-through, member by member, on the [Trip Planner page](/solutions/trip-planner).
 
 ## How is a VibeApp different from a classic app?
 
@@ -86,10 +86,10 @@ A VibeApp does the work. A team researches, compares, checks and prepares, then 
 It fits situations where requests differ from one person to the next and where several kinds of know-how are needed to answer well:
 
 - **Selling something with many parts.** A trip, an insurance policy, a configured product. One request touches several specialities.
-- **Advising a choice.** In the [Shopping Lab example](/use-cases/shopping-lab), a shopper describes a need, and nine specialists read what the stores publish, compare like with like and hand back an illustrated report with its sources.
+- **Advising a choice.** In the [Shopping Lab example](/solutions/product-compare-team), a shopper describes a need, and nine specialists read what the stores publish, compare like with like and hand back an illustrated report with its sources.
 - **Handling requests with exceptions.** Hiring, customer requests, internal services: the usual case is routine, and the unusual one is where time is lost.
 
-It is also fair to say when you do not need one. Much of the time a team needs no app at all: you start it, it does its work, and it reaches you by email, on Slack or in a form when a decision is yours. The [use cases page](/use-cases#ways) describes the three ways people talk to a team.
+It is also fair to say when you do not need one. Much of the time a team needs no app at all: you start it, it does its work, and it reaches you by email, on Slack or in a form when a decision is yours. The [use cases page](/solutions) describes the three ways people talk to a team.
 
 ## How do you build a VibeApp?
 
@@ -112,4 +112,4 @@ You can begin with the portal and move to an app of your own once you know what 
 
 ## In short
 
-A VibeApp is an app that behaves less like a tool and more like a capable team: you set the goal, it adapts to what you explain, and it moves forward with you as your need changes. The clearest way to understand it is to watch one: [see Trip Planner](/use-cases/trip-planner), then [see how a team is built](/how-it-works).
+A VibeApp is an app that behaves less like a tool and more like a capable team: you set the goal, it adapts to what you explain, and it moves forward with you as your need changes. The clearest way to understand it is to watch one: [see Trip Planner](/solutions/trip-planner), then [see how a team is built](/how-it-works).

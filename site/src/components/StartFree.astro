@@ -11,10 +11,12 @@ interface Props {
   label?: string;
   /** 'start' to align on the left (a landing page's hero); centred by default. */
   align?: 'center' | 'start';
+  /** The plan the trial opens on (start?plan=…); none by default. */
+  plan?: string;
 }
-const { lang, label, align = 'center' } = Astro.props;
+const { lang, label, align = 'center', plan } = Astro.props;
 const t = useTranslations(lang);
-const href = lang === 'fr' ? '/fr/start' : '/start';
+const href = (lang === 'fr' ? '/fr/start' : '/start') + (plan ? '?plan=' + plan : '');
 ---
 <div class:list={['start-free', { 'start-free--start': align === 'start' }]}>
   <a class="ed-btn ed-btn--navy" href={href}>{label ?? t.start_cta.label}</a>

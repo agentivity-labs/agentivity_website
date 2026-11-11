@@ -82,7 +82,7 @@ Some of its boxes can use AI, such as reading a document or assessing a text. Ot
 <figcaption>A workflow in the Agentivity Studio: the CV Screening example, first up close, then in full. Recorded from the product.</figcaption>
 </figure>
 
-Its strength is predictability. In the [CV screening example](/use-cases/cv-screening), every application goes through the same steps against the same criteria, and you can show afterwards which path each one took.
+Its strength is predictability. In the [CV screening example](/solutions/cv-screener), every application goes through the same steps against the same criteria, and you can show afterwards which path each one took.
 
 **Choose a workflow when** the process must be identical for everyone, and when you need to be able to explain what happened.
 

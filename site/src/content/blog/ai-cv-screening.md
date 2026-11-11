@@ -79,7 +79,7 @@ Two fixed thresholds choose the route: **75 or more** goes to the shortlist, **l
 
 For the cases in between, a form shows the recruiter the score, the reasons, and the skills found and missing, and waits for the decision. Then an AI step writes the report for that outcome.
 
-The [CV Screening page](/use-cases/cv-screening) shows the same steps with the building blocks used.
+The [CV Screening page](/solutions/cv-screener) shows the same steps with the building blocks used.
 
 ## Where does the recruiter stay in charge?
 

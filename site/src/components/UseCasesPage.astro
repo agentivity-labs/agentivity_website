@@ -1,5 +1,5 @@
 ---
-// Use cases, shared by /use-cases and /fr/use-cases. Texts come from the "use_cases_page" block of the translation files.
+// The French use cases page (/fr/use-cases), in its own layout; the English /solutions is the catalogue (SolutionsCatalogPage). Texts come from the "use_cases_page" block of the translation files.
 // Only real showcases get a card with a clip and a page of their own; the ones not built yet are marked "coming soon".
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
@@ -14,9 +14,9 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = t.use_cases_page;
-const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+const base = lang === 'fr' ? '/fr/use-cases' : '/solutions';
 ---
-<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
+<Base title={p.meta.title} description={p.meta.description} lang={lang} alternates={lang === 'fr'} look="editorial">
 
 <SiteHeader lang={lang} />
 
@@ -39,11 +39,13 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
       <ul class="uc-cases">
         {p.cases.map((item: any) => (
           <li>
-            <a class="uc-case" href={local('/use-cases/' + item.slug)}>
+            <a class="uc-case" href={base + '/' + item.slug}>
               <div class="uc-case-media">
-                <video muted loop playsinline preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
-                  <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
-                </video>
+                {item.media
+                  ? <video muted loop playsinline preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
+                      <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
+                    </video>
+                  : <div class="uc-placeholder" role="img" aria-label={item.alt}><span>{p.labels.placeholder}</span></div>}
               </div>
               <div class="uc-case-text">
                 <p class="uc-tags"><span class="uc-tag uc-tag--mode">{item.tag}</span><span class="uc-tag">{item.size}</span></p>
@@ -168,6 +170,7 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
 .uc-cases li:nth-child(even) .uc-case-media { order: 2; }
 .uc-case-media { border-radius: 18px; overflow: hidden; border: 1px solid var(--ed-line-2); background: var(--ed-mist); }
 .uc-case-media video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top left; }
+.uc-placeholder { display: grid; place-items: center; aspect-ratio: 4 / 3; color: var(--ed-ink-3); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .uc-case-text { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: clamp(4px, 1vw, 16px); font-size: 18px; }
 .uc-case-text h3 { font-family: var(--ed-serif); font-size: clamp(38px, 4.2vw, 58px); line-height: 1; color: var(--ed-ink); }
 .uc-case-more { margin-top: 6px; font-size: 16.5px; font-weight: 700; color: var(--ed-ink); border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }

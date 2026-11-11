@@ -1,0 +1,642 @@
+---
+// The English home, v3 (Content & CRO, 2026-11-11), on the section list the founder approved: what it is, what it does for me,
+// how I build it, how far it goes, is it for me, how much. Texts come from the "home_v3" block of en.json; the pricing block is
+// the live home's, unchanged. Message first: the layout uses the editorial components, the design comes later. The product
+// images stay large enough to read as product.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import TrialNote from './TrialNote.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import plans from '../data/plans.json';
+import { useTranslations } from '../i18n/utils';
+import { connections } from '../data/connections';
+import { brandLogos } from '../data/brand-logos';
+
+const t = useTranslations('en');
+const h = t.home_v3;
+const steps = h.ladder.steps;
+const company = steps[steps.length - 1];
+// The connections strip: the apps, best-known first as connections.ts lists them, then the AI models.
+const onHome = connections.filter((item) => item.home);
+const apps = onHome.filter((item) => item.group === 'apps');
+const models = onHome.filter((item) => item.group === 'models');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: h.faq.items.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })),
+};
+---
+<Base title={h.meta.title} ogTitle={h.meta.og_title} description={h.meta.description} lang="en" schema={schema} look="editorial">
+
+<SiteHeader lang="en" ctaHref={h.trial.href} />
+
+<main class="h3 ed-page">
+
+  <!-- 1. Hero: the promise, then the product film, full width -->
+  <section class="ed-wrap h3-hero" id="top">
+    <h1>{h.hero.h1} <em>{h.hero.h1_accent}</em></h1>
+    <p class="h3-lead">{h.hero.sub}</p>
+    <div class="h3-act h3-act--center">
+      <a class="ed-btn ed-btn--navy" href={h.trial.href}>{h.trial.label}</a>
+      <p class="trial-note">{h.hero.trial_note.replace('{trial_days}', String(plans.trial.days))}</p>
+    </div>
+    <figure class="h3-film">
+      <!-- The current film from 12.5 s on: it opens on a title card the home no longer uses. -->
+      <video id="h3-film" muted loop playsinline autoplay preload="auto" poster="/media/home/hero-film-en-teams.jpg" width="1600" height="900" aria-label={h.hero.video_alt}>
+        <source src="/media/home/hero-film-en-teams.mp4" type="video/mp4" />
+      </video>
+    </figure>
+  </section>
+
+  <!-- 2. From one helper to an AI company -->
+  <section class="ed-band--mist" id="ladder">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{h.ladder.eyebrow}</p>
+        <h2 class="ed-h2">{h.ladder.title} <em>{h.ladder.title_accent}</em></h2>
+        <p class="ed-sec-sub">{h.ladder.sub}</p>
+      </header>
+      <ol class="h3-steps">
+        {steps.slice(0, -1).map((step, i) => (
+          <li>
+            <figure class="h3-shot">
+              <div class="ed-shot-frame"><img src={step.image} alt={step.caption} width={step.width} height={step.height} loading="lazy" /></div>
+            </figure>
+            <p class="h3-step-tag"><span>{i + 1}</span> {step.tag}</p>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+            <p class="h3-caption">{step.caption}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="h3-step-company">
+        <div>
+          <p class="h3-step-tag"><span>{steps.length}</span> {company.tag}</p>
+          <h3>{company.title}</h3>
+          <p>{company.body}</p>
+        </div>
+        <figure class="h3-shot">
+          <div class="ed-shot-frame"><img src={company.image} alt={company.caption} width={company.width} height={company.height} loading="lazy" /></div>
+          <figcaption>{company.caption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Ready-made solutions -->
+  <section class="ed-wrap ed-sec" id="solutions">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{h.solutions.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{h.solutions.title}</h2>
+      <p class="ed-sec-sub">{h.solutions.sub}</p>
+    </header>
+    <ul class="h3-cards">
+      {h.solutions.cards.map((card: any) => (
+        <li>
+          <a class="h3-card" href={card.href}>
+            {card.image && <img src={card.image} alt="" width="1024" height="768" loading="lazy" />}
+            <span class="h3-card-text">
+              <strong>{card.name}</strong>
+              <em>{card.gain}</em>
+              <span>{card.body}</span>
+              <span class="h3-card-meta">{card.meta}</span>
+              <span class="h3-more">{h.solutions.more} →</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="h3-under">
+      <div class="h3-act">
+        <a class="ed-btn ed-btn--navy" href={h.trial.href}>{h.trial.label}</a>
+        <TrialNote lang="en" />
+      </div>
+      <a class="ed-link" href={h.solutions.all.href}>{h.solutions.all.label}</a>
+    </div>
+  </section>
+
+  <!-- 4. Build it without code: four real views of the product -->
+  <section class="ed-band--mist" id="build">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{h.build.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{h.build.title}</h2>
+        <p class="ed-sec-sub">{h.build.sub}</p>
+      </header>
+      <ul class="h3-views">
+        {h.build.views.map((view) => (
+          <li>
+            <h3>{view.title}</h3>
+            <p>{view.body}</p>
+            <figure class="h3-shot">
+              <div class="ed-shot-frame h3-view-frame">
+                <video muted loop playsinline preload="none" poster={view.poster} width={view.width} height={view.height} aria-label={view.caption} data-autoplay>
+                  <source src={view.video} type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>{view.caption}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+      <p class="h3-links"><a class="ed-link" href={h.build.link.href}>{h.build.link.label}</a></p>
+    </div>
+  </section>
+
+  <!-- 5. The whole AI company at work, large, on a dark background -->
+  <section class="ed-band--navy h3-observation" id="observation">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{h.observation.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{h.observation.title}</h2>
+        <p class="h3-body">{h.observation.body}</p>
+      </header>
+      <figure class="h3-shot">
+        <div class="ed-shot-frame"><img src="/media/home/northmoor-observation.webp" alt={h.observation.alt} width="1400" height="900" loading="lazy" /></div>
+        <figcaption>{h.observation.caption}</figcaption>
+      </figure>
+      <p class="h3-line">{h.observation.line}</p>
+      <p class="h3-links"><a class="ed-link h3-link-navy" href={h.observation.link.href}>{h.observation.link.label}</a></p>
+    </div>
+  </section>
+
+  <!-- 6. Everyone works with the same AI teams, on one Desk: what the company gains, the real product, then the AI bill -->
+  <section class="ed-wrap ed-sec" id="desk">
+    <div class="h3-desk-top">
+      <div>
+        <p class="ed-eyebrow">{h.desk.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{h.desk.title}</h2>
+        <p class="h3-desk-body">{h.desk.body}</p>
+        <p class="h3-desk-plan">{h.desk.plan}</p>
+      </div>
+      <figure class="h3-shot">
+        <div class="ed-shot-frame"><img src="/media/home/home-desk-result.png" alt={h.desk.shot_alt} width="1600" height="1342" loading="lazy" /></div>
+        <figcaption>{h.desk.shot_caption}</figcaption>
+      </figure>
+    </div>
+    <h3 class="h3-compare-title">{h.desk.compare.title}</h3>
+    <div class="h3-compare">
+      {h.desk.compare.columns.map((column, i) => (
+        <div class:list={['h3-compare-col', { 'h3-compare-col--desk': i === 1 }]}>
+          <p class="h3-compare-head">{column.title}</p>
+          <ul>{column.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="h3-tokens">
+      <p>{h.desk.tokens.line}</p>
+      <figure class="h3-shot">
+        <picture>
+          <source media="(max-width: 640px)" srcset="/media/blog/desk/token-savings-ranges-narrow.svg" width="480" height="600" />
+          <img src="/media/blog/desk/token-savings-ranges.svg" alt={h.desk.tokens.alt} width="960" height="560" loading="lazy" />
+        </picture>
+        <figcaption>{h.desk.tokens.caption}</figcaption>
+      </figure>
+    </div>
+    <p class="h3-links">{h.desk.links.map((link) => <a class="ed-link" href={link.href}>{link.label}</a>)}</p>
+  </section>
+
+  <!-- 7. Connections: the apps, best-known first, monochrome and with no badge; then the AI models, smaller -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{h.connections.title}</h2>
+        <p class="ed-sec-sub">{h.connections.body}</p>
+      </header>
+      <ul class="h3-apps">
+        {apps.map((item) => {
+          const logo = item.logo ? brandLogos[item.logo] : undefined;
+          return (
+            <li>
+              {logo && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={logo.d} /></svg>}
+              <span>{item.name}</span>
+            </li>
+          );
+        })}
+        <li class="h3-apps-more">{h.connections.more}</li>
+      </ul>
+      <div class="h3-models">
+        <p class="h3-conn-label">{h.connections.models_label}</p>
+        <ul>{models.map((item) => <li>{item.name}</li>)}</ul>
+      </div>
+      <p class="h3-links"><a class="ed-link" href={h.connections.link.href}>{h.connections.link.label}</a></p>
+    </div>
+  </section>
+
+  <!-- 8. Built for -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{h.built_for.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{h.built_for.title}</h2>
+    </header>
+    <ul class="h3-doors-cards">
+      {h.built_for.cards.map((card) => (
+        <li>
+          <a href={card.href}>
+            <img src={card.photo} alt={card.photo_alt} width="800" height="450" loading="lazy" />
+            <span class="h3-doors-card-text">
+              <strong>{card.title}</strong>
+              <span>{card.body}</span>
+              <span class="h3-more">{card.link} →</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- 9. Pricing: the live home's block, unchanged -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec" id="pricing">
+      <header class="ed-sec-head ed-sec-head--row">
+        <div>
+          <p class="ed-eyebrow">{h.pricing.eyebrow}</p>
+          <h2 class="h3-price-title"><span class="ed-mark">{h.pricing.price}</span> <em>{h.pricing.rest}</em></h2>
+          <p class="ed-sec-sub">{h.pricing.sub}</p>
+        </div>
+        <a class="ed-link" href="/pricing">{h.pricing.link}</a>
+      </header>
+      <ul class="h3-tiers">
+        {h.pricing.tiers.map((tier: any) => (
+          <li class:list={['h3-tier', { 'h3-tier--featured': tier.featured }]}>
+            <h3>{tier.name}</h3>
+            <span class="h3-tier-badge">{tier.badge}</span>
+            <p>{tier.desc}</p>
+            <a class="h3-tier-cta" href={tier.href}>{tier.cta}</a>
+          </li>
+        ))}
+      </ul>
+      <div class="h3-whitelabel">
+        <strong>{h.pricing.whitelabel}</strong>
+        <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io">{h.pricing.whitelabel_cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Questions, then the last call -->
+  <section class="ed-wrap ed-sec h3-faq">
+    <h2 class="ed-h2 ed-h2--md">{h.faq.title}</h2>
+    {h.faq.items.map((item) => (
+      <details>
+        <summary>{item.q}</summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
+  </section>
+
+  <!-- The last call, on a darkened photo of a quiet room at sunset (decorative) -->
+  <section class="h3-final" id="cta">
+    <div class="ed-wrap ed-final">
+      <h2>{h.final.title} <em>{h.final.title_accent}</em></h2>
+      <p class="ed-final-sub">{h.final.sub}</p>
+      <a class="ed-btn ed-btn--yellow" href={h.trial.href}>{h.trial.label}</a>
+      <TrialNote lang="en" class="h3-final-note" />
+      <p class="h3-final-links">{h.final.links.map((link) => <a class="ed-link" href={link.href}>{link.label}</a>)}</p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+<VideoAutoplay />
+
+</Base>
+
+<script>
+  // The hero film stands still for people who asked their system for less motion (the poster stays).
+  const film = document.getElementById('h3-film') as HTMLVideoElement | null;
+  if (film && matchMedia('(prefers-reduced-motion: reduce)').matches) { film.removeAttribute('autoplay'); film.pause(); }
+
+  const moving = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wide = matchMedia('(min-width: 901px)').matches;
+
+  // Connections: the tiles slide slowly in three rows, in turns to the left and to the right; "And many more…" stays as a
+  // line under them. The static grid stays in the page, hidden, for people who asked for less motion.
+  const appsGrid = document.querySelector('.h3-apps') as HTMLElement | null;
+  if (moving && appsGrid) {
+    const tiles = Array.from(appsGrid.children).filter((li) => !li.classList.contains('h3-apps-more'));
+    const more = appsGrid.querySelector('.h3-apps-more');
+    const marquee = document.createElement('div');
+    marquee.className = 'h3-marquee';
+    const rows = 3;
+    for (let r = 0; r < rows; r++) {
+      const row = document.createElement('div');
+      row.className = 'h3-marquee-row';
+      const track = document.createElement('ul');
+      track.className = 'h3-marquee-track';
+      const own = tiles.filter((_, i) => i % rows === r);
+      own.forEach((li) => track.appendChild(li.cloneNode(true)));
+      own.forEach((li) => { const copy = li.cloneNode(true) as HTMLElement; copy.setAttribute('aria-hidden', 'true'); track.appendChild(copy); });
+      row.appendChild(track);
+      marquee.appendChild(row);
+    }
+    if (more) {
+      const line = document.createElement('p');
+      line.className = 'h3-marquee-more';
+      line.textContent = more.textContent;
+      marquee.appendChild(line);
+    }
+    appsGrid.hidden = true;
+    appsGrid.after(marquee);
+  }
+
+  // Build it without code: on a wide screen, the four views become one player. The titles are tabs, the active one shows its
+  // clip large with a thin bar for its progress, and the next tab starts when the clip ends. A click picks a tab.
+  const views = document.querySelector('.h3-views') as HTMLElement | null;
+  if (moving && wide && views) {
+    const items = Array.from(views.children) as HTMLElement[];
+    const videoOf = (li: HTMLElement) => li.querySelector('video') as HTMLVideoElement;
+    let active = 0;
+    const show = (index: number) => {
+      items.forEach((li, i) => {
+        const on = i === index;
+        li.classList.toggle('is-active', on);
+        li.querySelector('h3')?.setAttribute('aria-selected', String(on));
+        const video = videoOf(li);
+        if (!on) { video.pause(); video.currentTime = 0; li.style.setProperty('--p', '0'); }
+      });
+      active = index;
+      videoOf(items[index]).play().catch(() => {});
+    };
+    views.classList.add('is-player');
+    views.setAttribute('role', 'tablist');
+    items.forEach((li, i) => {
+      const video = videoOf(li);
+      video.loop = false;
+      const tab = li.querySelector('h3') as HTMLElement;
+      tab.setAttribute('role', 'tab');
+      tab.tabIndex = 0;
+      [tab, li.querySelector('p') as HTMLElement].forEach((el) => el.addEventListener('click', () => show(i)));
+      tab.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i); } });
+      video.addEventListener('timeupdate', () => { if (video.duration) li.style.setProperty('--p', String(video.currentTime / video.duration)); });
+      video.addEventListener('ended', () => show((i + 1) % items.length));
+    });
+    show(active);
+  }
+
+  // Start with one helper: on a wide screen, a thin line runs through the four step numbers and fills with yellow as the
+  // section scrolls by; each number lights up when the fill reaches it.
+  const ladder = document.querySelector('#ladder .ed-wrap') as HTMLElement | null;
+  if (moving && ladder) {
+    const markers = Array.from(ladder.querySelectorAll('.h3-step-tag span')) as HTMLElement[];
+    const steps = ladder.querySelector('.h3-steps') as HTMLElement;
+    const company = ladder.querySelector('.h3-step-company') as HTMLElement;
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('class', 'h3-rail');
+    svg.setAttribute('aria-hidden', 'true');
+    const base = document.createElementNS(ns, 'path');
+    const fill = document.createElementNS(ns, 'path');
+    base.setAttribute('class', 'h3-rail-base');
+    fill.setAttribute('class', 'h3-rail-fill');
+    svg.append(base, fill);
+    ladder.prepend(svg);
+    // Positions from the layout itself, so that the pieces still rising into place do not shift the line.
+    const at = (el: HTMLElement) => {
+      let x = 0, y = 0, e: HTMLElement | null = el;
+      while (e && e !== ladder) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent as HTMLElement | null; }
+      return { x: x + el.offsetWidth / 2, y: y + el.offsetHeight / 2 };
+    };
+    let total = 0, stops: number[] = [];
+    const draw = () => {
+      const on = matchMedia('(min-width: 901px)').matches;
+      ladder.classList.toggle('has-rail', on);
+      if (!on) return;
+      const m = markers.map(at);
+      const right = at(steps).x + steps.offsetWidth / 2 + 18;
+      const sep = at(company).y - company.offsetHeight / 2;
+      const last = m[m.length - 1];
+      // From one number to the next along the row, stepping up or down in the gap between two steps when their numbers
+      // are not level; then round the right side and along the line above the last step, down to its number.
+      const items = Array.from(steps.children) as HTMLElement[];
+      const points = [m[0]];
+      for (let i = 1; i < 3; i++) {
+        if (Math.abs(m[i].y - m[i - 1].y) > 1) {
+          const gap = at(items[i]).x - items[i].offsetWidth / 2 - 14;
+          points.push({ x: gap, y: m[i - 1].y }, { x: gap, y: m[i].y });
+        }
+        points.push(m[i]);
+      }
+      points.push({ x: right, y: m[2].y }, { x: right, y: sep }, { x: last.x, y: sep }, last);
+      const d = points.map((p, i) => (i ? 'L' : 'M') + p.x.toFixed(1) + ' ' + p.y.toFixed(1)).join(' ');
+      base.setAttribute('d', d);
+      fill.setAttribute('d', d);
+      svg.setAttribute('width', String(ladder.offsetWidth));
+      svg.setAttribute('height', String(ladder.offsetHeight));
+      total = fill.getTotalLength();
+      fill.style.strokeDasharray = String(total);
+      let run = 0;
+      const along = points.map((p, i) => (i ? (run += Math.hypot(p.x - points[i - 1].x, p.y - points[i - 1].y)) : 0));
+      stops = m.map((marker) => along[points.indexOf(marker)]);
+      update();
+    };
+    const update = () => {
+      if (!total) return;
+      const first = markers[0].getBoundingClientRect(), end = markers[markers.length - 1].getBoundingClientRect();
+      const line = innerHeight * 0.6;
+      const progress = Math.min(1, Math.max(0, (line - first.top) / Math.max(1, end.top - first.top)));
+      const length = progress * total;
+      fill.style.strokeDashoffset = String(total - length);
+      markers.forEach((marker, i) => marker.classList.toggle('is-lit', length >= stops[i] - 1 && progress > 0));
+    };
+    let frame = 0;
+    addEventListener('scroll', () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); }, { passive: true });
+    new ResizeObserver(draw).observe(ladder);
+    draw();
+  }
+
+  // The content of each section after the hero comes in the first time it reaches the screen: it fades in and rises, piece
+  // by piece (the title, then the text, then the image or the cards one after another). Only what is still below the screen
+  // is hidden, and only here: without the script, or for people who asked for less motion, all stays in place.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const groups = 'header, .h3-desk-top, .h3-step-company, .h3-tokens';
+    const pieces: HTMLElement[] = [];
+    const add = (el: Element) => {
+      if ((el as HTMLElement).hidden || el.matches('svg')) return;
+      if ((el.tagName === 'UL' || el.tagName === 'OL') && el.children.length <= 12 && !el.classList.contains('is-player')) pieces.push(...(Array.from(el.children) as HTMLElement[]));
+      else pieces.push(el as HTMLElement);
+    };
+    document.querySelectorAll('.h3 > section:not(.h3-hero)').forEach((section) => {
+      const inner = section.classList.contains('ed-wrap') ? section : section.querySelector('.ed-wrap') ?? section;
+      Array.from(inner.children).forEach((child) => {
+        if (!child.matches(groups)) return add(child);
+        Array.from(child.children).forEach((part) => (part.tagName === 'DIV' ? Array.from(part.children).forEach(add) : add(part)));
+      });
+    });
+    const reveal = new IntersectionObserver((entries) => {
+      const shown = entries.filter((entry) => entry.isIntersecting).map((entry) => entry.target as HTMLElement);
+      shown.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left);
+      shown.forEach((el, i) => {
+        el.style.transitionDelay = Math.min(i, 6) * 120 + 'ms';
+        el.classList.add('is-in');
+        reveal.unobserve(el);
+        // Once in place, the piece gets its own styles back (its hover transitions, without the delay).
+        el.addEventListener('transitionend', () => { el.classList.remove('h3-reveal', 'is-in'); el.style.transitionDelay = ''; }, { once: true });
+      });
+    }, { rootMargin: '0px 0px -4% 0px' });
+    pieces.forEach((el) => {
+      if (el.getBoundingClientRect().top < innerHeight) return;
+      el.classList.add('h3-reveal');
+      reveal.observe(el);
+    });
+  }
+</script>
+
+<style>
+.h3-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-block: clamp(40px, 5vw, 72px) clamp(48px, 6vw, 88px); text-align: center; }
+.h3-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 6.6vw, 100px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.h3-hero h1 em { display: block; }
+.h3-lead { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.h3-act { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.h3-act--center { align-items: center; }
+.h3-hero .trial-note { font-size: 15px; font-weight: 600; color: var(--ed-ink-2); }
+/* The content after the hero, as it first comes into view (the classes and the delay are set by the script). */
+.h3 :global(.h3-reveal) { opacity: 0; transform: translateY(56px); }
+.h3 :global(.h3-reveal.is-in) { opacity: 1; transform: none; transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1); }
+.h3-film { width: 100%; margin: 16px 0 0; border-radius: 24px; overflow: hidden; background: var(--ed-navy); box-shadow: 0 40px 70px -40px rgba(16, 26, 46, .6); }
+.h3-film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+
+.h3-shot { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.h3-shot img, .h3-shot video { display: block; width: 100%; height: auto; }
+.h3-shot figcaption, .h3-caption { font-size: 15px; line-height: 1.5; color: var(--ed-ink-3); }
+
+.h3-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.h3-steps li { display: flex; flex-direction: column; gap: 10px; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.h3-steps .h3-shot { margin-bottom: 8px; }
+.h3-steps h3, .h3-step-company h3 { font-family: var(--ed-serif); font-weight: 400; font-size: 32px; line-height: 1.05; color: var(--ed-ink); }
+.h3-step-tag { display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+/* Start with one helper, with its rail: the line behind the numbers, each label on the band's colour so the line passes behind it. */
+.has-rail { position: relative; }
+.h3 :global(.h3-rail) { position: absolute; top: 0; left: 0; z-index: 0; overflow: visible; pointer-events: none; }
+.h3 :global(.h3-rail-base) { fill: none; stroke: var(--ed-line-2); stroke-width: 2; }
+.h3 :global(.h3-rail-fill) { fill: none; stroke: var(--ed-yellow); stroke-width: 3; stroke-linecap: round; }
+.has-rail .h3-step-tag { position: relative; z-index: 1; width: fit-content; padding-right: 12px; background: var(--ed-mist); }
+.h3-step-tag span.is-lit { background: var(--ed-yellow); color: var(--ed-ink); }
+.h3-step-tag span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--ed-navy); color: #fff; letter-spacing: 0; transition: background .3s ease, color .3s ease; }
+.h3-step-company { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(28px, 4vw, 56px); align-items: center; margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--ed-line-2); font-size: 17px; line-height: 1.55; color: var(--ed-ink-2); }
+.h3-step-company > div { display: flex; flex-direction: column; gap: 12px; }
+
+.h3-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.h3-card { display: flex; flex-direction: column; height: 100%; border-radius: 20px; border: 1px solid var(--ed-line); overflow: hidden; background: #fff; transition: box-shadow .15s ease; }
+.h3-card:hover { box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
+.h3-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top left; background: var(--ed-mist); }
+.h3-card-text { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px 22px; font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); flex: 1; }
+.h3-card-text strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+.h3-card-text em { font-style: normal; font-weight: 700; color: var(--ed-ink); }
+.h3-card-meta { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
+.h3-more { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--ed-ink); }
+.h3-under { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; margin-top: 36px; }
+
+.h3-views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 40px); }
+.h3-views li { display: flex; flex-direction: column; gap: 8px; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.h3-views h3 { font-size: 20px; font-weight: 700; color: var(--ed-ink); }
+.h3-views .h3-shot { margin-top: 10px; }
+.h3-view-frame { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; background: #fff; }
+/* Build it without code, as a player: the tabs on the left, the active clip large on the right, a thin bar for its progress. */
+.h3-views.is-player { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); column-gap: clamp(28px, 4vw, 56px); row-gap: 0; align-items: start; }
+.h3-views.is-player li { display: contents; }
+.h3-views.is-player h3 { grid-column: 1; padding-top: 18px; cursor: pointer; color: var(--ed-ink-3); transition: color .2s ease; }
+.h3-views.is-player li > p { grid-column: 1; padding-bottom: 18px; cursor: pointer; color: var(--ed-ink-3); transition: color .2s ease; }
+.h3-views.is-player li > p::after { content: ""; display: block; height: 2px; margin-top: 14px; background: linear-gradient(var(--ed-navy), var(--ed-navy)) left / calc(var(--p, 0) * 100%) 100% no-repeat, var(--ed-line-2); }
+.h3-views.is-player li:nth-child(1) h3 { grid-row: 1; } .h3-views.is-player li:nth-child(1) > p { grid-row: 2; }
+.h3-views.is-player li:nth-child(2) h3 { grid-row: 3; } .h3-views.is-player li:nth-child(2) > p { grid-row: 4; }
+.h3-views.is-player li:nth-child(3) h3 { grid-row: 5; } .h3-views.is-player li:nth-child(3) > p { grid-row: 6; }
+.h3-views.is-player li:nth-child(4) h3 { grid-row: 7; } .h3-views.is-player li:nth-child(4) > p { grid-row: 8; }
+.h3-views.is-player .h3-shot { grid-column: 2; grid-row: 1 / span 8; display: none; margin-top: 0; }
+.h3-views.is-player li.is-active .h3-shot { display: flex; }
+.h3-views.is-player li.is-active h3 { color: var(--ed-ink); }
+.h3-views.is-player li.is-active > p { color: var(--ed-ink-2); }
+.h3-views.is-player h3:focus-visible { outline: 2px solid var(--ed-navy); outline-offset: 4px; }
+.h3-view-frame video { width: 100%; height: 100%; object-fit: contain; }
+
+.h3-observation .ed-eyebrow { color: var(--ed-yellow); }
+.h3-body { font-size: 20px; line-height: 1.5; color: var(--ed-on-navy); max-width: 34em; }
+.h3-observation .h3-shot figcaption { color: var(--ed-on-navy); }
+.h3-line { margin-top: 24px; font-weight: 700; color: #fff; }
+.h3-link-navy { color: #fff; }
+
+.h3-desk-top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+.h3-desk-body { margin-top: 18px; font-size: 19px; line-height: 1.55; color: var(--ed-ink-2); }
+.h3-desk-plan { margin-top: 16px; font-weight: 700; color: var(--ed-ink); }
+/* Why one Desk: each person on their own AI (muted), everyone on one Desk (highlighted) */
+.h3-compare-title { margin-top: clamp(48px, 6vw, 80px); font-family: var(--ed-serif); font-weight: 400; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.05; color: var(--ed-ink); }
+.h3-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 24px; }
+.h3-compare-col { padding: clamp(22px, 2.6vw, 32px); border-radius: 20px; background: var(--ed-mist); color: var(--ed-ink-3); }
+.h3-compare-head { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+.h3-compare-col li { display: flex; gap: 12px; padding-block: 11px; border-top: 1px solid var(--ed-line-2); font-size: 17px; line-height: 1.45; }
+.h3-compare-col li::before { content: "–"; flex: none; width: 14px; }
+.h3-compare-col--desk { background: var(--ed-navy); color: #fff; }
+.h3-compare-col--desk .h3-compare-head { color: var(--ed-yellow); }
+.h3-compare-col--desk li { border-top-color: var(--ed-navy-line); font-weight: 600; }
+.h3-compare-col--desk li::before { content: "✓"; color: var(--ed-yellow); }
+.h3-tokens { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: clamp(36px, 4vw, 52px); }
+.h3-tokens > p { font-size: 19px; line-height: 1.55; color: var(--ed-ink-2); }
+.h3-tokens img { border-radius: 16px; border: 1px solid var(--ed-line); }
+.h3-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 22px; font-size: 16.5px; }
+
+.h3-apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr)); gap: 10px; }
+.h3-apps[hidden] { display: none; }
+.h3-apps li, .h3 :global(.h3-marquee-track li) { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 10px 14px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+/* Connections in motion: three rows that slide slowly, in turns to the left and to the right; they stop under the pointer. */
+.h3 :global(.h3-marquee) { display: flex; flex-direction: column; gap: 10px; }
+.h3 :global(.h3-marquee-row) { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.h3 :global(.h3-marquee-track) { display: flex; gap: 10px; width: max-content; margin: 0; padding: 0 10px 0 0; list-style: none; animation: h3-slide 80s linear infinite; }
+.h3 :global(.h3-marquee-row:nth-child(even) .h3-marquee-track) { animation-direction: reverse; }
+.h3 :global(.h3-marquee:hover .h3-marquee-track) { animation-play-state: paused; }
+.h3 :global(.h3-marquee-track li) { flex: none; width: 190px; }
+.h3 :global(.h3-marquee-more) { margin-top: 6px; text-align: center; font-size: 15.5px; font-weight: 600; color: var(--ed-ink-3); }
+@keyframes h3-slide { to { transform: translateX(-50%); } }
+.h3-apps .h3-apps-more { justify-content: center; border-style: dashed; color: var(--ed-ink-3); }
+.h3-apps svg, .h3 :global(.h3-marquee-track svg) { flex: none; width: 22px; height: 22px; fill: var(--ed-ink-3); }
+.h3-models { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--ed-line-2); }
+.h3-models ul { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; font-weight: 600; color: var(--ed-ink-3); }
+.h3-conn-label { color: var(--ed-yellow); }
+.h3-conn-label { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+
+.h3-doors-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.h3-doors-cards a { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: 20px; border: 1px solid var(--ed-line-2); font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.h3-doors-cards img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.h3-doors-card-text { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 24px 26px 26px; }
+.h3-doors-cards a:hover { border-color: var(--ed-ink); }
+.h3-doors-cards strong { font-family: var(--ed-serif); font-weight: 400; font-size: 32px; line-height: 1.05; color: var(--ed-ink); }
+
+/* Pricing: the live home's block and its styles */
+.h3-price-title { font-family: var(--ed-serif); font-size: clamp(72px, 11vw, 168px); line-height: .92; letter-spacing: -.02em; }
+.h3-price-title .ed-mark { background-image: linear-gradient(transparent 62%, var(--ed-yellow) 62%, var(--ed-yellow) 90%, transparent 90%); }
+.h3-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px; align-items: stretch; }
+.h3-tier { display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--ed-line-2); border-radius: 20px; padding: 24px 22px; background: #fff; }
+.h3-tier h3 { font-family: var(--ed-serif); font-size: 32px; line-height: 1.05; }
+.h3-tier-badge { align-self: flex-start; padding: 4px 11px; border-radius: 999px; background: var(--ed-mist); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.h3-tier p { font-size: 16px; color: var(--ed-ink-2); }
+.h3-tier-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 600; border-bottom: 1.5px solid currentColor; }
+.h3-tier-cta:hover { opacity: .7; }
+.h3-tier--featured { background: var(--ed-navy); border-color: var(--ed-navy); color: #fff; }
+.h3-tier--featured .h3-tier-badge { background: var(--ed-yellow); color: var(--ed-ink); }
+.h3-tier--featured p { color: var(--ed-on-navy); }
+.h3-tier--featured .h3-tier-cta { color: var(--ed-yellow); font-weight: 700; }
+.h3-whitelabel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--ed-line); }
+.h3-whitelabel strong { font-size: 18px; font-weight: 700; }
+
+.h3-faq h2 { margin-bottom: 24px; }
+.h3-faq details { border-top: 1px solid var(--ed-line-2); }
+.h3-faq details:last-of-type { border-bottom: 1px solid var(--ed-line-2); }
+.h3-faq summary { list-style: none; display: flex; justify-content: space-between; gap: 20px; padding-block: 20px; font-size: 19px; font-weight: 700; color: var(--ed-ink); cursor: pointer; }
+.h3-faq summary::-webkit-details-marker { display: none; }
+.h3-faq summary::after { content: "+"; font-family: var(--ed-serif); font-size: 28px; line-height: 1; }
+.h3-faq details[open] summary::after { content: "–"; }
+.h3-faq details p { padding-bottom: 22px; max-width: 48em; font-size: 17px; line-height: 1.6; color: var(--ed-ink-2); }
+
+.h3-final { background: linear-gradient(rgba(12, 22, 40, .74), rgba(12, 22, 40, .74)), url(/media/home/photos/final-call.webp) center / cover no-repeat, var(--ed-navy); color: #fff; }
+.h3-final .ed-final-sub { color: var(--ed-on-navy); }
+.h3-final h2 em { color: var(--ed-yellow); }
+.h3-final :global(.h3-final-note) { color: var(--ed-on-navy); }
+.h3-final .ed-link { color: #fff; }
+.h3-final-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 16.5px; }
+
+@media (max-width: 900px) {
+  .h3-steps, .h3-cards, .h3-views, .h3-doors-cards, .h3-step-company { grid-template-columns: minmax(0, 1fr); }
+  .h3-desk-top, .h3-compare, .h3-tokens { grid-template-columns: minmax(0, 1fr); }
+}
+</style>

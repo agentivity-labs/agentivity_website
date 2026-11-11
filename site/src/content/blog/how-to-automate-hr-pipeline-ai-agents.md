@@ -155,4 +155,4 @@ You don't need all 7 agents on day one. A minimal viable HR team is:
 
 That alone eliminates 80% of the manual work. Build from there.
 
-[Try the HR pipeline template in Synergi →](/use-cases#hr)
+[Try the HR pipeline template in Synergi →](/solutions/cv-screener)

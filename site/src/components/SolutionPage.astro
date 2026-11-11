@@ -1,0 +1,161 @@
+---
+// A Solutions page by who the visitor is (/solutions/your-own-projects, /solutions/freelancers-and-agencies), English only (KB-0147).
+// Texts come from the "solutions_pages" block of en.json; the ready-made solutions from the "home" block.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { page: 'builders' | 'makers'; }
+const { page } = Astro.props;
+const t = useTranslations('en');
+const p: any = t.solutions_pages[page];
+const ready = t.home.ready;
+---
+<Base title={p.meta.title} description={p.meta.description} lang="en" alternates={false} look="editorial">
+
+<SiteHeader lang="en" />
+
+<main class="ed-page">
+
+  <section class="ed-wrap so-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1} <em>{p.hero.h1_accent}</em></h1>
+    <p class="so-hero-sub">{p.hero.sub}</p>
+    <div class="so-hero-act">
+      <div class="so-hero-cta">
+        <a class="ed-btn ed-btn--navy" href="/start">{p.hero.cta}</a>
+        <a class="ed-btn ed-btn--line" href={p.hero.secondary_href}>{p.hero.secondary}</a>
+      </div>
+      <TrialNote lang="en" />
+    </div>
+  </section>
+
+  {p.sections.map((section: any, i: number) => (
+    <section class:list={[{ 'ed-band--mist': i % 2 === 0 }]}>
+      <div class:list={['ed-wrap ed-sec', section.media ? 'ed-split ed-split--center' : 'so-plain']}>
+        <div>
+          <p class="ed-eyebrow">{section.eyebrow}</p>
+          <h2 class="ed-h2 ed-h2--md">{section.title}</h2>
+          {section.body && <p class="so-body">{section.body}</p>}
+          {section.points.length > 0 && (
+            <ul class="ed-rows">
+              {section.points.map((point: any) => <li><strong>{point.title}</strong><span>{point.body}</span></li>)}
+            </ul>
+          )}
+          {section.button && <a class="ed-btn ed-btn--line so-section-btn" href={section.button.href}>{section.button.label}</a>}
+          {section.note && <p class="so-note">{section.note}</p>}
+        </div>
+        {section.media && (
+          <figure class="ed-shot">
+            <div class="ed-shot-frame ed-shot-frame--lift">
+              {section.media.kind === 'video'
+                ? <video muted loop playsinline preload="none" poster={section.media.poster} width={section.media.width} height={section.media.height} aria-label={section.alt} data-autoplay><source src={section.media.src} type="video/mp4" /></video>
+                : <img src={section.media.src} width={section.media.width} height={section.media.height} alt={section.alt} loading="lazy" />}
+            </div>
+            <figcaption>{section.caption}</figcaption>
+          </figure>
+        )}
+      </div>
+    </section>
+  ))}
+
+  {p.ready && (
+    <section class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{p.ready.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{p.ready.h2}</h2>
+        <p class="ed-sec-sub">{p.ready.body}</p>
+      </header>
+      <ul class="so-ready">
+        {ready.cards.map((card) => (
+          <li>
+            <a class="so-ready-card" href={card.href}>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+              <span class="so-ready-tag">{card.meta}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {p.partners && (
+    <section class="ed-wrap so-partners">
+      <div>
+        <strong>{p.partners.title}</strong>
+        <span>{p.partners.body}</span>
+      </div>
+      <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io?subject=Partner%20program">{p.partners.cta}</a>
+    </section>
+  )}
+
+  {p.faq && (
+    <section class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.faq.h2}</h2>
+      </header>
+      <div class="so-faq">
+        {p.faq.items.map((item: any) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="ed-band--yellow">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2} {p.cta.h2_accent && <em>{p.cta.h2_accent}</em>}</h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <StartFree lang="en" label={p.hero.cta} />
+      {p.cta.second && <a class="ed-link" href={p.cta.second.href}>{p.cta.second.label} →</a>}
+      <p class="so-cross">{p.cross.text} <a class="ed-link" href={p.cross.href}>{p.cross.link} →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+
+<VideoAutoplay />
+
+</Base>
+
+<style>
+.so-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-block: clamp(56px, 8vw, 104px) clamp(56px, 7vw, 88px); }
+.so-hero h1 { font-family: var(--ed-serif); font-size: clamp(42px, 5.8vw, 84px); line-height: .98; letter-spacing: -.02em; max-width: 15em; text-wrap: balance; }
+.so-hero h1 em { display: block; }
+.so-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 38em; text-wrap: balance; }
+.so-hero-act { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 6px; }
+.so-hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+.so-body { margin-block: 18px 10px; font-size: 19px; line-height: 1.55; color: var(--ed-ink-2); max-width: 34em; }
+.so-plain { max-width: 860px; }
+.ed-shot img, .ed-shot video { display: block; width: 100%; height: auto; }
+.so-ready { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.so-ready-card { display: flex; flex-direction: column; gap: 10px; height: 100%; border: 1px solid var(--ed-line); border-radius: 20px; padding: 24px; color: var(--ed-ink-2); transition: border-color .15s ease, transform .15s ease; }
+.so-ready-card:hover { border-color: var(--ed-ink); transform: translateY(-2px); }
+.so-ready h3 { font-family: var(--ed-serif); font-size: 28px; line-height: 1.1; color: var(--ed-ink); }
+.so-ready-tag { align-self: flex-start; margin-top: auto; padding: 5px 12px; border-radius: 999px; background: var(--ed-mist); font-size: 14px; font-weight: 600; color: var(--ed-ink); }
+.so-partners { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-bottom: clamp(56px, 7vw, 96px); padding: 24px 28px; border: 1px dashed var(--ed-line-2); border-radius: 20px; }
+.so-partners div { display: flex; flex-direction: column; gap: 4px; color: var(--ed-ink-2); }
+.so-partners strong { font-size: 19px; color: var(--ed-ink); }
+.so-section-btn { margin-top: 22px; }
+.so-note { margin-top: 12px; font-size: 15px; color: var(--ed-ink-3); }
+.so-faq { display: flex; flex-direction: column; max-width: 860px; }
+.so-faq details { border-top: 1px solid var(--ed-line-2); }
+.so-faq details:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.so-faq summary { cursor: pointer; padding-block: 20px; font-size: 19px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+.so-faq summary::-webkit-details-marker { display: none; }
+.so-faq summary::after { content: '+'; font-weight: 400; font-size: 24px; line-height: 1; }
+.so-faq details[open] summary::after { content: '–'; }
+.so-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
+.so-cross { margin-top: 14px; font-size: 16px; }
+.so-cross .ed-link { font-size: 16px; }
+</style>

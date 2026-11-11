@@ -66,6 +66,41 @@
   ],
   "redirects": [
     {
+      "source": "/use-cases{/}?",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/shopping-lab{/}?",
+      "destination": "/solutions/product-compare-team",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/cv-screening{/}?",
+      "destination": "/solutions/cv-screener",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/invoice-clerk{/}?",
+      "destination": "/solutions/invoice-clerk",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/trip-planner{/}?",
+      "destination": "/solutions/trip-planner",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/makers{/}?",
+      "destination": "/solutions/your-own-projects",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/builders-and-agencies{/}?",
+      "destination": "/solutions/freelancers-and-agencies",
+      "permanent": true
+    },
+    {
       "source": "/docs/studio/home{/}?",
       "destination": "/docs/studio/find-your-way-in-the-studio/#the-home-page",
       "permanent": true

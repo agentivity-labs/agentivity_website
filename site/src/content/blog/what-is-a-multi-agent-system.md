@@ -91,4 +91,4 @@ That's the loop. And once you see the first team deliver its first output — ex
 
 ---
 
-*Agentivity is a source-available platform for building and running multi-agent teams. [Star us on GitHub](https://github.com/agentivity-labs/agentivity) or [explore the use cases](/use-cases).*
+*Agentivity is a source-available platform for building and running multi-agent teams. [Star us on GitHub](https://github.com/agentivity-labs/agentivity) or [explore the use cases](/solutions).*

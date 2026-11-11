@@ -102,7 +102,7 @@ Four examples, from a single approval step to a whole app.
 <figcaption>An approval step in a workflow: Finance approves only the invoices above the set amount.</figcaption>
 </figure>
 
-**Choosing, in an app.** In the [Trip Planner example](/use-cases/trip-planner), a team of specialists plans a trip. It never books on its own initiative: the app shows the flights, the hotel, the transfers and the dinner, and the traveller chooses each one.
+**Choosing, in an app.** In the [Trip Planner example](/solutions/trip-planner), a team of specialists plans a trip. It never books on its own initiative: the app shows the flights, the hotel, the transfers and the dinner, and the traveller chooses each one.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/trip-planner.jpg" width="1024" height="768">
@@ -111,9 +111,9 @@ Four examples, from a single approval step to a whole app.
 <figcaption>Trip Planner: the team proposes, the traveller chooses. Recorded from the product, played faster. Bookings and payment are simulated in this demonstration.</figcaption>
 </figure>
 
-**Confirming before the work starts.** In the [Shopping Lab example](/use-cases/shopping-lab), one member turns a vague wish into a precise brief and has the shopper confirm it before eight others start. A two-line confirmation avoids a long search in the wrong direction.
+**Confirming before the work starts.** In the [Shopping Lab example](/solutions/product-compare-team), one member turns a vague wish into a precise brief and has the shopper confirm it before eight others start. A two-line confirmation avoids a long search in the wrong direction.
 
-**Reviewing the doubtful cases.** In the [CV screening example](/use-cases/cv-screening), the clear cases are sorted, and the ones the workflow is not sure about go to a recruiter. The workflow also asks for help when it cannot read a document. More on this in [AI CV screening: how to keep a recruiter in charge](/blog/ai-cv-screening).
+**Reviewing the doubtful cases.** In the [CV screening example](/solutions/cv-screener), the clear cases are sorted, and the ones the workflow is not sure about go to a recruiter. The workflow also asks for help when it cannot read a document. More on this in [AI CV screening: how to keep a recruiter in charge](/blog/ai-cv-screening).
 
 ## How should the question reach the person?
 

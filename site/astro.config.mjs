@@ -39,6 +39,18 @@ const isFrenchFallbackDoc = (pathname) => pathname.startsWith('/fr/docs/') && !f
 // Until the documentation has a published home page, the Docs link of the website must not end on a 404.
 const docsRedirects = isDev || nav.home.published ? {} : { '/docs': '/how-it-works', '/fr/docs': '/fr/how-it-works' };
 
+// The solution pages moved under /solutions/ (2026-11-11). Vercel answers these with a 301 (vercel.json); these pages cover the
+// local preview.
+const solutionRedirects = {
+  '/use-cases': '/solutions',
+  '/use-cases/shopping-lab': '/solutions/product-compare-team',
+  '/use-cases/cv-screening': '/solutions/cv-screener',
+  '/use-cases/invoice-clerk': '/solutions/invoice-clerk',
+  '/use-cases/trip-planner': '/solutions/trip-planner',
+  '/solutions/makers': '/solutions/your-own-projects',
+  '/solutions/builders-and-agencies': '/solutions/freelancers-and-agencies',
+};
+
 export default defineConfig({
   site: 'https://www.agentivity.io',
 
@@ -84,7 +96,7 @@ export default defineConfig({
 
   output: 'static',
 
-  redirects: docsRedirects,
+  redirects: { ...docsRedirects, ...solutionRedirects },
 
   devToolbar: { enabled: false },
 

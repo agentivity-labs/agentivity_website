@@ -1,10 +1,11 @@
 ---
-// One use case explained, shared by /use-cases/<slug> and /fr/use-cases/<slug>.
+// One solution explained, shared by /solutions/<slug> and /fr/use-cases/<slug> (the French pages keep their address for now).
 // The cases are the "cases" list of the "use_cases_page" block: adding one there adds a card on the main page and a page here.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
+import TrialNote from './TrialNote.astro';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -13,7 +14,7 @@ const { lang, slug } = Astro.props;
 const t = useTranslations(lang);
 const p = t.use_cases_page;
 const l = p.labels;
-const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
+const base = lang === 'fr' ? '/fr/use-cases' : '/solutions';
 const item: any = p.cases.find((entry: any) => entry.slug === slug);
 const others = p.cases.filter((entry: any) => entry.slug !== slug);
 // The questions in plain words are also given to search and answer engines as an FAQ.
@@ -22,31 +23,36 @@ const faq = {
   '@type': 'FAQPage',
   mainEntity: item.qa.map((entry: any) => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })),
 };
+// The welcome-guide line under a trial button marks the names to look for with **, shown in bold.
 // An article only in English is announced as such on a French page.
-const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en : l.read;
+const readLabel = item.article && lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en : l.read;
 ---
-<Base title={item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang={lang} look="editorial">
+<Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang={lang} alternates={lang === 'fr'} look="editorial">
 
 <SiteHeader lang={lang} />
 
 <main class="ed-page">
 
   <section class="ed-wrap ux-hero">
-    <a class="ux-back" href={local('/use-cases')}>{l.back}</a>
+    <a class="ux-back" href={base}>{l.back}</a>
     <p class="ux-tags"><span class="ux-tag ux-tag--mode">{item.tag}</span><span class="ux-tag">{item.size}</span><span class="ux-name">{item.title}</span></p>
     <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
     <p class="ux-lead">{item.lead}</p>
     {item.tag === 'VibeApp' && <p class="ux-vibe">{t.site.vibeapp[2]}</p>}
   </section>
 
-  <section class="ed-wrap ux-clip">
+  <section class:list={['ed-wrap', 'ux-clip', { 'ux-clip--tall': item.height > item.width }]}>
     <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
-        <video muted loop playsinline controls preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
-          <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
-        </video>
+        {item.media
+          ? <video muted loop playsinline controls preload="none" poster={'/media/' + item.media + '.jpg'} width={item.width} height={item.height} aria-label={item.alt} data-autoplay>
+              <source src={'/media/' + item.media + '.mp4'} type="video/mp4" />
+            </video>
+          : item.image
+            ? <img src={item.image} alt={item.alt} width={item.width} height={item.height} />
+            : <div class="ux-placeholder" role="img" aria-label={item.alt}><span>{l.placeholder}</span></div>}
       </div>
-      <figcaption>{l.recorded}</figcaption>
+      {(item.media || item.image) && <figcaption>{item.caption ?? l.recorded}</figcaption>}
     </figure>
     <dl class="ux-facts">
       <div><dt>{l.facts.for}</dt><dd>{item.facts.for}</dd></div>
@@ -102,9 +108,20 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
     )}
     <div class="ux-get">
       <p><strong>{l.get}</strong> {item.get.body}</p>
-      {item.get.external
-        ? <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href} target="_blank" rel="noopener noreferrer">{item.get.link}</a>
-        : <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href}>{item.get.link}</a>}
+      <div class="ux-get-act">
+        {item.get.external
+          ? <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href} target="_blank" rel="noopener noreferrer">{item.get.link}</a>
+          : <a class="ed-btn ed-btn--sm ed-btn--navy" href={item.get.href}>{item.get.link}</a>}
+        {item.get.guide && (
+          <p class="ux-get-guide">{item.get.guide.split('**').map((part: string, i: number) => (i % 2 ? <strong>{part}</strong> : part))}</p>
+        )}
+        {item.get.trial && <TrialNote lang={lang} />}
+        {item.get.more && (
+          <p class="ux-get-more">
+            {item.get.more.map((link: any) => <a class="ed-link" href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>{link.link}</a>)}
+          </p>
+        )}
+      </div>
     </div>
   </section>
 
@@ -116,7 +133,7 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
         <div><dt>{entry.q}</dt><dd>{entry.a}</dd></div>
       ))}
     </dl>
-    <a class="ed-link" href={item.article}>{readLabel}</a>
+    {item.article && <a class="ed-link" href={item.article}>{readLabel}</a>}
   </section>
 
   <!-- Other use cases -->
@@ -126,8 +143,10 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
       <ul class="ux-others">
         {others.map((other: any) => (
           <li>
-            <a href={local('/use-cases/' + other.slug)}>
-              <img src={'/media/' + other.media + '.jpg'} alt="" width={other.width} height={other.height} loading="lazy" />
+            <a href={base + '/' + other.slug}>
+              {other.media || other.image
+                ? <img src={other.image ?? '/media/' + other.media + '.jpg'} alt="" width={other.width} height={other.height} loading="lazy" />
+                : <span class="ux-others-placeholder" aria-hidden="true"></span>}
               <span class="ux-others-text">
                 <strong>{other.title}</strong>
                 <span>{other.summary}</span>
@@ -136,7 +155,7 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
           </li>
         ))}
       </ul>
-      <a class="ed-link" href={local('/use-cases')}>{l.back}</a>
+      <a class="ed-link" href={base}>{l.back}</a>
     </div>
   </section>
 
@@ -164,7 +183,12 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
 
 /* ---------- clip and facts ---------- */
 .ux-clip { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; padding-bottom: clamp(56px, 7vw, 96px); }
-.ux-clip video { display: block; width: 100%; height: auto; }
+.ux-clip video, .ux-clip .ed-shot-frame > img { display: block; width: 100%; height: auto; }
+/* A phone clip stands on a mist background, its height kept within the screen. */
+.ux-clip--tall .ed-shot-frame { display: flex; justify-content: center; padding: clamp(20px, 3vw, 36px); background: var(--ed-mist); }
+.ux-clip--tall video { width: auto; max-width: 100%; max-height: min(640px, 75svh); }
+/* Where the clip is not recorded yet. */
+.ux-placeholder { display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--ed-mist); color: var(--ed-ink-3); font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .ux-facts { display: flex; flex-direction: column; border-top: 2px solid var(--ed-ink); }
 .ux-facts div { display: flex; flex-direction: column; gap: 6px; padding-block: 20px; border-bottom: 1px solid var(--ed-line-2); }
 .ux-facts dt { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
@@ -188,6 +212,10 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
 .ux-studio video { display: block; width: 100%; height: auto; }
 .ux-get { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: clamp(32px, 4vw, 48px); padding: 22px 26px; border-radius: 20px; background: var(--ed-mist); font-size: 17px; color: var(--ed-ink-2); }
 .ux-get strong { display: block; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink); margin-bottom: 4px; }
+.ux-get-act { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.ux-get-guide { font-size: 15.5px; color: var(--ed-ink-2); }
+.ux-get .ux-get-guide strong { display: inline; margin: 0; font-size: inherit; letter-spacing: 0; text-transform: none; }
+.ux-get-more { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15.5px; }
 
 /* ---------- in plain words ---------- */
 .ux-qa { padding-top: 0; }
@@ -202,6 +230,7 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
 .ux-others a { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: center; height: 100%; background: #fff; border-radius: 22px; padding: 16px; color: var(--ed-ink-2); font-size: 16px; }
 .ux-others a:hover { box-shadow: 0 24px 40px -30px rgba(16, 26, 46, .5); }
 .ux-others img { width: 150px; height: 112px; object-fit: cover; object-position: top left; border-radius: 12px; border: 1px solid var(--ed-line-2); }
+.ux-others-placeholder { display: block; width: 150px; height: 112px; border-radius: 12px; background: var(--ed-mist); }
 .ux-others-text { display: flex; flex-direction: column; gap: 6px; }
 .ux-others strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
 
@@ -210,6 +239,6 @@ const readLabel = lang === 'fr' && !item.article.startsWith('/fr/') ? l.read_en 
 }
 @media (max-width: 480px) {
   .ux-others a { grid-template-columns: minmax(0, 1fr); }
-  .ux-others img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+  .ux-others img, .ux-others-placeholder { width: 100%; height: auto; aspect-ratio: 4 / 3; }
 }
 </style>

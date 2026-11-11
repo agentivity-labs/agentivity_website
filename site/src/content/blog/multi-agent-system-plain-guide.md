@@ -47,7 +47,7 @@ Take a team that plans a trip. One agent would have to know flights, hotels, tra
 <figcaption>A manager handing work to specialists and collecting their answers. Recorded from the product.</figcaption>
 </figure>
 
-That is a real example: the [Trip Planner team](/use-cases/trip-planner) has thirteen members, and only the manager talks to all the others.
+That is a real example: the [Trip Planner team](/solutions/trip-planner) has thirteen members, and only the manager talks to all the others.
 
 ## Why use several agents instead of one?
 
@@ -112,7 +112,7 @@ Move to a team when the job has distinct parts that need different know-how, whe
 
 They solve different problems, and you can mix them.
 
-A **workflow** follows the path you drew, the same way every time. It suits processes that must be consistent and easy to audit. The [CV screening example](/use-cases/cv-screening) is a workflow: every CV goes through the same steps.
+A **workflow** follows the path you drew, the same way every time. It suits processes that must be consistent and easy to audit. The [CV screening example](/solutions/cv-screener) is a workflow: every CV goes through the same steps.
 
 A **team** decides its own path, within the roles you gave it. It suits work where each request is different.
 

@@ -144,6 +144,7 @@ const schema = [
                   <li>{plural(limits.studio, plan.data.studioSeats)}</li>
                   {plan.data.deskSeats > 0 && <li>{plural(limits.desk, plan.data.deskSeats)}</li>}
                   <li>{fill(limits.executions, { n: num(plan.data.executionsPerMonth) })}</li>
+                  <li>{plan.data.schedules == null ? limits.schedules_unlimited : plural(limits.schedules, plan.data.schedules)}</li>
                   <li>{fill(limits.duration, { d: duration(plan.data.maxExecutionMinutes) })}</li>
                   <li>{fill(limits.disk, { n: num(plan.data.diskGb) })}</li>
                 </ul>
@@ -176,6 +177,8 @@ const schema = [
                 <tr><th scope="row">{compare.rows.more_seats}</th>{data.plans.map((plan) => <td class="pr-wrap">{plan.extraSeats ? compare.more_seats : compare.none}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.spaces}</th>{data.plans.map((plan) => <td>{num(plan.spaces)}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.executions}</th>{data.plans.map((plan) => <td>{num(plan.executionsPerMonth)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.schedules}</th>{data.plans.map((plan) => <td>{plan.schedules == null ? compare.unlimited : num(plan.schedules)}</td>)}</tr>
+                <tr><th scope="row">{compare.rows.webhooks}</th>{data.plans.map(() => <td>{compare.unlimited}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.parallel}</th>{data.plans.map((plan) => <td>{num(plan.parallelExecutions)}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.duration}</th>{data.plans.map((plan) => <td>{duration(plan.maxExecutionMinutes)}</td>)}</tr>
                 <tr><th scope="row">{compare.rows.disk}</th>{data.plans.map((plan) => <td>{fill(limits.gb, { n: num(plan.diskGb) })}</td>)}</tr>

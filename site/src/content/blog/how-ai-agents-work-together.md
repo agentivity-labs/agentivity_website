@@ -144,7 +144,7 @@ A manager supervises the work. It sends the request to one specialist at a time,
 
 **Watch out for:** everything rests on the manager's brief. If its role is vague, it will hand out work badly. Describe carefully what each specialist is for.
 
-**Example:** the [Trip Planner team](/use-cases/trip-planner) has a manager and twelve specialists: flights, hotel, transfers and more. A weekend away and a month abroad do not call on the same ones.
+**Example:** the [Trip Planner team](/solutions/trip-planner) has a manager and twelve specialists: flights, hotel, transfers and more. A weekend away and a month abroad do not call on the same ones.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">

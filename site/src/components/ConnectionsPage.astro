@@ -1,0 +1,252 @@
+---
+// The Connections page (/connections), English only (KB-0147): a page that sells what the connections do, then the list.
+// Texts come from the "connections_page" block of en.json, the list and its status from src/data/connections.ts, the marks
+// from src/data/brand-logos.ts. The captures are real Studio canvases, in public/media/connections (a 16:9 cut on narrow screens).
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
+import { useTranslations } from '../i18n/utils';
+import { connections } from '../data/connections';
+import { brandLogos } from '../data/brand-logos';
+
+const t = useTranslations('en');
+const p = t.connections_page as any;
+const apps = connections.filter((item) => item.group === 'apps');
+const stepShot = p.how.steps.find((step: any) => step.image_alt);
+const live = [...apps.filter((item) => item.status === 'live'), ...connections.filter((item) => item.group === 'build' && item.status === 'live' && !['Schedules', 'Webhooks', 'Events from your apps'].includes(item.name))];
+const coming = [...apps.filter((item) => item.status === 'soon'), ...connections.filter((item) => item.group === 'build' && item.status === 'soon')];
+const shown = coming.slice(0, 8);
+const rest = coming.slice(8);
+const models = connections.filter((item) => item.group === 'models');
+const band = live.filter((item) => item.logo);
+const mark = (id?: string) => (id ? brandLogos[id] : undefined);
+---
+<Base title={p.meta.title} description={p.meta.description} lang="en" alternates={false} look="editorial">
+
+<SiteHeader lang="en" ctaHref={p.hero.cta_href} />
+
+<main class="cn ed-page">
+
+  <!-- 1. The promise, and the live apps -->
+  <section class="ed-wrap cn-hero">
+    <p class="ed-eyebrow">{p.hero.eyebrow}</p>
+    <h1>{p.hero.h1}</h1>
+    <p class="cn-lead">{p.hero.sub}</p>
+    <div class="cn-act">
+      <a class="ed-btn ed-btn--navy" href={p.hero.cta_href}>{p.hero.cta}</a>
+      <TrialNote lang="en" />
+      <a class="ed-link" href={p.hero.secondary_href}>{p.hero.secondary}</a>
+    </div>
+    <ul class="cn-band" aria-label="Apps that work today">
+      {band.map((item) => (
+        <li title={item.name}><svg viewBox="0 0 24 24" role="img" aria-label={item.name}><path d={mark(item.logo)!.d} /></svg></li>
+      ))}
+    </ul>
+    <picture class="cn-shot cn-shot--wide">
+      <source media="(max-width: 900px)" srcset="/media/connections/connections-hero-agent-tools-16x9.webp" width="2560" height="1440" />
+      <img src="/media/connections/connections-hero-agent-tools.webp" width="3200" height="1371" alt={p.hero.image_alt} fetchpriority="high" />
+    </picture>
+  </section>
+
+  <!-- 2. What you can do with them -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.uses.h2}</h2>
+        <p class="ed-sec-sub">{p.uses.sub}</p>
+      </header>
+      <ul class="cn-uses">
+        {p.uses.cards.map((card: any) => (
+          <li>
+            <span class="cn-uses-logos">{card.logos.map((id: string) => <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(id)?.d} /></svg>)}</span>
+            <strong>{card.title}</strong>
+            <span>{card.body}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="cn-line">{p.uses.line}</p>
+    </div>
+  </section>
+
+  <!-- 3. How it works -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{p.how.h2}</h2>
+    </header>
+    <ol class="cn-steps">
+      {p.how.steps.map((step: any, i: number) => (
+        <li>
+          <p class="cn-step-n"><span>{i + 1}</span></p>
+          <strong>{step.title}</strong>
+          <span>{step.body}</span>
+          {step.link && <a class="ed-link" href={step.href}>{step.link}</a>}
+        </li>
+      ))}
+    </ol>
+    {stepShot && (
+      <figure class="cn-shot cn-shot--step">
+        <img src="/media/connections/connections-step-and-tool.webp" width="2560" height="1440" alt={stepShot.image_alt} loading="lazy" />
+      </figure>
+    )}
+    <p class="cn-note">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+      <span>{p.how.security} <a class="ed-link" href={p.how.security_href}>{p.how.security_link}</a></span>
+    </p>
+  </section>
+
+  <!-- 4. Steps or tools -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.modes.h2}</h2>
+        <p class="ed-sec-sub">{p.modes.sub}</p>
+      </header>
+      <picture class="cn-shot cn-shot--wide">
+        <source media="(max-width: 900px)" srcset="/media/connections/connections-workflow-step-and-tools-16x9.webp" width="2560" height="1440" />
+        <img src="/media/connections/connections-workflow-step-and-tools.webp" width="3200" height="1371" alt={p.modes.image_alt} loading="lazy" />
+      </picture>
+      <div class="cn-modes">
+        <div><strong>{p.modes.step.title}</strong><span>{p.modes.step.body}</span></div>
+        <div><strong>{p.modes.tool.title}</strong><span>{p.modes.tool.body}</span></div>
+      </div>
+      <p class="cn-note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z" /></svg>
+        <span>{p.modes.control}</span>
+      </p>
+      <p class="cn-line">{p.modes.closing}</p>
+      <div class="cn-depth">
+        <strong>{p.modes.depth.title}</strong>
+        <span>{p.modes.depth.body}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. The AI model -->
+  <section class="ed-wrap ed-sec cn-models">
+    <h2 class="ed-h2 ed-h2--md">{p.models.h2}</h2>
+    <p class="ed-sec-sub">{p.models.line}</p>
+    <ul>
+      {models.map((item) => (
+        <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- 6. The apps, compact: all that works today, then one row of what is coming -->
+  <section class="ed-band--mist" id="apps">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{p.apps.h2}</h2>
+        <p class="ed-sec-sub">{p.apps.sub}</p>
+      </header>
+      <p class="cn-label">{p.apps.available}</p>
+      <ul class="cn-chips">
+        {live.map((item) => (
+          <li class="is-live">{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+        ))}
+      </ul>
+      <p class="cn-small">{p.apps.available_note}</p>
+      <p class="cn-starting">{p.apps.starting}</p>
+      <p class="cn-label">{p.apps.coming}</p>
+      <details class="cn-coming">
+        <summary>
+          <ul class="cn-chips">
+            {shown.map((item) => (
+              <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+            ))}
+            {rest.length > 0 && <li class="cn-more">{p.apps.more.replace('{n}', String(rest.length))}</li>}
+          </ul>
+        </summary>
+        <ul class="cn-chips cn-rest">
+          {rest.map((item) => (
+            <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+          ))}
+        </ul>
+      </details>
+      <div class="cn-ask">
+        <div>
+          <strong>{p.ask.h2}</strong>
+          <span>{p.ask.body}</span>
+        </div>
+        <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io?subject=Connection">{p.ask.cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. The last call -->
+  <section class="ed-band--yellow">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2}</h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <StartFree lang="en" label={p.cta.button} plan="pro" />
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+
+</Base>
+
+<style>
+.cn-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-block: clamp(48px, 7vw, 96px) clamp(48px, 6vw, 80px); }
+.cn-hero h1 { font-family: var(--ed-serif); font-size: clamp(42px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; max-width: 14em; text-wrap: balance; }
+.cn-lead { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); max-width: 40em; text-wrap: balance; }
+.cn-act { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.cn-band { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; }
+.cn-band li { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); }
+.cn-band svg { width: 24px; height: 24px; fill: var(--ed-ink-2); }
+
+/* The Studio captures: a canvas in a quiet frame. */
+.cn-shot { display: block; overflow: hidden; border-radius: 18px; border: 1px solid var(--ed-line); background: #e9ebee; }
+.cn-shot img { display: block; width: 100%; height: auto; }
+.cn-shot--wide { margin-top: 12px; }
+.cn-shot--step { max-width: 880px; margin: clamp(28px, 4vw, 44px) auto 0; }
+
+.cn-uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+.cn-uses li { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 18px; background: #fff; border: 1px solid var(--ed-line); font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); }
+.cn-uses strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.1; color: var(--ed-ink); }
+.cn-uses-logos { display: flex; gap: 8px; }
+.cn-uses-logos svg { width: 22px; height: 22px; fill: var(--ed-ink-3); }
+.cn-line { margin-top: 24px; font-size: 17px; line-height: 1.55; color: var(--ed-ink-2); max-width: 46em; }
+
+.cn-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.cn-steps li { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.cn-steps strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--ed-ink); }
+.cn-step-n span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13px; font-weight: 700; }
+.cn-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 32px; font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.cn-note svg { flex: none; width: 22px; height: 22px; margin-top: 1px; fill: none; stroke: var(--ed-navy); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.cn-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+.cn-modes div { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 18px; background: #fff; border: 1px solid var(--ed-line); font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.cn-modes strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
+.cn-depth { display: flex; flex-direction: column; gap: 8px; margin-top: 28px; padding: 24px; border-radius: 18px; background: var(--ed-navy); color: var(--ed-on-navy); font-size: 16.5px; line-height: 1.55; }
+.cn-depth strong { font-size: 19px; color: #fff; }
+
+.cn-models { display: flex; flex-direction: column; gap: 16px; }
+.cn-models ul { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 8px; }
+.cn-models li { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; color: var(--ed-ink-2); }
+.cn-models svg { width: 26px; height: 26px; fill: var(--ed-ink-2); }
+
+.cn-label { margin-top: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
+.cn-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.cn-chips li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px dashed var(--ed-line-2); background: transparent; font-size: 15px; font-weight: 600; color: var(--ed-ink-3); }
+.cn-chips li.is-live { border: 1px solid var(--ed-line); background: #fff; color: var(--ed-ink); }
+.cn-chips svg { width: 18px; height: 18px; fill: currentColor; }
+.cn-small { margin-top: 12px; font-size: 15px; color: var(--ed-ink-3); }
+.cn-starting { margin-block: 28px 20px; padding: 16px 20px; border-left: 3px solid var(--ed-yellow); background: #fff; border-radius: 0 12px 12px 0; font-size: 16px; color: var(--ed-ink-2); }
+.cn-coming summary { list-style: none; cursor: pointer; }
+.cn-coming summary::-webkit-details-marker { display: none; }
+.cn-more { border-style: solid !important; background: #fff !important; color: var(--ed-ink) !important; }
+.cn-coming[open] .cn-more { display: none !important; }
+.cn-rest { margin-top: 10px; }
+.cn-ask { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 40px; padding: 24px 28px; border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); }
+.cn-ask div { display: flex; flex-direction: column; gap: 4px; font-size: 16px; color: var(--ed-ink-2); }
+.cn-ask strong { font-size: 19px; color: var(--ed-ink); }
+
+@media (max-width: 900px) {
+  .cn-steps, .cn-modes { grid-template-columns: minmax(0, 1fr); }
+}
+</style>

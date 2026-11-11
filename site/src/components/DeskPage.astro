@@ -1,13 +1,16 @@
 ---
 // Desk by Agentivity (/desk), for the leader who does not build. English only (KB-0147). Texts come from the "desk_page"
-// block of en.json. No price on this page: the seats link to /pricing.
+// block of en.json (v5). The page opens on the problem, then the answer, what a colleague does, what the company gains, the
+// plans and the questions. No price, seat number or tier on this page: the seats link to /pricing.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
+import TrialNote from './TrialNote.astro';
 import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('en');
-const d = t.desk_page;
+const d = t.desk_page as any;
+const g = d.gains;
 
 // The FAQ links to the contact address and to the seats; the schema gets the same answers as plain text.
 const email = 'hello@agentivity.io';
@@ -26,20 +29,31 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: d.faq.items.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: answerText(item.a) } })),
+    mainEntity: d.faq.items.map((item: any) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: answerText(item.a) } })),
   },
 ];
 ---
 <Base title={d.meta.title} description={d.meta.description} lang="en" schema={schema} alternates={false} look="editorial">
 
-<SiteHeader lang="en" />
+<SiteHeader lang="en" ctaHref={d.trial.href} />
 
 <main class="desk ed-page">
 
+  <!-- 1. What it is -->
   <section class="ed-wrap desk-hero">
     <div class="desk-hero-copy">
-      <h1>{d.hero.h1}</h1>
-      <p class="desk-hero-sub">{d.hero.sub}</p>
+      <div>
+        <p class="ed-eyebrow">{d.hero.eyebrow}</p>
+        <h1>{d.hero.h1}</h1>
+      </div>
+      <div class="desk-hero-side">
+        <p class="desk-hero-sub">{d.hero.sub}</p>
+        <div class="desk-act">
+          <a class="ed-btn ed-btn--navy" href={d.trial.href}>{d.trial.label}</a>
+          <TrialNote lang="en" />
+          <a class="ed-link desk-small-link" href={d.hero.article_href}>{d.hero.article} →</a>
+        </div>
+      </div>
     </div>
     <figure class="ed-shot">
       <div class="ed-shot-frame ed-shot-frame--lift">
@@ -49,18 +63,37 @@ const schema = [
     </figure>
   </section>
 
+  <!-- 2. The problem -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{d.problem.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{d.problem.h2}</h2>
+      </header>
+      <div class="desk-problem-body">
+        {d.problem.body.map((para: string) => <p>{para}</p>)}
+      </div>
+      <ul class="desk-cards">
+        {d.problem.cards.map((card: any) => <li><strong>{card.title}</strong><span>{card.body}</span></li>)}
+      </ul>
+      <p class="desk-line">{d.problem.line}</p>
+    </div>
+  </section>
+
+  <!-- 3. The answer: one Desk -->
   <section class="ed-band--navy">
     <div class="ed-wrap ed-sec desk-contrast">
       <header class="ed-sec-head">
-        <h2 class="ed-h2 ed-h2--md">{d.contrast.h2}</h2>
-        <p class="ed-sec-sub">{d.contrast.body}</p>
+        <p class="ed-eyebrow desk-on-navy">{d.answer.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{d.answer.h2}</h2>
+        <p class="ed-sec-sub">{d.answer.body}</p>
       </header>
       <table class="desk-versus">
         <thead>
-          <tr><th scope="col">{d.contrast.columns[0]}</th><th scope="col" class="desk-versus-us">{d.contrast.columns[1]}</th></tr>
+          <tr><th scope="col">{d.answer.columns[0]}</th><th scope="col" class="desk-versus-us">{d.answer.columns[1]}</th></tr>
         </thead>
         <tbody>
-          {d.contrast.rows.map(([personal, desk]) => (
+          {d.answer.rows.map(([personal, desk]: string[]) => (
             <tr><td>{personal}</td><td class="desk-versus-us">{desk}</td></tr>
           ))}
         </tbody>
@@ -68,77 +101,134 @@ const schema = [
     </div>
   </section>
 
-  <section class="ed-wrap ed-sec desk-split" id="people">
-    <div>
+  <!-- 4. What a colleague does on it -->
+  <section class="ed-wrap ed-sec" id="people">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{d.people.eyebrow}</p>
       <h2 class="ed-h2 ed-h2--md">{d.people.h2}</h2>
-      <p class="desk-lead">{d.people.body}</p>
-      <ul class="ed-rows">
-        {d.people.items.map((item) => <li><strong>{item.title}</strong><span>{item.body}</span></li>)}
-      </ul>
-      <p class="desk-lead">{d.people.you_lead}</p>
-      <ul class="desk-you">
-        {d.people.you_items.map((line) => <li>{line}</li>)}
-      </ul>
-    </div>
-    <figure class="ed-shot">
-      <div class="ed-shot-frame ed-shot-frame--lift">
-        <img src="/media/desk/desk-approval.webp" width="2000" height="987" alt={d.people.image_alt} loading="lazy" />
-      </div>
-      <figcaption>{d.people.caption}</figcaption>
-    </figure>
-  </section>
-
-  <section class="ed-band--mist" id="access">
-    <div class="ed-wrap ed-sec">
-      <header class="ed-sec-head">
-        <h2 class="ed-h2 ed-h2--md">{d.access.h2}</h2>
-        <p class="ed-sec-sub">{d.access.body}</p>
-      </header>
-      <ul class="desk-access">
-        {d.access.items.map((item) => <li><strong>{item.title}</strong> <span>{item.body}</span></li>)}
-      </ul>
-      <figure class="desk-access-shot">
-        <img src="/media/desk/desk-governance.webp" width="1820" height="340" alt={d.access.image_alt} loading="lazy" />
+      <p class="ed-sec-sub">{d.people.body}</p>
+    </header>
+    <ol class="desk-steps">
+      {d.people.steps.map((step: any, i: number) => (
+        <li><span class="desk-step-n">{i + 1}</span><strong>{step.title}</strong><span>{step.body}</span></li>
+      ))}
+    </ol>
+    <div class="desk-shots">
+      <figure class="ed-shot">
+        <div class="ed-shot-frame ed-shot-frame--lift">
+          <img src="/media/home/home-desk-result.png" width="1600" height="1342" alt={d.people.result_alt} loading="lazy" />
+        </div>
+        <figcaption>{d.people.result_caption}</figcaption>
+      </figure>
+      <figure class="ed-shot">
+        <div class="ed-shot-frame">
+          <img src="/media/desk/desk-approval.webp" width="2000" height="987" alt={d.people.approval_alt} loading="lazy" />
+        </div>
+        <figcaption>{d.people.approval_caption}</figcaption>
       </figure>
     </div>
+    <p class="desk-line">{d.people.line}</p>
   </section>
 
-  <section class="ed-wrap ed-sec desk-cockpits" id="cockpits">
-    <h2 class="desk-h3">{d.cockpits.h2}</h2>
-    <p>{d.cockpits.body}</p>
-    <figure class="ed-shot">
-      <ul class="desk-cockpit-row">
-        {d.cockpits.items.map((item) => (
-          <li class="ed-shot-frame"><img src={item.src} width="1200" height="675" alt={item.alt} loading="lazy" /></li>
-        ))}
-      </ul>
-      <figcaption>{d.cockpits.caption}</figcaption>
-    </figure>
+  <!-- 5. What your company gains -->
+  <section class="ed-band--mist" id="gains">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <p class="ed-eyebrow">{g.eyebrow}</p>
+        <h2 class="ed-h2 ed-h2--md">{g.h2}</h2>
+        <p class="ed-sec-sub">{g.sub}</p>
+      </header>
+
+      <div class="desk-gain-pair">
+        <div class="desk-gain"><span class="desk-step-n">1</span><h3>{g.same.h3}</h3><p>{g.same.body}</p></div>
+        <div class="desk-gain"><span class="desk-step-n">2</span><h3>{g.knowhow.h3}</h3><p>{g.knowhow.body}</p></div>
+      </div>
+
+      <div class="desk-gain desk-gain--wide" id="access">
+        <span class="desk-step-n">3</span>
+        <h3>{g.space.h3}</h3>
+        <p>{g.space.body}</p>
+        <ul class="desk-access">
+          {g.space.items.map((item: any) => <li><strong>{item.title}</strong> <span>{item.body}</span></li>)}
+        </ul>
+        <figure class="desk-access-shot">
+          <img src="/media/desk/desk-governance.webp" width="1820" height="340" alt={g.space.image_alt} loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="desk-gain desk-gain--wide desk-bill">
+        <div>
+          <span class="desk-step-n">4</span>
+          <h3>{g.bill.h3}</h3>
+          <p>{g.bill.body}</p>
+          <p class="desk-bill-line">{g.bill.line}</p>
+          <ul class="desk-figures">
+            {g.bill.figures.map(([who, range]: string[]) => <li><span>{who}</span><strong>{range}</strong></li>)}
+          </ul>
+          <p class="desk-small">{g.bill.small}</p>
+          <a class="ed-link" href={g.bill.href}>{g.bill.link} →</a>
+        </div>
+        <figure class="ed-shot">
+          <picture>
+            <source media="(max-width: 640px)" srcset="/media/blog/desk/token-savings-ranges-narrow.svg" width="480" height="600" />
+            <img src="/media/blog/desk/token-savings-ranges.svg" width="960" height="560" alt={g.bill.chart_alt} loading="lazy" />
+          </picture>
+          <figcaption>{g.bill.chart_caption}</figcaption>
+        </figure>
+      </div>
+
+      <div class="desk-gain desk-gain--wide" id="cockpits">
+        <span class="desk-step-n">5</span>
+        <h3>{g.cockpits.h3}</h3>
+        <p>{g.cockpits.body}</p>
+        <figure class="ed-shot">
+          <ul class="desk-cockpit-row">
+            {g.cockpits.items.map((item: any) => (
+              <li class="ed-shot-frame"><img src={item.src} width="1200" height="675" alt={item.alt} loading="lazy" /></li>
+            ))}
+          </ul>
+          <figcaption>{g.cockpits.caption}</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
+  <!-- 6. Who it is for, and on which plans -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head desk-seats">
+      <p class="ed-eyebrow">{d.seats.eyebrow}</p>
+      <h2 class="ed-h2 ed-h2--md">{d.seats.h2}</h2>
+      <p class="ed-sec-sub">{d.seats.body}</p>
+      <a class="ed-link" href={d.seats.href}>{d.seats.link} →</a>
+    </header>
+  </section>
+
+  <!-- 7. Questions -->
   <section class="ed-band--mist">
     <div class="ed-wrap ed-sec">
-      <header class="ed-sec-head desk-seats">
-        <h2 class="ed-h2 ed-h2--md">{d.seats.h2}</h2>
-        <p class="ed-sec-sub">{d.seats.body}</p>
-        <a class="ed-link" href={d.seats.href}>{d.seats.link} →</a>
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{d.faq.h2}</h2>
       </header>
+      <div class="desk-faq">
+        {d.faq.items.map((item: any) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p set:html={answerHtml(item.a)} />
+          </details>
+        ))}
+      </div>
+      <a class="ed-link desk-docs" href={d.faq.docs_href}>{d.faq.docs} →</a>
     </div>
   </section>
 
-  <section class="ed-wrap ed-sec">
-    <header class="ed-sec-head">
-      <h2 class="ed-h2 ed-h2--md">{d.faq.h2}</h2>
-    </header>
-    <div class="desk-faq">
-      {d.faq.items.map((item) => (
-        <details>
-          <summary>{item.q}</summary>
-          <p set:html={answerHtml(item.a)} />
-        </details>
-      ))}
+  <!-- 8. The last call -->
+  <section class="ed-band--navy">
+    <div class="ed-wrap ed-final desk-final">
+      <h2>{d.final.h2}</h2>
+      <p class="ed-final-sub">{d.final.sub}</p>
+      <a class="ed-btn ed-btn--yellow" href={d.trial.href}>{d.trial.label}</a>
+      <TrialNote lang="en" class="desk-final-note" />
     </div>
-    <a class="ed-link desk-docs" href={d.faq.docs_href}>{d.faq.docs} →</a>
   </section>
 
 </main>
@@ -150,16 +240,26 @@ const schema = [
 <style>
 .desk-hero { display: flex; flex-direction: column; gap: clamp(36px, 4.5vw, 56px); padding-block: clamp(40px, 5vw, 72px) clamp(56px, 7vw, 96px); }
 .desk-hero-copy { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 20px clamp(32px, 4.5vw, 72px); align-items: end; }
-.desk-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 5.6vw, 84px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
-.desk-hero-sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-ink-2); }
+.desk-hero h1 { margin-top: 12px; font-family: var(--ed-serif); font-size: clamp(44px, 5.4vw, 80px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.desk-hero-side { display: flex; flex-direction: column; gap: 22px; }
+.desk-hero-sub { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; color: var(--ed-ink-2); }
+.desk-act { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.desk-small-link { font-size: 15.5px; }
 .ed-shot img { display: block; width: 100%; height: auto; }
 @media (max-width: 960px) {
   .desk-hero-copy { grid-template-columns: minmax(0, 1fr); }
 }
 
+.desk-problem-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 40px; font-size: 18px; line-height: 1.6; color: var(--ed-ink-2); }
+.desk-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.desk-cards li { display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: 18px; background: #fff; border: 1px solid var(--ed-line); font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); }
+.desk-cards strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.05; color: var(--ed-ink); }
+.desk-line { margin-top: 28px; font-size: 18px; line-height: 1.55; color: var(--ed-ink-2); max-width: 46em; }
+
 /* The contrast: two columns, the Desk's one lit. */
 .desk-contrast .ed-sec-sub { color: var(--ed-on-navy); }
-.desk-versus { width: 100%; max-width: 980px; border-collapse: collapse; font-size: clamp(18px, 1.6vw, 21px); }
+.desk-on-navy { color: var(--ed-yellow); }
+.desk-versus { width: 100%; max-width: 980px; border-collapse: collapse; font-size: clamp(17px, 1.5vw, 20px); }
 .desk-versus th, .desk-versus td { width: 50%; text-align: left; padding: 18px 22px; border-top: 1px solid var(--ed-navy-line); color: var(--ed-on-navy); }
 .desk-versus thead th { border-top: 0; font-size: 14.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .desk-versus .desk-versus-us { color: #fff; font-weight: 700; background: var(--ed-navy-2); }
@@ -169,29 +269,31 @@ const schema = [
   .desk-versus thead th { font-size: 12.5px; }
 }
 
-.desk-split { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(36px, 4.5vw, 64px); align-items: center; }
-@media (max-width: 960px) { .desk-split { grid-template-columns: minmax(0, 1fr); } }
-.desk-lead { margin-top: 18px; font-size: 19px; line-height: 1.5; color: var(--ed-ink-2); }
-.desk-split .ed-rows { margin-top: 10px; }
-.desk-split .ed-rows li { padding-block: 12px; }
-.desk-split .ed-rows strong { font-size: 17px; }
-.desk-you { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; color: var(--ed-ink-2); }
-.desk-you li::before { content: '—'; margin-right: 10px; color: var(--ed-ink-3); }
+.desk-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.desk-steps li { display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); }
+.desk-steps strong { font-size: 18px; color: var(--ed-ink); }
+.desk-step-n { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13.5px; font-weight: 700; }
+.desk-shots { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: end; margin-top: clamp(32px, 4vw, 48px); }
 
-#people, #access, #cockpits { scroll-margin-top: 72px; }
-.desk-access { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 0 48px; }
-.desk-access li { padding-block: 16px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-2); }
+#people, #gains, #access, #cockpits { scroll-margin-top: 72px; }
+.desk-gain-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.desk-gain { display: flex; flex-direction: column; gap: 10px; padding: clamp(22px, 2.6vw, 32px); border-radius: 22px; background: #fff; border: 1px solid var(--ed-line); font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.desk-gain h3 { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.08; color: var(--ed-ink); }
+.desk-gain--wide { margin-top: 20px; }
+.desk-access { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 0 40px; margin-top: 8px; }
+.desk-access li { padding-block: 14px; border-top: 1px solid var(--ed-line-2); color: var(--ed-ink-2); }
 .desk-access strong { font-weight: 700; color: var(--ed-ink); }
-.desk-access-shot { margin-top: clamp(32px, 4vw, 48px); padding: clamp(12px, 2vw, 24px); border-radius: 18px; background: #fff; }
+.desk-access-shot { margin-top: 16px; padding: clamp(10px, 1.6vw, 18px); border-radius: 16px; background: var(--ed-mist); }
 .desk-access-shot img { display: block; width: 100%; height: auto; }
-
-/* The cockpits: a small section, a row of three. */
-.desk-cockpits { display: flex; flex-direction: column; gap: 12px; color: var(--ed-ink-2); }
-.desk-cockpits > h2, .desk-cockpits > p { max-width: 760px; }
-.desk-cockpits .ed-shot { margin-top: 16px; }
-.desk-cockpit-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-@media (max-width: 760px) { .desk-cockpit-row { grid-template-columns: minmax(0, 1fr); } }
-.desk-h3 { font-family: var(--ed-serif); font-size: clamp(32px, 3.2vw, 44px); line-height: 1.05; color: var(--ed-ink); }
+.desk-bill { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 48px); align-items: center; }
+.desk-bill > div { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.desk-bill-line { font-weight: 600; color: var(--ed-ink); }
+.desk-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; width: 100%; }
+.desk-figures li { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 12px; background: var(--ed-mist); font-size: 14px; color: var(--ed-ink-3); }
+.desk-figures strong { font-family: var(--ed-serif); font-weight: 400; font-size: 28px; line-height: 1.05; color: var(--ed-ink); }
+.desk-small { font-size: 14px; line-height: 1.5; color: var(--ed-ink-3); }
+.desk-bill picture, .desk-bill img { display: block; width: 100%; height: auto; }
+.desk-cockpit-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
 
 .desk-seats { margin-bottom: 0; }
 .desk-seats .ed-link { align-self: flex-start; }
@@ -206,4 +308,15 @@ const schema = [
 .desk-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
 .desk-faq details p :global(a) { color: var(--ed-ink); text-decoration: underline; }
 .desk-docs { margin-top: 28px; }
+
+.desk-final h2 { color: #fff; }
+.desk-final .ed-final-sub { color: var(--ed-on-navy); }
+.desk-final :global(.desk-final-note) { color: var(--ed-on-navy); }
+
+@media (max-width: 960px) {
+  .desk-problem-body, .desk-cards, .desk-steps, .desk-shots, .desk-gain-pair, .desk-bill { grid-template-columns: minmax(0, 1fr); }
+  .desk-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) { .desk-cockpit-row { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .desk-steps { grid-template-columns: minmax(0, 1fr); } }
 </style>

@@ -1035,6 +1035,11 @@
         "parallel": "{n} en même temps",
         "duration": "Exécutions jusqu'à {d}",
         "disk": "{n} Go de disque",
+        "schedules": [
+          "{n} planning, webhooks illimités",
+          "{n} plannings, webhooks illimités"
+        ],
+        "schedules_unlimited": "Plannings et webhooks illimités",
         "gb": "{n} Go",
         "backups": "{n} jours",
         "minutes": "{n} min",
@@ -1053,6 +1058,8 @@
           "executions": "Exécutions par mois",
           "parallel": "Exécutions en même temps",
           "duration": "Durée maximale d'une exécution",
+          "schedules": "Plannings",
+          "webhooks": "Webhooks",
           "disk": "Disque",
           "backups": "Sauvegardes gardées",
           "support": "Support",
@@ -1072,10 +1079,11 @@
           "monitoring": "Surveillance branchée (OpenTelemetry)"
         },
         "more_seats": "Studio et Desk, un par un",
+        "unlimited": "Illimités",
         "none": "—"
       },
       "seats_note": "Un siège Studio est pour une personne qui construit et s'occupe de l'espace de travail. Un siège Desk est pour une personne qui utilise ce qui est construit, sans construire.",
-      "cloud_note": "Inclus dans les offres hébergées : le lancement automatique. Vos équipes démarrent toutes seules, chaque matin ou chaque lundi.",
+      "cloud_note": "Inclus dans les offres hébergées : vos équipes démarrent toutes seules, selon un planning, quand un autre service appelle leur webhook, ou quand quelque chose se passe dans une de vos applications. Les webhooks n'ont pas de limite propre : les exécutions qu'ils lancent comptent comme les autres.",
       "community": {
         "name": "Community",
         "status": "Sur votre serveur",

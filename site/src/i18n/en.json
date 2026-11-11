@@ -1,7 +1,6 @@
 {
   "nav": {
     "links": [
-      { "label": "Use Cases",    "href": "/use-cases" },
       { "label": "Synergi",      "href": "https://synergi.agentivity.io" },
       { "label": "Services",     "href": "/services" },
       { "label": "Blog",         "href": "/blog" },
@@ -37,6 +36,12 @@
               "label": "Workflows",
               "body": "Fixed steps, with a person who approves",
               "href": "/workflows"
+            },
+            {
+              "icon": "plug",
+              "label": "Connections",
+              "body": "The apps and AI models it works with",
+              "href": "/connections"
             }
           ]
         },
@@ -92,6 +97,195 @@
         }
       ]
     },
+    "solutions": {
+      "label": "Solutions",
+      "by_department": "By department",
+      "soon": "Soon",
+      "groups": [
+        {
+          "title": "Sales",
+          "items": [
+            {
+              "label": "Lead Researcher"
+            },
+            {
+              "label": "Quote Builder"
+            },
+            {
+              "label": "Product Compare Team",
+              "href": "/solutions/product-compare-team",
+              "live": true
+            },
+            {
+              "label": "Account Manager"
+            }
+          ]
+        },
+        {
+          "title": "Customer support",
+          "items": [
+            {
+              "label": "Support Desk Team",
+              "href": "/solutions/support-desk-team",
+              "live": true
+            },
+            {
+              "label": "Complaint Handler"
+            },
+            {
+              "label": "Order Support Agent"
+            },
+            {
+              "label": "Subscription Care"
+            }
+          ]
+        },
+        {
+          "title": "Finance",
+          "items": [
+            {
+              "label": "Invoice Clerk",
+              "href": "/solutions/invoice-clerk",
+              "live": true
+            },
+            {
+              "label": "Cash Flow Analyst"
+            },
+            {
+              "label": "Monthly Report"
+            },
+            {
+              "label": "Invoice Processing"
+            }
+          ]
+        },
+        {
+          "title": "People (HR)",
+          "items": [
+            {
+              "label": "CV Screener",
+              "href": "/solutions/cv-screener",
+              "live": true
+            },
+            {
+              "label": "Onboarding Coordinator"
+            },
+            {
+              "label": "Recruiter"
+            },
+            {
+              "label": "Training Coordinator"
+            }
+          ]
+        },
+        {
+          "title": "Marketing",
+          "items": [
+            {
+              "label": "Image Creator",
+              "href": "/solutions/image-creator",
+              "live": true
+            },
+            {
+              "label": "Blog Writer Team"
+            },
+            {
+              "label": "Social Media Manager"
+            },
+            {
+              "label": "Email Marketer"
+            }
+          ]
+        },
+        {
+          "title": "Operations",
+          "items": [
+            {
+              "label": "Stock Replenisher"
+            },
+            {
+              "label": "Production Planner"
+            },
+            {
+              "label": "Quality Controller"
+            },
+            {
+              "label": "Logistics Coordinator"
+            }
+          ]
+        },
+        {
+          "title": "Personal & fun",
+          "items": [
+            {
+              "label": "Trip Planner",
+              "href": "/solutions/trip-planner",
+              "live": true
+            },
+            {
+              "label": "Training Coach",
+              "href": "/solutions/training-coach",
+              "live": true
+            },
+            {
+              "label": "Meal Planner"
+            },
+            {
+              "label": "Game Master Team"
+            }
+          ]
+        },
+        {
+          "title": "Creators",
+          "items": [
+            {
+              "label": "Video Script Team"
+            },
+            {
+              "label": "Podcast Notes"
+            },
+            {
+              "label": "Newsletter Writer"
+            },
+            {
+              "label": "Thumbnail Creator",
+              "live": true
+            }
+          ]
+        }
+      ],
+      "all": {
+        "label": "View all on Synergi",
+        "href": "https://synergi.agentivity.io"
+      },
+      "built_for": {
+        "title": "Built for",
+        "items": [
+          {
+            "icon": "maker",
+            "label": "Your own projects",
+            "body": "Automate your own work and side projects",
+            "href": "/solutions/your-own-projects"
+          },
+          {
+            "icon": "agency",
+            "label": "Freelancers & agencies",
+            "body": "Deliver automations and AI to your clients",
+            "href": "/solutions/freelancers-and-agencies"
+          },
+          {
+            "icon": "desk",
+            "label": "Companies",
+            "body": "Your best way of doing the work, used by everyone",
+            "href": "/desk"
+          }
+        ],
+        "company": {
+          "label": "The whole AI company",
+          "body": "Northmoor: departments run by AI teams"
+        }
+      }
+    },
     "github": "Star on GitHub",
     "cta": "Start your trial"
   },
@@ -108,7 +302,7 @@
           { "label": "Prompt Studio", "href": "/prompt-studio" },
           { "label": "Knowledge & Data", "href": "/knowledge-and-data" },
           { "label": "VibeApps", "href": "/vibeapps" },
-          { "label": "Use Cases",      "href": "/use-cases" },
+          { "label": "Solutions",      "href": "/solutions" },
           { "label": "Services",       "href": "/services" },
           { "label": "Pricing",        "href": "/pricing" },
           { "label": "Docs",           "href": "/docs" },
@@ -374,19 +568,19 @@
     "nocode": {
       "eyebrow": "How you build it",
       "h2": "No code.",
-      "h2_accent": "Brief it like a colleague.",
+      "h2_accent": "Describe it like you would to a colleague.",
       "steps": [
         {
-          "title": "Describe the role",
-          "body": "Give each agent a name, a job and the tools it needs. Like writing a job description."
+          "title": "Say what you need",
+          "body": "Tell the Assistant the job in plain words. It proposes the automation, the agents and how they work together."
         },
         {
-          "title": "Build the team",
-          "body": "Drag your agents onto the canvas and choose who leads."
+          "title": "Shape it your way",
+          "body": "Change a step, a rule or an expert's role on the canvas, without code."
         },
         {
-          "title": "Hand over the work",
-          "body": "Ask in plain words. The team does the work and comes back to you for the decisions."
+          "title": "Put it to work",
+          "body": "Run it on a schedule or whenever you ask, and approve what matters before it goes out."
         }
       ],
       "link": "See how it works",
@@ -396,8 +590,8 @@
     "ready": {
       "eyebrow": "Ready to use",
       "h2": "Ready-made solutions.",
-      "h2_accent": "Start in minutes.",
-      "link": "Build your first team",
+      "h2_accent": "Start from one that already works.",
+      "link": "Start your trial",
       "cards": [
         {
           "title": "Invoice Clerk",
@@ -409,19 +603,19 @@
           "title": "Shopping Lab",
           "body": "Compares a product across two stores and writes a report with the best picks.",
           "meta": "Shopping · team of 9",
-          "href": "/use-cases/shopping-lab"
+          "href": "/solutions/product-compare-team"
         },
         {
           "title": "Trip Manager Team",
           "body": "Plans a full trip with the traveller, who decides at each step. Bookings and payment are simulated.",
           "meta": "Travel · a manager and 12 specialists",
-          "href": "/use-cases/trip-planner"
+          "href": "/solutions/trip-planner"
         },
         {
           "title": "CV Screening",
           "body": "Compares a CV with a job description and proposes what to do with it.",
-          "meta": "HR · one workflow",
-          "href": "/use-cases/cv-screening"
+          "meta": "HR · one automation",
+          "href": "/solutions/cv-screener"
         }
       ]
     },
@@ -429,7 +623,7 @@
       "eyebrow": "Pricing",
       "price": "0€",
       "rest": "to start.",
-      "sub": "Try the hosted plans for 14 days, no card. Or install the free Community edition on your own server.",
+      "sub": "Try the hosted plans for 14 days, with your own AI model account and no card. Or install the free Community edition on your own server.",
       "link": "See full pricing",
       "tiers": [
         {
@@ -442,23 +636,23 @@
         {
           "name": "Personal",
           "badge": "Cloud",
-          "desc": "Hosted for you. No setup: sign in and build your first team.",
-          "cta": "Build your first team",
+          "desc": "Hosted for you. No setup: sign in and build your first automation.",
+          "cta": "Start your trial",
           "href": "/start?plan=personal",
           "featured": true
         },
         {
           "name": "Pro",
           "badge": "Cloud",
-          "desc": "More agents, longer executions and priority execution.",
-          "cta": "Build your first team",
+          "desc": "More executions, longer ones, 3 Studio seats, the Desk and Observation.",
+          "cta": "Start your trial",
           "href": "/start?plan=pro"
         },
         {
           "name": "Business",
           "badge": "Teams",
-          "desc": "Shared workspaces. Everyone builds, everyone benefits.",
-          "cta": "Build your first team",
+          "desc": "Shared workspaces: one person builds, everyone benefits.",
+          "cta": "Start your trial",
           "href": "/start?plan=business"
         },
         {
@@ -1047,6 +1241,11 @@
         "parallel": "{n} at the same time",
         "duration": "Executions up to {d}",
         "disk": "{n} GB of disk",
+        "schedules": [
+          "{n} schedule, unlimited webhooks",
+          "{n} schedules, unlimited webhooks"
+        ],
+        "schedules_unlimited": "Unlimited schedules and webhooks",
         "gb": "{n} GB",
         "backups": "{n} days",
         "minutes": "{n} min",
@@ -1065,6 +1264,8 @@
           "executions": "Executions per month",
           "parallel": "Executions at the same time",
           "duration": "Longest execution",
+          "schedules": "Schedules",
+          "webhooks": "Webhooks",
           "disk": "Disk",
           "backups": "Backups kept",
           "support": "Support",
@@ -1084,10 +1285,11 @@
           "monitoring": "Monitoring hook-up (OpenTelemetry)"
         },
         "more_seats": "Studio and Desk, one at a time",
+        "unlimited": "Unlimited",
         "none": "—"
       },
       "seats_note": "A Studio seat is for a person who builds and looks after the workspace. A Desk seat is for a person who uses what is built, without building.",
-      "cloud_note": "Included in the hosted plans: scheduling. Your teams start on their own, every morning or every Monday.",
+      "cloud_note": "Included in the hosted plans: your teams start on their own, on a schedule, when another service calls their webhook, or when something happens in one of your apps. Webhooks have no limit of their own: the executions they start count like any other.",
       "community": {
         "name": "Community",
         "status": "On your own server",
@@ -1323,17 +1525,18 @@
     "error_consent": "Please tick the box to agree to receive emails.",
     "error_rate": "Too many attempts. Please wait a few minutes and try again."
   },
-  "use_cases_page": {
+"use_cases_page": {
     "meta": {
-      "title": "Agentivity Use Cases — Real Examples of AI Teams at Work",
-      "description": "Real examples built with Agentivity and recorded from the product: a trip planner, a shopping comparison, a CV screening, an invoice clerk. With an app, with the portal, or with no app at all."
+      "title": "Ready-Made AI Solutions by Department | Agentivity",
+      "description": "Ready-made AI agents, teams and automations for sales, customer support, finance, HR and marketing, and for your own projects. Open one in a 14-day trial, no card."
     },
     "labels": {
       "for": "For",
-      "see": "See how it works",
-      "soon": "Coming soon",
-      "back": "All use cases",
+      "see": "See it at work",
+      "soon": "Soon",
+      "back": "All solutions",
       "recorded": "Recorded from the product, played faster.",
+      "placeholder": "Clip in the making",
       "facts": {
         "for": "For",
         "use": "How people use it",
@@ -1343,86 +1546,18 @@
       "decisions": "Where a person decides",
       "note": "Good to know",
       "get": "Get it",
-      "others": "Other use cases",
+      "others": "Other solutions",
       "qa": "In plain words",
       "read": "Read the full story",
       "read_en": "Read the full story"
     },
     "hero": {
-      "eyebrow": "Use cases",
-      "h1": "What a team",
-      "h1_accent": "can do for you.",
-      "sub": "Real examples, built with Agentivity and recorded from the product. More are on the way."
-    },
-    "ways": {
-      "eyebrow": "Good to know",
-      "h2": "Most of the time,",
-      "h2_accent": "you need no app.",
-      "sub": "A team does its work on the server. How people talk to it is your choice.",
-      "items": [
-        {
-          "tag": "No app",
-          "title": "Straight from the Studio",
-          "body": "You start the team with one click. It reads, checks and writes, and comes back to you only when a decision is yours: by email, on Slack or in a form."
-        },
-        {
-          "tag": "Portal",
-          "title": "The ready-made portal",
-          "body": "One web page where your colleagues start the teams you have published, under your brand. Nothing to develop."
-        },
-        {
-          "tag": "VibeApp",
-          "title": "A VibeApp",
-          "body": "An app of your own, with one or several of your teams behind it. Most VibeApps mix classic screens and teams."
-        }
-      ]
-    },
-    "showcases": {
-      "eyebrow": "Showcases",
-      "h2": "Built, recorded,",
-      "h2_accent": "explained.",
-      "sub": "Each one has its page: what happens, who decides, and the team behind it."
-    },
-    "vibeapp": {
-      "eyebrow": "A new kind of app",
-      "h2": "Meet the",
-      "h2_accent": "VibeApp.",
-      "sub": "A classic app is static: everything is predefined. A VibeApp is dynamic: it adapts to the context and goes to the essential, not fifty thousand screens or settings. Much closer to a human interaction.",
-      "example_label": "In Trip Planner",
-      "examples": [
-        "One sentence: Lisbon for two, the dates, the budget.",
-        "The manager calls in the specialists this trip needs: flights, hotel, transfers, dinner.",
-        "What the traveller chooses changes what comes next: dinner fits what is left of the budget."
-      ],
-      "link": "Watch Trip Planner",
-      "href": "/use-cases/trip-planner"
-    },
-    "soon": {
-      "eyebrow": "Coming soon",
-      "h2": "Next on the list.",
-      "h2_accent": "Built the same way.",
-      "sub": "Ready-made solutions on the way, built like the ones above.",
-      "items": [
-        {
-          "tag": "Portal",
-          "title": "Computer shop support",
-          "for": "a shop's customer service",
-          "body": "Three specialists answer customers from the shop's own data: its orders, its products and its help articles. They look up the order before they answer, and flag what needs a person."
-        },
-        {
-          "tag": "No app",
-          "title": "Quote requests",
-          "for": "an independent or a small business",
-          "body": "A customer fills in a form. The team prepares the quote, the owner approves or corrects it from their inbox, and the answer goes out."
-        },
-        {
-          "tag": "VibeApp",
-          "title": "Sport and nutrition coach",
-          "for": "one person",
-          "body": "A personal app: training and meals planned around your goals, and adjusted week after week."
-        }
-      ],
-      "link": "Build your first team"
+      "eyebrow": "Solutions",
+      "h1": "Ready-made solutions,",
+      "h1_accent": "for each part of your work.",
+      "sub": "Each solution does one real job, like answering customers or checking invoices. Open it in your trial and see it do the job. Then ask the Assistant to change it for you.",
+      "cta": "Start your trial",
+      "cta_href": "/start?plan=pro"
     },
     "cases": [
       {
@@ -1530,30 +1665,62 @@
             }
           ]
         },
-        "studio": {"media": "studio-trip-run", "width": 1600, "height": 900, "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller answers in the chat beside it at each step", "caption": "The same team, seen in the Studio, where it is built and run. Recorded from the product, played faster."},
+        "studio": {
+          "media": "studio-trip-run",
+          "width": 1600,
+          "height": 900,
+          "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller answers in the chat beside it at each step",
+          "caption": "The same team, seen in the Studio, where it is built and run. Recorded from the product, played faster."
+        },
         "article": "/blog/ai-trip-planner-manager-and-specialists",
         "qa": [
-          { "q": "What does Trip Planner do?", "a": "A traveller writes the trip they want in one sentence. A manager agent hands each part to the right specialist, and the app asks the traveller to choose each time a decision is theirs: the flights, the hotel, how to get there, the table for dinner. At the end, it takes the payment and shows the recap of the bookings." },
-          { "q": "Who is it for?", "a": "A travel agency, or any business that sells something with many parts and one person who decides: an event, an offer for a client, the arrival of a new employee." },
-          { "q": "What is real and what is simulated?", "a": "Everything that would cost money is simulated: no flight, hotel or table is booked, no payment is charged, and the confirmation codes are invented. The names of the airlines, hotels and restaurants are invented too. The cities and their places are real." },
-          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Trip Manager Team from the welcome guide, open it in Studio > Agents, switch to Execution and ask for a trip in one sentence. The Trip Planner app itself is a public example on GitHub, for a developer." }
+          {
+            "q": "What does Trip Planner do?",
+            "a": "A traveller writes the trip they want in one sentence. A manager agent hands each part to the right specialist, and the app asks the traveller to choose each time a decision is theirs: the flights, the hotel, how to get there, the table for dinner. At the end, it takes the payment and shows the recap of the bookings."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A travel agency, or any business that sells something with many parts and one person who decides: an event, an offer for a client, the arrival of a new employee."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "Everything that would cost money is simulated: no flight, hotel or table is booked, no payment is charged, and the confirmation codes are invented. The names of the airlines, hotels and restaurants are invented too. The cities and their places are real."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Trip Manager Team from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and ask for a trip in one sentence. The Trip Planner app itself is a public example on GitHub, for a developer."
+          }
         ],
         "note": "This is a demonstration. Flights, hotels and payment are simulated: nothing is really booked or charged.",
         "get": {
-          "body": "The code of the app is public. It needs the AI teams of the Community edition.",
-          "link": "The code on GitHub",
-          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
-          "external": true
-        }
+          "body": "Open the team behind Trip Planner in your trial and ask for a trip in one sentence. The Trip Planner app itself is public code on GitHub, for a developer.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **Trip Manager Team** and select **Add it**.",
+          "more": [
+            {
+              "link": "The app's code on GitHub",
+              "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency",
+              "external": true
+            },
+            {
+              "link": "See it on Synergi",
+              "href": "https://synergi.agentivity.io/templates/trip-manager-team",
+              "external": true
+            }
+          ]
+        },
+        "meta_title": "Trip Planner: A Whole Trip Planned by a Team of AI Agents | Agentivity"
       },
       {
-        "slug": "shopping-lab",
+        "slug": "product-compare-team",
         "media": "shopping-lab",
         "width": 1024,
         "height": 768,
         "tag": "Portal",
         "size": "Team of 9",
-        "title": "Shopping Lab",
+        "title": "Product Compare Team",
         "for": "a shop, a buyer, a comparison service",
         "summary": "A shopper describes what they need. Nine specialists read the stores’ own pages, compare, score and write an illustrated report.",
         "alt": "A recording of the Shopping Lab demo in the portal: a shopper asks for headphones, confirms the brief, then nine specialists work in turn, and the report shows the best pick and each product sheet",
@@ -1631,27 +1798,53 @@
         },
         "article": "/blog/ai-agents-compare-products-shopping-lab",
         "qa": [
-          { "q": "What does Shopping Lab do?", "a": "A shopper describes what they need and a budget. Nine AI specialists confirm the brief with the shopper, read two online stores, match the same product in both, compare the specifications in the same units, score each product with a script and write a report: a verdict, the top picks and the sources." },
-          { "q": "Who is it for?", "a": "A shop, a purchasing department or a comparison service. The same shape fits other comparisons: suppliers' offers, software plans, training courses." },
-          { "q": "What is real and what is simulated?", "a": "Nothing is simulated. The scouts read the stores' own public pages at the moment of the execution, so the prices and products are the ones published then. The demonstration is written for two stores in the United States and works in English. If a store changes its pages, a scout can find nothing." },
-          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Shopping Lab from the welcome guide, open it in the Studio, switch to Execution and ask for a product with a budget. Nine members work one after another, so an execution takes several minutes and uses more model calls than one question." }
+          {
+            "q": "What does Product Compare Team do?",
+            "a": "A shopper describes what they need and a budget. Nine AI specialists confirm the brief with the shopper, read two online stores, match the same product in both, compare the specifications in the same units, score each product with a script and write a report: a verdict, the top picks and the sources."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A shop, a purchasing department or a comparison service. The same shape fits other comparisons: suppliers' offers, software plans, training courses."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "Nothing is simulated. The scouts read the stores' own public pages at the moment of the execution, so the prices and products are the ones published then. The demonstration is written for two stores in the United States and works in English. If a store changes its pages, a scout can find nothing."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Shopping Lab, the template of this solution, from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and ask for a product with a budget. Nine members work one after another, so an execution takes several minutes and uses more model calls than one question."
+          }
         ],
         "note": "The demonstration reads two online stores. Add a scout, and the team covers another one.",
         "get": {
-          "body": "The code of the portal is public. It needs the AI teams of the Community edition.",
-          "link": "The portal on GitHub",
-          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
-          "external": true
-        }
+          "body": "Open Product Compare Team in your trial and ask for a product with a budget. The team reads two US stores and writes your report.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **Shopping Lab** and select **Add it**.",
+          "more": [
+            {
+              "link": "See it on Synergi",
+              "href": "https://synergi.agentivity.io/templates/shopping-lab",
+              "external": true
+            },
+            {
+              "link": "The portal's code on GitHub",
+              "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+              "external": true
+            }
+          ]
+        },
+        "meta_title": "Product Compare Team: AI That Compares Products Across Stores | Agentivity"
       },
       {
-        "slug": "cv-screening",
+        "slug": "cv-screener",
         "media": "cv-screening",
         "width": 1418,
         "height": 770,
         "tag": "Portal",
         "size": "Workflow",
-        "title": "CV Screening",
+        "title": "CV Screener",
         "for": "a recruiter, an HR team",
         "summary": "A CV and a job description in. A score, the reasons, and a route: shortlist, rejection, or review by a recruiter.",
         "alt": "A recording of the Studio showing the CV Screening workflow: boxes for reading the file, reading the page, assessing the fit and asking a person, linked from left to right",
@@ -1717,17 +1910,43 @@
         },
         "article": "/blog/ai-cv-screening",
         "qa": [
-          { "q": "What does CV Screening do?", "a": "It reads a CV and a job description, each given as a file, a link or pasted text. AI assesses the fit and explains it, a program computes one score, and fixed rules choose the route: shortlist, rejection, or review by a recruiter. It writes a report with the reasons." },
-          { "q": "Who is it for?", "a": "A recruiter or an HR team that reads many applications and wants every doubtful case seen by a person." },
-          { "q": "What is real and what is simulated?", "a": "The reading and the scoring are real. Nothing is sent to a candidate: the report is a recommendation for the recruiter. Try it with fictitious CVs. As delivered, a very low score is written as a rejection without review: before any real use, change it so that a recruiter confirms every rejection." },
-          { "q": "How can I try it?", "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add CV Screening from the welcome guide, open it in Studio > Workflows and run it on a CV and a job description. It also comes with the ready-made examples of the Community edition." }
+          {
+            "q": "What does CV Screener do?",
+            "a": "It reads a CV and a job description, each given as a file, a link or pasted text. AI assesses the fit and explains it, a program computes one score, and fixed rules choose the route: shortlist, rejection, or review by a recruiter. It writes a report with the reasons."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A recruiter or an HR team that reads many applications and wants every doubtful case seen by a person."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The reading and the scoring are real. Nothing is sent to a candidate: the report is a recommendation for the recruiter. Try it with fictitious CVs. As delivered, a very low score is written as a rejection without review: before any real use, change it so that a recruiter confirms every rejection."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add CV Screening, the template of this solution, from the welcome guide, open it in Studio > Agents & Workflows and run it on a CV and a job description. It also comes with the ready-made examples of the Community edition."
+          }
         ],
         "note": "A workflow follows the path you drew, the same way every time. A team decides its own path. You can mix both.",
         "get": {
-          "body": "It comes with the ready-made examples of the Community edition.",
-          "link": "Install Community",
-          "href": "/community"
-        }
+          "body": "Open CV Screener in your trial and run it on a CV and a job description. Try it with made-up CVs.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **CV Screening** and select **Add it**.",
+          "more": [
+            {
+              "link": "See it on Synergi",
+              "href": "https://synergi.agentivity.io/templates/cv-screening",
+              "external": true
+            },
+            {
+              "link": "Install the free Community edition",
+              "href": "/community"
+            }
+          ]
+        },
+        "meta_title": "CV Screener: Score Every CV Against the Job | Agentivity"
       },
       {
         "slug": "invoice-clerk",
@@ -1812,26 +2031,435 @@
           },
           {
             "q": "How can I try it?",
-            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Invoice Clerk from the welcome guide, open it in Studio > Agents, switch to Execution and upload an invoice with fictitious data. Then open Data Tables > invoices: the invoice has its row."
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Invoice Clerk from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and upload an invoice with fictitious data. Then open Data Tables > invoices: the invoice has its row."
           }
         ],
         "note": "One agent is the right shape when the job is one person's job done the same way every time. When invoices need an approval before payment, put the agent in a workflow with an approval step.",
         "get": {
-          "body": "The code of the portal is public. It needs the AI teams of the Community edition.",
-          "link": "The portal on GitHub",
-          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
-          "external": true
-        }
+          "body": "Open Invoice Clerk in your trial and upload a supplier invoice. It is read, checked and filed in its table.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **Invoice Clerk** and select **Add it**.",
+          "more": [
+            {
+              "link": "See it on Synergi",
+              "href": "https://synergi.agentivity.io/templates/invoice-clerk",
+              "external": true
+            },
+            {
+              "link": "The portal's code on GitHub",
+              "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions",
+              "external": true
+            }
+          ]
+        },
+        "meta_title": "Invoice Clerk: AI That Reads and Checks Supplier Invoices | Agentivity"
+      },
+      {
+        "slug": "support-desk-team",
+        "media": "support-desk-team",
+        "width": 2048,
+        "height": 1536,
+        "tag": "No app",
+        "size": "Team of 4",
+        "title": "Support Desk Team",
+        "for": "a customer service team",
+        "summary": "Paste a customer's message. The team checks the order and your help articles, and hands back a triage and a reply ready to send. Refunds wait for you.",
+        "alt": "Support Desk Team at work on the Desk: a customer message asking for a refund is pasted, the team checks the order with the orders and warranty specialist, a refund card waits for an answer, the refund is refused, and a drafted reply to the customer appears",
+        "h1": "Every customer answered,",
+        "h1_accent": "every refund your call.",
+        "lead": "Someone on your team pastes the customer's message on the Desk. The team looks up their order, reads your help articles, and gives back a reply you only have to send. Anything that costs you money waits for your yes.",
+        "facts": {
+          "for": "A shop or a small business that answers its customers itself",
+          "use": "A chat, in the Studio or on your team's Desk",
+          "behind": "A lead and three specialists, reading your orders, your products and your help articles"
+        },
+        "steps": [
+          {
+            "title": "The message",
+            "body": "You paste what the customer wrote: an order that is late, a laptop that will not charge, a question about stock."
+          },
+          {
+            "title": "The lead reads it",
+            "body": "It sends the message to the specialist who knows the subject: orders and warranty, technical problems, or sales."
+          },
+          {
+            "title": "The specialist checks",
+            "body": "It looks up the customer's order and the products in your tables, and the answer in your help articles."
+          },
+          {
+            "title": "Your reply",
+            "body": "You get a short triage and a reply ready to copy and send, with the facts the customer needs, such as the stock and the delay."
+          },
+          {
+            "title": "Your decision",
+            "body": "A refund, a return or a goodwill gesture comes to you as a card: approve or refuse, and the reply follows your choice."
+          }
+        ],
+        "decisions": [
+          "Approve or refuse a refund, a return or a goodwill gesture",
+          "Read the reply, and send it yourself"
+        ],
+        "note": "The demo shop, its customers and its orders are made up. To answer from yours, paste your help articles into its knowledge base or point it at your help pages, and fill its three tables (products, customers, orders) in the Studio or through the API. Tables have no file import yet.",
+        "team": {
+          "title": "The team",
+          "lead": "Four members. Only the lead talks to you.",
+          "members": [
+            {
+              "name": "Support Lead",
+              "role": "Reads each message, sends it to the right specialist, and gives you the triage and the reply."
+            },
+            {
+              "name": "Orders & Warranty",
+              "role": "Answers about orders, delivery, returns and warranty, from the order history."
+            },
+            {
+              "name": "Technical Support",
+              "role": "Finds the fix for a product problem in your help articles."
+            },
+            {
+              "name": "Sales",
+              "role": "Answers about products, prices, stock and which model fits a need."
+            }
+          ]
+        },
+        "get": {
+          "body": "Open Support Desk Team in your trial: it comes with a demo shop, so once it is open, the first reply takes one message.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **Acme Computers Support** and select **Add it**.",
+          "more": [
+            {
+              "link": "See how your team would use it on the Desk",
+              "href": "/desk"
+            }
+          ]
+        },
+        "qa": [
+          {
+            "q": "What does Support Desk Team do?",
+            "a": "You paste a customer's message. A lead sends it to the right specialist, who looks up the customer's order and products and reads your help articles. You get back a triage and a reply ready to send. Any refund, return or goodwill gesture waits for your approval first."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A shop or a small business that answers its own customers, and the agency that sets up support for them. The same shape fits any desk that answers from its own records: bookings, subscriptions, deliveries."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The reading, the look-ups and the replies are real. The shop is made up: Acme Computers, its customers, its 47 orders and its 28 products are fictional. Nothing is sent to anyone: the reply is yours to send."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Acme Computers Support from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and paste a customer's message, for example a laptop that will not charge."
+          }
+        ]
+      },
+      {
+        "slug": "image-creator",
+        "image": "/media/image-creator.webp",
+        "caption": "Example images made with Recraft, the image model Image Creator uses.",
+        "width": 1600,
+        "height": 1200,
+        "tag": "No app",
+        "size": "Automation",
+        "title": "Image Creator",
+        "for": "a marketing team, a small business, a creator",
+        "summary": "Describe the image you need in one sentence. An agent writes the full prompt, you approve it, and the image appears in the chat. Change it in your own words until you keep it.",
+        "alt": "Four example images made with Recraft: a poster of a jazz evening in a park, a product photo of a mug and coffee beans, a bakery table for a social post, and a flat illustration of a team planning at a board",
+        "h1": "The image you described,",
+        "h1_accent": "made only when you say go.",
+        "lead": "Write what you need: a visual for a post, an illustration for an article. An agent turns it into a precise request for the image model, shows it to you, and makes the image only when you say go.",
+        "facts": {
+          "for": "A marketing team, a small business or a creator who needs visuals without a designer",
+          "use": "A chat, in the Studio or on your team's Desk",
+          "behind": "An automation with one agent that writes the prompt, an image model, and your approval at each round"
+        },
+        "steps": [
+          {
+            "title": "Your words",
+            "body": "One message: what the image shows, where it will go, the feeling you want."
+          },
+          {
+            "title": "The prompt",
+            "body": "An agent writes the full request for the image model, with the settings it needs, such as size and format."
+          },
+          {
+            "title": "Your go-ahead",
+            "body": "A card shows exactly what will be sent and what changed since the last round. Continue, or say what to change."
+          },
+          {
+            "title": "The image",
+            "body": "It appears in the chat, ready to download."
+          },
+          {
+            "title": "Until it is right",
+            "body": "Ask for a change in your own words; the agent rewrites the whole request and shows it to you again."
+          }
+        ],
+        "decisions": [
+          "Approve the request before any image is made",
+          "Keep the image, or say what to change"
+        ],
+        "note": "Nothing is made, and nothing is billed by Recraft, until you choose Continue. You always see what the image model receives. Your comment goes to the agent, never straight to the image model, so each new try starts from a complete request.",
+        "team": {
+          "title": "The building blocks",
+          "lead": "An automation is drawn box by box. These are the parts this one uses.",
+          "members": [
+            {
+              "name": "Form",
+              "role": "Where you write what you need."
+            },
+            {
+              "name": "Prompt writer",
+              "role": "The agent that turns your words into a precise request, with its settings."
+            },
+            {
+              "name": "Approval card",
+              "role": "Shows the request in the chat, with Continue and Change."
+            },
+            {
+              "name": "Image generator",
+              "role": "Makes the image from the approved request."
+            },
+            {
+              "name": "Loop",
+              "role": "Sends your comment back to the agent until you keep the image."
+            }
+          ]
+        },
+        "get": {
+          "body": "Open Image Creator in your trial, add your Recraft key, and describe your first image.",
+          "link": "Open it in your trial",
+          "href": "/start?plan=pro",
+          "trial": true,
+          "guide": "In the welcome guide, choose **Media Content Creator** and select **Add it**.",
+          "more": [
+            {
+              "link": "See it on Synergi",
+              "href": "https://synergi.agentivity.io/templates/media-content-creator",
+              "external": true
+            }
+          ]
+        },
+        "qa": [
+          {
+            "q": "What does Image Creator do?",
+            "a": "You describe the image you need in one message. An agent writes a complete request for the image model, with its settings, and shows it to you in a card. When you choose Continue, the image is made and appears in the chat. Ask for a change in your own words and it starts again from a complete request, as many times as you like."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A marketing team that wants every visual made through the same steps, from one tool the whole team shares. A small business or a creator who needs visuals for posts, articles and pages, and wants to see what is asked before an image is made. A builder can put the same approval step in front of any image in an automation."
+          },
+          {
+            "q": "What do I need?",
+            "a": "An AI model for the agent, and a Recraft API key: Recraft is the image model it uses, a paid service. Recraft bills each image it makes from your API credit, as your AI usage is billed by your provider."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. In Administration > Credentials, add your Recraft API key. Add Media Content Creator from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and describe an image."
+          }
+        ]
+      },
+      {
+        "slug": "training-coach",
+        "media": "blog/momentum/loop",
+        "width": 720,
+        "height": 1558,
+        "tag": "VibeApp",
+        "size": "Team of 5",
+        "title": "Training Coach",
+        "for": "one person, and the app developers who build for clients",
+        "summary": "The coaching team behind Momentum. Tell it your goal and your week: five coaches build your training plan and your meals, and change them when life does. Every change waits for your yes.",
+        "alt": "A recording of the Momentum app: the person says the machine is taken, and two other exercises appear in 3D while the rest of the session stays",
+        "caption": "The Momentum app, built on this team.",
+        "h1": "A training plan",
+        "h1_accent": "that follows your week.",
+        "lead": "The coaching team behind Momentum. Tell the head coach your goal, your level and what you have at hand: the coaches build your week, and when the machine is taken or your knee hurts, one sentence is enough to change it.",
+        "facts": {
+          "for": "Anyone who trains, and the app developers who want to build an app like it for a client",
+          "use": "The Momentum app, whose code is public; in your trial, the same coaches in the Studio",
+          "behind": "A head coach and four specialists, and a catalogue of 32 exercises"
+        },
+        "steps": [
+          {
+            "title": "A few questions",
+            "body": "The head coach asks your goal, your level, where you train and what you have at hand."
+          },
+          {
+            "title": "The coaches work",
+            "body": "One picks your exercises from the catalogue, one sets your sets, reps and rest, one suggests simple meals."
+          },
+          {
+            "title": "The safety check",
+            "body": "Before anything reaches you, one coach checks the whole plan against your injuries, pain and age."
+          },
+          {
+            "title": "Your week",
+            "body": "Your training plan and your meals for the week, drawn by the app."
+          },
+          {
+            "title": "Life happens",
+            "body": "Say what changed, in one sentence. The app shows the change as a card, and you accept it or not."
+          }
+        ],
+        "decisions": [
+          "Answer the few questions at the start",
+          "Accept or refuse each change to the plan"
+        ],
+        "note": "Training Coach is a demonstration, not a coaching or medical service. Exercises are chosen only from the included catalogue of 32.",
+        "team": {
+          "title": "The team",
+          "lead": "Five coaches. Only the head coach talks to you.",
+          "members": [
+            {
+              "name": "Head Coach",
+              "role": "Talks to you, asks what it needs, and brings in the other coaches."
+            },
+            {
+              "name": "The coach who picks your exercises",
+              "role": "Only from the catalogue, matched to your goal, level, place and equipment."
+            },
+            {
+              "name": "The coach who sets the dose",
+              "role": "Sets, reps, weight and rest, from your profile."
+            },
+            {
+              "name": "The coach for your meals",
+              "role": "Simple food rules and example meals around your goal, habits and allergies."
+            },
+            {
+              "name": "The coach who keeps you from getting hurt",
+              "role": "Checks every plan and every change against injuries, pain and age."
+            }
+          ]
+        },
+        "get": {
+          "body": "The code of the app is public, under the MIT licence. Click through the app first to see what it does.",
+          "link": "The app's code on GitHub",
+          "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_coach",
+          "external": true,
+          "more": [
+            {
+              "link": "Click through the app",
+              "href": "/services/work/momentum/mockup/"
+            }
+          ]
+        },
+        "article": "/blog/momentum-app-that-adapts",
+        "qa": [
+          {
+            "q": "What does Training Coach do?",
+            "a": "You tell the head coach your goal, your level and where you train. Four coaches behind it pick your exercises, set the dose, suggest meals and check everything for your safety, and the Momentum app draws your week's plan. When something changes, say it in one sentence: the app shows the change as a card, and you accept it or not."
+          },
+          {
+            "q": "Is it a real coach?",
+            "a": "No. It is a demonstration, not a coaching or medical service. It shows what an app can do when a team of AI experts works behind it, and it suggests seeing a doctor when you mention pain."
+          },
+          {
+            "q": "Can I build an app like this for my clients?",
+            "a": "Yes. Keep the shape: one coach who talks to the person, experts with clear roles behind it, and rules they follow. Start from the template, and from the Momentum app, whose code is public."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Click through the app's mockup on this page. To run the team itself, start the 14-day trial (no card), connect your AI model, add Momentum Coaches from the welcome guide and open it in Studio > Agents & Workflows: you see the coaches pass the work to each other. The plan and meal cards are drawn by the Momentum app, public code on GitHub, for a developer."
+          }
+        ]
       }
     ],
+    "catalogue": {
+      "eyebrow": "By department",
+      "h2": "Find your department.",
+      "h2_accent": "Pick a job to start with.",
+      "sub": "Open a live solution to see what it does and try it. The ones marked Soon are coming next.",
+      "groups": {
+        "Sales": "For the people who find customers and win them.",
+        "Customer support": "For the people who answer your customers every day.",
+        "Finance": "For the people who handle invoices, cash and reports.",
+        "People (HR)": "For the people who hire new colleagues and welcome them.",
+        "Marketing": "For the people who make images, posts and campaigns.",
+        "Operations": "For the people who manage stock, production and shipping.",
+        "Personal & fun": "For your free time: trips, training, meals and games.",
+        "Creators": "For people who make videos, podcasts and newsletters."
+      },
+      "cards": {
+        "product-compare-team": {
+          "line": "A product compared across stores, with a visual report.",
+          "type": "A team of 9"
+        },
+        "support-desk-team": {
+          "line": "A reply ready to send for every customer message.",
+          "type": "A team of 4"
+        },
+        "invoice-clerk": {
+          "line": "Supplier invoices read, filed and checked.",
+          "type": "One agent"
+        },
+        "cv-screener": {
+          "line": "Each CV scored against the job, with the reasons.",
+          "type": "An automation"
+        },
+        "image-creator": {
+          "line": "The image you need, from one sentence.",
+          "type": "An automation"
+        },
+        "trip-planner": {
+          "line": "A whole trip planned with you, from one sentence.",
+          "type": "A team of 13 · a demo"
+        },
+        "training-coach": {
+          "line": "A training plan that follows your week.",
+          "type": "A team of 5 · not medical advice"
+        }
+      },
+      "soon": {
+        "Lead Researcher": "A company profile and a fit score.",
+        "Quote Builder": "A quote from a customer's request.",
+        "Account Manager": "Your key accounts followed, the next step prepared.",
+        "Complaint Handler": "A complaint taken to a proposed answer.",
+        "Order Support Agent": "Order and delivery questions answered.",
+        "Subscription Care": "Subscription changes and renewals handled.",
+        "Cash Flow Analyst": "A cash forecast from your figures.",
+        "Monthly Report": "The month's management report.",
+        "Invoice Processing": "Supplier invoices from the inbox to approval.",
+        "Onboarding Coordinator": "A new colleague's first weeks, planned.",
+        "Recruiter": "A job post and a shortlist.",
+        "Training Coordinator": "A training plan for each person.",
+        "Blog Writer Team": "The week's article, ready for you to read.",
+        "Social Media Manager": "Posts planned and drafted.",
+        "Email Marketer": "A campaign email and its follow-up.",
+        "Stock Replenisher": "Low stock spotted and the order drafted.",
+        "Production Planner": "The week's production plan.",
+        "Quality Controller": "A batch checked against its standards.",
+        "Logistics Coordinator": "Shipments planned and followed.",
+        "Meal Planner": "The week's meals and the shopping list.",
+        "Game Master Team": "A team that runs your tabletop role-playing game.",
+        "Video Script Team": "A video script from an idea.",
+        "Podcast Notes": "Show notes and chapters from a transcript.",
+        "Newsletter Writer": "Your newsletter drafted from your notes and links.",
+        "Thumbnail Creator": "Thumbnails and images from a description."
+      },
+      "all": {
+        "label": "More ready-made teams on Synergi",
+        "href": "https://synergi.agentivity.io"
+      }
+    },
+    "built_for": {
+      "eyebrow": "Built for",
+      "h2": "Is it for you?",
+      "h2_accent": "Pick your path.",
+      "company_link": "See a whole AI company at work",
+      "company_href": "/blog/ai-company-observation"
+    },
     "cta": {
-      "h2": "A case in mind?",
-      "h2_accent": "Build it.",
-      "sub": "See how a team is put together in the Studio, or try it in the cloud.",
-      "primary": "Build your first team",
-      "primary_href": "/start",
-      "secondary": "See how it works",
-      "secondary_href": "/how-it-works",
+      "h2": "Start with one solution.",
+      "h2_accent": "Make it yours.",
+      "sub": "Open any live solution in your trial and see it work before you change anything. Then describe your changes to the Assistant.",
+      "primary": "Start your trial",
+      "primary_href": "/start?plan=pro",
+      "secondary": "Or describe your own to the Assistant",
+      "secondary_href": "/assistant",
       "services": "A larger project in your organisation?",
       "services_link": "About our services",
       "services_href": "/services"
@@ -2190,19 +2818,19 @@
           "tag": "Sequential",
           "title": "Shopping Lab",
           "body": "Nine specialists, one after another, compare a product across two stores and write a report with the best picks.",
-          "href": "/use-cases/shopping-lab"
+          "href": "/solutions/product-compare-team"
         },
         {
           "tag": "Manager-led",
           "title": "Trip Manager",
           "body": "A manager and twelve specialists plan, book and pay for a trip, and ask the traveller at each decision.",
-          "href": "/use-cases/trip-planner"
+          "href": "/solutions/trip-planner"
         },
         {
           "tag": "Workflow",
           "title": "CV Screening",
           "body": "Fixed steps, AI steps and an approval compare a CV with a job description and propose what to do with it.",
-          "href": "/use-cases/cv-screening"
+          "href": "/solutions/cv-screener"
         }
       ]
     },
@@ -2430,7 +3058,7 @@
         "sub": "Draw the steps in advance: a form, a rule, an approval, an AI step. The workflow follows them in the order you drew, and waits for a person where a decision is theirs. AI works only in the steps you choose.",
         "secondary": {
           "label": "See the CV Screening example",
-          "href": "/use-cases/cv-screening"
+          "href": "/solutions/cv-screener"
         },
         "media": {
           "kind": "video",
@@ -2897,7 +3525,7 @@
         "sub": "An application that adapts to the person who uses it. Behind it, a team of AI specialists does the work.",
         "secondary": {
           "label": "See the use cases",
-          "href": "/use-cases"
+          "href": "/solutions"
         },
         "media": {
           "kind": "video",
@@ -3220,129 +3848,232 @@
     "label": "Build your first team",
     "note": "{trial_days}-day trial · no card · AI usage billed by your provider"
   },
-  "desk_page": {
-    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v4.3 of marketing-content (ACT-189), reviewed, put live by the founder on 2026-11-08. No price, seat number or tier on this page: the detail stays on /pricing.",
+"desk_page": {
+    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v5 of marketing-content, 2026-11-11, reviewed. No price, seat number or tier on this page: the detail stays on /pricing.",
     "meta": {
-      "title": "Desk by Agentivity: your company's AI toolbox",
-      "description": "Your company's AI agents, teams and workflows in one place, following your rules. Everyone uses the same approved tools instead of building their own."
+      "title": "Desk by Agentivity: one place for your company's AI teams",
+      "description": "Your people already use AI, each in their own way. Desk by Agentivity gives everyone the company's AI teams, set up once, in one place. In Pro and Business, with a 14-day trial."
+    },
+    "trial": {
+      "label": "Start your trial",
+      "href": "/start?plan=pro"
     },
     "hero": {
-      "h1": "Your company's AI toolbox, ready for everyone.",
-      "sub": "Desk by Agentivity puts your company's AI agents, teams and workflows in one place, set up to follow your processes and rules. Everyone uses the same tools, approved by the company, instead of each person building their own.",
-      "image_alt": "The Desk home: one field to ask the company's AI teams, and ready requests from the support team, the sales team and the content team.",
-      "caption": "Demo workspace."
+      "eyebrow": "Desk by Agentivity",
+      "h1": "One Desk where everyone uses your company's AI teams.",
+      "sub": "Your people already use AI at work, each with their own assistant and their own way. The Desk gives them one place to use the AI teams your company set up once, for its own tasks and rules. They ask in plain words and get the work back, done the company's way.",
+      "article": "Why one Desk for everyone? Read the article",
+      "article_href": "/blog/shared-ai-toolbox-for-the-company",
+      "image_alt": "The Desk home: one field to ask the company's AI teams, a request waiting for an answer, and ready requests from the support team, the sales team and the content team.",
+      "caption": "The Desk home of a demo company: ask in plain words, or start a ready request."
     },
-    "contrast": {
-      "h2": "A personal AI assistant helps one person. The Desk equips the whole company.",
-      "body": "With a personal assistant, each person builds their own prompts and their own way, and it is hard for anyone else to see or check it. With the Desk, the company sets up its AI teams once, the right way, and everyone uses them.",
+    "problem": {
+      "eyebrow": "The problem",
+      "h2": "Everyone at work has their own AI. Does your company?",
+      "body": [
+        "Your people already use AI to write emails, summarise documents and answer customers. Each of them found their own way, with their own prompts and habits. Each of them gains time, but the company ends up with as many ways of doing the same task as it has people, and it cannot see any of them.",
+        "Picture one refund request in one week. On Monday, one person's assistant offers a voucher first, as the company wants. On Wednesday, another person's assistant has never heard of the voucher rule and accepts the refund. On Friday, a new team member uses a colleague's old prompt. Three answers to the same request, and nobody chose this."
+      ],
+      "cards": [
+        {
+          "title": "Consistency",
+          "body": "The same question gets different answers, depending on who handled it. When a rule changes, it reaches some assistants and not others."
+        },
+        {
+          "title": "Control",
+          "body": "Nobody else can see what was asked, or what was sent on. Company and client information sometimes ends up in personal accounts."
+        },
+        {
+          "title": "Know-how",
+          "body": "The best prompts hold how your company works. They live in personal accounts, and they leave when the person leaves."
+        }
+      ],
+      "line": "Banning personal AI rarely works: people use it because it saves them real effort. It works better to give them something more useful, AI that already knows how your company works."
+    },
+    "answer": {
+      "eyebrow": "The answer",
+      "h2": "One Desk, set up once, used by everyone.",
+      "body": "The company sets up its AI teams once, for its own tasks, processes and rules. Everyone uses them from the same Desk, with nothing to build and no prompt to write.",
       "columns": [
-        "A personal AI assistant",
-        "Desk by Agentivity"
+        "Each person with their own AI",
+        "Everyone on one Desk"
       ],
       "rows": [
         [
-          "Each person, their own way",
-          "The company's way, for everyone"
+          "Each person writes their own prompts.",
+          "Set up once, used by everyone."
         ],
         [
-          "Rebuilt by everyone",
-          "Set up once, shared"
+          "The same task is done in many different ways.",
+          "The same task, done the same way."
         ],
         [
-          "Hard for anyone else to see",
-          "Under your rules and your access"
+          "Good ideas stay with one person, and leave with them.",
+          "Every improvement reaches everyone, and stays in the company."
+        ],
+        [
+          "Work stays in personal accounts.",
+          "Work stays in your company's space."
+        ],
+        [
+          "Everyone pays again for the same setup work.",
+          "Less AI spend: nobody redoes the setup for each request."
         ]
       ]
     },
     "people": {
+      "eyebrow": "On the Desk",
       "h2": "As simple as asking a colleague",
-      "body": "Your people have nothing to build and no prompt to write. They pick the AI team they need, ask in plain words, and the work is done the company's way.",
-      "items": [
+      "body": "Your people have nothing to build and no prompt to write. They pick the AI team they need and ask in plain words. The AI team does the work the company's way and brings it back to them.",
+      "steps": [
         {
-          "title": "Ask.",
-          "body": "Type the request, pick the AI team with @, or dictate it if transcription is set up. Or start a ready request in one click."
+          "title": "Ask in plain words.",
+          "body": "Type the request, or pick the AI team with @. They can also dictate it, if transcription is set up."
         },
         {
-          "title": "Approve.",
-          "body": "When a team needs a check, a choice or a sign-off, it waits for them in \"Waiting for you\". People keep the decisions."
+          "title": "Or pick a ready request.",
+          "body": "The requests people make most are ready to start in one click."
         },
         {
-          "title": "Find and share.",
-          "body": "Their conversations stay, with search and filters. They share one with a colleague when they choose, to read only or to reply too."
+          "title": "Get the work back.",
+          "body": "A reply, a report, an image: the result appears next to the conversation, ready to check and use."
+        },
+        {
+          "title": "Approve when it matters.",
+          "body": "When an AI team needs a check or a sign-off, the request waits in \"Waiting for you\". People keep the decisions."
         }
       ],
-      "you_lead": "What it changes for you:",
-      "you_items": [
-        "the same process, whoever does the task;",
-        "new people who can work your way from day one;",
-        "when an AI team is improved, everyone uses the improved one from their next request."
-      ],
-      "image_alt": "A request waiting in the Desk: the AI team asks the person to approve or refuse a refund before it goes on.",
-      "caption": "Demo workspace."
+      "line": "Their conversations stay, with search. They share one with a colleague when they choose, to read only or to reply too.",
+      "result_alt": "The Desk: a conversation with the Media Content Creator team, the request for an image, and the image it made, shown again in the result panel on the right.",
+      "result_caption": "A colleague asks the content team for an image. The result appears next to the conversation.",
+      "approval_alt": "A request waiting on the Desk: the support team asks the person to approve or refuse a refund before it goes on.",
+      "approval_caption": "The refund waits for a person's answer."
     },
-    "access": {
-      "h2": "Your rules, in your company's space",
-      "body": "When everyone uses AI in personal accounts, sometimes on client documents, nobody can see or check that work, and it leaves with the person. On the Desk, the AI work stays in your company's space, under your rules.",
-      "items": [
-        {
-          "title": "You choose the AI teams on the Desk.",
-          "body": "An administrator decides which AI teams your people can use. Set it to only what you choose, and nothing else appears there."
-        },
-        {
-          "title": "Access decides who sees what.",
-          "body": "Finance sees Finance's AI teams."
-        },
-        {
-          "title": "Each person has their own Desk.",
-          "body": "Colleagues see only the conversations shared with them. The administrators you allow can read them."
-        },
-        {
-          "title": "You know who started what.",
-          "body": "Every conversation keeps who started it, which AI team did the work, and the approvals."
-        },
-        {
-          "title": "An audit journal, on Business.",
-          "body": "Sign-ins, changes to people, roles and keys, and every share are recorded for a year."
-        },
-        {
-          "title": "Hosted in Europe (Frankfurt),",
-          "body": "each company in its own space, apart from every other customer."
-        },
-        {
-          "title": "When someone leaves, the work stays.",
-          "body": "You deactivate them: their access ends at once, and nothing is deleted."
-        }
-      ],
-      "image_alt": "The Desk settings: published to the Desk is set to Only what I choose, so the administrator picks each AI team people can use."
-    },
-    "cockpits": {
-      "h2": "A cockpit for each department",
-      "body": "A department can also have its own page on the Desk. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it.",
-      "items": [
-        {
-          "src": "/media/desk/cockpit-finance.webp",
-          "alt": "A Finance & Purchasing page on the Desk: the month's close notice, the field to ask, and ready requests for invoices, purchases and due diligence."
-        },
-        {
-          "src": "/media/desk/cockpit-marketing.webp",
-          "alt": "A Marketing page on the Desk: the Black Friday notice, the field to ask, and ready requests for a campaign, a blog post and a social media visual."
-        },
-        {
-          "src": "/media/desk/cockpit-travel.webp",
-          "alt": "A Travel & Events page on the Desk: the offsite notice, the field to ask, and figures for trips, approvals waiting and budget booked."
-        }
-      ],
-      "caption": "Demo workspace."
+    "gains": {
+      "eyebrow": "What your company gains",
+      "h2": "Your company's AI, working the company's way.",
+      "sub": "Five things change when everyone uses the same AI teams.",
+      "same": {
+        "h3": "The same way of working, whoever does the task.",
+        "body": "The process lives in the AI team, not in each person's prompt. Monday, Wednesday and Friday get the same answer. When a rule changes, it changes in one place, and new people work your way from their first day."
+      },
+      "knowhow": {
+        "h3": "Know-how that stays in the company.",
+        "body": "When someone finds a better way, the AI team is improved once, and everyone uses the improved one from their next request. When a person leaves, their way of working with AI does not leave with them."
+      },
+      "space": {
+        "h3": "Work in your company's space, under your rules.",
+        "body": "The AI work stays in your company's space, where the people you allow can find it, instead of in personal accounts.",
+        "items": [
+          {
+            "title": "You choose the AI teams on the Desk.",
+            "body": "An administrator decides which AI teams your people can use. Set it to only what you choose, and nothing else appears there."
+          },
+          {
+            "title": "Access decides who sees what.",
+            "body": "Finance sees Finance's AI teams."
+          },
+          {
+            "title": "Each person has their own Desk.",
+            "body": "Colleagues see only the conversations shared with them. The administrators you allow can read them."
+          },
+          {
+            "title": "You know who started what.",
+            "body": "Every conversation keeps who started it, which AI team did the work, and the approvals."
+          },
+          {
+            "title": "An audit log, on Business.",
+            "body": "Sign-ins, changes to people, roles and keys, and every share are recorded for a year."
+          },
+          {
+            "title": "Hosted in Europe (Frankfurt),",
+            "body": "each company in its own space, apart from every other customer."
+          },
+          {
+            "title": "When someone leaves, the work stays.",
+            "body": "You deactivate them: their access ends at once, and nothing is deleted."
+          }
+        ],
+        "image_alt": "The Desk settings: published to the Desk is set to Only what I choose, so the administrator picks each AI team people can use."
+      },
+      "bill": {
+        "h3": "A smaller AI bill for the tasks you share.",
+        "body": "When each person does a task in their own chat, they write the prompt, paste the document, then correct the answer and try again. Where AI is billed by use, the company pays for all of that text. A shared agent does the same task in a few fixed steps. Its instructions stay the same, so the model keeps them ready, and reading them again costs much less.",
+        "figures": [
+          [
+            "10 people",
+            "15% to 43%"
+          ],
+          [
+            "20 people",
+            "29% to 55%"
+          ],
+          [
+            "50 people",
+            "36% to 61%"
+          ],
+          [
+            "500 people",
+            "39% to 63%"
+          ]
+        ],
+        "line": "By our estimate, this is how much the usage part of the AI bill for that task falls when people share it through one agent instead of each using their own chat.",
+        "small": "Below about ten people, the agent runs too rarely to keep its instructions ready, and the saving can disappear. We count only the AI bill: people's time and seats are not counted, and we assume the quality of the work is the same. This is an estimate from simple assumptions, not a measurement.",
+        "link": "How we estimated it",
+        "href": "/blog/shared-ai-toolbox-for-the-company#what-it-costs-on-the-ai-bill",
+        "chart_alt": "Column chart of the middle of our estimate of the share of the usage AI bill saved on one task when people share one agent instead of each using their own chat or personal agent: between 15% and 43% with 10 people, between 29% and 55% with 20, between 36% and 61% with 50, and between 39% and 63% with 500. An estimate from simple assumptions, not a measurement.",
+        "chart_caption": "Middle 30% of our estimate, from public prices."
+      },
+      "cockpits": {
+        "h3": "One place for every department.",
+        "body": "Each department can have its own page on the Desk, a cockpit. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it.",
+        "items": [
+          {
+            "src": "/media/desk/cockpit-finance.webp",
+            "alt": "A Finance & Purchasing page on the Desk: the month's close notice, the field to ask, and ready requests for invoices, purchases and due diligence."
+          },
+          {
+            "src": "/media/desk/cockpit-marketing.webp",
+            "alt": "A Marketing page on the Desk: the Black Friday notice, the field to ask, and ready requests for a campaign, a blog post and a social media visual."
+          },
+          {
+            "src": "/media/desk/cockpit-travel.webp",
+            "alt": "A Travel & Events page on the Desk: the offsite notice, the field to ask, and figures for trips, approvals waiting and budget booked."
+          }
+        ],
+        "caption": "Three cockpits of a demo company: Finance, Marketing, Travel."
+      }
     },
     "seats": {
-      "h2": "Seats for the whole team",
-      "body": "The Desk is included from the Pro plan.",
-      "link": "See the Desk seats",
-      "href": "/pricing#seats"
+      "eyebrow": "Plans",
+      "h2": "For teams and companies, on Pro and Business.",
+      "body": "Included in Pro and Business, and in their 14-day trial, with no card. A Studio seat is for a person who builds and looks after the AI teams; a Desk seat is for a person who uses them, without building.",
+      "link": "See plans and seats",
+      "href": "/pricing"
     },
     "faq": {
       "h2": "Questions leaders ask",
       "items": [
+        {
+          "q": "What is shadow AI?",
+          "a": "Shadow AI is the use of AI tools at work outside anything the company has chosen or can see: personal assistant accounts, personal prompts, and sometimes company or client documents pasted into them."
+        },
+        {
+          "q": "We already pay for one AI assistant for everyone. Is that not enough?",
+          "a": "It shares the tool, not the way of working. Each person still writes their own prompts and keeps their own habits, so the same task is done differently by each person. A shared AI team holds the company's process itself, so everyone who uses it works the same way."
+        },
+        {
+          "q": "Should a company ban personal AI assistants?",
+          "a": "A ban rarely holds, because people use AI to get real work done. It works better to give them something more useful: AI teams set up once for the company's own tasks, that follow its processes and rules, and that everyone can use."
+        },
+        {
+          "q": "Does a shared agent use less AI than everyone using their own AI assistant?",
+          "a": "Often, on a task that many people do the same way. Nobody rewrites the prompt, pastes the document again or goes back and forth, and the shared agent reads its fixed instructions from a cache, where they cost much less. Our central estimate is that the usage part of the AI bill for that task falls by 15% to 43% for a team of 10, and by 36% to 61% from about 50 people, after which it hardly grows. Below about ten people, the saving can disappear. People's time and seats are not counted, and we assume the quality is the same. This is an estimate from simple assumptions, not a measurement."
+        },
+        {
+          "q": "Who sets up the AI teams?",
+          "a": "Someone on your team, or a partner you work with. They describe the task in plain words to Agentivity's Assistant, which asks its questions, proposes a plan and builds a draft they check before saving. Then it is published to the Desk for the people who need it."
+        },
         {
           "q": "Can my people still make their own AI teams?",
           "a": "On a Desk seat, no: they use the AI teams the company chose."
@@ -3357,11 +4088,814 @@
         },
         {
           "q": "How do we start?",
-          "a": "Start a trial of a plan that includes the Desk, with no card, then invite your team. The seats of each plan are on the pricing page: {seats_link}"
+          "a": "Start a 14-day trial of Pro or Business, with no card, and connect your AI model account. Set up one task that several people do differently today, publish it to the Desk, and invite the people who do that task. The plans and seats are on the pricing page: {seats_link}"
         }
       ],
       "docs": "How the Desk works, in the docs",
       "docs_href": "/docs/desk/agentivity-desk/"
+    },
+    "final": {
+      "h2": "Give your company one Desk.",
+      "sub": "Start with one task that several people do differently today: a customer request, a supplier invoice, a job ad, a weekly report. Set it up once, give it to everyone who does it, and see what changes."
+    }
+  },
+"connections_page": {
+    "_comment": "The Connections page (/connections), English only. v2 of Content & CRO (2026-11-11), reviewed: a page that sells the connections. The list itself is in src/data/connections.ts.",
+    "meta": {
+      "title": "Connections: Your AI Agents Inside Your Apps | Agentivity",
+      "description": "Connect Google, Slack, HubSpot, Notion, Stripe and more once. Use each app in your automations and give it to your AI agents as a tool. Your team uses the result from the Desk."
+    },
+    "hero": {
+      "eyebrow": "Connections",
+      "h1": "Your AI agents work inside the tools you already use",
+      "sub": "Connect Google, Slack, HubSpot, Notion, Stripe and the other apps you work with, once. Use each app as a fixed step in an automation, or hand it to an AI agent that decides when to use it. The sheet, the document, the message, the contact: the work gets done where it lives.",
+      "cta": "Start your trial",
+      "cta_href": "/start?plan=pro",
+      "secondary": "See the apps",
+      "secondary_href": "#apps",
+      "image_alt": "The Studio canvas: an AI agent with its AI model and three apps as tools, Google Sheets, HubSpot and a Slack channel."
+    },
+    "uses": {
+      "h2": "Hand over the work that lives in your apps",
+      "sub": "Most of a day goes into moving information from one app to another. With your apps connected, an AI agent or an automation does that part, and you keep the decisions.",
+      "cards": [
+        {
+          "title": "Keep a sheet up to date",
+          "body": "An agent reads your Google Sheet, checks each row, and fills in what is missing: a status, a date, a note. You open the sheet and it is done.",
+          "logos": [
+            "googlesheets"
+          ]
+        },
+        {
+          "title": "Get your weekly report written",
+          "body": "Every Monday morning, an automation collects the numbers of the week and an agent writes the report in a Google Doc, ready to read with your coffee.",
+          "logos": [
+            "googledocs",
+            "googlesheets"
+          ]
+        },
+        {
+          "title": "Tell the team in Slack",
+          "body": "When the work is done, the result is posted in the right Slack channel, so nobody has to ask where things stand.",
+          "logos": [
+            "slack"
+          ]
+        },
+        {
+          "title": "Keep your CRM clean",
+          "body": "Tell the agent about your call, or let it read your latest emails, and it updates the contact in HubSpot with the notes and the next step. Your CRM shows what really happened.",
+          "logos": [
+            "hubspot"
+          ]
+        },
+        {
+          "title": "Answer \"has this customer paid?\"",
+          "body": "An agent looks up the customer's payments and invoices in Stripe and gives a clear answer, without anyone opening the Stripe dashboard.",
+          "logos": [
+            "stripe"
+          ]
+        }
+      ],
+      "line": "The same goes for Notion pages, Airtable records, your calendar, your email, Telegram and Discord messages, and posts on your WordPress site."
+    },
+    "how": {
+      "h2": "Connect once. Use it everywhere.",
+      "steps": [
+        {
+          "title": "Connect your app",
+          "body": "Sign in with your account, or paste a key, once. One Google sign-in opens Sheets, Calendar, Docs, Drive, Slides, Forms, Contacts and Tasks together."
+        },
+        {
+          "title": "Use it in a step, or give it to an agent",
+          "body": "Put the app in an automation as a step, or plug it into an agent as a tool. The Assistant can also add it to your agent when you describe what you need. You connect the app once yourself.",
+          "image_alt": "The Studio canvas: Google Sheets as a step before an AI agent, and the same app plugged into the agent as a tool."
+        },
+        {
+          "title": "Your team uses it from the Desk",
+          "body": "Your colleagues ask for the work in the Desk. The agents use your connected apps to do it. Your colleagues never handle a password or a key.",
+          "link": "See the Desk",
+          "href": "/desk"
+        }
+      ],
+      "security": "Your API keys and sign-in tokens are encrypted in your workspace. Delete the connection, and they are deleted with it.",
+      "security_link": "How we protect your data",
+      "security_href": "/legal/dpa"
+    },
+    "modes": {
+      "h2": "The same app, used two ways",
+      "sub": "Every app on the \"Available\" list works both ways. You choose, for each job, how much the AI decides.",
+      "step": {
+        "title": "As a step",
+        "body": "A step does the same thing every time, in the order you set. \"Every Friday, add the new orders to the sheet.\" Use it when you know exactly what must happen."
+      },
+      "tool": {
+        "title": "As a tool",
+        "body": "An agent decides when to use a tool, and how. \"Find out why this customer is unhappy and fix their record.\" The agent looks for what it needs, in the apps you gave it."
+      },
+      "control": "You decide what an agent may change. An app tool only reads at first. It creates, sends or deletes only when you allow it on that tool.",
+      "closing": "Most good automations mix both: fixed steps where you want your own rules, and an agent where it takes judgment.",
+      "image_alt": "A workflow in the Studio: a Google Sheets step, then an AI agent with a Slack channel and HubSpot as tools.",
+      "depth": {
+        "title": "An app that is not on the list?",
+        "body": "Your automations and agents can often still work with it. A step or an agent can call any API that has an HTTP interface, with the key you connect. And an agent can use the tools of an MCP server, a common way for apps to offer their tools to AI agents."
+      }
+    },
+    "models": {
+      "h2": "Your AI model, your choice",
+      "line": "Pick the AI model for each agent, and change it when you want."
+    },
+    "apps": {
+      "h2": "Apps you can connect",
+      "sub": "\"Available\" works today, as a step and as a tool. \"Coming\" is planned, and shows here until you can use it.",
+      "available": "Available",
+      "available_note": "Email works with any mailbox that uses SMTP and IMAP. HTTP requests and MCP servers reach the apps that are not on this list.",
+      "starting": "An automation starts when you start it, on a schedule, when another service calls its webhook, or when something happens in one of your apps, starting with a Telegram message. Schedules, webhooks and app events are on the hosted plans.",
+      "coming": "Coming",
+      "more": "and {n} more"
+    },
+    "ask": {
+      "h2": "Need another app?",
+      "body": "Tell us which one, and what you want your agents to do with it. It helps us choose what comes next.",
+      "cta": "Tell us"
+    },
+    "cta": {
+      "h2": "Put your AI agents to work in your apps",
+      "sub": "Connect your first app, build an automation, and let an agent do the work you do by hand today.",
+      "button": "Start your trial"
+    }
+  },
+  "solutions_pages": {
+    "_comment": "The Solutions pages by who the visitor is (KB-0320, plan of 2026-11-09), English only. Texts v1.1 of Content & CRO (2026-11-09), not reviewed yet. For companies is the Desk page (/desk).",
+    "builders": {
+      "meta": {
+        "title": "Deliver Automation and AI to Your Clients | Agentivity",
+        "description": "Build automations, AI agents and teams of AI agents once, keep each client in its own space, and give their people an app or portal. 14-day trial, no card."
+      },
+      "hero": {
+        "eyebrow": "Freelancers & agencies",
+        "h1": "Deliver automations and AI to your clients,",
+        "h1_accent": "as your own.",
+        "sub": "Build automations, AI agents and teams of AI agents once, keep each client in its own space, and hand their people an app or a portal they can use.",
+        "cta": "Start your trial",
+        "secondary": "Talk to us about white label",
+        "secondary_href": "mailto:hello@agentivity.io?subject=White%20label"
+      },
+      "sections": [
+        {
+          "eyebrow": "What you can deliver",
+          "title": "Everything your clients ask for, built in one place.",
+          "body": "Your clients come with very different requests: one wants a report every Monday, another wants help with the complaints. You answer both from the same place, with the same tools you already know.",
+          "points": [
+            {
+              "title": "Automations that follow their rules",
+              "body": "Fixed steps where their rules apply, AI where a step takes judgment, working with the apps and services they use."
+            },
+            {
+              "title": "Teams of AI experts",
+              "body": "Each expert with its own role, knowledge and tools, working on the job together, with a person approving what matters."
+            },
+            {
+              "title": "An app for their customers",
+              "body": "A VibeApp: an app built for one job, where each screen appears when it is needed."
+            },
+            {
+              "title": "A control center for their team",
+              "body": "The Desk: their people start the processes you set up from one place and see what is waiting for them."
+            }
+          ],
+          "media": {
+            "kind": "video",
+            "src": "/media/studio-trip-run.mp4",
+            "poster": "/media/studio-trip-run.jpg",
+            "width": 1600,
+            "height": 900
+          },
+          "caption": "A manager-led team at work in the Studio. Recorded from the product, played faster.",
+          "alt": "The Trip Manager Team at work in the Studio: the manager hands the trip to each specialist in turn, and the traveller answers in the chat beside it at each step."
+        },
+        {
+          "eyebrow": "How you work with a client",
+          "title": "Each client in its own space, each person with the right access.",
+          "body": "",
+          "points": [
+            {
+              "title": "Spaces kept apart",
+              "body": "Each client's agents, automations, data and credentials stay in their own space, apart from the others."
+            },
+            {
+              "title": "Roles you choose",
+              "body": "You build. Their people use what you built, as you decide. You can create your own roles too."
+            },
+            {
+              "title": "Their people use what you built, without the Studio",
+              "body": "They use a portal, one page where they start what you made available for them, or an app, or a Desk."
+            },
+            {
+              "title": "Every step is recorded",
+              "body": "You and your client know what ran, when and why."
+            }
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/desk/desk-governance.webp",
+            "width": 1820,
+            "height": 340
+          },
+          "caption": "Choose what each team can use.",
+          "alt": "The Desk settings: published to the Desk is set to Only what I choose, so the administrator picks each AI team people can use."
+        },
+        {
+          "eyebrow": "White label",
+          "title": "Full white label, on Enterprise.",
+          "body": "Your clients see your brand, on the apps and the portal you deliver to them. You keep one place to build and run it all.",
+          "points": [],
+          "button": {
+            "label": "Talk to us about white label",
+            "href": "mailto:hello@agentivity.io?subject=White%20label"
+          },
+          "note": "White label is part of the Enterprise plan.",
+          "media": {
+            "kind": "video",
+            "src": "/media/shopping-lab.mp4",
+            "poster": "/media/shopping-lab.jpg",
+            "width": 1024,
+            "height": 768
+          },
+          "caption": "A team published to the portal: no app to build. Recorded from the product, played faster.",
+          "alt": "The Shopping Lab demo in the portal: a shopper asks for headphones, the specialists work in turn, and the report shows the best pick."
+        },
+        {
+          "eyebrow": "A delivery, end to end",
+          "title": "One client, delivered from start to finish.",
+          "body": "",
+          "points": [
+            {
+              "title": "The request.",
+              "body": "Northmoor's customer care team wants help with complaints and subscription questions."
+            },
+            {
+              "title": "What you build.",
+              "body": "A Complaint Handling automation with its own rules, and a team of experts: a Coffee Advisor, a Subscription Specialist and an Order Support Agent."
+            },
+            {
+              "title": "What their people use.",
+              "body": "The care team starts it from their portal and approves the replies that matter before anything goes out."
+            },
+            {
+              "title": "What you see.",
+              "body": "The whole organisation on one screen, down to each step, so you know what ran and where to improve it."
+            }
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/home/northmoor-customer-care.webp",
+            "width": 1800,
+            "height": 1125
+          },
+          "caption": "Northmoor Coffee Roasters is an example company, built in the product.",
+          "alt": "The Observation view of Northmoor Coffee Roasters with the Customer Care department open: its head, the complaint handling, subscription, order support and coffee advice experts."
+        }
+      ],
+      "ready": {
+        "eyebrow": "Starting points",
+        "h2": "Start from a solution that already works.",
+        "body": "Open a ready-made solution, adapt it to your client, and deliver it."
+      },
+      "partners": {
+        "title": "A partner offer for agencies is coming.",
+        "body": "We are preparing an offer for agencies and builders who deliver Agentivity to their clients. Tell us about your work and we will let you know first.",
+        "cta": "Talk to us"
+      },
+      "faq": {
+        "h2": "Questions freelancers and agencies ask",
+        "items": [
+          {
+            "q": "Can my clients use what I build without seeing how it is built?",
+            "a": "Yes. Their people use a portal, an app or a Desk, with the role you give them. The build stays with you."
+          },
+          {
+            "q": "Which AI model does it use?",
+            "a": "Your own AI model account, for example through OpenRouter. You choose the model for each agent."
+          },
+          {
+            "q": "Can I deliver under my own brand?",
+            "a": "Yes. Put your name, logo and colour on the Desk on Pro and Business, and your own look on the portal and apps. Full white label comes with Enterprise."
+          },
+          {
+            "q": "Does it work with my clients' apps?",
+            "a": "Yes. Google, Slack, HubSpot, Notion, Stripe, Airtable, email and more work today, as steps in your automations and as tools for your agents. For another app, a step or an agent can call its API with an HTTP request. The Connections page shows what works today and what is coming."
+          },
+          {
+            "q": "Can I start from something ready?",
+            "a": "Yes. Each ready-made solution is a starting point you can adapt to a client."
+          }
+        ]
+      },
+      "cta": {
+        "h2": "Build it once.",
+        "h2_accent": "Deliver it to every client.",
+        "sub": "Start your 14-day trial with your own AI model account, no card needed."
+      },
+      "cross": {
+        "text": "Automating your own projects too?",
+        "link": "See Your own projects",
+        "href": "/solutions/your-own-projects"
+      }
+    },
+    "makers": {
+      "meta": {
+        "title": "Automate Your Own Projects With AI | Agentivity",
+        "description": "Automations, AI agents and teams of AI agents for your own projects: your rules where they fit, AI where it takes judgment. 14-day trial, no card."
+      },
+      "hero": {
+        "eyebrow": "Your own projects",
+        "h1": "Automate your own work",
+        "h1_accent": "and side projects.",
+        "sub": "Automations, AI agents and teams of AI agents in one place, running on your schedule or whenever you start them, under your own rules.",
+        "cta": "Start your trial",
+        "secondary": "Or run the Community edition on your own server",
+        "secondary_href": "/community"
+      },
+      "sections": [
+        {
+          "eyebrow": "What you can automate",
+          "title": "The small jobs that keep coming back.",
+          "body": "Every project has a few jobs you do by hand week after week, because building something for them never felt worth the evening. Pick one, set when it runs, and keep the decisions for yourself.",
+          "points": [
+            {
+              "title": "Jobs that run on their own",
+              "body": "Set an automation to run every morning or every Monday, and find the result waiting for you."
+            },
+            {
+              "title": "Files you would rather not read",
+              "body": "Upload documents, and let an AI step read them, sort them and pull out what matters."
+            },
+            {
+              "title": "Questions too big for one prompt",
+              "body": "Give a research or planning job to a team of AI experts, each with its own role, and approve what matters."
+            },
+            {
+              "title": "An app for your side project",
+              "body": "Put an AI team behind a small app and share it with the people it is for."
+            }
+          ],
+          "media": {
+            "kind": "video",
+            "src": "/media/studio-workflow.mp4",
+            "poster": "/media/studio-workflow.jpg",
+            "width": 1418,
+            "height": 770
+          },
+          "caption": "An automation in the Studio: an invoice is read by AI; above €1,000, Finance approves it. Recorded from the product, played faster.",
+          "alt": "An automation in the Studio: an invoice is read by an AI step, and an invoice above €1,000 waits for Finance to approve it."
+        },
+        {
+          "eyebrow": "Your rules, and AI",
+          "title": "Fixed steps where your rules apply. AI where it takes judgment.",
+          "body": "Draw the steps that must happen the same way every time, and let an AI step decide where no rule can. You decide where the line falls.",
+          "points": [
+            {
+              "title": "You decide, it executes.",
+              "body": "It can stop and ask you before anything important goes out."
+            },
+            {
+              "title": "Every step is recorded.",
+              "body": "You know what ran, when and why."
+            }
+          ],
+          "media": {
+            "kind": "image",
+            "src": "/media/studio-workflow-approval.webp",
+            "width": 1640,
+            "height": 549
+          },
+          "caption": "An automation in the Studio: an AI step reads, a rule checks, a person approves.",
+          "alt": "A short Agentivity automation: an invoice comes in and the AI reads it; over 1,000 €, Finance approves it before the requester is told."
+        },
+        {
+          "eyebrow": "VibeApps",
+          "title": "An app for your project, without building screens.",
+          "body": "Put a team behind an app and share it. You set the goal, and each screen appears when the person using it needs it.",
+          "points": [],
+          "media": {
+            "kind": "video",
+            "src": "/media/trip-planner.mp4",
+            "poster": "/media/trip-planner.jpg",
+            "width": 1024,
+            "height": 768
+          },
+          "caption": "Trip Planner: one request, a team of specialists, a trip chosen screen by screen. Recorded from the product, played faster. Bookings and payment are simulated.",
+          "alt": "The Trip Planner app: a traveller describes a trip, then the flights, the hotels and the bookings appear in the conversation as the team works."
+        },
+        {
+          "eyebrow": "Your AI model",
+          "title": "Your own account, your choice of model.",
+          "body": "Connect your own AI model account, for example OpenRouter, which gives you many providers through one account. You choose the model for each agent, and AI usage is billed to you by your provider.",
+          "points": [],
+          "media": null,
+          "caption": "",
+          "alt": ""
+        }
+      ],
+      "faq": {
+        "h2": "Questions about your own projects",
+        "items": [
+          {
+            "q": "Do I need my own AI model account?",
+            "a": "Yes. You connect your own account, for example OpenRouter, and choose the model for each agent. AI usage is billed to you by your provider."
+          },
+          {
+            "q": "What starts an automation?",
+            "a": "You, whenever you start it. On the hosted plans, also the schedule you set, another service calling its webhook, or something happening in one of your apps, starting with a Telegram message."
+          },
+          {
+            "q": "Which apps does it work with?",
+            "a": "Google Sheets, Docs, Calendar and the other Google apps, Slack, HubSpot, Notion, Stripe, Airtable, email, WordPress and more work today, as steps and as tools for your agents. The Connections page shows the full list, and what is coming."
+          },
+          {
+            "q": "Personal or Pro?",
+            "a": "Personal is for one person. Pro gives you more and longer executions, room for 3 builders, several spaces and the Observation view of your teams."
+          },
+          {
+            "q": "Can I run it on my own server?",
+            "a": "Yes. The Community edition is free and runs on your own server: agents, teams, automations and the Studio, for one person. Schedules are on the hosted plans only."
+          },
+          {
+            "q": "I build automations at work too.",
+            "a": "See Freelancers & agencies: the same platform, with a space for each client."
+          }
+        ]
+      },
+      "cta": {
+        "h2": "Hand over the first job that keeps coming back.",
+        "h2_accent": "",
+        "sub": "Try the hosted plans, or run the free Community edition on your own server.",
+        "second": {
+          "label": "Run it on your own server",
+          "href": "/community"
+        }
+      },
+      "cross": {
+        "text": "Building for clients too?",
+        "link": "See Freelancers & agencies",
+        "href": "/solutions/freelancers-and-agencies"
+      }
+    }
+  },
+  "home_v3": {
+    "meta": {
+      "title": "Start with One Automation, Grow to an AI Company | Agentivity",
+      "description": "AI agents that do real work. Start with one task, then a team, then a whole AI company you can see at work. 14-day trial, no card.",
+      "og_title": "Start with one automation. Grow to a whole AI company."
+    },
+    "trial": {
+      "label": "Start your trial",
+      "href": "/start?plan=pro"
+    },
+    "hero": {
+      "h1": "Start with one automation.",
+      "h1_accent": "Grow to a whole AI company.",
+      "sub": "AI agents that do the real work, from one task to a whole company.",
+      "trial_note": "{trial_days}-day trial · no card",
+      "video_alt": "A short film from the product: one agent becomes a team, then a team in every department, then a whole AI company on one screen."
+    },
+    "ladder": {
+      "eyebrow": "For a one-person bakery, or a company of 500 people.",
+      "title": "Start with one helper.",
+      "title_accent": "Grow to an AI company.",
+      "sub": "Agentivity gives you AI agents that do real work. Start small, and grow when you are ready.",
+      "steps": [
+        {
+          "tag": "On your own",
+          "title": "One helper",
+          "body": "Sam runs a bakery and pastes in the day's orders. An AI helper answers the simple questions and makes the list of what to bake.",
+          "caption": "An AI helper in the Studio.",
+          "image": "/media/home/studio-agent-helper.jpg",
+          "width": 1418,
+          "height": 770
+        },
+        {
+          "tag": "Small business",
+          "title": "One team",
+          "body": "Lena runs a small travel agency. A trip manager and its specialists plan each trip: the flight, the hotel and the dinner.",
+          "caption": "A team in the Studio: a manager and its specialists.",
+          "image": "/media/studio-team.jpg",
+          "width": 1418,
+          "height": 770
+        },
+        {
+          "tag": "Company",
+          "title": "A team in every department",
+          "body": "Customer care, finance, marketing, people: each department gets its own AI team, next to its people.",
+          "caption": "The customer care department of Northmoor: a head and its experts.",
+          "image": "/media/home/northmoor-customer-care.webp",
+          "width": 1800,
+          "height": 1125
+        },
+        {
+          "tag": "Where it goes",
+          "title": "An AI company",
+          "body": "A chief executive shares the work between the departments, and each department between its experts. Here, Northmoor Coffee Roasters, an example company built in the product.",
+          "caption": "Northmoor Coffee Roasters: a chief executive, six departments and their teams.",
+          "image": "/media/home/northmoor-observation.webp",
+          "width": 1400,
+          "height": 900
+        }
+      ]
+    },
+    "solutions": {
+      "eyebrow": "Ready-made solutions",
+      "title": "What can AI do for you first?",
+      "sub": "Each one is ready to use. Open it in your trial with its demo data, then ask the Assistant to change it for you.",
+      "more": "See it at work",
+      "cards": [
+        {
+          "name": "Support Desk Team",
+          "gain": "Reply to every customer, fast.",
+          "body": "Paste a customer's message and get a reply ready to send. Refunds and returns wait for you to approve.",
+          "meta": "Customer support · a team of 4",
+          "href": "/solutions/support-desk-team",
+          "image": "/media/support-desk-team.jpg"
+        },
+        {
+          "name": "Invoice Clerk",
+          "gain": "Supplier invoices read, filed and checked.",
+          "body": "Upload an invoice. It is read and filed, the totals are checked, and duplicates are flagged.",
+          "meta": "Finance · one agent",
+          "href": "/solutions/invoice-clerk",
+          "image": "/media/invoice-clerk.jpg"
+        },
+        {
+          "name": "Product Compare Team",
+          "gain": "Compare a product across stores.",
+          "body": "Say what you need. The team reads the stores' pages and writes a report with the best choices.",
+          "meta": "Sales · a team of 9",
+          "href": "/solutions/product-compare-team",
+          "image": "/media/shopping-lab.jpg"
+        },
+        {
+          "name": "Image Creator",
+          "gain": "The image you need, from one sentence.",
+          "body": "You check the full prompt first, then change the image in your own words.",
+          "meta": "Marketing · an automation",
+          "href": "/solutions/image-creator",
+          "image": "/media/image-creator.webp"
+        },
+        {
+          "name": "Trip Planner",
+          "gain": "A whole trip, planned with you.",
+          "body": "Write one sentence, then approve a flight, choose a hotel and book a dinner. A demo: nothing is really booked or paid.",
+          "meta": "Personal · a team of 13",
+          "href": "/solutions/trip-planner",
+          "image": "/media/trip-planner.jpg"
+        },
+        {
+          "name": "Training Coach",
+          "gain": "A training plan that follows your week.",
+          "body": "Give your goal and your week. Five coaches build your plan and your meals. A demo, not medical advice.",
+          "meta": "Personal · a team of 5",
+          "href": "/solutions/training-coach",
+          "image": "/media/blog/momentum/loop.jpg"
+        }
+      ],
+      "all": {
+        "label": "See all solutions",
+        "href": "/solutions"
+      }
+    },
+    "build": {
+      "eyebrow": "How you build it",
+      "title": "Build it without code.",
+      "sub": "Describe what you need in plain words. You can change every part later, still without code.",
+      "views": [
+        {
+          "title": "The Assistant.",
+          "body": "You describe the job. The Assistant builds it, checks it and tells you what is left to add.",
+          "caption": "The Assistant builds a team of three for a weekly competitor note.",
+          "video": "/media/assistant-create.mp4",
+          "poster": "/media/assistant-create.jpg",
+          "width": 1418,
+          "height": 770
+        },
+        {
+          "title": "Automations.",
+          "body": "Your steps, in your order. Add AI at the steps where something must be read, judged or written.",
+          "caption": "An invoice is read by AI; above €1,000, Finance approves it.",
+          "video": "/media/studio-workflow.mp4",
+          "poster": "/media/studio-workflow.jpg",
+          "width": 1418,
+          "height": 770
+        },
+        {
+          "title": "Teams.",
+          "body": "A manager shares the job between its experts. Each expert has its own role, knowledge and tools.",
+          "caption": "A trip manager and its specialists at work.",
+          "video": "/media/team-manager.mp4",
+          "poster": "/media/team-manager.jpg",
+          "width": 1000,
+          "height": 950
+        },
+        {
+          "title": "Apps.",
+          "body": "Give your users a simple app. They say what they need, and each screen appears when it is needed.",
+          "caption": "The Trip Planner app: one sentence in, then a flight, a hotel and a dinner.",
+          "video": "/media/trip-planner.mp4",
+          "poster": "/media/trip-planner.jpg",
+          "width": 1024,
+          "height": 768
+        }
+      ],
+      "link": {
+        "label": "See how it works",
+        "href": "/how-it-works"
+      }
+    },
+    "observation": {
+      "eyebrow": "Observation",
+      "title": "See your whole AI company at work.",
+      "body": "Each department, who works in it, and how many tokens each one uses, on one screen.",
+      "line": "In Pro and Business, and in their 14-day trial.",
+      "link": {
+        "label": "How to read your AI company",
+        "href": "/blog/ai-company-observation"
+      },
+      "caption": "Northmoor Coffee Roasters, an example company built in the product: a chief executive, six departments, 34 agents.",
+      "alt": "Northmoor Coffee Roasters in Observation: the chief executive, six departments and their teams of agents, on one screen"
+    },
+    "desk": {
+      "eyebrow": "The Desk",
+      "title": "Everyone works with the same AI teams, on one Desk.",
+      "body": "Today, each person uses their own AI assistant, and the same task is done in as many ways as there are people. On the Desk, everyone uses the same AI teams, set up once for your company's tasks. People ask in plain words or pick a ready request, with nothing to build.",
+      "plan": "The Desk is included in Pro and Business, and in their 14-day trial.",
+      "shot_caption": "On the Desk, a colleague asks the Media Content Creator team for an image, and the result appears next to the conversation.",
+      "shot_alt": "The Desk: a conversation with the Media Content Creator team, the request for the image and the image it made, with the result shown again in the panel on the right",
+      "compare": {
+        "title": "Why one Desk for everyone?",
+        "columns": [
+          {
+            "title": "Each person with their own AI",
+            "items": [
+              "Each person writes their own prompts.",
+              "The same task is done in many different ways.",
+              "Good ideas stay with one person, and leave with them.",
+              "Work stays in personal accounts.",
+              "Everyone pays again for the same setup work."
+            ]
+          },
+          {
+            "title": "Everyone on one Desk",
+            "items": [
+              "Set up once, used by everyone.",
+              "The same task, done the same way.",
+              "Every improvement reaches everyone, and stays in the company.",
+              "Work stays in your company's space.",
+              "Less AI spend: nobody redoes the setup for each request."
+            ]
+          }
+        ]
+      },
+      "tokens": {
+        "line": "When many people do the same task through one shared agent instead of each in their own chat, our central estimate is that the usage part of the AI bill for that task falls by 15% to 43% for a team of 10, and by 36% to 61% from about 50 people.",
+        "caption": "Middle of our estimate. Estimate from public prices and simple assumptions, not a measurement.",
+        "alt": "Column chart of the middle of our estimate of the share of the usage AI bill saved on one task shared through one agent instead of everyone's own chat: between 15% and 43% with 10 people, between 29% and 55% with 20, between 36% and 61% with 50, and between 39% and 63% with 500. An estimate from simple assumptions, not a measurement."
+      },
+      "links": [
+        {
+          "label": "Why one Desk for everyone? Read the article",
+          "href": "/blog/shared-ai-toolbox-for-the-company"
+        },
+        {
+          "label": "See the Desk",
+          "href": "/desk"
+        }
+      ]
+    },
+    "connections": {
+      "title": "Connect the tools you already use.",
+      "body": "Google Workspace, Slack, HubSpot, Notion, Stripe, Airtable and more already work inside your automations and as tools for your agents. Many more are on the way.",
+      "more": "And many more…",
+      "models_label": "And the AI model you choose",
+      "link": {
+        "label": "See every connection, and what works today",
+        "href": "/connections"
+      }
+    },
+    "built_for": {
+      "eyebrow": "Built for",
+      "title": "Built for the way you work.",
+      "cards": [
+        {
+          "title": "Your projects.",
+          "photo": "/media/home/photos/card-projects.webp",
+          "photo_alt": "A man working on a laptop at a wooden table at home, with plants and a cup of coffee",
+          "body": "Give the small jobs you still do yourself to AI agents.",
+          "link": "For your own projects",
+          "href": "/solutions/your-own-projects"
+        },
+        {
+          "title": "Your clients.",
+          "photo": "/media/home/photos/card-clients.webp",
+          "photo_alt": "Two women talking across a table with a laptop, in a small office",
+          "body": "Build it once, then give each client their own space: an app, a portal or their own Desk.",
+          "link": "For your clients",
+          "href": "/solutions/freelancers-and-agencies"
+        },
+        {
+          "title": "Your company.",
+          "photo": "/media/home/photos/card-company.webp",
+          "photo_alt": "A team gathered around a laptop in an office",
+          "body": "One good way of working, used by every team, from their own Desk.",
+          "link": "For your company",
+          "href": "/desk"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "price": "0€",
+      "rest": "to start.",
+      "sub": "Try the hosted plans for 14 days, no card. Or install the free Community edition on your own server.",
+      "link": "See full pricing",
+      "tiers": [
+        {
+          "name": "Community",
+          "badge": "Free forever",
+          "desc": "Agents, teams and the Studio, on your own server.",
+          "cta": "Install it",
+          "href": "/community"
+        },
+        {
+          "name": "Personal",
+          "badge": "Cloud",
+          "desc": "Hosted for you. No setup: sign in and build your first team.",
+          "cta": "Start your trial",
+          "href": "/start?plan=personal"
+        },
+        {
+          "name": "Pro",
+          "badge": "Cloud",
+          "desc": "More and longer executions, priority execution and Observation, to see where your tokens go.",
+          "cta": "Start your trial",
+          "href": "/start?plan=pro",
+          "featured": true
+        },
+        {
+          "name": "Business",
+          "badge": "Teams",
+          "desc": "Shared workspaces: one person builds, everyone benefits.",
+          "cta": "Start your trial",
+          "href": "/start?plan=business"
+        },
+        {
+          "name": "Enterprise",
+          "badge": "White-label",
+          "desc": "White-label and dedicated support.",
+          "cta": "Contact us",
+          "href": "mailto:hello@agentivity.io"
+        }
+      ],
+      "whitelabel": "Full white label comes with Enterprise.",
+      "whitelabel_cta": "Talk to us about white-label"
+    },
+    "faq": {
+      "title": "Questions",
+      "items": [
+        {
+          "q": "What does Agentivity do?",
+          "a": "It gives you AI agents that do real work. Start with one automation, then build teams of experts, and see your whole AI company on one screen."
+        },
+        {
+          "q": "Do I need to code?",
+          "a": "No. Describe the job to the Assistant in plain words, and it builds it. You can change any step or expert later, without code."
+        },
+        {
+          "q": "Who pays for the AI?",
+          "a": "You connect your own AI model account, such as OpenAI, Anthropic or OpenRouter. Your AI usage is billed by your provider, not by us."
+        },
+        {
+          "q": "Which apps does it connect to today?",
+          "a": "Google, Slack, HubSpot, Notion, Stripe, Airtable, email and more work today, as steps in your automations and as tools for your agents. For another app, a step or an agent can call its API. The Connections page shows the full list, and what is coming."
+        },
+        {
+          "q": "Can I host it myself?",
+          "a": "Yes. The Community edition is free on your own server, for one person. The hosted plans run in Frankfurt."
+        }
+      ]
+    },
+    "final": {
+      "title": "Start your first automation",
+      "title_accent": "today.",
+      "sub": "Pick a ready-made solution, or describe your own. Your 14-day trial needs no card.",
+      "links": [
+        {
+          "label": "Building for clients? White label comes with Enterprise.",
+          "href": "/solutions/freelancers-and-agencies"
+        },
+        {
+          "label": "Self-hosting? The Community edition is free.",
+          "href": "/community"
+        }
+      ]
     }
   }
 }
