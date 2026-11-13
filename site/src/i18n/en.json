@@ -2098,7 +2098,7 @@
               },
               {
                 "title": "A password that Outlook keeps asking for.",
-                "caption": "Your service desk gives the ticket number and gets the reply to send. When you confirm the fix worked, the Resolution Team closes the ticket and writes down its resolution note.",
+                "caption": "Your service desk gives the ticket number and gets the reply to send. When you confirm the fix worked, the Resolution Team closes the ticket and writes down what fixed it as a short article. You say yes, and it is saved.",
                 "media": "service-desk-3-outlook"
               },
               {
