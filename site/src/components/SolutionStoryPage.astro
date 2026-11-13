@@ -9,6 +9,7 @@ import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import { useTranslations } from '../i18n/utils';
 import { brandLogos } from '../data/brand-logos';
+import '../styles/scroll-player.css';
 
 // Plain icons for the blocks that are not an app ("@schedule", "@desk", "@email" in a card's logos).
 const icons: Record<string, string> = {
@@ -16,6 +17,7 @@ const icons: Record<string, string> = {
   desk: '<rect x="3" y="4.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17.5V21M7.5 10.5l2.5 2.5 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
   web: '<circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3.5c2.5 2.4 3.6 5.2 3.6 8.5s-1.1 6.1-3.6 8.5c-2.5-2.4-3.6-5.2-3.6-8.5s1.1-6.1 3.6-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
   chat: '<path d="M4 5.5h16v10H9l-5 4v-14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  table: '<rect x="3.5" y="4.5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10" fill="none" stroke="currentColor" stroke-width="2"/>',
   email: '<rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
 };
 
@@ -26,14 +28,15 @@ const p = t.use_cases_page;
 const l = p.labels;
 const item: any = p.cases.find((entry: any) => entry.slug === slug);
 const st = item.story;
-// The scenario shown first: the first one already recorded.
-const first = Math.max(0, st.decide.scenarios.findIndex((sc: any) => sc.media));
 const faq = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: item.qa.map((entry: any) => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })),
 };
 // Names to look for are marked with ** in the texts, shown in bold.
+const ext = (href?: string) => (href && /^https?:/.test(href) ? { target: '_blank', rel: 'noopener' } : {});
+const tall = item.height > item.width;
+const more = st.get.more == null ? [] : Array.isArray(st.get.more) ? st.get.more : [{ link: st.get.more, href: st.get.more_href }];
 const bold = (text: string) => text.split('**').map((part: string, i: number) => (i % 2 ? `<strong>${part}</strong>` : part)).join('');
 ---
 <Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang="en" look="editorial">
@@ -49,7 +52,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
     <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
     <p class="sx-lead">{item.lead}</p>
     <div class="sx-act">
-      <a class="ed-btn ed-btn--navy" href={st.cta.href}>{st.cta.label}</a>
+      <a class="ed-btn ed-btn--navy" href={st.cta.href} {...ext(st.cta.href)}>{st.cta.label}</a>
       <p class="sx-note">{st.cta.note}</p>
     </div>
   </section>
@@ -61,30 +64,29 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
         <h2 class="ed-h2 ed-h2--md">{st.decide.h2}</h2>
         <p class="ed-sec-sub">{st.decide.intro}</p>
       </header>
-      <div class="sx-decide">
-        <div class="sx-tabs" role="tablist">
-          {st.decide.scenarios.map((sc: any, i: number) => (
-            <button type="button" role="tab" class:list={['sx-tab', { 'is-active': i === first }]} aria-selected={i === first ? 'true' : 'false'} tabindex={i === first ? 0 : -1} aria-controls={'sx-panel-' + i} data-tab={i}>
-              <span class="sx-tab-n">{i + 1}</span>
-              <span class="sx-tab-text"><strong>{sc.title}</strong><span>{sc.caption}</span></span>
-            </button>
-          ))}
-        </div>
-        <div class="sx-panels">
-          {st.decide.scenarios.map((sc: any, i: number) => (
-            <figure class="ed-shot sx-panel" id={'sx-panel-' + i} role="tabpanel" hidden={i !== first}>
+      <ul class="sx-views sp-list">
+        {st.decide.scenarios.map((sc: any) => (
+          <li>
+            <h3>{sc.title}</h3>
+            <p>{sc.caption}</p>
+            <figure class="ed-shot sx-shot">
               <div class="ed-shot-frame ed-shot-frame--lift">
                 {sc.media
-                  ? <video muted loop playsinline controls preload="none" poster={'/media/' + sc.media + '.jpg'} width={item.width} height={item.height} aria-label={sc.caption} data-autoplay>
+                  ? <video class:list={[{ 'is-tall': tall }]} muted loop playsinline controls preload="none" poster={'/media/' + sc.media + '.jpg'} width={item.width} height={item.height} aria-label={sc.caption} data-autoplay>
                       <source src={'/media/' + sc.media + '.mp4'} type="video/mp4" />
                     </video>
-                  : <div class="sx-missing" role="img" aria-label={sc.caption}><span>{st.decide.missing}</span></div>}
+                  : sc.image
+                    ? <img src={sc.image} alt={sc.caption} width={item.width} height={item.height} loading="lazy" />
+                    : <div class="sx-told">
+                        <strong class="sx-told-title">{sc.title}</strong>
+                        <ol class="sx-told-steps">{sc.what_happens.map((line: string) => <li set:html={bold(line)} />)}</ol>
+                      </div>}
               </div>
             </figure>
-          ))}
-          <p class="sx-recorded">{st.decide.recorded}</p>
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
+      {st.decide.recorded && <p class="sx-recorded">{st.decide.recorded}</p>}
     </div>
   </section>
 
@@ -110,6 +112,21 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
       ))}
     </ol>
   </section>
+
+  <!-- 4b. Who is on the team (teams only) -->
+  {st.team && (
+    <section class="ed-wrap ed-sec sx-team-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{st.team.h2}</h2>
+        <p class="ed-sec-sub">{st.team.lead}</p>
+      </header>
+      <ul class="sx-team">
+        {st.team.members.map((m: any, i: number) => (
+          <li class:list={[{ 'is-lead': i === 0 }]}><strong>{m.name}</strong><span>{m.role}</span></li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <!-- 5. What it never does alone -->
   <section class="ed-band--mist">
@@ -184,10 +201,10 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
     <div class="ed-wrap ed-sec sx-get">
       <h2 class="ed-h2 ed-h2--md sx-on-navy">{st.get.h2}</h2>
       <p class="sx-get-body">{st.get.body}</p>
-      <a class="ed-btn ed-btn--yellow" href={st.get.href}>{st.get.button}</a>
-      <p class="sx-get-guide" set:html={bold(st.get.guide)} />
+      <a class="ed-btn ed-btn--yellow" href={st.get.href} {...ext(st.get.href)}>{st.get.button}</a>
+      {st.get.guide && <p class="sx-get-guide" set:html={bold(st.get.guide)} />}
       <p class="sx-get-note">{st.get.note ?? st.cta.note}</p>
-      <a class="ed-link sx-get-more" href={st.get.more_href}>{st.get.more} →</a>
+      {more.map((m: any) => <a class="ed-link sx-get-more" href={m.href} {...ext(m.href)}>{m.link} →</a>)}
     </div>
   </section>
 
@@ -213,30 +230,10 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 </Base>
 
 <script>
-  // The scenarios are tabs: a click or the arrow keys show one capture at a time; a clip that is hidden stops.
-  const tabs = Array.from(document.querySelectorAll('.sx-tab')) as HTMLButtonElement[];
-  const select = (index: number) => {
-    tabs.forEach((tab, i) => {
-      const on = i === index;
-      tab.classList.toggle('is-active', on);
-      tab.setAttribute('aria-selected', String(on));
-      tab.tabIndex = on ? 0 : -1;
-      const panel = document.getElementById(tab.getAttribute('aria-controls')!) as HTMLElement;
-      panel.hidden = !on;
-      const video = panel.querySelector('video');
-      if (video) { if (on) video.play().catch(() => {}); else video.pause(); }
-    });
-  };
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(i));
-    tab.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
-      e.preventDefault();
-      const next = (i + (e.key === 'ArrowDown' ? 1 : tabs.length - 1)) % tabs.length;
-      select(next);
-      tabs[next].focus();
-    });
-  });
+  // See it decide: held still while the page scrolls through the cases (scripts/scroll-player.ts).
+  import { scrollPlayer } from '../scripts/scroll-player';
+  const cases = document.querySelector('.sx-views') as HTMLElement | null;
+  if (cases) scrollPlayer(cases);
 </script>
 
 <style>
@@ -252,21 +249,27 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 .sx-note { font-size: 15px; color: var(--ed-ink-3); }
 
 /* ---------- 2. see it decide ---------- */
-.sx-decide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
-.sx-tabs { display: flex; flex-direction: column; gap: 10px; }
-.sx-tab { display: flex; gap: 14px; align-items: flex-start; width: 100%; padding: 18px; border: 1px solid var(--ed-line); border-radius: 18px; background: transparent; text-align: left; font: inherit; color: var(--ed-ink-3); cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease; }
-.sx-tab:hover { border-color: var(--ed-line-2); background: rgba(255, 255, 255, .5); }
-.sx-tab.is-active { background: #fff; border-color: var(--ed-navy); color: var(--ed-ink-2); box-shadow: 0 18px 36px -28px rgba(16, 27, 52, .45); }
-.sx-tab:focus-visible { outline: 2px solid var(--ed-navy); outline-offset: 3px; }
-.sx-tab-n { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); font-size: 14px; font-weight: 700; }
-.sx-tab.is-active .sx-tab-n { background: var(--ed-yellow); border-color: var(--ed-yellow); color: var(--ed-navy); }
-.sx-tab-text { display: flex; flex-direction: column; gap: 6px; font-size: 15.5px; line-height: 1.5; }
-.sx-tab-text strong { font-size: 18px; color: var(--ed-ink); }
-.sx-tab:not(.is-active) .sx-tab-text strong { color: var(--ed-ink-2); }
-.sx-panels video { display: block; width: 100%; height: auto; }
 /* The figure's own display would show a hidden panel. */
-.sx-panel[hidden] { display: none; }
-.sx-missing { display: grid; place-items: center; aspect-ratio: 4 / 3; background: #fff; border: 2px dashed var(--ed-line-2); color: var(--ed-ink-3); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+/* A case told in three lines, for the scenarios that have no recording. */
+.sx-told { display: flex; flex-direction: column; justify-content: center; gap: 22px; aspect-ratio: 4 / 3; padding: clamp(24px, 4vw, 52px); background: #fff; }
+/* The cases, stacked on a phone or with less motion; held still while the page scrolls elsewhere (styles/scroll-player.css). */
+.sx-views { display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px); margin: 0; padding: 0; list-style: none; }
+.sx-views > li { display: flex; flex-direction: column; gap: 8px; font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.sx-views h3 { font-size: 20px; font-weight: 700; color: var(--ed-ink); }
+.sx-views .sx-shot { margin-top: 10px; }
+.sx-shot video, .sx-shot img { display: block; width: 100%; height: auto; }
+.sx-shot video.is-tall { width: auto; max-width: 100%; max-height: min(72vh, 680px); margin-inline: auto; }
+.sx-told-title { font-family: var(--ed-serif, Georgia, serif); font-size: clamp(22px, 2.4vw, 30px); font-weight: 400; line-height: 1.2; color: var(--ed-ink); }
+.sx-told-steps { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; counter-reset: told; }
+.sx-told-steps li { position: relative; padding-left: 46px; font-size: clamp(15.5px, 1.5vw, 17.5px); line-height: 1.5; color: var(--ed-ink-2); counter-increment: told; }
+.sx-told-steps li::before { content: counter(told); position: absolute; left: 0; top: -2px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13.5px; font-weight: 700; }
+.sx-told-steps li:last-child::before { background: var(--ed-yellow); color: var(--ed-navy); }
+@media (max-width: 640px) { .sx-told { aspect-ratio: auto; } }
+.sx-team { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: clamp(20px, 2.6vw, 30px); }
+.sx-team li { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid var(--ed-line); font-size: 14.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.sx-team strong { font-size: 16px; color: var(--ed-ink); }
+.sx-team li.is-lead { background: var(--ed-navy); border-color: var(--ed-navy); color: var(--ed-on-navy); }
+.sx-team li.is-lead strong { color: #fff; }
 .sx-recorded { margin-top: 12px; font-size: 14.5px; color: var(--ed-ink-3); }
 
 /* ---------- 3. without it, with it ---------- */
@@ -341,7 +344,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 .sx-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
 
 @media (max-width: 900px) {
-  .sx-decide, .sx-fits, .sx-cards, .sx-cards--3, .sx-rows, .sx-next { grid-template-columns: minmax(0, 1fr); }
+  .sx-fits, .sx-cards, .sx-cards--3, .sx-rows, .sx-next { grid-template-columns: minmax(0, 1fr); }
   .sx-ups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {

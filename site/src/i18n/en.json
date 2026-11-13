@@ -1562,6 +1562,316 @@
     "cases": [
       {
         "slug": "trip-planner",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. A demonstration: nothing is really booked or paid."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good travel agent never books what the traveller has not chosen. Here is one trip, and two moments when the team holds back.",
+            "scenarios": [
+              {
+                "title": "Lisbon for two, in one sentence.",
+                "media": "trip-planner",
+                "caption": "The traveller writes one sentence. The manager hands each part to a specialist, and the app shows a card each time the traveller must choose: the flight, the hotel, the dinner. Then the payment and the recap."
+              },
+              {
+                "title": "A city weekend: no car needed.",
+                "caption": "The manager calls only the specialists the trip needs.",
+                "what_happens": [
+                  "A weekend in a city, with no driving planned.",
+                  "The manager calls the flight, hotel, transfer and dinner specialists, and leaves the car rental specialist out.",
+                  "The traveller only sees the choices this trip needs."
+                ]
+              },
+              {
+                "title": "Nothing booked before the payment.",
+                "caption": "The specialists only propose. The bookings wait for the payment.",
+                "what_happens": [
+                  "The traveller has chosen the flight, the hotel and the dinner.",
+                  "The six specialists only proposed. The Payment Agent asks for the payment and reports whether it was authorised.",
+                  "Only then does the Reservation Agent record the bookings. In the demonstration, both are simulated."
+                ]
+              }
+            ],
+            "recorded": "Recorded in the real product. A demonstration: nothing is booked or paid."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Trip Planner"
+            ],
+            "rows": [
+              [
+                "A client asks for a trip in one email, and an hour goes on flights, hotels and transfers.",
+                "One sentence, and each part goes to a specialist at once."
+              ],
+              [
+                "Options pile up in browser tabs, and the budget is added up by hand.",
+                "The Currency & Budget Advisor checks that the budget holds across every part."
+              ],
+              [
+                "The visa or the passport is checked a week before departure.",
+                "The Visa & Documents Specialist checks visa, passport and vaccinations with the rest of the trip."
+              ],
+              [
+                "The client says yes on the phone, and nobody writes down what they chose.",
+                "Each choice is a card the traveller picks, and the trip is kept in your tables."
+              ],
+              [
+                "A booking goes out before the payment is confirmed.",
+                "Bookings are recorded only once the payment is authorised."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with one sentence.",
+                "body": "The city, the dates, the number of travellers and a budget, written in the Trip Planner app or in a chat."
+              },
+              {
+                "title": "It proposes, the traveller chooses.",
+                "body": "Flights, hotel, getting there and dinner come back as cards. As delivered, the options are made up; point the specialists at your own offers."
+              },
+              {
+                "title": "The trip lands in your tables.",
+                "body": "Each trip and each booking is kept in two tables, with the traveller's choices."
+              }
+            ]
+          },
+          "team": {
+            "h2": "Who is on the team",
+            "lead": "Thirteen members in four groups. The manager talks to the traveller and calls only the specialists the trip needs.",
+            "members": [
+              {
+                "name": "Trip Manager",
+                "role": "Coordinates the specialists and keeps the trip coherent."
+              },
+              {
+                "name": "Flight Specialist",
+                "role": "Proposes the flights."
+              },
+              {
+                "name": "Hotel Specialist",
+                "role": "Proposes the hotel that fits best."
+              },
+              {
+                "name": "Ground Transport Specialist",
+                "role": "Proposes airport transfers and local transport."
+              },
+              {
+                "name": "Car Rental Specialist",
+                "role": "Proposes a rental car when it makes sense."
+              },
+              {
+                "name": "Restaurant & Dining Specialist",
+                "role": "Recommends restaurants."
+              },
+              {
+                "name": "Activity Planner",
+                "role": "Builds a day-by-day programme around the traveller’s interests."
+              },
+              {
+                "name": "Travel Insurance Specialist",
+                "role": "Proposes an insurance policy."
+              },
+              {
+                "name": "Visa & Documents Specialist",
+                "role": "Checks visa, passport and vaccination requirements."
+              },
+              {
+                "name": "Currency & Budget Advisor",
+                "role": "Advises on currency and checks the budget across the specialists."
+              },
+              {
+                "name": "Payment Agent",
+                "role": "Handles the payment and reports whether it was authorised."
+              },
+              {
+                "name": "Reservation Agent",
+                "role": "Confirms every reservation once the payment is authorised."
+              },
+              {
+                "name": "On-Trip Assistant",
+                "role": "Handles changes once the trip is confirmed."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never chooses for the traveller.",
+                "body": "Each part is a card: the traveller picks it, or asks for another."
+              },
+              {
+                "title": "It never books before the payment.",
+                "body": "The specialists only propose. The Reservation Agent records the bookings once the payment is authorised."
+              },
+              {
+                "title": "It never calls everyone.",
+                "body": "A city weekend does not need the car rental specialist. Fewer members at work means fewer model calls."
+              },
+              {
+                "title": "It keeps a record.",
+                "body": "Each trip and booking is in your tables, and each conversation is kept step by step, with the AI usage of each member."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "airtable",
+                    "googlesheets"
+                  ],
+                  "title": "Propose your offers, not made-up ones.",
+                  "body": "Point the specialists at your flights, hotels and partners in a table, so every option is one you can really sell.",
+                  "uses": "The six specialists · Airtable · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Approve the trip before the client sees it.",
+                  "body": "Put a person between the team and the client: the full trip waits for your travel agent's yes on the Desk.",
+                  "uses": "A workflow · an approval · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "hubspot"
+                  ],
+                  "title": "Keep each trip with the client.",
+                  "body": "Each confirmed trip is added to the client's record in HubSpot, so your agents see every trip they took.",
+                  "uses": "Reservation Agent · HubSpot"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email",
+                    "brevo"
+                  ],
+                  "title": "Send the traveller the recap.",
+                  "body": "Once the trip is confirmed, the dates, the bookings and what to bring go to the traveller by email.",
+                  "uses": "Email · Brevo"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlecalendar"
+                  ],
+                  "title": "Put the trip in the calendar.",
+                  "body": "The flights, the check-in and the dinner become events in the traveller's Google Calendar.",
+                  "uses": "Reservation Agent · Google Calendar"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "whatsapp"
+                  ],
+                  "title": "Help during the trip, on WhatsApp.",
+                  "body": "A late flight or a change of plan: the On-Trip Assistant answers the traveller where they already write.",
+                  "uses": "On-Trip Assistant · WhatsApp"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your destinations.",
+                "body": "Ask the Assistant, in plain words, to focus on the cities and the kinds of trips you sell."
+              },
+              {
+                "title": "Your team.",
+                "body": "Remove the specialists you do not need, or add one: a guide, a ski school, a conference venue."
+              },
+              {
+                "title": "Another kind of plan.",
+                "body": "The same shape plans an event, a client offer, or a new employee's first week."
+              },
+              {
+                "title": "Your own app.",
+                "body": "The Trip Planner app's code is public: change its look, or build your own VibeApp on the same team."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "One team behind every door.",
+                "body": "Your travel agents use it on the Desk; your clients use it in your app. The same team answers both.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "Build the app your clients see.",
+                "body": "This one is a VibeApp: an app on your own site, made for one job, with the team behind it.",
+                "link": "What a VibeApp is",
+                "href": "/blog/what-is-a-vibeapp"
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Training Coach",
+                "body": "A training plan that follows your week.",
+                "href": "/solutions/training-coach"
+              },
+              {
+                "title": "Product Compare Team",
+                "body": "A product compared across stores, with the sources.",
+                "href": "/solutions/product-compare-team"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open the team behind Trip Planner in your trial and ask for a trip in one sentence. The Trip Planner app itself is public code on GitHub, for a developer.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Trip Manager Team** and select **Add it**.",
+            "more": [
+              {
+                "link": "The app's code on GitHub",
+                "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_tripagency"
+              },
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/trip-manager-team"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          }
+        },
         "media": "trip-planner",
         "width": 1024,
         "height": 768,
@@ -1715,6 +2025,292 @@
       },
       {
         "slug": "product-compare-team",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. As delivered, it reads two US stores, in English."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good buyer does not guess. Here is one request, and what the team does when a figure is missing or two products look alike.",
+            "scenarios": [
+              {
+                "title": "Headphones, within a budget.",
+                "media": "shopping-lab",
+                "caption": "The shopper describes a need. The Needs Analyst turns it into a brief and waits for a yes. Then the team reads two stores, compares, scores and writes a report with its sources."
+              },
+              {
+                "title": "A figure no store gives.",
+                "caption": "The team never fills a gap with a guess.",
+                "what_happens": [
+                  "One store gives the battery life of a pair of headphones; the other does not.",
+                  "The Spec Normalizer puts the figures in common units and leaves the missing one missing.",
+                  "The shopper sees what was not published, and weighs it."
+                ]
+              },
+              {
+                "title": "Two products that look alike.",
+                "caption": "The score comes from a calculation, not from a feeling.",
+                "what_happens": [
+                  "One product is cheaper; the other has better reviews.",
+                  "The Scoring Analyst scores both with the same script, from the priorities the shopper confirmed.",
+                  "The shopper reads the reasons and the sources, and decides what to buy."
+                ]
+              }
+            ],
+            "recorded": "Recorded in the real product, on the stores' real pages."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Product Compare Team"
+            ],
+            "rows": [
+              [
+                "A buyer opens ten tabs and copies prices into a spreadsheet.",
+                "One scout per store reads its pages: prices, ratings, reviews, photos and specifications."
+              ],
+              [
+                "The same product appears under two names in two stores.",
+                "The Product Matcher merges it and keeps the best offer of each store."
+              ],
+              [
+                "Specifications use different units, and gaps are filled with guesses.",
+                "Figures are put in common units; a missing figure stays missing."
+              ],
+              [
+                "The choice depends on who did the search.",
+                "Every product is scored by the same calculation, from the priorities the shopper confirmed."
+              ],
+              [
+                "Nobody can say where a price came from.",
+                "The report gives its sources, and the date the prices were read."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with a need, in plain words.",
+                "body": "In the ready-made portal or in a chat. The Needs Analyst asks what it needs, and the search waits until the brief is confirmed."
+              },
+              {
+                "title": "It reads the stores' own pages.",
+                "body": "Two US stores as delivered, read directly, with no paid search service."
+              },
+              {
+                "title": "The report lands in the chat.",
+                "body": "A verdict, the top picks with photos, charts, the points to watch and the sources."
+              }
+            ]
+          },
+          "team": {
+            "h2": "Who is on the team",
+            "lead": "Nine members, working in turn. Only the Needs Analyst talks to the shopper.",
+            "members": [
+              {
+                "name": "Needs Analyst",
+                "role": "Turns a vague wish into a precise, confirmed brief. The only member who talks to the shopper."
+              },
+              {
+                "name": "Query Planner",
+                "role": "Prepares the search for each store from the confirmed brief."
+              },
+              {
+                "name": "Store Scouts (2)",
+                "role": "Each one reads one store’s own pages and reports prices, ratings, reviews, photos and specifications."
+              },
+              {
+                "name": "Product Matcher",
+                "role": "Merges the same product across stores and keeps the best offer of each."
+              },
+              {
+                "name": "Spec Normalizer",
+                "role": "Builds a clean side-by-side comparison. Never fills a gap with a guess."
+              },
+              {
+                "name": "Scoring Analyst",
+                "role": "Scores every product with a fixed calculation."
+              },
+              {
+                "name": "Customer Reviews Analyst",
+                "role": "Says what customers really think, and where to be careful."
+              },
+              {
+                "name": "Report Writer",
+                "role": "Writes the final illustrated report."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never starts without your brief.",
+                "body": "The search waits until the shopper says the brief is right."
+              },
+              {
+                "title": "It never guesses a figure.",
+                "body": "A specification the store does not give stays missing in the comparison."
+              },
+              {
+                "title": "It never scores by feeling.",
+                "body": "A script computes every score, the same way for every product."
+              },
+              {
+                "title": "It keeps its sources.",
+                "body": "Every price in the report says which store it came from and when it was read."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "@web"
+                  ],
+                  "title": "Add a store.",
+                  "body": "Copy a scout and point it at another store, after checking that store's terms. The team then compares three stores, or four.",
+                  "uses": "A Store Scout · the web page reader"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets",
+                    "airtable"
+                  ],
+                  "title": "Compare your own catalogue.",
+                  "body": "Let the team read your products from a table and set them against what the stores offer.",
+                  "uses": "Store Scout · Google Sheets · Airtable"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@table"
+                  ],
+                  "title": "Score on what matters to you.",
+                  "body": "Change the scoring script: delivery time, warranty, energy use. Every product is then ranked on your criteria.",
+                  "uses": "Scoring Analyst · its script"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "googlesheets"
+                  ],
+                  "title": "Watch prices every week.",
+                  "body": "Every Monday, a schedule asks for the same brief and adds the prices to a Google Sheet, so you see when one drops.",
+                  "uses": "A schedule · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack",
+                    "@email"
+                  ],
+                  "title": "Send the report to the person who buys.",
+                  "body": "Once written, the report goes to your purchasing channel in Slack, or by email.",
+                  "uses": "Report Writer · Slack · Email"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "shopify",
+                    "woocommerce"
+                  ],
+                  "title": "Check your own prices.",
+                  "body": "Read your prices from Shopify or WooCommerce, and see where a store sells for less than you.",
+                  "uses": "Store Scout · Shopify · WooCommerce"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Other things to compare.",
+                "body": "Suppliers, software plans, courses: the same team compares anything with a page and a price."
+              },
+              {
+                "title": "Your brief.",
+                "body": "Change the questions the Needs Analyst asks, in plain words with the Assistant."
+              },
+              {
+                "title": "Your report.",
+                "body": "Change what the Report Writer puts first: the cheapest, the best rated, or your own priorities."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Your people use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "Your product tables and your scoring rules are already there for the next one."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Your supplier invoices read, filed and every total checked.",
+                "href": "/solutions/invoice-clerk"
+              },
+              {
+                "title": "Trip Planner",
+                "body": "A whole trip planned with the traveller, from one sentence.",
+                "href": "/solutions/trip-planner"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Product Compare Team in your trial and ask for a product with a budget. The team reads two US stores and writes your report.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Shopping Lab** and select **Add it**.",
+            "more": [
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/shopping-lab"
+              },
+              {
+                "link": "The portal's code on GitHub",
+                "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          }
+        },
         "media": "shopping-lab",
         "width": 1024,
         "height": 768,
@@ -1839,6 +2435,282 @@
       },
       {
         "slug": "cv-screener",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. Try it with made-up CVs."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good screener knows when it is not sure. Here is the workflow, and what it does with a document it cannot read and a profile that does not fit the boxes.",
+            "scenarios": [
+              {
+                "title": "A CV against the job.",
+                "media": "cv-screening",
+                "caption": "Seen in the Studio: the workflow reads the CV and the job description, scores the fit on six points with the reasons, and sends the case down its route."
+              },
+              {
+                "title": "A scanned CV it cannot read.",
+                "caption": "It does not guess. It says so, and asks again.",
+                "what_happens": [
+                  "The CV is a scanned image, or the link to the job is broken.",
+                  "The workflow cannot extract the text, so it stops and says so in the chat.",
+                  "The recruiter gives the document again: a file, a link or pasted text."
+                ]
+              },
+              {
+                "title": "A career change.",
+                "caption": "The middle scores go to a recruiter, with the reasons.",
+                "what_happens": [
+                  "A strong profile misses one requirement: the candidate is changing careers.",
+                  "The score lands between 50 and 75. A program, not an AI model, picks the route: review by a person.",
+                  "A form shows the recruiter the score, the reasons, the skills found and missing, and waits for the decision."
+                ]
+              }
+            ],
+            "recorded": "Recorded in the real product."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With CV Screener"
+            ],
+            "rows": [
+              [
+                "Forty applications for one role, read one by one in the evening.",
+                "Each CV is read against the job and scored on six points, with the reasons."
+              ],
+              [
+                "Two recruiters score the same CV differently.",
+                "One weighted score, computed the same way for every candidate."
+              ],
+              [
+                "A strong but unusual profile is dropped in the first pass.",
+                "The middle scores go to a recruiter, who sees why."
+              ],
+              [
+                "A scanned CV is skipped, and nobody notices.",
+                "When a document cannot be read, the workflow says so and asks again."
+              ],
+              [
+                "Nobody can explain why a candidate was set aside.",
+                "Every report keeps the score, the reasons, and the skills found and missing."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with a CV and a job.",
+                "body": "Each as a file, a link or pasted text, in a form."
+              },
+              {
+                "title": "It follows the path you drew.",
+                "body": "A workflow of 34 steps in the Studio: read, score, route. The same way every time."
+              },
+              {
+                "title": "The decision lands with a person.",
+                "body": "Each doubtful case waits in a form for a recruiter. Nothing is sent to a candidate."
+              }
+            ]
+          },
+          "team": {
+            "h2": "What it is made of",
+            "lead": "A workflow is drawn box by box. These are the kinds of boxes this one uses.",
+            "members": [
+              {
+                "name": "Form",
+                "role": "Where the recruiter drops the CV and the job description."
+              },
+              {
+                "name": "Read the file",
+                "role": "Extracts the text of a document."
+              },
+              {
+                "name": "Read the page",
+                "role": "Reads a job description published on the web."
+              },
+              {
+                "name": "AI steps",
+                "role": "Assess the fit and write the reasons."
+              },
+              {
+                "name": "Conditions",
+                "role": "Send each case down the right route."
+              },
+              {
+                "name": "Human steps",
+                "role": "Stop and wait for a person when one is needed."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never writes to a candidate.",
+                "body": "Its reports are recommendations for your recruiters."
+              },
+              {
+                "title": "It never guesses what it cannot read.",
+                "body": "A scanned CV or a broken link stops it, with a message."
+              },
+              {
+                "title": "It never lets an AI model choose the route.",
+                "body": "A program applies your thresholds: 75 and above to the shortlist, under 50 to rejection, the middle to a person."
+              },
+              {
+                "title": "It keeps a record.",
+                "body": "Each execution is kept step by step, with the score, the reasons and the AI usage."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Send every case to a recruiter.",
+                  "body": "Before any real use, let every case reach a person, rejections included. It is one change of route in the Studio.",
+                  "uses": "A condition · a human step · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "googleforms"
+                  ],
+                  "title": "Screen the applications of your form.",
+                  "body": "Every hour, a schedule reads the new answers of your Google Form and screens each CV.",
+                  "uses": "A schedule · Google Forms"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets",
+                    "airtable"
+                  ],
+                  "title": "Keep the shortlist where your team works.",
+                  "body": "Each result is added to the Google Sheet or the Airtable base your hiring team already uses.",
+                  "uses": "Google Sheets · Airtable"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Tell the hiring manager.",
+                  "body": "When a candidate reaches the shortlist, a message goes to the hiring manager's Slack channel with the score and the reasons.",
+                  "uses": "Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@table"
+                  ],
+                  "title": "Score the way you hire.",
+                  "body": "Change the six points and their weights to match what your team looks for.",
+                  "uses": "The scoring steps · the weighting program"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "calendly"
+                  ],
+                  "title": "Book the first call.",
+                  "body": "A shortlisted candidate gets a link to book a call, and the meeting comes back to the workflow.",
+                  "uses": "Calendly"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your thresholds.",
+                "body": "75 for the shortlist and 50 for rejection are a starting point: change them in the Studio."
+              },
+              {
+                "title": "Other documents to check.",
+                "body": "The same shape checks a tender against a call for tenders, an invoice against an order, or a request against a policy."
+              },
+              {
+                "title": "Where it lives.",
+                "body": "In a hosted workspace stored in the EU, or on your own server with the free Community edition."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Your people use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "Workflows and teams, side by side.",
+                "body": "A workflow follows the path you drew. A team decides its own path. Use both in the same place."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Your supplier invoices read, filed and every total checked.",
+                "href": "/solutions/invoice-clerk"
+              },
+              {
+                "title": "Service Desk",
+                "body": "Solve a problem once, and the next employee who asks gets the answer in seconds.",
+                "href": "/solutions/service-desk"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open CV Screener in your trial and give it a CV and a job description. Try it with made-up CVs.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **CV Screening** and select **Add it**.",
+            "more": [
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/cv-screening"
+              },
+              {
+                "link": "Install the free Community edition",
+                "href": "/community"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          }
+        },
         "media": "cv-screening",
         "width": 1418,
         "height": 770,
@@ -1950,6 +2822,274 @@
       },
       {
         "slug": "invoice-clerk",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good clerk never corrects a supplier's figures. Here is a batch of invoices, and what the agent does when a total is wrong or the same invoice comes twice.",
+            "scenarios": [
+              {
+                "title": "A batch of supplier invoices.",
+                "media": "invoice-clerk",
+                "caption": "Each invoice is read and filed with its total and category. A wrong total is flagged, a reminder is recognised as a duplicate, and the spending is charted by category."
+              },
+              {
+                "title": "A total that does not add up.",
+                "caption": "It flags the gap, and leaves the decision to you.",
+                "what_happens": [
+                  "The lines add up to 214.80 EUR, plus 42.96 EUR of VAT: 257.76 EUR. The invoice says 267.76 EUR.",
+                  "The calculator finds the gap. The agent keeps the printed total, stores its own sum beside it, and marks the invoice as a mismatch.",
+                  "You decide: pay, or ask the supplier."
+                ]
+              },
+              {
+                "title": "The same invoice, twice.",
+                "caption": "A reminder is recognised, and counted once.",
+                "what_happens": [
+                  "A supplier sends a reminder for an invoice already filed.",
+                  "Same supplier, same number: the agent files nothing, and says when the first one was filed.",
+                  "Your spending counts the invoice once."
+                ]
+              }
+            ],
+            "recorded": "Recorded in the real product, with made-up invoices."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Invoice Clerk"
+            ],
+            "rows": [
+              [
+                "Invoices arrive as PDFs, and someone types them into a spreadsheet.",
+                "Each invoice is read and filed as one row: supplier, number, dates, amounts, category."
+              ],
+              [
+                "A wrong total is found after the payment, or never.",
+                "Every line and total is checked with a calculator, and a gap is flagged."
+              ],
+              [
+                "A reminder is paid as if it were a new invoice.",
+                "Same supplier and same number: it is recognised and filed once."
+              ],
+              [
+                "A missing date is filled in from memory.",
+                "A missing value stays empty, never a guess."
+              ],
+              [
+                "Nobody knows where the money went this month.",
+                "The spending by category, read from the table, after each invoice."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with an upload.",
+                "body": "A PDF, a Word file or pasted text, in the ready-made portal or in a chat."
+              },
+              {
+                "title": "It reads, then checks.",
+                "body": "A document reader for the text, a calculator for every figure."
+              },
+              {
+                "title": "The result lands in your table.",
+                "body": "One row per invoice, with what was printed, what was computed, and the result of the check."
+              }
+            ]
+          },
+          "team": {
+            "h2": "The agent and its tools",
+            "lead": "One agent is enough for one person's job. The parts that must be exact are given to tools.",
+            "members": [
+              {
+                "name": "Invoice Clerk",
+                "role": "The agent: reads each invoice, follows its numbered steps and talks to you."
+              },
+              {
+                "name": "Document reader",
+                "role": "Reads the text of the PDF or Word file you upload."
+              },
+              {
+                "name": "Calculator",
+                "role": "Adds up the lines and the totals, so every figure is exact."
+              },
+              {
+                "name": "The invoices table",
+                "role": "One row per invoice: what was printed, what the agent computed, and the result of the check."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never corrects a supplier's figure.",
+                "body": "It keeps the printed total, stores its own sum, and leaves the decision to you."
+              },
+              {
+                "title": "It never pays or sends anything.",
+                "body": "It reads, checks and files. Nothing goes to a supplier or to your accounting software."
+              },
+              {
+                "title": "It never guesses a value.",
+                "body": "What the invoice does not say stays empty."
+              },
+              {
+                "title": "It keeps a record.",
+                "body": "Every invoice is a row you can read later, with its check; every conversation is kept step by step."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Approve before payment.",
+                  "body": "Put the agent in a workflow with an approval step: each checked invoice waits for your finance lead's yes on the Desk.",
+                  "uses": "A workflow · an approval · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Read the invoices from a mailbox.",
+                  "body": "Point it at the mailbox your suppliers write to, and each new invoice is read and filed.",
+                  "uses": "Email · Invoice Clerk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Warn someone when a total is wrong.",
+                  "body": "When the check fails, a message goes to your finance channel in Slack, with the gap and the invoice.",
+                  "uses": "Invoice Clerk · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets",
+                    "airtable"
+                  ],
+                  "title": "Keep the table where finance works.",
+                  "body": "Each invoice is also added to your Google Sheet or your Airtable base.",
+                  "uses": "Google Sheets · Airtable"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googledrive"
+                  ],
+                  "title": "File the documents.",
+                  "body": "Each invoice is saved in Google Drive, in a folder per supplier.",
+                  "uses": "Google Drive"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "quickbooks",
+                    "xero"
+                  ],
+                  "title": "Send it to your accounting.",
+                  "body": "Once an invoice is approved, the bill is created in QuickBooks or Xero.",
+                  "uses": "QuickBooks · Xero"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your columns and categories.",
+                "body": "Six categories come ready: rename them, add your own, and the columns your accountant needs."
+              },
+              {
+                "title": "Other documents.",
+                "body": "Receipts or delivery notes, with the same shape."
+              },
+              {
+                "title": "Your rules.",
+                "body": "When to flag, what counts as a duplicate: change them in plain words with the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Your people use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next step is ready.",
+                "body": "When a person must approve, put this agent in a workflow: the table is already there for the next step."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "CV Screener",
+                "body": "Each CV scored against the job, with the reasons.",
+                "href": "/solutions/cv-screener"
+              },
+              {
+                "title": "Service Desk",
+                "body": "Solve a problem once, and the next employee who asks gets the answer in seconds.",
+                "href": "/solutions/service-desk"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Invoice Clerk in your trial and upload a supplier invoice. It is read, checked and filed in its table.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Invoice Clerk** and select **Add it**.",
+            "more": [
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/invoice-clerk"
+              },
+              {
+                "link": "The portal's code on GitHub",
+                "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_solutions"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          }
+        },
         "media": "invoice-clerk",
         "width": 1024,
         "height": 768,
@@ -2112,8 +3252,7 @@
                 "media": "service-desk-5-battery"
               }
             ],
-            "recorded": "Recorded in the real product, on a demo company.",
-            "missing": "Capture to record"
+            "recorded": "Recorded in the real product, on a demo company."
           },
           "versus": {
             "h2": "Without it, with it",
@@ -2412,6 +3551,269 @@
       },
       {
         "slug": "image-creator",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider; images billed by Recraft, with your own key."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good designer shows the brief before the work. Here are images it made, and the two moments where you stay in charge.",
+            "scenarios": [
+              {
+                "title": "A poster, a product photo, a post.",
+                "image": "/media/image-creator.webp",
+                "caption": "Four images from one sentence each: a poster for a jazz evening, a product photo, a bakery table for a social post, an illustration."
+              },
+              {
+                "title": "You see the request first.",
+                "caption": "Nothing is made until you say go.",
+                "what_happens": [
+                  "You write one sentence: a poster for a jazz evening in a park.",
+                  "An agent writes the full request for the image model, with its size and format, and shows it on a card.",
+                  "You choose Continue, or say what to change. Nothing is made or billed before."
+                ]
+              },
+              {
+                "title": "Change it in your own words.",
+                "caption": "Your comment goes to the agent, never straight to the model.",
+                "what_happens": [
+                  "The image is close, but the colours are too dark.",
+                  "The agent rewrites the whole request from your comment, and shows what changed.",
+                  "You approve the new request, and the new image appears in the chat."
+                ]
+              }
+            ],
+            "recorded": "Example images made with Recraft, the image model Image Creator uses."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Image Creator"
+            ],
+            "rows": [
+              [
+                "A simple visual waits days for a designer.",
+                "One sentence, and the image is in the chat."
+              ],
+              [
+                "Nobody knows how to write a request for an image model.",
+                "An agent writes the full request, with the settings it needs."
+              ],
+              [
+                "Every try is paid, even the ones you would not have made.",
+                "Nothing is made, or billed by Recraft, until you choose Continue."
+              ],
+              [
+                "A change means starting again from zero.",
+                "Say what to change: the request is rewritten whole, and you see what changed."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with your words.",
+                "body": "One message: what the image shows, where it will go, the feeling you want. In the Studio or on your team's Desk."
+              },
+              {
+                "title": "It uses your image model.",
+                "body": "Recraft, with your own key."
+              },
+              {
+                "title": "The image lands in the chat.",
+                "body": "Ready to download, after each round you approve."
+              }
+            ]
+          },
+          "team": {
+            "h2": "What it is made of",
+            "lead": "An automation is drawn box by box. These are the parts this one uses.",
+            "members": [
+              {
+                "name": "Form",
+                "role": "Where you write what you need."
+              },
+              {
+                "name": "Prompt writer",
+                "role": "The agent that turns your words into a precise request, with its settings."
+              },
+              {
+                "name": "Approval card",
+                "role": "Shows the request in the chat, with Continue and Change."
+              },
+              {
+                "name": "Image generator",
+                "role": "Makes the image from the approved request."
+              },
+              {
+                "name": "Loop",
+                "role": "Sends your comment back to the agent until you keep the image."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never makes an image without your go.",
+                "body": "A card shows exactly what the model will receive."
+              },
+              {
+                "title": "It never sends your words straight to the model.",
+                "body": "Your comment goes to the agent, so each try starts from a complete request."
+              },
+              {
+                "title": "It never hides the request.",
+                "body": "You see what the image model receives, and what changed since the last round."
+              },
+              {
+                "title": "It keeps a record.",
+                "body": "Each request and each image are kept in the conversation, with the AI usage."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Your brand in every image.",
+                  "body": "Give the agent your colours, your style and what to avoid, so every request starts on brand.",
+                  "uses": "The prompt writer · its instructions"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googledrive"
+                  ],
+                  "title": "Save what you keep.",
+                  "body": "Each image you keep is saved in your team's Google Drive folder.",
+                  "uses": "Google Drive"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "wordpress"
+                  ],
+                  "title": "Illustrate your posts.",
+                  "body": "Make the image for an article and publish it with the post in WordPress.",
+                  "uses": "WordPress"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack",
+                    "discord"
+                  ],
+                  "title": "Share it with the team.",
+                  "body": "The image you keep is posted in your marketing channel in Slack or Discord.",
+                  "uses": "Slack · Discord"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "notion"
+                  ],
+                  "title": "Keep the requests that worked.",
+                  "body": "Save each kept image with its request in a Notion database, and start the next one from it.",
+                  "uses": "Notion"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "mailchimp"
+                  ],
+                  "title": "Images for your campaigns.",
+                  "body": "Make the header of your next email and add it to your campaign in Mailchimp.",
+                  "uses": "Mailchimp"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your formats.",
+                "body": "Square for social posts, wide for a header: tell the agent the sizes you use."
+              },
+              {
+                "title": "Someone else approves.",
+                "body": "Send the request to your brand manager before any image is made."
+              },
+              {
+                "title": "Your words.",
+                "body": "Change how the agent writes its requests, in plain words with the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Your people use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "Your brand rules, written once, serve the next team too."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Product Compare Team",
+                "body": "A product compared across stores, with the sources.",
+                "href": "/solutions/product-compare-team"
+              },
+              {
+                "title": "Trip Planner",
+                "body": "A whole trip planned with the traveller, from one sentence.",
+                "href": "/solutions/trip-planner"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Image Creator in your trial, add your Recraft key, and describe your first image.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Media Content Creator** and select **Add it**.",
+            "more": [
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/media-content-creator"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider; images billed by Recraft"
+          }
+        },
         "image": "/media/image-creator.webp",
         "caption": "Example images made with Recraft, the image model Image Creator uses.",
         "width": 1600,
@@ -2518,6 +3920,272 @@
       },
       {
         "slug": "training-coach",
+        "story": {
+          "cta": {
+            "label": "Click through the app",
+            "href": "/services/work/momentum/mockup/",
+            "note": "A demonstration, not a coaching or medical service. The app's code is public, under the MIT licence."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good coach changes the plan when life does, and knows when to say no. Here are three moments from one week.",
+            "scenarios": [
+              {
+                "title": "The machine is taken.",
+                "media": "blog/momentum/loop",
+                "caption": "The person says the machine is taken. Two other exercises appear in 3D, and the rest of the session stays as it was."
+              },
+              {
+                "title": "A shoulder that hurts.",
+                "caption": "The upper-body work goes, and it suggests a doctor.",
+                "what_happens": [
+                  "The person says their shoulder hurts.",
+                  "The coach who keeps you from getting hurt removes the upper-body work, and suggests seeing a doctor.",
+                  "The change comes as a card: the person accepts it, or not."
+                ]
+              },
+              {
+                "title": "Four hours of deadlifts, every day.",
+                "caption": "Nothing is applied. A sensible option is offered.",
+                "what_happens": [
+                  "The person asks for four hours of maximum deadlifts, every day.",
+                  "The team applies nothing, and offers a sensible plan instead.",
+                  "The plan only changes when the person says yes."
+                ]
+              }
+            ],
+            "recorded": "Recorded in the Momentum app, built on this team."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "A fixed plan",
+              "With Training Coach"
+            ],
+            "rows": [
+              [
+                "A PDF plan, the same whatever happens in your week.",
+                "One sentence, and the plan follows your week."
+              ],
+              [
+                "The machine is taken, and the exercise is skipped.",
+                "Two other exercises, and the rest of the session stays."
+              ],
+              [
+                "An injury, and the plan does not know.",
+                "Every plan and every change is checked against injuries, pain, age and allergies."
+              ],
+              [
+                "Meals that ignore your allergies or your guests.",
+                "Simple meals around your goal, your habits and your allergies, with the shopping list."
+              ],
+              [
+                "An app that changes the plan without asking.",
+                "Every change is a card you accept or refuse."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "It starts with a few questions.",
+                "body": "Your goal, your level, where you train and what you have at hand."
+              },
+              {
+                "title": "It works from a catalogue.",
+                "body": "32 exercises, each with its rules. Nothing outside it is ever proposed."
+              },
+              {
+                "title": "The plan lands in the app.",
+                "body": "Your week of training and meals, drawn by the Momentum app."
+              }
+            ]
+          },
+          "team": {
+            "h2": "Who is on the team",
+            "lead": "Five coaches. Only the head coach talks to you.",
+            "members": [
+              {
+                "name": "Head Coach",
+                "role": "Talks to you, asks what it needs, and brings in the other coaches."
+              },
+              {
+                "name": "The coach who picks your exercises",
+                "role": "Only from the catalogue, matched to your goal, level, place and equipment."
+              },
+              {
+                "name": "The coach who sets the dose",
+                "role": "Sets, reps, weight and rest, from your profile."
+              },
+              {
+                "name": "The coach for your meals",
+                "role": "Simple food rules and example meals around your goal, habits and allergies."
+              },
+              {
+                "name": "The coach who keeps you from getting hurt",
+                "role": "Checks every plan and every change against injuries, pain and age."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never changes the plan without your yes.",
+                "body": "Every change is a card. Mid-session, you pick the replacement yourself."
+              },
+              {
+                "title": "It never gives medical advice.",
+                "body": "On pain or an injury, it removes what could hurt and suggests seeing a doctor."
+              },
+              {
+                "title": "It never leaves its catalogue.",
+                "body": "Asked for an exercise it does not know, it refuses and offers one it does."
+              },
+              {
+                "title": "It never applies a risky request.",
+                "body": "Four hours of maximum deadlifts a day: nothing applied, a sensible option offered."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "For the developer or the agency who builds an app like it for a client.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "@table"
+                  ],
+                  "title": "Your gym's own catalogue.",
+                  "body": "Replace the 32 exercises with your client's, with their rules, so the coaches only propose what the gym teaches.",
+                  "uses": "The exercise coach · a table"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "A real coach approves.",
+                  "body": "Put a professional between the team and the person: each new plan waits for the coach's yes before it reaches the app.",
+                  "uses": "A workflow · an approval · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlecalendar"
+                  ],
+                  "title": "Sessions in the calendar.",
+                  "body": "Each session of the week becomes an event in the person's Google Calendar.",
+                  "uses": "Google Calendar"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "telegram"
+                  ],
+                  "title": "Tell the coach from Telegram.",
+                  "body": "The person writes what changed in Telegram, and the head coach adapts the plan.",
+                  "uses": "Head Coach · Telegram"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "@email"
+                  ],
+                  "title": "A recap every Sunday.",
+                  "body": "The plan of the coming week and the shopping list, by email.",
+                  "uses": "A schedule · Email"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "whatsapp"
+                  ],
+                  "title": "The coach on WhatsApp.",
+                  "body": "The same team in the messaging app your client's members already use.",
+                  "uses": "Head Coach · WhatsApp"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Another sport.",
+                "body": "Running, swimming, rehabilitation: change the coaches and the catalogue in plain words with the Assistant."
+              },
+              {
+                "title": "Your client's app.",
+                "body": "Momentum's code is public: change its look, or build your client's VibeApp on the same team."
+              },
+              {
+                "title": "Your safety rules.",
+                "body": "What counts as too much, and what needs a doctor: write it in the safety coach's instructions."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Build the app your clients see.",
+                "body": "This one is a VibeApp: an app on your own site, made for one job, with the team behind it.",
+                "link": "What a VibeApp is",
+                "href": "/blog/what-is-a-vibeapp"
+              },
+              {
+                "title": "Changed on a draft.",
+                "body": "Change the team on a draft: the app only sees it once you publish."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Trip Planner",
+                "body": "A whole trip planned with the traveller, from one sentence.",
+                "href": "/solutions/trip-planner"
+              },
+              {
+                "title": "Image Creator",
+                "body": "The image you need, from one sentence.",
+                "href": "/solutions/image-creator"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "The code of the app is public, under the MIT licence. Click through the app first to see what it does.",
+            "button": "Click through the app",
+            "href": "/services/work/momentum/mockup/",
+            "more": [
+              {
+                "link": "The app's code on GitHub",
+                "href": "https://github.com/agentivity-labs/agentivity_sdk_showcase_coach"
+              }
+            ],
+            "note": "A demonstration, not a coaching or medical service."
+          }
+        },
         "media": "blog/momentum/loop",
         "width": 720,
         "height": 1558,
