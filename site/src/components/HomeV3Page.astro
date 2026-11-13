@@ -343,9 +343,11 @@ const schema = {
   }
 
   // Build it without code: on a wide screen, the section holds still while the page scrolls through its four views, so that
-  // scrolling down goes through all four. The titles stay on the left, numbered; the active one opens its text, and a thin
-  // line beside it fills as the scroll moves on. Its clip plays on the right from its start, in full, for as long as the
-  // reader stays. A click on a title scrolls to it. After the fourth view, the page scrolls on.
+  // scrolling down goes through all four. The titles stay on the left, numbered; the active one opens its text, with a thin
+  // line beside it that fills as the scroll moves on. On the right, the next clip slides up over the current one like a card
+  // laid on a pile, while the one below steps back and fades (the other way when scrolling up). Each clip starts from its
+  // first frame and plays in full for as long as the reader stays. A click on a title scrolls to it. After the fourth view,
+  // the page scrolls on.
   const views = document.querySelector('.h3-views') as HTMLElement | null;
   if (moving && wide && views) {
     const items = Array.from(views.children) as HTMLElement[];
@@ -368,21 +370,49 @@ const schema = {
     views.setAttribute('role', 'tablist');
 
     let active = -1, start = 0, step = 0, seen = false;
+    const slide = 1300;
+    const leaving = new Set<number>();
+    const shown = (i: number) => i === active || leaving.has(i);
+    const play = () => videos.forEach((video, i) => {
+      if (shown(i) && seen) { if (video.paused) video.play().catch(() => {}); }
+      else if (!video.paused) video.pause();
+    });
     const show = (index: number) => {
       if (index === active) return;
+      const previous = active;
       active = index;
       items.forEach((li, i) => {
         const on = i === index;
         li.classList.toggle('is-active', on);
         li.querySelector('h3')?.setAttribute('aria-selected', String(on));
-        figures[i].classList.toggle('is-active', on);
-        if (!on) videos[i].pause();
       });
+      const card = figures[index];
+      if (previous >= 0) {
+        // The new card starts below (above when scrolling back up), without a transition, then moves into place.
+        card.style.transition = 'none';
+        card.style.transform = `translateY(${index > previous ? 60 : -60}%)`;
+        void card.offsetWidth;
+        card.style.transition = '';
+        card.style.transform = '';
+        const below = figures[previous];
+        below.style.setProperty('--away', index > previous ? '-10%' : '10%');
+        below.classList.remove('is-active');
+        below.classList.add('is-leaving');
+        leaving.add(previous);
+        setTimeout(() => {
+          below.classList.remove('is-leaving');
+          leaving.delete(previous);
+          play();
+        }, slide);
+      }
+      leaving.delete(index);
+      card.classList.remove('is-leaving');
+      card.classList.add('is-active');
       videos[index].currentTime = 0;
-      if (seen) videos[index].play().catch(() => {});
+      play();
     };
-    // The page's other clips start when they come on screen: here, only the active one plays, and only while it is seen.
-    videos.forEach((video, i) => video.addEventListener('play', () => { if (i !== active || !seen) video.pause(); }));
+    // The page's other clips start when they come on screen: here, a clip plays only while it shows, and the section is seen.
+    videos.forEach((video, i) => video.addEventListener('play', () => { if (!shown(i) || !seen) video.pause(); }));
 
     // The title of the section stays held with the views; on a short screen it slides up out of sight, the views do not.
     const measure = () => {
@@ -414,8 +444,11 @@ const schema = {
       tab.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
     new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) videos.forEach((video) => { if (video.preload !== 'auto') { video.preload = 'auto'; video.load(); } });
+    }, { rootMargin: '0px 0px 100% 0px' }).observe(track);
+    new IntersectionObserver(([entry]) => {
       seen = entry.isIntersecting;
-      if (seen) videos[active]?.play().catch(() => {}); else videos.forEach((video) => video.pause());
+      play();
     }, { threshold: 0.3 }).observe(stage);
     measure();
     update();
@@ -582,24 +615,27 @@ const schema = {
 .h3-views h3 { font-size: 20px; font-weight: 700; color: var(--ed-ink); }
 .h3-views .h3-shot { margin-top: 10px; }
 .h3-view-frame { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; background: #fff; }
-/* Build it without code, held still while the page scrolls: the numbered titles on the left, a line beside the active one
-   that fills with the scroll, its text open; the clips stacked on the right, the active one shown. */
+/* Build it without code, held still while the page scrolls: the numbered titles on the left, the active one lit with its
+   text open and a line beside it that fills with the scroll; the clips on the right as a pile of cards. */
 :global(.h3-track) { position: relative; }
 :global(.h3-pin) { position: sticky; }
 :global(.h3-player) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); column-gap: clamp(28px, 4vw, 56px); align-items: center; }
 .h3-views.is-player { display: flex; flex-direction: column; gap: 4px; counter-reset: view; }
 .h3-views.is-player li { position: relative; display: block; padding: 14px 0 14px 26px; cursor: pointer; counter-increment: view; }
 .h3-views.is-player li::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 2px; background: linear-gradient(var(--ed-navy), var(--ed-navy)) top / 100% calc(var(--p, 0) * 100%) no-repeat, var(--ed-line-2); }
-.h3-views.is-player h3 { display: flex; align-items: center; gap: 12px; color: var(--ed-ink-3); transition: color .25s ease; }
-.h3-views.is-player h3::before { content: counter(view); display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); font-size: 14px; font-weight: 700; color: var(--ed-ink-3); transition: background .25s ease, border-color .25s ease, color .25s ease; }
-.h3-views.is-player li > p { max-height: 0; overflow: hidden; opacity: 0; margin-left: 42px; transition: max-height .4s ease, opacity .3s ease, margin-top .4s ease; }
+.h3-views.is-player h3 { display: flex; align-items: center; gap: 12px; color: var(--ed-ink-3); transition: color .35s ease; }
+.h3-views.is-player h3::before { content: counter(view); display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); font-size: 14px; font-weight: 700; color: var(--ed-ink-3); transition: background .35s ease, border-color .35s ease, color .35s ease; }
+.h3-views.is-player li > p { max-height: 0; overflow: hidden; opacity: 0; margin-left: 42px; transition: max-height .45s ease, opacity .35s ease, margin-top .45s ease; }
 .h3-views.is-player li.is-active h3 { color: var(--ed-ink); }
 .h3-views.is-player li.is-active h3::before { background: var(--ed-yellow); border-color: var(--ed-yellow); color: var(--ed-navy); }
 .h3-views.is-player li.is-active > p { max-height: 12em; opacity: 1; margin-top: 8px; color: var(--ed-ink-2); }
 .h3-views.is-player h3:focus-visible { outline: 2px solid var(--ed-navy); outline-offset: 4px; }
 :global(.h3-stage) { display: grid; }
-:global(.h3-stage) .h3-shot { grid-area: 1 / 1; margin-top: 0; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility 0s linear .45s; }
-:global(.h3-stage) .h3-shot.is-active { opacity: 1; visibility: visible; transition: opacity .45s ease, visibility 0s; }
+/* The clips as a pile of cards: the active one on top; the one it covers steps back, fades, then hides. */
+:global(.h3-stage) .h3-shot { grid-area: 1 / 1; margin-top: 0; opacity: 0; visibility: hidden; transition: transform 1.3s cubic-bezier(.22, .8, .24, 1), opacity .6s ease, visibility 0s linear 1.3s; }
+:global(.h3-stage) .h3-shot.is-active { z-index: 2; opacity: 1; visibility: visible; transition: transform 1.3s cubic-bezier(.22, .8, .24, 1), opacity .6s ease, visibility 0s; }
+:global(.h3-stage) .h3-shot.is-leaving { z-index: 1; opacity: 0; visibility: visible; transform: translateY(var(--away, -10%)) scale(.84); transition: transform 1.3s cubic-bezier(.22, .8, .24, 1), opacity .9s ease .35s, visibility 0s; }
+:global(.h3-stage) .h3-shot.is-active .ed-shot-frame { box-shadow: 0 24px 48px -28px rgba(16, 27, 52, .35); }
 /* Sticky needs a page that clips without becoming a scroll box of its own. */
 main.ed-page { overflow: clip; }
 .h3-view-frame video { width: 100%; height: 100%; object-fit: contain; }
