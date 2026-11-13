@@ -1,0 +1,354 @@
+---
+// One solution told as the Solution page playbook orders it (KB-0330): the outcome, the team seen deciding, today against
+// tomorrow, how it fits the reader's work, what it never does alone, how to make it one's own, what the platform adds, how
+// to get it, then the questions. Used by the cases of "use_cases_page" that carry a "story" block; the others keep
+// UseCasePage. English only.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import VideoAutoplay from './VideoAutoplay.astro';
+import { useTranslations } from '../i18n/utils';
+import { brandLogos } from '../data/brand-logos';
+
+// Plain icons for the blocks that are not an app ("@schedule", "@desk", "@email" in a card's logos).
+const icons: Record<string, string> = {
+  schedule: '<circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  desk: '<rect x="3" y="4.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17.5V21M7.5 10.5l2.5 2.5 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+  web: '<circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3.5c2.5 2.4 3.6 5.2 3.6 8.5s-1.1 6.1-3.6 8.5c-2.5-2.4-3.6-5.2-3.6-8.5s1.1-6.1 3.6-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  chat: '<path d="M4 5.5h16v10H9l-5 4v-14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  email: '<rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+};
+
+interface Props { slug: string; }
+const { slug } = Astro.props;
+const t = useTranslations('en');
+const p = t.use_cases_page;
+const l = p.labels;
+const item: any = p.cases.find((entry: any) => entry.slug === slug);
+const st = item.story;
+// The scenario shown first: the first one already recorded.
+const first = Math.max(0, st.decide.scenarios.findIndex((sc: any) => sc.media));
+const faq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: item.qa.map((entry: any) => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })),
+};
+// Names to look for are marked with ** in the texts, shown in bold.
+const bold = (text: string) => text.split('**').map((part: string, i: number) => (i % 2 ? `<strong>${part}</strong>` : part)).join('');
+---
+<Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang="en" look="editorial">
+
+<SiteHeader lang="en" ctaHref={st.cta.href} />
+
+<main class="ed-page">
+
+  <!-- 1. The outcome -->
+  <section class="ed-wrap sx-hero">
+    <a class="sx-back" href="/solutions">{l.back}</a>
+    <p class="sx-name">{item.title}</p>
+    <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
+    <p class="sx-lead">{item.lead}</p>
+    <div class="sx-act">
+      <a class="ed-btn ed-btn--navy" href={st.cta.href}>{st.cta.label}</a>
+      <p class="sx-note">{st.cta.note}</p>
+    </div>
+  </section>
+
+  <!-- 2. See it decide: an easy case and the hard ones -->
+  <section class="ed-band--mist" id="decide">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{st.decide.h2}</h2>
+        <p class="ed-sec-sub">{st.decide.intro}</p>
+      </header>
+      <div class="sx-decide">
+        <div class="sx-tabs" role="tablist">
+          {st.decide.scenarios.map((sc: any, i: number) => (
+            <button type="button" role="tab" class:list={['sx-tab', { 'is-active': i === first }]} aria-selected={i === first ? 'true' : 'false'} tabindex={i === first ? 0 : -1} aria-controls={'sx-panel-' + i} data-tab={i}>
+              <span class="sx-tab-n">{i + 1}</span>
+              <span class="sx-tab-text"><strong>{sc.title}</strong><span>{sc.caption}</span></span>
+            </button>
+          ))}
+        </div>
+        <div class="sx-panels">
+          {st.decide.scenarios.map((sc: any, i: number) => (
+            <figure class="ed-shot sx-panel" id={'sx-panel-' + i} role="tabpanel" hidden={i !== first}>
+              <div class="ed-shot-frame ed-shot-frame--lift">
+                {sc.media
+                  ? <video muted loop playsinline controls preload="none" poster={'/media/' + sc.media + '.jpg'} width={item.width} height={item.height} aria-label={sc.caption} data-autoplay>
+                      <source src={'/media/' + sc.media + '.mp4'} type="video/mp4" />
+                    </video>
+                  : <div class="sx-missing" role="img" aria-label={sc.caption}><span>{st.decide.missing}</span></div>}
+              </div>
+            </figure>
+          ))}
+          <p class="sx-recorded">{st.decide.recorded}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Without it, with it -->
+  <section class="ed-band--navy">
+    <div class="ed-wrap ed-sec">
+      <h2 class="ed-h2 ed-h2--md sx-on-navy">{st.versus.h2}</h2>
+      <table class="sx-versus">
+        <thead><tr><th scope="col">{st.versus.columns[0]}</th><th scope="col" class="sx-versus-us">{st.versus.columns[1]}</th></tr></thead>
+        <tbody>
+          {st.versus.rows.map(([today, after]: string[]) => <tr><td>{today}</td><td class="sx-versus-us">{after}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. How it fits your work -->
+  <section class="ed-wrap ed-sec">
+    <h2 class="ed-h2 ed-h2--md">{st.fits.h2}</h2>
+    <ol class="sx-fits">
+      {st.fits.steps.map((step: any, i: number) => (
+        <li><span class="sx-n">{i + 1}</span><strong>{step.title}</strong><span>{step.body}</span></li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- 5. What it never does alone -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <h2 class="ed-h2 ed-h2--md">{st.never.h2}</h2>
+      <ul class="sx-cards">
+        {st.never.items.map((it: any) => <li><strong>{it.title}</strong><span>{it.body}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Make it yours -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{st.yours.h2}</h2>
+      <p class="ed-sec-sub">{st.yours.sub}</p>
+    </header>
+    {st.yours.further && (
+      <div class="sx-further">
+        <h3 class="sx-h3">{st.yours.further.h3}</h3>
+        <p class="sx-further-intro">{st.yours.further.intro}</p>
+        <ul class="sx-ups">
+          {st.yours.further.items.map((it: any) => (
+            <li class="sx-up">
+              <div class="sx-up-top">
+                <span class="sx-up-marks">
+                  {it.logos.map((id: string) => id.startsWith('@')
+                    ? <span class="sx-mark sx-mark--icon" title={id.slice(1)}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={icons[id.slice(1)]} /></span>
+                    : brandLogos[id] && <span class="sx-mark" title={id}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={brandLogos[id].d} fill={brandLogos[id].c} /></svg></span>)}
+                </span>
+                <span class={'sx-up-tag is-' + it.status}>{st.yours.further.labels[it.status]}</span>
+              </div>
+              <strong>{it.title}</strong>
+              <span>{it.body}</span>
+              <small class="sx-up-uses">{it.uses}</small>
+            </li>
+          ))}
+        </ul>
+        <a class="sx-further-link" href={st.yours.further.href}>{st.yours.further.link} →</a>
+        <h3 class="sx-h3 sx-h3--adapt">{st.yours.further.adapt}</h3>
+      </div>
+    )}
+    <ul class="sx-rows">
+      {st.yours.items.map((it: any) => <li><strong>{it.title}</strong><span>{it.body}</span></li>)}
+    </ul>
+  </section>
+
+  <!-- 7. One place for every team you build -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <h2 class="ed-h2 ed-h2--md">{st.platform.h2}</h2>
+      <ul class="sx-cards sx-cards--3">
+        {st.platform.items.map((it: any) => (
+          <li>
+            <strong>{it.title}</strong>
+            <span set:html={bold(it.body)} />
+            {it.link && <a class="ed-link" href={it.href}>{it.link} →</a>}
+          </li>
+        ))}
+      </ul>
+      <h3 class="sx-next-title">{st.platform.next}</h3>
+      <ul class="sx-next">
+        {st.platform.next_items.map((it: any) => (
+          <li><a href={it.href}><strong>{it.title}</strong><span>{it.body}</span><span class="sx-next-go" aria-hidden="true">→</span></a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Get it -->
+  <section class="ed-band--navy">
+    <div class="ed-wrap ed-sec sx-get">
+      <h2 class="ed-h2 ed-h2--md sx-on-navy">{st.get.h2}</h2>
+      <p class="sx-get-body">{st.get.body}</p>
+      <a class="ed-btn ed-btn--yellow" href={st.get.href}>{st.get.button}</a>
+      <p class="sx-get-guide" set:html={bold(st.get.guide)} />
+      <p class="sx-get-note">{st.get.note ?? st.cta.note}</p>
+      <a class="ed-link sx-get-more" href={st.get.more_href}>{st.get.more} →</a>
+    </div>
+  </section>
+
+  <!-- 9. Questions -->
+  <section class="ed-wrap ed-sec sx-qa">
+    <h2 class="ed-h2 ed-h2--md">{l.qa}</h2>
+    <div class="sx-faq">
+      {item.qa.map((entry: any) => (
+        <details>
+          <summary>{entry.q}</summary>
+          <p>{entry.a}</p>
+        </details>
+      ))}
+    </div>
+    <a class="ed-link" href="/solutions">{l.back}</a>
+  </section>
+
+</main>
+
+<SiteFooter lang="en" />
+<VideoAutoplay />
+
+</Base>
+
+<script>
+  // The scenarios are tabs: a click or the arrow keys show one capture at a time; a clip that is hidden stops.
+  const tabs = Array.from(document.querySelectorAll('.sx-tab')) as HTMLButtonElement[];
+  const select = (index: number) => {
+    tabs.forEach((tab, i) => {
+      const on = i === index;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', String(on));
+      tab.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls')!) as HTMLElement;
+      panel.hidden = !on;
+      const video = panel.querySelector('video');
+      if (video) { if (on) video.play().catch(() => {}); else video.pause(); }
+    });
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(i));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      const next = (i + (e.key === 'ArrowDown' ? 1 : tabs.length - 1)) % tabs.length;
+      select(next);
+      tabs[next].focus();
+    });
+  });
+</script>
+
+<style>
+/* ---------- 1. the outcome ---------- */
+.sx-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding-block: clamp(40px, 5vw, 72px) clamp(56px, 7vw, 96px); }
+.sx-back { font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.sx-back::before { content: "← "; }
+.sx-back:hover { color: var(--ed-ink); }
+.sx-name { font-size: 14.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.sx-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.sx-lead { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.sx-act { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 6px; }
+.sx-note { font-size: 15px; color: var(--ed-ink-3); }
+
+/* ---------- 2. see it decide ---------- */
+.sx-decide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.sx-tabs { display: flex; flex-direction: column; gap: 10px; }
+.sx-tab { display: flex; gap: 14px; align-items: flex-start; width: 100%; padding: 18px; border: 1px solid var(--ed-line); border-radius: 18px; background: transparent; text-align: left; font: inherit; color: var(--ed-ink-3); cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.sx-tab:hover { border-color: var(--ed-line-2); background: rgba(255, 255, 255, .5); }
+.sx-tab.is-active { background: #fff; border-color: var(--ed-navy); color: var(--ed-ink-2); box-shadow: 0 18px 36px -28px rgba(16, 27, 52, .45); }
+.sx-tab:focus-visible { outline: 2px solid var(--ed-navy); outline-offset: 3px; }
+.sx-tab-n { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 999px; border: 1.5px solid var(--ed-line-2); font-size: 14px; font-weight: 700; }
+.sx-tab.is-active .sx-tab-n { background: var(--ed-yellow); border-color: var(--ed-yellow); color: var(--ed-navy); }
+.sx-tab-text { display: flex; flex-direction: column; gap: 6px; font-size: 15.5px; line-height: 1.5; }
+.sx-tab-text strong { font-size: 18px; color: var(--ed-ink); }
+.sx-tab:not(.is-active) .sx-tab-text strong { color: var(--ed-ink-2); }
+.sx-panels video { display: block; width: 100%; height: auto; }
+/* The figure's own display would show a hidden panel. */
+.sx-panel[hidden] { display: none; }
+.sx-missing { display: grid; place-items: center; aspect-ratio: 4 / 3; background: #fff; border: 2px dashed var(--ed-line-2); color: var(--ed-ink-3); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.sx-recorded { margin-top: 12px; font-size: 14.5px; color: var(--ed-ink-3); }
+
+/* ---------- 3. without it, with it ---------- */
+.sx-on-navy { color: #fff; margin-bottom: clamp(24px, 3vw, 36px); }
+.sx-versus { width: 100%; border-collapse: collapse; font-size: clamp(16.5px, 1.4vw, 19px); line-height: 1.45; }
+.sx-versus th, .sx-versus td { width: 50%; text-align: left; vertical-align: top; padding: 18px 22px; border-top: 1px solid var(--ed-navy-line); color: var(--ed-on-navy); }
+.sx-versus thead th { border-top: 0; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.sx-versus .sx-versus-us { color: #fff; font-weight: 600; background: var(--ed-navy-2); }
+.sx-versus thead .sx-versus-us { color: var(--ed-yellow); border-radius: 14px 14px 0 0; }
+
+/* ---------- 4. how it fits ---------- */
+.sx-fits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(24px, 3vw, 36px); }
+.sx-fits li { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 2px solid var(--ed-ink); font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.sx-fits strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; color: var(--ed-ink); }
+.sx-n { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13.5px; font-weight: 700; }
+
+/* ---------- 5 and 7. cards ---------- */
+.sx-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: clamp(24px, 3vw, 36px); }
+.sx-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sx-cards li { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: clamp(20px, 2.4vw, 28px); border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.sx-cards strong { font-size: 19px; color: var(--ed-ink); }
+.sx-cards span :global(strong) { font-size: inherit; }
+
+/* ---------- 6. make it yours ---------- */
+.sx-h3 { margin: 0; font-size: clamp(20px, 2vw, 24px); font-weight: 700; color: var(--ed-ink); }
+.sx-h3--adapt { margin-top: clamp(40px, 5vw, 64px); margin-bottom: 14px; }
+.sx-further { margin-top: clamp(8px, 1vw, 12px); }
+.sx-further-intro { margin: 8px 0 0; max-width: 62ch; font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-3); }
+.sx-ups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: clamp(20px, 2.6vw, 30px); }
+.sx-up { display: flex; flex-direction: column; gap: 8px; padding: clamp(20px, 2.2vw, 26px); border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); font-size: 15.5px; line-height: 1.55; color: var(--ed-ink-2); transition: transform .2s ease, box-shadow .2s ease; }
+.sx-up:hover { transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(16, 27, 52, .45); }
+.sx-up strong { font-size: 18px; line-height: 1.3; color: var(--ed-ink); }
+.sx-up-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.sx-up-marks { display: flex; gap: 8px; }
+.sx-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #fff; border: 1px solid var(--ed-line); box-shadow: 0 6px 14px -10px rgba(16, 27, 52, .35); }
+.sx-mark svg { width: 22px; height: 22px; }
+.sx-mark--icon { color: var(--ed-navy); background: var(--ed-mist); }
+.sx-up-tag { flex: none; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.sx-up-tag.is-live { background: #E3F4EA; color: #17663A; }
+.sx-up-tag.is-soon { border: 1px dashed var(--ed-line-2); color: var(--ed-ink-3); }
+.sx-up-uses { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--ed-line); font-size: 13px; line-height: 1.45; color: var(--ed-ink-3); }
+.sx-further-link { display: inline-block; margin-top: 18px; font-weight: 600; color: var(--ed-navy); text-decoration: underline; text-underline-offset: 3px; }
+.sx-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 56px); border-top: 2px solid var(--ed-ink); }
+.sx-rows li { display: flex; flex-direction: column; gap: 6px; padding-block: 20px; border-bottom: 1px solid var(--ed-line-2); font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.sx-rows strong { font-size: 18px; color: var(--ed-ink); }
+
+/* ---------- 7. the next step ---------- */
+.sx-next-title { margin-top: clamp(36px, 4vw, 52px); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.sx-next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+.sx-next a { position: relative; display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 20px 44px 20px 22px; border-radius: 18px; background: var(--ed-navy); color: var(--ed-on-navy); font-size: 15.5px; line-height: 1.5; transition: transform .2s ease; }
+.sx-next a:hover { transform: translateY(-2px); }
+.sx-next strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.05; color: #fff; }
+.sx-next-go { position: absolute; right: 20px; top: 22px; color: var(--ed-yellow); font-size: 20px; }
+
+/* ---------- 8. get it ---------- */
+.sx-get { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.sx-get .sx-on-navy { margin-bottom: 0; }
+.sx-get-body { max-width: 40em; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--ed-on-navy); }
+.sx-get-guide { font-size: 15.5px; color: var(--ed-on-navy); }
+.sx-get-guide :global(strong) { color: #fff; }
+.sx-get-note { font-size: 14.5px; color: var(--ed-on-navy); }
+.sx-get-more { color: #fff; }
+
+/* ---------- 9. questions ---------- */
+.sx-faq { display: flex; flex-direction: column; max-width: 860px; margin-block: clamp(20px, 3vw, 32px); }
+.sx-faq details { border-top: 1px solid var(--ed-line-2); }
+.sx-faq details:last-child { border-bottom: 1px solid var(--ed-line-2); }
+.sx-faq summary { cursor: pointer; padding-block: 20px; font-size: 19px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+.sx-faq summary::-webkit-details-marker { display: none; }
+.sx-faq summary::after { content: '+'; font-weight: 400; font-size: 24px; line-height: 1; }
+.sx-faq details[open] summary::after { content: '–'; }
+.sx-faq details p { padding-bottom: 22px; color: var(--ed-ink-2); max-width: 46em; }
+
+@media (max-width: 900px) {
+  .sx-decide, .sx-fits, .sx-cards, .sx-cards--3, .sx-rows, .sx-next { grid-template-columns: minmax(0, 1fr); }
+  .sx-ups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .sx-ups { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .sx-versus th, .sx-versus td { padding: 14px 12px; font-size: 15.5px; }
+  .sx-versus thead th { font-size: 12.5px; }
+}
+</style>

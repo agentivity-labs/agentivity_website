@@ -122,11 +122,11 @@
           ]
         },
         {
-          "title": "Customer support",
+          "title": "Support",
           "items": [
             {
-              "label": "Support Desk Team",
-              "href": "/solutions/support-desk-team",
+              "label": "Service Desk",
+              "href": "/solutions/service-desk",
               "live": true
             },
             {
@@ -1525,7 +1525,7 @@
     "error_consent": "Please tick the box to agree to receive emails.",
     "error_rate": "Too many attempts. Please wait a few minutes and try again."
   },
-"use_cases_page": {
+  "use_cases_page": {
     "meta": {
       "title": "Ready-Made AI Solutions by Department | Agentivity",
       "description": "Ready-made AI agents, teams and automations for sales, customer support, finance, HR and marketing, and for your own projects. Open one in a 14-day trial, no card."
@@ -2057,102 +2057,356 @@
         "meta_title": "Invoice Clerk: AI That Reads and Checks Supplier Invoices | Agentivity"
       },
       {
-        "slug": "support-desk-team",
-        "media": "support-desk-team",
+        "slug": "service-desk",
+        "image": "/media/service-desk-cockpit.webp",
         "width": 2048,
         "height": 1536,
         "tag": "No app",
-        "size": "Team of 4",
-        "title": "Support Desk Team",
-        "for": "a customer service team",
-        "summary": "Paste a customer's message. The team checks the order and your help articles, and hands back a triage and a reply ready to send. Refunds wait for you.",
-        "alt": "Support Desk Team at work on the Desk: a customer message asking for a refund is pasted, the team checks the order with the orders and warranty specialist, a refund card waits for an answer, the refund is refused, and a drafted reply to the customer appears",
-        "h1": "Every customer answered,",
-        "h1_accent": "every refund your call.",
-        "lead": "Someone on your team pastes the customer's message on the Desk. The team looks up their order, reads your help articles, and gives back a reply you only have to send. Anything that costs you money waits for your yes.",
+        "size": "Two teams",
+        "title": "Service Desk",
+        "for": "an internal service desk",
+        "summary": "Your employees ask on the Desk. The Front Desk answers from your help articles and opens a clear ticket when a person is needed. Your service desk gets the context and a draft reply.",
+        "alt": "Service Desk on the Desk: an employee asks the Front Desk, and the service desk works its tickets with the Resolution Team.",
+        "h1": "Solve each problem once.",
+        "h1_accent": "After that, anyone who asks gets the answer in seconds.",
+        "lead": "When your service desk fixes a problem on a ticket, the fix becomes a short help article. Once a person approves it, the Front Desk uses it to answer the next employee who asks about it, in seconds. Questions it cannot answer become clear tickets, with the context and a reply ready for your service desk to check and send.",
         "facts": {
-          "for": "A shop or a small business that answers its customers itself",
-          "use": "A chat, in the Studio or on your team's Desk",
-          "behind": "A lead and three specialists, reading your orders, your products and your help articles"
+          "for": "The head of IT or operations of a company that answers its own people's questions",
+          "use": "On the Desk: employees ask the Front Desk, your service desk works from its own view",
+          "behind": "Two teams: a Front Desk of specialists for the first level, and a Resolution Team that helps your service desk"
         },
-        "steps": [
-          {
-            "title": "The message",
-            "body": "You paste what the customer wrote: an order that is late, a laptop that will not charge, a question about stock."
+        "story": {
+          "_comment": "The page as the Solution page playbook (KB-0330) orders it. Text of marketing-content, 2026-11-12 (service-desk/page-text.md); the approved-article loop is the headline (founder, 2026-11-12).",
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company, so you can play the employee and the service desk yourself. No Slack or email to set up."
           },
-          {
-            "title": "The lead reads it",
-            "body": "It sends the message to the specialist who knows the subject: orders and warranty, technical problems, or sales."
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good service desk is not only fast. It knows what it can answer, what it must not decide, and who should take over. Here are five real cases, from a question to an expert.",
+            "scenarios": [
+              {
+                "title": "A VPN that keeps dropping.",
+                "caption": "An employee asks. The Front Desk answers with the four steps of your VPN article, and says when a ticket will be opened. No ticket needed.",
+                "media": "service-desk-1-vpn"
+              },
+              {
+                "title": "A request for access to Finance files.",
+                "caption": "Access is never the Front Desk's decision. It opens ticket SD-1052, gives the number, and explains that her manager and the data owner must approve. The ticket is at the top of your queue.",
+                "media": "service-desk-2-access"
+              },
+              {
+                "title": "A password that Outlook keeps asking for.",
+                "caption": "Your service desk gives the ticket number and gets the reply to send. When you confirm the fix worked, the Resolution Team closes the ticket and writes down its resolution note.",
+                "media": "service-desk-3-outlook"
+              },
+              {
+                "title": "A CRM export that stops at 80%.",
+                "caption": "Earlier, your service desk fixed this on a ticket, and a person approved the fix. Now another employee asks in her own words. The Front Desk answers with the same steps in seconds, and no ticket is needed.",
+                "media": "service-desk-4-loop"
+              },
+              {
+                "title": "A swollen laptop battery.",
+                "caption": "Safety first: the reply tells the employee what not to do. Then it explains why an expert is needed, proposes Ines from Hardware & Fleet, and waits for your yes. It also checks the person's other open tickets.",
+                "media": "service-desk-5-battery"
+              }
+            ],
+            "recorded": "Recorded in the real product, on a demo company.",
+            "missing": "Capture to record"
           },
-          {
-            "title": "The specialist checks",
-            "body": "It looks up the customer's order and the products in your tables, and the answer in your help articles."
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Service Desk"
+            ],
+            "rows": [
+              [
+                "The same questions about the VPN, passwords and expenses fill your service desk's day.",
+                "The Front Desk answers them from your articles, and only the cases that need a person reach your queue."
+              ],
+              [
+                "A ticket says \"it does not work\", and you write back to ask what, where and since when.",
+                "Each ticket comes with a subject, a category, a priority, a short summary and what the person already tried."
+              ],
+              [
+                "Before you answer, you look up who the person is, their team, their laptop and their past tickets.",
+                "Give the ticket number to the Resolution Team: that context comes back, with the steps from your articles and a reply ready to send."
+              ],
+              [
+                "An expert gets a forwarded message and has to start from zero.",
+                "The right expert is proposed from your \"Who to call\" list, and the hand-over is written in the ticket once you approve."
+              ],
+              [
+                "Nobody has time to write help articles, so the same fix is explained again and again.",
+                "You do not write the article. It is drafted from the closed ticket; you read it, say yes, and it joins your knowledge."
+              ],
+              [
+                "Access to a shared folder depends on who you ask.",
+                "Access, a replacement device or anything that costs money is never decided by the Front Desk: it opens a ticket and says who must approve."
+              ]
+            ]
           },
-          {
-            "title": "Your reply",
-            "body": "You get a short triage and a reply ready to copy and send, with the facts the customer needs, such as the stock and the delay."
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "Employees ask on the Desk.",
+                "body": "They write their question to the Front Desk, in their own words, where your company already uses its AI teams."
+              },
+              {
+                "title": "It reads your service desk's records.",
+                "body": "Your help articles, your list of employees, your tickets and your \"Who to call\" list. It writes only to tickets and to approved articles, and never deletes anything."
+              },
+              {
+                "title": "Everything lands in one queue.",
+                "body": "New tickets appear in the Service Desk view on the Desk, with counters for new, urgent and waiting tickets. Your service desk starts the Resolution Team from there with a ticket number."
+              }
+            ]
           },
-          {
-            "title": "Your decision",
-            "body": "A refund, a return or a goodwill gesture comes to you as a card: approve or refuse, and the reply follows your choice."
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never decides for a person.",
+                "body": "Access to data, a replacement device, anything that costs money, or an employee who asks for a human: the Front Desk opens a ticket and tells them what happens next."
+              },
+              {
+                "title": "It asks before it acts on a ticket.",
+                "body": "The Resolution Team asks your service desk before it escalates to an expert, before it closes a ticket and before it adds an article to your knowledge."
+              },
+              {
+                "title": "It does not invent.",
+                "body": "It answers from your articles. Given a ticket number that does not exist, it says so and asks you to check it."
+              },
+              {
+                "title": "It keeps a record.",
+                "body": "Every escalation and closing is written in the ticket's history. Each conversation is kept step by step, and you can see the AI usage of each member and your monthly usage by model."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes a service desk can make once it runs, each built from the same blocks as the solution.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "soon",
+                  "logos": [
+                    "jira",
+                    "zendesk",
+                    "linear"
+                  ],
+                  "title": "Open the ticket in Jira, not in a table.",
+                  "body": "The Ticket Clerk creates the issue in your own project, with the subject, the priority and what was tried, and the Resolution Team reads it back by its key. Until then, any tool with an API can be reached through an HTTP request or an MCP server.",
+                  "uses": "Ticket Clerk · Context Finder · Jira"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Hand the case to the expert in Slack.",
+                  "body": "Once you approve an escalation, the hand-over is posted in the expert's channel, #it-hardware for Ines, with the ticket, the laptop and what the employee already tried. Nobody has to forward anything.",
+                  "uses": "Escalation Advisor · Slack · the \"Who to call\" table"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@web"
+                  ],
+                  "title": "Put the Front Desk on your intranet.",
+                  "body": "Employees ask from the intranet page they already open every morning: the same Front Desk, inside your own page and your own design, built as a VibeApp.",
+                  "uses": "A VibeApp · the Front Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Chase the urgent tickets nobody has taken.",
+                  "body": "Every morning at 9, a schedule lists the urgent tickets still new and the ones waiting for more than two days, and posts the list in your service desk's channel.",
+                  "uses": "A schedule · the Tickets table · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Let the data owner approve access.",
+                  "body": "For the Finance folder, a workflow asks the Finance data owner. The question waits in their \"Waiting for you\" on the Desk; once they say yes, the ticket moves on with their name in its history.",
+                  "uses": "A workflow · a named approver · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "notion",
+                    "googledocs",
+                    "confluence"
+                  ],
+                  "title": "Answer from the wiki you already keep.",
+                  "body": "Let the specialists read your IT pages in Notion or Google Docs, or give them your help site's address. Confluence and SharePoint are coming.",
+                  "uses": "The three specialists · Notion · Google Docs"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "slack",
+                    "@chat"
+                  ],
+                  "title": "Let employees ask from Slack or Teams.",
+                  "body": "An employee writes to the Front Desk in Slack or Microsoft Teams and gets the same answer, or a ticket number, in the same thread.",
+                  "uses": "The Front Desk · Slack · Microsoft Teams"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets",
+                    "airtable"
+                  ],
+                  "title": "Know who is asking from your HR list.",
+                  "body": "The Context Finder reads the people list your HR team already keeps in Google Sheets or Airtable, so a new joiner's team, manager and laptop are known on day one.",
+                  "uses": "Context Finder · Google Sheets · Airtable"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "@email",
+                    "googledocs"
+                  ],
+                  "title": "Send the head of IT a weekly report.",
+                  "body": "Every Friday: the tickets opened and closed, the subjects that came back most, the tickets still waiting, and the articles approved this week. By email, or as a Google Doc.",
+                  "uses": "A schedule · the Tickets and Knowledge Updates tables · Email"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your subjects.",
+                "body": "IT and equipment, accounts and access, workplace and HR come ready. Rename them, or add a specialist for facilities or for your own software."
+              },
+              {
+                "title": "Your rules.",
+                "body": "Who approves access, what is urgent, when to call an expert: change them in plain words with the Assistant."
+              },
+              {
+                "title": "Your knowledge.",
+                "body": "Paste your own help articles into its knowledge bases, or give it the addresses of your help pages or your sitemap."
+              },
+              {
+                "title": "Your people and your experts.",
+                "body": "Fill the employees and \"Who to call\" tables in the Studio or through the API."
+              },
+              {
+                "title": "For your customers instead?",
+                "body": "A public help desk on your own site is a different build: a VibeApp, an app on your own site."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "The whole company uses it from the Desk.",
+                "body": "Employees ask the Front Desk. Your service desk works from its own view, with the queue and the Resolution Team. They use these teams; they cannot change them.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "It reuses your employees table and your help articles, already filled."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every team's history and usage are in the same workspace."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Your supplier invoices read, filed and every total checked.",
+                "href": "/solutions/invoice-clerk"
+              },
+              {
+                "title": "CV Screener",
+                "body": "Each CV scored against the job, with the reasons.",
+                "href": "/solutions/cv-screener"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Service Desk in your trial. It comes with a demo company, Brightwell Logistics, with its help articles, employees, experts and open tickets. Ask the Front Desk as an employee, then open the queue as the service desk: one person can try every level.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Service Desk** and select **Add it**.",
+            "more": "See how your people would use it on the Desk",
+            "more_href": "/desk",
+            "note": "14-day trial · no card · AI usage billed by your provider"
           }
-        ],
-        "decisions": [
-          "Approve or refuse a refund, a return or a goodwill gesture",
-          "Read the reply, and send it yourself"
-        ],
-        "note": "The demo shop, its customers and its orders are made up. To answer from yours, paste your help articles into its knowledge base or point it at your help pages, and fill its three tables (products, customers, orders) in the Studio or through the API. Tables have no file import yet.",
-        "team": {
-          "title": "The team",
-          "lead": "Four members. Only the lead talks to you.",
-          "members": [
-            {
-              "name": "Support Lead",
-              "role": "Reads each message, sends it to the right specialist, and gives you the triage and the reply."
-            },
-            {
-              "name": "Orders & Warranty",
-              "role": "Answers about orders, delivery, returns and warranty, from the order history."
-            },
-            {
-              "name": "Technical Support",
-              "role": "Finds the fix for a product problem in your help articles."
-            },
-            {
-              "name": "Sales",
-              "role": "Answers about products, prices, stock and which model fits a need."
-            }
-          ]
-        },
-        "get": {
-          "body": "Open Support Desk Team in your trial: it comes with a demo shop, so once it is open, the first reply takes one message.",
-          "link": "Open it in your trial",
-          "href": "/start?plan=pro",
-          "trial": true,
-          "guide": "In the welcome guide, choose **Acme Computers Support** and select **Add it**.",
-          "more": [
-            {
-              "link": "See how your team would use it on the Desk",
-              "href": "/desk"
-            }
-          ]
         },
         "qa": [
           {
-            "q": "What does Support Desk Team do?",
-            "a": "You paste a customer's message. A lead sends it to the right specialist, who looks up the customer's order and products and reads your help articles. You get back a triage and a reply ready to send. Any refund, return or goodwill gesture waits for your approval first."
-          },
-          {
-            "q": "Who is it for?",
-            "a": "A shop or a small business that answers its own customers, and the agency that sets up support for them. The same shape fits any desk that answers from its own records: bookings, subscriptions, deliveries."
+            "q": "What does Service Desk do?",
+            "a": "It gives your company three levels of support. The Front Desk (first level) answers employees from your articles and opens a ticket when a person is needed. Your service desk (second level) calls the Resolution Team with a ticket number and gets the context, the steps and a reply to send. When an expert is needed, it proposes one from your \"Who to call\" list. People approve every escalation, every closing and every new article."
           },
           {
             "q": "What is real and what is simulated?",
-            "a": "The reading, the look-ups and the replies are real. The shop is made up: Acme Computers, its customers, its 47 orders and its 28 products are fictional. Nothing is sent to anyone: the reply is yours to send."
+            "a": "The answers, the tickets, the escalations and the closings are real, and they are written in real tables. The company is made up: Brightwell Logistics, its employees, its experts, its tickets and its articles are fictional. Replace them with your own."
+          },
+          {
+            "q": "Can employees send an email, or use a form, instead of the Desk?",
+            "a": "Not in this solution today: employees ask on the Desk."
+          },
+          {
+            "q": "Does it message the expert on Slack?",
+            "a": "Not as built: the hand-over is written in the ticket, and each expert's Slack channel is listed in \"Who to call\"."
+          },
+          {
+            "q": "Can an approval go to a colleague, not to me?",
+            "a": "The platform can send a question to a named person through a workflow. This solution does not use it: the person who works on the ticket approves, so one person can try every level."
+          },
+          {
+            "q": "Can I filter the queue?",
+            "a": "Not the list itself today. It shows the latest tickets, and the counters above it show the new, urgent and waiting ones."
+          },
+          {
+            "q": "What if an answer is wrong?",
+            "a": "The Front Desk answers from your articles only, and opens a ticket when they do not cover the case. On a ticket, nothing is escalated, closed or added to your knowledge without your yes. It never deletes a ticket."
+          },
+          {
+            "q": "How do I give it my own data?",
+            "a": "Fill the tables in the Studio or through the API (tables have no file import yet), and paste your help articles or give your help pages' addresses."
+          },
+          {
+            "q": "What does a request cost?",
+            "a": "Your AI usage is billed by your model provider. Each member that works calls the model, so a case handled by a lead and a specialist costs more than a single agent. The Observation tab shows the tokens each member used."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "The head of IT or operations of a company that answers its own people's questions, and the agency or builder who sets it up for them."
           },
           {
             "q": "How can I try it?",
-            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Acme Computers Support from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and paste a customer's message, for example a laptop that will not charge."
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Service Desk from the welcome guide, then ask the Front Desk, for example, why your VPN keeps dropping."
           }
         ]
       },
@@ -2375,7 +2629,7 @@
       "sub": "Open a live solution to see what it does and try it. The ones marked Soon are coming next.",
       "groups": {
         "Sales": "For the people who find customers and win them.",
-        "Customer support": "For the people who answer your customers every day.",
+        "Support": "For the people who answer questions every day, from your colleagues or your customers.",
         "Finance": "For the people who handle invoices, cash and reports.",
         "People (HR)": "For the people who hire new colleagues and welcome them.",
         "Marketing": "For the people who make images, posts and campaigns.",
@@ -2388,9 +2642,9 @@
           "line": "A product compared across stores, with a visual report.",
           "type": "A team of 9"
         },
-        "support-desk-team": {
-          "line": "A reply ready to send for every customer message.",
-          "type": "A team of 4"
+        "service-desk": {
+          "line": "Solve a problem once, and the next employee who asks gets the answer in seconds.",
+          "type": "Two teams"
         },
         "invoice-clerk": {
           "line": "Supplier invoices read, filed and checked.",
@@ -4610,12 +4864,12 @@
       "more": "See it at work",
       "cards": [
         {
-          "name": "Support Desk Team",
-          "gain": "Reply to every customer, fast.",
-          "body": "Paste a customer's message and get a reply ready to send. Refunds and returns wait for you to approve.",
-          "meta": "Customer support · a team of 4",
-          "href": "/solutions/support-desk-team",
-          "image": "/media/support-desk-team.jpg"
+          "name": "Service Desk",
+          "gain": "Solve each problem once.",
+          "body": "Your employees ask on the Desk. Your help articles, and every fix your service desk approves, answer them in seconds. The rest become clear tickets, ready for your service desk.",
+          "meta": "Support · two teams",
+          "href": "/solutions/service-desk",
+          "image": "/media/service-desk-cockpit.webp"
         },
         {
           "name": "Invoice Clerk",

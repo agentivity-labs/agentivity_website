@@ -49,6 +49,7 @@ const solutionRedirects = {
   '/use-cases/trip-planner': '/solutions/trip-planner',
   '/solutions/makers': '/solutions/your-own-projects',
   '/solutions/builders-and-agencies': '/solutions/freelancers-and-agencies',
+  '/solutions/support-desk-team': '/solutions/service-desk',
 };
 
 export default defineConfig({

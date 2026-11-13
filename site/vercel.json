@@ -101,6 +101,11 @@
       "permanent": true
     },
     {
+      "source": "/solutions/support-desk-team{/}?",
+      "destination": "/solutions/service-desk",
+      "permanent": true
+    },
+    {
       "source": "/docs/studio/home{/}?",
       "destination": "/docs/studio/find-your-way-in-the-studio/#the-home-page",
       "permanent": true

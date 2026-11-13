@@ -1,10 +1,13 @@
 ---
 import UseCasePage from '../../components/UseCasePage.astro';
+import SolutionStoryPage from '../../components/SolutionStoryPage.astro';
 import { useTranslations } from '../../i18n/utils';
 
 export function getStaticPaths() {
   return useTranslations('en').use_cases_page.cases.map((item) => ({ params: { slug: item.slug } }));
 }
 const { slug } = Astro.params;
+// A case written to the Solution page playbook (a "story" block) has its own layout; the others keep the first one.
+const story = (useTranslations('en').use_cases_page.cases as any[]).find((item) => item.slug === slug)?.story;
 ---
-<UseCasePage lang="en" slug={slug} />
+{story ? <SolutionStoryPage slug={slug} /> : <UseCasePage lang="en" slug={slug} />}
