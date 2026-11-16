@@ -51,6 +51,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
     <p class="sx-name">{item.title}</p>
     <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
     <p class="sx-lead">{item.lead}</p>
+    {item.notice && <p class="sx-notice">{item.notice}</p>}
     <div class="sx-act">
       <a class="ed-btn ed-btn--navy" href={st.cta.href} {...ext(st.cta.href)}>{st.cta.label}</a>
       <p class="sx-note">{st.cta.note}</p>
@@ -245,6 +246,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 .sx-name { font-size: 14.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
 .sx-hero h1 { font-family: var(--ed-serif); font-size: clamp(46px, 7vw, 104px); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
 .sx-lead { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; color: var(--ed-ink-2); max-width: 36em; }
+.sx-notice { margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--ed-yellow); font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); max-width: 40em; }
 .sx-act { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 6px; }
 .sx-note { font-size: 15px; color: var(--ed-ink-3); }
 
@@ -265,6 +267,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 .sx-told-steps li::before { content: counter(told); position: absolute; left: 0; top: -2px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13.5px; font-weight: 700; }
 .sx-told-steps li:last-child::before { background: var(--ed-yellow); color: var(--ed-navy); }
 @media (max-width: 640px) { .sx-told { aspect-ratio: auto; } }
+
 .sx-team { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: clamp(20px, 2.6vw, 30px); }
 .sx-team li { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid var(--ed-line); font-size: 14.5px; line-height: 1.5; color: var(--ed-ink-2); }
 .sx-team strong { font-size: 16px; color: var(--ed-ink); }

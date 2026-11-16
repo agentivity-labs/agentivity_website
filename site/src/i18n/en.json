@@ -155,7 +155,9 @@
               "label": "Monthly Report"
             },
             {
-              "label": "Invoice Processing"
+              "label": "Contract Checker",
+              "href": "/solutions/contract-checker",
+              "live": true
             }
           ]
         },
@@ -1580,20 +1582,12 @@
               {
                 "title": "A city weekend: no car needed.",
                 "caption": "The manager calls only the specialists the trip needs.",
-                "what_happens": [
-                  "A weekend in a city, with no driving planned.",
-                  "The manager calls the flight, hotel, transfer and dinner specialists, and leaves the car rental specialist out.",
-                  "The traveller only sees the choices this trip needs."
-                ]
+                "media": "trip-planner-2-no-car"
               },
               {
                 "title": "Nothing booked before the payment.",
                 "caption": "The specialists only propose. The bookings wait for the payment.",
-                "what_happens": [
-                  "The traveller has chosen the flight, the hotel and the dinner.",
-                  "The six specialists only proposed. The Payment Agent asks for the payment and reports whether it was authorised.",
-                  "Only then does the Reservation Agent record the bookings. In the demonstration, both are simulated."
-                ]
+                "media": "trip-planner-3-payment"
               }
             ],
             "recorded": "Recorded in the real product. A demonstration: nothing is booked or paid."
@@ -2052,11 +2046,7 @@
               {
                 "title": "Two products that look alike.",
                 "caption": "The score comes from a calculation, not from a feeling.",
-                "what_happens": [
-                  "One product is cheaper; the other has better reviews.",
-                  "The Scoring Analyst scores both with the same script, from the priorities the shopper confirmed.",
-                  "The shopper reads the reasons and the sources, and decides what to buy."
-                ]
+                "media": "product-compare-3-scores"
               }
             ],
             "recorded": "Recorded in the real product, on the stores' real pages."
@@ -2840,20 +2830,12 @@
               {
                 "title": "A total that does not add up.",
                 "caption": "It flags the gap, and leaves the decision to you.",
-                "what_happens": [
-                  "The lines add up to 214.80 EUR, plus 42.96 EUR of VAT: 257.76 EUR. The invoice says 267.76 EUR.",
-                  "The calculator finds the gap. The agent keeps the printed total, stores its own sum beside it, and marks the invoice as a mismatch.",
-                  "You decide: pay, or ask the supplier."
-                ]
+                "media": "invoice-clerk-2-mismatch"
               },
               {
                 "title": "The same invoice, twice.",
                 "caption": "A reminder is recognised, and counted once.",
-                "what_happens": [
-                  "A supplier sends a reminder for an invoice already filed.",
-                  "Same supplier, same number: the agent files nothing, and says when the first one was filed.",
-                  "Your spending counts the invoice once."
-                ]
+                "media": "invoice-clerk-3-duplicate"
               }
             ],
             "recorded": "Recorded in the real product, with made-up invoices."
@@ -3550,6 +3532,320 @@
         ]
       },
       {
+        "slug": "contract-checker",
+        "width": 2048,
+        "height": 1536,
+        "tag": "No app",
+        "size": "One agent",
+        "title": "Contract Checker",
+        "for": "legal, finance or purchasing",
+        "summary": "Give it a supplier contract. It checks every clause against your own rules, quotes what departs from them, and legal decides what to accept and what to ask the supplier to change.",
+        "alt": "Contract Checker on the Desk: a supplier contract reviewed against the company's playbook, with each flag quoted and legal's decision.",
+        "h1": "Every supplier contract read against your rules.",
+        "h1_accent": "Legal reads the flags, not the twenty pages.",
+        "lead": "Supplier contracts arrive as the supplier's own PDF, and nobody has time to read them against your rules, so they are signed as they come. Contract Checker reads each one against your contract playbook, quotes every clause that departs from it, and says how far. Legal decides, and gets the note to the supplier ready to copy.",
+        "notice": "It flags; legal decides. Contract Checker compares contracts with your own rules and gives no legal advice.",
+        "facts": {
+          "for": "The in-house counsel, finance director or purchasing lead who signs supplier contracts",
+          "use": "On the Desk: give it a contract, read the review, decide",
+          "behind": "One agent, with your contract playbook, your suppliers and your past reviews"
+        },
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company and four sample contracts. No connection to set up."
+          },
+          "decide": {
+            "h2": "See it decide",
+            "intro": "A good contract review is not only fast. It quotes the clause, knows what you accept, and leaves the decision to legal. Here are five real cases, from a simple renewal to a contract it cannot read.",
+            "scenarios": [
+              {
+                "title": "A software renewal, close to your rules.",
+                "caption": "Every rule comes back with its clause quoted. Payment in 60 days and a 3% price index are within your fallback, so the level is low. It also recalls that last year's 4% was accepted for one year only. Legal approves, and the review is saved.",
+                "image": "/media/contract-checker-concept.webp"
+              },
+              {
+                "title": "A freight contract with three red lines.",
+                "caption": "A 36-month automatic renewal, unlimited liability, foreign courts: red lines first, each quoted. At 180,000 € a year, it reminds you that the finance director decides too. Legal asks for two changes, and the note to the supplier lists only those two.",
+                "media": "contract-checker-2-changes"
+              },
+              {
+                "title": "A maintenance contract in Word, with your staff's data.",
+                "caption": "The supplier's technicians can read your access-control logs, and no data processing terms are attached: a red line under your rule on personal data. It also points out that a critical machine has no response time for breakdowns.",
+                "media": "contract-checker-3-word"
+              },
+              {
+                "title": "“Can I sign it? Is that clause legal?”",
+                "caption": "It says what is on record: two changes asked, so the contract is not cleared yet. Then it says plainly that it does not judge whether a clause is legal. It compares the wording with your playbook, and legal decides.",
+                "image": "/media/contract-checker-4-refuses.webp"
+              },
+              {
+                "title": "A scanned contract.",
+                "caption": "A scan has no text to read. It says so, asks for a text PDF or the Word file, and saves nothing. It never guesses at clauses it cannot read.",
+                "image": "/media/contract-checker-5-scan.webp"
+              }
+            ],
+            "recorded": "Recorded in the real product, on a demo company."
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Contract Checker"
+            ],
+            "rows": [
+              [
+                "Contracts are signed as they come, because nobody has time to read twenty pages.",
+                "Every contract is read against your rules, and legal reads only what departs from them."
+              ],
+              [
+                "A contract that renews for three more years, or leaves you without a cap, is found a year later.",
+                "Red lines come first, each with the clause quoted and the rule it breaks."
+              ],
+              [
+                "Nobody remembers what was accepted from this supplier last time.",
+                "Past reviews are kept, with each exception and its reason, and the next review starts from them."
+              ],
+              [
+                "Writing back to the supplier takes another hour.",
+                "The note asks only for the changes legal chose, citing the clauses, ready to copy."
+              ],
+              [
+                "A large contract goes through without the finance director.",
+                "Above your threshold, the review says who must decide too."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "Give it the contract on the Desk.",
+                "body": "A text PDF or a Word file, with the supplier and who asked for it. Your people use it where your company already uses its AI teams."
+              },
+              {
+                "title": "It reads your playbook.",
+                "body": "Your rules, each with a standard, an acceptable fallback and a red line, plus your suppliers and your past reviews. It writes only to the reviews, and never deletes anything."
+              },
+              {
+                "title": "Decisions land in one view.",
+                "body": "The Contracts view on the Desk shows what is waiting for legal, the red lines this month and every review, latest first."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It gives no legal advice.",
+                "body": "It never says a clause is legal, valid or safe to sign, and never cites the law. It compares the wording with your playbook."
+              },
+              {
+                "title": "It never decides.",
+                "body": "No review is saved as decided without legal's choice: approve as is, ask for changes, or do not sign."
+              },
+              {
+                "title": "It never sends anything.",
+                "body": "The note to the supplier is shown for legal to copy and send."
+              },
+              {
+                "title": "It does not guess.",
+                "body": "Every flag quotes the contract. A rule with no clause is marked missing. A contract it cannot read stops it."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes a legal or finance team can make once it runs, each built from the same blocks as the solution.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Tell legal a contract is waiting.",
+                  "body": "When a review is ready, a message in legal's channel gives the supplier, the level and the red lines.",
+                  "uses": "Contract Checker · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@desk"
+                  ],
+                  "title": "Let the finance director decide on the Desk.",
+                  "body": "Above your threshold, a workflow sends the review to the finance director by name. The question waits in their \"Waiting for you\" on the Desk.",
+                  "uses": "A workflow · a named approver · the Desk"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Send the note once legal says yes.",
+                  "body": "After legal approves the note, it goes to the supplier's contact by email, with legal in copy.",
+                  "uses": "A workflow · legal's approval · Email"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googledocs"
+                  ],
+                  "title": "Draft the note in a Google Doc.",
+                  "body": "The note to the supplier is written into a Google Doc that legal can edit before it goes out.",
+                  "uses": "Contract Checker · Google Docs"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "hubspot"
+                  ],
+                  "title": "Keep the decision with the supplier.",
+                  "body": "The decision and the term of the contract are written on the supplier's company in HubSpot.",
+                  "uses": "Contract Checker · HubSpot"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Never miss a notice date.",
+                  "body": "Every Monday, a schedule lists the contracts whose notice period ends in the next 60 days, and posts the list for legal.",
+                  "uses": "A schedule · the Contract Reviews table · Slack"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "dropbox"
+                  ],
+                  "title": "Pick the contract where you keep it.",
+                  "body": "Read the contract straight from the Dropbox, OneDrive or SharePoint folder where purchasing files them.",
+                  "uses": "Contract Checker · Dropbox · SharePoint"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your playbook.",
+                "body": "Replace the sample rules with yours, in plain words: what you accept, what you can live with, and what legal must decide."
+              },
+              {
+                "title": "Your thresholds.",
+                "body": "Above which amount the finance director decides too, and which suppliers are critical."
+              },
+              {
+                "title": "Your suppliers and past reviews.",
+                "body": "Fill the tables in the Studio or through the API, so the first review already knows what you accepted before."
+              },
+              {
+                "title": "Other contracts?",
+                "body": "It reviews supplier contracts. Customer terms or NDAs need their own rules: describe them to the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Legal and purchasing use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "It reuses your suppliers table, already filled."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Your supplier invoices read, filed and every total checked.",
+                "href": "/solutions/invoice-clerk"
+              },
+              {
+                "title": "Service Desk",
+                "body": "Solve a problem once, and the next employee who asks gets the answer in seconds.",
+                "href": "/solutions/service-desk"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Contract Checker in your trial. It comes with a demo company, Orlenne Kitchens, with its contract playbook, its suppliers, three past reviews and four sample contracts. Give it a contract, then decide as legal: one person can try both sides.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Contract Checker** and select **Add it**.",
+            "more": [
+              {
+                "link": "See how your people would use it on the Desk",
+                "href": "/desk"
+              },
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/contract-checker"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          }
+        },
+        "qa": [
+          {
+            "q": "What does Contract Checker do?",
+            "a": "You give it a supplier contract, as a text PDF or a Word file. It reads it against your contract playbook and returns a review: a short summary, then each rule with the clause quoted and a level (standard, acceptable fallback, red line or missing). Legal decides: approve as is, ask the supplier for changes, or do not sign. It then writes the note to the supplier with only the changes legal chose, and saves the review."
+          },
+          {
+            "q": "Is it legal advice?",
+            "a": "No. It compares the contract's wording with your own playbook, and nothing else. It never says a clause is legal, valid or safe to sign, and never cites the law. Asked \"can I sign?\", it gives what is on record and leaves the decision to legal."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The reviews, the decisions and the notes are real, and they are written in real tables. The company is made up: Orlenne Kitchens, its suppliers, its people and its contracts are fictional. Replace them with your own. Nothing is sent to a supplier."
+          },
+          {
+            "q": "Which files can it read?",
+            "a": "Text PDFs and Word files. A scanned contract is a picture with no text: it says so, asks for a text PDF or the Word file, and stops. On a long contract, it says plainly which part it did not read."
+          },
+          {
+            "q": "How long does a review take?",
+            "a": "In our tests, a two-page contract was reviewed in about one to two and a half minutes after the file was given."
+          },
+          {
+            "q": "What does a review cost?",
+            "a": "Your AI usage is billed by your model provider. A review is one agent reading one contract; a longer contract uses more. The Observation tab shows the tokens it used."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "The in-house counsel, finance director or purchasing lead of a company that signs supplier contracts every month, and the agency or builder who sets it up for them with each client's own playbook."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Contract Checker from the welcome guide, then give it one of the four sample contracts on the Desk."
+          }
+        ]
+      },
+      {
         "slug": "image-creator",
         "story": {
           "cta": {
@@ -3559,33 +3855,33 @@
           },
           "decide": {
             "h2": "See it decide",
-            "intro": "A good designer shows the brief before the work. Here are images it made, and the two moments where you stay in charge.",
+            "intro": "A good designer starts from your brand and shows the idea before the work. Here are three real requests, from approved to rejected.",
             "scenarios": [
               {
-                "title": "A poster, a product photo, a post.",
-                "image": "/media/image-creator.webp",
-                "caption": "Four images from one sentence each: a poster for a jazz evening, a product photo, a bakery table for a social post, an illustration."
+                "title": "A new winter drink, for Instagram.",
+                "caption": "Three directions in the brand's colours, with no text in the image. You pick a warm flat illustration, and the portrait image comes back with its caption. Kept: one. Set aside: none. You approve, and the request is saved for next time.",
+                "image": "/media/image-creator-concept.webp"
               },
               {
-                "title": "You see the request first.",
-                "caption": "Nothing is made until you say go.",
+                "title": "A hiring post for LinkedIn.",
+                "caption": "The brand shows people as hands, backs or profiles, never faces, and the directions follow it. You ask for other directions once, pick two pairs of hands making latte art, read the LinkedIn caption, and reject it. Nothing is saved.",
                 "what_happens": [
-                  "You write one sentence: a poster for a jazz evening in a park.",
-                  "An agent writes the full request for the image model, with its size and format, and shows it on a card.",
-                  "You choose Continue, or say what to change. Nothing is made or billed before."
+                  "Two baristas wanted: natural-light photography, landscape, LinkedIn.",
+                  "The directions show hands, never faces, as the brand asks. You ask for others once.",
+                  "The image and the LinkedIn caption come back. You reject them, and nothing is saved."
                 ]
               },
               {
-                "title": "Change it in your own words.",
-                "caption": "Your comment goes to the agent, never straight to the model.",
+                "title": "A Black Friday request, off the brand.",
+                "caption": "Neon pink, black and big text in the image: the brand guide forbids all three. The directions keep your navy and copper and leave empty space for the sale copy, which is added later, never drawn into the image.",
                 "what_happens": [
-                  "The image is close, but the colours are too dark.",
-                  "The agent rewrites the whole request from your comment, and shows what changed.",
-                  "You approve the new request, and the new image appears in the chat."
+                  "Someone asks for a neon pink and black poster with \"50% OFF\" in the middle.",
+                  "The directions keep the brand's colours and leave room for the copy, with no text in the image.",
+                  "You approve the calm version. The sale copy is added later, by a person."
                 ]
               }
             ],
-            "recorded": "Example images made with Recraft, the image model Image Creator uses."
+            "recorded": "Recorded in the real product, on a demo brand."
           },
           "versus": {
             "h2": "Without it, with it",
@@ -3595,20 +3891,24 @@
             ],
             "rows": [
               [
-                "A simple visual waits days for a designer.",
-                "One sentence, and the image is in the chat."
+                "Images come out off-brand: the wrong colours, text baked in, a style that is not yours.",
+                "Every direction starts from your brand guide, and every image is checked against it before you see it."
               ],
               [
-                "Nobody knows how to write a request for an image model.",
-                "An agent writes the full request, with the settings it needs."
+                "One size, then cropped by hand for each network.",
+                "The size comes from the network you pick: Instagram feed or story, LinkedIn, Facebook, X or Pinterest."
               ],
               [
-                "Every try is paid, even the ones you would not have made.",
-                "Nothing is made, or billed by Recraft, until you choose Continue."
+                "Every try is paid, even the wrong idea.",
+                "You pick a direction before any image is made."
               ],
               [
-                "A change means starting again from zero.",
-                "Say what to change: the request is rewritten whole, and you see what changed."
+                "The caption is written at the last minute.",
+                "The post's text is written for the network: its length, its hashtags, its tone."
+              ],
+              [
+                "Nobody looks at it before it goes out.",
+                "Your brand manager approves the image and the caption. Nothing is published."
               ]
             ]
           },
@@ -3616,16 +3916,16 @@
             "h2": "How it fits your work",
             "steps": [
               {
-                "title": "It starts with your words.",
-                "body": "One message: what the image shows, where it will go, the feeling you want. In the Studio or on your team's Desk."
+                "title": "Ask on the Desk.",
+                "body": "A short form: what the visual is about, the style, the size, and the network if there is one."
               },
               {
-                "title": "It uses your image model.",
-                "body": "Recraft, with your own key."
+                "title": "It reads your brand.",
+                "body": "Your brand guide, the formats of each network, and the requests you approved before."
               },
               {
-                "title": "The image lands in the chat.",
-                "body": "Ready to download, after each round you approve."
+                "title": "Approved requests are kept.",
+                "body": "Each one is saved with its direction and caption, so the next request starts from it. You download the image and post it yourself."
               }
             ]
           },
@@ -3635,23 +3935,31 @@
             "members": [
               {
                 "name": "Form",
-                "role": "Where you write what you need."
+                "role": "Where you say what you need, and for which network."
+              },
+              {
+                "name": "Art director",
+                "role": "Proposes two or three directions from your brand guide."
               },
               {
                 "name": "Prompt writer",
-                "role": "The agent that turns your words into a precise request, with its settings."
+                "role": "Writes the request for the image model, for each size needed."
+              },
+              {
+                "name": "Image model",
+                "role": "Recraft makes each image."
+              },
+              {
+                "name": "Brand check",
+                "role": "A model that looks at each image, and keeps it or sets it aside with the rule it breaks."
+              },
+              {
+                "name": "Caption writer",
+                "role": "Writes the post for the network you chose."
               },
               {
                 "name": "Approval card",
-                "role": "Shows the request in the chat, with Continue and Change."
-              },
-              {
-                "name": "Image generator",
-                "role": "Makes the image from the approved request."
-              },
-              {
-                "name": "Loop",
-                "role": "Sends your comment back to the agent until you keep the image."
+                "role": "Your brand manager approves or rejects."
               }
             ]
           },
@@ -3659,20 +3967,20 @@
             "h2": "What it never does alone",
             "items": [
               {
-                "title": "It never makes an image without your go.",
-                "body": "A card shows exactly what the model will receive."
+                "title": "It never makes an image before you pick a direction.",
+                "body": "The directions cost a few lines of text. The image comes after your choice."
               },
               {
-                "title": "It never sends your words straight to the model.",
-                "body": "Your comment goes to the agent, so each try starts from a complete request."
+                "title": "It never shows an image it set aside.",
+                "body": "Only the reason is shown: the brand rule the image breaks."
               },
               {
-                "title": "It never hides the request.",
-                "body": "You see what the image model receives, and what changed since the last round."
+                "title": "It never publishes.",
+                "body": "You download the approved image and post it yourself."
               },
               {
-                "title": "It keeps a record.",
-                "body": "Each request and each image are kept in the conversation, with the AI usage."
+                "title": "It never makes a stand-in.",
+                "body": "If an image cannot be made, it stops. It never shows a placeholder instead."
               }
             ]
           },
@@ -3681,7 +3989,7 @@
             "sub": "It is a starting point, not a fixed template.",
             "further": {
               "h3": "Take it further",
-              "intro": "Real changes you can make once it works for you, each built from the same blocks.",
+              "intro": "Real changes a marketing team can make once it runs, each built from the same blocks.",
               "labels": {
                 "live": "Ready today",
                 "soon": "Coming soon"
@@ -3692,18 +4000,37 @@
                   "logos": [
                     "@desk"
                   ],
-                  "title": "Your brand in every image.",
-                  "body": "Give the agent your colours, your style and what to avoid, so every request starts on brand.",
-                  "uses": "The prompt writer · its instructions"
+                  "title": "Let the brand manager approve on the Desk.",
+                  "body": "A workflow sends the approval to your brand manager by name. It waits in their \"Waiting for you\" on the Desk.",
+                  "uses": "A workflow · a named approver · the Desk"
                 },
                 {
                   "status": "live",
                   "logos": [
                     "googledrive"
                   ],
-                  "title": "Save what you keep.",
-                  "body": "Each image you keep is saved in your team's Google Drive folder.",
+                  "title": "Save what you approve.",
+                  "body": "Each approved image is saved in your team's Google Drive folder.",
                   "uses": "Google Drive"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Share it with the team.",
+                  "body": "The approved image and its caption are posted in your marketing channel.",
+                  "uses": "Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "notion",
+                    "@schedule"
+                  ],
+                  "title": "Start from your content calendar.",
+                  "body": "Every Monday, read the week's posts from your Notion calendar and prepare a request for each.",
+                  "uses": "A schedule · Notion"
                 },
                 {
                   "status": "live",
@@ -3713,25 +4040,6 @@
                   "title": "Illustrate your posts.",
                   "body": "Make the image for an article and publish it with the post in WordPress.",
                   "uses": "WordPress"
-                },
-                {
-                  "status": "live",
-                  "logos": [
-                    "slack",
-                    "discord"
-                  ],
-                  "title": "Share it with the team.",
-                  "body": "The image you keep is posted in your marketing channel in Slack or Discord.",
-                  "uses": "Slack · Discord"
-                },
-                {
-                  "status": "live",
-                  "logos": [
-                    "notion"
-                  ],
-                  "title": "Keep the requests that worked.",
-                  "body": "Save each kept image with its request in a Notion database, and start the next one from it.",
-                  "uses": "Notion"
                 },
                 {
                   "status": "soon",
@@ -3749,16 +4057,16 @@
             },
             "items": [
               {
-                "title": "Your formats.",
-                "body": "Square for social posts, wide for a header: tell the agent the sizes you use."
+                "title": "Your brand guide.",
+                "body": "Replace the sample brand with yours: colours, styles, what to avoid, how to show people."
               },
               {
-                "title": "Someone else approves.",
-                "body": "Send the request to your brand manager before any image is made."
+                "title": "Your networks.",
+                "body": "Add a row for each format you use, with its size, the length of its captions and its hashtags."
               },
               {
                 "title": "Your words.",
-                "body": "Change how the agent writes its requests, in plain words with the Assistant."
+                "body": "Change how the art director or the caption writer works, in plain words with the Assistant."
               }
             ]
           },
@@ -3773,7 +4081,7 @@
               },
               {
                 "title": "The next team starts further ahead.",
-                "body": "Your brand rules, written once, serve the next team too."
+                "body": "Your brand guide, written once, serves the next team too."
               },
               {
                 "title": "One place to approve and to watch.",
@@ -3783,14 +4091,14 @@
             "next": "The next step",
             "next_items": [
               {
-                "title": "Product Compare Team",
-                "body": "A product compared across stores, with the sources.",
-                "href": "/solutions/product-compare-team"
+                "title": "Contract Checker",
+                "body": "Supplier contracts checked against your rules; legal decides.",
+                "href": "/solutions/contract-checker"
               },
               {
-                "title": "Trip Planner",
-                "body": "A whole trip planned with the traveller, from one sentence.",
-                "href": "/solutions/trip-planner"
+                "title": "Service Desk",
+                "body": "Solve a problem once, and the next employee who asks gets the answer in seconds.",
+                "href": "/solutions/service-desk"
               },
               {
                 "title": "Your own team",
@@ -3801,14 +4109,14 @@
           },
           "get": {
             "h2": "Get it",
-            "body": "Open Image Creator in your trial, add your Recraft key, and describe your first image.",
+            "body": "Open Image Creator in your trial and add your Recraft key. It comes with a demo brand, Northbeam Coffee, with its brand guide and the formats of each network. Ask for a visual, then approve it as the brand manager: one person can try both sides.",
             "button": "Open it in your trial",
             "href": "/start?plan=pro",
-            "guide": "In the welcome guide, choose **Media Content Creator** and select **Add it**.",
+            "guide": "In the welcome guide, choose **Image Creator** and select **Add it**.",
             "more": [
               {
                 "link": "See it on Synergi",
-                "href": "https://synergi.agentivity.io/templates/media-content-creator"
+                "href": "https://synergi.agentivity.io/templates/image-creator"
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider; images billed by Recraft"
@@ -3816,105 +4124,50 @@
         },
         "image": "/media/image-creator.webp",
         "caption": "Example images made with Recraft, the image model Image Creator uses.",
-        "width": 1600,
-        "height": 1200,
+        "width": 2048,
+        "height": 1536,
         "tag": "No app",
         "size": "Automation",
         "title": "Image Creator",
-        "for": "a marketing team, a small business, a creator",
-        "summary": "Describe the image you need in one sentence. An agent writes the full prompt, you approve it, and the image appears in the chat. Change it in your own words until you keep it.",
+        "for": "a marketing team without a designer",
+        "summary": "Ask for a visual in a short form. An art director proposes directions from your brand guide, you pick one, and each image is checked against your brand before you see it. Your brand manager approves; nothing is published.",
         "alt": "Four example images made with Recraft: a poster of a jazz evening in a park, a product photo of a mug and coffee beans, a bakery table for a social post, and a flat illustration of a team planning at a board",
-        "h1": "The image you described,",
-        "h1_accent": "made only when you say go.",
-        "lead": "Write what you need: a visual for a post, an illustration for an article. An agent turns it into a precise request for the image model, shows it to you, and makes the image only when you say go.",
+        "h1": "Visuals in your brand, for every network.",
+        "h1_accent": "Checked before anyone sees them.",
+        "lead": "Say what the visual is for, the style, the size and, if you like, the network. An art director reads your brand guide and proposes two or three directions; no image is made until you pick one. Each image is checked against your brand before it is shown, the caption is written for the network, and your brand manager approves.",
         "facts": {
-          "for": "A marketing team, a small business or a creator who needs visuals without a designer",
-          "use": "A chat, in the Studio or on your team's Desk",
-          "behind": "An automation with one agent that writes the prompt, an image model, and your approval at each round"
-        },
-        "steps": [
-          {
-            "title": "Your words",
-            "body": "One message: what the image shows, where it will go, the feeling you want."
-          },
-          {
-            "title": "The prompt",
-            "body": "An agent writes the full request for the image model, with the settings it needs, such as size and format."
-          },
-          {
-            "title": "Your go-ahead",
-            "body": "A card shows exactly what will be sent and what changed since the last round. Continue, or say what to change."
-          },
-          {
-            "title": "The image",
-            "body": "It appears in the chat, ready to download."
-          },
-          {
-            "title": "Until it is right",
-            "body": "Ask for a change in your own words; the agent rewrites the whole request and shows it to you again."
-          }
-        ],
-        "decisions": [
-          "Approve the request before any image is made",
-          "Keep the image, or say what to change"
-        ],
-        "note": "Nothing is made, and nothing is billed by Recraft, until you choose Continue. You always see what the image model receives. Your comment goes to the agent, never straight to the image model, so each new try starts from a complete request.",
-        "team": {
-          "title": "The building blocks",
-          "lead": "An automation is drawn box by box. These are the parts this one uses.",
-          "members": [
-            {
-              "name": "Form",
-              "role": "Where you write what you need."
-            },
-            {
-              "name": "Prompt writer",
-              "role": "The agent that turns your words into a precise request, with its settings."
-            },
-            {
-              "name": "Approval card",
-              "role": "Shows the request in the chat, with Continue and Change."
-            },
-            {
-              "name": "Image generator",
-              "role": "Makes the image from the approved request."
-            },
-            {
-              "name": "Loop",
-              "role": "Sends your comment back to the agent until you keep the image."
-            }
-          ]
-        },
-        "get": {
-          "body": "Open Image Creator in your trial, add your Recraft key, and describe your first image.",
-          "link": "Open it in your trial",
-          "href": "/start?plan=pro",
-          "trial": true,
-          "guide": "In the welcome guide, choose **Media Content Creator** and select **Add it**.",
-          "more": [
-            {
-              "link": "See it on Synergi",
-              "href": "https://synergi.agentivity.io/templates/media-content-creator",
-              "external": true
-            }
-          ]
+          "for": "A marketing team that posts every week without a designer",
+          "use": "On the Desk: a short form, then cards to pick a direction and approve",
+          "behind": "An automation with three agents, a brand check that looks at each image, and your brand guide"
         },
         "qa": [
           {
             "q": "What does Image Creator do?",
-            "a": "You describe the image you need in one message. An agent writes a complete request for the image model, with its settings, and shows it to you in a card. When you choose Continue, the image is made and appears in the chat. Ask for a change in your own words and it starts again from a complete request, as many times as you like."
+            "a": "You fill a short form: what the visual is about, the style, the size and, if you like, the network. An art director proposes two or three directions from your brand guide, and you pick one. Images are made in the sizes needed, each one is checked against your brand, the caption is written for the network, and your brand manager approves. Approved requests are kept, so the next one starts from them."
           },
           {
-            "q": "Who is it for?",
-            "a": "A marketing team that wants every visual made through the same steps, from one tool the whole team shares. A small business or a creator who needs visuals for posts, articles and pages, and wants to see what is asked before an image is made. A builder can put the same approval step in front of any image in an automation."
+            "q": "What if an image is off-brand?",
+            "a": "The brand check sets it aside with the rule it breaks, and it is not shown. A person still approves every image and every caption: read the caption before approving, as it can add details you did not ask for."
           },
           {
             "q": "What do I need?",
-            "a": "An AI model for the agent, and a Recraft API key: Recraft is the image model it uses, a paid service. Recraft bills each image it makes from your API credit, as your AI usage is billed by your provider."
+            "a": "An AI model that reads images, because the brand check looks at each one, and a Recraft API key. Recraft is the image model it uses, a paid service that bills each image from your API credit, as your AI usage is billed by your provider."
+          },
+          {
+            "q": "How long does a request take?",
+            "a": "In our tests, about two to two and a half minutes from the form to the approval card, including your choice of a direction."
+          },
+          {
+            "q": "Does it post to social networks?",
+            "a": "No. Nothing is published: you download the approved image and post it yourself, with the caption it wrote."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A marketing team or a small business that posts every week without a designer, and the agency that sets it up for each client's brand."
           },
           {
             "q": "How can I try it?",
-            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. In Administration > Credentials, add your Recraft API key. Add Media Content Creator from the welcome guide, open it in Studio > Agents & Workflows, switch to Execution and describe an image."
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. In Administration > Credentials, add your Recraft API key. Add Image Creator from the welcome guide, then ask for a visual on the Desk."
           }
         ]
       },
@@ -3947,11 +4200,7 @@
               {
                 "title": "Four hours of deadlifts, every day.",
                 "caption": "Nothing is applied. A sensible option is offered.",
-                "what_happens": [
-                  "The person asks for four hours of maximum deadlifts, every day.",
-                  "The team applies nothing, and offers a sensible plan instead.",
-                  "The plan only changes when the person says yes."
-                ]
+                "media": "training-coach-3-deadlifts"
               }
             ],
             "recorded": "Recorded in the Momentum app, built on this team."
@@ -4323,8 +4572,12 @@
           "type": "An automation"
         },
         "image-creator": {
-          "line": "The image you need, from one sentence.",
+          "line": "Visuals in your brand for every network, checked before you see them.",
           "type": "An automation"
+        },
+        "contract-checker": {
+          "line": "Supplier contracts checked against your rules; legal decides.",
+          "type": "One agent"
         },
         "trip-planner": {
           "line": "A whole trip planned with you, from one sentence.",
