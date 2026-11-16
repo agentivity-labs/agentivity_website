@@ -71,7 +71,7 @@ A person starts it in the Studio, or an application asks for it.
 
 ### Can an execution start by itself, every morning for example?
 
-Yes, on the hosted plans: an execution can start on a schedule. Personal has up to 3 schedules, at most daily; Pro up to 20, at most hourly; Business has no limit on their number, at most every 15 minutes. The Community edition has no schedules.
+Yes, on the hosted plans: an execution can start on a schedule. Personal has up to 3 schedules, at most daily; Pro up to 20, at most hourly; Business has no limit on their number, at most every 15 minutes. The Community edition has no schedules. On the hosted plans, an execution can also start when another service calls a webhook, or when an app sends an event, such as a paid invoice or a booked call. Webhooks have no limit of their own: only executions are counted. See [Start an agent, a team or a workflow on its own](/docs/workflows/start-on-its-own-with-triggers/).
 
 ### Can an execution be started by an incoming e-mail?
 

@@ -37,6 +37,9 @@ These tools work without an account at another service. They are in the **Nodes 
 |---|---|
 | **AI Agent Web Search Tool (SearXNG)** | The address of a SearXNG search service, as credentials. |
 | **MCP Server** | The address of an MCP server. MCP is a standard way to give tools to AI agents. |
+| **Google Sheets**, **Calendar**, **Docs**, **Drive**, **Slides**, **Forms**, **Contacts** and **Tasks** | A Google connection, made by signing in with Google. See [Connect a Google account](/docs/guides/connect-google/) and [Use the Google steps](/docs/workflows/use-google-sheets-and-google-calendar/). |
+
+Many online applications come as a tool too: Resend, GitHub, Trello, Asana, Calendly and others. See [Use an application in a workflow or as a tool](/docs/workflows/use-an-application/).
 
 E-mail and Slack are not tools you plug in: they come with a channel. **Email Channel** gives an agent a mailbox to search, read, answer, write and file e-mails, and **Slack Channel** gives it the Slack tools, next to the questions it asks a person. See [Let an agent ask a person before it decides](/docs/agents/let-an-agent-ask-a-person/#email-and-slack-give-an-agent-its-tools).
 

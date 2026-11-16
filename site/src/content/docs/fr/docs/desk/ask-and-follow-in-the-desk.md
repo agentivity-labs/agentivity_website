@@ -30,11 +30,13 @@ Cette page est pour les personnes qui utilisent le Desk. Elle suit une demande, 
 ## Demander du travail
 
 1. Dans le champ de l'accueil, décrivez ce qu'il vous faut. Tapez **@** pour choisir la Solution à qui demander. Un bouton sous le champ nomme la Solution qui sera sollicitée : sélectionnez-le pour ouvrir **Who do you ask?**, une fenêtre où vous cherchez les Solutions par leur nom ou par ce qu'elles font.
-2. Envoyez. Une conversation s'ouvre et commence avec votre premier message.
+2. Envoyez. Une conversation s'ouvre et commence avec votre premier message. Un workflow n'a qu'une entrée : ce que vous tapez le démarre, et répond à sa première question quand c'est tout ce qu'il demande. Il n'y a pas de bouton Start.
 3. Suivez le travail à mesure qu'il avance. La Solution demande ce dont elle a besoin en chemin : une question, un choix, une validation.
 4. Répondez dans la zone sous la conversation. Elle dit à qui vous parlez : l'agent, l'équipe ou le workflow.
 
 ![Une conversation : la Solution pose une question dans la conversation, avec une zone pour répondre, et le champ de réponse en dessous.](images/desk-conversation.jpg)
+
+Un agent peut vous interroger avec une carte : un choix, un formulaire, ou un fichier à donner. Le Desk montre la carte dans la conversation, et prend le fichier que vous lui donnez.
 
 Vous pouvez quitter la conversation. Le travail continue. Quand une Solution a besoin de vous, la conversation passe sous **Waiting for you**.
 

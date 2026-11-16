@@ -40,7 +40,7 @@ Un **cockpit** est la page de départ d'un département. Il dit à quoi sert le 
 
 1. La personne écrit ce qu'il lui faut dans le Desk, ou part d'une suggestion ou d'un cockpit.
 2. Le Desk lance la Solution choisie, et une conversation s'ouvre.
-3. La conversation montre le travail. Si la Solution a besoin d'une réponse ou d'une validation, la conversation passe sous **Waiting for you**, et la personne peut être prévenue par e-mail.
+3. La conversation montre le travail. Ce qu'un agent ou une équipe dit à une personne passe par son Chat Channel : donnez un Chat Channel à l'équipe, sinon rien de son travail n'arrive dans le Desk. Un agent seul, sans canal, a quand même sa réponse écrite dans la conversation quand il termine. Si la Solution a besoin d'une réponse ou d'une validation, la conversation passe sous **Waiting for you**, et la personne peut être prévenue par e-mail.
 4. La personne répond. Le travail continue.
 5. Le résultat reste à côté de la conversation, enregistré avec elle.
 

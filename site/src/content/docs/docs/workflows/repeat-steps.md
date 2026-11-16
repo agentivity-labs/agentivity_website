@@ -109,6 +109,7 @@ With the list above, the steps in the loop receive each customer in turn, and th
 - **The Studio shows the last item only.** After an execution, each step of the loop shows what it received and produced for the last item. To keep a trace of every item, write each result in a Data Table from inside the loop. See [Use a table in a workflow](/docs/data-tables/use-a-table-in-a-workflow/).
 - **The loop does not collect what its steps produce by itself.** After the loop, `each.count` is the only output of **For Each**. Add a **Collect** step in the loop to keep what each item produces.
 - **One failure fails the execution.** If a step of the loop fails on one item, the whole execution fails.
+- **An If or a Switch in the loop works as anywhere else.** For each item, it chooses which steps run next.
 - **An empty list is not an error.** The steps of the loop are skipped, `count` is 0, and the workflow continues from the lower dot.
 - **An AI step in a loop costs once per item.** A list of one hundred items uses the AI model at least one hundred times. Try with two or three items first.
 

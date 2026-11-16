@@ -30,11 +30,13 @@ This page is for the people who use the Desk. It follows one request, from the q
 ## Ask for work
 
 1. In the field of the home, describe what you need. Type **@** to choose the Solution to ask. A button under the field names the Solution that will be asked: select it to open **Who do you ask?**, a window where you search the Solutions by name or by what they do.
-2. Send it. A conversation opens and starts with your first message.
+2. Send it. A conversation opens and starts with your first message. A workflow has one way in: what you type starts it, and answers its first question when that is all it asks. There is no Start button.
 3. Follow the work as it goes. The Solution asks what it needs along the way: a question, a choice, an approval.
 4. Reply in the box under the conversation. It says who you are talking to: the agent, the team or the workflow.
 
 ![A conversation: the Solution asks a question in the conversation, with a box to answer, and the reply field below.](images/desk-conversation.jpg)
+
+An agent can ask you with a card: a choice, a form, or a file to give. The Desk shows the card in the conversation, and takes the file you give it.
 
 You can leave the conversation. The work goes on. When a Solution needs you, the conversation moves to **Waiting for you**.
 

@@ -67,6 +67,8 @@ Vous pouvez continuer dans la même conversation : demander une modification, aj
 - Les conversations restent dans la liste **Solutions**, à gauche. Sélectionnez-en une pour la reprendre.
 - **Work on an existing one** ouvre dans l'Assistant quelque chose que vous avez déjà, dans une nouvelle conversation. Rien ne change tant que vous n'avez pas enregistré.
 - Quand l'Assistant a besoin d'une connexion, seul son nom lui est transmis, jamais ses secrets.
+- Une connexion que vous n'avez pas demandée reste vide : l'Assistant dit qu'elle vous revient, et vous la choisissez dans l'étape. Quand le travail doit informer une équipe, il propose les applications possibles (Slack, Teams ou e-mail) et vous décidez laquelle.
+- L'Assistant ne construit pas de cockpits et ne publie rien dans le Desk : c'est à vous de le faire.
 - Ce que construit l'Assistant est une équipe ordinaire. Vous pouvez ensuite la modifier à la main : voyez [Créer une équipe d'agents](/fr/docs/teams/create-a-team/).
 
 ## Étape suivante

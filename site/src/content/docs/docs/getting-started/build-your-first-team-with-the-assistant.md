@@ -67,6 +67,8 @@ You can keep talking in the same conversation: ask for a change, add a member, o
 - The conversations stay in the list **Solutions**, on the left. Select one to continue it.
 - **Work on an existing one** opens something you already have in the Assistant, in a new conversation. Nothing changes until you save.
 - When the Assistant needs a connection, only its name is shared with the Assistant, never its secrets.
+- A connection you did not ask for stays empty: the Assistant says it is yours to choose, and you choose it in the step. When the work needs to tell a team something, it offers the applications you could use (Slack, Teams or e-mail) and you decide which.
+- The Assistant does not build cockpits and does not publish to the Desk: that is yours to do. See [Publish Solutions to the Desk](/docs/desk/publish-solutions-to-the-desk/).
 - What the Assistant builds is an ordinary team. You can change it by hand afterwards: see [Create a team of agents](/docs/teams/create-a-team/).
 
 ## Next step

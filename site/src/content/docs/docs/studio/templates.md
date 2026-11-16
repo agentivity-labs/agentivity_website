@@ -23,6 +23,9 @@ Each card is a Template. It shows a picture, the name, a short description, its 
 
 - **Search templates** finds a Template.
 - **Import from file**, at the top right, adds a Template that you received as a file.
+- On a hosted workspace, a switch at the top has two views: **Catalogue** and **Mine**. **Mine** is where you publish your own Templates. See [Share your work as a Template](/docs/guides/share-a-template/).
+
+A card that holds several Solutions working together says, for example, "2 Solutions".
 
 ## The window of a Template
 

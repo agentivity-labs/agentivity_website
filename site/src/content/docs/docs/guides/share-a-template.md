@@ -41,6 +41,32 @@ A Template is one file that holds a solution and everything it needs: the agent,
 
 Your browser saves a file whose name ends with `.template.json`.
 
+## A Template of several Solutions
+
+Some solutions are made of several Solutions that work together on the same data: for example a front desk and a resolution team that share their tickets. Put them in one Template, so that every agent of the imported Template uses the same tables and the same Knowledge Bases.
+
+1. In **Agents & Workflows**, open the menu of the folder that holds the Solutions, in the list or in the folder tree, and select **Create a Template from this folder**.
+2. The window says how many Solutions it packs: the Solutions of the folder and of the folders inside it.
+3. Fill in the form as above and select **Create Template**.
+
+What the Solutions share is carried once. Every Solution keeps its Solution mark. When you import such a Template, the window counts the Solutions first, and a card of the catalogue says, for example, "2 Solutions". A Template made of one Solution imports as before.
+
+## Publish a Template on the marketplace
+
+On a hosted workspace, you can publish your Templates in the catalogue of the marketplace, under a name of your own.
+
+1. Open **Templates**. At the top, a switch has two views: **Catalogue**, and **Mine**.
+2. In **Mine**, the first time, choose **the name you publish under**: your name, or your company's, and your website if you want. People see it on your Templates. It is yours alone: nobody else can publish under it. **Change name** lets you change it.
+3. Select **Publish a file…**, or select **Publish** in the window **Create a Template**.
+4. The header says "You publish as" followed by your name. It says either that what you publish is in the catalogue at once, or that it is reviewed before it goes online.
+
+Each Template of yours shows its state: **Online**, **Out of the catalogue**, **In review**, or **Refused**, with the reason. To publish a new version, give it a higher version than the one online, for example 1.0.1.
+
+- **Take out** removes a Template from the catalogue: people can no longer import it, and those who imported it keep their copy. You can publish it again later with a new version.
+- **Delete** removes a Template of yours for good, also one already out of the catalogue.
+
+You need to be signed in, with an e-mail address on your account. Publishing is open to the hosted workspaces of Agentivity.
+
 ## The Knowledge Bases in a Template
 
 If the agents of your solution search Knowledge Bases, the Template carries those bases with the rest: the agents, the teams, the workflows and the data tables.

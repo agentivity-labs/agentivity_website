@@ -40,7 +40,7 @@ A **cockpit** is the starting page of a department. It says what the department 
 
 1. The person writes what they need in the Desk, or starts from a suggestion or a cockpit.
 2. The Desk starts the Solution they chose, and a conversation opens.
-3. The conversation shows the work. If the Solution needs an answer or an approval, the conversation moves to **Waiting for you**, and the person may be e-mailed.
+3. The conversation shows the work. What an agent or a team says to a person goes through its Chat Channel: give the team a Chat Channel, or nothing of its work reaches the Desk. An agent on its own with no channel still has its answer written in the conversation when it ends. If the Solution needs an answer or an approval, the conversation moves to **Waiting for you**, and the person may be e-mailed.
 4. The person answers. The work goes on.
 5. The result stays next to the conversation, saved with it.
 
