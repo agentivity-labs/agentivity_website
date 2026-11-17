@@ -56,6 +56,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
       <a class="ed-btn ed-btn--navy" href={st.cta.href} {...ext(st.cta.href)}>{st.cta.label}</a>
       <p class="sx-note">{st.cta.note}</p>
     </div>
+    {item.hero_image && <figure class="sx-hero-shot"><img src={item.hero_image} alt={item.hero_image_alt} width="2048" height="1536" /></figure>}
   </section>
 
   <!-- 2. See it decide: an easy case and the hard ones -->
@@ -249,6 +250,9 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 .sx-notice { margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--ed-yellow); font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); max-width: 40em; }
 .sx-act { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 6px; }
 .sx-note { font-size: 15px; color: var(--ed-ink-3); }
+/* A product shot under the title: added below, nothing above it moves. */
+.sx-hero-shot { width: 100%; max-width: 1080px; margin-top: clamp(14px, 3vw, 36px); }
+.sx-hero-shot img { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 24px 60px -24px rgba(21, 40, 68, .45); }
 
 /* ---------- 2. see it decide ---------- */
 /* The figure's own display would show a hidden panel. */

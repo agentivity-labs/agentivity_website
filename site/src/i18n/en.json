@@ -4133,6 +4133,8 @@
         "summary": "Ask for a visual in a short form. An art director proposes directions from your brand guide, you pick one, and each image is checked against your brand before you see it. Your brand manager approves; nothing is published.",
         "alt": "Four example images made with Recraft: a poster of a jazz evening in a park, a product photo of a mug and coffee beans, a bakery table for a social post, and a flat illustration of a team planning at a board",
         "h1": "Visuals in your brand, for every network.",
+        "hero_image": "/media/image-creator-hero.webp",
+        "hero_image_alt": "The Agentivity Studio running the Brand Visuals workflow: the Image Viewer node shows the photo it generated, two baristas pouring latte art.",
         "h1_accent": "Checked before anyone sees them.",
         "lead": "Say what the visual is for, the style, the size and, if you like, the network. An art director reads your brand guide and proposes two or three directions; no image is made until you pick one. Each image is checked against your brand before it is shown, the caption is written for the network, and your brand manager approves.",
         "facts": {
