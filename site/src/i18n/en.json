@@ -6026,10 +6026,10 @@
     "note": "{trial_days}-day trial · no card · AI usage billed by your provider"
   },
 "desk_page": {
-    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v5 of marketing-content, 2026-11-11, reviewed. No price, seat number or tier on this page: the detail stays on /pricing.",
+    "_comment": "Desk by Agentivity (/desk), English only (KB-0147). Text v6, 2026-11-18: the raison d'etre and the six gains of the strategy (KB-0250, KB-0252, _strategy/04-pitchs.md), images of the cockpits of agl. No price, seat number or tier on this page: the detail stays on /pricing. No gain figure: the pilots will measure them.",
     "meta": {
-      "title": "Desk by Agentivity: one place for your company's AI teams",
-      "description": "Your people already use AI, each in their own way. Desk by Agentivity gives everyone the company's AI teams, set up once, in one place. In Pro and Business, with a 14-day trial."
+      "title": "Desk by Agentivity: your best way of doing the work, used by everyone",
+      "description": "Desk by Agentivity puts your company's proven AI teams in one place, set to your processes and rules. Everyone uses them in plain words, instead of each person building their own. In Pro and Business, with a 14-day trial."
     },
     "trial": {
       "label": "Start your trial",
@@ -6037,12 +6037,13 @@
     },
     "hero": {
       "eyebrow": "Desk by Agentivity",
-      "h1": "One Desk where everyone uses your company's AI teams.",
-      "sub": "Your people already use AI at work, each with their own assistant and their own way. The Desk gives them one place to use the AI teams your company set up once, for its own tasks and rules. They ask in plain words and get the work back, done the company's way.",
+      "h1": "Your best way of doing the work, used by everyone.",
+      "sub": "The Desk gives everyone your company's AI teams in one place: built once, tested on real cases, and set to your processes and rules. Your people ask in plain words and get the work back, done the company's way, instead of each of them building their own AI.",
+      "kicker": "From AI you put up with to AI you steer.",
       "article": "Why one Desk for everyone? Read the article",
       "article_href": "/blog/shared-ai-toolbox-for-the-company",
-      "image_alt": "The Desk home: one field to ask the company's AI teams, a request waiting for an answer, and ready requests from the support team, the sales team and the content team.",
-      "caption": "The Desk home of a demo company: ask in plain words, or start a ready request."
+      "image_alt": "The Desk with the company's hub open, with the week's news and a field to ask, and in front the AI teams anyone can start from it: ask the Front Desk, check a contract, make a visual, screen a CV.",
+      "caption": "One hub for the whole company, and the AI teams everyone can start from it."
     },
     "problem": {
       "eyebrow": "The problem",
@@ -6095,6 +6096,14 @@
         [
           "Everyone pays again for the same setup work.",
           "Less AI spend: nobody redoes the setup for each request."
+        ],
+        [
+          "Each person picks a model out of habit.",
+          "The right model for each task, chosen once."
+        ],
+        [
+          "Nobody can say who approved what.",
+          "Sensitive steps wait for a person, and each request keeps its history."
         ]
       ]
     },
@@ -6122,25 +6131,100 @@
       ],
       "line": "Their conversations stay, with search. They share one with a colleague when they choose, to read only or to reply too.",
       "result_alt": "The Desk: a conversation with the Media Content Creator team, the request for an image, and the image it made, shown again in the result panel on the right.",
-      "result_caption": "A colleague asks the content team for an image. The result appears next to the conversation.",
-      "approval_alt": "A request waiting on the Desk: the support team asks the person to approve or refuse a refund before it goes on.",
-      "approval_caption": "The refund waits for a person's answer."
+      "result_caption": "A colleague asks the content team for an image. The result appears next to the conversation."
     },
     "gains": {
-      "eyebrow": "What your company gains",
+      "eyebrow": "In detail",
       "h2": "Your company's AI, working the company's way.",
-      "sub": "Five things change when everyone uses the same AI teams.",
-      "same": {
-        "h3": "The same way of working, whoever does the task.",
-        "body": "The process lives in the AI team, not in each person's prompt. Monday, Wednesday and Friday get the same answer. When a rule changes, it changes in one place, and new people work your way from their first day."
+      "time": {
+        "h3": "Work starts in one click, and gets done faster.",
+        "body": [
+          "Using AI well today means writing a prompt, choosing a tool, pasting the document, then correcting the answer and trying again. On the Desk, that work is already done: the people who build your AI teams set them up and test them on real cases before publishing them.",
+          "Your people pick what they need, ask in plain words, and keep the decision."
+        ],
+        "image": "/media/desk/desk-ask.webp",
+        "width": 1600,
+        "height": 1000,
+        "image_alt": "The Service Desk page on the Desk: a field to tell the Front Desk what is happening, and four ready requests: report an incident, request access, order equipment, ask IT a question.",
+        "caption": "Say what is happening, or start a ready request: the IT Service Desk, on the Desk."
       },
-      "knowhow": {
-        "h3": "Know-how that stays in the company.",
-        "body": "When someone finds a better way, the AI team is improved once, and everyone uses the improved one from their next request. When a person leaves, their way of working with AI does not leave with them."
+      "best": {
+        "h3": "Your best performer's method, in everyone's hands.",
+        "body": [
+          "The process lives in the AI team, not in each person's prompt. Monday, Wednesday and Friday get the same answer. When a rule changes, it changes in one place, and new people work your way from their first day.",
+          "When someone finds a better way, the AI team is improved once, and everyone uses the improved one from their next request. When a person leaves, their way of working with AI does not leave with them."
+        ],
+        "image": "/media/desk/desk-playbook.webp",
+        "width": 1600,
+        "height": 1000,
+        "image_alt": "The Contracts page on the Desk: supplier contracts checked against the company's own Contract Playbook, with the figures of the reviews: high level, red lines raised, changes asked, approved as is.",
+        "caption": "Every supplier contract is read against the same playbook, whoever sends it."
       },
-      "space": {
-        "h3": "Work in your company's space, under your rules.",
-        "body": "The AI work stays in your company's space, where the people you allow can find it, instead of in personal accounts.",
+      "flow": {
+        "h3": "Faster teamwork: the hand-offs run themselves.",
+        "body": [
+          "A request starts with one person and moves along your process: one prepares, another checks, a third approves. The AI team asks the right person at each step, and what waits for someone lands in their \"Waiting for you\".",
+          "A conversation can be shared with a colleague, to read or to reply. Nobody chases a file by email to know where it stands."
+        ],
+        "image": "/media/desk/desk-decision.webp",
+        "width": 1600,
+        "height": 1000,
+        "image_alt": "A contract waiting on the Desk for a person's decision: the flags of the review against the company's playbook, then the choice to approve it as is, ask for changes or not sign, and Waiting for you in the sidebar.",
+        "caption": "The contract review waits for a person: approve as is, ask for changes, or do not sign."
+      },
+      "spend": {
+        "h3": "Cut AI costs up to 40x on everyday tasks.",
+        "body": [
+          "The model is no longer chosen out of habit, by each person. Whoever builds an AI team picks the right model for each step, once: a small one for simple work, a large one where reasoning is needed.",
+          "At the providers' public prices, a small model can cost up to 40 times less than a large one, and most everyday tasks do not need the largest. You connect your own model account and pay the provider's price, with no margin from us."
+        ],
+        "bill": {
+          "h3": "A smaller AI bill for the tasks you share.",
+          "body": "When each person does a task in their own chat, they write the prompt, paste the document, then correct the answer and try again. Where AI is billed by use, the company pays for all of that text. A shared agent does the same task in a few fixed steps. Its instructions stay the same, so the model keeps them ready, and reading them again costs much less.",
+          "figures": [
+            [
+              "10 people",
+              "15% to 43%"
+            ],
+            [
+              "20 people",
+              "29% to 55%"
+            ],
+            [
+              "50 people",
+              "36% to 61%"
+            ],
+            [
+              "500 people",
+              "39% to 63%"
+            ]
+          ],
+          "line": "By our estimate, this is how much the usage part of the AI bill for that task falls when people share it through one agent instead of each using their own chat.",
+          "small": "Below about ten people, the agent runs too rarely to keep its instructions ready, and the saving can disappear. We count only the AI bill: people's time and seats are not counted, and we assume the quality of the work is the same. This is an estimate from simple assumptions, not a measurement.",
+          "link": "How we estimated it",
+          "href": "/blog/shared-ai-toolbox-for-the-company#what-it-costs-on-the-ai-bill",
+          "chart_alt": "Column chart of the middle of our estimate of the share of the usage AI bill saved on one task when people share one agent instead of each using their own chat or personal agent: between 15% and 43% with 10 people, between 29% and 55% with 20, between 36% and 61% with 50, and between 39% and 63% with 500. An estimate from simple assumptions, not a measurement.",
+          "chart_caption": "Middle 30% of our estimate, from public prices."
+        }
+      },
+      "teams": {
+        "h3": "Grow AI maturity across the company. No team left behind.",
+        "body": [
+          "Each department can have its own page on the Desk, a cockpit: its AI teams, what waits for each person, the news to share, and figures and charts read from your own data. You choose who may change it.",
+          "With the AI work in one place, you see team by team and domain by domain where it already helps, and which teams need a new AI team, training or support. It looks at teams and domains, never at individuals."
+        ],
+        "image": "/media/desk/desk-cockpits.webp",
+        "width": 1600,
+        "height": 1100,
+        "image_alt": "Three cockpits on the Desk: Marketing with its ready requests and brand pages, Service Desk with its open tickets and a chart of tickets by week, and Quotes with the month's quoted amount, margin and how the quotes ended.",
+        "caption": "Three departments, three cockpits: Marketing, Service Desk, Quotes."
+      },
+      "control": {
+        "h3": "End shadow AI: every action traced, every sensitive step approved.",
+        "body": [
+          "Every action of the AI has a person responsible for it. If a client, an auditor or your board asks, you can answer: which process ran, on which data, and who approved it.",
+          "The AI work stays in your company's space, where the people you allow can find it, instead of in personal accounts."
+        ],
         "items": [
           {
             "title": "You choose the AI teams on the Desk.",
@@ -6172,53 +6256,6 @@
           }
         ],
         "image_alt": "The Desk settings: published to the Desk is set to Only what I choose, so the administrator picks each AI team people can use."
-      },
-      "bill": {
-        "h3": "A smaller AI bill for the tasks you share.",
-        "body": "When each person does a task in their own chat, they write the prompt, paste the document, then correct the answer and try again. Where AI is billed by use, the company pays for all of that text. A shared agent does the same task in a few fixed steps. Its instructions stay the same, so the model keeps them ready, and reading them again costs much less.",
-        "figures": [
-          [
-            "10 people",
-            "15% to 43%"
-          ],
-          [
-            "20 people",
-            "29% to 55%"
-          ],
-          [
-            "50 people",
-            "36% to 61%"
-          ],
-          [
-            "500 people",
-            "39% to 63%"
-          ]
-        ],
-        "line": "By our estimate, this is how much the usage part of the AI bill for that task falls when people share it through one agent instead of each using their own chat.",
-        "small": "Below about ten people, the agent runs too rarely to keep its instructions ready, and the saving can disappear. We count only the AI bill: people's time and seats are not counted, and we assume the quality of the work is the same. This is an estimate from simple assumptions, not a measurement.",
-        "link": "How we estimated it",
-        "href": "/blog/shared-ai-toolbox-for-the-company#what-it-costs-on-the-ai-bill",
-        "chart_alt": "Column chart of the middle of our estimate of the share of the usage AI bill saved on one task when people share one agent instead of each using their own chat or personal agent: between 15% and 43% with 10 people, between 29% and 55% with 20, between 36% and 61% with 50, and between 39% and 63% with 500. An estimate from simple assumptions, not a measurement.",
-        "chart_caption": "Middle 30% of our estimate, from public prices."
-      },
-      "cockpits": {
-        "h3": "One place for every department.",
-        "body": "Each department can have its own page on the Desk, a cockpit. It holds its AI teams, what waits for each person, the news to share, and figures from your own data. You choose who may change it.",
-        "items": [
-          {
-            "src": "/media/desk/cockpit-finance.webp",
-            "alt": "A Finance & Purchasing page on the Desk: the month's close notice, the field to ask, and ready requests for invoices, purchases and due diligence."
-          },
-          {
-            "src": "/media/desk/cockpit-marketing.webp",
-            "alt": "A Marketing page on the Desk: the Black Friday notice, the field to ask, and ready requests for a campaign, a blog post and a social media visual."
-          },
-          {
-            "src": "/media/desk/cockpit-travel.webp",
-            "alt": "A Travel & Events page on the Desk: the offsite notice, the field to ask, and figures for trips, approvals waiting and budget booked."
-          }
-        ],
-        "caption": "Three cockpits of a demo company: Finance, Marketing, Travel."
       }
     },
     "seats": {
@@ -6242,6 +6279,10 @@
         {
           "q": "Should a company ban personal AI assistants?",
           "a": "A ban rarely holds, because people use AI to get real work done. It works better to give them something more useful: AI teams set up once for the company's own tasks, that follow its processes and rules, and that everyone can use."
+        },
+        {
+          "q": "Is the Desk a way to watch what each employee does?",
+          "a": "No. The point is to see where AI helps, team by team and domain by domain, so that the teams that lag behind get a new AI team, training or support. Each person's conversations stay on their own Desk unless they share them; only the administrators you allow can read them."
         },
         {
           "q": "Does a shared agent use less AI than everyone using their own AI assistant?",
@@ -6274,6 +6315,42 @@
     "final": {
       "h2": "Give your company one Desk.",
       "sub": "Start with one task that several people do differently today: a customer request, a supplier invoice, a job ad, a weekly report. Set it up once, give it to everyone who does it, and see what changes."
+    },
+    "overview": {
+      "eyebrow": "Why a Desk",
+      "h2": "Six things your company gains.",
+      "items": [
+        {
+          "title": "Work starts in one click, and gets done faster.",
+          "body": "No prompt to write, no tool to choose. People start an AI team that is ready, and keep the decision.",
+          "href": "#time"
+        },
+        {
+          "title": "Your best performer's method, in everyone's hands.",
+          "body": "Your best method becomes everyone's method, from a new person's first day.",
+          "href": "#best"
+        },
+        {
+          "title": "Faster teamwork: the hand-offs run themselves.",
+          "body": "Nobody has to know the process by heart or chase anyone. Each step goes straight to whoever it belongs to, to approve, decide or take over, in their \"Waiting for you\" or the channel your team already uses.",
+          "href": "#flow"
+        },
+        {
+          "title": "Cut AI costs up to 40x on everyday tasks.",
+          "body": "The right model for each task, chosen once by whoever builds it.",
+          "href": "#spend"
+        },
+        {
+          "title": "Grow AI maturity across the company. No team left behind.",
+          "body": "Each department has its place, and you see where AI helps and where a team needs support.",
+          "href": "#teams"
+        },
+        {
+          "title": "End shadow AI: every action traced, every sensitive step approved.",
+          "body": "Every action has a person behind it: what ran, on which data, and who approved.",
+          "href": "#control"
+        }
+      ]
     }
   },
 "connections_page": {
