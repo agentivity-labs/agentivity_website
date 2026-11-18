@@ -3211,30 +3211,30 @@
               {
                 "title": "A VPN that keeps dropping.",
                 "caption": "An employee asks. The Front Desk answers with the four steps of your VPN article, and says when a ticket will be opened. No ticket needed.",
-                "media": "service-desk-1-vpn"
+                "image": "/media/service-desk-1-vpn.webp"
               },
               {
                 "title": "A request for access to Finance files.",
                 "caption": "Access is never the Front Desk's decision. It opens ticket SD-1052, gives the number, and explains that her manager and the data owner must approve. The ticket is at the top of your queue.",
-                "media": "service-desk-2-access"
+                "image": "/media/service-desk-2-access.webp"
               },
               {
                 "title": "A password that Outlook keeps asking for.",
                 "caption": "Your service desk gives the ticket number and gets the reply to send. When you confirm the fix worked, the Resolution Team closes the ticket and writes down what fixed it as a short article. You say yes, and it is saved.",
-                "media": "service-desk-3-outlook"
+                "image": "/media/service-desk-3-outlook.webp"
               },
               {
                 "title": "A CRM export that stops at 80%.",
                 "caption": "Earlier, your service desk fixed this on a ticket, and a person approved the fix. Now another employee asks in her own words. The Front Desk answers with the same steps in seconds, and no ticket is needed.",
-                "media": "service-desk-4-loop"
+                "image": "/media/service-desk-4-loop.webp"
               },
               {
                 "title": "A swollen laptop battery.",
                 "caption": "Safety first: the reply tells the employee what not to do. Then it explains why an expert is needed, proposes Ines from Hardware & Fleet, and waits for your yes. It also checks the person's other open tickets.",
-                "media": "service-desk-5-battery"
+                "image": "/media/service-desk-5-battery.webp"
               }
             ],
-            "recorded": "Recorded in the real product, on a demo company."
+            "recorded": "Captured in the real product."
           },
           "versus": {
             "h2": "Without it, with it",
