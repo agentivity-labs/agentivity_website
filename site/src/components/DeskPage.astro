@@ -7,9 +7,11 @@ import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import TrialNote from './TrialNote.astro';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
 
-const t = useTranslations('en');
+// English by default; the French pages pass lang="fr" (2026-11-19).
+const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
+const t = useTranslations(lang);
 const d = t.desk_page as any;
 const g = d.gains;
 const n2 = (i: number) => String(i).padStart(2, '0');
@@ -25,7 +27,7 @@ const answerHtml = (text: string) => fill(escape(text), {
 });
 const answerText = (text: string) => fill(text, { email, seats_link: d.seats.link + ': ' + new URL(d.seats.href, Astro.site).href });
 
-const pageUrl = new URL('/desk/', Astro.site).href;
+const pageUrl = new URL(getLocalePath(lang, '/desk/'), Astro.site).href;
 const schema = [
   { '@context': 'https://schema.org', '@type': 'WebPage', name: d.meta.title, description: d.meta.description, url: pageUrl },
   {
@@ -38,9 +40,9 @@ const schema = [
 // The first three gains share one shape: text beside a screen, the sides alternating.
 const shots = [['time', g.time], ['best', g.best], ['flow', g.flow]];
 ---
-<Base title={d.meta.title} description={d.meta.description} lang="en" schema={schema} alternates={false} look="editorial">
+<Base title={d.meta.title} description={d.meta.description} lang={lang} schema={schema} look="editorial">
 
-<SiteHeader lang="en" ctaHref={d.trial.href} />
+<SiteHeader lang={lang} ctaHref={d.trial.href} />
 
 <main class="desk ed-page">
 
@@ -56,7 +58,7 @@ const shots = [['time', g.time], ['best', g.best], ['flow', g.flow]];
         <p class="desk-kicker">{d.hero.kicker}</p>
         <div class="desk-act">
           <a class="ed-btn ed-btn--navy" href={d.trial.href}>{d.trial.label}</a>
-          <TrialNote lang="en" />
+          <TrialNote lang={lang} />
           <a class="ed-link desk-small-link" href={d.hero.article_href}>{d.hero.article} →</a>
         </div>
       </div>
@@ -255,13 +257,13 @@ const shots = [['time', g.time], ['best', g.best], ['flow', g.flow]];
       <h2>{d.final.h2}</h2>
       <p class="ed-final-sub">{d.final.sub}</p>
       <a class="ed-btn ed-btn--yellow" href={d.trial.href}>{d.trial.label}</a>
-      <TrialNote lang="en" class="desk-final-note" />
+      <TrialNote lang={lang} class="desk-final-note" />
     </div>
   </section>
 
 </main>
 
-<SiteFooter lang="en" />
+<SiteFooter lang={lang} />
 
 </Base>
 

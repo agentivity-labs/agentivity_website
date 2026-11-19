@@ -66,10 +66,13 @@ function linksTall(): Link[] {
 const branchText: Record<string, string> = { 'if-approve': d.branches.above, 'if-sheets': d.branches.under };
 const chipW = (s: string, size: number) => Math.round(s.length * size * 0.56 + 28);
 const notesX = [40, 425, 810];
+// Longer titles (the French ones) are drawn a little smaller, so that neighbours never touch: 16 characters fit at 20px.
+const longest = Math.max(...nodes.map((n) => String(n.title).length));
+const titleSize = Math.min(20, Math.floor((20 * 16) / longest));
 
 const LAYOUTS = [
   { kind: 'wide', p: WIDE, links: linksWide(), branch: { 'if-approve': [668, 158], 'if-sheets': [775, 385] } as Record<string, Pt>,
-    view: '30 6 1140 712', w: 1200, h: 750, s: 104, tag: [52, 44] as Pt },
+    view: '10 3 1180 738', w: 1200, h: 750, s: 104, tag: [52, 44] as Pt },
   { kind: 'tall', p: TALL, links: linksTall(), branch: { 'if-approve': [110, 530], 'if-sheets': [516, 610] } as Record<string, Pt>,
     view: '0 0 600 1010', w: 600, h: 1010, s: 84, tag: [40, 968] as Pt },
 ];
@@ -119,7 +122,7 @@ const portsOf = (L: (typeof LAYOUTS)[number]) => {
             </svg>
             {wide
               ? <>
-                  <text class="wf-title" x={x} y={y + s / 2 + 32} text-anchor="middle">{n.title}</text>
+                  <text class="wf-title" x={x} y={y + s / 2 + 32} text-anchor="middle" style={`font-size:${titleSize}px`}>{n.title}</text>
                   <text class="wf-type" x={x} y={y + s / 2 + 57} text-anchor="middle">{n.type}</text>
                 </>
               : <>

@@ -47,7 +47,7 @@ Prenez une équipe qui organise un voyage. Un agent seul devrait tout connaître
 <figcaption>Un manager qui confie le travail à des spécialistes et rassemble leurs réponses. Enregistré depuis le produit.</figcaption>
 </figure>
 
-C'est un exemple réel : l'[équipe Trip Planner](/fr/use-cases/trip-planner) compte treize membres, et seul le manager parle à tous les autres.
+C'est un exemple réel : l'[équipe Trip Planner](/fr/solutions/trip-planner) compte treize membres, et seul le manager parle à tous les autres.
 
 ## Pourquoi plusieurs agents plutôt qu'un seul ?
 
@@ -112,7 +112,7 @@ Passez à une équipe quand le travail a des parties distinctes qui demandent de
 
 Ils répondent à des problèmes différents, et vous pouvez les combiner.
 
-Un **workflow** suit le chemin que vous avez tracé, de la même façon à chaque fois. Il convient aux processus qui doivent être réguliers et faciles à contrôler. L'[exemple de CV screening](/fr/use-cases/cv-screening) est un workflow : chaque CV passe par les mêmes étapes.
+Un **workflow** suit le chemin que vous avez tracé, de la même façon à chaque fois. Il convient aux processus qui doivent être réguliers et faciles à contrôler. L'[exemple de CV screening](/fr/solutions/cv-screener) est un workflow : chaque CV passe par les mêmes étapes.
 
 Une **équipe** choisit elle-même son chemin, dans le cadre des rôles que vous lui avez donnés. Elle convient au travail où chaque demande est différente.
 

@@ -7,11 +7,13 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import StartFree from './StartFree.astro';
 import TrialNote from './TrialNote.astro';
-import { useTranslations } from '../i18n/utils';
-import { connections } from '../data/connections';
+import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
+import { connections, nameOf } from '../data/connections';
 import { brandLogos } from '../data/brand-logos';
 
-const t = useTranslations('en');
+// English by default; the French pages pass lang="fr" (2026-11-19).
+const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
+const t = useTranslations(lang);
 const p = t.connections_page as any;
 const apps = connections.filter((item) => item.group === 'apps');
 const stepShot = p.how.steps.find((step: any) => step.image_alt);
@@ -23,9 +25,9 @@ const models = connections.filter((item) => item.group === 'models');
 const band = live.filter((item) => item.logo);
 const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 ---
-<Base title={p.meta.title} description={p.meta.description} lang="en" alternates={false} look="editorial">
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
 
-<SiteHeader lang="en" ctaHref={p.hero.cta_href} />
+<SiteHeader lang={lang} ctaHref={p.hero.cta_href} />
 
 <main class="cn ed-page">
 
@@ -36,10 +38,10 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     <p class="cn-lead">{p.hero.sub}</p>
     <div class="cn-act">
       <a class="ed-btn ed-btn--navy" href={p.hero.cta_href}>{p.hero.cta}</a>
-      <TrialNote lang="en" />
+      <TrialNote lang={lang} />
       <a class="ed-link" href={p.hero.secondary_href}>{p.hero.secondary}</a>
     </div>
-    <ul class="cn-band" aria-label="Apps that work today">
+    <ul class="cn-band" aria-label={lang === 'fr' ? 'Les apps qui marchent aujourd’hui' : 'Apps that work today'}>
       {band.map((item) => (
         <li title={item.name}><svg viewBox="0 0 24 24" role="img" aria-label={item.name}><path d={mark(item.logo)!.d} /></svg></li>
       ))}
@@ -129,7 +131,7 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     <p class="ed-sec-sub">{p.models.line}</p>
     <ul>
       {models.map((item) => (
-        <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+        <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
       ))}
     </ul>
   </section>
@@ -144,7 +146,7 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
       <p class="cn-label">{p.apps.available}</p>
       <ul class="cn-chips">
         {live.map((item) => (
-          <li class="is-live">{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+          <li class="is-live">{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
         ))}
       </ul>
       <p class="cn-small">{p.apps.available_note}</p>
@@ -154,14 +156,14 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
         <summary>
           <ul class="cn-chips">
             {shown.map((item) => (
-              <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+              <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
             ))}
             {rest.length > 0 && <li class="cn-more">{p.apps.more.replace('{n}', String(rest.length))}</li>}
           </ul>
         </summary>
         <ul class="cn-chips cn-rest">
           {rest.map((item) => (
-            <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{item.name}</span></li>
+            <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
           ))}
         </ul>
       </details>
@@ -180,13 +182,13 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     <div class="ed-wrap ed-final">
       <h2>{p.cta.h2}</h2>
       <p class="ed-final-sub">{p.cta.sub}</p>
-      <StartFree lang="en" label={p.cta.button} plan="pro" />
+      <StartFree lang={lang} label={p.cta.button} plan="pro" />
     </div>
   </section>
 
 </main>
 
-<SiteFooter lang="en" />
+<SiteFooter lang={lang} />
 
 </Base>
 

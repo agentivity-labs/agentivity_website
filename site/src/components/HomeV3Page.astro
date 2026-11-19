@@ -11,11 +11,13 @@ import VideoAutoplay from './VideoAutoplay.astro';
 import WorkflowLoop from './WorkflowLoop.astro';
 import TeamLoop from './TeamLoop.astro';
 import plans from '../data/plans.json';
-import { useTranslations } from '../i18n/utils';
-import { connections } from '../data/connections';
+import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
+import { connections, nameOf } from '../data/connections';
 import { brandLogos } from '../data/brand-logos';
 
-const t = useTranslations('en');
+// English by default; the French pages pass lang="fr" (2026-11-19).
+const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
+const t = useTranslations(lang);
 const h = t.home_v3;
 const steps = h.ladder.steps;
 const company = steps[steps.length - 1];
@@ -30,9 +32,9 @@ const schema = {
   mainEntity: h.faq.items.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })),
 };
 ---
-<Base title={h.meta.title} ogTitle={h.meta.og_title} description={h.meta.description} lang="en" schema={schema} look="editorial">
+<Base title={h.meta.title} ogTitle={h.meta.og_title} description={h.meta.description} lang={lang} schema={schema} look="editorial">
 
-<SiteHeader lang="en" ctaHref={h.trial.href} />
+<SiteHeader lang={lang} ctaHref={h.trial.href} />
 
 <main class="h3 ed-page">
 
@@ -114,7 +116,7 @@ const schema = {
     <div class="h3-under">
       <div class="h3-act">
         <a class="ed-btn ed-btn--navy" href={h.trial.href}>{h.trial.label}</a>
-        <TrialNote lang="en" />
+        <TrialNote lang={lang} />
       </div>
       <a class="ed-link" href={h.solutions.all.href}>{h.solutions.all.label}</a>
     </div>
@@ -218,7 +220,7 @@ const schema = {
           return (
             <li>
               {logo && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={logo.d} /></svg>}
-              <span>{item.name}</span>
+              <span>{nameOf(item, lang)}</span>
             </li>
           );
         })}
@@ -263,7 +265,7 @@ const schema = {
           <h2 class="h3-price-title"><span class="ed-mark">{h.pricing.price}</span> <em>{h.pricing.rest}</em></h2>
           <p class="ed-sec-sub">{h.pricing.sub}</p>
         </div>
-        <a class="ed-link" href="/pricing">{h.pricing.link}</a>
+        <a class="ed-link" href={getLocalePath(lang, '/pricing')}>{h.pricing.link}</a>
       </header>
       <ul class="h3-tiers">
         {h.pricing.tiers.map((tier: any) => (
@@ -299,14 +301,14 @@ const schema = {
       <h2>{h.final.title} <em>{h.final.title_accent}</em></h2>
       <p class="ed-final-sub">{h.final.sub}</p>
       <a class="ed-btn ed-btn--yellow" href={h.trial.href}>{h.trial.label}</a>
-      <TrialNote lang="en" class="h3-final-note" />
+      <TrialNote lang={lang} class="h3-final-note" />
       <p class="h3-final-links">{h.final.links.map((link) => <a class="ed-link" href={link.href}>{link.label}</a>)}</p>
     </div>
   </section>
 
 </main>
 
-<SiteFooter lang="en" />
+<SiteFooter lang={lang} />
 <VideoAutoplay />
 
 </Base>

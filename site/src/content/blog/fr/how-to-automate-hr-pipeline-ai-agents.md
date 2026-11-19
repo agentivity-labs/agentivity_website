@@ -155,4 +155,4 @@ Vous n'avez pas besoin des 7 agents dès le premier jour. Une équipe RH minimal
 
 Cela suffit déjà à supprimer 80 % du travail manuel. Construisez à partir de là.
 
-[Essayez le Template de recrutement dans Synergi →](/fr/use-cases#hr)
+[Essayez le Template de recrutement dans Synergi →](/fr/solutions)

@@ -24,7 +24,7 @@ const ctaText = ctaLabel ?? t.nav.cta;
 const menuLabel = lang === 'fr' ? 'Ouvrir le menu' : 'Open menu';
 const navLabel = lang === 'fr' ? 'Navigation principale' : 'Main navigation';
 const product = t.nav.product;
-// The Solutions menu, English only for now (KB-0147): solutions by department, and who they are built for. A group shows once one
+// The Solutions menu, in both languages since 2026-11-19 (KB-0147): solutions by department, and who they are built for. A group shows once one
 // of its solutions is live in the trial (display rule A, 2026-11-11); a solution links only once its page exists, the others say
 // "coming soon".
 const solutions = 'solutions' in t.nav ? (t.nav as typeof import('../i18n/en.json')['nav']).solutions : undefined;

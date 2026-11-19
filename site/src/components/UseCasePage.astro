@@ -1,5 +1,5 @@
 ---
-// One solution explained, shared by /solutions/<slug> and /fr/use-cases/<slug> (the French pages keep their address for now).
+// One solution explained, for a case without a story block, at /solutions/<slug> or /fr/solutions/<slug>.
 // The cases are the "cases" list of the "use_cases_page" block: adding one there adds a card on the main page and a page here.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
@@ -14,7 +14,7 @@ const { lang, slug } = Astro.props;
 const t = useTranslations(lang);
 const p = t.use_cases_page;
 const l = p.labels;
-const base = lang === 'fr' ? '/fr/use-cases' : '/solutions';
+const base = lang === 'fr' ? '/fr/solutions' : '/solutions';
 const item: any = p.cases.find((entry: any) => entry.slug === slug);
 const others = p.cases.filter((entry: any) => entry.slug !== slug);
 // The questions in plain words are also given to search and answer engines as an FAQ.

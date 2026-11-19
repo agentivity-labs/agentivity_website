@@ -268,7 +268,7 @@ const tagW = 52, tagT = 44;
         tag.querySelector('text')!.textContent = run.request;
         tag.classList.add('is-on');
         svg.querySelector('[data-manager-node]')!.classList.add('is-on');
-        await brief(svg, `Traveller → ${manager}`, run.request.replace(/[“”"]/g, ''));
+        await brief(svg, `${run.answer.to} → ${manager}`, run.request.replace(/[“”"«»]/g, '').trim());
         await wait(HOLD);
         for (const s of plan(run)) {
           const link = svg.querySelector<SVGPathElement>(`[data-link="${s.to}"]`)!;

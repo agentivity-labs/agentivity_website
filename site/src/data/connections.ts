@@ -1,4 +1,4 @@
-// The connections shown on /connections and on the home page, English only. "live" works today on a hosted workspace, as a
+// The connections shown on /connections and on the home page (apps and models keep their names; "fr" names a building block in French). "live" works today on a hosted workspace, as a
 // workflow step and as an agent tool (Dev Integrations confirmed the list on image 0.1.111, 2026-11-11); everything else shows
 // as coming soon (founder 2026-11-09: the site leads, development follows). Built but not released stays "soon". No app starts
 // an automation yet. HTTP requests and MCP servers are live too (founder and Dev Integrations, 2026-11-11): they reach the apps
@@ -6,7 +6,7 @@
 // src/data/brand-logos.ts; an app without one shows its name only. The apps are listed best-known first: the home grid keeps
 // this order; /connections lists what works today first. Planned apps that need a paid review or a paid API are left out, such as
 // Gmail; a simple review is fine (founder, 2026-11-11).
-export type Connection = { name: string; body: string; group: 'apps' | 'models' | 'build'; status: 'live' | 'soon'; home?: boolean; logo?: string };
+export type Connection = { name: string; body: string; group: 'apps' | 'models' | 'build'; status: 'live' | 'soon'; home?: boolean; logo?: string; fr?: string };
 
 export const connections: Connection[] = [
   { name: 'Google Sheets', body: 'Read rows, add rows, and update or clear cells', group: 'apps', status: 'live', home: true, logo: 'googlesheets' },
@@ -71,11 +71,14 @@ export const connections: Connection[] = [
   { name: 'Anthropic', body: 'Claude models', group: 'models', status: 'live', home: true, logo: 'anthropic' },
   { name: 'Google Gemini', body: 'Gemini models', group: 'models', status: 'live', home: true, logo: 'googlegemini' },
   { name: 'Amazon Bedrock', body: 'The models of your AWS account', group: 'models', status: 'live', home: true },
-  { name: 'Schedules', body: 'Start an automation at the times you set', group: 'build', status: 'live' },
-  { name: 'Web search', body: 'Search the web from a step or an agent', group: 'build', status: 'soon' },
-  { name: 'Web pages', body: 'Read any public page', group: 'build', status: 'soon' },
-  { name: 'HTTP requests', body: 'Call your own systems and other web services from a step or an agent', group: 'build', status: 'live' },
-  { name: 'MCP servers', body: 'Give your agents the tools of any MCP server', group: 'build', status: 'live' },
-  { name: 'Webhooks', body: 'Start an automation when another service calls it', group: 'build', status: 'live' },
-  { name: 'Events from your apps', body: 'Start an automation when something happens in another app, starting with a Telegram message', group: 'build', status: 'live' },
+  { name: 'Schedules', fr: 'Planifications', body: 'Start an automation at the times you set', group: 'build', status: 'live' },
+  { name: 'Web search', fr: 'Recherche web', body: 'Search the web from a step or an agent', group: 'build', status: 'soon' },
+  { name: 'Web pages', fr: 'Pages web', body: 'Read any public page', group: 'build', status: 'soon' },
+  { name: 'HTTP requests', fr: 'Requêtes HTTP', body: 'Call your own systems and other web services from a step or an agent', group: 'build', status: 'live' },
+  { name: 'MCP servers', fr: 'Serveurs MCP', body: 'Give your agents the tools of any MCP server', group: 'build', status: 'live' },
+  { name: 'Webhooks', fr: 'Webhooks', body: 'Start an automation when another service calls it', group: 'build', status: 'live' },
+  { name: 'Events from your apps', fr: 'Événements de vos apps', body: 'Start an automation when something happens in another app, starting with a Telegram message', group: 'build', status: 'live' },
 ];
+
+/** The name of a connection on a page in that language: apps and models keep theirs; the building blocks have a French one. */
+export const nameOf = (item: Connection, lang: 'en' | 'fr') => (lang === 'fr' && item.fr) || item.name;

@@ -91,4 +91,4 @@ C'est la boucle. Et dès que vous voyez la première équipe livrer son premier 
 
 ---
 
-*Agentivity est une plateforme à code source disponible pour construire et faire tourner des équipes multi-agents. [Ajoutez-nous une étoile sur GitHub](https://github.com/agentivity-labs/agentivity) ou [découvrez les cas d'usage](/fr/use-cases).*
+*Agentivity est une plateforme à code source disponible pour construire et faire tourner des équipes multi-agents. [Ajoutez-nous une étoile sur GitHub](https://github.com/agentivity-labs/agentivity) ou [découvrez les cas d'usage](/fr/solutions).*

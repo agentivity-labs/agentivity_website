@@ -4504,7 +4504,7 @@
           },
           {
             "q": "What is real and what is simulated?",
-            "a": "The reading, the check and the filing are real. The demo invoices are fictitious: the suppliers, the buyer and the people do not exist. The agent pays nothing and sends nothing; when a total does not add up, it records the printed total, flags it, and leaves the decision to a person."
+            "a": "The reading, the check and the filing are real. It comes ready to try with sample invoices from its suppliers: replace them with your own. The agent pays nothing and sends nothing; when a total does not add up, it records the printed total, flags it, and leaves the decision to a person."
           },
           {
             "q": "How can I try it?",

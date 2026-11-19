@@ -66,7 +66,7 @@ Des étapes d'IA comparent le CV à la fiche de poste. Elles produisent une note
 
 Chaque candidature prend l'une des trois voies : la liste restreinte, le refus, ou une relecture par un recruteur quand le workflow a un doute.
 
-La [page CV Screening](/fr/use-cases/cv-screening) montre les mêmes étapes avec les briques utilisées.
+La [page CV Screening](/fr/solutions/cv-screener) montre les mêmes étapes avec les briques utilisées.
 
 ## Où le recruteur garde-t-il la main ?
 

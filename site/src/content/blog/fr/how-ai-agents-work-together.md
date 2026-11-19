@@ -144,7 +144,7 @@ Un manager supervise le travail. Il confie la demande à un spécialiste à la f
 
 **Attention à :** tout repose sur les consignes du manager. Si son rôle est flou, il répartira mal le travail. Décrivez avec soin à quoi sert chaque spécialiste.
 
-**Exemple :** l'[équipe Trip Planner](/fr/use-cases/trip-planner) compte un manager et douze spécialistes : vols, hôtel, transferts et d'autres. Un week-end et un mois à l'étranger ne font pas appel aux mêmes.
+**Exemple :** l'[équipe Trip Planner](/fr/solutions/trip-planner) compte un manager et douze spécialistes : vols, hôtel, transferts et d'autres. Un week-end et un mois à l'étranger ne font pas appel aux mêmes.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/team-manager.jpg" width="1000" height="950" style="max-width: 440px;">

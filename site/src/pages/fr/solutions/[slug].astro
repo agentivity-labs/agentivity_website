@@ -1,0 +1,11 @@
+---
+import SolutionStoryPage from '../../../components/SolutionStoryPage.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+// The French solution pages, written to the Solution page playbook as the English ones (2026-11-19).
+export function getStaticPaths() {
+  return (useTranslations('fr').use_cases_page.cases as any[]).filter((item) => item.story).map((item) => ({ params: { slug: item.slug } }));
+}
+const { slug } = Astro.params;
+---
+<SolutionStoryPage slug={slug} lang="fr" />

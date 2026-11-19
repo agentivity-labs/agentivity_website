@@ -82,7 +82,7 @@ Certaines de ses cases peuvent utiliser l'IA, par exemple pour lire un document 
 <figcaption>Un workflow dans le Studio d'Agentivity : l'exemple CV Screening, d'abord de près, puis en entier. Enregistré depuis le produit.</figcaption>
 </figure>
 
-Sa force, c'est la prévisibilité. Dans l'[exemple du CV screening](/fr/use-cases/cv-screening), chaque candidature passe par les mêmes étapes avec les mêmes critères, et vous pouvez montrer ensuite quel chemin chacune a pris.
+Sa force, c'est la prévisibilité. Dans l'[exemple du CV screening](/fr/solutions/cv-screener), chaque candidature passe par les mêmes étapes avec les mêmes critères, et vous pouvez montrer ensuite quel chemin chacune a pris.
 
 **Choisissez un workflow quand** le processus doit être identique pour tout le monde, et quand vous devez pouvoir expliquer ce qui s'est passé.
 

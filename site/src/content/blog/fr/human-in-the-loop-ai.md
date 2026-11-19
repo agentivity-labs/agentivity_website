@@ -71,7 +71,7 @@ Un test utile : si la personne dirait oui sans regarder, quatre-vingt-dix-neuf f
 
 Trois exemples réels, du plus simple au plus strict.
 
-**Choisir, dans une application.** Dans l'[exemple Trip Planner](/fr/use-cases/trip-planner), une équipe de spécialistes organise un voyage. Elle ne réserve jamais de sa propre initiative : l'application montre les vols, l'hôtel, les transferts et le dîner, et le voyageur choisit chacun d'eux.
+**Choisir, dans une application.** Dans l'[exemple Trip Planner](/fr/solutions/trip-planner), une équipe de spécialistes organise un voyage. Elle ne réserve jamais de sa propre initiative : l'application montre les vols, l'hôtel, les transferts et le dîner, et le voyageur choisit chacun d'eux.
 
 <figure>
 <video controls muted loop playsinline preload="none" poster="/media/trip-planner.jpg" width="1024" height="768">
@@ -80,9 +80,9 @@ Trois exemples réels, du plus simple au plus strict.
 <figcaption>Trip Planner : l'équipe propose, le voyageur choisit. Enregistré depuis le produit, accéléré. Les réservations et le paiement sont simulés dans cette démonstration.</figcaption>
 </figure>
 
-**Confirmer avant que le travail commence.** Dans l'[exemple Shopping Lab](/fr/use-cases/shopping-lab), un membre transforme un souhait vague en demande précise et la fait confirmer par l'acheteur avant que huit autres se mettent au travail. Une confirmation de deux lignes évite une longue recherche dans la mauvaise direction.
+**Confirmer avant que le travail commence.** Dans l'[exemple Shopping Lab](/fr/solutions/product-compare-team), un membre transforme un souhait vague en demande précise et la fait confirmer par l'acheteur avant que huit autres se mettent au travail. Une confirmation de deux lignes évite une longue recherche dans la mauvaise direction.
 
-**Revoir les cas douteux.** Dans l'[exemple de CV screening](/fr/use-cases/cv-screening), les cas clairs sont triés, et ceux dont le workflow n'est pas sûr vont à un recruteur. Le workflow demande aussi de l'aide quand il ne peut pas lire un document. Pour en savoir plus : [CV screening par l'IA : comment laisser la main au recruteur](/fr/blog/ai-cv-screening).
+**Revoir les cas douteux.** Dans l'[exemple de CV screening](/fr/solutions/cv-screener), les cas clairs sont triés, et ceux dont le workflow n'est pas sûr vont à un recruteur. Le workflow demande aussi de l'aide quand il ne peut pas lire un document. Pour en savoir plus : [CV screening par l'IA : comment laisser la main au recruteur](/fr/blog/ai-cv-screening).
 
 ## Comment la question doit-elle arriver à la personne ?
 

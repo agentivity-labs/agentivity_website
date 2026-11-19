@@ -91,6 +91,31 @@
       "permanent": true
     },
     {
+      "source": "/fr/use-cases{/}?",
+      "destination": "/fr/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/fr/use-cases/shopping-lab{/}?",
+      "destination": "/fr/solutions/product-compare-team",
+      "permanent": true
+    },
+    {
+      "source": "/fr/use-cases/cv-screening{/}?",
+      "destination": "/fr/solutions/cv-screener",
+      "permanent": true
+    },
+    {
+      "source": "/fr/use-cases/invoice-clerk{/}?",
+      "destination": "/fr/solutions/invoice-clerk",
+      "permanent": true
+    },
+    {
+      "source": "/fr/use-cases/trip-planner{/}?",
+      "destination": "/fr/solutions/trip-planner",
+      "permanent": true
+    },
+    {
       "source": "/solutions/makers{/}?",
       "destination": "/solutions/your-own-projects",
       "permanent": true

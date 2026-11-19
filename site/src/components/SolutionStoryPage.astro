@@ -8,7 +8,7 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import SolutionPower from './SolutionPower.astro';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
 import { brandLogos } from '../data/brand-logos';
 import '../styles/scroll-player.css';
 
@@ -22,9 +22,11 @@ const icons: Record<string, string> = {
   email: '<rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
 };
 
-interface Props { slug: string; }
+interface Props { slug: string; lang?: Lang; }
 const { slug } = Astro.props;
-const t = useTranslations('en');
+// English by default; the French pages pass lang="fr" (2026-11-19).
+const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
+const t = useTranslations(lang);
 const p = t.use_cases_page;
 const l = p.labels;
 const item: any = p.cases.find((entry: any) => entry.slug === slug);
@@ -41,15 +43,15 @@ const more = st.get.more == null ? [] : Array.isArray(st.get.more) ? st.get.more
 const bold = (text: string) => text.split('**').map((part: string, i: number) => (i % 2 ? `<strong>${part}</strong>` : part)).join('');
 const pw = st.power;
 ---
-<Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang="en" look="editorial">
+<Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang={lang} look="editorial">
 
-<SiteHeader lang="en" ctaHref={st.cta.href} />
+<SiteHeader lang={lang} ctaHref={st.cta.href} />
 
 <main class="ed-page">
 
   <!-- 1. The outcome -->
   <section class="ed-wrap sx-hero">
-    <a class="sx-back" href="/solutions">{l.back}</a>
+    <a class="sx-back" href={getLocalePath(lang, '/solutions')}>{l.back}</a>
     <p class="sx-name">{item.title}</p>
     <h1>{item.h1} <em class="ed-mark">{item.h1_accent}</em></h1>
     <p class="sx-lead">{item.lead}</p>
@@ -252,12 +254,12 @@ const pw = st.power;
         </details>
       ))}
     </div>
-    <a class="ed-link" href="/solutions">{l.back}</a>
+    <a class="ed-link" href={getLocalePath(lang, '/solutions')}>{l.back}</a>
   </section>
 
 </main>
 
-<SiteFooter lang="en" />
+<SiteFooter lang={lang} />
 <VideoAutoplay />
 
 </Base>

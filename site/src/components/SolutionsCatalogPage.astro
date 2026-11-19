@@ -1,25 +1,29 @@
 ---
 // /solutions, the catalogue: the solutions by department, from the same list as the Solutions menu (nav.solutions.groups), so
 // the page and the menu never disagree. A group shows once one of its solutions is live (display rule A); a live solution with
-// a page gets a card with its clip, the others a quiet "Soon" line. Then who it is for, and the trial. English only; the French
-// page keeps its own layout (UseCasesPage).
+// a page gets a card with its clip, the others a quiet "Soon" line. Then who it is for, and the trial. In English and in French.
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
 import TrialNote from './TrialNote.astro';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
 
-const t = useTranslations('en');
+// English by default; the French pages pass lang="fr" (2026-11-19).
+const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
+const t = useTranslations(lang);
 const p = t.use_cases_page as any;
 const c = p.catalogue;
 const nav = (t.nav as any).solutions;
 const cases: Record<string, any> = Object.fromEntries(p.cases.map((item: any) => [item.slug, item]));
+// The lines of the catalogue are keyed by the English name of each department; the French menu names them in French.
+const enGroups = (useTranslations('en').nav as any).solutions.groups;
 const groups = nav.groups
+  .map((group: any, i: number) => ({ ...group, key: enGroups[i]?.title ?? group.title }))
   .filter((group: any) => group.items.some((item: any) => item.live))
   .map((group: any) => ({
     title: group.title,
-    line: c.groups[group.title],
+    line: c.groups[group.key] ?? c.groups[group.title],
     live: group.items.filter((item: any) => item.href).map((item: any) => {
       const slug = item.href.split('/').pop();
       return { label: item.label, href: item.href, card: c.cards[slug], item: cases[slug] };
@@ -28,9 +32,9 @@ const groups = nav.groups
   }));
 const doors = (t as any).home_v3.built_for.cards;
 ---
-<Base title={p.meta.title} description={p.meta.description} lang="en" alternates={false} look="editorial">
+<Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
 
-<SiteHeader lang="en" ctaHref={p.hero.cta_href} />
+<SiteHeader lang={lang} ctaHref={p.hero.cta_href} />
 
 <main class="sc ed-page">
 
@@ -40,7 +44,7 @@ const doors = (t as any).home_v3.built_for.cards;
     <p class="sc-sub">{p.hero.sub}</p>
     <div class="sc-act">
       <a class="ed-btn ed-btn--navy" href={p.hero.cta_href}>{p.hero.cta}</a>
-      <TrialNote lang="en" />
+      <TrialNote lang={lang} />
     </div>
   </section>
 
@@ -125,7 +129,7 @@ const doors = (t as any).home_v3.built_for.cards;
       <h2>{p.cta.h2} <em>{p.cta.h2_accent}</em></h2>
       <p class="ed-final-sub">{p.cta.sub}</p>
       <a class="ed-btn ed-btn--navy" href={p.cta.primary_href}>{p.cta.primary}</a>
-      <TrialNote lang="en" />
+      <TrialNote lang={lang} />
       <p class="sc-final-links"><a class="ed-link" href={p.cta.secondary_href}>{p.cta.secondary}</a></p>
       <p class="sc-services">{p.cta.services} <a class="ed-link" href={p.cta.services_href}>{p.cta.services_link}</a></p>
     </div>
@@ -133,7 +137,7 @@ const doors = (t as any).home_v3.built_for.cards;
 
 </main>
 
-<SiteFooter lang="en" />
+<SiteFooter lang={lang} />
 <VideoAutoplay />
 
 </Base>
