@@ -74,6 +74,7 @@ const schema = faq.length === 0 ? posting : [posting, {
   <div class="ed-wrap bp-layout">
     <article class="bp-prose">
       <Content />
+      <p class="bp-follow">{p.follow.before}<a href={t.site.linkedin_href} target="_blank" rel="noopener">{p.follow.link}</a>{p.follow.after}</p>
       {post.data.template && (
         <section class="bp-template">
           <p class="bp-aside-label">{p.template.label}</p>
@@ -245,4 +246,7 @@ const schema = faq.length === 0 ? posting : [posting, {
   .bp-toc { display: none; }
   .bp-prose { font-size: 18px; }
 }
+/* The line that invites to follow the LinkedIn Page, right after the text. */
+.bp-follow { margin-top: 2.2em; padding-top: 1.2em; border-top: 1px solid var(--ed-line); font-size: 17px; color: var(--ed-ink-2); }
+.bp-follow a { font-weight: 600; color: var(--ed-ink); text-decoration: underline; text-underline-offset: 3px; }
 </style>

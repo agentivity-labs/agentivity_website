@@ -351,6 +351,9 @@
     ],
     "github": "Star on GitHub",
     "github_href": "https://github.com/agentivity-labs/agentivity",
+    "github_label": "Agentivity on GitHub",
+    "linkedin_href": "https://www.linkedin.com/company/agentivity-io/",
+    "linkedin_label": "Agentivity on LinkedIn",
     "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
     "install": "Install Community",
     "install_href": "/community",
@@ -8184,6 +8187,11 @@
       "body": "A no-code platform to build teams of AI specialists that work alongside your people.",
       "how": "See how it works",
       "how_href": "/how-it-works"
+    },
+    "follow": {
+      "before": "Follow ",
+      "link": "Agentivity on LinkedIn",
+      "after": " for new articles."
     }
   },
   "assistant_page": {

@@ -18,4 +18,8 @@ export const featuredBadges: { name: string; html: string }[] = [
     name: 'Dang.ai',
     html: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
   },
+  {
+    name: 'tools.cafe',
+    html: `<a href="https://tools.cafe/p/agentivity" target="_blank" rel="noopener"><img src="https://tools.cafe/b/light.svg" alt="Listed on tools.cafe" width="180" height="54" /></a>`,
+  },
 ];
