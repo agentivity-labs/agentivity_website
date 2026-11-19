@@ -1779,7 +1779,7 @@
                   "uses": "Reservation Agent · Google Calendar"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "whatsapp"
                   ],
@@ -2081,7 +2081,7 @@
                 [
                   "",
                   "Microsoft Excel",
-                  "soon"
+                  "live"
                 ]
               ]
             },
@@ -2110,7 +2110,7 @@
                     [
                       "whatsapp",
                       "WhatsApp",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -2155,12 +2155,12 @@
                     [
                       "salesforce",
                       "Salesforce",
-                      "soon"
+                      "live"
                     ],
                     [
                       "zoho",
                       "Zoho CRM",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -2185,7 +2185,7 @@
                     [
                       "whatsapp",
                       "WhatsApp",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -2611,7 +2611,7 @@
                   "uses": "Report Writer · Slack · Email"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "shopify",
                     "woocommerce"
@@ -2918,12 +2918,12 @@
                     [
                       "shopify",
                       "Shopify",
-                      "soon"
+                      "live"
                     ],
                     [
                       "woocommerce",
                       "WooCommerce",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -3340,7 +3340,7 @@
                   "uses": "The scoring steps · the weighting program"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "calendly"
                   ],
@@ -3600,7 +3600,7 @@
                     [
                       "typeform",
                       "Typeform",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -3640,7 +3640,7 @@
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -3655,12 +3655,12 @@
                     [
                       "calendly",
                       "Calendly",
-                      "soon"
+                      "live"
                     ],
                     [
                       "zoom",
                       "Zoom",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4022,7 +4022,7 @@
                   "uses": "Google Drive"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "quickbooks",
                     "xero"
@@ -4277,7 +4277,7 @@
                     [
                       "@email",
                       "Invoices sent by email",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4302,7 +4302,7 @@
                     [
                       "",
                       "Microsoft Excel",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4317,17 +4317,17 @@
                     [
                       "dropbox",
                       "Dropbox",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "OneDrive",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "SharePoint",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4347,7 +4347,7 @@
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4362,12 +4362,12 @@
                     [
                       "quickbooks",
                       "QuickBooks",
-                      "soon"
+                      "live"
                     ],
                     [
                       "xero",
                       "Xero",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -4675,7 +4675,7 @@
               },
               "items": [
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "jira",
                     "zendesk",
@@ -4734,7 +4734,7 @@
                   "uses": "The three specialists · Notion · Google Docs"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "slack",
                     "@chat"
@@ -5019,12 +5019,12 @@
                 [
                   "confluence",
                   "Confluence",
-                  "soon"
+                  "live"
                 ],
                 [
                   "",
                   "SharePoint",
-                  "soon"
+                  "live"
                 ]
               ]
             },
@@ -5049,12 +5049,12 @@
                     [
                       "slack",
                       "Slack",
-                      "soon"
+                      "live"
                     ],
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -5069,22 +5069,22 @@
                     [
                       "jira",
                       "Jira",
-                      "soon"
+                      "live"
                     ],
                     [
                       "zendesk",
                       "Zendesk",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "Freshdesk",
-                      "soon"
+                      "live"
                     ],
                     [
                       "linear",
                       "Linear",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -5124,7 +5124,7 @@
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -5442,7 +5442,7 @@
                   "uses": "A schedule · the Contract Reviews table · Slack"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "dropbox"
                   ],
@@ -5707,12 +5707,12 @@
                 [
                   "confluence",
                   "Confluence",
-                  "soon"
+                  "live"
                 ],
                 [
                   "",
                   "SharePoint",
-                  "soon"
+                  "live"
                 ]
               ]
             },
@@ -5736,17 +5736,17 @@
                     [
                       "dropbox",
                       "Dropbox",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "OneDrive",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "SharePoint",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -5771,7 +5771,7 @@
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -5821,7 +5821,7 @@
                     [
                       "salesforce",
                       "Salesforce",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6143,7 +6143,7 @@
                   "uses": "A schedule · the Quotes table · Slack"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "@email"
                   ],
@@ -6376,7 +6376,7 @@
                 [
                   "",
                   "Microsoft Excel",
-                  "soon"
+                  "live"
                 ]
               ]
             },
@@ -6405,7 +6405,7 @@
                     [
                       "@email",
                       "The sales inbox",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6435,7 +6435,7 @@
                     [
                       "",
                       "Microsoft Excel",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6455,17 +6455,17 @@
                     [
                       "salesforce",
                       "Salesforce",
-                      "soon"
+                      "live"
                     ],
                     [
                       "",
                       "Pipedrive",
-                      "soon"
+                      "live"
                     ],
                     [
                       "zoho",
                       "Zoho CRM",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6485,7 +6485,7 @@
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6500,12 +6500,12 @@
                     [
                       "quickbooks",
                       "QuickBooks",
-                      "soon"
+                      "live"
                     ],
                     [
                       "xero",
                       "Xero",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -6819,7 +6819,7 @@
                   "uses": "WordPress"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "mailchimp"
                   ],
@@ -7101,7 +7101,7 @@
                 [
                   "dropbox",
                   "Dropbox",
-                  "soon"
+                  "live"
                 ]
               ]
             },
@@ -7125,12 +7125,12 @@
                     [
                       "slack",
                       "Slack",
-                      "soon"
+                      "live"
                     ],
                     [
                       "@chat",
                       "Microsoft Teams",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -7200,12 +7200,12 @@
                     [
                       "mailchimp",
                       "Mailchimp",
-                      "soon"
+                      "live"
                     ],
                     [
                       "webflow",
                       "Webflow",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },
@@ -7517,7 +7517,7 @@
                   "uses": "A schedule · Email"
                 },
                 {
-                  "status": "soon",
+                  "status": "live",
                   "logos": [
                     "whatsapp"
                   ],
@@ -7807,7 +7807,7 @@
                     [
                       "whatsapp",
                       "WhatsApp",
-                      "soon"
+                      "live"
                     ]
                   ]
                 },

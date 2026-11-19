@@ -1,10 +1,9 @@
-// The connections shown on /connections (EN and FR) and on the home page. Rebuilt on 2026-11-19 from the product's own catalogue
-// (ConnectorCatalog.cs and the nodes that declare an app): every application with a connector is a step of a workflow and a tool
-// an agent can use; "starts" means it can also start an agent, a team or a workflow (a trigger). "live" works on a hosted
-// workspace today, in the last published image; an app built since, or still being built, shows as "soon" until the next image
-// ships it (then flip it to "live"). Planned apps that are not built are "soon" too (founder 2026-11-09: the site leads,
-// development follows). The page never says how many there are: new ones arrive every week (founder 2026-11-19).
-// "logo" names a mark of src/data/brand-logos.ts; an app without one shows its initial. "home" puts it in the home's grid.
+// The connections shown on /connections (EN and FR) and on the home page, from the product's own catalogue (ConnectorCatalog.cs
+// and the nodes that declare an app): each application is a step of a workflow and a tool an agent can use; "starts" means it
+// can also start an agent, a team or a workflow (a trigger). Every connection shows as available, the ones being built or
+// planned included (founder 2026-11-19: "ne mets aucune connexion en soon, fais comme si elles étaient déjà là"). The page
+// never says how many there are: new ones arrive every week. "logo" names a mark of src/data/brand-logos.ts; an app without one
+// shows its initial. "home" puts it in the home's grid.
 export type Category =
   | 'crm' | 'support' | 'commerce' | 'finance' | 'marketing' | 'email' | 'messaging'
   | 'projects' | 'docs' | 'forms' | 'content' | 'ai' | 'build';
@@ -94,39 +93,36 @@ export const connections: Connection[] = [
   app({ name: 'Supabase Storage', cat: 'build', status: 'live', step: true, logo: 'supabase', body: 'Store and fetch files', bodyFr: 'Stocker et récupérer des fichiers' }),
   app({ name: 'Recraft', cat: 'ai', status: 'live', step: true, body: 'Make images from a description', bodyFr: 'Créer des images à partir d’une description' }),
 
-  // Built since the last published image: they work as soon as the next one ships.
-  app({ name: 'WooCommerce', cat: 'commerce', status: 'soon', ...both, starts: true, logo: 'woocommerce', body: 'Orders, products and customers of your store', bodyFr: 'Commandes, produits et clients de votre boutique' }),
-  app({ name: 'PayPal', cat: 'commerce', status: 'soon', ...both, starts: true, logo: 'paypal', body: 'Payments, orders, invoices and disputes', bodyFr: 'Paiements, commandes, factures et litiges' }),
-  app({ name: 'Mollie', cat: 'commerce', status: 'soon', ...both, starts: true, body: 'Payments, payment links and refunds', bodyFr: 'Paiements, liens de paiement et remboursements' }),
-  app({ name: 'Pennylane', cat: 'finance', status: 'soon', ...both, starts: true, body: 'Your books: invoices, suppliers and customers', bodyFr: 'Votre comptabilité : factures, fournisseurs et clients' }),
-  app({ name: 'Qonto', cat: 'finance', status: 'soon', ...both, starts: true, body: 'Read your bank transactions and attach receipts', bodyFr: 'Lire vos opérations bancaires et joindre les justificatifs' }),
-  app({ name: 'Klaviyo', cat: 'marketing', status: 'soon', ...both, body: 'Profiles, lists and events of your email marketing', bodyFr: 'Profils, listes et événements de votre e-mailing' }),
-  app({ name: 'ActiveCampaign', cat: 'marketing', status: 'soon', ...both, starts: true, body: 'Contacts, lists, tags and deals', bodyFr: 'Contacts, listes, tags et affaires' }),
-  app({ name: 'SendGrid', cat: 'email', status: 'soon', ...both, starts: true, body: 'Send emails, and follow what became of them', bodyFr: 'Envoyer des e-mails et suivre ce qu’ils deviennent' }),
-  app({ name: 'Postmark', cat: 'email', status: 'soon', ...both, starts: true, body: 'Send and receive emails from your application', bodyFr: 'Envoyer et recevoir des e-mails depuis votre application' }),
-  app({ name: 'Mailgun', cat: 'email', status: 'soon', ...both, starts: true, logo: 'mailgun', body: 'Send and receive emails on your domain', bodyFr: 'Envoyer et recevoir des e-mails sur votre domaine' }),
-  app({ name: 'Twilio', cat: 'messaging', status: 'soon', ...both, starts: true, body: 'Send and receive text messages', bodyFr: 'Envoyer et recevoir des SMS' }),
-  app({ name: 'WhatsApp Business', cat: 'messaging', status: 'soon', ...both, starts: true, logo: 'whatsapp', body: 'Send and receive messages on your business number', bodyFr: 'Envoyer et recevoir des messages sur votre numéro professionnel' }),
-  app({ name: 'Webflow', cat: 'content', status: 'soon', ...both, starts: true, logo: 'webflow', body: 'Publish and update your site content', bodyFr: 'Publier et mettre à jour le contenu de votre site' }),
-  app({ name: 'Contentful', cat: 'content', status: 'soon', ...both, starts: true, logo: 'contentful', body: 'Entries and assets of your content', bodyFr: 'Entrées et médias de vos contenus' }),
-  // Being built.
-  app({ name: 'Zoom', cat: 'forms', status: 'soon', ...both, starts: true, logo: 'zoom', body: 'Create meetings and read their details', bodyFr: 'Créer des réunions et lire leurs détails' }),
-  app({ name: 'Dropbox', cat: 'docs', status: 'soon', ...both, logo: 'dropbox', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
-  app({ name: 'Box', cat: 'docs', status: 'soon', ...both, starts: true, logo: 'box', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
-  app({ name: 'Miro', cat: 'docs', status: 'soon', ...both, logo: 'miro', body: 'Add notes and cards to your boards', bodyFr: 'Ajouter des notes et des cartes à vos tableaux' }),
-  // Planned.
-  app({ name: 'Microsoft Excel', cat: 'docs', status: 'soon', body: 'Read and fill your workbooks', bodyFr: 'Lire et remplir vos classeurs' }),
-  app({ name: 'Outlook', cat: 'email', status: 'soon', body: 'Read, sort and answer your emails', bodyFr: 'Lire, trier et répondre à vos e-mails' }),
-  app({ name: 'Microsoft Teams', cat: 'messaging', status: 'soon', body: 'Post and read messages', bodyFr: 'Publier et lire des messages' }),
-  app({ name: 'OneDrive', cat: 'docs', status: 'soon', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
-  app({ name: 'SharePoint', cat: 'docs', status: 'soon', body: 'Find, read and file documents in your sites', bodyFr: 'Trouver, lire et classer les documents de vos sites' }),
-  app({ name: 'Salesforce', cat: 'crm', status: 'soon', logo: 'salesforce', body: 'Read and update your CRM', bodyFr: 'Lire et mettre à jour votre CRM' }),
-  app({ name: 'Zoho CRM', cat: 'crm', status: 'soon', logo: 'zoho', body: 'Read and update leads, contacts and deals', bodyFr: 'Lire et mettre à jour prospects, contacts et affaires' }),
-  app({ name: 'QuickBooks', cat: 'finance', status: 'soon', logo: 'quickbooks', body: 'Read and create invoices and customers', bodyFr: 'Lire et créer des factures et des clients' }),
-  app({ name: 'Xero', cat: 'finance', status: 'soon', logo: 'xero', body: 'Read and create invoices and contacts', bodyFr: 'Lire et créer des factures et des contacts' }),
-  app({ name: 'Confluence', cat: 'docs', status: 'soon', logo: 'confluence', body: 'Read and write pages', bodyFr: 'Lire et écrire des pages' }),
-  app({ name: 'Google Analytics', cat: 'content', status: 'soon', logo: 'googleanalytics', body: 'Read your traffic reports', bodyFr: "Lire vos rapports d'audience" }),
-  app({ name: 'PostgreSQL', cat: 'build', status: 'soon', logo: 'postgresql', body: 'Read and write the tables of your database', bodyFr: 'Lire et écrire les tables de votre base' }),
+  app({ name: 'WooCommerce', cat: 'commerce', status: 'live', ...both, starts: true, logo: 'woocommerce', body: 'Orders, products and customers of your store', bodyFr: 'Commandes, produits et clients de votre boutique' }),
+  app({ name: 'PayPal', cat: 'commerce', status: 'live', ...both, starts: true, logo: 'paypal', body: 'Payments, orders, invoices and disputes', bodyFr: 'Paiements, commandes, factures et litiges' }),
+  app({ name: 'Mollie', cat: 'commerce', status: 'live', ...both, starts: true, body: 'Payments, payment links and refunds', bodyFr: 'Paiements, liens de paiement et remboursements' }),
+  app({ name: 'Pennylane', cat: 'finance', status: 'live', ...both, starts: true, body: 'Your books: invoices, suppliers and customers', bodyFr: 'Votre comptabilité : factures, fournisseurs et clients' }),
+  app({ name: 'Qonto', cat: 'finance', status: 'live', ...both, starts: true, body: 'Read your bank transactions and attach receipts', bodyFr: 'Lire vos opérations bancaires et joindre les justificatifs' }),
+  app({ name: 'Klaviyo', cat: 'marketing', status: 'live', ...both, body: 'Profiles, lists and events of your email marketing', bodyFr: 'Profils, listes et événements de votre e-mailing' }),
+  app({ name: 'ActiveCampaign', cat: 'marketing', status: 'live', ...both, starts: true, body: 'Contacts, lists, tags and deals', bodyFr: 'Contacts, listes, tags et affaires' }),
+  app({ name: 'SendGrid', cat: 'email', status: 'live', ...both, starts: true, body: 'Send emails, and follow what became of them', bodyFr: 'Envoyer des e-mails et suivre ce qu’ils deviennent' }),
+  app({ name: 'Postmark', cat: 'email', status: 'live', ...both, starts: true, body: 'Send and receive emails from your application', bodyFr: 'Envoyer et recevoir des e-mails depuis votre application' }),
+  app({ name: 'Mailgun', cat: 'email', status: 'live', ...both, starts: true, logo: 'mailgun', body: 'Send and receive emails on your domain', bodyFr: 'Envoyer et recevoir des e-mails sur votre domaine' }),
+  app({ name: 'Twilio', cat: 'messaging', status: 'live', ...both, starts: true, body: 'Send and receive text messages', bodyFr: 'Envoyer et recevoir des SMS' }),
+  app({ name: 'WhatsApp Business', cat: 'messaging', status: 'live', ...both, starts: true, logo: 'whatsapp', body: 'Send and receive messages on your business number', bodyFr: 'Envoyer et recevoir des messages sur votre numéro professionnel' }),
+  app({ name: 'Webflow', cat: 'content', status: 'live', ...both, starts: true, logo: 'webflow', body: 'Publish and update your site content', bodyFr: 'Publier et mettre à jour le contenu de votre site' }),
+  app({ name: 'Contentful', cat: 'content', status: 'live', ...both, starts: true, logo: 'contentful', body: 'Entries and assets of your content', bodyFr: 'Entrées et médias de vos contenus' }),
+  app({ name: 'Zoom', cat: 'forms', status: 'live', ...both, starts: true, logo: 'zoom', body: 'Create meetings and read their details', bodyFr: 'Créer des réunions et lire leurs détails' }),
+  app({ name: 'Dropbox', cat: 'docs', status: 'live', ...both, logo: 'dropbox', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
+  app({ name: 'Box', cat: 'docs', status: 'live', ...both, starts: true, logo: 'box', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
+  app({ name: 'Miro', cat: 'docs', status: 'live', ...both, logo: 'miro', body: 'Add notes and cards to your boards', bodyFr: 'Ajouter des notes et des cartes à vos tableaux' }),
+  app({ name: 'Microsoft Excel', cat: 'docs', status: 'live', ...both, body: 'Read and fill your workbooks', bodyFr: 'Lire et remplir vos classeurs' }),
+  app({ name: 'Outlook', cat: 'email', status: 'live', ...both, body: 'Read, sort and answer your emails', bodyFr: 'Lire, trier et répondre à vos e-mails' }),
+  app({ name: 'Microsoft Teams', cat: 'messaging', status: 'live', ...both, body: 'Post and read messages', bodyFr: 'Publier et lire des messages' }),
+  app({ name: 'OneDrive', cat: 'docs', status: 'live', ...both, body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
+  app({ name: 'SharePoint', cat: 'docs', status: 'live', ...both, body: 'Find, read and file documents in your sites', bodyFr: 'Trouver, lire et classer les documents de vos sites' }),
+  app({ name: 'Salesforce', cat: 'crm', status: 'live', ...both, logo: 'salesforce', body: 'Read and update your CRM', bodyFr: 'Lire et mettre à jour votre CRM' }),
+  app({ name: 'Zoho CRM', cat: 'crm', status: 'live', ...both, logo: 'zoho', body: 'Read and update leads, contacts and deals', bodyFr: 'Lire et mettre à jour prospects, contacts et affaires' }),
+  app({ name: 'QuickBooks', cat: 'finance', status: 'live', ...both, logo: 'quickbooks', body: 'Read and create invoices and customers', bodyFr: 'Lire et créer des factures et des clients' }),
+  app({ name: 'Xero', cat: 'finance', status: 'live', ...both, logo: 'xero', body: 'Read and create invoices and contacts', bodyFr: 'Lire et créer des factures et des contacts' }),
+  app({ name: 'Confluence', cat: 'docs', status: 'live', ...both, logo: 'confluence', body: 'Read and write pages', bodyFr: 'Lire et écrire des pages' }),
+  app({ name: 'Google Analytics', cat: 'content', status: 'live', ...both, logo: 'googleanalytics', body: 'Read your traffic reports', bodyFr: "Lire vos rapports d'audience" }),
+  app({ name: 'PostgreSQL', cat: 'build', status: 'live', ...both, logo: 'postgresql', body: 'Read and write the tables of your database', bodyFr: 'Lire et écrire les tables de votre base' }),
 
   // The AI models: each agent picks its own.
   app({ name: 'OpenRouter', group: 'models', cat: 'ai', status: 'live', logo: 'openrouter', body: 'Many AI providers through one account', bodyFr: "De nombreux fournisseurs d'IA avec un seul compte" }),
@@ -140,8 +136,8 @@ export const connections: Connection[] = [
   { name: 'MCP servers', fr: 'Serveurs MCP', group: 'build', cat: 'build', status: 'live', tool: true, body: 'Give your agents the tools of any MCP server', bodyFr: "Donner à vos agents les outils de n'importe quel serveur MCP" },
   { name: 'Webhooks', fr: 'Webhooks', group: 'build', cat: 'build', status: 'live', starts: true, body: 'Start an automation when another service calls it', bodyFr: 'Lancer une automatisation quand un autre service l’appelle' },
   { name: 'Schedules', fr: 'Planifications', group: 'build', cat: 'build', status: 'live', starts: true, body: 'Start an automation at the times you set', bodyFr: 'Lancer une automatisation aux heures que vous fixez' },
-  { name: 'Web search', fr: 'Recherche web', group: 'build', cat: 'build', status: 'soon', step: true, tool: true, body: 'Search the web from a step or an agent', bodyFr: 'Chercher sur le web, depuis une étape ou un agent' },
-  { name: 'Web pages', fr: 'Pages web', group: 'build', cat: 'build', status: 'soon', step: true, tool: true, body: 'Read any public page', bodyFr: "Lire n'importe quelle page publique" },
+  { name: 'Web search', fr: 'Recherche web', group: 'build', cat: 'build', status: 'live', step: true, tool: true, body: 'Search the web from a step or an agent', bodyFr: 'Chercher sur le web, depuis une étape ou un agent' },
+  { name: 'Web pages', fr: 'Pages web', group: 'build', cat: 'build', status: 'live', step: true, tool: true, body: 'Read any public page', bodyFr: "Lire n'importe quelle page publique" },
 ];
 
 /** The name of a connection on a page in that language: apps and models keep theirs; the building blocks have a French one. */
