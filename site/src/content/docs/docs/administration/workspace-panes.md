@@ -1,6 +1,6 @@
 ---
 title: "Workspace panes: credentials, data and network"
-description: "The panes of the group Workspace. Credentials, AI Assistant, Voice dictation, Configurations, Data to export or import, Network and Desk."
+description: "The panes of the group Workspace. Credentials, AI Assistant, Voice dictation, Configurations, Place and time, Data to export or import, Network and Desk."
 sidebar:
   order: 4
 editUrl: false
@@ -28,6 +28,15 @@ A microphone in the chats: what is said is turned into text, then sent like a ty
 ![The Configurations pane](images/configurations.jpg)
 
 **Configurations** lets you look at and change settings of the server. On a new workspace the list may be empty and say "No configurations available."
+
+## Place and time
+
+Where a day begins and ends for the people who read the platform: what "today" is, what "the last 30 days" covers in a cockpit, and the day a week starts on. Dates themselves travel in UTC, and each page writes them in the words of whoever reads it.
+
+- **The place**: **Automatic**, the default, lets each person read by their own time, wherever they are. To make everyone read by one place instead, search a city or a country (Paris, New_York, Tokyo) and choose it. The pane then shows the time it is there and which day it is.
+- **The week**: **Monday**, **Sunday** or **Saturday**. A chart drawn week by week groups its rows from that day.
+
+You need the right to manage settings.
 
 ## Data
 

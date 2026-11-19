@@ -88,9 +88,20 @@ An agent or a team reads one sentence about the event, for example "Calendly mee
 | **Zendesk** | Ticket created, Ticket status changed, Comment added | The ticket, read whole when the trigger starts: number, subject, description, status, priority, tags, the name and e-mail of the requester, and its address. For **Ticket status changed**, the status before. For **Comment added**, the comment, whether the customer sees it or it is a private note, and its author. The agent of the connection must be an administrator, because a trigger makes a webhook in Zendesk. |
 | **monday.com** | Item created, Column value changed (any column, or one), Update posted | The ID and the name of the item, its board and group, and who did it. For **Column value changed**, the column and its value before and after, as text. For **Update posted**, the text of the update. |
 | **Shopify** | Order created, Order paid, Order fulfilled, Customer created | An order: its name (#1001), total and currency, the name and e-mail of the customer, the payment and fulfillment status, the lines, the shipping address, the note, and its address in the admin. A customer: name, e-mail, phone, marketing consent, tags and address in the admin. The triggers are signed with the client secret, so it is required. |
+| **WooCommerce** | Order created, Order updated, Customer created | An order: its number, status, total and currency, the name and e-mail of the customer, the lines, the shipping address, the customer's note, the payment method and its address in the store admin. A customer: ID, name, e-mail, phone. The key needs **Read/Write**. |
+| **ActiveCampaign** | Contact subscribed, Contact updated, Tag added (any tag, or one), Deal created | The contact (ID, e-mail, name, phone, tags) and who did it. Also the list for **Contact subscribed**, the tag for **Tag added**, and for **Deal created** the ID, title, value, currency, stage and pipeline of the deal. |
+| **Webflow** | Form submitted (any form, or one), CMS item created (any collection, or one), Order placed | A form: its name and each field sent. An item: its ID, collection, name, slug and fields. An order: ID, status, customer, total paid and products. The token needs the scopes the guide lists, **Sites** read and write included. |
+| **Contentful** | Entry published (any content type, or one), Entry unpublished, Asset published | An entry: its ID, content type, title, fields (in the first locale and per locale) and version. An asset: title, file name and type, and address. The triggers listen to the `master` environment unless you give another. You must be allowed to manage the webhooks of the space. |
+| **Twilio** | Message received (on one of the account's numbers) | Who wrote (their number) and the number written to, the text, the WhatsApp name when there is one, the addresses of the files, the message SID and the channel (`sms` or `whatsapp`). The trigger points the incoming messages of the number to Agentivity, and gives the number back what it had when the trigger is removed. |
+| **WhatsApp Business** | Message received (on the business number) | Who wrote (their number, and their business-scoped ID, which is given even when WhatsApp hides the number), their name, the text (or the caption, or the button pressed), the kind of message, the message ID (to mark it read) and the ID of the file when there is one. The trigger points the messages of the business number to Agentivity, and takes that back when it is removed. |
+| **SendGrid** | Email delivered, Email opened, Link clicked, Email bounced (bounced or dropped) | The recipient, the message ID, the event, when, the link clicked, the reason of the bounce and the tags. |
+| **Postmark** | Email received, Email delivered, Email bounced, Email opened, Link clicked | The same for the events. For **Email received**: the address and the name of the sender, the address written to, the subject, the text (only the reply part when it is a reply), the HTML, the message ID and the names of the attachments. It uses the inbound address of the server. |
+| **Mailgun** | Email received (at one address of the domain), Email delivered, Email failed, Email opened, Link clicked | The same as Postmark. **Email received** makes a Mailgun route for one address of a domain that receives with Mailgun, and removes it when the trigger is removed. |
 | **Telegram** | Message received | The text, the chat, who sent it. |
 
-Todoist, Freshdesk and Intercom have no trigger. Todoist's webhooks belong to a registered app, not to a personal token. Freshdesk sends webhooks only from its own automation rules, set in Freshdesk. Intercom subscribes webhooks only in its Developer Hub.
+Todoist, Freshdesk, Intercom and Klaviyo have no trigger. Todoist's webhooks belong to a registered app, not to a personal token. Freshdesk sends webhooks only from its own automation rules, set in Freshdesk. Intercom subscribes webhooks only in its Developer Hub. Klaviyo opens its webhooks only to some accounts.
+
+The triggers **Email opened** and **Link clicked** work only when the open or link tracking of the e-mail service is on.
 
 #### Telegram
 
@@ -105,6 +116,8 @@ A workflow gets `text`, `chat_id`, `chat_title`, `chat_type`, `from_id`, `from_n
 
 A trigger whose person loses the right to run what it starts pauses itself. You can change what a trigger starts after you made it: open its dialog and change **What starts**.
 
+
+The editor of a trigger lists its **Next executions** and its **Last executions**. Select one of the last executions to open it, in the editor of what it started.
 
 Each trigger has a switch. **Active** means it starts on its own. **Paused** means it keeps its settings and starts nothing. In the editor of an agent, a team or a workflow, the button says **Triggers · 2** when two triggers start it.
 

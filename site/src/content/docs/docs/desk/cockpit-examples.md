@@ -24,14 +24,14 @@ A cockpit is not a dashboard to look at. It is a page to start from. Here are th
 
 | Block | Width | Setting |
 |---|---|---|
-| **Top of the page** | Full width | "Finance: what to pay, what to check" |
-| **Ask** | Full width | |
-| **Indicator** | A third | Invoices to approve: rows of the table `Invoices` **Only the rows where** status is `to approve` |
-| **Indicator** | A third | Total of the column `Amount` of those rows |
-| **Waiting for you** | A third | |
-| **Launch button** | Half | "Check today's invoices" |
-| **Announcement** | Half | **Warning**: "Closing on the 28th" with a date when it stops |
-| **Table** | Full width | The last rows of `Invoices`, **Latest first** |
+| **Top of the page** | Full | "Finance: what to pay, what to check" |
+| **Ask** | Full | |
+| **Indicator** | 1/3 | Invoices to approve: how many rows of the table `Invoices`, with the condition status is `to approve` |
+| **Indicator** | 1/3 | Total of the column `Amount` of those rows |
+| **Waiting for you** | 1/3 | |
+| **Launch button** | 1/2 | "Check today's invoices" |
+| **Announcement** | 1/2 | A warning colour: "Closing on the 28th" with a date when it stops |
+| **Table** | Full | The last rows of `Invoices`, **Latest first** |
 
 Why it works: the person sees what waits, starts the daily work in one click, and sees the figures that matter.
 
@@ -41,13 +41,13 @@ Why it works: the person sees what waits, starts the daily work in one click, an
 
 | Block | Width | Setting |
 |---|---|---|
-| **Top of the page** | Full width | "Sales: today's follow-ups" |
-| **Ask** | Two thirds | |
-| **Suggestions** | A third | "Write a follow-up to the client of yesterday" |
-| **Indicator** | A third | Open opportunities |
-| **Time saved** | A third | |
-| **Card** | Half | The CRM, with its link |
-| **Links** | Half | The price policy, the contract model |
+| **Top of the page** | Full | "Sales: today's follow-ups" |
+| **Ask** | 2/3 | |
+| **Suggestions** | 1/3 | "Write a follow-up to the client of yesterday" |
+| **Indicator** | 1/3 | Open opportunities |
+| **Time saved** | 1/3 | |
+| **Card** | 1/2 | The CRM, with its link |
+| **Links** | 1/2 | The price policy, the contract model |
 
 ## Support: the queue
 
@@ -55,12 +55,13 @@ Why it works: the person sees what waits, starts the daily work in one click, an
 
 | Block | Width | Setting |
 |---|---|---|
-| **Top of the page** | Full width | "Support: answer faster" |
-| **Waiting for you** | Half | Replies to approve |
-| **Conversations** | Half | The conversations in progress |
-| **Indicator** | A third | Tickets of the day |
-| **Announcement** | Two thirds | **News**: the incident of the morning |
-| **Text** | Full width | The tone of a reply: three short rules |
+| **Top of the page** | Full | "Support: answer faster" |
+| **Waiting for you** | 1/2 | Replies to approve |
+| **Conversations** | 1/2 | The conversations in progress |
+| **Indicator** | 1/3 | Tickets of the day: the last 7 days, with **Say how it moved** |
+| **Chart** | 1/2 | Tickets by category, **Ranking** |
+| **Announcement** | 2/3 | A news colour: the incident of the morning |
+| **Text** | Full | The tone of a reply: three short rules |
 
 ## How to build yours
 
