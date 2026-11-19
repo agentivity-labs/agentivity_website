@@ -7,6 +7,7 @@ import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
+import SolutionPower from './SolutionPower.astro';
 import { useTranslations } from '../i18n/utils';
 import { brandLogos } from '../data/brand-logos';
 import '../styles/scroll-player.css';
@@ -38,6 +39,7 @@ const ext = (href?: string) => (href && /^https?:/.test(href) ? { target: '_blan
 const tall = item.height > item.width;
 const more = st.get.more == null ? [] : Array.isArray(st.get.more) ? st.get.more : [{ link: st.get.more, href: st.get.more_href }];
 const bold = (text: string) => text.split('**').map((part: string, i: number) => (i % 2 ? `<strong>${part}</strong>` : part)).join('');
+const pw = st.power;
 ---
 <Base title={item.meta_title ?? item.title + ' — ' + p.hero.eyebrow + ' | Agentivity'} description={item.summary} schema={faq} lang="en" look="editorial">
 
@@ -59,7 +61,11 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
     {item.hero_image && <figure class="sx-hero-shot"><img src={item.hero_image} alt={item.hero_image_alt} width="2048" height="1536" /></figure>}
   </section>
 
+  <!-- 1b. What the system is, before the examples (pages that carry a "power" block) -->
+  {pw && <SolutionPower pw={pw} icons={icons} />}
+
   <!-- 2. See it decide: an easy case and the hard ones -->
+  {!st.decide.compact && (
   <section class="ed-band--mist" id="decide">
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
@@ -91,6 +97,7 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
       {st.decide.recorded && <p class="sx-recorded">{st.decide.recorded}</p>}
     </div>
   </section>
+  )}
 
   <!-- 3. Without it, with it -->
   <section class="ed-band--navy">
@@ -104,6 +111,30 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
       </table>
     </div>
   </section>
+
+  <!-- 3b. The cases, compact (pages that tell the system first) -->
+  {st.decide.compact && (
+    <section class="ed-wrap ed-sec" id="decide">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{st.decide.h2}</h2>
+        <p class="ed-sec-sub">{st.decide.intro}</p>
+      </header>
+      <ul class="pw-cases" style={`--n:${Math.min(st.decide.scenarios.length, 5)}`}>
+        {st.decide.scenarios.map((sc: any) => (
+          <li>
+            {sc.media
+              ? <video class:list={['pw-case-media', { 'is-tall': tall }]} muted loop playsinline preload="none" poster={'/media/' + sc.media + '.jpg'} width={item.width} height={item.height} aria-label={sc.caption} data-autoplay><source src={'/media/' + sc.media + '.mp4'} type="video/mp4" /></video>
+              : sc.image
+                ? <img class="pw-case-media" src={sc.image} alt={sc.caption} width={item.width} height={item.height} loading="lazy" />
+                : <ol class="pw-case-told">{sc.what_happens.map((line: string) => <li set:html={bold(line)} />)}</ol>}
+            <strong>{sc.title}</strong>
+            <span>{sc.caption}</span>
+          </li>
+        ))}
+      </ul>
+      {st.decide.recorded && <p class="sx-recorded">{st.decide.recorded}</p>}
+    </section>
+  )}
 
   <!-- 4. How it fits your work -->
   <section class="ed-wrap ed-sec">
@@ -253,6 +284,19 @@ const bold = (text: string) => text.split('**').map((part: string, i: number) =>
 /* A product shot under the title: added below, nothing above it moves. */
 .sx-hero-shot { width: 100%; max-width: 1080px; margin-top: clamp(14px, 3vw, 36px); }
 .sx-hero-shot img { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 24px 60px -24px rgba(21, 40, 68, .45); }
+
+/* ---------- 3b. the cases, compact ---------- */
+.pw-cases { display: grid; grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr)); gap: 14px; margin: clamp(22px, 3vw, 32px) 0 0; padding: 0; list-style: none; }
+.pw-cases li { display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; color: var(--ed-ink-2); }
+.pw-case-media { display: block; width: 100%; height: auto; border-radius: 14px; margin-bottom: 4px; background: var(--ed-mist); }
+.pw-case-media.is-tall { max-height: 520px; width: auto; max-width: 100%; margin-inline: auto; }
+.pw-case-told { display: grid; gap: 10px; margin: 0 0 4px; padding: 16px 16px 16px 18px; border-radius: 14px; background: var(--ed-mist); list-style: none; counter-reset: told; }
+.pw-case-told li { position: relative; padding-left: 30px; font-size: 13.5px; line-height: 1.45; counter-increment: told; }
+.pw-case-told li::before { content: counter(told); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 21px; height: 21px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 11px; font-weight: 700; }
+.pw-cases strong { font-size: 15.5px; line-height: 1.3; color: var(--ed-ink); }
+@media (max-width: 1080px) { .pw-cases { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .pw-cases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .pw-cases { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- 2. see it decide ---------- */
 /* The figure's own display would show a hidden panel. */

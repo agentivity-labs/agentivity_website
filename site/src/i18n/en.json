@@ -109,7 +109,9 @@
               "label": "Lead Researcher"
             },
             {
-              "label": "Quote Builder"
+              "label": "Quote Desk",
+              "href": "/solutions/quote-desk",
+              "live": true
             },
             {
               "label": "Product Compare Team",
@@ -1571,7 +1573,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider. A demonstration: nothing is really booked or paid."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three real moments",
             "intro": "A good travel agent never books what the traveller has not chosen. Here is one trip, and two moments when the team holds back.",
             "scenarios": [
               {
@@ -1590,7 +1592,8 @@
                 "media": "trip-planner-3-payment"
               }
             ],
-            "recorded": "Recorded in the real product. A demonstration: nothing is booked or paid."
+            "recorded": "Recorded in the real product. A demonstration: nothing is booked or paid.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -1864,6 +1867,397 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it is organised",
+              "h2": "Organised like a good travel agency.",
+              "sub": "The manager talks to the traveller and hands out the work. Each specialist knows one trade. The traveller makes every choice, and the money comes last. A thirteenth member, the On-Trip Assistant, handles the changes once the trip is confirmed.",
+              "flow": {
+                "alt": "How Trip Planner is organised: a traveller writes one sentence; the Trip Manager hands each part, one at a time, to the specialist it needs; the specialist proposes options with their prices; the traveller picks each one on a card; once the payment is authorised, the Reservation Agent records every booking and the traveller gets the full recap. The specialists can propose from your own offers once you add them, and each trip and each booking is kept in two tables.",
+                "start": {
+                  "label": "A traveller",
+                  "out": "One sentence",
+                  "back": "The full recap"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "Trip Manager",
+                    "sub": "Calls only who the trip needs"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "Nine specialists",
+                    "sub": "Six propose, three advise"
+                  },
+                  {
+                    "tag": "3",
+                    "title": "The traveller",
+                    "sub": "Picks each part on a card",
+                    "you": true
+                  },
+                  {
+                    "tag": "4",
+                    "title": "Paid, then booked",
+                    "sub": "Payment Agent, Reservation Agent"
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "One part at a time"
+                  },
+                  {
+                    "label": "Options, with prices"
+                  },
+                  {
+                    "label": "A yes on each part"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your offers and rules",
+                    "sub": "Hotels, rates, partners",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Follows your rules, in plain words",
+                        "at": 0.5
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Proposes from your offers, once added",
+                        "at": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Trips · Bookings",
+                    "sub": "Each trip and each booking, in your tables",
+                    "from": 2,
+                    "to": 3,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Each choice kept with the trip",
+                        "at": 0.5
+                      },
+                      {
+                        "node": 3,
+                        "dir": "down",
+                        "label": "Every booking, after the payment",
+                        "good": true,
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "AI, the manager",
+                  "title": "The Trip Manager",
+                  "body": "Talks with the traveller until it knows the destination, the dates, who is going and the budget. Then it hands each part to one specialist at a time. It never searches for a flight itself: it knows who should.",
+                  "points": [
+                    "No fixed order: a city weekend skips the car",
+                    "Before the payment, checks the trip can really be taken",
+                    "Asks the traveller before adding anything missing"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "AI, nine specialists",
+                  "title": "Specialists who propose",
+                  "body": "Flights, hotel, rental car, transfers, dinner and insurance each have their own specialist. Three more advise: a programme day by day, visa and documents, currency and budget.",
+                  "points": [
+                    "Each one talks to the traveller about its own part",
+                    "Up to three hotels, with the one it recommends",
+                    "The budget checked across every part, with a chart"
+                  ]
+                },
+                {
+                  "tag": "3",
+                  "who": "The traveller",
+                  "title": "Every choice is theirs",
+                  "body": "In the app, each proposal is a card: a cover of the trip, hotels with photos of their area, a programme day by day, the budget as a chart.",
+                  "points": [
+                    "Accept, or ask for another, as often as they like",
+                    "The team lights up beside the chat as it works",
+                    "Nothing is chosen for them"
+                  ],
+                  "you": true
+                },
+                {
+                  "tag": "4",
+                  "who": "AI, two members, in that order",
+                  "title": "Payment, then bookings",
+                  "body": "The Payment Agent shows the total, line by line, on a payment card. Once it is authorised, the Reservation Agent records each booking with its confirmation code. As it comes, the payment is simulated.",
+                  "points": [
+                    "Not one booking before the payment",
+                    "Never the same booking twice",
+                    "A recap with every confirmation code"
+                  ]
+                }
+              ],
+              "handovers": [
+                "When the trip needs that part",
+                "Options with their prices, on a card",
+                "When every part the trip needs is chosen"
+              ]
+            },
+            "loop": {
+              "eyebrow": "How the work moves",
+              "h2": "One part at a time, back to the manager.",
+              "sub": "A trip is not a checklist. After each part, the manager reads what came back and decides who works next. If a choice changes, it goes back to the specialist who made it.",
+              "center": [
+                "One part",
+                "at a time"
+              ],
+              "steps": [
+                {
+                  "title": "The manager picks who the trip needs now.",
+                  "short": "Who is next",
+                  "body": "From the request and what is already settled. No specialist is called by default."
+                },
+                {
+                  "title": "One specialist proposes.",
+                  "short": "Proposed",
+                  "body": "An option with its price, or up to three hotels with the one it recommends."
+                },
+                {
+                  "title": "The traveller chooses.",
+                  "short": "Chosen",
+                  "body": "On a card in the app. They accept it, or ask for something else, as many times as they need."
+                },
+                {
+                  "title": "The trip is kept up to date.",
+                  "short": "Trip updated",
+                  "body": "The manager writes what was agreed into the trip, then goes back to step one until the trip is whole."
+                }
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "What it proposes",
+              "h2": "Your offers, not made-up ones.",
+              "body": [
+                "As it comes, each specialist plays a booking service and makes up plausible options, so you can try it on any city today. For your clients, give each specialist what you really sell: your hotels and their rates, your partner restaurants, your excursions, your insurance.",
+                "Then tell it in plain words to propose only from them. Your agents keep the final word: the whole trip can wait for their yes on the Desk before the client sees it."
+              ],
+              "sources_title": "Fill it from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "Your site's sitemap",
+                "RSS feeds",
+                "An API",
+                "PostgreSQL",
+                "SQLite"
+              ],
+              "apps_title": "Or let it read where your offers already are",
+              "apps": [
+                [
+                  "airtable",
+                  "Airtable",
+                  "live"
+                ],
+                [
+                  "googlesheets",
+                  "Google Sheets",
+                  "live"
+                ],
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "",
+                  "Microsoft Excel",
+                  "soon"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with what your agency already runs.",
+              "sub": "Start with nothing to connect: it comes with its own trips and bookings tables. Then plug in your tools, one by one.",
+              "hub": [
+                "Trip Planner",
+                "1 manager · 12 specialists"
+              ],
+              "groups": [
+                {
+                  "title": "Where travellers ask",
+                  "items": [
+                    [
+                      "@web",
+                      "Your site or app, as a VibeApp",
+                      "live"
+                    ],
+                    [
+                      "@desk",
+                      "The Desk, for your travel agents",
+                      "live"
+                    ],
+                    [
+                      "whatsapp",
+                      "WhatsApp",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "What it proposes",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own data tables",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "notion",
+                      "Notion",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Payment and clients",
+                  "items": [
+                    [
+                      "stripe",
+                      "Stripe",
+                      "live"
+                    ],
+                    [
+                      "hubspot",
+                      "HubSpot",
+                      "live"
+                    ],
+                    [
+                      "salesforce",
+                      "Salesforce",
+                      "soon"
+                    ],
+                    [
+                      "zoho",
+                      "Zoho CRM",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Tell the traveller",
+                  "items": [
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "brevo",
+                      "Brevo",
+                      "live"
+                    ],
+                    [
+                      "googlecalendar",
+                      "Google Calendar",
+                      "live"
+                    ],
+                    [
+                      "whatsapp",
+                      "WhatsApp",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, a specialist reaches any booking system with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One shape, for anything with many parts.",
+              "sub": "Travel is where it starts. A manager and specialists with narrow roles fit any request with several parts and one person who decides.",
+              "items": [
+                {
+                  "title": "A travel agency",
+                  "body": "Your hotels, partners and rates in a table. The full trip waits for one of your agents' yes on the Desk before the client sees it."
+                },
+                {
+                  "title": "A hotel or a resort",
+                  "body": "Rooms, the restaurant, transfers from the airport, excursions: one guest request, and each part proposed from what you have."
+                },
+                {
+                  "title": "Business travel",
+                  "body": "Trips for your employees that keep to your travel policy, with the budget checked and a person's approval before anything is paid."
+                },
+                {
+                  "title": "Events",
+                  "body": "A venue, catering and speakers, each with its own specialist, and the same manager keeping the whole within the budget."
+                },
+                {
+                  "title": "An offer for a client",
+                  "body": "A specialist for each part of the offer, a budget adviser, and your approval before anything is sent."
+                },
+                {
+                  "title": "A new employee's first week",
+                  "body": "Equipment, accounts and a first-week programme, each handled by its own specialist."
+                }
+              ],
+              "how": "Each one is the same manager with other specialists, other offers and other rules: remove a specialist, add one or rename it, in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "media": "trip-planner",
@@ -1875,9 +2269,9 @@
         "for": "a travel agency",
         "summary": "One sentence in. A manager and twelve specialists plan the trip, and the traveller chooses the flights, the hotel and the dinner.",
         "alt": "A recording of the Trip Planner app: a traveller asks for a trip to Lisbon, a manager hands the work to specialists, and the app asks the traveller to approve the flight and choose the hotel, then takes the payment and shows the recap of the bookings",
-        "h1": "A whole trip,",
-        "h1_accent": "from one sentence.",
-        "lead": "The traveller writes what they want. A manager hands each part to the right specialist, and the app shows a choice each time a decision belongs to the traveller.",
+        "h1": "A whole trip, planned by a team.",
+        "h1_accent": "The traveller chooses every part.",
+        "lead": "A travel team inside your app. The traveller writes one sentence. A Trip Manager calls only the specialists the trip needs, one at a time: flights, hotel, transfers, dinner, visa, budget. Each part comes back as a card the traveller picks. Nothing is booked before the payment, and every trip lands in your tables. Give it your own offers, and put it in your own site.",
         "facts": {
           "for": "A travel agency, or anyone who sells something with many parts",
           "use": "A VibeApp, made for this one job",
@@ -2026,7 +2420,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider. As delivered, it reads two US stores, in English."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three real cases",
             "intro": "A good buyer does not guess. Here is one request, and what the team does when a figure is missing or two products look alike.",
             "scenarios": [
               {
@@ -2049,7 +2443,8 @@
                 "media": "product-compare-3-scores"
               }
             ],
-            "recorded": "Recorded in the real product, on the stores' real pages."
+            "recorded": "Recorded in the real product, on the stores' real pages.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -2299,6 +2694,333 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it is organised",
+              "h2": "Nine specialists, one job each, in four steps.",
+              "sub": "Each member does one short job and saves its work in shared tables. The next one starts from what is saved, not from a summary. Nobody guesses what the one before meant.",
+              "flow": {
+                "alt": "How Product Compare Team works: a shopper describes a need; the Needs Analyst and the Query Planner turn it into a brief, and the search starts only after the shopper's yes; two Store Scouts read each store's own pages; four analysts match the products, put the specifications in common units, read the reviews and score every product with a script; the Report Writer hands back a report with its sources. Every member saves its work in five shared tables, and every score comes from one fixed script.",
+                "start": {
+                  "label": "A shopper",
+                  "out": "Describes a need",
+                  "back": "A report with sources"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "The brief",
+                    "sub": "Needs Analyst + Query Planner"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "Two store scouts",
+                    "sub": "Each reads one store's pages"
+                  },
+                  {
+                    "tag": "3",
+                    "title": "Compare and score",
+                    "sub": "Four analysts, one job each"
+                  },
+                  {
+                    "tag": "4",
+                    "title": "The report",
+                    "sub": "Report Writer, with sources"
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Starts after a yes",
+                    "good": true
+                  },
+                  {
+                    "label": "Real prices and specs"
+                  },
+                  {
+                    "label": "Scores from a script"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Five shared tables",
+                    "sub": "Brief · offers · products · comparison · store reports",
+                    "from": 0,
+                    "to": 1,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "down",
+                        "label": "The confirmed brief, saved"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "down",
+                        "label": "Only what each page shows",
+                        "good": true
+                      }
+                    ]
+                  },
+                  {
+                    "title": "A fixed scoring script",
+                    "sub": "Same inputs, same score",
+                    "from": 2,
+                    "to": 3,
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "up",
+                        "label": "Every score comes from it",
+                        "good": true
+                      },
+                      {
+                        "node": 3,
+                        "dir": "up",
+                        "label": "Weights and formula, in the report"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "Needs Analyst · Query Planner",
+                  "title": "A brief the shopper confirms",
+                  "body": "The Needs Analyst asks only what it does not know yet: the budget, the use, the brands, the must-haves, what matters most. It is the only member who talks to the shopper.",
+                  "points": [
+                    "At most five questions, in forms and choices",
+                    "A recap, then \"Search with this brief?\"",
+                    "The Query Planner turns it into one search per store"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "Two Store Scouts",
+                  "title": "The stores' own pages",
+                  "body": "Each scout reads one store: its search page, then up to four product pages, with the page reader built into the product. No paid search service.",
+                  "points": [
+                    "Price, rating, reviews, photos and specifications",
+                    "A value the page does not show stays empty",
+                    "A store that blocks or fails is reported, not hidden"
+                  ]
+                },
+                {
+                  "tag": "3",
+                  "who": "Four analysts",
+                  "title": "Like with like, scored by a script",
+                  "body": "The Product Matcher merges the same product across stores. The Spec Normalizer puts the figures in common units. The Customer Reviews Analyst reads the reviews. The Scoring Analyst scores.",
+                  "points": [
+                    "Matched on the barcode, then the model, then the title",
+                    "A missing figure stays \"unknown\"",
+                    "One script, weighted by the shopper's priorities"
+                  ]
+                },
+                {
+                  "tag": "4",
+                  "who": "Report Writer",
+                  "title": "A report you can check",
+                  "body": "Delivered in the chat in one piece: a verdict, the top picks with photos, charts, a spec table, the watch-outs and the sources.",
+                  "points": [
+                    "Every price with its store and the date it was read",
+                    "The weights and the formula behind each score",
+                    "A close match shown as partial, never as a full one"
+                  ]
+                }
+              ],
+              "handovers": [
+                "When the shopper says the brief is right",
+                "When every offer is saved in the tables",
+                "When every product is scored"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Its sources",
+              "h2": "It reads what the stores publish, not what it remembers.",
+              "body": [
+                "The scouts read each store's own public pages at the moment of the execution, with the page reader built into the product, not a paid search service. They save only what a page shows. A price, a rating or a specification the page does not give stays empty, and the report says what is missing.",
+                "The score is a script anyone can open, with the shopper's priorities as its weights. The report shows those weights and the formula, so a buyer sees why one product ranks first, and \"Best overall\" goes to a product with at least 30 reviews when there is one."
+              ],
+              "sources_title": "What a scout saves from each page",
+              "sources": [
+                "Price and was price",
+                "Rating and review count",
+                "The share of each star",
+                "A good and a bad review",
+                "Specifications",
+                "Photos",
+                "Stock and seller"
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It starts where your people ask, and the report goes where you decide.",
+              "sub": "Start with nothing to connect: it comes with its own five tables and reads two stores as delivered. Then add your catalogue and your tools, one by one.",
+              "hub": [
+                "Product Compare Team",
+                "9 specialists, in turn"
+              ],
+              "groups": [
+                {
+                  "title": "Where shoppers ask",
+                  "items": [
+                    [
+                      "@web",
+                      "The ready-made portal",
+                      "live"
+                    ],
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "The Studio, in Execution",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "The stores it reads",
+                  "items": [
+                    [
+                      "@web",
+                      "Two US stores, as delivered",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Another store, with one more scout",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Your own catalogue",
+                  "items": [
+                    [
+                      "@table",
+                      "A data table",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "shopify",
+                      "Shopify",
+                      "soon"
+                    ],
+                    [
+                      "woocommerce",
+                      "WooCommerce",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where the report goes",
+                  "items": [
+                    [
+                      "@chat",
+                      "The chat it was asked in",
+                      "live"
+                    ],
+                    [
+                      "@table",
+                      "Its five tables",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to compare",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server. Before a scout reads a new store, check that the store's terms allow its pages to be read this way."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One shape for anything with a page and a price.",
+              "sub": "Products are where it starts. Clarify, collect, match, compare, score, report: the same six steps fit every choice a company makes between offers.",
+              "items": [
+                {
+                  "title": "A shop",
+                  "body": "Your own products, kept in a table, set against what other stores sell, before you change a price."
+                },
+                {
+                  "title": "A purchasing department",
+                  "body": "Equipment, supplies, furniture: a brief, a comparison and the sources, ready for the person who signs."
+                },
+                {
+                  "title": "A comparison service",
+                  "body": "The same report for every reader's question: top picks, charts, the watch-outs and where each price came from."
+                },
+                {
+                  "title": "Suppliers' offers",
+                  "body": "One scout per supplier, and a scoring script that weighs price, delivery time and warranty."
+                },
+                {
+                  "title": "Software plans",
+                  "body": "Each vendor's pricing page read and compared feature by feature, with the missing answers left visible."
+                },
+                {
+                  "title": "Training courses",
+                  "body": "Courses compared on price, length and what they cover, for the team that books them."
+                }
+              ],
+              "how": "Each one is the same team with other instructions: change a scout's store, the brief's questions or the scoring script, in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "media": "shopping-lab",
@@ -2310,9 +3032,9 @@
         "for": "a shop, a buyer, a comparison service",
         "summary": "A shopper describes what they need. Nine specialists read the stores’ own pages, compare, score and write an illustrated report.",
         "alt": "A recording of the Shopping Lab demo in the portal: a shopper asks for headphones, confirms the brief, then nine specialists work in turn, and the report shows the best pick and each product sheet",
-        "h1": "A buying advice",
-        "h1_accent": "you can check.",
-        "lead": "The shopper describes a need in their own words. The team reads what the stores really publish, compares like with like, and hands back a report with its sources.",
+        "h1": "A buying team of nine specialists.",
+        "h1_accent": "And advice you can check, line by line.",
+        "lead": "A team that works like a careful buyer. One specialist agrees the brief with the shopper. Two read the stores' own pages. Four match, compare, read the reviews and score with a script. One writes a report with every price, its store and the date it was read. The shopper confirms the brief, and the shopper makes the choice.",
         "facts": {
           "for": "A shop, a purchasing department, a comparison service",
           "use": "The ready-made portal, with no app to build",
@@ -2432,7 +3154,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider. Try it with made-up CVs."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three real cases",
             "intro": "A good screener knows when it is not sure. Here is the workflow, and what it does with a document it cannot read and a profile that does not fit the boxes.",
             "scenarios": [
               {
@@ -2459,7 +3181,8 @@
                 ]
               }
             ],
-            "recorded": "Recorded in the real product."
+            "recorded": "Recorded in the real product.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -2699,6 +3422,317 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it is organised",
+              "h2": "The AI judges the fit. It never picks the route.",
+              "sub": "Each part does one job, and the next one sees why. A score comes with its evidence, a route with its rule, a doubt with a person.",
+              "flow": {
+                "alt": "How CV Screener is organised: a recruiter drops a CV and a job description; AI reads both and scores six points, each with its evidence; a program turns them into one score weighted by what the job asks; fixed thresholds send the case to the shortlist, to rejection or, from 50 to 74, to a person who decides. Every outcome comes back to the recruiter as a report, and every case stays on record.",
+                "start": {
+                  "label": "A recruiter",
+                  "out": "Drops a CV and a job",
+                  "back": "A report with reasons"
+                },
+                "nodes": [
+                  {
+                    "tag": "AI",
+                    "title": "Reads and judges",
+                    "sub": "Six points, each with evidence"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "One score",
+                    "sub": "Weighted by what the job asks"
+                  },
+                  {
+                    "tag": "Rule",
+                    "title": "Fixed thresholds",
+                    "sub": "Shortlist, review or rejection"
+                  },
+                  {
+                    "tag": "HR",
+                    "title": "A person decides",
+                    "sub": "Every case from 50 to 74",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Six scores",
+                    "good": false
+                  },
+                  {
+                    "label": "Score and formula",
+                    "good": false
+                  },
+                  {
+                    "label": "50 to 74: a person",
+                    "good": true
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "The job description",
+                    "sub": "What it asks, and how much each point matters",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Judges only what the job asks",
+                        "good": false
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Weights from the job, 1 to 5",
+                        "good": false
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Every case on record",
+                    "sub": "Score, formula, reasons, the yes or no",
+                    "from": 2,
+                    "to": 3,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "down",
+                        "label": "The route and its rule",
+                        "good": false
+                      },
+                      {
+                        "node": 3,
+                        "dir": "both",
+                        "label": "The decision and its notes",
+                        "good": false,
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "AI",
+                  "who": "AI, on every CV",
+                  "title": "Reads and judges",
+                  "body": "Reads the CV and the job, from a file, a link or pasted text, and scores the fit on six points: skills, experience, level, qualifications, achievements, tools.",
+                  "points": [
+                    "Keeps only what is written, invents nothing",
+                    "Marks each requirement met, partial or missing, with the evidence",
+                    "Never weighs age, gender, nationality, family, health or appearance"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "A program, not AI",
+                  "title": "One score",
+                  "body": "A weighted average of the six points. The weights come from the job description: a care job leans on qualifications, a sales job on results, a junior job on skills.",
+                  "points": [
+                    "The same six scores always give the same result",
+                    "The score and its weights shown in the report",
+                    "Points and weights yours to change"
+                  ]
+                },
+                {
+                  "tag": "Rule",
+                  "who": "Your thresholds",
+                  "title": "The route",
+                  "body": "75 and above to the shortlist, under 50 to rejection, the middle to a person. No AI model picks the path, and nothing is sent to a candidate.",
+                  "points": [
+                    "75 and 50 to start, changed in the Studio",
+                    "Every outcome ends in a report for the recruiter",
+                    "Before real use, send rejections to a person too: one change"
+                  ]
+                },
+                {
+                  "tag": "HR",
+                  "who": "Your recruiters",
+                  "title": "The decision",
+                  "body": "A form shows the score, the formula, the reasons, the skills found and missing, the seniority and the career path, and waits for a yes or a no.",
+                  "points": [
+                    "Moves the candidate forward or not, with notes",
+                    "A shortlist report comes with interview questions",
+                    "A rejection report comes with a draft message it never sends"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Six scores, each with its evidence",
+                "One score, and how it was made",
+                "From 50 to 74, the case waits for a person"
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It fits the way your hiring team already works.",
+              "sub": "Start with nothing to connect: drop a CV and a job description in the chat. Then plug in where applications arrive and where your team keeps its shortlist.",
+              "hub": [
+                "CV Screener",
+                "Read · Score · Route"
+              ],
+              "groups": [
+                {
+                  "title": "Where CVs come from",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Your HR portal, as a VibeApp",
+                      "live"
+                    ],
+                    [
+                      "googleforms",
+                      "Google Forms",
+                      "live"
+                    ],
+                    [
+                      "typeform",
+                      "Typeform",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where the shortlist lives",
+                  "items": [
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "notion",
+                      "Notion",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell",
+                  "items": [
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "To plan the interview",
+                  "items": [
+                    [
+                      "googlecalendar",
+                      "Google Calendar",
+                      "live"
+                    ],
+                    [
+                      "calendly",
+                      "Calendly",
+                      "soon"
+                    ],
+                    [
+                      "zoom",
+                      "Zoom",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, a step reaches any tool with an API through an HTTP request, and your careers site or applicant tracking system can start the workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One workflow, every kind of hiring.",
+              "sub": "The six points weigh differently for each job description, so the same workflow serves very different roles.",
+              "items": [
+                {
+                  "title": "High-volume roles",
+                  "body": "Stores, warehouses, seasonal staff: every application gets the same full read, and recruiters spend their time on the middle scores."
+                },
+                {
+                  "title": "Regulated jobs",
+                  "body": "Care, transport, building: the weights lean on diplomas, licences and permits, and each one shows as met, partial or missing."
+                },
+                {
+                  "title": "Junior and campus hiring",
+                  "body": "The weights lean on skills rather than level, so a first job is not marked down for a short career."
+                },
+                {
+                  "title": "Internal mobility",
+                  "body": "Employees who apply for an open role are read against the job like anyone else, and a career change goes to a person."
+                },
+                {
+                  "title": "A recruitment agency",
+                  "body": "Each client's roles screened the same way, with reports that keep the reasons a consultant can explain to the client."
+                },
+                {
+                  "title": "Beyond hiring",
+                  "body": "The same shape checks a tender against a call for tenders, an invoice against an order, or a request against a policy."
+                }
+              ],
+              "how": "Each one is the same workflow with its own points, weights and thresholds: change them in the Studio, or in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "media": "cv-screening",
@@ -2710,9 +3744,9 @@
         "for": "a recruiter, an HR team",
         "summary": "A CV and a job description in. A score, the reasons, and a route: shortlist, rejection, or review by a recruiter.",
         "alt": "A recording of the Studio showing the CV Screening workflow: boxes for reading the file, reading the page, assessing the fit and asking a person, linked from left to right",
-        "h1": "Every CV read,",
-        "h1_accent": "every doubt reviewed.",
-        "lead": "The recruiter gives a CV and a job description. The workflow reads both, scores the fit, explains why, and sends the doubtful cases to a person.",
+        "h1": "Every CV read the same way.",
+        "h1_accent": "AI judges, fixed rules route, a person decides.",
+        "lead": "Not a keyword filter that hides candidates: a screening line you can explain. AI reads each CV against the job and scores six points, each with its evidence. A program turns them into one score, weighted by what the job asks. Fixed thresholds choose the route, and every doubtful case waits for a recruiter. Nothing goes to a candidate, every step stays on record, and it plugs into the forms and sheets your hiring team already uses.",
         "facts": {
           "for": "A recruiter or an HR team",
           "use": "A form to drop the CV, and the result on screen",
@@ -2819,7 +3853,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider"
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three cases, recorded in the product",
             "intro": "A good clerk never corrects a supplier's figures. Here is a batch of invoices, and what the agent does when a total is wrong or the same invoice comes twice.",
             "scenarios": [
               {
@@ -2838,7 +3872,8 @@
                 "media": "invoice-clerk-3-duplicate"
               }
             ],
-            "recorded": "Recorded in the real product, with made-up invoices."
+            "recorded": "Recorded in the real product, with made-up invoices.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -3070,6 +4105,326 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "The path of an invoice",
+              "h2": "Read, checked, filed. And a person decides.",
+              "sub": "The agent understands the document. Tools do the parts that must be exact. The decision on money stays with your team.",
+              "flow": {
+                "alt": "The path of an invoice: your finance team uploads it; the Invoice Clerk agent reads it with a document reader (1), checks every figure with a calculator (2) and files it once in the invoices table (3); a total that does not add up is flagged, never fixed, and the decision stays with your team. Your rules guide the reading and the check; the table keeps the printed total, the agent's own sum and the result of the check.",
+                "start": {
+                  "label": "Your finance team",
+                  "out": "Uploads an invoice",
+                  "back": "Filed, with a chart"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "Read",
+                    "sub": "Document reader: every field"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "Checked",
+                    "sub": "Calculator: every figure"
+                  },
+                  {
+                    "tag": "3",
+                    "title": "Filed",
+                    "sub": "One row, never twice"
+                  },
+                  {
+                    "tag": "You",
+                    "title": "Your decision",
+                    "sub": "Pay, or ask the supplier",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Fields, or left empty"
+                  },
+                  {
+                    "label": "Figures checked"
+                  },
+                  {
+                    "label": "Flagged, never fixed",
+                    "good": true
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your rules",
+                    "sub": "Six categories · when to flag · what is a duplicate",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "A category from your list"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "A gap over half a cent is flagged"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "The invoices table",
+                    "sub": "Printed total · its own sum · the check",
+                    "from": 2,
+                    "to": 3,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Same supplier and number: filed once"
+                      },
+                      {
+                        "node": 3,
+                        "dir": "up",
+                        "label": "Every invoice, with its check",
+                        "at": 0.15
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "AI, with a document reader",
+                  "title": "Read",
+                  "body": "A PDF, a Word file or pasted text, uploaded in the ready-made portal or in a chat. A scanned image with no text: it says so and asks again.",
+                  "points": [
+                    "Supplier, number, dates, currency and amounts",
+                    "A category from your list and a one-line summary",
+                    "What the invoice does not say stays empty, never a guess"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "AI, with a calculator",
+                  "title": "Checked",
+                  "body": "Every figure is added up by a calculator, never in its head and never by eye.",
+                  "points": [
+                    "The lines against the subtotal",
+                    "The subtotal plus VAT against the printed total",
+                    "Even a one-cent gap is flagged"
+                  ]
+                },
+                {
+                  "tag": "3",
+                  "who": "AI, in your table",
+                  "title": "Filed",
+                  "body": "One row per invoice in the invoices table, unless the same invoice is already there.",
+                  "points": [
+                    "The printed total and its own sum, side by side",
+                    "Same supplier and same number: a reminder, counted once",
+                    "The spending by category, read from the table"
+                  ]
+                },
+                {
+                  "tag": "You",
+                  "who": "Your finance team",
+                  "title": "Your decision",
+                  "body": "A total that does not add up comes to you with both figures. Pay, or ask the supplier: you decide.",
+                  "points": [
+                    "It never corrects a supplier's figure",
+                    "It never pays or sends anything",
+                    "Add an approval step before payment, on the Desk"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "When every field it can read is read",
+                "When every figure is checked",
+                "Every invoice, with a warning when a total does not add up"
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It fits the tools finance already uses.",
+              "sub": "Start with nothing to connect: it comes with its own invoices table. Then plug in your tools, one by one.",
+              "hub": [
+                "Invoice Clerk",
+                "Read · Check · File"
+              ],
+              "groups": [
+                {
+                  "title": "Where invoices arrive",
+                  "items": [
+                    [
+                      "@web",
+                      "The ready-made portal",
+                      "live"
+                    ],
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Your own app, with the SDK",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Invoices sent by email",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where the record lives",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own invoices table",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where the documents go",
+                  "items": [
+                    [
+                      "googledrive",
+                      "Google Drive",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "SharePoint",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell",
+                  "items": [
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Before and after payment",
+                  "items": [
+                    [
+                      "@desk",
+                      "An approval on the Desk",
+                      "live"
+                    ],
+                    [
+                      "quickbooks",
+                      "QuickBooks",
+                      "soon"
+                    ],
+                    [
+                      "xero",
+                      "Xero",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until your accounting software is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One clerk, wherever a document carries figures.",
+              "sub": "Supplier invoices are where it starts. The same read, check and file works for every document with lines and a total.",
+              "items": [
+                {
+                  "title": "Accounts payable",
+                  "body": "Supplier invoices read, checked and filed before anyone pays. The solution as it comes."
+                },
+                {
+                  "title": "Expense claims",
+                  "body": "Receipts and expense notes from your teams, each one added up and filed with the name of who spent it."
+                },
+                {
+                  "title": "Goods received",
+                  "body": "Delivery notes read and compared with the purchase order, from a second table of orders it reads before it files."
+                },
+                {
+                  "title": "Approval before payment",
+                  "body": "Over the amount you set, each checked invoice waits for your finance lead's yes on the Desk."
+                },
+                {
+                  "title": "An accounting firm",
+                  "body": "A column for the client, and the same checks for every set of books you keep."
+                },
+                {
+                  "title": "Month-end",
+                  "body": "The spending by category, read from the table, so the figures always match what is filed."
+                }
+              ],
+              "how": "Each one is a change to its columns, its categories or its numbered steps, made in plain words with the Assistant, or the agent placed in a workflow with an approval step."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "media": "invoice-clerk",
@@ -3081,9 +4436,9 @@
         "for": "an accounting team, an office manager",
         "summary": "Upload a supplier invoice. One agent reads it, files it, checks every total with a calculator, spots duplicates and charts the spending.",
         "alt": "A recording of Invoice Clerk in the portal: supplier invoices uploaded one by one, each filed with its total and category, a warning when a total does not add up, a reminder recognised as a duplicate, and a chart of the spending by category",
-        "h1": "Every invoice filed,",
-        "h1_accent": "every total checked.",
-        "lead": "Upload a supplier invoice. The agent reads it, files it in a table, checks the figures with a calculator, and flags what does not add up instead of correcting it.",
+        "h1": "Every invoice read, checked and filed.",
+        "h1_accent": "A gap is flagged, never fixed.",
+        "lead": "More than data entry: a clerk that checks. One agent reads each supplier invoice, adds up every line and every total with a calculator, recognises a reminder already filed, and keeps the printed total next to its own sum. When the figures do not add up, it tells you and leaves the decision to you. Then plug it into the tools finance already uses, or add an approval step before payment.",
         "facts": {
           "for": "An accounting team, an office manager, a small business",
           "use": "The ready-made portal, with no app to build",
@@ -3189,9 +4544,9 @@
         "for": "an internal service desk",
         "summary": "Your employees ask on the Desk. The Front Desk answers from your help articles and opens a clear ticket when a person is needed. Your service desk gets the context and a draft reply.",
         "alt": "Service Desk on the Desk: an employee asks the Front Desk, and the service desk works its tickets with the Resolution Team.",
-        "h1": "Solve each problem once.",
-        "h1_accent": "After that, anyone who asks gets the answer in seconds.",
-        "lead": "When your service desk fixes a problem on a ticket, the fix becomes a short help article. Once a person approves it, the Front Desk uses it to answer the next employee who asks about it, in seconds. Questions it cannot answer become clear tickets, with the context and a reply ready for your service desk to check and send.",
+        "h1": "A real service desk, from L0 to L2.",
+        "h1_accent": "AI on the first line, and it learns from every fix.",
+        "lead": "Not a chatbot: a service desk organised like yours. An AI Front Desk answers your employees from your knowledge and opens clear tickets. Your service desk resolves them with an AI team at its side. Your experts get the case already worked. Every fix becomes an article, so the next person who asks gets the answer in seconds. And it plugs into the tools you already run.",
         "facts": {
           "for": "The head of IT or operations of a company that answers its own people's questions",
           "use": "On the Desk: employees ask the Front Desk, your service desk works from its own view",
@@ -3205,7 +4560,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company, so you can play the employee and the service desk yourself. No Slack or email to set up."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Five real cases",
             "intro": "A good service desk is not only fast. It knows what it can answer, what it must not decide, and who should take over. Here are five real cases, from a question to an expert.",
             "scenarios": [
               {
@@ -3234,7 +4589,8 @@
                 "image": "/media/service-desk-5-battery.webp"
               }
             ],
-            "recorded": "Captured in the real product."
+            "recorded": "Captured in the real product.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -3482,6 +4838,369 @@
             "more": "See how your people would use it on the Desk",
             "more_href": "/desk",
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it is organised",
+              "h2": "Three levels, like the service desks that work.",
+              "sub": "Each level does what it is best at, and hands over with everything the next one needs. Nobody starts from zero.",
+              "items": [
+                {
+                  "tag": "L0",
+                  "who": "AI, at any hour",
+                  "title": "The Front Desk",
+                  "body": "Three specialists, IT and equipment, accounts and access, workplace and HR, each with its own knowledge, and a Ticket Clerk.",
+                  "points": [
+                    "Answers in seconds from your articles",
+                    "Opens a ticket with the subject, category, priority and what was tried",
+                    "Never decides access, a replacement or anything that costs money"
+                  ]
+                },
+                {
+                  "tag": "L1",
+                  "who": "Your people, with an AI team at their side",
+                  "title": "Your service desk",
+                  "body": "Works its queue from its cockpit on the Desk, and gives a ticket number to the Resolution Team.",
+                  "points": [
+                    "Who asks, their team, their laptop and their past tickets",
+                    "The steps from your articles, and a reply ready to send",
+                    "Approves every escalation, every closing and every article"
+                  ],
+                  "you": true
+                },
+                {
+                  "tag": "L2",
+                  "who": "Your experts",
+                  "title": "The right expert",
+                  "body": "Proposed from your \"Who to call\" list, with the hand-over written in the ticket, or posted in their Slack channel.",
+                  "points": [
+                    "Proposed, never imposed: your service desk says yes",
+                    "The case arrives already worked",
+                    "Every hand-over kept in the ticket's history"
+                  ]
+                }
+              ],
+              "handovers": [
+                "When the knowledge does not cover it, a person must decide, or the employee asks for a human",
+                "When it needs an expert"
+              ],
+              "flow": {
+                "alt": "How Service Desk is organised: an employee asks the AI Front Desk (L0), which answers from the knowledge or opens a clear ticket for your service desk (L1); L1 works it with the Resolution Team and hands it to the right expert (L2) after a yes. Each closed ticket becomes an article that, once approved, joins the knowledge the Front Desk answers from.",
+                "start": {
+                  "label": "An employee",
+                  "out": "Asks in plain words",
+                  "back": "Answer in seconds"
+                },
+                "nodes": [
+                  {
+                    "tag": "L0",
+                    "title": "Front Desk",
+                    "sub": "AI specialists"
+                  },
+                  {
+                    "tag": "L1",
+                    "title": "Your service desk",
+                    "sub": "People + Resolution Team",
+                    "you": true
+                  },
+                  {
+                    "tag": "L2",
+                    "title": "The right expert",
+                    "sub": "From \"Who to call\"",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "A clear ticket"
+                  },
+                  {
+                    "label": "Hand-over, after a yes"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your knowledge",
+                    "sub": "3 knowledge bases + every approved article",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Answers from it"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "down",
+                        "label": "Closed ticket → article, after a yes",
+                        "good": true
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Tickets · People · Who to call",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Every step in the ticket's history",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "loop": {
+              "eyebrow": "It learns from every fix",
+              "h2": "Solve each problem once.",
+              "sub": "Nobody has time to write help articles. Here, nobody has to: the knowledge grows from the tickets you close.",
+              "steps": [
+                {
+                  "title": "Your service desk fixes it.",
+                  "body": "On the ticket, with the steps and the reply the Resolution Team prepared.",
+                  "short": "Fixed"
+                },
+                {
+                  "title": "The article writes itself.",
+                  "body": "When the ticket is closed, the Closing Clerk turns what fixed it into a short article.",
+                  "short": "Article drafted"
+                },
+                {
+                  "title": "A person approves it.",
+                  "body": "Your service desk reads it and says yes. Nothing joins the knowledge without that yes.",
+                  "short": "Approved"
+                },
+                {
+                  "title": "The next person gets it in seconds.",
+                  "body": "The Front Desk answers the same problem, asked in other words, and no ticket is opened.",
+                  "short": "Answered in seconds"
+                }
+              ],
+              "center": [
+                "Every fix",
+                "makes it smarter"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Its knowledge",
+              "h2": "It answers from your knowledge, not from the internet.",
+              "body": [
+                "Each specialist has its own knowledge base: your IT articles, your access rules, your HR policies. When a source changes, sync it, and the answers follow.",
+                "Where its knowledge stops, it says so and opens a ticket. It does not invent."
+              ],
+              "sources_title": "Fill it from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "Your help site's sitemap",
+                "RSS feeds",
+                "An API",
+                "PostgreSQL",
+                "SQLite"
+              ],
+              "apps_title": "Or let it read where you already write",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "soon"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "soon"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools your service desk already runs.",
+              "sub": "Start with nothing to connect: it comes with its own tickets, people and experts tables. Then plug in your tools, one by one.",
+              "groups": [
+                {
+                  "title": "Where employees ask",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Your intranet, as a VibeApp",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "soon"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where tickets live",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own tickets table",
+                      "live"
+                    ],
+                    [
+                      "jira",
+                      "Jira",
+                      "soon"
+                    ],
+                    [
+                      "zendesk",
+                      "Zendesk",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "Freshdesk",
+                      "soon"
+                    ],
+                    [
+                      "linear",
+                      "Linear",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who is who",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own people table",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell",
+                  "items": [
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook.",
+              "hub": [
+                "Service Desk",
+                "L0 · L1 · L2"
+              ]
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One pattern, a desk for every department.",
+              "sub": "IT is where it starts. The same three levels work wherever people ask the same questions every day.",
+              "items": [
+                {
+                  "title": "IT",
+                  "body": "Laptops, VPN, printers, software, access. The solution as it comes."
+                },
+                {
+                  "title": "HR",
+                  "body": "Leave, payslips, the first week of a new joiner. Personal cases go straight to a person in HR."
+                },
+                {
+                  "title": "Facilities",
+                  "body": "Badges, meeting rooms, desks, a broken light. The expert is the site manager of each office."
+                },
+                {
+                  "title": "Finance and purchasing",
+                  "body": "Where is my reimbursement, which supplier, which budget code. Anything that costs money waits for the person who signs."
+                },
+                {
+                  "title": "Your own software",
+                  "body": "Questions about the tools your company builds or runs, answered from their documentation, with the product team as L2."
+                },
+                {
+                  "title": "Security",
+                  "body": "A suspicious email, a lost phone. The Front Desk says what to do right now, and Identity & Security takes over."
+                }
+              ],
+              "how": "Each one is a specialist, a knowledge base and a \"Who to call\" list, with its own cockpit on the Desk. Add them in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "qa": [
@@ -3541,9 +5260,9 @@
         "for": "legal, finance or purchasing",
         "summary": "Give it a supplier contract. It checks every clause against your own rules, quotes what departs from them, and legal decides what to accept and what to ask the supplier to change.",
         "alt": "Contract Checker on the Desk: a supplier contract reviewed against the company's playbook, with each flag quoted and legal's decision.",
-        "h1": "Every supplier contract read against your rules.",
+        "h1": "Your own playbook, applied to every supplier contract.",
         "h1_accent": "Legal reads the flags, not the twenty pages.",
-        "lead": "Supplier contracts arrive as the supplier's own PDF, and nobody has time to read them against your rules, so they are signed as they come. Contract Checker reads each one against your contract playbook, quotes every clause that departs from it, and says how far. Legal decides, and gets the note to the supplier ready to copy.",
+        "lead": "Your own Contract Playbook, applied the same way to every supplier contract, whoever sends it. Contract Checker quotes every clause that departs from your rules and says how far, red lines first, with what you accepted from this supplier before. Legal decides, with the finance director above your threshold, and gets the note to the supplier ready to copy. Every decision is kept for the next review. And it plugs into the tools you already use.",
         "notice": "It flags; legal decides. Contract Checker compares contracts with your own rules and gives no legal advice.",
         "facts": {
           "for": "The in-house counsel, finance director or purchasing lead who signs supplier contracts",
@@ -3557,7 +5276,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company and four sample contracts. No connection to set up."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Five real cases",
             "intro": "A good contract review is not only fast. It quotes the clause, knows what you accept, and leaves the decision to legal. Here are five real cases, from a simple renewal to a contract it cannot read.",
             "scenarios": [
               {
@@ -3586,7 +5305,8 @@
                 "image": "/media/contract-checker-5-scan.webp"
               }
             ],
-            "recorded": "Recorded in the real product, on a demo company."
+            "recorded": "Recorded in the real product, on a demo company.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -3808,6 +5528,372 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it works",
+              "h2": "One agent reads. Legal decides. Nothing goes out alone.",
+              "sub": "Contract Checker does the reading nobody has time for, clause by clause against your rules. Legal reads only what departs from them, and makes every decision.",
+              "flow": {
+                "alt": "How Contract Checker works: legal gives a supplier contract on the Desk; Contract Checker reads it against your Contract Playbook and returns every flag with its clause quoted, red lines first; legal decides to approve it as is, ask for changes or not sign, with the finance director above your threshold; Contract Checker then writes the note to the supplier with only the changes legal chose, for legal to copy, and saves the review with your suppliers and past reviews, which the next review of that supplier starts from.",
+                "start": {
+                  "label": "Legal, on the Desk",
+                  "out": "Gives the contract",
+                  "back": "Note ready to copy"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "Contract Checker",
+                    "sub": "Every rule, every clause quoted"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "Legal decides",
+                    "sub": "Approve, ask changes, don't sign",
+                    "you": true
+                  },
+                  {
+                    "tag": "3",
+                    "title": "Note and record",
+                    "sub": "Only the changes legal chose"
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "The flags, quoted"
+                  },
+                  {
+                    "label": "Legal's choice"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your Contract Playbook",
+                    "sub": "Standard, fallback, red line",
+                    "from": 0,
+                    "to": 0,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Reads every rule against it"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Suppliers · Contract Reviews",
+                    "sub": "Spend, criticality, every past decision",
+                    "from": 1,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Past exceptions, with their reason",
+                        "at": 0.5
+                      },
+                      {
+                        "node": 2,
+                        "dir": "down",
+                        "label": "Every review saved, who decided",
+                        "good": true
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "AI, on the Desk",
+                  "title": "It reads the whole contract",
+                  "body": "A text PDF or a Word file, read clause by clause against every rule of your playbook, with the supplier's file and your past reviews with them.",
+                  "points": [
+                    "Each rule: the clause quoted, and standard, fallback, red line or missing",
+                    "Red lines first, and one level for the contract: low, medium or high",
+                    "A scan it cannot read stops it: it never guesses at a clause"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "Legal, and finance above your threshold",
+                  "title": "Legal decides",
+                  "body": "The review waits for a person: approve as is, ask the supplier for changes, or do not sign. Legal picks which flags to raise.",
+                  "points": [
+                    "Each flag left as it is gets a reason, kept with the review",
+                    "Above your threshold, the review says the finance director decides too",
+                    "Nothing is saved as decided without legal's choice"
+                  ],
+                  "you": true
+                },
+                {
+                  "tag": "3",
+                  "who": "AI, after legal's choice",
+                  "title": "The note, and the record",
+                  "body": "A short, polite note to the supplier that asks only for the changes legal chose, citing the clauses. Then the review is saved.",
+                  "points": [
+                    "Shown for legal to copy: nothing is sent",
+                    "Saved with the flags, the decision, the exceptions and who decided",
+                    "The next contract with this supplier starts from it"
+                  ]
+                }
+              ],
+              "handovers": [
+                "The review, red lines first, each clause quoted",
+                "Legal's decision, and the changes to ask for"
+              ]
+            },
+            "loop": {
+              "eyebrow": "It remembers every decision",
+              "h2": "What legal accepted once comes back at the next review.",
+              "sub": "A year later, nobody remembers why a clause was let through. Here every exception is saved with its reason, and the next contract with that supplier is read with it.",
+              "center": [
+                "Every decision",
+                "on record"
+              ],
+              "steps": [
+                {
+                  "title": "It flags what departs from your rules.",
+                  "short": "Flagged",
+                  "body": "Every rule checked, each clause quoted, red lines first."
+                },
+                {
+                  "title": "Legal decides, and says why.",
+                  "short": "Decided",
+                  "body": "A clause is accepted with a reason, for this contract only, or the supplier is asked to change it."
+                },
+                {
+                  "title": "The review is kept.",
+                  "short": "Kept",
+                  "body": "The flags, the decision, the exceptions, the note and who decided, in the Contract Reviews table and on the Contracts view of the Desk."
+                },
+                {
+                  "title": "The next contract starts from it.",
+                  "short": "Recalled",
+                  "body": "Last year's 4% price rise was accepted for one year only: the renewal review says so, and that 3% is now within your rules. An old exception is never accepted again without legal."
+                }
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Its rules",
+              "h2": "It checks against your rules, and nothing else.",
+              "body": [
+                "Your Contract Playbook says, for each rule, what you want, what you can live with, and what only legal can decide: payment terms, price changes, renewal, liability, personal data, courts and the rest. It comes with sample rules: replace them with yours, in plain words. Change a rule once, and every next review follows it.",
+                "It also reads your suppliers table, so it knows which suppliers are critical, where a missing service level is a red line. It gives no legal advice: it never says a clause is legal or safe to sign, and never cites the law."
+              ],
+              "sources_title": "Write it from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "An API",
+                "PostgreSQL",
+                "SQLite"
+              ],
+              "apps_title": "Or let it read where legal already writes",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "soon"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "soon"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools legal and purchasing already use.",
+              "sub": "Start with nothing to connect: it comes with its own playbook, suppliers and reviews tables. Then plug in your tools, one by one.",
+              "hub": [
+                "Contract Checker",
+                "Your playbook, applied"
+              ],
+              "groups": [
+                {
+                  "title": "Where contracts come from",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk, a PDF or Word file",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "SharePoint",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell, who decides",
+                  "items": [
+                    [
+                      "@desk",
+                      "\"Waiting for you\" on the Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where reviews are kept",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own Contract Reviews table",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "notion",
+                      "Notion",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "The supplier's side",
+                  "items": [
+                    [
+                      "googledocs",
+                      "Google Docs, for the note",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email, after legal's yes",
+                      "live"
+                    ],
+                    [
+                      "hubspot",
+                      "HubSpot",
+                      "live"
+                    ],
+                    [
+                      "salesforce",
+                      "Salesforce",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One check, a playbook for every kind of contract.",
+              "sub": "Supplier contracts are where it starts. The same check works wherever your company signs paper written by someone else.",
+              "items": [
+                {
+                  "title": "Purchasing",
+                  "body": "Software, transport, raw materials, maintenance: every supplier contract, before it is signed. The solution as it comes."
+                },
+                {
+                  "title": "IT",
+                  "body": "Software subscriptions and the suppliers who touch your staff's data: data processing terms, renewals and service levels, read the same way each time."
+                },
+                {
+                  "title": "Finance",
+                  "body": "Payment terms, price rises and large commitments. Above your threshold, the review says the finance director decides too."
+                },
+                {
+                  "title": "Sales",
+                  "body": "A customer's purchase terms, read against your own rules for what you accept as a supplier. Its own playbook, described to the Assistant."
+                },
+                {
+                  "title": "NDAs",
+                  "body": "The confidentiality agreements that arrive every week, read against your NDA rules. Legal opens the ones that depart from them."
+                },
+                {
+                  "title": "Agencies and advisers",
+                  "body": "Set it up for each client, with that client's own playbook. The same check, their rules."
+                }
+              ],
+              "how": "Each one is its own playbook in plain words, with the same check. Describe the rules to the Assistant, and publish it to the Desk for the people who sign."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "qa": [
@@ -3846,6 +5932,696 @@
         ]
       },
       {
+        "slug": "quote-desk",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company, its price list and its quoting rules. No connection to set up."
+          },
+          "decide": {
+            "h2": "Five real requests",
+            "intro": "A good quote is not only fast. Every price comes from your list, every discount from your rules, and what goes beyond them reaches the person who decides. Here are five real requests, from a simple one to one it will not quote.",
+            "scenarios": [
+              {
+                "title": "Three roll-up banners for a trade fair.",
+                "caption": "A standard client, no discount asked. It picks the line from the price list, prices it in code, and the quote is within the rules: 435 € excl. VAT, 526.35 € with VAT, valid 30 days. Nobody had to approve, and the e-mail text is ready to copy.",
+                "image": "/media/quote-desk-concept.webp"
+              },
+              {
+                "title": "“Wrap our two new vans.”",
+                "caption": "Full wrap or partial? Small vans or large? It asks the rep before pricing, and never guesses a size. Two large vans, full wrap: the key account's discount of 16% is applied to the goods, while installation and travel stay at full price.",
+                "image": "/media/quote-desk-2-asks.webp"
+              },
+              {
+                "title": "The rep asks for 18%.",
+                "caption": "The rules allow this partner 15% at most. The quote goes to the sales manager, with the reason on top and the margin. She sets 12%, and the quote is saved with her decision and her name.",
+                "what_happens": [
+                  "A partner asks for ten roll-ups and six beach flags; the rep asks 18%.",
+                  "The sales manager sees why it reached her: 18% is above the 15% the rules allow.",
+                  "She sets 12%. The quote is saved with her decision and her name."
+                ]
+              },
+              {
+                "title": "A large order under the margin floor.",
+                "caption": "Thirty-two square metres of acrylic panels for a key account. The discount the rules give brings the margin under 25%, so the sales manager decides. She refuses and offers another material. The rep gets her reason; nothing goes to the client.",
+                "what_happens": [
+                  "A key account orders 32 m² of acrylic panels, no discount asked.",
+                  "The rules discount brings the margin to 21.88%, under the 25% floor: the sales manager decides.",
+                  "She refuses with her reason. The rep is told; nothing goes to the client."
+                ]
+              },
+              {
+                "title": "“Could you quote a website?”",
+                "caption": "Websites are not in the price list. It quotes nothing, writes no guessed line, tells the rep why, and saves the request as not quoted.",
+                "image": "/media/quote-desk-5-scope.webp"
+              }
+            ],
+            "recorded": "Recorded in the real product, on a demo company.",
+            "compact": true
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Quote Desk"
+            ],
+            "rows": [
+              [
+                "The rep looks up prices in a spreadsheet and works out the quantities by hand.",
+                "The lines come from your price list, and every price is computed in code, never written by the AI."
+              ],
+              [
+                "Two reps quote the same job differently.",
+                "Every quote follows the same rules: volume, client tier, VAT, validity, payment terms."
+              ],
+              [
+                "Discounts are given by feel, and the manager learns it when the margin is gone.",
+                "Beyond the rules, or under your margin floor, the quote waits for the sales manager, with the reason."
+              ],
+              [
+                "A missing size is guessed, and the quote is wrong.",
+                "When something is missing, it asks the rep first."
+              ],
+              [
+                "The e-mail to the client is written last, in a hurry.",
+                "The e-mail text is ready to copy, in the language of the client's request."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "The rep starts a quote on the Desk.",
+                "body": "The client's name, the request as the client wrote it, and a discount if one was asked. Your people use it where your company already uses its AI teams."
+              },
+              {
+                "title": "It reads your price list and your clients.",
+                "body": "Your items with their prices and costs, each client's tier and payment terms, and your quoting rules. It writes only to the quotes, and never deletes anything."
+              },
+              {
+                "title": "Quotes land in one view.",
+                "body": "The Quotes view on the Desk shows the quotes of the month, what is waiting for the sales manager, and every quote, latest first."
+              }
+            ]
+          },
+          "team": {
+            "h2": "What it is made of",
+            "lead": "An automation is drawn box by box. These are the parts this one uses.",
+            "members": [
+              {
+                "name": "Form",
+                "role": "Where the rep gives the client, the request and a discount if one was asked."
+              },
+              {
+                "name": "Line picker",
+                "role": "An agent that picks the lines from your price list, and lists what is missing."
+              },
+              {
+                "name": "Questions to the rep",
+                "role": "Shown only when something is missing, such as a size."
+              },
+              {
+                "name": "Calculation",
+                "role": "Code, not AI: prices, the discount your rules allow, VAT, totals and margin."
+              },
+              {
+                "name": "Rules check",
+                "role": "Within your rules, the quote goes on. Beyond them, it goes to the sales manager."
+              },
+              {
+                "name": "Sales manager's card",
+                "role": "Approve, change the discount, or refuse, with a reason."
+              },
+              {
+                "name": "E-mail writer",
+                "role": "Writes the e-mail text in the language of the client's request."
+              },
+              {
+                "name": "Quotes table",
+                "role": "Every quote saved, with its status and who decided."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never invents a price.",
+                "body": "Every line comes from your price list, and every figure is computed in code. A request for something you do not sell is not quoted."
+              },
+              {
+                "title": "It never guesses.",
+                "body": "A missing size, quantity or model is asked to the rep before anything is priced."
+              },
+              {
+                "title": "It never goes beyond your rules.",
+                "body": "A larger discount, or a margin under your floor, waits for the sales manager's decision."
+              },
+              {
+                "title": "It never sends anything.",
+                "body": "The rep copies the e-mail text and sends the quote."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes a sales team can make once it runs, each built from the same blocks as the solution.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Tell the sales manager a quote is waiting.",
+                  "body": "When a quote needs her decision, a message in the sales channel gives the client, the discount asked and the reason.",
+                  "uses": "Quote Desk · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Send the quote once the rep says yes.",
+                  "body": "After the rep approves the text, the e-mail goes to the client's contact, with the rep in copy.",
+                  "uses": "A workflow · the rep's approval · Email"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "hubspot"
+                  ],
+                  "title": "Keep the quote with the client.",
+                  "body": "The total, the discount and the status are written on the client's company in HubSpot.",
+                  "uses": "Quote Desk · HubSpot"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets"
+                  ],
+                  "title": "Keep your prices where they are.",
+                  "body": "Read the price list from the Google Sheet your team already updates.",
+                  "uses": "Quote Desk · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Follow up before a quote expires.",
+                  "body": "Every Monday, a schedule lists the quotes whose 30 days end this week, and posts the list for the reps.",
+                  "uses": "A schedule · the Quotes table · Slack"
+                },
+                {
+                  "status": "soon",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Start from the client's e-mail.",
+                  "body": "Read the request straight from the sales inbox, and prepare the quote for the rep.",
+                  "uses": "Email · Quote Desk"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your price list.",
+                "body": "Replace the sample items with yours, with the unit, the price, the cost and the minimum quantity."
+              },
+              {
+                "title": "Your rules.",
+                "body": "Volume and client discounts, how far a rep may go, your margin floor, your VAT and validity, in plain words."
+              },
+              {
+                "title": "Your clients.",
+                "body": "Fill the table in the Studio or through the API, with each client's tier and payment terms."
+              },
+              {
+                "title": "Your quote.",
+                "body": "Change the lines, the e-mail or who decides, in plain words with the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Your reps use it from the Desk.",
+                "body": "Shared by the whole team, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "It reuses your clients table, already filled."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Product Compare Team",
+                "body": "A product compared across stores, with a visual report.",
+                "href": "/solutions/product-compare-team"
+              },
+              {
+                "title": "Contract Checker",
+                "body": "Supplier contracts checked against your rules; legal decides.",
+                "href": "/solutions/contract-checker"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Quote Desk in your trial. It comes with a demo company, Vellacor Signs, a sign maker with its price list, its clients, its quoting rules and three past quotes. Start a quote as a rep, then decide as the sales manager: one person can try both sides.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the welcome guide, choose **Quote Desk** and select **Add it**.",
+            "more": [
+              {
+                "link": "See how your people would use it on the Desk",
+                "href": "/desk"
+              },
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/quote-desk"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it works",
+              "h2": "The AI reads. Code prices. Your sales manager decides.",
+              "sub": "Each part does only what it can do safely. The AI understands the request, but never writes a figure. Your rules are applied the same way on every quote, and what goes beyond them waits for a person. At the end, the e-mail text is written from the final figures, in the language of the client's request, and the rep sends it.",
+              "flow": {
+                "alt": "How Quote Desk works: a sales rep pastes the client's request; the Line picker (AI) picks the lines from your price list and asks the rep what is missing; the Calculation (code) prices every line and applies your rules; within them, the quote and its e-mail text go back to the rep; beyond them, the sales manager approves, changes the discount or refuses. Every quote is saved in the Quotes table with who decided.",
+                "start": {
+                  "label": "A sales rep",
+                  "out": "Pastes the request",
+                  "back": "Quote and e-mail text"
+                },
+                "nodes": [
+                  {
+                    "tag": "AI",
+                    "title": "Line picker",
+                    "sub": "Asks the rep what is missing"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "Calculation",
+                    "sub": "Prices, discount, VAT, margin"
+                  },
+                  {
+                    "tag": "You",
+                    "title": "Sales manager",
+                    "sub": "Only beyond your rules",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Lines, never prices"
+                  },
+                  {
+                    "label": "Beyond your rules"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your price list and your rules",
+                    "sub": "Items, prices and costs · discounts, ceiling, margin floor, VAT",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Picks lines only from it"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Every price and discount from it"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Clients · Quotes",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Every quote saved, with who decided",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "AI",
+                  "who": "One AI agent",
+                  "title": "The Line picker",
+                  "body": "Reads the request as the client wrote it, in their own words, and picks the items and quantities from your price list.",
+                  "points": [
+                    "Only lines from your price list, never a guessed one",
+                    "A missing size, model or quantity: it asks the rep first",
+                    "Something you do not sell: it quotes nothing and says why"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "Code, not AI",
+                  "title": "The Calculation",
+                  "body": "Prices every line from your list, applies the discount your rules allow for this client and this volume, then checks the quote against your rules.",
+                  "points": [
+                    "The rules discount applied without anyone asking",
+                    "Discounts on goods only: installation and travel stay at full price",
+                    "VAT, totals, payment terms, validity and margin"
+                  ]
+                },
+                {
+                  "tag": "You",
+                  "who": "Your sales manager",
+                  "title": "The decision",
+                  "body": "Only a discount above what a rep may give, or a margin under your floor, reaches her on the Desk, with the reason on top and the margin.",
+                  "points": [
+                    "Approve, change the discount, or refuse, with a reason",
+                    "Her decision and her name saved on the quote",
+                    "A refusal goes back to the rep as a note, never to the client"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Lines from your price list, never a price",
+                "Only when the discount or the margin goes beyond your rules"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "What it quotes from",
+              "h2": "It quotes from your price list, not from memory.",
+              "body": [
+                "Your items, with their unit, price, cost and minimum quantity, and your clients, with their tier and payment terms. Change a price in the list, and the next quote uses it.",
+                "Your quoting rules are set once, in plain words: volume and client discounts, how far a rep may go, your margin floor, VAT and validity. What is not in your list is not quoted."
+              ],
+              "sources_title": "Fill its tables your way",
+              "sources": [
+                "By hand, in the Studio",
+                "Through the API"
+              ],
+              "apps_title": "Or read them where they already live",
+              "apps": [
+                [
+                  "googlesheets",
+                  "Google Sheets",
+                  "live"
+                ],
+                [
+                  "airtable",
+                  "Airtable",
+                  "live"
+                ],
+                [
+                  "hubspot",
+                  "HubSpot, for your clients",
+                  "live"
+                ],
+                [
+                  "",
+                  "Microsoft Excel",
+                  "soon"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools your sales team already runs.",
+              "sub": "Start with nothing to connect: it comes with its own price list, clients and quotes tables. Then plug in your tools, one by one.",
+              "hub": [
+                "Quote Desk",
+                "AI · Code · You"
+              ],
+              "groups": [
+                {
+                  "title": "Where requests come from",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Your website's quote form, by webhook",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "The sales inbox",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Your prices and clients",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own Price List and Clients tables",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ],
+                    [
+                      "hubspot",
+                      "HubSpot",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where quotes are kept",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own Quotes table",
+                      "live"
+                    ],
+                    [
+                      "hubspot",
+                      "HubSpot",
+                      "live"
+                    ],
+                    [
+                      "salesforce",
+                      "Salesforce",
+                      "soon"
+                    ],
+                    [
+                      "",
+                      "Pipedrive",
+                      "soon"
+                    ],
+                    [
+                      "zoho",
+                      "Zoho CRM",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell",
+                  "items": [
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Once it is won",
+                  "items": [
+                    [
+                      "stripe",
+                      "Stripe",
+                      "live"
+                    ],
+                    [
+                      "quickbooks",
+                      "QuickBooks",
+                      "soon"
+                    ],
+                    [
+                      "xero",
+                      "Xero",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One pattern, for every business that quotes from a list.",
+              "sub": "Signs are where it starts. The same three parts work wherever a price comes from a list and a discount from a rule.",
+              "items": [
+                {
+                  "title": "Signs and print",
+                  "body": "Banners, panels, vehicle wraps, with design and installation. The solution as it comes."
+                },
+                {
+                  "title": "Wholesale and distribution",
+                  "body": "Volume breaks and a price per client tier, as your list says. An order under your margin floor waits for the sales director."
+                },
+                {
+                  "title": "Trades and installation",
+                  "body": "Materials discounted, labour hours at full price, a travel line per visit: the split this one already makes."
+                },
+                {
+                  "title": "Equipment rental",
+                  "body": "Rates by day or by week, delivery and collection, a deposit for new clients. The dates are asked before anything is priced."
+                },
+                {
+                  "title": "Agencies and consulting",
+                  "body": "Day rates by role and fixed packages. A discount beyond the rule goes to the partner who signs."
+                },
+                {
+                  "title": "Events and catering",
+                  "body": "A price per guest, minimums and a rush surcharge. A missing date or head count is asked first."
+                }
+              ],
+              "how": "Each one is your price list, your rules and who decides, with a Quotes cockpit on the Desk. Change them in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
+          }
+        },
+        "image": "/media/quote-desk-hero.webp",
+        "width": 2048,
+        "height": 1536,
+        "tag": "No app",
+        "size": "Automation",
+        "title": "Quote Desk",
+        "for": "a sales team that quotes every week",
+        "summary": "Paste a client's request on the Desk. It picks the lines from your price list, asks when something is missing, prices in code and applies your discount rules. Beyond them, your sales manager decides; nothing is sent to the client.",
+        "alt": "Quote Desk on the Desk: the quote for a client, with the goods from the price list, the discount the rules allow, services at full price and the totals.",
+        "h1": "Every rep quotes your way.",
+        "h1_accent": "The AI reads the request. Your list and your rules set every price.",
+        "hero_image": "/media/quote-desk-hero.webp",
+        "hero_image_alt": "Agentivity Quote Desk: the quote card for Halvorsen Logistics, with goods €5,300, a 16 % discount, services not discounted and the status Approved within the rules.",
+        "lead": "Not an AI that guesses prices: a quote desk set up like your sales process. An AI reads the client's request, picks the lines from your price list, and asks the rep when a size or a model is missing. Code prices every line and applies your discount rules, the same way for every rep. What goes beyond them waits for your sales manager, with the reason. Every quote is saved with who decided, and the whole team sees them in one view on the Desk.",
+        "notice": "It quotes; your people send. Every price comes from your list, and nothing reaches the client without a person.",
+        "facts": {
+          "for": "The sales reps and the sales manager of a business that quotes every week",
+          "use": "On the Desk: paste the request, answer its questions, take the quote",
+          "behind": "An automation with one agent, a calculation in code, your price list, your clients and your rules"
+        },
+        "qa": [
+          {
+            "q": "What does Quote Desk do?",
+            "a": "A rep pastes the client's request on the Desk. It picks the items and quantities from your price list, asks the rep when something needed is missing, then prices the quote in code: the discount your rules allow for this client and this volume, VAT, totals and margin. Within your rules the quote is ready, with the e-mail text to copy. Beyond them, your sales manager approves, changes the discount or refuses."
+          },
+          {
+            "q": "Does the AI compute the prices?",
+            "a": "No. The agent only picks the lines and the quantities. Every price, discount, total and margin is computed in a calculation step, in code, from your price list and your rules."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The quotes, the decisions and the e-mail texts are real, and they are written in real tables. The company is made up: Vellacor Signs, its clients, its prices and its people are fictional. Replace them with your own. Nothing is sent to a client."
+          },
+          {
+            "q": "Can it quote something that is not in my price list?",
+            "a": "No. It says the request is not something you quote, writes no guessed line, and saves it as not quoted. Add the item to your price list first."
+          },
+          {
+            "q": "How long does a quote take?",
+            "a": "In our tests, the quote came back in about twenty seconds after the rep answered its questions."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "A business that sells to other businesses and answers requests with quotes every week, its reps and its sales manager, and the agency or builder who sets it up with each client's own price list and rules."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Add Quote Desk from the welcome guide, then start a quote on the Desk with one of the demo clients."
+          }
+        ]
+      },
+      {
         "slug": "image-creator",
         "story": {
           "cta": {
@@ -3854,7 +6630,7 @@
             "note": "14-day trial · no card · AI usage billed by your provider; images billed by Recraft, with your own key."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three real requests",
             "intro": "A good designer starts from your brand and shows the idea before the work. Here are three real requests, from approved to rejected.",
             "scenarios": [
               {
@@ -3881,7 +6657,8 @@
                 ]
               }
             ],
-            "recorded": "Recorded in the real product, on a demo brand."
+            "recorded": "Recorded in the real product, on a demo brand.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -4120,6 +6897,387 @@
               }
             ],
             "note": "14-day trial · no card · AI usage billed by your provider; images billed by Recraft"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it works",
+              "h2": "Four steps, like a good art department: the idea before the image.",
+              "sub": "AI does the work that takes time. People make the two calls that matter: which idea, and whether it goes out. No image is paid for the wrong idea, and none is shown before it is checked.",
+              "flow": {
+                "alt": "How Image Creator works: someone in marketing fills a short form; the art director proposes two or three directions from the brand guide and the network formats, with no image made yet; a person picks one; the image is made in the size of the network, checked against the brand guide, and the caption is written; the brand manager approves, and the approved request is saved, so the next request starts from it.",
+                "start": {
+                  "label": "Your marketing team",
+                  "out": "A short form",
+                  "back": "Image, ready to post"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "Art director",
+                    "sub": "2 or 3 directions, no image yet"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "You pick one",
+                    "sub": "Or ask for other directions",
+                    "you": true
+                  },
+                  {
+                    "tag": "3",
+                    "title": "Made and checked",
+                    "sub": "Sizes, brand check, caption"
+                  },
+                  {
+                    "tag": "4",
+                    "title": "Brand manager",
+                    "sub": "Approves image and caption",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Directions, in words"
+                  },
+                  {
+                    "label": "After your pick",
+                    "good": true
+                  },
+                  {
+                    "label": "Kept images only"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your brand guide · Network formats",
+                    "sub": "Colours, styles, what never appears, sizes, caption rules",
+                    "from": 0,
+                    "to": 2,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Directions start from it"
+                      },
+                      {
+                        "node": 2,
+                        "dir": "up",
+                        "label": "Every image checked against it"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Approved requests",
+                    "from": 3,
+                    "to": 3,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 3,
+                        "dir": "down",
+                        "label": "Saved after a yes",
+                        "good": true,
+                        "at": 0.2
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "AI agent",
+                  "title": "The art director",
+                  "body": "Reads your brand guide, the formats of the network and the requests you approved before. Proposes two or three directions, a few lines each.",
+                  "points": [
+                    "In your colours and your styles",
+                    "Brings an off-brand request back to the brand, and says why",
+                    "No image made yet, so no image paid for"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "You",
+                  "title": "You pick a direction",
+                  "body": "A card on the Desk shows the directions. Pick the one you want, or ask for other directions.",
+                  "points": [
+                    "The idea is chosen before the image",
+                    "Not convinced? New directions come back",
+                    "Your choice goes on to the next step, word for word"
+                  ],
+                  "you": true
+                },
+                {
+                  "tag": "3",
+                  "who": "AI, step by step",
+                  "title": "Made, checked, captioned",
+                  "body": "The prompt writer writes the request for the image model. Recraft makes the image. A model that sees it checks it against your brand guide. The caption writer writes the post for the network.",
+                  "points": [
+                    "The size of Instagram, LinkedIn, Facebook, X or Pinterest",
+                    "An image set aside is never shown: only the rule it breaks",
+                    "If an image cannot be made, it stops: never a stand-in"
+                  ]
+                },
+                {
+                  "tag": "4",
+                  "who": "Your brand manager",
+                  "title": "The brand manager says yes",
+                  "body": "One card: the kept images, what was set aside and why, and the caption.",
+                  "points": [
+                    "Approves or rejects, after reading the caption",
+                    "Approved: saved with its direction and caption",
+                    "Nothing is published: you download it and post it"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Two or three directions, no image yet",
+                "Once a direction is picked",
+                "Only the kept images, with the caption"
+              ]
+            },
+            "loop": {
+              "eyebrow": "It learns what you approve",
+              "h2": "Every yes guides the next visual.",
+              "sub": "A brand is more than its guide: it is also what you said yes to. Here, that is kept, and the art director reads it at every request.",
+              "center": [
+                "Every yes",
+                "guides the next"
+              ],
+              "steps": [
+                {
+                  "title": "Your brand manager approves.",
+                  "short": "Approved",
+                  "body": "The image and its caption, on the approval card."
+                },
+                {
+                  "title": "The request is kept.",
+                  "short": "Saved",
+                  "body": "The subject, the network, the direction, the prompt, the size and the caption are saved in your approved requests. A rejected visual is never saved."
+                },
+                {
+                  "title": "The art director reads it.",
+                  "short": "Read next time",
+                  "body": "At the next request, it reads your approved requests beside your brand guide and the formats of the network."
+                },
+                {
+                  "title": "The next visual starts there.",
+                  "short": "A head start",
+                  "body": "The new directions start from what your brand manager already approved, not from a blank page."
+                }
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "What it reads",
+              "h2": "It works from your brand guide, not from taste.",
+              "body": [
+                "Your brand guide is a knowledge base: your colours with their codes, the styles you use, what never appears in an image, how people are shown, the tone of your captions. The formats of each network are a table: the size, a style note, the caption rules. Change a line, and the next visual follows.",
+                "When a request goes against the guide, a neon poster or big text drawn into the image, the art director says so and proposes the closest direction that keeps your brand. The sale copy is added later, by a person."
+              ],
+              "sources_title": "Fill it from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "Your site's sitemap"
+              ],
+              "apps_title": "Or let it read where you already write",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "googleslides",
+                  "Google Slides",
+                  "live"
+                ],
+                [
+                  "dropbox",
+                  "Dropbox",
+                  "soon"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools your marketing team already uses.",
+              "sub": "Start with your AI model and your Recraft key: it comes with a sample brand guide, the formats of six networks and its own table of approved requests. Then plug in your tools, one by one.",
+              "hub": [
+                "Image Creator",
+                "Brand · Sizes · Check"
+              ],
+              "groups": [
+                {
+                  "title": "Where you ask",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "soon"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Your content calendar",
+                  "items": [
+                    [
+                      "notion",
+                      "Notion",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "The models, with your keys",
+                  "items": [
+                    [
+                      "",
+                      "Recraft, for the images",
+                      "live"
+                    ],
+                    [
+                      "anthropic",
+                      "Anthropic",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "OpenAI",
+                      "live"
+                    ],
+                    [
+                      "googlegemini",
+                      "Google Gemini",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where approved work goes",
+                  "items": [
+                    [
+                      "googledrive",
+                      "Google Drive",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "wordpress",
+                      "WordPress",
+                      "live"
+                    ],
+                    [
+                      "mailchimp",
+                      "Mailchimp",
+                      "soon"
+                    ],
+                    [
+                      "webflow",
+                      "Webflow",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to start",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "It posts to no social network on its own: you download the approved image. Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One brand guide, every team that needs a visual.",
+              "sub": "Marketing is where it starts. The same steps work for anyone who has to show the brand and has no designer at hand.",
+              "items": [
+                {
+                  "title": "A small business",
+                  "body": "A café, a shop, a studio that posts every week alone. The art director works from the brand guide you wrote once."
+                },
+                {
+                  "title": "A marketing team",
+                  "body": "Several people ask, from the same form and the same guide. One brand manager signs off every visual and every caption."
+                },
+                {
+                  "title": "An agency",
+                  "body": "One copy per client, each with its own brand guide, its own networks and the client's own approver."
+                },
+                {
+                  "title": "A network of shops",
+                  "body": "Local teams ask for their own posts. Head office keeps the guide and gives the yes."
+                },
+                {
+                  "title": "HR and hiring",
+                  "body": "Hiring posts on LinkedIn and internal news, in the same brand as marketing, shown the way the guide shows people."
+                },
+                {
+                  "title": "Content and blog",
+                  "body": "An image for each article, made from the post, and published with it in WordPress once approved."
+                }
+              ],
+              "how": "Each one is a brand guide, a row for each format it uses and a named approver on the Desk. Change them in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "image": "/media/image-creator.webp",
@@ -4132,11 +7290,11 @@
         "for": "a marketing team without a designer",
         "summary": "Ask for a visual in a short form. An art director proposes directions from your brand guide, you pick one, and each image is checked against your brand before you see it. Your brand manager approves; nothing is published.",
         "alt": "Four example images made with Recraft: a poster of a jazz evening in a park, a product photo of a mug and coffee beans, a bakery table for a social post, and a flat illustration of a team planning at a board",
-        "h1": "Visuals in your brand, for every network.",
+        "h1": "An art department in your brand.",
         "hero_image": "/media/image-creator-hero.webp",
         "hero_image_alt": "The Agentivity Studio running the Brand Visuals workflow: the Image Viewer node shows the photo it generated, two baristas pouring latte art.",
-        "h1_accent": "Checked before anyone sees them.",
-        "lead": "Say what the visual is for, the style, the size and, if you like, the network. An art director reads your brand guide and proposes two or three directions; no image is made until you pick one. Each image is checked against your brand before it is shown, the caption is written for the network, and your brand manager approves.",
+        "h1_accent": "The idea first, every image checked, a person signs off.",
+        "lead": "Not an image generator: art direction that works like yours. An art director reads your brand guide and proposes two or three directions before any image is made. You pick one. Each image is made in the size its network needs, then checked against your brand by a model that sees it: what breaks a rule is set aside, with the rule it breaks. The caption is written for the network, your brand manager approves, and every approved visual is kept for the next request.",
         "facts": {
           "for": "A marketing team that posts every week without a designer",
           "use": "On the Desk: a short form, then cards to pick a direction and approve",
@@ -4182,7 +7340,7 @@
             "note": "A demonstration, not a coaching or medical service. The app's code is public, under the MIT licence."
           },
           "decide": {
-            "h2": "See it decide",
+            "h2": "Three moments from one week",
             "intro": "A good coach changes the plan when life does, and knows when to say no. Here are three moments from one week.",
             "scenarios": [
               {
@@ -4205,7 +7363,8 @@
                 "media": "training-coach-3-deadlifts"
               }
             ],
-            "recorded": "Recorded in the Momentum app, built on this team."
+            "recorded": "Recorded in the Momentum app, built on this team.",
+            "compact": true
           },
           "versus": {
             "h2": "Without it, with it",
@@ -4435,6 +7594,342 @@
               }
             ],
             "note": "A demonstration, not a coaching or medical service."
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it is organised",
+              "h2": "One voice, three specialists, and a check before anything reaches the person.",
+              "sub": "Each coach does one job and nothing else. The Head Coach brings in only the coaches a change needs, and the Safety Coach always has the last word before the person sees it.",
+              "flow": {
+                "alt": "How Training Coach is organised: the person tells the Head Coach what changed; the Head Coach briefs only the specialists it needs (exercises, dose, meals), who work from the exercise catalogue; the Safety Coach checks the whole plan against injuries, pain, age and allergies, using the same catalogue; the change comes back to the person as a card to accept or refuse. The app keeps the profile, the plan and the recorded sessions, and sends them with each message.",
+                "start": {
+                  "label": "The person",
+                  "out": "Says what changed",
+                  "back": "A card: yes or no"
+                },
+                "nodes": [
+                  {
+                    "tag": "1",
+                    "title": "Head Coach",
+                    "sub": "The only one who talks"
+                  },
+                  {
+                    "tag": "2",
+                    "title": "Three specialists",
+                    "sub": "Exercises, dose and meals"
+                  },
+                  {
+                    "tag": "3",
+                    "title": "Safety Coach",
+                    "sub": "Checks every plan and change"
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "A brief, per coach"
+                  },
+                  {
+                    "label": "The plan, to check",
+                    "good": true
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Profile, plan, sessions",
+                    "sub": "Kept in the app, sent each time",
+                    "from": 0,
+                    "to": 0,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "both",
+                        "label": "Read with every message",
+                        "at": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "title": "The exercise catalogue",
+                    "sub": "32 exercises, each with its impact and joint stress",
+                    "from": 1,
+                    "to": 2,
+                    "links": [
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Picks only from it"
+                      },
+                      {
+                        "node": 2,
+                        "dir": "up",
+                        "label": "Checks impact and joint stress",
+                        "good": true
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "1",
+                  "who": "AI, the only one who talks",
+                  "title": "The Head Coach",
+                  "body": "Asks one or two questions at a time, then brings in only the coaches a change needs. A swapped exercise is not a new plan.",
+                  "points": [
+                    "Reads the profile, plan and sessions the app sends",
+                    "Answers with widgets the app draws: plan, meals, choices",
+                    "One card per change; mid-session, the person picks the swap"
+                  ]
+                },
+                {
+                  "tag": "2",
+                  "who": "AI, behind the Head Coach",
+                  "title": "Three specialists",
+                  "body": "One picks the exercises, one sets the sets, reps, load and rest, one plans the meals. None does another's job.",
+                  "points": [
+                    "Exercises only from the catalogue, never invented",
+                    "A beginner and a lifter do not get the same dose",
+                    "Every allergy and eating habit kept, with the shopping list"
+                  ]
+                },
+                {
+                  "tag": "3",
+                  "who": "AI, before anything reaches the person",
+                  "title": "The Safety Coach",
+                  "body": "Reviews the whole plan, training, dose and food, against injuries, pain, age and allergies, and corrects it itself.",
+                  "points": [
+                    "Swaps a risky exercise for one from the catalogue",
+                    "Re-checks every change, even a small one",
+                    "Serious pain: see a doctor first, and a very gentle plan"
+                  ]
+                }
+              ],
+              "handovers": [
+                "With the profile and what the coach before produced",
+                "Only its corrected version reaches the person"
+              ]
+            },
+            "loop": {
+              "eyebrow": "It follows the person",
+              "h2": "Every session tunes the next one.",
+              "sub": "A fixed plan is the same in week six as in week one. Here, what the person did and how it felt goes back to the coaches.",
+              "center": [
+                "Every session",
+                "shapes the next"
+              ],
+              "steps": [
+                {
+                  "title": "The person trains.",
+                  "short": "Trains",
+                  "body": "The session screen goes set by set and keeps the reps and load really done. The progress chart is drawn from them, never guessed."
+                },
+                {
+                  "title": "They say how it felt.",
+                  "short": "How it felt",
+                  "body": "Easy, good, hard or too hard: one tap at the end of the session. Mention pain, and the Safety Coach decides what the plan can still hold."
+                },
+                {
+                  "title": "The coaches propose a change.",
+                  "short": "A change, checked",
+                  "body": "Only the coaches it needs, then the Safety Coach. It comes as a card: what was there, what replaces it, and why."
+                },
+                {
+                  "title": "The person says yes.",
+                  "short": "Their yes",
+                  "body": "The plan updates, and the rest of the week stays as it was. Say no, and nothing moves."
+                }
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Its frame",
+              "h2": "It only proposes what the catalogue holds.",
+              "body": [
+                "Every exercise comes from one catalogue: 32 of them, each with the muscles it works, the equipment, the place, the difficulty, the impact and the stress on each joint. The coaches choose from it, the Safety Coach checks against it, and an exercise outside it cannot appear. Asked for one it does not know, it says no and offers one it does.",
+                "The rules are written in plain words in each coach's instructions: what counts as too much, when to suggest a doctor, what never goes in a meal. Change them, and the coaches follow."
+              ],
+              "sources_title": "Every exercise carries its rules",
+              "sources": [
+                "Muscles",
+                "Equipment",
+                "Place",
+                "Difficulty",
+                "Impact",
+                "Joint stress",
+                "Load type"
+              ],
+              "apps_title": "Keep your client's catalogue where they already keep it",
+              "apps": [
+                [
+                  "@table",
+                  "Its own catalogue table",
+                  "live"
+                ],
+                [
+                  "googlesheets",
+                  "Google Sheets",
+                  "live"
+                ],
+                [
+                  "airtable",
+                  "Airtable",
+                  "live"
+                ],
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your client's tools",
+              "h2": "The same team, wherever your client's members are.",
+              "sub": "Start with nothing to connect: the team comes with its own catalogue, and the app keeps the plan. Then plug in what your client already uses.",
+              "hub": [
+                "Training Coach",
+                "5 coaches"
+              ],
+              "groups": [
+                {
+                  "title": "Where people talk to it",
+                  "items": [
+                    [
+                      "@web",
+                      "Your client's app, as a VibeApp",
+                      "live"
+                    ],
+                    [
+                      "telegram",
+                      "Telegram",
+                      "live"
+                    ],
+                    [
+                      "whatsapp",
+                      "WhatsApp",
+                      "soon"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where the exercises live",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own catalogue table",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When a professional approves",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Into the person's week",
+                  "items": [
+                    [
+                      "googlecalendar",
+                      "Google Calendar",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, a coach reaches any tool with an API through an HTTP request or an MCP server. The app draws the 32 exercises in 3D: a new exercise in the catalogue also needs its figure in the app's code, which is public."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One pattern, a coach for every client you build for.",
+              "sub": "Fitness is where it starts. The same shape, one voice, specialists behind it, a safety check and a yes, fits wherever each person's week changes the answer.",
+              "items": [
+                {
+                  "title": "Gyms and studios",
+                  "body": "The gym's own exercises and machines in the catalogue, so members only get what the gym teaches. A coach on the floor approves each first plan."
+                },
+                {
+                  "title": "Physiotherapy and rehabilitation",
+                  "body": "The home exercises the clinic prescribes, as the catalogue. The physiotherapist approves every plan before the patient sees it. The coaches never diagnose and never treat."
+                },
+                {
+                  "title": "Corporate wellness",
+                  "body": "Short sessions that fit a working week, at home, at a desk or in the office gym, with the coming week's plan by email every Sunday."
+                },
+                {
+                  "title": "Sports clubs",
+                  "body": "The club's own drills as the catalogue, a plan for each player, and the club's coach approving changes before they reach the squad."
+                },
+                {
+                  "title": "Meal plans",
+                  "body": "Meals around goals, habits and allergies, with the shopping list. For a medical condition, the coach says to check with a doctor or a dietitian."
+                },
+                {
+                  "title": "Beyond fitness",
+                  "body": "A study plan, a language course: any app where the answer depends on each person's week. Keep the shape, change the coaches and the catalogue."
+                }
+              ],
+              "how": "Each one is a catalogue, the rules in each coach's instructions and, where a professional must decide, an approval on the Desk. Change them in plain words with the Assistant."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
           }
         },
         "media": "blog/momentum/loop",
@@ -4447,9 +7942,9 @@
         "summary": "The coaching team behind Momentum. Tell it your goal and your week: five coaches build your training plan and your meals, and change them when life does. Every change waits for your yes.",
         "alt": "A recording of the Momentum app: the person says the machine is taken, and two other exercises appear in 3D while the rest of the session stays",
         "caption": "The Momentum app, built on this team.",
-        "h1": "A training plan",
-        "h1_accent": "that follows your week.",
-        "lead": "The coaching team behind Momentum. Tell the head coach your goal, your level and what you have at hand: the coaches build your week, and when the machine is taken or your knee hurts, one sentence is enough to change it.",
+        "h1": "Five coaches behind one app.",
+        "h1_accent": "Every change checked for safety, and none without a yes.",
+        "lead": "A coaching team organised like a real coaching staff. A Head Coach talks to the person. Three specialists pick the exercises from a set catalogue, set the dose and plan the meals. A Safety Coach checks every plan and every change against injuries, pain, age and allergies. The app shows each change as a card, and the person says yes or no. Every session they record comes back to the coaches, so the next change starts from what they really did. And you build it into your client's app, as a VibeApp.",
         "facts": {
           "for": "Anyone who trains, and the app developers who want to build an app like it for a client",
           "use": "The Momentum app, whose code is public; in your trial, the same coaches in the Studio",
@@ -4577,6 +8072,10 @@
           "line": "Visuals in your brand for every network, checked before you see them.",
           "type": "An automation"
         },
+        "quote-desk": {
+          "line": "A quote from the request, priced from your list, within your rules.",
+          "type": "An automation"
+        },
         "contract-checker": {
           "line": "Supplier contracts checked against your rules; legal decides.",
           "type": "One agent"
@@ -4592,7 +8091,6 @@
       },
       "soon": {
         "Lead Researcher": "A company profile and a fit score.",
-        "Quote Builder": "A quote from a customer's request.",
         "Account Manager": "Your key accounts followed, the next step prepared.",
         "Complaint Handler": "A complaint taken to a proposed answer.",
         "Order Support Agent": "Order and delivery questions answered.",

@@ -1,0 +1,387 @@
+---
+// What a solution is, shown before its examples (founder, 2026-11-19: "expose the power, not examples"; diagrams to explain).
+// Every part is optional and drawn from the case's "story.power" block in en.json:
+//   levels   the flow of the work, as a diagram (flow) and cards (items), on navy
+//   loop     a cycle of steps, drawn as a circle beside the steps
+//   knowledge what it reads: types of sources and apps
+//   connect  the tools around it, as a hub with groups on each side
+//   company  what a real company makes of it, as cards
+import { brandLogos } from '../data/brand-logos';
+
+interface Props { pw: any; icons: Record<string, string>; }
+const { pw, icons } = Astro.props;
+
+// SVG text does not wrap: lines of at most n characters, cut between words.
+const wrap = (text: string, n: number) => (text ?? '').split(' ').reduce((lines: string[], w: string) => {
+  const last = lines[lines.length - 1];
+  if (last && (last + ' ' + w).length <= n) lines[lines.length - 1] = last + ' ' + w; else lines.push(w);
+  return lines;
+}, []);
+// A brand logo, a plain icon ("@schedule"), or an empty square for an app without a logo here.
+const mark = (id: string) => {
+  if (id.startsWith('@')) return `<span class="sx-mark sx-mark--icon"><svg viewBox="0 0 24 24" aria-hidden="true">${icons[id.slice(1)] ?? ''}</svg></span>`;
+  const b = brandLogos[id];
+  return b ? `<span class="sx-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${b.d}" fill="${b.c}"/></svg></span>` : '<span class="sx-mark sx-mark--none"></span>';
+};
+const labels = pw.labels ?? { live: 'Ready today', soon: 'Coming soon' };
+
+// ---------- the flow: a start (a person), boxes left to right, and boxes under them joined by arrows ----------
+const f = pw.levels?.flow;
+let flow: any = null;
+if (f) {
+  const X0 = f.start ? 215 : 20, X1 = 1185, GAP = 92, TOP = 115;
+  const n = f.nodes.length;
+  const w = (X1 - X0 - GAP * (n - 1)) / n;
+  const big = n <= 3;
+  const tFont = big ? 23 : 20, tLine = big ? 27 : 24;
+  const nodes = f.nodes.map((nd: any, i: number) => {
+    const title = wrap(nd.title, Math.floor((w - 40) / (tFont * 0.53))).slice(0, 2);
+    const sub = wrap(nd.sub, Math.floor((w - 40) / 7.4)).slice(0, 3);
+    return { ...nd, x: X0 + i * (w + GAP), title, sub };
+  });
+  const H = Math.max(150, ...nodes.map((nd: any) => 101 + (nd.title.length - 1) * tLine + nd.sub.length * 19 + 22));
+  const mid = TOP + H / 2;
+  const BY = TOP + H + 140;
+  const below = (f.below ?? []).map((b: any) => {
+    const bx = nodes[b.from].x, bw = nodes[b.to].x + w - bx;
+    const links = (b.links ?? []).map((l: any) => {
+      const x = nodes[l.node].x + w * (l.at ?? (l.dir === 'down' ? 0.6 : 0.3));
+      return { ...l, x, lines: wrap(l.label, 18) };
+    });
+    return { ...b, x: bx, w: bw, title: wrap(b.title, Math.floor(bw / 11)), subl: wrap(b.sub, Math.floor(bw / 7.6)), links };
+  });
+  const bottom = below.length ? BY + 92 : TOP + H + (f.start ? 60 : 10);
+  flow = { X0, w, TOP, H, mid, BY, nodes, below, tFont, tLine, vb: `0 70 1200 ${bottom + 10 - 70}`, gap: GAP };
+}
+
+// ---------- the loop: N steps on a circle, clockwise from the top ----------
+const R = 190, CX = 320, CY = 280;
+const at = (deg: number) => [CX + R * Math.cos((deg * Math.PI) / 180), CY + R * Math.sin((deg * Math.PI) / 180)];
+const steps = pw.loop?.steps ?? [];
+const N = steps.length;
+const loopNodes = steps.map((s: any, i: number) => {
+  const deg = -90 + (i * 360) / N;
+  const [x, y] = at(deg);
+  const c = Math.cos((deg * Math.PI) / 180), sn = Math.sin((deg * Math.PI) / 180);
+  const side = c > 0.35 ? 'r' : c < -0.35 ? 'l' : sn < 0 ? 't' : 'b';
+  return { x, y, s, i, side };
+});
+const pad = N > 4 ? 12 : 15;
+const loopArcs = steps.map((_: any, i: number) => {
+  const [x1, y1] = at(-90 + (i * 360) / N + pad), [x2, y2] = at(-90 + ((i + 1) * 360) / N - pad);
+  return `M${x1.toFixed(1)} ${y1.toFixed(1)} A${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+});
+
+// ---------- the hub: groups on both sides, lines to the middle ----------
+const groups = pw.connect?.groups ?? [];
+const leftN = Math.ceil(groups.length / 2), rows = Math.max(leftN, groups.length - leftN);
+const hubLines = groups.map((_: any, gi: number) => {
+  const right = gi >= leftN, k = right ? gi - leftN : gi;
+  return `M50 150L${right ? 100 : 0} ${((k + 0.5) * 300) / rows}`;
+});
+---
+{pw.levels && (
+  <section class="ed-band--navy" id="how">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        {pw.levels.eyebrow && <p class="pw-eyebrow">{pw.levels.eyebrow}</p>}
+        <h2 class="ed-h2 ed-h2--md pw-on-navy">{pw.levels.h2}</h2>
+        {pw.levels.sub && <p class="pw-sub-navy">{pw.levels.sub}</p>}
+      </header>
+      {flow && (
+        <figure class="pw-map">
+          <svg viewBox={flow.vb} role="img" aria-label={f.alt}>
+            <defs>
+              <marker id="pw-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="pw-ah" /></marker>
+              <marker id="pw-ahy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="pw-ahy" /></marker>
+            </defs>
+            {f.start && (
+              <g>
+                <circle cx="80" cy={flow.mid} r="46" class="pw-node-emp" />
+                <circle cx="80" cy={flow.mid - 14} r="13" class="pw-ico" /><path d={`M56 ${flow.mid + 24}c4-14 13-21 24-21s20 7 24 21`} class="pw-ico" />
+                {wrap(f.start.label, 16).map((ln: string, k: number) => <text x="80" y={flow.mid + 76 + k * 18} class="pw-t-label" text-anchor="middle">{ln}</text>)}
+                {f.start.out && <path d={`M130 ${flow.mid - 18}H${flow.X0 - 3}`} class="pw-arrow" marker-end="url(#pw-ah)" />}
+                {f.start.out && wrap(f.start.out, 12).map((ln: string, k: number, a: string[]) => <text x="170" y={flow.mid - 30 - (a.length - 1 - k) * 16} class="pw-t-small" text-anchor="middle">{ln}</text>)}
+                {f.start.back && <path d={`M${flow.X0 - 3} ${flow.mid + 22}H132`} class="pw-arrow pw-arrow--y" marker-end="url(#pw-ahy)" />}
+                {f.start.back && wrap(f.start.back, 12).map((ln: string, k: number) => <text x="170" y={flow.mid + 46 + k * 16} class="pw-t-small pw-t-good" text-anchor="middle">{ln}</text>)}
+              </g>
+            )}
+            {flow.nodes.map((nd: any, i: number) => (
+              <g>
+                <rect x={nd.x} y={flow.TOP} width={flow.w} height={flow.H} rx="22" class:list={['pw-box', { 'pw-box--you': nd.you }]} />
+                <rect x={nd.x + 20} y={flow.TOP + 22} width={Math.max(58, nd.tag.length * 15 + 26)} height="40" rx="12" class:list={['pw-pill', { 'pw-pill--you': nd.you }]} />
+                <text x={nd.x + 20 + Math.max(58, nd.tag.length * 15 + 26) / 2} y={flow.TOP + 50} class:list={['pw-t-tag', { 'pw-t-tag--you': nd.you }]} text-anchor="middle">{nd.tag}</text>
+                {nd.title.map((ln: string, k: number) => <text x={nd.x + 20} y={flow.TOP + 101 + k * flow.tLine} class="pw-t-title" style={`font-size:${flow.tFont}px`}>{ln}</text>)}
+                {nd.sub.map((ln: string, k: number) => <text x={nd.x + 20} y={flow.TOP + 101 + (nd.title.length - 1) * flow.tLine + 27 + k * 19} class="pw-t-sub">{ln}</text>)}
+                {i < flow.nodes.length - 1 && <path d={`M${nd.x + flow.w + 3} ${flow.mid}H${nd.x + flow.w + flow.gap - 4}`} class:list={['pw-arrow', { 'pw-arrow--y': f.links?.[i]?.good }]} marker-end={f.links?.[i]?.good ? 'url(#pw-ahy)' : 'url(#pw-ah)'} />}
+                {i < flow.nodes.length - 1 && f.links?.[i] && wrap(f.links[i].label ?? f.links[i], 11).map((ln: string, k: number, a: string[]) => (
+                  <text x={nd.x + flow.w + flow.gap / 2} y={flow.mid - 14 - (a.length - 1 - k) * 16} class:list={['pw-t-small', { 'pw-t-good': f.links[i].good }]} text-anchor="middle">{ln}</text>
+                ))}
+              </g>
+            ))}
+            {flow.below.map((b: any) => (
+              <g>
+                <rect x={b.x} y={flow.BY} width={b.w} height="84" rx="20" class:list={[b.kind === 'records' ? 'pw-rec-box' : 'pw-know-box']} />
+                {b.title.map((ln: string, k: number, a: string[]) => <text x={b.x + b.w / 2} y={flow.BY + (b.sub ? 36 : 48) - (a.length - 1) * 10 + k * 20} class="pw-t-kn" text-anchor="middle">{ln}</text>)}
+                {b.sub && b.subl.slice(0, 1).map((ln: string) => <text x={b.x + b.w / 2} y={flow.BY + 62} class="pw-t-kn-sub" text-anchor="middle">{ln}</text>)}
+                {b.links.map((l: any) => (
+                  <g>
+                    {l.dir === 'up' && <path d={`M${l.x} ${flow.BY - 4}V${flow.TOP + flow.H + 6}`} class:list={['pw-arrow', { 'pw-arrow--y': l.good }]} marker-end={l.good ? 'url(#pw-ahy)' : 'url(#pw-ah)'} />}
+                    {l.dir === 'down' && <path d={`M${l.x} ${flow.TOP + flow.H + 4}V${flow.BY - 6}`} class:list={['pw-arrow', { 'pw-arrow--y': l.good }]} marker-end={l.good ? 'url(#pw-ahy)' : 'url(#pw-ah)'} />}
+                    {l.dir === 'both' && <path d={`M${l.x} ${flow.TOP + flow.H + 4}V${flow.BY - 4}`} class="pw-link" />}
+                    {l.lines.map((ln: string, k: number) => <text x={l.x + 14} y={(flow.TOP + flow.H + flow.BY) / 2 - (l.lines.length - 1) * 8 + k * 16 + 4} class:list={['pw-t-small', { 'pw-t-good': l.good }]}>{ln}</text>)}
+                  </g>
+                ))}
+              </g>
+            ))}
+          </svg>
+        </figure>
+      )}
+      {pw.levels.items && (
+        <ol class:list={['pw-levels', { 'pw-levels--4': pw.levels.items.length === 4, 'pw-levels--2': pw.levels.items.length === 2 }]}>
+          {pw.levels.items.map((lv: any, i: number) => (
+            <Fragment>
+              <li class:list={['pw-level', { 'is-you': lv.you }]}>
+                <div class="pw-level-top"><span class="pw-tag">{lv.tag}</span>{lv.who && <span class="pw-who">{lv.who}</span>}</div>
+                <strong>{lv.title}</strong>
+                {lv.body && <p>{lv.body}</p>}
+                {lv.points && <ul>{lv.points.map((pt: string) => <li>{pt}</li>)}</ul>}
+              </li>
+              {pw.levels.handovers && i < pw.levels.handovers.length && <li class="pw-hand" aria-hidden="true"><span>{pw.levels.handovers[i]}</span></li>}
+            </Fragment>
+          ))}
+        </ol>
+      )}
+    </div>
+  </section>
+)}
+
+{pw.loop && (
+  <section class="ed-wrap ed-sec" id="loop">
+    <header class="ed-sec-head">
+      {pw.loop.eyebrow && <p class="pw-eyebrow pw-eyebrow--ink">{pw.loop.eyebrow}</p>}
+      <h2 class="ed-h2 ed-h2--md">{pw.loop.h2}</h2>
+      {pw.loop.sub && <p class="ed-sec-sub">{pw.loop.sub}</p>}
+    </header>
+    <div class="pw-loop-wrap">
+      <svg class="pw-cycle" viewBox="-150 20 940 530" role="img" aria-label={steps.map((s: any) => s.title).join(' ')}>
+        <defs>
+          <marker id="pw-ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="pw-ah2" /></marker>
+        </defs>
+        <circle cx={CX} cy={CY} r={R - 62} class="pw-cycle-core" />
+        <text x={CX} y={CY - 8} class="pw-cycle-c1" text-anchor="middle">{pw.loop.center[0]}</text>
+        <text x={CX} y={CY + 32} class="pw-cycle-c2" text-anchor="middle">{pw.loop.center[1]}</text>
+        {loopArcs.map((d: string) => <path d={d} class="pw-cycle-arc" marker-end="url(#pw-ah2)" />)}
+        {loopNodes.map((nd: any) => (
+          <g>
+            <circle cx={nd.x} cy={nd.y} r="32" class:list={['pw-cycle-node', { 'is-last': nd.i === N - 1 }]} />
+            <text x={nd.x} y={nd.y + 9} class:list={['pw-cycle-n', { 'is-last': nd.i === N - 1 }]} text-anchor="middle">{nd.i + 1}</text>
+            <text x={nd.side === 'r' ? nd.x + 46 : nd.side === 'l' ? nd.x - 46 : nd.x} y={nd.side === 't' ? nd.y - 46 : nd.side === 'b' ? nd.y + 62 : nd.y + 8}
+              class="pw-cycle-label" text-anchor={nd.side === 'r' ? 'start' : nd.side === 'l' ? 'end' : 'middle'}>{nd.s.short}</text>
+          </g>
+        ))}
+      </svg>
+      <ol class="pw-loop">
+        {steps.map((s: any, i: number) => (
+          <li><span class="pw-n">{i + 1}</span><div><strong>{s.title}</strong><span>{s.body}</span></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}
+
+{pw.knowledge && (
+  <section class="ed-band--mist" id="knowledge">
+    <div class="ed-wrap ed-sec pw-know">
+      <div>
+        {pw.knowledge.eyebrow && <p class="pw-eyebrow pw-eyebrow--ink">{pw.knowledge.eyebrow}</p>}
+        <h2 class="ed-h2 ed-h2--md">{pw.knowledge.h2}</h2>
+        {pw.knowledge.body.map((b: string) => <p class="pw-body">{b}</p>)}
+      </div>
+      <div class="pw-know-side">
+        {pw.knowledge.sources && <h3 class="pw-h3">{pw.knowledge.sources_title}</h3>}
+        {pw.knowledge.sources && <ul class="pw-chips">{pw.knowledge.sources.map((s: string) => <li>{s}</li>)}</ul>}
+        {pw.knowledge.apps && <h3 class="pw-h3">{pw.knowledge.apps_title}</h3>}
+        {pw.knowledge.apps && (
+          <ul class="pw-apps">
+            {pw.knowledge.apps.map(([id, name, status]: string[]) => (
+              <li class={'is-' + status}><Fragment set:html={mark(id)} /><span>{name}</span><em>{labels[status]}</em></li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+{pw.connect && (
+  <section class="ed-wrap ed-sec" id="tools">
+    <header class="ed-sec-head">
+      {pw.connect.eyebrow && <p class="pw-eyebrow pw-eyebrow--ink">{pw.connect.eyebrow}</p>}
+      <h2 class="ed-h2 ed-h2--md">{pw.connect.h2}</h2>
+      {pw.connect.sub && <p class="ed-sec-sub">{pw.connect.sub}</p>}
+    </header>
+    <div class="pw-groups" style={`grid-template-rows:repeat(${rows}, 1fr)`}>
+      <div class="pw-hub" aria-hidden="true" style={`grid-row:1 / span ${rows}`}>
+        <svg viewBox="0 0 100 300" preserveAspectRatio="none">{hubLines.map((d: string) => <path d={d} />)}</svg>
+        <div class="pw-hub-core"><strong>{pw.connect.hub[0]}</strong>{pw.connect.hub[1] && <span>{pw.connect.hub[1]}</span>}</div>
+      </div>
+      {groups.map((g: any, gi: number) => (
+        <div class="pw-group" style={`grid-column:${gi < leftN ? 1 : 3};grid-row:${(gi < leftN ? gi : gi - leftN) + 1}`}>
+          <h3 class="pw-h3">{g.title}</h3>
+          <ul class="pw-apps">
+            {g.items.map(([id, name, status]: string[]) => (
+              <li class={'is-' + status}><Fragment set:html={mark(id)} /><span>{name}</span><em>{labels[status]}</em></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    {pw.connect.note && <p class="pw-note">{pw.connect.note}</p>}
+  </section>
+)}
+
+{pw.company && (
+  <section class="ed-band--mist" id="company">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        {pw.company.eyebrow && <p class="pw-eyebrow pw-eyebrow--ink">{pw.company.eyebrow}</p>}
+        <h2 class="ed-h2 ed-h2--md">{pw.company.h2}</h2>
+        {pw.company.sub && <p class="ed-sec-sub">{pw.company.sub}</p>}
+      </header>
+      <ul class="pw-cards">
+        {pw.company.items.map((it: any) => <li><strong>{it.title}</strong><span>{it.body}</span></li>)}
+      </ul>
+      {pw.company.how && <p class="pw-how">{pw.company.how}</p>}
+    </div>
+  </section>
+)}
+
+<style>
+.pw-eyebrow { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ed-yellow); }
+.pw-eyebrow--ink { color: var(--ed-ink-3); }
+.pw-on-navy { color: #fff; margin-bottom: clamp(24px, 3vw, 36px); }
+.pw-sub-navy { max-width: 46em; margin-top: -12px; font-size: clamp(17px, 1.5vw, 19.5px); line-height: 1.5; color: var(--ed-on-navy); }
+.pw-n { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13.5px; font-weight: 700; }
+
+/* The flow, drawn (hidden on a phone: the cards below say the same). */
+.pw-map { margin: clamp(28px, 4vw, 44px) 0 0; }
+.pw-map svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pw-map text { font-family: inherit; }
+.pw-node-emp { fill: var(--ed-navy-2); stroke: rgba(255,255,255,.35); stroke-width: 2; }
+.pw-ico { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; }
+.pw-box { fill: #fff; }
+.pw-box--you { stroke: var(--ed-yellow); stroke-width: 4; }
+.pw-pill { fill: var(--ed-navy); }
+.pw-pill--you { fill: var(--ed-yellow); }
+.pw-t-tag { font-family: var(--ed-serif) !important; font-size: 24px; fill: var(--ed-yellow); }
+.pw-t-tag--you { fill: var(--ed-navy); }
+.pw-t-title { font-weight: 700; fill: var(--ed-ink); }
+.pw-t-sub { font-size: 15px; fill: var(--ed-ink-3); }
+.pw-t-label { font-size: 15px; font-weight: 600; fill: #fff; }
+.pw-t-small { font-size: 13.5px; fill: var(--ed-on-navy); }
+.pw-t-good { fill: var(--ed-yellow); font-weight: 600; }
+.pw-arrow { fill: none; stroke: rgba(255,255,255,.75); stroke-width: 2.5; }
+.pw-arrow--y { stroke: var(--ed-yellow); }
+.pw-ah { fill: rgba(255,255,255,.85); }
+.pw-ahy { fill: var(--ed-yellow); }
+.pw-know-box { fill: var(--ed-navy-2); stroke: var(--ed-yellow); stroke-width: 2; stroke-dasharray: 7 6; }
+.pw-rec-box { fill: var(--ed-navy-2); stroke: rgba(255,255,255,.3); stroke-width: 1.5; }
+.pw-t-kn { font-size: 18px; font-weight: 700; fill: #fff; }
+.pw-t-kn-sub { font-size: 14px; fill: var(--ed-on-navy); }
+.pw-link { stroke: rgba(255,255,255,.45); stroke-width: 2; stroke-dasharray: 4 5; }
+
+.pw-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; margin: clamp(20px, 3vw, 32px) 0 0; padding: 0; list-style: none; }
+.pw-levels--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pw-levels--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pw-level { display: flex; flex-direction: column; gap: 10px; padding: clamp(22px, 2.4vw, 30px); border-radius: 22px; background: #fff; color: var(--ed-ink-2); font-size: 15.5px; line-height: 1.5; }
+.pw-level.is-you { box-shadow: 0 0 0 3px var(--ed-yellow); }
+.pw-level-top { display: flex; align-items: center; gap: 12px; }
+.pw-tag { flex: none; display: grid; place-items: center; min-width: 54px; height: 54px; padding: 0 10px; border-radius: 16px; background: var(--ed-navy); color: var(--ed-yellow); font-family: var(--ed-serif); font-size: 24px; }
+.pw-level.is-you .pw-tag { background: var(--ed-yellow); color: var(--ed-navy); }
+.pw-who { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); line-height: 1.3; }
+.pw-level > strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(25px, 2.3vw, 31px); line-height: 1.05; color: var(--ed-ink); }
+.pw-level p { margin: 0; }
+.pw-level ul { display: grid; gap: 8px; margin: 6px 0 0; padding: 14px 0 0; list-style: none; border-top: 1px solid var(--ed-line); }
+.pw-level ul li { position: relative; padding-left: 24px; font-size: 14.5px; }
+.pw-level ul li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 10px; height: 6px; border-left: 2px solid #17663A; border-bottom: 2px solid #17663A; transform: rotate(-45deg); }
+.pw-hand { position: relative; display: none; align-items: center; justify-content: center; padding: 0 10px; }
+.pw-hand::before { content: ""; position: absolute; left: 50%; top: 6px; bottom: 14px; border-left: 2px dashed var(--ed-yellow); }
+.pw-hand::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: 6px; border: 6px solid transparent; border-top: 9px solid var(--ed-yellow); border-bottom: 0; }
+.pw-hand span { position: relative; padding: 8px 10px; border-radius: 12px; background: var(--ed-navy); font-size: 12.5px; line-height: 1.35; text-align: center; color: var(--ed-on-navy); }
+
+/* The loop: the cycle drawn, the steps beside it. */
+.pw-loop-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center; margin-top: clamp(20px, 3vw, 32px); }
+.pw-cycle { display: block; width: 100%; max-width: 640px; height: auto; margin-inline: auto; overflow: visible; }
+.pw-cycle text { font-family: inherit; }
+.pw-cycle-core { fill: var(--ed-mist); }
+.pw-cycle-c1, .pw-cycle-c2 { font-family: var(--ed-serif) !important; font-size: 36px; fill: var(--ed-ink); }
+.pw-cycle-c2 { fill: var(--ed-navy); font-style: italic; }
+.pw-cycle-arc { fill: none; stroke: var(--ed-navy); stroke-width: 3; }
+.pw-ah2 { fill: var(--ed-navy); }
+.pw-cycle-node { fill: var(--ed-navy); }
+.pw-cycle-node.is-last { fill: var(--ed-yellow); }
+.pw-cycle-n { font-size: 26px; font-weight: 700; fill: #fff; }
+.pw-cycle-n.is-last { fill: var(--ed-navy); }
+.pw-cycle-label { font-size: 24px; font-weight: 700; fill: var(--ed-ink); }
+.pw-loop { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ed-ink); }
+.pw-loop li { display: flex; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--ed-line-2); font-size: 15.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.pw-loop li > div { display: flex; flex-direction: column; gap: 4px; }
+.pw-loop li:last-child .pw-n { background: var(--ed-yellow); color: var(--ed-navy); }
+.pw-loop strong { font-size: 18px; line-height: 1.3; color: var(--ed-ink); }
+
+/* What it reads. */
+.pw-know { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.pw-body { margin-top: 14px; font-size: clamp(16.5px, 1.4vw, 18.5px); line-height: 1.55; color: var(--ed-ink-2); }
+.pw-know-side { display: flex; flex-direction: column; gap: 14px; padding: clamp(20px, 2.4vw, 30px); border-radius: 22px; background: #fff; border: 1px solid var(--ed-line); }
+.pw-h3 { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-2); }
+.pw-know-side .pw-h3:not(:first-child) { margin-top: 8px; }
+.pw-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pw-chips li { padding: 7px 13px; border-radius: 999px; background: var(--ed-mist); font-size: 14.5px; font-weight: 600; color: var(--ed-ink); }
+.pw-apps { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pw-apps li { display: flex; align-items: center; gap: 12px; font-size: 15.5px; font-weight: 600; color: var(--ed-ink); }
+.pw-apps li > span:not(:global(.sx-mark)) { flex: 1; }
+/* The marks are written as HTML (set:html), so they take global rules. */
+.pw-apps :global(.sx-mark) { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #fff; border: 1px solid var(--ed-line); box-shadow: 0 6px 14px -10px rgba(16, 27, 52, .35); }
+.pw-apps :global(.sx-mark svg) { width: 19px; height: 19px; }
+.pw-apps :global(.sx-mark--icon) { color: var(--ed-navy); background: var(--ed-mist); }
+.pw-apps :global(.sx-mark--none) { background: var(--ed-mist); box-shadow: none; }
+.pw-apps em { font-style: normal; flex: none; padding: 2px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.pw-apps .is-live em { background: #E3F4EA; color: #17663A; }
+.pw-apps .is-soon em { border: 1px dashed var(--ed-line-2); color: var(--ed-ink-3); }
+.pw-apps .is-soon > span:not(:global(.sx-mark)) { color: var(--ed-ink-2); }
+
+/* The tools around it: groups on each side, lines to the hub. */
+.pw-groups { display: grid; grid-template-columns: minmax(0, 1fr) clamp(160px, 18vw, 240px) minmax(0, 1fr); gap: 16px 0; margin-top: clamp(24px, 3vw, 36px); }
+.pw-hub { position: relative; grid-column: 2; display: grid; place-items: center; }
+.pw-hub svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pw-hub path { fill: none; stroke: var(--ed-line-2); stroke-width: 2; stroke-dasharray: 5 5; vector-effect: non-scaling-stroke; }
+.pw-hub-core { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; width: clamp(140px, 14vw, 180px); aspect-ratio: 1; padding: 14px; border-radius: 999px; background: var(--ed-navy); box-shadow: 0 0 0 8px var(--ed-mist), 0 24px 50px -24px rgba(16,27,52,.6); text-align: center; }
+.pw-hub-core strong { font-family: var(--ed-serif); font-weight: 400; font-size: clamp(20px, 2vw, 26px); line-height: 1.05; color: #fff; }
+.pw-hub-core span { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; color: var(--ed-yellow); }
+.pw-group { display: flex; flex-direction: column; gap: 14px; padding: clamp(20px, 2.2vw, 26px); border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); }
+.pw-note { max-width: 62ch; margin-top: 18px; font-size: 15px; line-height: 1.55; color: var(--ed-ink-3); }
+
+/* What a company makes of it. */
+.pw-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: clamp(24px, 3vw, 36px) 0 0; padding: 0; list-style: none; }
+.pw-cards li { display: flex; flex-direction: column; gap: 8px; padding: clamp(20px, 2.4vw, 28px); border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); font-size: 16px; line-height: 1.55; color: var(--ed-ink-2); }
+.pw-cards strong { font-size: 19px; color: var(--ed-ink); }
+.pw-how { max-width: 62ch; margin-top: 20px; font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+
+@media (max-width: 1080px) {
+  .pw-levels--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .pw-know, .pw-loop-wrap, .pw-cards { grid-template-columns: minmax(0, 1fr); }
+  .pw-groups { grid-template-columns: minmax(0, 1fr); grid-template-rows: none !important; gap: 14px; }
+  .pw-groups > .pw-group { grid-column: auto !important; grid-row: auto !important; }
+  .pw-hub { grid-column: auto; grid-row: auto !important; }
+  .pw-hub svg { display: none; }
+}
+@media (max-width: 760px) {
+  .pw-map { display: none; }
+  .pw-levels, .pw-levels--4, .pw-levels--2 { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .pw-levels:not(:has(.pw-hand)) { gap: 14px; }
+  .pw-hand { display: flex; height: 74px; }
+}
+</style>
