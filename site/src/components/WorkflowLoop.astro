@@ -1,0 +1,285 @@
+---
+// A workflow drawn and played in a loop (home, "Build it without code" > Automations, 2026-11-19): the steps of a real
+// automation on the Studio's dark canvas; only the step at work is lit, the path already taken stays as a yellow line, and a
+// note under each group of steps lights with it. Each pass takes the other branch of the condition, so the visitor sees
+// that it decides; the invoice going through is named in the corner. Two drawings of the same workflow: wide (with the
+// notes) and tall for a phone. Nothing to load: it shows at once, and stands still, fully lit, when the visitor asks for
+// less motion. Texts come from en.json (home_v3.build.views[].diagram).
+import { brandLogos } from '../data/brand-logos';
+
+interface Props { d: any }
+const { d } = Astro.props;
+
+const ICON: Record<string, { d: string; c?: string }> = {
+  webhook: { d: 'M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z' },
+  document: { d: 'M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z' },
+  ai: { d: 'M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z' },
+  branch: { d: 'M14 4l2.29 2.29-2.88 2.88 1.42 1.42 2.88-2.88L20 10V4zm-4 0H4v6l2.29-2.29 4.71 4.7V20h2v-8.41l-5.29-5.3z' },
+  person: { d: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' },
+  googlesheets: brandLogos.googlesheets,
+  slack: brandLogos.slack,
+};
+
+type Pt = [number, number];
+type Link = { id: string; a: Pt; b: Pt; d: string };
+const nodes: any[] = d.nodes;
+
+// Wide: left to right, the approval above the line, the direct branch below it.
+const WIDE: Record<string, Pt> = {
+  trigger: [100, 250], file: [265, 250], ai: [430, 250], if: [595, 250], approve: [775, 120], sheets: [955, 250], slack: [1110, 250],
+};
+function linksWide(): Link[] {
+  const p = WIDE, h = 52;
+  const R = (n: string): Pt => [p[n][0] + h, p[n][1]], Lf = (n: string): Pt => [p[n][0] - h, p[n][1]];
+  const line = (id: string, a: Pt, b: Pt) => ({ id, a, b, d: `M${a[0]} ${a[1]} L${b[0]} ${b[1]}` });
+  const curve = (id: string, a: Pt, b: Pt) => ({ id, a, b, d: `M${a[0]} ${a[1]} C ${a[0] + 100} ${a[1]}, ${b[0] - 100} ${b[1]}, ${b[0]} ${b[1]}` });
+  const [ia, sb] = [R('if'), Lf('sheets')];
+  return [
+    line('trigger-file', R('trigger'), Lf('file')),
+    line('file-ai', R('file'), Lf('ai')),
+    line('ai-if', R('ai'), Lf('if')),
+    curve('if-approve', ia, Lf('approve')),
+    curve('approve-sheets', R('approve'), sb),
+    { id: 'if-sheets', a: ia, b: sb, d: `M${ia[0]} ${ia[1]} C ${ia[0] + 90} ${ia[1]}, ${p.approve[0] - 120} 385, ${p.approve[0]} 385 S ${sb[0] - 90} ${sb[1]}, ${sb[0]} ${sb[1]}` },
+    line('sheets-slack', R('sheets'), Lf('slack')),
+  ];
+}
+// Tall: top to bottom, labels on the right, the direct branch as a loop on the right.
+const TALL: Record<string, Pt> = {
+  trigger: [110, 70], file: [110, 200], ai: [110, 330], if: [110, 460], approve: [110, 600], sheets: [110, 760], slack: [110, 890],
+};
+function linksTall(): Link[] {
+  const p = TALL, h = 42;
+  const B = (n: string): Pt => [p[n][0], p[n][1] + h], T = (n: string): Pt => [p[n][0], p[n][1] - h];
+  const line = (id: string, a: Pt, b: Pt) => ({ id, a, b, d: `M${a[0]} ${a[1]} L${b[0]} ${b[1]}` });
+  const ia: Pt = [p.if[0] + h, p.if[1]], sb: Pt = [p.sheets[0] + h, p.sheets[1]];
+  return [
+    line('trigger-file', B('trigger'), T('file')),
+    line('file-ai', B('file'), T('ai')),
+    line('ai-if', B('ai'), T('if')),
+    line('if-approve', B('if'), T('approve')),
+    line('approve-sheets', B('approve'), T('sheets')),
+    { id: 'if-sheets', a: ia, b: sb, d: `M${ia[0]} ${ia[1]} C 590 ${ia[1]}, 590 ${sb[1]}, ${sb[0]} ${sb[1]}` },
+    line('sheets-slack', B('sheets'), T('slack')),
+  ];
+}
+const branchText: Record<string, string> = { 'if-approve': d.branches.above, 'if-sheets': d.branches.under };
+const chipW = (s: string, size: number) => Math.round(s.length * size * 0.56 + 28);
+const notesX = [40, 425, 810];
+
+const LAYOUTS = [
+  { kind: 'wide', p: WIDE, links: linksWide(), branch: { 'if-approve': [668, 158], 'if-sheets': [775, 385] } as Record<string, Pt>,
+    view: '30 6 1140 712', w: 1200, h: 750, s: 104, tag: [52, 44] as Pt },
+  { kind: 'tall', p: TALL, links: linksTall(), branch: { 'if-approve': [110, 530], 'if-sheets': [516, 610] } as Record<string, Pt>,
+    view: '0 0 600 1010', w: 600, h: 1010, s: 84, tag: [40, 968] as Pt },
+];
+// Each port (the small dot where a link meets a step) belongs to the step it sits on.
+const portsOf = (L: (typeof LAYOUTS)[number]) => {
+  const seen = new Map<string, { x: number; y: number; node: string }>();
+  for (const ln of L.links) {
+    const [from, to] = ln.id.split('-');
+    seen.set(`${ln.a}`, { x: ln.a[0], y: ln.a[1], node: from });
+    seen.set(`${ln.b}`, { x: ln.b[0], y: ln.b[1], node: to });
+  }
+  return [...seen.values()];
+};
+---
+<div class="wf" data-wf data-routes={JSON.stringify(d.invoices)} role="img" aria-label={d.alt}>
+  {LAYOUTS.map((L) => (
+    <svg class={`wf-svg wf-${L.kind}`} viewBox={L.view} aria-hidden="true">
+      <defs>
+        <pattern id={`wf-dots-${L.kind}`} width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="rgba(255,255,255,.07)" /></pattern>
+        <filter id={`wf-glow-${L.kind}`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" /></filter>
+      </defs>
+      <rect x="-50" y="-50" width={L.w + 100} height={L.h + 100} fill={`url(#wf-dots-${L.kind})`} />
+      <g class="wf-tag" data-tag transform={`translate(${L.tag[0]} ${L.tag[1]})`}>
+        <circle cx="10" cy="0" r="6" />
+        <text x="26" y="6"></text>
+      </g>
+      {L.links.map((ln) => <path class="wf-link" d={ln.d} />)}
+      {L.links.map((ln) => <path class="wf-trail" data-link={ln.id} d={ln.d} />)}
+      {Object.entries(L.branch).map(([id, [x, y]]) => {
+        const t = branchText[id], w = chipW(t, L.kind === 'wide' ? 16 : 18);
+        return (
+          <g class="wf-branch" data-branch={id} transform={`translate(${x} ${y})`}>
+            <rect x={-w / 2} y="-17" width={w} height="34" rx="17" />
+            <text y="6" text-anchor="middle">{t}</text>
+          </g>
+        );
+      })}
+      {nodes.map((n) => {
+        const [x, y] = L.p[n.id], s = L.s, ic = ICON[n.icon];
+        const wide = L.kind === 'wide';
+        return (
+          <g class={`wf-node wf-${n.kind}`} data-node={n.id} data-group={n.group}>
+            <rect class="wf-halo" x={x - s / 2} y={y - s / 2} width={s} height={s} rx={s * 0.22} filter={`url(#wf-glow-${L.kind})`} />
+            <rect class="wf-box" x={x - s / 2} y={y - s / 2} width={s} height={s} rx={s * 0.22} />
+            <svg x={x - s * 0.22} y={y - s * 0.22} width={s * 0.44} height={s * 0.44} viewBox="0 0 24 24">
+              <path class="wf-icon" d={ic.d} style={ic.c ? `--brand:${ic.c}` : undefined} />
+            </svg>
+            {wide
+              ? <>
+                  <text class="wf-title" x={x} y={y + s / 2 + 32} text-anchor="middle">{n.title}</text>
+                  <text class="wf-type" x={x} y={y + s / 2 + 57} text-anchor="middle">{n.type}</text>
+                </>
+              : <>
+                  <text class="wf-title" x={x + s / 2 + 22} y={y - 2}>{n.title}</text>
+                  <text class="wf-type" x={x + s / 2 + 22} y={y + 25}>{n.type}</text>
+                </>}
+          </g>
+        );
+      })}
+      {portsOf(L).map((pt) => <circle class="wf-port" data-port={pt.node} cx={pt.x} cy={pt.y} r="5.5" />)}
+      {L.kind === 'wide' && d.notes.map((note: any, i: number) => (
+        <g class="wf-note" data-note={i}>
+          <rect x={notesX[i]} y="520" width="350" height="185" rx="16" />
+          <path class="wf-note-head" d={`M${notesX[i]} 536 a16 16 0 0 1 16 -16 h318 a16 16 0 0 1 16 16 v32 h-350 z`} />
+          <text class="wf-note-title" x={notesX[i] + 22} y="550">{note.title}</text>
+          {note.lines.map((line: string, j: number) => <text class="wf-note-text" x={notesX[i] + 22} y={606 + j * 28}>{line}</text>)}
+        </g>
+      ))}
+      <g class="wf-token" data-token>
+        <circle class="wf-token-glow" r="16" filter={`url(#wf-glow-${L.kind})`} />
+        <circle r="7.5" />
+      </g>
+    </svg>
+  ))}
+</div>
+
+<style>
+.wf { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #151A23; }
+.wf-svg { display: block; width: 100%; height: 100%; font-family: var(--ed-sans); }
+.wf-tall { display: none; }
+@media (max-width: 640px) { .wf-wide { display: none; } .wf-tall { display: block; } }
+
+.wf-link { fill: none; stroke: rgba(255, 255, 255, .16); stroke-width: 2; }
+.wf-trail { fill: none; stroke: var(--ed-yellow); stroke-width: 2.5; stroke-linecap: round; opacity: 0; }
+.wf-trail.is-done { opacity: 1; }
+.wf-port { fill: #222833; stroke: rgba(255, 255, 255, .3); stroke-width: 1.5; transition: fill .4s ease, stroke .4s ease; }
+.wf-port.is-on { fill: var(--ed-yellow); stroke: var(--ed-yellow); }
+
+.wf-node { opacity: .5; transition: opacity .4s ease; }
+.wf-node.is-on { opacity: 1; }
+.wf-halo { fill: var(--ed-yellow); opacity: 0; transition: opacity .4s ease; }
+.wf-node.is-on .wf-halo { opacity: .28; }
+.wf-box { fill: #222833; stroke: rgba(255, 255, 255, .14); stroke-width: 1.5; transition: fill .4s ease, stroke .4s ease; }
+.wf-icon { fill: rgba(255, 255, 255, .55); transition: fill .4s ease; }
+.wf-node.is-on .wf-box { fill: #fff; stroke: #fff; }
+.wf-node.is-on .wf-icon { fill: var(--brand, var(--ed-navy)); opacity: 1; }
+.wf-person.is-on .wf-box { fill: var(--ed-yellow); stroke: var(--ed-yellow); }
+.wf-title { font-size: 20px; font-weight: 700; fill: rgba(255, 255, 255, .75); transition: fill .4s ease; }
+.wf-type { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 15px; fill: rgba(255, 255, 255, .45); }
+.wf-node.is-on .wf-title { fill: #fff; }
+.wf-node.is-on .wf-type { fill: rgba(255, 255, 255, .75); }
+.wf-tall .wf-title { font-size: 25px; }
+.wf-tall .wf-type { font-size: 18px; }
+
+.wf-branch { transition: opacity .4s ease; }
+.wf-branch rect { fill: #151A23; stroke: rgba(255, 255, 255, .2); stroke-width: 1.5; transition: stroke .4s ease; }
+.wf-branch text { font-size: 15px; font-weight: 700; fill: rgba(255, 255, 255, .5); transition: fill .4s ease; }
+.wf-tall .wf-branch text { font-size: 17px; }
+.wf-branch.is-on rect { stroke: var(--ed-yellow); }
+.wf-branch.is-on text { fill: var(--ed-yellow); }
+
+.wf-note rect { fill: rgba(255, 255, 255, .03); stroke: rgba(255, 255, 255, .1); stroke-width: 1.5; transition: fill .4s ease, stroke .4s ease; }
+.wf-note-head { fill: rgba(255, 255, 255, .05); transition: fill .4s ease; }
+.wf-note-title { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 15px; letter-spacing: .08em; fill: rgba(255, 255, 255, .4); transition: fill .4s ease; }
+.wf-note-text { font-size: 18px; fill: rgba(255, 255, 255, .32); transition: fill .4s ease; }
+.wf-note.is-on rect { fill: rgba(255, 255, 255, .08); stroke: rgba(255, 255, 255, .3); }
+.wf-note.is-on .wf-note-head { fill: rgba(255, 255, 255, .14); }
+.wf-note.is-on .wf-note-title { fill: #fff; }
+.wf-note.is-on .wf-note-text { fill: rgba(255, 255, 255, .92); }
+
+.wf-tag { opacity: 0; transition: opacity .4s ease; }
+.wf-tag.is-on { opacity: 1; }
+.wf-tag circle { fill: var(--ed-yellow); }
+.wf-tag text { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 17px; fill: rgba(255, 255, 255, .85); }
+.wf-tall .wf-tag text { font-size: 19px; }
+.wf-token { opacity: 0; }
+.wf-token circle { fill: var(--ed-yellow); }
+.wf-token-glow { opacity: .55; }
+</style>
+
+<script>
+  type Invoice = { label: string; route: string[] };
+  const MOVE = 700, HOLD = 750, REST = 1600;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLElement>('[data-wf]').forEach((root) => {
+    const invoices: Invoice[] = JSON.parse(root.dataset.routes || '[]');
+    let visible = false, running = false;
+
+    const svgNow = () => [...root.querySelectorAll<SVGSVGElement>('.wf-svg')].find((s) => s.getBoundingClientRect().width > 0);
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const until = async () => { while (!visible) await wait(300); };
+
+    function reset(svg: SVGSVGElement) {
+      svg.querySelectorAll('.is-on, .is-done').forEach((el) => el.classList.remove('is-on', 'is-done'));
+      svg.querySelectorAll<SVGPathElement>('.wf-trail').forEach((p) => { p.style.strokeDasharray = ''; p.style.strokeDashoffset = ''; });
+    }
+    // Only the step at work is lit, with its ports and the note of its group.
+    function light(svg: SVGSVGElement, id: string | null) {
+      svg.querySelectorAll('.wf-node.is-on, .wf-port.is-on').forEach((el) => el.classList.remove('is-on'));
+      if (!id) return;
+      const node = svg.querySelector<SVGGElement>(`[data-node="${id}"]`);
+      node?.classList.add('is-on');
+      svg.querySelectorAll(`[data-port="${id}"]`).forEach((el) => el.classList.add('is-on'));
+      const group = node?.dataset.group;
+      svg.querySelectorAll<SVGGElement>('.wf-note').forEach((n) => n.classList.toggle('is-on', n.dataset.note === group));
+    }
+    function travel(svg: SVGSVGElement, link: SVGPathElement) {
+      const token = svg.querySelector<SVGGElement>('[data-token]')!;
+      const len = link.getTotalLength();
+      link.classList.add('is-done');
+      link.style.strokeDasharray = `${len}`;
+      link.style.strokeDashoffset = `${len}`;
+      token.style.opacity = '1';
+      return new Promise<void>((done) => {
+        const t0 = performance.now();
+        const step = (now: number) => {
+          const k = Math.min(1, (now - t0) / MOVE), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+          const pt = link.getPointAtLength(len * e);
+          token.setAttribute('transform', `translate(${pt.x} ${pt.y})`);
+          link.style.strokeDashoffset = `${len * (1 - e)}`;
+          if (k < 1) requestAnimationFrame(step); else { token.style.opacity = '0'; done(); }
+        };
+        requestAnimationFrame(step);
+      });
+    }
+
+    async function loop() {
+      if (running) return;
+      running = true;
+      for (let i = 0; ; i = (i + 1) % invoices.length) {
+        await until();
+        const svg = svgNow();
+        if (!svg) { await wait(500); continue; }
+        const { label, route } = invoices[i];
+        reset(svg);
+        const tag = svg.querySelector<SVGGElement>('[data-tag]')!;
+        tag.querySelector('text')!.textContent = label;
+        tag.classList.add('is-on');
+        light(svg, route[0]);
+        await wait(HOLD);
+        for (let j = 1; j < route.length; j++) {
+          const id = `${route[j - 1]}-${route[j]}`;
+          const link = svg.querySelector<SVGPathElement>(`[data-link="${id}"]`);
+          light(svg, null);
+          svg.querySelector(`[data-branch="${id}"]`)?.classList.add('is-on');
+          if (link) await travel(svg, link);
+          light(svg, route[j]);
+          await wait(HOLD);
+        }
+        await wait(REST);
+      }
+    }
+
+    if (reduce) {
+      root.querySelectorAll('.wf-node, .wf-port, .wf-note, .wf-branch, .wf-tag').forEach((el) => el.classList.add('is-on'));
+      root.querySelectorAll('.wf-trail').forEach((el) => el.classList.add('is-done'));
+      root.querySelectorAll('[data-tag] text').forEach((el) => { el.textContent = JSON.parse(root.dataset.routes || '[]')[0]?.label ?? ''; });
+      return;
+    }
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) loop(); }, { threshold: .25 }).observe(root);
+  });
+</script>

@@ -4535,7 +4535,7 @@
       },
       {
         "slug": "service-desk",
-        "image": "/media/service-desk-cockpit.webp",
+        "image": "/media/service-desk-cockpit-desk.webp",
         "width": 2048,
         "height": 1536,
         "tag": "No app",
@@ -5210,7 +5210,7 @@
           },
           {
             "q": "What is real and what is simulated?",
-            "a": "The answers, the tickets, the escalations and the closings are real, and they are written in real tables. The company is made up: Brightwell Logistics, its employees, its experts, its tickets and its articles are fictional. Replace them with your own."
+            "a": "The answers, the tickets, the escalations and the closings are real, and they are written in real tables. It comes ready to try with Brightwell Logistics: its employees, its experts, its tickets and its articles. Replace them with your own."
           },
           {
             "q": "Can employees send an email, or use a form, instead of the Desk?",
@@ -5907,7 +5907,7 @@
           },
           {
             "q": "What is real and what is simulated?",
-            "a": "The reviews, the decisions and the notes are real, and they are written in real tables. The company is made up: Orlenne Kitchens, its suppliers, its people and its contracts are fictional. Replace them with your own. Nothing is sent to a supplier."
+            "a": "The reviews, the decisions and the notes are real, and they are written in real tables. It comes ready to try with Orlenne Kitchens: its suppliers, its people and its contracts. Replace them with your own. Nothing is sent to a supplier."
           },
           {
             "q": "Which files can it read?",
@@ -6601,7 +6601,7 @@
           },
           {
             "q": "What is real and what is simulated?",
-            "a": "The quotes, the decisions and the e-mail texts are real, and they are written in real tables. The company is made up: Vellacor Signs, its clients, its prices and its people are fictional. Replace them with your own. Nothing is sent to a client."
+            "a": "The quotes, the decisions and the e-mail texts are real, and they are written in real tables. It comes ready to try with Vellacor Signs: its clients, its prices and its people. Replace them with your own. Nothing is sent to a client."
           },
           {
             "q": "Can it quote something that is not in my price list?",
@@ -10357,54 +10357,123 @@
     },
     "solutions": {
       "eyebrow": "Ready-made solutions",
-      "title": "What can AI do for you first?",
-      "sub": "Each one is ready to use. Open it in your trial with its demo data, then ask the Assistant to change it for you.",
+      "title": "Hand real work to AI.",
+      "sub": "Not chatbots: working solutions, each with its knowledge, its rules, its connections and a person at every decision that matters. Open one in your trial with its sample data, then ask the Assistant to make it yours.",
       "more": "See it at work",
       "cards": [
         {
           "name": "Service Desk",
-          "gain": "Solve each problem once.",
-          "body": "Your employees ask on the Desk. Your help articles, and every fix your service desk approves, answer them in seconds. The rest become clear tickets, ready for your service desk.",
+          "gain": "A real service desk, from L0 to L2.",
+          "body": "AI answers your employees from your knowledge and opens clear tickets. Your experts get each case already worked, and every fix becomes an article.",
+          "points": [
+            "Escalation L0 to L2",
+            "Knowledge base",
+            "Learns from every fix"
+          ],
           "meta": "Support · two teams",
           "href": "/solutions/service-desk",
-          "image": "/media/service-desk-cockpit.webp"
+          "image": "/media/service-desk-cockpit-desk.webp"
         },
         {
           "name": "Invoice Clerk",
-          "gain": "Supplier invoices read, filed and checked.",
-          "body": "Upload an invoice. It is read and filed, the totals are checked, and duplicates are flagged.",
+          "gain": "Every invoice read, checked and filed.",
+          "body": "Each supplier invoice is read, every line and total added up, and a reminder already filed is recognised. A gap is flagged, never fixed.",
+          "points": [
+            "Totals recalculated",
+            "Duplicates caught",
+            "You decide on gaps"
+          ],
           "meta": "Finance · one agent",
           "href": "/solutions/invoice-clerk",
           "image": "/media/invoice-clerk.jpg"
         },
         {
-          "name": "Product Compare Team",
-          "gain": "Compare a product across stores.",
-          "body": "Say what you need. The team reads the stores' pages and writes a report with the best choices.",
-          "meta": "Sales · a team of 9",
-          "href": "/solutions/product-compare-team",
-          "image": "/media/shopping-lab.jpg"
-        },
-        {
           "name": "Image Creator",
-          "gain": "The image you need, from one sentence.",
-          "body": "You check the full prompt first, then change the image in your own words.",
+          "gain": "An art department in your brand.",
+          "body": "Directions first, then each image in the size its network needs, checked against your brand guide. Your brand manager approves.",
+          "points": [
+            "Your brand guide",
+            "Every image checked",
+            "A person approves"
+          ],
           "meta": "Marketing · an automation",
           "href": "/solutions/image-creator",
-          "image": "/media/image-creator.webp"
+          "image": "/media/image-creator-hero.webp"
         },
         {
           "name": "Trip Planner",
-          "gain": "A whole trip, planned with you.",
-          "body": "Write one sentence, then approve a flight, choose a hotel and book a dinner. A demo: nothing is really booked or paid.",
+          "gain": "A whole trip, planned by a team.",
+          "body": "One sentence in. A Trip Manager calls the specialists the trip needs, and the traveller picks every part. A demo: nothing is really booked or paid.",
+          "points": [
+            "Thirteen specialists",
+            "Inside your own app",
+            "The traveller chooses"
+          ],
           "meta": "Personal · a team of 13",
           "href": "/solutions/trip-planner",
           "image": "/media/trip-planner.jpg"
         },
         {
+          "name": "Quote Desk",
+          "gain": "Every rep quotes your way.",
+          "body": "AI reads the client's request. Your price list and your discount rules set every price, and what goes beyond them waits for your sales manager.",
+          "points": [
+            "Your price list",
+            "Your discount rules",
+            "Approval beyond them"
+          ],
+          "meta": "Sales · an automation",
+          "href": "/solutions/quote-desk",
+          "image": "/media/quote-desk-hero.webp"
+        },
+        {
+          "name": "CV Screener",
+          "gain": "Every CV read the same way.",
+          "body": "Each CV is scored against the job on six points, each with its evidence. Fixed thresholds choose the route, and doubtful cases wait for a recruiter.",
+          "points": [
+            "Evidence for every score",
+            "Same rules for all",
+            "Recruiter on doubtful cases"
+          ],
+          "meta": "HR · a workflow",
+          "href": "/solutions/cv-screener",
+          "image": "/media/cv-screening.jpg"
+        },
+        {
+          "name": "Contract Checker",
+          "gain": "Your playbook, applied to every contract.",
+          "body": "Every clause that departs from your rules is quoted, red lines first, with the change to ask. Legal decides.",
+          "points": [
+            "Your own playbook",
+            "Red lines first",
+            "Legal decides"
+          ],
+          "meta": "Finance · one agent",
+          "href": "/solutions/contract-checker",
+          "image": "/media/contract-checker-decision.webp"
+        },
+        {
+          "name": "Product Compare Team",
+          "gain": "A buying team of nine specialists.",
+          "body": "Two read the stores' own pages, four compare, read the reviews and score, one writes the report with every price and its source.",
+          "points": [
+            "Nine specialists",
+            "Every price sourced",
+            "The shopper chooses"
+          ],
+          "meta": "Sales · a team of 9",
+          "href": "/solutions/product-compare-team",
+          "image": "/media/shopping-lab.jpg"
+        },
+        {
           "name": "Training Coach",
-          "gain": "A training plan that follows your week.",
-          "body": "Give your goal and your week. Five coaches build your plan and your meals. A demo, not medical advice.",
+          "gain": "Five coaches behind one app.",
+          "body": "Exercises, dose and meals planned for the week, every change checked for safety and shown as a card to accept. A demo, not medical advice.",
+          "points": [
+            "Five coaches",
+            "Safety checked",
+            "Nothing without a yes"
+          ],
           "meta": "Personal · a team of 5",
           "href": "/solutions/training-coach",
           "image": "/media/blog/momentum/loop.jpg"
@@ -10413,7 +10482,8 @@
       "all": {
         "label": "See all solutions",
         "href": "/solutions"
-      }
+      },
+      "title_accent": "Ready on day one, yours to change."
     },
     "build": {
       "eyebrow": "How you build it",
@@ -10423,38 +10493,280 @@
         {
           "title": "The Assistant.",
           "body": "You describe the job. The Assistant builds it, checks it and tells you what is left to add.",
-          "caption": "The Assistant builds a team of three for a weekly competitor note.",
-          "video": "/media/assistant-create.mp4",
-          "poster": "/media/assistant-create.jpg",
-          "width": 1418,
-          "height": 770
+          "caption": "The Assistant builds a team of five that writes a blog article every week.",
+          "image": "/media/home/assistant-dark.webp",
+          "width": 2128,
+          "height": 1396
         },
         {
           "title": "Automations.",
           "body": "Your steps, in your order. Add AI at the steps where something must be read, judged or written.",
           "caption": "An invoice is read by AI; above €1,000, Finance approves it.",
-          "video": "/media/studio-workflow.mp4",
-          "poster": "/media/studio-workflow.jpg",
-          "width": 1418,
-          "height": 770
+          "diagram": {
+            "alt": "An automation drawn step by step: a new invoice arrives by webhook, the file is read, an AI step finds the amounts, a condition sends it above €1,000 to Finance for approval or straight on below, then it is filed in Google Sheets and the team is told in Slack.",
+            "nodes": [
+              {
+                "id": "trigger",
+                "title": "New invoice",
+                "type": "Webhook",
+                "icon": "webhook",
+                "kind": "step",
+                "group": "0"
+              },
+              {
+                "id": "file",
+                "title": "Read the file",
+                "type": "Extract Document Text",
+                "icon": "document",
+                "kind": "step",
+                "group": "0"
+              },
+              {
+                "id": "ai",
+                "title": "Find the amounts",
+                "type": "LLM Prompt",
+                "icon": "ai",
+                "kind": "ai",
+                "group": "0"
+              },
+              {
+                "id": "if",
+                "title": "Above €1,000?",
+                "type": "If",
+                "icon": "branch",
+                "kind": "step",
+                "group": "1"
+              },
+              {
+                "id": "approve",
+                "title": "Finance approves",
+                "type": "Human Interaction",
+                "icon": "person",
+                "kind": "person",
+                "group": "1"
+              },
+              {
+                "id": "sheets",
+                "title": "File it",
+                "type": "Google Sheets",
+                "icon": "googlesheets",
+                "kind": "app",
+                "group": "2"
+              },
+              {
+                "id": "slack",
+                "title": "Tell the team",
+                "type": "Slack",
+                "icon": "slack",
+                "kind": "app",
+                "group": "2"
+              }
+            ],
+            "branches": {
+              "above": "Above €1,000",
+              "under": "Under €1,000"
+            },
+            "notes": [
+              {
+                "title": "READ IT",
+                "lines": [
+                  "A new invoice arrives. The file is",
+                  "read, and AI takes out the supplier,",
+                  "the lines and the total."
+                ]
+              },
+              {
+                "title": "CHECK IT",
+                "lines": [
+                  "Above €1,000, Finance approves",
+                  "before anything is filed. Below,",
+                  "it goes straight on."
+                ]
+              },
+              {
+                "title": "FILE IT",
+                "lines": [
+                  "One row per invoice in the finance",
+                  "sheet, and a message to the team",
+                  "in Slack."
+                ]
+              }
+            ],
+            "invoices": [
+              {
+                "label": "INV-0412 · €4,280",
+                "route": [
+                  "trigger",
+                  "file",
+                  "ai",
+                  "if",
+                  "approve",
+                  "sheets",
+                  "slack"
+                ]
+              },
+              {
+                "label": "INV-0413 · €640",
+                "route": [
+                  "trigger",
+                  "file",
+                  "ai",
+                  "if",
+                  "sheets",
+                  "slack"
+                ]
+              }
+            ]
+          }
         },
         {
           "title": "Teams.",
           "body": "A manager shares the job between its experts. Each expert has its own role, knowledge and tools.",
           "caption": "A trip manager and its specialists at work.",
-          "video": "/media/team-manager.mp4",
-          "poster": "/media/team-manager.jpg",
-          "width": 1000,
-          "height": 950
+          "diagram": {
+            "kind": "team",
+            "alt": "A team drawn as in the Studio: the Trip Manager on top, its specialists below in two groups, Booking and Advice. A request comes in, and the manager decides as it goes which specialists the trip needs, in no set order, gives each a short brief, then answers the traveller.",
+            "manager": {
+              "title": "Trip Manager",
+              "type": "Manager"
+            },
+            "groups": [
+              {
+                "title": "BOOKING",
+                "members": [
+                  {
+                    "id": "flight",
+                    "icon": "flight",
+                    "lines": [
+                      "Flight",
+                      "Specialist"
+                    ]
+                  },
+                  {
+                    "id": "hotel",
+                    "icon": "hotel",
+                    "lines": [
+                      "Hotel",
+                      "Specialist"
+                    ]
+                  },
+                  {
+                    "id": "restaurant",
+                    "icon": "restaurant",
+                    "lines": [
+                      "Restaurant &",
+                      "Dining"
+                    ]
+                  },
+                  {
+                    "id": "transport",
+                    "icon": "transport",
+                    "lines": [
+                      "Ground",
+                      "Transport"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "ADVICE",
+                "members": [
+                  {
+                    "id": "activity",
+                    "icon": "activity",
+                    "lines": [
+                      "Activity",
+                      "Planner"
+                    ]
+                  },
+                  {
+                    "id": "visa",
+                    "icon": "visa",
+                    "lines": [
+                      "Visa &",
+                      "Documents"
+                    ]
+                  },
+                  {
+                    "id": "budget",
+                    "icon": "budget",
+                    "lines": [
+                      "Currency &",
+                      "Budget"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "requests": [
+              {
+                "request": "“3 days in Lisbon in mid-June, for two”",
+                "briefs": {
+                  "flight": "Return flights to Lisbon, 14 to 17 June, for two.",
+                  "hotel": "Three nights in Alfama, a double room.",
+                  "restaurant": "A Portuguese dinner on the 15th, near the hotel.",
+                  "activity": "A day of visits on foot, ending with a view at sunset.",
+                  "transport": "From the airport to Alfama on the 14th."
+                },
+                "answer": {
+                  "to": "Traveller",
+                  "text": "The trip, part by part, each one to choose."
+                }
+              },
+              {
+                "request": "“A weekend in Rome under €600, no car”",
+                "briefs": {
+                  "flight": "Return flights to Rome, Friday to Sunday, for one.",
+                  "hotel": "Two nights near the centre, within the budget.",
+                  "transport": "From the airport to the hotel, without a car.",
+                  "budget": "Check that the whole trip stays under €600.",
+                  "restaurant": "Somewhere simple for Saturday night, near the hotel."
+                },
+                "follow": [
+                  {
+                    "after": "budget",
+                    "to": "hotel",
+                    "brief": "The total is over €600: a cheaper room, please."
+                  }
+                ],
+                "answer": {
+                  "to": "Traveller",
+                  "text": "The weekend, part by part, under €600."
+                }
+              },
+              {
+                "request": "“Two weeks in Japan in April”",
+                "briefs": {
+                  "visa": "What a visitor needs to enter Japan for two weeks.",
+                  "flight": "Return flights to Tokyo, early April.",
+                  "hotel": "Tokyo and Kyoto, a week in each.",
+                  "activity": "Where to see the cherry blossom, a few places each week.",
+                  "budget": "A daily budget in yen, and where to change money.",
+                  "transport": "Between Tokyo and Kyoto by train."
+                },
+                "follow": [
+                  {
+                    "after": "budget",
+                    "to": "activity",
+                    "brief": "Fewer paid visits: the daily budget is tight."
+                  }
+                ],
+                "answer": {
+                  "to": "Traveller",
+                  "text": "Two weeks, part by part, each one to choose."
+                }
+              }
+            ]
+          }
         },
         {
           "title": "Apps.",
           "body": "Give your users a simple app. They say what they need, and each screen appears when it is needed.",
-          "caption": "The Trip Planner app: one sentence in, then a flight, a hotel and a dinner.",
-          "video": "/media/trip-planner.mp4",
-          "poster": "/media/trip-planner.jpg",
-          "width": 1024,
-          "height": 768
+          "caption": "Momentum, a coaching app: ask to see an exercise, and the Head Coach shows it moving, in the chat.",
+          "video": "/media/home/apps-momentum.mp4",
+          "poster": "/media/home/apps-momentum.jpg",
+          "width": 1920,
+          "height": 1200
         }
       ],
       "link": {

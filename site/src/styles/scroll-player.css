@@ -1,6 +1,6 @@
 /* A list of views held still while the page scrolls (scripts/scroll-player.ts): the numbered titles on the left, the active
    one lit with its text open and a line beside it that fills with the scroll; the figures on the right as a pile of cards.
-   Used by the home's "Build it without code" and the solution pages' "See it decide". */
+   Used by the solution pages' "See it decide". */
 .sp-track { position: relative; }
 .sp-pin { position: sticky; }
 .sp-player { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); column-gap: clamp(28px, 4vw, 56px); align-items: center; }

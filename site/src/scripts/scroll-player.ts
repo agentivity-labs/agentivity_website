@@ -1,5 +1,4 @@
-// A list of views held still while the page scrolls through them: the home's "Build it without code" and the "See it
-// decide" of the solution pages. The list is a <ul class="sp-list">; each <li> holds a title (<h3>), its text (<p>) and a
+// A list of views held still while the page scrolls through them: the "See it decide" of the solution pages. The list is a <ul class="sp-list">; each <li> holds a title (<h3>), its text (<p>) and a
 // <figure>. On a wide screen, with motion allowed, the section's header and the list stay on screen while the page scrolls,
 // so that scrolling down goes through every view. The titles stay on the left, numbered; the active one opens its text,
 // with a thin line beside it that fills as the scroll moves on. On the right, the next figure slides up over the current

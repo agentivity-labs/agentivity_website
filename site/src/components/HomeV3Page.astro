@@ -8,11 +8,12 @@ import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import TrialNote from './TrialNote.astro';
 import VideoAutoplay from './VideoAutoplay.astro';
+import WorkflowLoop from './WorkflowLoop.astro';
+import TeamLoop from './TeamLoop.astro';
 import plans from '../data/plans.json';
 import { useTranslations } from '../i18n/utils';
 import { connections } from '../data/connections';
 import { brandLogos } from '../data/brand-logos';
-import '../styles/scroll-player.css';
 
 const t = useTranslations('en');
 const h = t.home_v3;
@@ -90,7 +91,7 @@ const schema = {
   <section class="ed-wrap ed-sec" id="solutions">
     <header class="ed-sec-head">
       <p class="ed-eyebrow">{h.solutions.eyebrow}</p>
-      <h2 class="ed-h2 ed-h2--md">{h.solutions.title}</h2>
+      <h2 class="ed-h2 ed-h2--md">{h.solutions.title}{h.solutions.title_accent && <> <em>{h.solutions.title_accent}</em></>}</h2>
       <p class="ed-sec-sub">{h.solutions.sub}</p>
     </header>
     <ul class="h3-cards">
@@ -102,6 +103,7 @@ const schema = {
               <strong>{card.name}</strong>
               <em>{card.gain}</em>
               <span>{card.body}</span>
+              {card.points && <span class="h3-card-points">{card.points.map((pt: string) => <span>{pt}</span>)}</span>}
               <span class="h3-card-meta">{card.meta}</span>
               <span class="h3-more">{h.solutions.more} →</span>
             </span>
@@ -119,23 +121,27 @@ const schema = {
   </section>
 
   <!-- 4. Build it without code: four real views of the product -->
-  <section class="ed-band--mist" id="build">
+  <section class="h3-build" id="build">
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
         <p class="ed-eyebrow">{h.build.eyebrow}</p>
         <h2 class="ed-h2 ed-h2--md">{h.build.title}</h2>
         <p class="ed-sec-sub">{h.build.sub}</p>
       </header>
-      <ul class="h3-views sp-list">
+      <ul class="h3-views">
         {h.build.views.map((view) => (
           <li>
             <h3>{view.title}</h3>
             <p>{view.body}</p>
             <figure class="h3-shot">
-              <div class="ed-shot-frame h3-view-frame">
-                <video muted loop playsinline preload="none" poster={view.poster} width={view.width} height={view.height} aria-label={view.caption} data-autoplay>
-                  <source src={view.video} type="video/mp4" />
-                </video>
+              <div class:list={['ed-shot-frame h3-view-frame', { 'h3-view-frame--wf': view.diagram && view.diagram.kind !== 'team', 'h3-view-frame--team': view.diagram?.kind === 'team', 'h3-view-frame--shot': view.image, 'h3-view-frame--video': !view.image && !view.diagram }]}>
+                {view.image
+                  ? <img src={view.image} alt={view.caption} width={view.width} height={view.height} loading="lazy" />
+                  : view.diagram
+                  ? (view.diagram.kind === 'team' ? <TeamLoop d={view.diagram} /> : <WorkflowLoop d={view.diagram} />)
+                  : <video muted loop playsinline preload="none" poster={view.poster} width={view.width} height={view.height} aria-label={view.caption} data-autoplay>
+                      <source src={view.video} type="video/mp4" />
+                    </video>}
               </div>
               <figcaption>{view.caption}</figcaption>
             </figure>
@@ -306,8 +312,6 @@ const schema = {
 </Base>
 
 <script>
-  import { scrollPlayer } from '../scripts/scroll-player';
-
   // The hero film stands still for people who asked their system for less motion (the poster stays).
   const film = document.getElementById('h3-film') as HTMLVideoElement | null;
   if (film && matchMedia('(prefers-reduced-motion: reduce)').matches) { film.removeAttribute('autoplay'); film.pause(); }
@@ -343,10 +347,6 @@ const schema = {
     appsGrid.hidden = true;
     appsGrid.after(marquee);
   }
-
-  // Build it without code: held still while the page scrolls through its four views (scripts/scroll-player.ts).
-  const views = document.querySelector('.h3-views') as HTMLElement | null;
-  if (views) scrollPlayer(views);
 
   // Start with one helper: on a wide screen, a thin line runs through the four step numbers and fills with yellow as the
   // section scrolls by; each number lights up when the fill reaches it.
@@ -497,6 +497,8 @@ const schema = {
 .h3-card-text { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px 22px; font-size: 16px; line-height: 1.5; color: var(--ed-ink-2); flex: 1; }
 .h3-card-text strong { font-family: var(--ed-serif); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--ed-ink); }
 .h3-card-text em { font-style: normal; font-weight: 700; color: var(--ed-ink); }
+.h3-card-points { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.h3-card-points span { font-size: 13px; line-height: 1.3; font-weight: 600; color: var(--ed-ink); background: var(--ed-mist); border-radius: 999px; padding: 5px 10px; }
 .h3-card-meta { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ed-ink-3); }
 .h3-more { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--ed-ink); }
 .h3-under { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; margin-top: 36px; }
@@ -507,6 +509,21 @@ const schema = {
 .h3-views .h3-shot { margin-top: 10px; }
 .h3-view-frame { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; background: #fff; }
 .h3-view-frame video { width: 100%; height: 100%; object-fit: contain; }
+/* Build it without code is dark, as the Studio is in its dark theme: its four cards are the Studio's own dark canvas */
+/* (the diagrams now, screenshots of the Studio later), so the band takes the ground of that theme. */
+.h3-build { background: #0F141C; color: #fff; }
+.h3-build .ed-eyebrow { color: var(--ed-yellow); }
+.h3-build .ed-h2, .h3-build h3 { color: #fff; }
+.h3-build .ed-sec-sub, .h3-build .h3-views li, .h3-build .h3-shot figcaption { color: var(--ed-on-navy); }
+.h3-build .ed-link { color: #fff; }
+.h3-build .ed-shot-frame { border-color: rgba(255, 255, 255, .1); }
+.h3-view-frame--wf, .h3-view-frame--team { background: #151A23; }
+/* A screenshot of the Studio in its dark theme, letterboxed in the Studio's own panel colour. */
+.h3-view-frame--shot { background: #1A1F27; }
+/* A clip, on the ground of the app it shows. */
+.h3-view-frame--video { background: #121226; }
+.h3-view-frame--shot img { width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 640px) { .h3-view-frame--wf { aspect-ratio: 600 / 1010; } .h3-view-frame--team { aspect-ratio: 600 / 1292; } }
 
 .h3-observation .ed-eyebrow { color: var(--ed-yellow); }
 .h3-body { font-size: 20px; line-height: 1.5; color: var(--ed-on-navy); max-width: 34em; }
