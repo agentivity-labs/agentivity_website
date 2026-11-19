@@ -8,8 +8,8 @@ thumb: "/media/blog/thumbs/ai-company-observation.jpg"
 lang: fr
 draft: false
 faq:
-  - q: "Quelle différence entre Execution et Observation ?"
-    a: "Execution montre une exécution en détail. Observation montre une période dans son ensemble : 7, 14 ou 30 jours, sur le même graphe."
+  - q: "Quelle différence entre Exécution et Observation ?"
+    a: "Exécution montre une exécution en détail. Observation montre une période dans son ensemble : 7, 14 ou 30 jours, sur le même graphe."
   - q: "La latence compte-t-elle le temps qu'une personne met à répondre ?"
     a: "Non. La latence est le temps habituel d'un appel à un modèle. Le temps d'une personne ne compte jamais."
   - q: "Pourquoi ne vois-je que le premier niveau dans Tokens ?"
@@ -87,11 +87,11 @@ La latence mesure le temps habituel d'un appel à un modèle. Le temps d'une per
 <figcaption>Le même graphe, lu pour la latence. Les chiffres sont un exemple.</figcaption>
 </figure>
 
-## Observation ou Execution ?
+## Observation ou Exécution ?
 
-Observation est le troisième onglet des éditeurs d'équipes et de workflows, à côté d'Editor et d'Execution. Execution et Observation se confondent facilement, et ils ne répondent pas à la même question.
+Observation est le troisième onglet des éditeurs d'équipes et de workflows, à côté d'Editor et d'Exécution. Exécution et Observation se confondent facilement, et ils ne répondent pas à la même question.
 
-| | Execution | Observation |
+| | Exécution | Observation |
 |---|---|---|
 | Ce qu'il montre | Une exécution en détail | Une période dans son ensemble |
 | La question | Que s'est-il passé cette fois-ci ? | Que se passe-t-il d'habitude ? |
@@ -99,7 +99,7 @@ Observation est le troisième onglet des éditeurs d'équipes et de workflows, �
 
 ## Comment l'utiliser, pas à pas
 
-**1. Ouvrez l'onglet.** Dans le Studio, ouvrez une équipe ou un workflow et choisissez **Observation**, à côté d'Editor et d'Execution.
+**1. Ouvrez l'onglet.** Dans le Studio, ouvrez une équipe ou un workflow et choisissez **Observation**, à côté d'Editor et d'Exécution.
 
 **2. Regardez la structure.** Vous arrivez sur **Groups**. Une équipe qui contient des équipes s'affiche tout ouverte, comme sur la première image. Faites défiler pour zoomer : en reculant, les niveaux se ferment l'un après l'autre, en avançant ils reviennent. Cliquez sur une équipe fermée et la vue s'y rend. L'icône **Back to the whole company**, en haut à droite du graphe, ramène à la vue complète.
 

@@ -2484,7 +2484,7 @@
           },
           {
             "q": "Comment l'essayer \u0001",
-            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Execution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur."
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Exécution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur."
           }
         ],
         "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés \u0001 rien n'est réellement réservé ni débité.",
@@ -4606,7 +4606,7 @@
           },
           {
             "q": "Comment l'essayer ?",
-            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Invoice Clerk depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Execution et déposez une facture aux données fictives. Ouvrez ensuite Data Tables > invoices : la facture a sa ligne."
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Invoice Clerk depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Exécution et déposez une facture aux données fictives. Ouvrez ensuite Data Tables > invoices : la facture a sa ligne."
           }
         ],
         "note": "Un seul agent est la bonne forme quand le travail est celui d'une personne, fait de la même façon à chaque fois. Si les factures doivent être validées avant paiement, placez l'agent dans un workflow avec une étape de validation.",
@@ -4639,27 +4639,27 @@
         "tag": "Sans application",
         "size": "Deux équipes",
         "title": "Service Desk",
-        "for": "un support interne",
-        "summary": "Vos salariés posent leur question sur le Desk. Le Front Desk répond à partir de vos articles d'aide et ouvre un ticket clair quand une personne doit intervenir. Votre support reçoit le contexte et un brouillon de réponse.",
-        "alt": "Service Desk sur le Desk : un salarié interroge le Front Desk, et le support traite ses tickets avec la Resolution Team.",
-        "h1": "Un vrai support, de L0 à L2.",
+        "for": "un Service Desk interne",
+        "summary": "Vos salariés posent leur question sur le Desk. Le Front Desk répond à partir de vos articles d'aide et ouvre un ticket clair quand une personne doit intervenir. Votre Service Desk reçoit le contexte et un brouillon de réponse.",
+        "alt": "Service Desk sur le Desk : un salarié interroge le Front Desk, et le Service Desk traite ses tickets avec la Resolution Team.",
+        "h1": "Un vrai Service Desk, de L0 à L2.",
         "h1_accent": "L'IA en première ligne, et elle apprend de chaque correction.",
-        "lead": "Pas un chatbot : un support organisé comme le vôtre. Un Front Desk IA répond à vos salariés à partir de vos connaissances et ouvre des tickets clairs. Votre support les résout avec une équipe IA à ses côtés. Vos experts reçoivent un cas déjà travaillé. Chaque correction devient un article : la prochaine personne qui pose la question a la réponse en quelques secondes. Et il se branche sur les outils que vous utilisez déjà.",
+        "lead": "Pas un chatbot : un Service Desk organisé comme le vôtre. Un Front Desk IA répond à vos salariés à partir de vos connaissances et ouvre des tickets clairs. Votre Service Desk les résout avec une équipe IA à ses côtés. Vos experts reçoivent un cas déjà travaillé. Chaque correction devient un article : la prochaine personne qui pose la question a la réponse en quelques secondes. Et il se branche sur les outils que vous utilisez déjà.",
         "facts": {
           "for": "Le responsable informatique ou des opérations d'une entreprise qui répond aux questions de ses propres équipes",
-          "use": "Sur le Desk : les salariés interrogent le Front Desk, votre support travaille depuis sa propre vue",
-          "behind": "Deux équipes : un Front Desk de spécialistes pour le premier niveau, et une Resolution Team qui aide votre support"
+          "use": "Sur le Desk : les salariés interrogent le Front Desk, votre Service Desk travaille depuis sa propre vue",
+          "behind": "Deux équipes : un Front Desk de spécialistes pour le premier niveau, et une Resolution Team qui aide votre Service Desk"
         },
         "story": {
           "_comment": "The page as the Solution page playbook (KB-0330) orders it. Text of marketing-content, 2026-11-12 (service-desk/page-text.md); the approved-article loop is the headline (founder, 2026-11-12).",
           "cta": {
             "label": "Essayez-le pendant l'essai",
             "href": "/fr/start?plan=pro",
-            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Il est livré avec une entreprise de démonstration : vous jouez vous-même le salarié et le support. Ni Slack ni e-mail à configurer."
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Il est livré avec une entreprise de démonstration : vous jouez vous-même le salarié et le Service Desk. Ni Slack ni e-mail à configurer."
           },
           "decide": {
             "h2": "Cinq cas réels",
-            "intro": "Un bon support n'est pas seulement rapide. Il sait ce qu'il peut répondre, ce qu'il ne doit pas décider, et qui doit prendre le relais. Voici cinq cas réels, d'une simple question jusqu'à un expert.",
+            "intro": "Un bon Service Desk n'est pas seulement rapide. Il sait ce qu'il peut répondre, ce qu'il ne doit pas décider, et qui doit prendre le relais. Voici cinq cas réels, d'une simple question jusqu'à un expert.",
             "scenarios": [
               {
                 "title": "Un VPN qui décroche sans cesse.",
@@ -4673,12 +4673,12 @@
               },
               {
                 "title": "Un mot de passe qu'Outlook redemande sans cesse.",
-                "caption": "Votre support donne le numéro du ticket et reçoit la réponse à envoyer. Quand vous confirmez que la correction a marché, la Resolution Team ferme le ticket et résume ce qui a réglé le problème dans un court article. Vous dites oui, et il est enregistré.",
+                "caption": "Votre Service Desk donne le numéro du ticket et reçoit la réponse à envoyer. Quand vous confirmez que la correction a marché, la Resolution Team ferme le ticket et résume ce qui a réglé le problème dans un court article. Vous dites oui, et il est enregistré.",
                 "image": "/media/service-desk-3-outlook.webp"
               },
               {
                 "title": "Un export du CRM qui s'arrête à 80 %.",
-                "caption": "Plus tôt, votre support a réglé ce problème sur un ticket, et une personne a validé la correction. Une autre salariée pose maintenant la question avec ses propres mots. Le Front Desk répond avec les mêmes étapes en quelques secondes, sans ticket.",
+                "caption": "Plus tôt, votre Service Desk a réglé ce problème sur un ticket, et une personne a validé la correction. Une autre salariée pose maintenant la question avec ses propres mots. Le Front Desk répond avec les mêmes étapes en quelques secondes, sans ticket.",
                 "image": "/media/service-desk-4-loop.webp"
               },
               {
@@ -4698,7 +4698,7 @@
             ],
             "rows": [
               [
-                "Les mêmes questions sur le VPN, les mots de passe et les notes de frais remplissent la journée de votre support.",
+                "Les mêmes questions sur le VPN, les mots de passe et les notes de frais remplissent la journée de votre Service Desk.",
                 "Le Front Desk y répond à partir de vos articles, et seuls les cas qui demandent une personne arrivent dans votre file."
               ],
               [
@@ -4731,12 +4731,12 @@
                 "body": "Ils écrivent au Front Desk, avec leurs mots, là où votre entreprise utilise déjà ses équipes IA."
               },
               {
-                "title": "Il lit les registres de votre support.",
+                "title": "Il lit les registres de votre Service Desk.",
                 "body": "Vos articles d'aide, votre liste de salariés, vos tickets et votre liste « Who to call ». Il n'écrit que dans les tickets et les articles validés, et ne supprime jamais rien."
               },
               {
                 "title": "Tout arrive dans une seule file.",
-                "body": "Les nouveaux tickets apparaissent dans la vue Service Desk du Desk, avec des compteurs pour les tickets nouveaux, urgents et en attente. Votre support y lance la Resolution Team avec un numéro de ticket."
+                "body": "Les nouveaux tickets apparaissent dans la vue Service Desk du Desk, avec des compteurs pour les tickets nouveaux, urgents et en attente. Votre Service Desk y lance la Resolution Team avec un numéro de ticket."
               }
             ]
           },
@@ -4749,7 +4749,7 @@
               },
               {
                 "title": "Il demande avant d'agir sur un ticket.",
-                "body": "La Resolution Team demande à votre support avant d'escalader vers un expert, avant de fermer un ticket et avant d'ajouter un article à vos connaissances."
+                "body": "La Resolution Team demande à votre Service Desk avant d'escalader vers un expert, avant de fermer un ticket et avant d'ajouter un article à vos connaissances."
               },
               {
                 "title": "Il n'invente pas.",
@@ -4766,7 +4766,7 @@
             "sub": "C'est un point de départ, pas un modèle figé.",
             "further": {
               "h3": "Allez plus loin",
-              "intro": "De vrais changements qu'un support peut faire une fois qu'il tourne, chacun construit avec les mêmes briques que la solution.",
+              "intro": "De vrais changements qu'un Service Desk peut faire une fois qu'il tourne, chacun construit avec les mêmes briques que la solution.",
               "labels": {
                 "live": "Disponible aujourd'hui",
                 "soon": "Bientôt"
@@ -4808,7 +4808,7 @@
                     "slack"
                   ],
                   "title": "Relancer les tickets urgents que personne n'a pris.",
-                  "body": "Chaque matin à 9 h, une planification liste les tickets urgents encore nouveaux et ceux en attente depuis plus de deux jours, et publie la liste dans le canal de votre support.",
+                  "body": "Chaque matin à 9 h, une planification liste les tickets urgents encore nouveaux et ceux en attente depuis plus de deux jours, et publie la liste dans le canal de votre Service Desk.",
                   "uses": "Une planification · la table Tickets · Slack"
                 },
                 {
@@ -4886,7 +4886,7 @@
               },
               {
                 "title": "Plutôt pour vos clients ?",
-                "body": "Un support public sur votre propre site, c'est une autre construction : une VibeApp, une application sur votre propre site."
+                "body": "Un Service Desk public sur votre propre site, c'est une autre construction : une VibeApp, une application sur votre propre site."
               }
             ]
           },
@@ -4895,7 +4895,7 @@
             "items": [
               {
                 "title": "Toute l'entreprise l'utilise depuis le Desk.",
-                "body": "Les salariés interrogent le Front Desk. Votre support travaille depuis sa propre vue, avec la file et la Resolution Team. Ils utilisent ces équipes ; ils ne peuvent pas les modifier.",
+                "body": "Les salariés interrogent le Front Desk. Votre Service Desk travaille depuis sa propre vue, avec la file et la Resolution Team. Ils utilisent ces équipes ; ils ne peuvent pas les modifier.",
                 "link": "Comment fonctionne le Desk",
                 "href": "/fr/desk"
               },
@@ -4929,7 +4929,7 @@
           },
           "get": {
             "h2": "Obtenez-le",
-            "body": "Ouvrez Service Desk pendant votre essai. Il est livré avec une entreprise de démonstration, Brightwell Logistics, avec ses articles d'aide, ses salariés, ses experts et ses tickets ouverts. Interrogez le Front Desk comme un salarié, puis ouvrez la file comme le support : une seule personne peut essayer chaque niveau.",
+            "body": "Ouvrez Service Desk pendant votre essai. Il est livré avec une entreprise de démonstration, Brightwell Logistics, avec ses articles d'aide, ses salariés, ses experts et ses tickets ouverts. Interrogez le Front Desk comme un salarié, puis ouvrez la file comme le Service Desk : une seule personne peut essayer chaque niveau.",
             "button": "Ouvrez-le pendant votre essai",
             "href": "/fr/start?plan=pro",
             "guide": "Dans le guide de bienvenue, choisissez **Service Desk** et sélectionnez **Add it**.",
@@ -4940,7 +4940,7 @@
           "power": {
             "levels": {
               "eyebrow": "Comment il est organisé",
-              "h2": "Trois niveaux, comme les supports qui fonctionnent.",
+              "h2": "Trois niveaux, comme les Service Desks qui fonctionnent.",
               "sub": "Chaque niveau fait ce qu'il fait le mieux, et passe le relais avec tout ce dont le suivant a besoin. Personne ne repart de zéro.",
               "items": [
                 {
@@ -4957,7 +4957,7 @@
                 {
                   "tag": "L1",
                   "who": "Des personnes, avec une équipe IA à leurs côtés",
-                  "title": "Votre support",
+                  "title": "Votre Service Desk",
                   "body": "Traite sa file depuis son cockpit sur le Desk, et donne un numéro de ticket à la Resolution Team.",
                   "points": [
                     "Qui demande, son équipe, son ordinateur et ses anciens tickets",
@@ -4972,7 +4972,7 @@
                   "title": "Le bon expert",
                   "body": "Proposé depuis votre liste « Who to call », avec la passation écrite dans le ticket, ou publiée dans son canal Slack.",
                   "points": [
-                    "Proposé, jamais imposé : votre support dit oui",
+                    "Proposé, jamais imposé : votre Service Desk dit oui",
                     "Le cas arrive déjà travaillé",
                     "Chaque passation gardée dans l'historique du ticket"
                   ]
@@ -4983,7 +4983,7 @@
                 "Quand il faut un expert"
               ],
               "flow": {
-                "alt": "Comment Service Desk est organisé : un salarié interroge le Front Desk IA (L0), qui répond à partir des connaissances ou ouvre un ticket clair pour votre support (L1) ; le L1 le traite avec la Resolution Team et le passe au bon expert (L2) après un oui. Chaque ticket clos devient un article qui, une fois validé, rejoint les connaissances dont se sert le Front Desk pour répondre.",
+                "alt": "Comment Service Desk est organisé : un salarié interroge le Front Desk IA (L0), qui répond à partir des connaissances ou ouvre un ticket clair pour votre Service Desk (L1) ; le L1 le traite avec la Resolution Team et le passe au bon expert (L2) après un oui. Chaque ticket clos devient un article qui, une fois validé, rejoint les connaissances dont se sert le Front Desk pour répondre.",
                 "start": {
                   "label": "Un salarié",
                   "out": "Demande avec ses mots",
@@ -4997,7 +4997,7 @@
                   },
                   {
                     "tag": "L1",
-                    "title": "Votre support",
+                    "title": "Votre Service Desk",
                     "sub": "Personnes + Resolution Team",
                     "you": true
                   },
@@ -5059,7 +5059,7 @@
               "sub": "Personne n'a le temps d'écrire des articles d'aide. Ici, personne n'en a besoin : les connaissances grandissent avec les tickets que vous fermez.",
               "steps": [
                 {
-                  "title": "Votre support le corrige.",
+                  "title": "Votre Service Desk le corrige.",
                   "body": "Sur le ticket, avec les étapes et la réponse préparées par la Resolution Team.",
                   "short": "Corrigé"
                 },
@@ -5070,7 +5070,7 @@
                 },
                 {
                   "title": "Une personne le valide.",
-                  "body": "Votre support le lit et dit oui. Rien ne rejoint les connaissances sans ce oui.",
+                  "body": "Votre Service Desk le lit et dit oui. Rien ne rejoint les connaissances sans ce oui.",
                   "short": "Validé"
                 },
                 {
@@ -5128,7 +5128,7 @@
             },
             "connect": {
               "eyebrow": "Branché sur vos outils",
-              "h2": "Il fonctionne avec les outils que votre support utilise déjà.",
+              "h2": "Il fonctionne avec les outils que votre Service Desk utilise déjà.",
               "sub": "Commencez sans rien connecter : il est livré avec ses propres tables de tickets, de personnes et d'experts. Branchez ensuite vos outils, un par un.",
               "groups": [
                 {
@@ -5265,7 +5265,7 @@
             },
             "company": {
               "eyebrow": "Dans une vraie entreprise",
-              "h2": "Un seul modèle, un support pour chaque service.",
+              "h2": "Un seul modèle, un Service Desk pour chaque service.",
               "sub": "L'informatique est le point de départ. Les trois mêmes niveaux fonctionnent partout où l'on pose les mêmes questions chaque jour.",
               "items": [
                 {
@@ -5304,7 +5304,7 @@
         "qa": [
           {
             "q": "Que fait Service Desk ?",
-            "a": "Il donne à votre entreprise trois niveaux de support. Le Front Desk (premier niveau) répond aux salariés à partir de vos articles et ouvre un ticket quand une personne doit intervenir. Votre support (deuxième niveau) appelle la Resolution Team avec un numéro de ticket et reçoit le contexte, les étapes et une réponse à envoyer. Quand un expert est nécessaire, il en propose un depuis votre liste « Who to call ». Des personnes valident chaque escalade, chaque clôture et chaque nouvel article."
+            "a": "Il donne à votre entreprise trois niveaux de support. Le Front Desk (premier niveau) répond aux salariés à partir de vos articles et ouvre un ticket quand une personne doit intervenir. Votre Service Desk (deuxième niveau) appelle la Resolution Team avec un numéro de ticket et reçoit le contexte, les étapes et une réponse à envoyer. Quand un expert est nécessaire, il en propose un depuis votre liste « Who to call ». Des personnes valident chaque escalade, chaque clôture et chaque nouvel article."
           },
           {
             "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
@@ -9691,7 +9691,7 @@
       "cards": [
         {
           "name": "Service Desk",
-          "gain": "Un vrai support, de L0 à L2.",
+          "gain": "Un vrai Service Desk, de L0 à L2.",
           "body": "L'IA répond à vos collaborateurs à partir de vos connaissances et ouvre des tickets clairs. Vos experts reçoivent chaque cas déjà travaillé, et chaque solution devient un article.",
           "points": [
             "Escalade de L0 à L2",
