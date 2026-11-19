@@ -10619,7 +10619,7 @@
     }
   },
   "connections_page": {
-    "_comment": "The Connections page (/connections), English only. v2 of Content & CRO (2026-11-11), reviewed: a page that sells the connections. The list itself is in src/data/connections.ts.",
+    "_comment": "The Connections page (/connections and /fr/connections), rebuilt 2026-11-19: the catalogue of every app comes first, by category, with a search, and never says how many there are. The list itself is in src/data/connections.ts.",
     "meta": {
       "title": "Connexions : vos agents IA dans vos applications | Agentivity",
       "description": "Connectez une fois Google, Slack, HubSpot, Notion, Stripe et bien d'autres. Utilisez chaque application dans vos automatisations et confiez-la à vos agents IA comme outil. Votre équipe utilise le résultat depuis le Desk."
@@ -10702,7 +10702,7 @@
     },
     "modes": {
       "h2": "La même application, utilisée de deux façons",
-      "sub": "Chaque application de la liste « Disponible » fonctionne des deux façons. Vous choisissez, pour chaque tâche, la part de décision que vous laissez à l'IA.",
+      "sub": "La plupart des applications servent des deux façons. Vous choisissez, pour chaque tâche, la part de décision que vous laissez à l'IA.",
       "step": {
         "title": "Comme étape",
         "body": "Une étape fait la même chose à chaque fois, dans l'ordre que vous fixez. « Chaque vendredi, ajouter les nouvelles commandes au tableur. » À utiliser quand vous savez exactement ce qui doit se passer."
@@ -10724,13 +10724,20 @@
       "line": "Choisissez le modèle d'IA de chaque agent, et changez-le quand vous voulez."
     },
     "apps": {
-      "h2": "Les applications que vous pouvez connecter",
-      "sub": "« Disponible » fonctionne aujourd'hui, comme étape et comme outil. « Bientôt » est prévu, et reste affiché ici jusqu'à ce que vous puissiez l'utiliser.",
-      "available": "Disponible",
+      "h2": "Branchez les applications de votre entreprise",
+      "sub": "De nouvelles applications arrivent chaque semaine. Chacune est une étape à placer dans une automatisation et un outil pour vos agents IA, et beaucoup lancent le travail dès qu'il s'y passe quelque chose.",
+      "search": "Chercher une application",
+      "filter_label": "Filtrer par catégorie",
+      "all": "Toutes",
+      "starts_filter": "Lancent le travail",
+      "soon": "Bientôt",
+      "model": "Modèle d'IA",
+      "step": "Étape",
+      "tool": "Outil d'agent",
+      "starts": "Lance le travail",
+      "empty": "Aucune application ne correspond pour l'instant. Dites-nous laquelle il vous faut, juste en dessous.",
       "available_note": "L'e-mail fonctionne avec toute boîte qui utilise SMTP et IMAP. Les requêtes HTTP et les serveurs MCP atteignent les applications absentes de cette liste.",
-      "starting": "Une automatisation démarre quand vous la lancez, selon un planning, quand un autre service appelle son webhook, ou quand quelque chose se passe dans l'une de vos applications, à commencer par un message Telegram. Plannings, webhooks et événements d'application sont réservés aux offres hébergées.",
-      "coming": "Bientôt",
-      "more": "et {n} autres"
+      "starting": "Une automatisation démarre quand vous la lancez, selon une planification, quand un autre service appelle son webhook, ou quand il se passe quelque chose dans l'une de vos applications : une nouvelle commande, un formulaire rempli, un paiement reçu, un message. Les planifications, les webhooks et les événements des applications sont inclus dans les offres hébergées."
     },
     "ask": {
       "h2": "Besoin d'une autre application ?",

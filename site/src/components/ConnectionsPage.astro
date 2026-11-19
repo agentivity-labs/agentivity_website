@@ -1,14 +1,16 @@
 ---
-// The Connections page (/connections), English only (KB-0147): a page that sells what the connections do, then the list.
-// Texts come from the "connections_page" block of en.json, the list and its status from src/data/connections.ts, the marks
-// from src/data/brand-logos.ts. The captures are real Studio canvases, in public/media/connections (a 16:9 cut on narrow screens).
+// The Connections page (/connections and /fr/connections): the promise, then the catalogue of every app (filters by category and
+// a search, rebuilt 2026-11-19: new apps arrive every week, so the page never counts them), then what they are for and how.
+// Texts come from the "connections_page" block of en.json / fr.json, the list, its categories and status from
+// src/data/connections.ts, the marks from src/data/brand-logos.ts (an app without one shows its initial). The captures are real
+// Studio canvases, in public/media/connections (a 16:9 cut on narrow screens).
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import StartFree from './StartFree.astro';
 import TrialNote from './TrialNote.astro';
 import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
-import { connections, nameOf } from '../data/connections';
+import { connections, categories, nameOf, bodyOf } from '../data/connections';
 import { brandLogos } from '../data/brand-logos';
 
 // English by default; the French pages pass lang="fr" (2026-11-19).
@@ -17,12 +19,15 @@ const t = useTranslations(lang);
 const p = t.connections_page as any;
 const apps = connections.filter((item) => item.group === 'apps');
 const stepShot = p.how.steps.find((step: any) => step.image_alt);
-const live = [...apps.filter((item) => item.status === 'live'), ...connections.filter((item) => item.group === 'build' && item.status === 'live' && !['Schedules', 'Webhooks', 'Events from your apps'].includes(item.name))];
-const coming = [...apps.filter((item) => item.status === 'soon'), ...connections.filter((item) => item.group === 'build' && item.status === 'soon')];
-const shown = coming.slice(0, 8);
-const rest = coming.slice(8);
+const live = apps.filter((item) => item.status === 'live');
 const models = connections.filter((item) => item.group === 'models');
 const band = live.filter((item) => item.logo);
+// The catalogue: what works today first, then what is coming, each in the order of its category.
+const order = (id: string) => categories.findIndex((c) => c.id === id);
+const catalogue = [...connections]
+  .sort((a, b) => (a.status === b.status ? 0 : a.status === 'live' ? -1 : 1) || order(a.cat) - order(b.cat) || a.name.localeCompare(b.name));
+const used = categories.filter((c) => catalogue.some((item) => item.cat === c.id));
+const a = p.apps;
 const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
@@ -52,8 +57,54 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     </picture>
   </section>
 
-  <!-- 2. What you can do with them -->
-  <section class="ed-band--mist">
+  <!-- 2. The catalogue: every app, by category, with a search -->
+  <section class="ed-band--mist" id="apps">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head">
+        <h2 class="ed-h2 ed-h2--md">{a.h2}</h2>
+        <p class="ed-sec-sub">{a.sub}</p>
+      </header>
+      <div class="cn-filter" data-cn-filter>
+        <label class="cn-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg><input type="search" placeholder={a.search} aria-label={a.search} data-cn-search /></label>
+        <div class="cn-cats" role="group" aria-label={a.filter_label}>
+          <button type="button" class="is-on" data-cn-cat="">{a.all}</button>
+          <button type="button" data-cn-cat="starts">{a.starts_filter}</button>
+          {used.map((c) => <button type="button" data-cn-cat={c.id}>{lang === 'fr' ? c.fr : c.en}</button>)}
+        </div>
+      </div>
+      <ul class="cn-grid" data-cn-grid>
+        {catalogue.map((item) => (
+          <li class:list={['cn-app', { 'is-soon': item.status === 'soon' }]} data-cat={item.cat} data-starts={item.starts ? '1' : undefined} data-search={(nameOf(item, lang) + ' ' + bodyOf(item, lang) + ' ' + (lang === 'fr' ? categories.find((c) => c.id === item.cat)?.fr : categories.find((c) => c.id === item.cat)?.en)).toLowerCase()}>
+            <span class="cn-app-mark">{mark(item.logo) ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg> : <b aria-hidden="true">{nameOf(item, lang).charAt(0)}</b>}</span>
+            <span class="cn-app-text">
+              <strong>{nameOf(item, lang)}</strong>
+              <span>{bodyOf(item, lang)}</span>
+              <span class="cn-app-tags">
+                {item.status === 'soon' && <em class="is-soon">{a.soon}</em>}
+                {item.group === 'models' && <em>{a.model}</em>}
+                {item.step && <em>{a.step}</em>}
+                {item.tool && <em>{a.tool}</em>}
+                {item.starts && <em class="is-starts">{a.starts}</em>}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p class="cn-empty" data-cn-empty hidden>{a.empty}</p>
+      <p class="cn-small">{a.available_note}</p>
+      <p class="cn-starting">{a.starting}</p>
+      <div class="cn-ask">
+        <div>
+          <strong>{p.ask.h2}</strong>
+          <span>{p.ask.body}</span>
+        </div>
+        <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io?subject=Connection">{p.ask.cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. What you can do with them -->
+  <section>
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
         <h2 class="ed-h2 ed-h2--md">{p.uses.h2}</h2>
@@ -72,8 +123,9 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     </div>
   </section>
 
-  <!-- 3. How it works -->
-  <section class="ed-wrap ed-sec">
+  <!-- 4. How it works -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
     <header class="ed-sec-head">
       <h2 class="ed-h2 ed-h2--md">{p.how.h2}</h2>
     </header>
@@ -96,10 +148,11 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
       <span>{p.how.security} <a class="ed-link" href={p.how.security_href}>{p.how.security_link}</a></span>
     </p>
+    </div>
   </section>
 
-  <!-- 4. Steps or tools -->
-  <section class="ed-band--mist">
+  <!-- 5. Steps or tools -->
+  <section>
     <div class="ed-wrap ed-sec">
       <header class="ed-sec-head">
         <h2 class="ed-h2 ed-h2--md">{p.modes.h2}</h2>
@@ -125,8 +178,9 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     </div>
   </section>
 
-  <!-- 5. The AI model -->
-  <section class="ed-wrap ed-sec cn-models">
+  <!-- 6. The AI model -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec cn-models">
     <h2 class="ed-h2 ed-h2--md">{p.models.h2}</h2>
     <p class="ed-sec-sub">{p.models.line}</p>
     <ul>
@@ -134,46 +188,6 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
         <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
       ))}
     </ul>
-  </section>
-
-  <!-- 6. The apps, compact: all that works today, then one row of what is coming -->
-  <section class="ed-band--mist" id="apps">
-    <div class="ed-wrap ed-sec">
-      <header class="ed-sec-head">
-        <h2 class="ed-h2 ed-h2--md">{p.apps.h2}</h2>
-        <p class="ed-sec-sub">{p.apps.sub}</p>
-      </header>
-      <p class="cn-label">{p.apps.available}</p>
-      <ul class="cn-chips">
-        {live.map((item) => (
-          <li class="is-live">{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
-        ))}
-      </ul>
-      <p class="cn-small">{p.apps.available_note}</p>
-      <p class="cn-starting">{p.apps.starting}</p>
-      <p class="cn-label">{p.apps.coming}</p>
-      <details class="cn-coming">
-        <summary>
-          <ul class="cn-chips">
-            {shown.map((item) => (
-              <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
-            ))}
-            {rest.length > 0 && <li class="cn-more">{p.apps.more.replace('{n}', String(rest.length))}</li>}
-          </ul>
-        </summary>
-        <ul class="cn-chips cn-rest">
-          {rest.map((item) => (
-            <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
-          ))}
-        </ul>
-      </details>
-      <div class="cn-ask">
-        <div>
-          <strong>{p.ask.h2}</strong>
-          <span>{p.ask.body}</span>
-        </div>
-        <a class="ed-btn ed-btn--sm ed-btn--line" href="mailto:hello@agentivity.io?subject=Connection">{p.ask.cta}</a>
-      </div>
     </div>
   </section>
 
@@ -191,6 +205,34 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 <SiteFooter lang={lang} />
 
 </Base>
+
+<script>
+  // The catalogue's filters: one category (or the apps that start work), and a search on the name, what it does and its category.
+  document.querySelectorAll<HTMLElement>('[data-cn-filter]').forEach((filter) => {
+    const section = filter.closest('section')!;
+    const tiles = [...section.querySelectorAll<HTMLElement>('.cn-app')];
+    const empty = section.querySelector<HTMLElement>('[data-cn-empty]');
+    const search = filter.querySelector<HTMLInputElement>('[data-cn-search]');
+    let cat = '';
+    const apply = () => {
+      const q = (search?.value ?? '').trim().toLowerCase();
+      let shown = 0;
+      tiles.forEach((tile) => {
+        const inCat = !cat || (cat === 'starts' ? tile.dataset.starts === '1' : tile.dataset.cat === cat);
+        const ok = inCat && (!q || (tile.dataset.search ?? '').includes(q));
+        tile.hidden = !ok;
+        if (ok) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    };
+    filter.querySelectorAll<HTMLButtonElement>('[data-cn-cat]').forEach((button) => button.addEventListener('click', () => {
+      cat = button.dataset.cnCat ?? '';
+      filter.querySelectorAll('[data-cn-cat]').forEach((b) => b.classList.toggle('is-on', b === button));
+      apply();
+    }));
+    search?.addEventListener('input', apply);
+  });
+</script>
 
 <style>
 .cn-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-block: clamp(48px, 7vw, 96px) clamp(48px, 6vw, 80px); }
@@ -232,18 +274,33 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 .cn-models li { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; color: var(--ed-ink-2); }
 .cn-models svg { width: 26px; height: 26px; fill: var(--ed-ink-2); }
 
-.cn-label { margin-top: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ed-ink-3); }
-.cn-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-.cn-chips li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px dashed var(--ed-line-2); background: transparent; font-size: 15px; font-weight: 600; color: var(--ed-ink-3); }
-.cn-chips li.is-live { border: 1px solid var(--ed-line); background: #fff; color: var(--ed-ink); }
-.cn-chips svg { width: 18px; height: 18px; fill: currentColor; }
+/* The catalogue: a search, the categories, and a tile per app (its mark, what it does, how it is used). */
+.cn-filter { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+.cn-search { display: flex; align-items: center; gap: 10px; max-width: 420px; padding: 0 16px; height: 48px; border-radius: 999px; background: #fff; border: 1px solid var(--ed-line-2); }
+.cn-search svg { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--ed-ink-3); stroke-width: 2; stroke-linecap: round; }
+.cn-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 16px; color: var(--ed-ink); }
+.cn-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+.cn-cats button { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--ed-line-2); background: #fff; font: inherit; font-size: 14.5px; font-weight: 600; color: var(--ed-ink-2); cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease; }
+.cn-cats button:hover { border-color: var(--ed-navy); }
+.cn-cats button.is-on { background: var(--ed-navy); border-color: var(--ed-navy); color: #fff; }
+.cn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+.cn-app { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 16px; background: #fff; border: 1px solid var(--ed-line); }
+.cn-app[hidden] { display: none; }
+.cn-app-mark { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--ed-mist); }
+.cn-app-mark svg { width: 24px; height: 24px; fill: var(--ed-ink); }
+.cn-app-mark b { font-family: var(--ed-serif); font-weight: 400; font-size: 24px; line-height: 1; color: var(--ed-ink); }
+.cn-app-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; font-size: 14.5px; line-height: 1.45; color: var(--ed-ink-2); }
+.cn-app-text strong { font-size: 16.5px; color: var(--ed-ink); }
+.cn-app-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.cn-app-tags em { font-style: normal; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--ed-mist); color: var(--ed-ink-2); }
+.cn-app-tags em.is-starts { background: #FFF3CC; color: #6B4E00; }
+.cn-app-tags em.is-soon { background: transparent; border: 1px dashed var(--ed-line-2); color: var(--ed-ink-3); }
+.cn-app.is-soon { background: transparent; border-style: dashed; }
+.cn-app.is-soon .cn-app-mark { background: transparent; border: 1px dashed var(--ed-line-2); }
+.cn-app.is-soon .cn-app-mark svg { fill: var(--ed-ink-3); }
+.cn-empty { margin-top: 16px; font-size: 16px; color: var(--ed-ink-2); }
 .cn-small { margin-top: 12px; font-size: 15px; color: var(--ed-ink-3); }
 .cn-starting { margin-block: 28px 20px; padding: 16px 20px; border-left: 3px solid var(--ed-yellow); background: #fff; border-radius: 0 12px 12px 0; font-size: 16px; color: var(--ed-ink-2); }
-.cn-coming summary { list-style: none; cursor: pointer; }
-.cn-coming summary::-webkit-details-marker { display: none; }
-.cn-more { border-style: solid !important; background: #fff !important; color: var(--ed-ink) !important; }
-.cn-coming[open] .cn-more { display: none !important; }
-.cn-rest { margin-top: 10px; }
 .cn-ask { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 40px; padding: 24px 28px; border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); }
 .cn-ask div { display: flex; flex-direction: column; gap: 4px; font-size: 16px; color: var(--ed-ink-2); }
 .cn-ask strong { font-size: 19px; color: var(--ed-ink); }

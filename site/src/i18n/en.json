@@ -9852,130 +9852,137 @@
     }
   },
 "connections_page": {
-    "_comment": "The Connections page (/connections), English only. v2 of Content & CRO (2026-11-11), reviewed: a page that sells the connections. The list itself is in src/data/connections.ts.",
-    "meta": {
-      "title": "Connections: Your AI Agents Inside Your Apps | Agentivity",
-      "description": "Connect Google, Slack, HubSpot, Notion, Stripe and more once. Use each app in your automations and give it to your AI agents as a tool. Your team uses the result from the Desk."
-    },
-    "hero": {
-      "eyebrow": "Connections",
-      "h1": "Your AI agents work inside the tools you already use",
-      "sub": "Connect Google, Slack, HubSpot, Notion, Stripe and the other apps you work with, once. Use each app as a fixed step in an automation, or hand it to an AI agent that decides when to use it. The sheet, the document, the message, the contact: the work gets done where it lives.",
-      "cta": "Start your trial",
-      "cta_href": "/start?plan=pro",
-      "secondary": "See the apps",
-      "secondary_href": "#apps",
-      "image_alt": "The Studio canvas: an AI agent with its AI model and three apps as tools, Google Sheets, HubSpot and a Slack channel."
-    },
-    "uses": {
-      "h2": "Hand over the work that lives in your apps",
-      "sub": "Most of a day goes into moving information from one app to another. With your apps connected, an AI agent or an automation does that part, and you keep the decisions.",
-      "cards": [
-        {
-          "title": "Keep a sheet up to date",
-          "body": "An agent reads your Google Sheet, checks each row, and fills in what is missing: a status, a date, a note. You open the sheet and it is done.",
-          "logos": [
-            "googlesheets"
-          ]
-        },
-        {
-          "title": "Get your weekly report written",
-          "body": "Every Monday morning, an automation collects the numbers of the week and an agent writes the report in a Google Doc, ready to read with your coffee.",
-          "logos": [
-            "googledocs",
-            "googlesheets"
-          ]
-        },
-        {
-          "title": "Tell the team in Slack",
-          "body": "When the work is done, the result is posted in the right Slack channel, so nobody has to ask where things stand.",
-          "logos": [
-            "slack"
-          ]
-        },
-        {
-          "title": "Keep your CRM clean",
-          "body": "Tell the agent about your call, or let it read your latest emails, and it updates the contact in HubSpot with the notes and the next step. Your CRM shows what really happened.",
-          "logos": [
-            "hubspot"
-          ]
-        },
-        {
-          "title": "Answer \"has this customer paid?\"",
-          "body": "An agent looks up the customer's payments and invoices in Stripe and gives a clear answer, without anyone opening the Stripe dashboard.",
-          "logos": [
-            "stripe"
-          ]
-        }
-      ],
-      "line": "The same goes for Notion pages, Airtable records, your calendar, your email, Telegram and Discord messages, and posts on your WordPress site."
-    },
-    "how": {
-      "h2": "Connect once. Use it everywhere.",
-      "steps": [
-        {
-          "title": "Connect your app",
-          "body": "Sign in with your account, or paste a key, once. One Google sign-in opens Sheets, Calendar, Docs, Drive, Slides, Forms, Contacts and Tasks together."
-        },
-        {
-          "title": "Use it in a step, or give it to an agent",
-          "body": "Put the app in an automation as a step, or plug it into an agent as a tool. The Assistant can also add it to your agent when you describe what you need. You connect the app once yourself.",
-          "image_alt": "The Studio canvas: Google Sheets as a step before an AI agent, and the same app plugged into the agent as a tool."
-        },
-        {
-          "title": "Your team uses it from the Desk",
-          "body": "Your colleagues ask for the work in the Desk. The agents use your connected apps to do it. Your colleagues never handle a password or a key.",
-          "link": "See the Desk",
-          "href": "/desk"
-        }
-      ],
-      "security": "Your API keys and sign-in tokens are encrypted in your workspace. Delete the connection, and they are deleted with it.",
-      "security_link": "How we protect your data",
-      "security_href": "/legal/dpa"
-    },
-    "modes": {
-      "h2": "The same app, used two ways",
-      "sub": "Every app on the \"Available\" list works both ways. You choose, for each job, how much the AI decides.",
-      "step": {
-        "title": "As a step",
-        "body": "A step does the same thing every time, in the order you set. \"Every Friday, add the new orders to the sheet.\" Use it when you know exactly what must happen."
+  "_comment": "The Connections page (/connections and /fr/connections), rebuilt 2026-11-19: the catalogue of every app comes first, by category, with a search, and never says how many there are. The list itself is in src/data/connections.ts.",
+  "meta": {
+    "title": "Connections: Your AI Agents Inside Your Apps | Agentivity",
+    "description": "Connect Google, Slack, HubSpot, Notion, Stripe and more once. Use each app in your automations and give it to your AI agents as a tool. Your team uses the result from the Desk."
+  },
+  "hero": {
+    "eyebrow": "Connections",
+    "h1": "Your AI agents work inside the tools you already use",
+    "sub": "Connect Google, Slack, HubSpot, Notion, Stripe and the other apps you work with, once. Use each app as a fixed step in an automation, or hand it to an AI agent that decides when to use it. The sheet, the document, the message, the contact: the work gets done where it lives.",
+    "cta": "Start your trial",
+    "cta_href": "/start?plan=pro",
+    "secondary": "See the apps",
+    "secondary_href": "#apps",
+    "image_alt": "The Studio canvas: an AI agent with its AI model and three apps as tools, Google Sheets, HubSpot and a Slack channel."
+  },
+  "uses": {
+    "h2": "Hand over the work that lives in your apps",
+    "sub": "Most of a day goes into moving information from one app to another. With your apps connected, an AI agent or an automation does that part, and you keep the decisions.",
+    "cards": [
+      {
+        "title": "Keep a sheet up to date",
+        "body": "An agent reads your Google Sheet, checks each row, and fills in what is missing: a status, a date, a note. You open the sheet and it is done.",
+        "logos": [
+          "googlesheets"
+        ]
       },
-      "tool": {
-        "title": "As a tool",
-        "body": "An agent decides when to use a tool, and how. \"Find out why this customer is unhappy and fix their record.\" The agent looks for what it needs, in the apps you gave it."
+      {
+        "title": "Get your weekly report written",
+        "body": "Every Monday morning, an automation collects the numbers of the week and an agent writes the report in a Google Doc, ready to read with your coffee.",
+        "logos": [
+          "googledocs",
+          "googlesheets"
+        ]
       },
-      "control": "You decide what an agent may change. An app tool only reads at first. It creates, sends or deletes only when you allow it on that tool.",
-      "closing": "Most good automations mix both: fixed steps where you want your own rules, and an agent where it takes judgment.",
-      "image_alt": "A workflow in the Studio: a Google Sheets step, then an AI agent with a Slack channel and HubSpot as tools.",
-      "depth": {
-        "title": "An app that is not on the list?",
-        "body": "Your automations and agents can often still work with it. A step or an agent can call any API that has an HTTP interface, with the key you connect. And an agent can use the tools of an MCP server, a common way for apps to offer their tools to AI agents."
+      {
+        "title": "Tell the team in Slack",
+        "body": "When the work is done, the result is posted in the right Slack channel, so nobody has to ask where things stand.",
+        "logos": [
+          "slack"
+        ]
+      },
+      {
+        "title": "Keep your CRM clean",
+        "body": "Tell the agent about your call, or let it read your latest emails, and it updates the contact in HubSpot with the notes and the next step. Your CRM shows what really happened.",
+        "logos": [
+          "hubspot"
+        ]
+      },
+      {
+        "title": "Answer \"has this customer paid?\"",
+        "body": "An agent looks up the customer's payments and invoices in Stripe and gives a clear answer, without anyone opening the Stripe dashboard.",
+        "logos": [
+          "stripe"
+        ]
       }
+    ],
+    "line": "The same goes for Notion pages, Airtable records, your calendar, your email, Telegram and Discord messages, and posts on your WordPress site."
+  },
+  "how": {
+    "h2": "Connect once. Use it everywhere.",
+    "steps": [
+      {
+        "title": "Connect your app",
+        "body": "Sign in with your account, or paste a key, once. One Google sign-in opens Sheets, Calendar, Docs, Drive, Slides, Forms, Contacts and Tasks together."
+      },
+      {
+        "title": "Use it in a step, or give it to an agent",
+        "body": "Put the app in an automation as a step, or plug it into an agent as a tool. The Assistant can also add it to your agent when you describe what you need. You connect the app once yourself.",
+        "image_alt": "The Studio canvas: Google Sheets as a step before an AI agent, and the same app plugged into the agent as a tool."
+      },
+      {
+        "title": "Your team uses it from the Desk",
+        "body": "Your colleagues ask for the work in the Desk. The agents use your connected apps to do it. Your colleagues never handle a password or a key.",
+        "link": "See the Desk",
+        "href": "/desk"
+      }
+    ],
+    "security": "Your API keys and sign-in tokens are encrypted in your workspace. Delete the connection, and they are deleted with it.",
+    "security_link": "How we protect your data",
+    "security_href": "/legal/dpa"
+  },
+  "modes": {
+    "h2": "The same app, used two ways",
+    "sub": "Most apps work both ways. You choose, for each job, how much the AI decides.",
+    "step": {
+      "title": "As a step",
+      "body": "A step does the same thing every time, in the order you set. \"Every Friday, add the new orders to the sheet.\" Use it when you know exactly what must happen."
     },
-    "models": {
-      "h2": "Your AI model, your choice",
-      "line": "Pick the AI model for each agent, and change it when you want."
+    "tool": {
+      "title": "As a tool",
+      "body": "An agent decides when to use a tool, and how. \"Find out why this customer is unhappy and fix their record.\" The agent looks for what it needs, in the apps you gave it."
     },
-    "apps": {
-      "h2": "Apps you can connect",
-      "sub": "\"Available\" works today, as a step and as a tool. \"Coming\" is planned, and shows here until you can use it.",
-      "available": "Available",
-      "available_note": "Email works with any mailbox that uses SMTP and IMAP. HTTP requests and MCP servers reach the apps that are not on this list.",
-      "starting": "An automation starts when you start it, on a schedule, when another service calls its webhook, or when something happens in one of your apps, starting with a Telegram message. Schedules, webhooks and app events are on the hosted plans.",
-      "coming": "Coming",
-      "more": "and {n} more"
-    },
-    "ask": {
-      "h2": "Need another app?",
-      "body": "Tell us which one, and what you want your agents to do with it. It helps us choose what comes next.",
-      "cta": "Tell us"
-    },
-    "cta": {
-      "h2": "Put your AI agents to work in your apps",
-      "sub": "Connect your first app, build an automation, and let an agent do the work you do by hand today.",
-      "button": "Start your trial"
+    "control": "You decide what an agent may change. An app tool only reads at first. It creates, sends or deletes only when you allow it on that tool.",
+    "closing": "Most good automations mix both: fixed steps where you want your own rules, and an agent where it takes judgment.",
+    "image_alt": "A workflow in the Studio: a Google Sheets step, then an AI agent with a Slack channel and HubSpot as tools.",
+    "depth": {
+      "title": "An app that is not on the list?",
+      "body": "Your automations and agents can often still work with it. A step or an agent can call any API that has an HTTP interface, with the key you connect. And an agent can use the tools of an MCP server, a common way for apps to offer their tools to AI agents."
     }
   },
+  "models": {
+    "h2": "Your AI model, your choice",
+    "line": "Pick the AI model for each agent, and change it when you want."
+  },
+  "apps": {
+    "h2": "Connect the apps your business runs on",
+    "sub": "New apps arrive every week. Each one is a step you place in an automation and a tool your AI agents use, and many start the work the moment something happens in them.",
+    "search": "Search an app",
+    "filter_label": "Filter by category",
+    "all": "All",
+    "starts_filter": "Start the work",
+    "soon": "Coming soon",
+    "model": "AI model",
+    "step": "Step",
+    "tool": "Agent tool",
+    "starts": "Starts the work",
+    "empty": "No app matches yet. Tell us which one you need, just below.",
+    "available_note": "Email works with any mailbox that uses SMTP and IMAP. HTTP requests and MCP servers reach the apps that are not on this list.",
+    "starting": "An automation starts when you start it, on a schedule, when another service calls its webhook, or when something happens in one of your apps: a new order, a form answered, a payment received, a message. Schedules, webhooks and app events are on the hosted plans."
+  },
+  "ask": {
+    "h2": "Need another app?",
+    "body": "Tell us which one, and what you want your agents to do with it. It helps us choose what comes next.",
+    "cta": "Tell us"
+  },
+  "cta": {
+    "h2": "Put your AI agents to work in your apps",
+    "sub": "Connect your first app, build an automation, and let an agent do the work you do by hand today.",
+    "button": "Start your trial"
+  }
+},
   "solutions_pages": {
     "_comment": "The Solutions pages by who the visitor is (KB-0320, plan of 2026-11-09), English only. Texts v1.1 of Content & CRO (2026-11-09), not reviewed yet. For companies is the Desk page (/desk).",
     "builders": {
