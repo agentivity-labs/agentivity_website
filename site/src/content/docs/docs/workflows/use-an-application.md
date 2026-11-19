@@ -47,6 +47,7 @@ Every field and every operation of each step is in the [reference of the nodes](
 | Application | What you can do | Worth knowing |
 |---|---|---|
 | **Resend** | Send an e-mail, read a sent e-mail and its latest status (delivered, opened, bounced). Add, read, update, list and delete contacts. | The sender is an address on a domain verified in Resend. The key starts with `re_`. |
+| **lemlist** | List campaigns. Add a lead to a campaign, find one by e-mail, pause, resume, remove it from a campaign. List activities. | The connection takes the API key of the team. Adding a lead to a campaign starts the e-mails and steps of that campaign, sent by lemlist. A person already in another campaign stays there unless the step says otherwise. The triggers need a user allowed to edit the integrations of the team. |
 | **Brevo** | Send an e-mail, written here or from a Brevo template. Create or update, read, update, list and delete contacts and their lists. | The sender must be verified in Brevo (**Senders, Domains & Dedicated IPs**, then **Senders**). The key starts with `xkeysib-`. Brevo may limit sending from a new account until it has reviewed the account. |
 | **MailerLite** | Create or update a subscriber, read and list subscribers, add to or remove from a group, delete one, or forget one and all its data for good. | |
 | **Mailchimp** | Create or update a member of an audience, read and list members, tag, archive, delete for good. List campaigns. | The key acts for the person who made it and does not expire: delete it in Mailchimp to take the access back. |
@@ -77,10 +78,23 @@ These steps are in the category **Email sending**. A send only says the e-mail w
 
 ### Tables and payments
 
+The payment steps are in the category **Payments**. **A refund is made only by a step of a workflow, never by an agent:** Mollie and PayPal never offer a refund to an agent, even when changes are allowed on its tool.
+
 | Application | What you can do | Worth knowing |
 |---|---|---|
 | **Airtable** | List the records of a table, all of them or those a formula or a view keeps. Read, create, create many (ten in each call), update, create or update (fails when several records match) and delete records. | Give the fields by their name in `fields`. The token needs the scopes `data.records:read`, `data.records:write` and `schema.bases:read`, and the bases the workflows may use. It starts with `pat`. Airtable accepts five calls a second per base: a step that writes many records waits when it needs to. |
 | **Stripe** | Create, update, read, list, search and delete customers. List and read payments. Make a payment link. List invoices. Read the balance. | Start with a test key (`rk_test_` or `sk_test_`): workflows run on test data and no money moves. The connection test says whether the key is in test or live mode. A restricted key is recommended: allow only what the workflows need. Deleting a customer is for good and cancels its subscriptions. New customers can take a minute to be found. |
+| **Mollie** | Create a payment (it gives the address where the buyer pays), list and read payments, refund a payment (a workflow step only). Create a payment link. List and create customers. | The connection takes the API key of a website profile: `live_…`, or `test_…` to try. The triggers need an organization access token (`access_…`) instead, with the ID of the profile and whether it is for test mode, because Mollie makes webhooks only with such a token. Amounts are given with their cents (49.90). |
+| **PayPal** | Create an order (it gives the address where the buyer approves it), read it, capture it. Refund a capture (a workflow step only). List transactions, 31 days at most. Create a draft invoice, send, read and list invoices. | The connection takes the client ID and the secret of an app, and its environment: live or sandbox. PayPal gives a token that lasts some hours, and Agentivity asks for a new one by itself. In the app, turn on **Invoicing**, **Transaction search** and **Webhooks**. An order is paid once the buyer has approved it at its address and it has been captured. Transactions can show up to 3 hours late. |
+
+### Accounting and banking
+
+These steps are in the category **Accounting and banking**.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **Pennylane** | List and read customer invoices, create a draft, finalize it, mark it as paid. List customers, create a company or a person. List supplier invoices, products and bank transactions. | The connection takes a company API token (Essential plan or higher). Choose **Read and write** to draft invoices or add customers. Prices on an invoice line are before tax, and the VAT rate is given by its code: `FR_200` is 20 %. A draft gets its number when it is finalized. |
+| **Qonto** | List the bank accounts, with their balances. List transactions (money in or out, since a date, or those without a receipt), read one, attach a receipt to it. List labels and members. | **Qonto never moves money here.** It reads the accounts and attaches receipts; transfers stay in Qonto, where they are approved. The connection takes the login of the organization and its secret key. A receipt is given by its public address (PDF, JPEG or PNG). |
 
 ### Projects and tasks
 
@@ -101,6 +115,10 @@ These steps are in the category **Email sending**. A send only says the e-mail w
 |---|---|---|
 | **Pipedrive** | Create, update, read and find people, organizations and deals, and add activities and notes. | The connection asks for the company domain, for example `acme` for acme.pipedrive.com, besides the token. |
 | **Attio** | Search, read, create, create or update (by a unique attribute), update and delete records of any object: people, companies, deals, your own. Add a note or a task. List attributes. | Values are given by attribute slug. |
+| **Zoho CRM** | List, search (by e-mail, words or Zoho's criteria), read, create or update, update records of leads, contacts, accounts and deals, and add a note. Convert a lead into a contact, an account and a deal. | The connection is a **Self Client** made in Zoho's API Console (client ID and secret), with the ID of the organization and the data center (`eu` by default; `us`, `in`, `au`, `jp`, `ca` or `cn`). The fields of a record are given by their API name: `{"Last_Name": "Martin"}`. **Create or update** finds the same record by e-mail address unless you name other fields. |
+| **Close** | List, read, create (with its first contact) and update leads. Create an opportunity. Add a note and a task. | The connection takes an API key, which belongs to your user. The value of an opportunity is in the units of the currency (4800.00). The triggers need the right to manage webhooks. |
+| **Copper** | Search, read, create and update people, companies, leads and opportunities, and add a note. Add a task. | The connection takes an API key and the e-mail address of the user who made it. |
+| **folk** | List people or find one by e-mail, read, create (with its company and group) and update. List and create companies. List groups. Add a note. | The connection takes the API key of the workspace. folk may merge a person you add with one already there. |
 
 ### Customer support
 
@@ -129,6 +147,15 @@ These steps are in the category **CMS**, named **Sites and the content they publ
 |---|---|---|
 | **Webflow** | List the sites. List collections and read their fields. List items (drafts included, or only the live ones), read, create (a draft by default), update and publish them. List the submissions of a form. | The connection takes a site API token, which reaches one site, with the scopes the guide lists. A new item is a draft until published, and publishing it does not publish the whole site again. The fields other than the name and the slug are given by their slug, which **Read** on the collection shows. |
 | **Contentful** | List content types. List (by content type or words), read, create (a draft), update, publish and unpublish entries. List assets. | The connection takes a personal access token (`CFPAT-…`). Fields are given plainly with a locale (`en-US` by default), or per locale. **Update** changes only the fields given. The connection asks for the region of the space: US (the default) or EU. |
+
+### Meetings, files and boards
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **Zoom** | List meetings (to come, past, live), read, create (it gives the address to join), update and delete one, list its participants, read its transcript as text. List and read recordings, a month at most. | These steps are in the category **Video meetings**. The connection is a **Server-to-Server OAuth** app made by the admin of the account in the Zoom App Marketplace: its account ID, client ID and client secret, and the e-mail address of a default user. Such an app works for the whole account, not as one person: a step names whose meetings by e-mail address, or uses the default user. The triggers also need the secret token of the app, from its **Features** page. A transcript exists only for a meeting with a cloud recording and audio transcripts turned on, and Zoom makes it some minutes after the meeting. |
+| **Dropbox** | List a folder, search, read the details of a file or a folder, read a text file, upload (a text, or a file from a public address), create a folder, move or rename, delete, make a share link. | It is connected by **signing in with Dropbox**, with a button, as for [Google](/docs/guides/connect-google/): Agentivity never sees your password, and you can remove its access in Dropbox, under **Settings** › **Connected apps**. When the installation has no Agentivity app for Dropbox, make one in Dropbox's App Console (**Scoped access**) and give its app key and secret in the connection. Its guide gives the permissions and the redirect address. **Read text** reads text files only (`.txt`, `.md`, `.csv`, `.json`…), 2 MB at most: a PDF is read by a Document step. It has no trigger: Dropbox sets its webhooks only in the console of an app. |
+| **Box** | List and create folders. Search files, read their details and their text, upload, make a share link, comment. | The connection is a **Custom App** with Client Credentials Grant (client ID, client secret and enterprise ID), approved by a Box admin. It works as its own service account: share with it the folders it uses. The triggers need the signature keys of the app, from the Developer Console. Box cannot watch the root folder. |
+| **Miro** | List, read and create boards, invite people. List items, add a sticky note, a card or a frame. | The step is in the category **Documents, presentations and whiteboards**. The connection takes the token given by **Install app and get OAuth token** in the Miro app, which must be made with **Expire user authorization token** unticked so that the token lasts. It has no trigger: Miro removed its webhooks on 5 December 2025. |
 
 ### Forms and bookings
 

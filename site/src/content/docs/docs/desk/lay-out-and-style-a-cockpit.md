@@ -50,7 +50,7 @@ For examples by department, see [Cockpit ideas by department](/docs/desk/cockpit
 
 In the tab **Look** of the page:
 
-- **A style in one click**: **Desk**, **Soft**, **Bright**, **Bold** or **Night**. Start with one, then change what you want.
+- **A style in one click**: **Desk**, **Soft**, **Tinted**, **Paper** or **Night**. Start with one, then change what you want.
 - **The background**: **None**, **Colour**, **Gradient** (**Down**, **Diagonal** or **Across**) or **Image**, with a veil over it so that the page stays readable. **What is written on it** is **Dark** or **Light**.
 - **Layout**: **Rows**, or **Two columns** that fill on their own, so that a table beside two small figures does not stretch them to its height.
 - **The cards**: their **Corners** (**Square**, **Soft** or **Round**), their **Border** (**No border** or **A border**), its thickness and its colour, their **Fill** (**White**, **Tinted** or **Clear**) and their **Shadow** (**None** or **Soft**).

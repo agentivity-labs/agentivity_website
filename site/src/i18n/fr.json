@@ -10619,15 +10619,16 @@
     }
   },
   "connections_page": {
-    "_comment": "The Connections page (/connections and /fr/connections): every integration in sliding rows with \"and many more\"; no detail, no \"coming soon\", no count. The list itself is in src/data/connections.ts.",
+    "_comment": "The Connections page (/connections and /fr/connections), refounded on value (2026-11-19): what changes for the customer's teams first, the integrations in sliding rows with \"and many more\", three plain steps, one line of trust. No feature explanation (step or tool, AI models): that is for the docs. The list itself is in src/data/connections.ts.",
     "meta": {
-      "title": "Connexions : vos agents IA dans vos applications | Agentivity",
-      "description": "Connectez une fois Google, Slack, HubSpot, Notion, Stripe et bien d'autres. Utilisez chaque application dans vos automatisations et confiez-la à vos agents IA comme outil. Votre équipe utilise le résultat depuis le Desk."
+      "title": "Connexions : le travail entre vos applications, fait pour vous | Agentivity",
+      "description": "Vos agents IA travaillent dans les applications que vous utilisez déjà : Google, Slack, HubSpot, Stripe, Shopify, Zendesk et bien d'autres. Les petites tâches entre vos outils se font, et vos équipes gardent les décisions."
     },
     "hero": {
       "eyebrow": "Connexions",
-      "h1": "Vos agents IA travaillent dans les outils que vous utilisez déjà",
-      "sub": "Connectez une fois Google, Slack, HubSpot, Notion, Stripe et les autres applications avec lesquelles vous travaillez. Utilisez chaque application comme une étape fixe d'une automatisation, ou confiez-la à un agent IA qui décide quand s'en servir. Le tableur, le document, le message, le contact : le travail se fait là où il se trouve.",
+      "h1": "Le travail entre vos applications,",
+      "h1_accent": "fait pour vous.",
+      "sub": "Recopier une commande dans un tableau, mettre à jour un client, prévenir l'équipe : les petites tâches entre vos outils prennent des heures chaque semaine. Connectez vos applications une fois, et vos agents IA s'en chargent, dans les outils que vous utilisez déjà. Vous gardez les décisions.",
       "cta": "Démarrer l'essai",
       "cta_href": "/fr/start?plan=pro",
       "secondary": "Voir les applications",
@@ -10721,108 +10722,107 @@
         ]
       }
     },
-    "uses": {
-      "h2": "Confiez le travail qui vit dans vos applications",
-      "sub": "Une journée passe surtout à déplacer des informations d'une application à l'autre. Une fois vos applications connectées, un agent IA ou une automatisation s'en charge, et vous gardez les décisions.",
-      "cards": [
+    "teams": {
+      "h2": "Ce qui change pour vos équipes",
+      "sub": "Les mêmes agents IA, au travail là où chaque équipe travaille déjà.",
+      "items": [
         {
-          "title": "Tenir un tableur à jour",
-          "body": "Un agent lit votre Google Sheet, vérifie chaque ligne et complète ce qui manque : un statut, une date, une note. Vous ouvrez le tableur, c'est fait.",
+          "team": "Ventes",
+          "title": "Votre CRM est toujours à jour.",
+          "body": "Après chaque appel ou e-mail, l'agent note le compte rendu et la prochaine étape sur le contact. Votre pipeline montre ce qui s'est vraiment passé.",
           "logos": [
-            "googlesheets"
+            "hubspot",
+            "salesforce",
+            "googlecalendar"
           ]
         },
         {
-          "title": "Faire rédiger votre rapport de la semaine",
-          "body": "Chaque lundi matin, une automatisation rassemble les chiffres de la semaine et un agent rédige le rapport dans un Google Doc, prêt à lire avec votre café.",
+          "team": "Support",
+          "title": "Chaque ticket arrive avec son contexte.",
+          "body": "Qui est le client, ce qu'il a acheté, ce qu'il a déjà demandé : l'agent rassemble tout et prépare la réponse. Votre équipe répond mieux, et plus vite.",
           "logos": [
-            "googledocs",
-            "googlesheets"
+            "zendesk",
+            "intercom",
+            "shopify"
           ]
         },
         {
-          "title": "Prévenir l'équipe dans Slack",
-          "body": "Quand le travail est fait, le résultat est publié dans le bon canal Slack : personne n'a besoin de demander où en sont les choses.",
+          "team": "Finance",
+          "title": "Paiements vérifiés, factures classées.",
+          "body": "L'agent rapproche chaque paiement de sa commande et classe la facture. Ce qui ne tombe pas juste va à une personne, jamais corrigé en silence.",
           "logos": [
+            "stripe",
+            "quickbooks",
+            "xero"
+          ]
+        },
+        {
+          "team": "Marketing",
+          "title": "Chaque contact est relancé.",
+          "body": "Un formulaire est rempli ou un rendez-vous est pris : l'agent ajoute le contact, envoie le bon e-mail et prévient la bonne personne.",
+          "logos": [
+            "typeform",
+            "mailchimp",
+            "calendly"
+          ]
+        },
+        {
+          "team": "Opérations",
+          "title": "Les commandes avancent toutes seules.",
+          "body": "Une nouvelle commande arrive dans le tableau, le client est mis à jour et l'équipe est prévenue, sans que personne ne recopie une ligne.",
+          "logos": [
+            "shopify",
+            "googlesheets",
             "slack"
           ]
         },
         {
-          "title": "Garder votre CRM propre",
-          "body": "Racontez votre appel à l'agent, ou laissez-le lire vos derniers e-mails, et il met à jour le contact dans HubSpot avec les notes et la prochaine étape. Votre CRM montre ce qui s'est vraiment passé.",
+          "team": "Tout le monde",
+          "title": "Plus personne ne demande où on en est.",
+          "body": "Quand le travail est fait, le résultat est dans le bon canal ou le bon document, à la vue de tous.",
           "logos": [
-            "hubspot"
-          ]
-        },
-        {
-          "title": "Répondre à « ce client a-t-il payé ? »",
-          "body": "Un agent consulte les paiements et les factures du client dans Stripe et donne une réponse claire, sans que personne n'ouvre le tableau de bord Stripe.",
-          "logos": [
-            "stripe"
+            "slack",
+            "notion",
+            "googledocs"
           ]
         }
-      ],
-      "line": "Il en va de même pour les pages Notion, les enregistrements Airtable, votre agenda, vos e-mails, les messages Telegram et Discord, et les articles de votre site WordPress."
-    },
-    "how": {
-      "h2": "Connectez une fois. Utilisez partout.",
-      "steps": [
-        {
-          "title": "Connectez votre application",
-          "body": "Connectez-vous avec votre compte, ou collez une clé, une seule fois. Une seule connexion Google ouvre ensemble Sheets, Calendar, Docs, Drive, Slides, Forms, Contacts et Tasks."
-        },
-        {
-          "title": "Utilisez-la dans une étape, ou confiez-la à un agent",
-          "body": "Placez l'application comme étape dans une automatisation, ou branchez-la sur un agent comme outil. L'Assistant peut aussi l'ajouter à votre agent quand vous décrivez votre besoin. La connexion de l'application, c'est vous qui la faites, une fois.",
-          "image_alt": "Le canevas du Studio : Google Sheets comme étape avant un agent IA, et la même application branchée sur l'agent comme outil."
-        },
-        {
-          "title": "Votre équipe l'utilise depuis le Desk",
-          "body": "Vos collègues demandent le travail dans le Desk. Les agents utilisent vos applications connectées pour le faire. Vos collègues ne manipulent jamais un mot de passe ni une clé.",
-          "link": "Voir le Desk",
-          "href": "/fr/desk"
-        }
-      ],
-      "security": "Vos clés d'API et vos jetons de connexion sont chiffrés dans votre espace. Supprimez la connexion, ils sont supprimés avec elle.",
-      "security_link": "Comment nous protégeons vos données",
-      "security_href": "/fr/legal/dpa"
-    },
-    "modes": {
-      "h2": "La même application, utilisée de deux façons",
-      "sub": "La plupart des applications servent des deux façons. Vous choisissez, pour chaque tâche, la part de décision que vous laissez à l'IA.",
-      "step": {
-        "title": "Comme étape",
-        "body": "Une étape fait la même chose à chaque fois, dans l'ordre que vous fixez. « Chaque vendredi, ajouter les nouvelles commandes au tableur. » À utiliser quand vous savez exactement ce qui doit se passer."
-      },
-      "tool": {
-        "title": "Comme outil",
-        "body": "Un agent décide quand utiliser un outil, et comment. « Trouve pourquoi ce client est mécontent et corrige sa fiche. » L'agent cherche ce dont il a besoin, dans les applications que vous lui avez données."
-      },
-      "control": "Vous décidez de ce qu'un agent peut modifier. Au départ, un outil d'application ne fait que lire. Il crée, envoie ou supprime seulement si vous l'autorisez sur cet outil.",
-      "closing": "La plupart des bonnes automatisations mêlent les deux : des étapes fixes là où vous voulez vos propres règles, et un agent là où il faut du jugement.",
-      "image_alt": "Un workflow dans le Studio : une étape Google Sheets, puis un agent IA avec un canal Slack et HubSpot comme outils.",
-      "depth": {
-        "title": "Une application absente de la liste ?",
-        "body": "Vos automatisations et vos agents peuvent souvent travailler avec elle quand même. Une étape ou un agent peut appeler n'importe quelle API dotée d'une interface HTTP, avec la clé que vous connectez. Et un agent peut utiliser les outils d'un serveur MCP, un moyen courant pour les applications d'offrir leurs outils aux agents IA."
-      }
-    },
-    "models": {
-      "h2": "Votre modèle d'IA, votre choix",
-      "line": "Choisissez le modèle d'IA de chaque agent, et changez-le quand vous voulez."
+      ]
     },
     "apps": {
-      "h2": "Branchez les applications de votre entreprise",
-      "sub": "De nouvelles applications arrivent chaque semaine. Chacune est une étape à placer dans une automatisation et un outil pour vos agents IA, et beaucoup lancent le travail dès qu'il s'y passe quelque chose.",
+      "h2": "Compatible avec les applications que vous utilisez déjà",
+      "sub": "De nouvelles applications arrivent chaque semaine.",
       "more": "Et bien d’autres…"
     },
     "ask": {
-      "h2": "Besoin d'une autre application ?",
-      "body": "Dites-nous laquelle, et ce que vous voulez que vos agents en fassent. Cela nous aide à choisir la suite.",
+      "h2": "Besoin d'une autre application ?",
+      "body": "Dites-nous laquelle, et ce que vous voulez que vos agents en fassent.",
       "cta": "Dites-le-nous"
     },
+    "steps": {
+      "h2": "En route en trois étapes",
+      "items": [
+        {
+          "title": "Connectez vos applications",
+          "body": "Connectez-vous une fois avec votre compte. Une seule connexion Google ouvre Sheets, Docs, Drive et Calendar."
+        },
+        {
+          "title": "Dites ce qu'il vous faut",
+          "body": "Décrivez la tâche avec vos mots. L'Assistant construit l'agent ou l'automatisation pour vous."
+        },
+        {
+          "title": "Laissez faire",
+          "body": "Le travail se fait tout seul, ou quand votre équipe le demande depuis le Desk."
+        }
+      ]
+    },
+    "trust": {
+      "body": "Vous décidez ce qu'un agent peut modifier : au départ, il ne fait que lire. Vos clés restent chiffrées dans votre espace.",
+      "link": "Comment nous protégeons vos données",
+      "href": "/fr/legal/dpa"
+    },
     "cta": {
-      "h2": "Mettez vos agents IA au travail dans vos applications",
-      "sub": "Connectez votre première application, construisez une automatisation, et laissez un agent faire le travail que vous faites à la main aujourd'hui.",
+      "h2": "Confiez les petites tâches à vos agents IA",
+      "sub": "Connectez votre première application, et laissez un agent faire le travail que vous faites à la main aujourd'hui.",
       "button": "Démarrer l'essai"
     }
   },

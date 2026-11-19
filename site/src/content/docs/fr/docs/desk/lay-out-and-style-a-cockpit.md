@@ -48,7 +48,7 @@ Pour des exemples par département, voyez [Idées de cockpit par département](/
 
 Dans l'onglet **Look** de la page :
 
-- **Un style en un clic** : **Desk**, **Soft**, **Bright**, **Bold** ou **Night**. Partez de l'un d'eux, puis changez ce que vous voulez.
+- **Un style en un clic** : **Desk**, **Soft**, **Tinted**, **Paper** ou **Night**. Partez de l'un d'eux, puis changez ce que vous voulez.
 - **Le fond** : **None**, **Colour**, **Gradient** ou **Image**.
 - **Les cartes** : leurs **Corners** (**Square**, **Soft** ou **Round**), leur **Border** (**No border** ou **A border**), son épaisseur (**Fine**, **Medium** ou **Bold**) et sa couleur (**Grey** ou **The cockpit's**).
 
