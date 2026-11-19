@@ -9852,7 +9852,7 @@
     }
   },
 "connections_page": {
-  "_comment": "The Connections page (/connections and /fr/connections), rebuilt 2026-11-19: the catalogue of every app comes first, by category, with a search, and never says how many there are. The list itself is in src/data/connections.ts.",
+  "_comment": "The Connections page (/connections and /fr/connections): every integration in sliding rows with \"and many more\"; no detail, no \"coming soon\", no count. The list itself is in src/data/connections.ts.",
   "meta": {
     "title": "Connections: Your AI Agents Inside Your Apps | Agentivity",
     "description": "Connect Google, Slack, HubSpot, Notion, Stripe and more once. Use each app in your automations and give it to your AI agents as a tool. Your team uses the result from the Desk."
@@ -9865,7 +9865,94 @@
     "cta_href": "/start?plan=pro",
     "secondary": "See the apps",
     "secondary_href": "#apps",
-    "image_alt": "The Studio canvas: an AI agent with its AI model and three apps as tools, Google Sheets, HubSpot and a Slack channel."
+    "loop": {
+      "agent": "AI Agent",
+      "alt": "An AI agent among the apps it works with. A new Shopify order starts it; it checks the payment in Stripe, adds the order to a Google Sheet, updates the customer in HubSpot and tells the sales team in Slack. Then a Zendesk ticket, then a meeting booked in Calendly.",
+      "stories": [
+        {
+          "steps": [
+            {
+              "app": "shopify",
+              "dir": "in",
+              "label": "New order"
+            },
+            {
+              "app": "stripe",
+              "dir": "out",
+              "label": "Check the payment"
+            },
+            {
+              "app": "googlesheets",
+              "dir": "out",
+              "label": "Add it to the sheet"
+            },
+            {
+              "app": "hubspot",
+              "dir": "out",
+              "label": "Update the customer"
+            },
+            {
+              "app": "slack",
+              "dir": "out",
+              "label": "Tell the sales team"
+            }
+          ]
+        },
+        {
+          "steps": [
+            {
+              "app": "zendesk",
+              "dir": "in",
+              "label": "New ticket"
+            },
+            {
+              "app": "notion",
+              "dir": "out",
+              "label": "Find the answer"
+            },
+            {
+              "app": "jira",
+              "dir": "out",
+              "label": "Open a bug"
+            },
+            {
+              "app": "zendesk",
+              "dir": "out",
+              "label": "Reply to the customer"
+            },
+            {
+              "app": "slack",
+              "dir": "out",
+              "label": "Warn the product team"
+            }
+          ]
+        },
+        {
+          "steps": [
+            {
+              "app": "calendly",
+              "dir": "in",
+              "label": "Meeting booked"
+            },
+            {
+              "app": "hubspot",
+              "dir": "out",
+              "label": "Look up the company"
+            },
+            {
+              "app": "googledocs",
+              "dir": "out",
+              "label": "Write the briefing"
+            },
+            {
+              "app": "googlecalendar",
+              "dir": "out",
+              "label": "Add it to the meeting"
+            }
+          ]
+        }
+      ]
+    }
   },
   "uses": {
     "h2": "Hand over the work that lives in your apps",
@@ -9959,18 +10046,7 @@
   "apps": {
     "h2": "Connect the apps your business runs on",
     "sub": "New apps arrive every week. Each one is a step you place in an automation and a tool your AI agents use, and many start the work the moment something happens in them.",
-    "search": "Search an app",
-    "filter_label": "Filter by category",
-    "all": "All",
-    "starts_filter": "Start the work",
-    "soon": "Coming soon",
-    "model": "AI model",
-    "step": "Step",
-    "tool": "Agent tool",
-    "starts": "Starts the work",
-    "empty": "No app matches yet. Tell us which one you need, just below.",
-    "available_note": "Email works with any mailbox that uses SMTP and IMAP. HTTP requests and MCP servers reach the apps that are not on this list.",
-    "starting": "An automation starts when you start it, on a schedule, when another service calls its webhook, or when something happens in one of your apps: a new order, a form answered, a payment received, a message. Schedules, webhooks and app events are on the hosted plans."
+    "more": "And many more…"
   },
   "ask": {
     "h2": "Need another app?",

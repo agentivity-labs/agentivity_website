@@ -10619,7 +10619,7 @@
     }
   },
   "connections_page": {
-    "_comment": "The Connections page (/connections and /fr/connections), rebuilt 2026-11-19: the catalogue of every app comes first, by category, with a search, and never says how many there are. The list itself is in src/data/connections.ts.",
+    "_comment": "The Connections page (/connections and /fr/connections): every integration in sliding rows with \"and many more\"; no detail, no \"coming soon\", no count. The list itself is in src/data/connections.ts.",
     "meta": {
       "title": "Connexions : vos agents IA dans vos applications | Agentivity",
       "description": "Connectez une fois Google, Slack, HubSpot, Notion, Stripe et bien d'autres. Utilisez chaque application dans vos automatisations et confiez-la à vos agents IA comme outil. Votre équipe utilise le résultat depuis le Desk."
@@ -10632,7 +10632,94 @@
       "cta_href": "/fr/start?plan=pro",
       "secondary": "Voir les applications",
       "secondary_href": "#apps",
-      "image_alt": "Le canevas du Studio : un agent IA avec son modèle d'IA et trois applications comme outils, Google Sheets, HubSpot et un canal Slack."
+      "loop": {
+        "agent": "Agent IA",
+        "alt": "Un agent IA au milieu des applications avec lesquelles il travaille. Une nouvelle commande Shopify le lance ; il vérifie le paiement dans Stripe, ajoute la commande dans un Google Sheet, met à jour le client dans HubSpot et prévient l'équipe commerciale dans Slack. Puis un ticket Zendesk, puis un rendez-vous pris dans Calendly.",
+        "stories": [
+          {
+            "steps": [
+              {
+                "app": "shopify",
+                "dir": "in",
+                "label": "Nouvelle commande"
+              },
+              {
+                "app": "stripe",
+                "dir": "out",
+                "label": "Vérifier le paiement"
+              },
+              {
+                "app": "googlesheets",
+                "dir": "out",
+                "label": "L'ajouter au tableau"
+              },
+              {
+                "app": "hubspot",
+                "dir": "out",
+                "label": "Mettre à jour le client"
+              },
+              {
+                "app": "slack",
+                "dir": "out",
+                "label": "Prévenir les ventes"
+              }
+            ]
+          },
+          {
+            "steps": [
+              {
+                "app": "zendesk",
+                "dir": "in",
+                "label": "Nouveau ticket"
+              },
+              {
+                "app": "notion",
+                "dir": "out",
+                "label": "Trouver la réponse"
+              },
+              {
+                "app": "jira",
+                "dir": "out",
+                "label": "Ouvrir un bug"
+              },
+              {
+                "app": "zendesk",
+                "dir": "out",
+                "label": "Répondre au client"
+              },
+              {
+                "app": "slack",
+                "dir": "out",
+                "label": "Prévenir le produit"
+              }
+            ]
+          },
+          {
+            "steps": [
+              {
+                "app": "calendly",
+                "dir": "in",
+                "label": "Rendez-vous pris"
+              },
+              {
+                "app": "hubspot",
+                "dir": "out",
+                "label": "Chercher l'entreprise"
+              },
+              {
+                "app": "googledocs",
+                "dir": "out",
+                "label": "Rédiger la note"
+              },
+              {
+                "app": "googlecalendar",
+                "dir": "out",
+                "label": "La joindre au rendez-vous"
+              }
+            ]
+          }
+        ]
+      }
     },
     "uses": {
       "h2": "Confiez le travail qui vit dans vos applications",
@@ -10726,18 +10813,7 @@
     "apps": {
       "h2": "Branchez les applications de votre entreprise",
       "sub": "De nouvelles applications arrivent chaque semaine. Chacune est une étape à placer dans une automatisation et un outil pour vos agents IA, et beaucoup lancent le travail dès qu'il s'y passe quelque chose.",
-      "search": "Chercher une application",
-      "filter_label": "Filtrer par catégorie",
-      "all": "Toutes",
-      "starts_filter": "Lancent le travail",
-      "soon": "Bientôt",
-      "model": "Modèle d'IA",
-      "step": "Étape",
-      "tool": "Outil d'agent",
-      "starts": "Lance le travail",
-      "empty": "Aucune application ne correspond pour l'instant. Dites-nous laquelle il vous faut, juste en dessous.",
-      "available_note": "L'e-mail fonctionne avec toute boîte qui utilise SMTP et IMAP. Les requêtes HTTP et les serveurs MCP atteignent les applications absentes de cette liste.",
-      "starting": "Une automatisation démarre quand vous la lancez, selon une planification, quand un autre service appelle son webhook, ou quand il se passe quelque chose dans l'une de vos applications : une nouvelle commande, un formulaire rempli, un paiement reçu, un message. Les planifications, les webhooks et les événements des applications sont inclus dans les offres hébergées."
+      "more": "Et bien d’autres…"
     },
     "ask": {
       "h2": "Besoin d'une autre application ?",

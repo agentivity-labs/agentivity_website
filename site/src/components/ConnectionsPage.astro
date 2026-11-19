@@ -1,34 +1,37 @@
 ---
-// The Connections page (/connections and /fr/connections): the promise, then the catalogue of every app (filters by category and
-// a search, rebuilt 2026-11-19: new apps arrive every week, so the page never counts them), then what they are for and how.
-// Texts come from the "connections_page" block of en.json / fr.json, the list, its categories and status from
-// src/data/connections.ts, the marks from src/data/brand-logos.ts (an app without one shows its initial). The captures are real
-// Studio canvases, in public/media/connections (a 16:9 cut on narrow screens).
+// The Connections page (/connections and /fr/connections): the promise, then every integration in rows that slide past, as on
+// the home, with "and many more" (2026-11-19: no detail, no "coming soon", no count; adding an integration to
+// src/data/connections.ts is all it takes), then what they are for and how. Texts from the "connections_page" block of en.json
+// / fr.json, the marks from src/data/brand-logos.ts (an app without one shows its initial). The captures are real Studio
+// canvases, in public/media/connections (a 16:9 cut on narrow screens).
 import Base from '../layouts/Base.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import StartFree from './StartFree.astro';
 import TrialNote from './TrialNote.astro';
+import AppHubLoop from './AppHubLoop.astro';
 import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
-import { connections, categories, nameOf, bodyOf } from '../data/connections';
-import { brandLogos } from '../data/brand-logos';
+import { connections, nameOf } from '../data/connections';
+import { brandLogos, brandFiles } from '../data/brand-logos';
 
 // English by default; the French pages pass lang="fr" (2026-11-19).
 const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
 const t = useTranslations(lang);
 const p = t.connections_page as any;
+const mark = (id?: string) => (id ? brandLogos[id] : undefined);
+const file = (id?: string) => (id ? brandFiles[id] : undefined);
 const apps = connections.filter((item) => item.group === 'apps');
 const stepShot = p.how.steps.find((step: any) => step.image_alt);
 const live = apps.filter((item) => item.status === 'live');
 const models = connections.filter((item) => item.group === 'models');
-const band = live.filter((item) => item.logo);
-// The catalogue: what works today first, then what is coming, each in the order of its category.
-const order = (id: string) => categories.findIndex((c) => c.id === id);
-const catalogue = [...connections]
-  .sort((a, b) => (a.status === b.status ? 0 : a.status === 'live' ? -1 : 1) || order(a.cat) - order(b.cat) || a.name.localeCompare(b.name));
-const used = categories.filter((c) => catalogue.some((item) => item.cat === c.id));
+// The band shows marks alone: only the single-path ones (a press-kit file such as Microsoft's must sit beside its name).
+const band = live.filter((item) => mark(item.logo));
+// Every integration (the apps and the AI models), in rows that slide past, as on the home; "and many more" under them. The
+// page lists what src/data/connections.ts lists: adding an integration there is all it takes (founder 2026-11-19).
+const all = connections.filter((item) => item.group !== 'build');
+const ROWS = 6;
+const rows = Array.from({ length: ROWS }, (_, r) => all.filter((_, i) => i % ROWS === r));
 const a = p.apps;
-const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 ---
 <Base title={p.meta.title} description={p.meta.description} lang={lang} look="editorial">
 
@@ -48,13 +51,10 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     </div>
     <ul class="cn-band" aria-label={lang === 'fr' ? 'Les apps qui marchent aujourd’hui' : 'Apps that work today'}>
       {band.map((item) => (
-        <li title={item.name}><svg viewBox="0 0 24 24" role="img" aria-label={item.name}><path d={mark(item.logo)!.d} /></svg></li>
+        <li title={item.name}>{mark(item.logo) ? <svg viewBox="0 0 24 24" role="img" aria-label={item.name}><path d={mark(item.logo)!.d} /></svg> : <img class="cn-file" src={file(item.logo)} alt={item.name} width="24" height="24" loading="lazy" />}</li>
       ))}
     </ul>
-    <picture class="cn-shot cn-shot--wide">
-      <source media="(max-width: 900px)" srcset="/media/connections/connections-hero-agent-tools-16x9.webp" width="2560" height="1440" />
-      <img src="/media/connections/connections-hero-agent-tools.webp" width="3200" height="1371" alt={p.hero.image_alt} fetchpriority="high" />
-    </picture>
+    <div class="cn-hub"><AppHubLoop d={p.hero.loop} /></div>
   </section>
 
   <!-- 2. The catalogue: every app, by category, with a search -->
@@ -64,35 +64,21 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
         <h2 class="ed-h2 ed-h2--md">{a.h2}</h2>
         <p class="ed-sec-sub">{a.sub}</p>
       </header>
-      <div class="cn-filter" data-cn-filter>
-        <label class="cn-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg><input type="search" placeholder={a.search} aria-label={a.search} data-cn-search /></label>
-        <div class="cn-cats" role="group" aria-label={a.filter_label}>
-          <button type="button" class="is-on" data-cn-cat="">{a.all}</button>
-          <button type="button" data-cn-cat="starts">{a.starts_filter}</button>
-          {used.map((c) => <button type="button" data-cn-cat={c.id}>{lang === 'fr' ? c.fr : c.en}</button>)}
-        </div>
-      </div>
-      <ul class="cn-grid" data-cn-grid>
-        {catalogue.map((item) => (
-          <li class:list={['cn-app', { 'is-soon': item.status === 'soon' }]} data-cat={item.cat} data-starts={item.starts ? '1' : undefined} data-search={(nameOf(item, lang) + ' ' + bodyOf(item, lang) + ' ' + (lang === 'fr' ? categories.find((c) => c.id === item.cat)?.fr : categories.find((c) => c.id === item.cat)?.en)).toLowerCase()}>
-            <span class="cn-app-mark">{mark(item.logo) ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg> : <b aria-hidden="true">{nameOf(item, lang).charAt(0)}</b>}</span>
-            <span class="cn-app-text">
-              <strong>{nameOf(item, lang)}</strong>
-              <span>{bodyOf(item, lang)}</span>
-              <span class="cn-app-tags">
-                {item.status === 'soon' && <em class="is-soon">{a.soon}</em>}
-                {item.group === 'models' && <em>{a.model}</em>}
-                {item.step && <em>{a.step}</em>}
-                {item.tool && <em>{a.tool}</em>}
-                {item.starts && <em class="is-starts">{a.starts}</em>}
-              </span>
-            </span>
-          </li>
+      <div class="cn-marquee" aria-label={a.h2}>
+        {rows.map((row) => (
+          <div class="cn-marquee-row">
+            <ul class="cn-marquee-track">
+              {[...row, ...row].map((item, i) => (
+                <li aria-hidden={i >= row.length ? 'true' : undefined}>
+                  {mark(item.logo) ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg> : file(item.logo) ? <img class="cn-file" src={file(item.logo)} alt="" width="22" height="22" loading="lazy" /> : <b aria-hidden="true">{nameOf(item, lang).charAt(0)}</b>}
+                  <span>{nameOf(item, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
-      <p class="cn-empty" data-cn-empty hidden>{a.empty}</p>
-      <p class="cn-small">{a.available_note}</p>
-      <p class="cn-starting">{a.starting}</p>
+      </div>
+      <p class="cn-more-line"><span>{a.more}</span></p>
       <div class="cn-ask">
         <div>
           <strong>{p.ask.h2}</strong>
@@ -185,7 +171,7 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
     <p class="ed-sec-sub">{p.models.line}</p>
     <ul>
       {models.map((item) => (
-        <li>{mark(item.logo) && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg>}<span>{nameOf(item, lang)}</span></li>
+        <li>{mark(item.logo) ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mark(item.logo)!.d} /></svg> : file(item.logo) && <img class="cn-file" src={file(item.logo)} alt="" width="26" height="26" loading="lazy" />}<span>{nameOf(item, lang)}</span></li>
       ))}
     </ul>
     </div>
@@ -206,33 +192,6 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 
 </Base>
 
-<script>
-  // The catalogue's filters: one category (or the apps that start work), and a search on the name, what it does and its category.
-  document.querySelectorAll<HTMLElement>('[data-cn-filter]').forEach((filter) => {
-    const section = filter.closest('section')!;
-    const tiles = [...section.querySelectorAll<HTMLElement>('.cn-app')];
-    const empty = section.querySelector<HTMLElement>('[data-cn-empty]');
-    const search = filter.querySelector<HTMLInputElement>('[data-cn-search]');
-    let cat = '';
-    const apply = () => {
-      const q = (search?.value ?? '').trim().toLowerCase();
-      let shown = 0;
-      tiles.forEach((tile) => {
-        const inCat = !cat || (cat === 'starts' ? tile.dataset.starts === '1' : tile.dataset.cat === cat);
-        const ok = inCat && (!q || (tile.dataset.search ?? '').includes(q));
-        tile.hidden = !ok;
-        if (ok) shown++;
-      });
-      if (empty) empty.hidden = shown > 0;
-    };
-    filter.querySelectorAll<HTMLButtonElement>('[data-cn-cat]').forEach((button) => button.addEventListener('click', () => {
-      cat = button.dataset.cnCat ?? '';
-      filter.querySelectorAll('[data-cn-cat]').forEach((b) => b.classList.toggle('is-on', b === button));
-      apply();
-    }));
-    search?.addEventListener('input', apply);
-  });
-</script>
 
 <style>
 .cn-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-block: clamp(48px, 7vw, 96px) clamp(48px, 6vw, 80px); }
@@ -247,6 +206,9 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 .cn-shot { display: block; overflow: hidden; border-radius: 18px; border: 1px solid var(--ed-line); background: #e9ebee; }
 .cn-shot img { display: block; width: 100%; height: auto; }
 .cn-shot--wide { margin-top: 12px; }
+/* The hero: the agent among the apps, played on the Studio's dark canvas. */
+.cn-hub { width: 100%; margin-top: 12px; aspect-ratio: 1400 / 600; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -36px rgba(16, 26, 46, .6); }
+@media (max-width: 640px) { .cn-hub { aspect-ratio: 600 / 860; } }
 .cn-shot--step { max-width: 880px; margin: clamp(28px, 4vw, 44px) auto 0; }
 
 .cn-uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
@@ -274,33 +236,24 @@ const mark = (id?: string) => (id ? brandLogos[id] : undefined);
 .cn-models li { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; color: var(--ed-ink-2); }
 .cn-models svg { width: 26px; height: 26px; fill: var(--ed-ink-2); }
 
-/* The catalogue: a search, the categories, and a tile per app (its mark, what it does, how it is used). */
-.cn-filter { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
-.cn-search { display: flex; align-items: center; gap: 10px; max-width: 420px; padding: 0 16px; height: 48px; border-radius: 999px; background: #fff; border: 1px solid var(--ed-line-2); }
-.cn-search svg { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--ed-ink-3); stroke-width: 2; stroke-linecap: round; }
-.cn-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 16px; color: var(--ed-ink); }
-.cn-cats { display: flex; flex-wrap: wrap; gap: 8px; }
-.cn-cats button { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--ed-line-2); background: #fff; font: inherit; font-size: 14.5px; font-weight: 600; color: var(--ed-ink-2); cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease; }
-.cn-cats button:hover { border-color: var(--ed-navy); }
-.cn-cats button.is-on { background: var(--ed-navy); border-color: var(--ed-navy); color: #fff; }
-.cn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
-.cn-app { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 16px; background: #fff; border: 1px solid var(--ed-line); }
-.cn-app[hidden] { display: none; }
-.cn-app-mark { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--ed-mist); }
-.cn-app-mark svg { width: 24px; height: 24px; fill: var(--ed-ink); }
-.cn-app-mark b { font-family: var(--ed-serif); font-weight: 400; font-size: 24px; line-height: 1; color: var(--ed-ink); }
-.cn-app-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; font-size: 14.5px; line-height: 1.45; color: var(--ed-ink-2); }
-.cn-app-text strong { font-size: 16.5px; color: var(--ed-ink); }
-.cn-app-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
-.cn-app-tags em { font-style: normal; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--ed-mist); color: var(--ed-ink-2); }
-.cn-app-tags em.is-starts { background: #FFF3CC; color: #6B4E00; }
-.cn-app-tags em.is-soon { background: transparent; border: 1px dashed var(--ed-line-2); color: var(--ed-ink-3); }
-.cn-app.is-soon { background: transparent; border-style: dashed; }
-.cn-app.is-soon .cn-app-mark { background: transparent; border: 1px dashed var(--ed-line-2); }
-.cn-app.is-soon .cn-app-mark svg { fill: var(--ed-ink-3); }
-.cn-empty { margin-top: 16px; font-size: 16px; color: var(--ed-ink-2); }
-.cn-small { margin-top: 12px; font-size: 15px; color: var(--ed-ink-3); }
-.cn-starting { margin-block: 28px 20px; padding: 16px 20px; border-left: 3px solid var(--ed-yellow); background: #fff; border-radius: 0 12px 12px 0; font-size: 16px; color: var(--ed-ink-2); }
+/* The integrations, in rows that slide past (paused under the mouse; standing still, wrapped, for less motion). */
+.cn-marquee { display: flex; flex-direction: column; gap: 10px; }
+.cn-marquee-row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.cn-marquee-track { display: flex; gap: 10px; width: max-content; margin: 0; padding: 0 10px 0 0; list-style: none; animation: cn-slide 90s linear infinite; }
+.cn-marquee-row:nth-child(even) .cn-marquee-track { animation-direction: reverse; }
+.cn-marquee:hover .cn-marquee-track { animation-play-state: paused; }
+.cn-marquee-track li { flex: none; display: flex; align-items: center; gap: 10px; width: 200px; min-height: 56px; padding: 10px 14px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); font-size: 15.5px; font-weight: 600; color: var(--ed-ink-2); }
+.cn-marquee-track svg { flex: none; width: 22px; height: 22px; fill: var(--ed-ink-3); }
+.cn-marquee-track b { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: var(--ed-mist); font-size: 13px; color: var(--ed-ink-3); }
+.cn-file { flex: none; display: block; width: 22px; height: 22px; object-fit: contain; }
+.cn-more-line { margin-top: clamp(24px, 3vw, 36px); text-align: center; }
+.cn-more-line span { display: inline-block; padding: .05em .35em; background: var(--ed-yellow); color: var(--ed-ink); font-family: var(--ed-serif); font-style: italic; font-size: clamp(36px, 5vw, 64px); line-height: 1.1; }
+@keyframes cn-slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .cn-marquee-track { animation: none; flex-wrap: wrap; width: auto; }
+  .cn-marquee-track li[aria-hidden] { display: none; }
+  .cn-marquee-row { -webkit-mask-image: none; mask-image: none; }
+}
 .cn-ask { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 40px; padding: 24px 28px; border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); }
 .cn-ask div { display: flex; flex-direction: column; gap: 4px; font-size: 16px; color: var(--ed-ink-2); }
 .cn-ask strong { font-size: 19px; color: var(--ed-ink); }

@@ -6,7 +6,7 @@
 //   knowledge what it reads: types of sources and apps
 //   connect  the tools around it, as a hub with groups on each side
 //   company  what a real company makes of it, as cards
-import { brandLogos } from '../data/brand-logos';
+import { brandLogos, brandFiles } from '../data/brand-logos';
 
 interface Props { pw: any; icons: Record<string, string>; }
 const { pw, icons } = Astro.props;
@@ -21,7 +21,10 @@ const wrap = (text: string, n: number) => (text ?? '').split(' ').reduce((lines:
 const mark = (id: string) => {
   if (id.startsWith('@')) return `<span class="sx-mark sx-mark--icon"><svg viewBox="0 0 24 24" aria-hidden="true">${icons[id.slice(1)] ?? ''}</svg></span>`;
   const b = brandLogos[id];
-  return b ? `<span class="sx-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${b.d}" fill="${b.c}"/></svg></span>` : '<span class="sx-mark sx-mark--none"></span>';
+  if (b) return `<span class="sx-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${b.d}" fill="${b.c}"/></svg></span>`;
+  // An official file from the brand's press kit, in its own colours.
+  if (brandFiles[id]) return `<span class="sx-mark"><img src="${brandFiles[id]}" alt="" width="20" height="20" loading="lazy" /></span>`;
+  return '<span class="sx-mark sx-mark--none"></span>';
 };
 const labels = pw.labels ?? { live: 'Ready today', soon: 'Coming soon' };
 
@@ -344,6 +347,7 @@ const hubLines = groups.map((_: any, gi: number) => {
 /* The marks are written as HTML (set:html), so they take global rules. */
 .pw-apps :global(.sx-mark) { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #fff; border: 1px solid var(--ed-line); box-shadow: 0 6px 14px -10px rgba(16, 27, 52, .35); }
 .pw-apps :global(.sx-mark svg) { width: 19px; height: 19px; }
+.pw-apps :global(.sx-mark img), .pw-hub :global(.sx-mark img) { width: 19px; height: 19px; object-fit: contain; }
 .pw-apps :global(.sx-mark--icon) { color: var(--ed-navy); background: var(--ed-mist); }
 .pw-apps :global(.sx-mark--none) { background: var(--ed-mist); box-shadow: none; }
 .pw-apps em { font-style: normal; flex: none; padding: 2px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }

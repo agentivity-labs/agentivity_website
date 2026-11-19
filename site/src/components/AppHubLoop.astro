@@ -1,0 +1,189 @@
+---
+// The hero of the Connections page (2026-11-19): an AI agent in the middle of the apps it works with, on the Studio's dark
+// canvas, played in a loop. A story at a time: an app starts the work (its event comes in), then the agent calls one app after
+// another, each call lit, its link yellow, what it does written beside it. The ring takes the apps of the stories first, then
+// other apps of src/data/connections.ts that have a mark, so the integrations added there can show up here. Two drawings: wide,
+// and tall for a phone. Stands still, the first story lit, when the visitor asks for less motion. Texts:
+// connections_page.hero.loop of en.json / fr.json.
+import { connections } from '../data/connections';
+import { brandLogos } from '../data/brand-logos';
+
+interface Props { d: any }
+const { d } = Astro.props;
+
+const RING = 12;
+const story: string[] = [...new Set<string>(d.stories.flatMap((s: any) => s.steps.map((x: any) => x.app)))];
+const others = connections.filter((c) => c.logo && brandLogos[c.logo] && !story.includes(c.logo)).map((c) => c.logo as string);
+// The apps of the stories first, then others with a mark, to fill the ring.
+const ids: string[] = [...story, ...others].slice(0, Math.max(RING, story.length));
+const names: Record<string, string> = Object.fromEntries(connections.filter((c) => c.logo).map((c) => [c.logo, c.name]));
+
+type L = { kind: string; view: string; w: number; h: number; cx: number; cy: number; rx: number; ry: number; tile: number; agent: number; font: number };
+const LAYOUTS: L[] = [
+  { kind: 'wide', view: '0 0 1400 600', w: 1400, h: 600, cx: 700, cy: 300, rx: 400, ry: 228, tile: 76, agent: 132, font: 19 },
+  { kind: 'tall', view: '0 0 600 860', w: 600, h: 860, cx: 300, cy: 390, rx: 226, ry: 320, tile: 68, agent: 116, font: 24 },
+];
+const at = (L: L, i: number) => {
+  const a = -Math.PI / 2 + (i * 2 * Math.PI) / ids.length;
+  return { x: L.cx + L.rx * Math.cos(a), y: L.cy + L.ry * Math.sin(a), ux: Math.cos(a), uy: Math.sin(a) };
+};
+const robot = 'M12 2a1 1 0 0 1 1 1v1h4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-1v2.5a.5.5 0 0 1-.8.4L11.7 18H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4V3a1 1 0 0 1 1-1zM9 9.5A1.5 1.5 0 1 0 9 12.5 1.5 1.5 0 0 0 9 9.5zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM8.5 14.5h7v1.5h-7z';
+---
+<div class="ah" data-ah data-stories={JSON.stringify(d.stories)} role="img" aria-label={d.alt}>
+  {LAYOUTS.map((L) => (
+    <svg class={`ah-svg ah-${L.kind}`} viewBox={L.view} aria-hidden="true">
+      <defs>
+        <pattern id={`ah-dots-${L.kind}`} width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="rgba(255,255,255,.07)" /></pattern>
+        <filter id={`ah-glow-${L.kind}`} x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="12" /></filter>
+      </defs>
+      <rect width={L.w} height={L.h} fill={`url(#ah-dots-${L.kind})`} />
+      {ids.map((id, i) => { const p = at(L, i); return <line class="ah-link" x1={L.cx} y1={L.cy} x2={p.x} y2={p.y} />; })}
+      {ids.map((id, i) => { const p = at(L, i); return <line class="ah-trail" data-trail={id} x1={L.cx} y1={L.cy} x2={p.x} y2={p.y} />; })}
+
+      <g class="ah-agent" data-agent>
+        <rect class="ah-halo" x={L.cx - L.agent / 2} y={L.cy - L.agent / 2} width={L.agent} height={L.agent} rx={L.agent * .24} filter={`url(#ah-glow-${L.kind})`} />
+        <rect class="ah-box" x={L.cx - L.agent / 2} y={L.cy - L.agent / 2} width={L.agent} height={L.agent} rx={L.agent * .24} />
+        <svg x={L.cx - L.agent * .26} y={L.cy - L.agent * .3} width={L.agent * .52} height={L.agent * .52} viewBox="0 0 24 24"><path class="ah-robot" d={robot} /></svg>
+        <text class="ah-agent-name" x={L.cx} y={L.cy + L.agent * .36} text-anchor="middle">{d.agent}</text>
+      </g>
+
+      {ids.map((id, i) => {
+        const p = at(L, i), t = L.tile, b = brandLogos[id];
+        const side = Math.abs(p.ux) > .45 ? (p.ux > 0 ? 'right' : 'left') : (p.uy > 0 ? 'below' : 'above');
+        const cx = side === 'right' ? p.x + t / 2 + 14 : side === 'left' ? p.x - t / 2 - 14 : p.x;
+        const cy = side === 'below' ? p.y + t / 2 + 34 : side === 'above' ? p.y - t / 2 - 22 : p.y + 7;
+        const anchor = side === 'right' ? 'start' : side === 'left' ? 'end' : 'middle';
+        return (
+          <g class="ah-app" data-app={id} data-name={names[id] ?? id} style={`--brand:${b?.c ?? '#fff'}`}>
+            <rect class="ah-halo" x={p.x - t / 2} y={p.y - t / 2} width={t} height={t} rx={t * .26} filter={`url(#ah-glow-${L.kind})`} />
+            <rect class="ah-box" x={p.x - t / 2} y={p.y - t / 2} width={t} height={t} rx={t * .26} />
+            <svg x={p.x - t * .27} y={p.y - t * .27} width={t * .54} height={t * .54} viewBox="0 0 24 24"><title>{names[id] ?? id}</title><path class="ah-mark" d={b?.d} /></svg>
+            {L.kind === 'wide' && <text class="ah-say" x={cx} y={cy} text-anchor={anchor} data-say={id} style={`font-size:${L.font}px`}></text>}
+          </g>
+        );
+      })}
+
+      {L.kind === 'tall' && <text class="ah-caption" data-caption x={L.cx} y={L.h - 28} text-anchor="middle" style={`font-size:${L.font}px`}></text>}
+      <circle class="ah-token" data-token r="8" />
+    </svg>
+  ))}
+</div>
+
+<style>
+.ah { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #151A23; }
+.ah-svg { display: block; width: 100%; height: 100%; font-family: var(--ed-sans); }
+.ah-tall { display: none; }
+@media (max-width: 640px) { .ah-wide { display: none; } .ah-tall { display: block; } }
+
+.ah-link { stroke: rgba(255, 255, 255, .09); stroke-width: 2; }
+.ah-trail { stroke: var(--ed-yellow); stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .5s ease; }
+.ah-trail.is-on { opacity: 1; }
+.ah-halo { fill: var(--ed-yellow); opacity: 0; transition: opacity .4s ease; }
+
+.ah-agent .ah-box { fill: #0B0F15; stroke: rgba(255, 255, 255, .35); stroke-width: 2; transition: fill .4s ease, stroke .4s ease; }
+.ah-robot { fill: rgba(255, 255, 255, .85); transition: fill .4s ease; }
+.ah-agent-name { font-size: 17px; font-weight: 700; fill: rgba(255, 255, 255, .7); transition: fill .4s ease; }
+.ah-agent.is-on .ah-box { fill: #fff; stroke: #fff; }
+.ah-agent.is-on .ah-robot { fill: var(--ed-navy); }
+.ah-agent.is-on .ah-agent-name { fill: var(--ed-navy); }
+.ah-agent.is-on .ah-halo { opacity: .22; }
+
+.ah-app { opacity: .42; transition: opacity .4s ease; }
+.ah-app .ah-box { fill: #222833; stroke: rgba(255, 255, 255, .12); stroke-width: 1.5; transition: fill .4s ease; }
+.ah-mark { fill: rgba(255, 255, 255, .8); transition: fill .4s ease; }
+.ah-app.is-on { opacity: 1; }
+.ah-app.is-on .ah-box { fill: #fff; stroke: #fff; }
+.ah-app.is-on .ah-mark { fill: var(--brand); }
+.ah-app.is-on .ah-halo { opacity: .3; }
+.ah-say { font-weight: 700; fill: #fff; opacity: 0; transition: opacity .35s ease; }
+.ah-app.is-on .ah-say { opacity: 1; }
+.ah-app.is-in .ah-say { fill: var(--ed-yellow); }
+
+.ah-caption { font-weight: 700; fill: #fff; }
+.ah-caption.is-in { fill: var(--ed-yellow); }
+.ah-token { fill: var(--ed-yellow); opacity: 0; filter: drop-shadow(0 0 8px rgba(255, 200, 61, .8)); }
+</style>
+
+<script>
+  type Step = { app: string; dir: 'in' | 'out'; label: string };
+  type Story = { steps: Step[] };
+  const MOVE = 650, HOLD = 1300, REST = 1400;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLElement>('[data-ah]').forEach((root) => {
+    const stories: Story[] = JSON.parse(root.dataset.stories || '[]');
+    let visible = false, running = false;
+    const svgNow = () => [...root.querySelectorAll<SVGSVGElement>('.ah-svg')].find((s) => s.getBoundingClientRect().width > 0);
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const until = async () => { while (!visible) await wait(300); };
+
+    function say(svg: SVGSVGElement, s: Step) {
+      const t = svg.querySelector<SVGTextElement>(`[data-say="${s.app}"]`);
+      if (t) t.textContent = s.label;
+      const app = svg.querySelector<SVGGElement>(`[data-app="${s.app}"]`);
+      // On a phone, what happens is written once, under the ring.
+      const caption = svg.querySelector<SVGTextElement>('[data-caption]');
+      if (caption) { caption.textContent = `${app?.dataset.name ?? ''} · ${s.label}`; caption.classList.toggle('is-in', s.dir === 'in'); }
+      app?.classList.add('is-on');
+      app?.classList.toggle('is-in', s.dir === 'in');
+      svg.querySelector(`[data-trail="${s.app}"]`)?.classList.add('is-on');
+    }
+    function travel(svg: SVGSVGElement, s: Step) {
+      const line = svg.querySelector<SVGLineElement>(`[data-trail="${s.app}"]`);
+      const token = svg.querySelector<SVGCircleElement>('[data-token]');
+      if (!line || !token) return Promise.resolve();
+      const [x1, y1, x2, y2] = ['x1', 'y1', 'x2', 'y2'].map((k) => Number(line.getAttribute(k)));
+      const from = s.dir === 'in' ? [x2, y2] : [x1, y1], to = s.dir === 'in' ? [x1, y1] : [x2, y2];
+      token.style.opacity = '1';
+      return new Promise<void>((done) => {
+        const t0 = performance.now();
+        const step = (now: number) => {
+          const k = Math.min(1, (now - t0) / MOVE), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+          token.setAttribute('cx', String(from[0] + (to[0] - from[0]) * e));
+          token.setAttribute('cy', String(from[1] + (to[1] - from[1]) * e));
+          if (k < 1) requestAnimationFrame(step); else { token.style.opacity = '0'; done(); }
+        };
+        requestAnimationFrame(step);
+      });
+    }
+    function clear(svg: SVGSVGElement, keepAgent = false) {
+      svg.querySelectorAll('.ah-app.is-on, .ah-trail.is-on').forEach((el) => el.classList.remove('is-on', 'is-in'));
+      if (!keepAgent) svg.querySelector('[data-agent]')?.classList.remove('is-on');
+    }
+
+    async function loop() {
+      if (running) return;
+      running = true;
+      for (let i = 0; ; i = (i + 1) % stories.length) {
+        await until();
+        const svg = svgNow();
+        if (!svg) { await wait(500); continue; }
+        clear(svg);
+        const agent = svg.querySelector('[data-agent]');
+        for (const s of stories[i].steps) {
+          if (s.dir === 'in') {
+            say(svg, s);
+            await wait(500);
+            await travel(svg, s);
+            agent?.classList.add('is-on');
+          } else {
+            agent?.classList.add('is-on');
+            await travel(svg, s);
+            say(svg, s);
+          }
+          await wait(HOLD);
+          clear(svg, true);
+        }
+        agent?.classList.remove('is-on');
+        await wait(REST);
+      }
+    }
+
+    if (reduce) {
+      const s = stories[0];
+      root.querySelectorAll<SVGSVGElement>('.ah-svg').forEach((svg) => { s?.steps.forEach((x) => say(svg, x)); svg.querySelector('[data-agent]')?.classList.add('is-on'); });
+      return;
+    }
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) loop(); }, { threshold: .2 }).observe(root);
+  });
+</script>

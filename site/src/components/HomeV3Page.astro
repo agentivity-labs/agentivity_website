@@ -13,7 +13,7 @@ import TeamLoop from './TeamLoop.astro';
 import plans from '../data/plans.json';
 import { useTranslations, getLocalePath, type Lang } from '../i18n/utils';
 import { connections, nameOf } from '../data/connections';
-import { brandLogos } from '../data/brand-logos';
+import { brandLogos, brandFiles } from '../data/brand-logos';
 
 // English by default; the French pages pass lang="fr" (2026-11-19).
 const lang: Lang = (Astro.props as { lang?: Lang }).lang ?? 'en';
@@ -219,7 +219,7 @@ const schema = {
           const logo = item.logo ? brandLogos[item.logo] : undefined;
           return (
             <li>
-              {logo && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={logo.d} /></svg>}
+              {logo ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d={logo.d} /></svg> : item.logo && brandFiles[item.logo] && <img class="h3-file" src={brandFiles[item.logo]} alt="" width="22" height="22" loading="lazy" />}
               <span>{nameOf(item, lang)}</span>
             </li>
           );
@@ -566,6 +566,7 @@ const schema = {
 @keyframes h3-slide { to { transform: translateX(-50%); } }
 .h3-apps .h3-apps-more { justify-content: center; border-style: dashed; color: var(--ed-ink-3); }
 .h3-apps svg, .h3 :global(.h3-marquee-track svg) { flex: none; width: 22px; height: 22px; fill: var(--ed-ink-3); }
+.h3-file, .h3 :global(.h3-marquee-track .h3-file) { flex: none; width: 22px; height: 22px; object-fit: contain; }
 .h3-models { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--ed-line-2); }
 .h3-models ul { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; font-weight: 600; color: var(--ed-ink-3); }
 .h3-conn-label { color: var(--ed-yellow); }

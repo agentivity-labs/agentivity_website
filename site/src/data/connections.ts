@@ -28,23 +28,6 @@ export type Connection = {
   fr?: string;
 };
 
-/** The categories of the catalogue, in the order of its filters. */
-export const categories: { id: Category; en: string; fr: string }[] = [
-  { id: 'crm', en: 'CRM & sales', fr: 'CRM et ventes' },
-  { id: 'support', en: 'Customer support', fr: 'Support client' },
-  { id: 'commerce', en: 'Commerce & payments', fr: 'Commerce et paiements' },
-  { id: 'finance', en: 'Accounting & banking', fr: 'Comptabilité et banque' },
-  { id: 'marketing', en: 'Email marketing', fr: 'E-mailing' },
-  { id: 'email', en: 'Email', fr: 'E-mail' },
-  { id: 'messaging', en: 'Messaging & chat', fr: 'Messagerie' },
-  { id: 'projects', en: 'Projects & tasks', fr: 'Projets et tâches' },
-  { id: 'docs', en: 'Docs, sheets & files', fr: 'Documents, tableurs et fichiers' },
-  { id: 'forms', en: 'Forms & meetings', fr: 'Formulaires et rendez-vous' },
-  { id: 'content', en: 'Websites & content', fr: 'Sites et contenus' },
-  { id: 'ai', en: 'AI models & images', fr: "Modèles d'IA et images" },
-  { id: 'build', en: 'Anything else', fr: 'Pour tout le reste' },
-];
-
 const app = (c: Omit<Connection, 'group'> & { group?: Connection['group'] }): Connection => ({ group: 'apps', home: true, ...c });
 // An application with a connector: a step and a tool, and sometimes a trigger.
 const both = { step: true, tool: true };
@@ -63,7 +46,7 @@ export const connections: Connection[] = [
   app({ name: 'Airtable', cat: 'docs', status: 'live', ...both, starts: true, logo: 'airtable', body: 'List, read, add, update and delete records', bodyFr: 'Lister, lire, ajouter, modifier et supprimer des enregistrements' }),
   app({ name: 'Zendesk', cat: 'support', status: 'live', ...both, starts: true, logo: 'zendesk', body: 'Read, answer and update tickets', bodyFr: 'Lire, répondre et mettre à jour des tickets' }),
   app({ name: 'Intercom', cat: 'support', status: 'live', ...both, logo: 'intercom', body: 'Read and answer conversations', bodyFr: 'Lire et répondre aux conversations' }),
-  app({ name: 'Freshdesk', cat: 'support', status: 'live', ...both, body: 'Read, answer and update tickets', bodyFr: 'Lire, répondre et mettre à jour des tickets' }),
+  app({ name: 'Freshdesk', cat: 'support', status: 'live', ...both, logo: 'freshdesk', body: 'Read, answer and update tickets', bodyFr: 'Lire, répondre et mettre à jour des tickets' }),
   app({ name: 'Jira', cat: 'projects', status: 'live', ...both, logo: 'jira', body: 'Create and update issues', bodyFr: 'Créer et mettre à jour des tickets' }),
   app({ name: 'Asana', cat: 'projects', status: 'live', ...both, starts: true, logo: 'asana', body: 'Create and update tasks', bodyFr: 'Créer et mettre à jour des tâches' }),
   app({ name: 'Trello', cat: 'projects', status: 'live', ...both, logo: 'trello', body: 'Create and move cards', bodyFr: 'Créer et déplacer des cartes' }),
@@ -73,8 +56,8 @@ export const connections: Connection[] = [
   app({ name: 'GitHub', cat: 'projects', status: 'live', ...both, starts: true, logo: 'github', body: 'Issues and pull requests', bodyFr: 'Issues et pull requests' }),
   app({ name: 'Todoist', cat: 'projects', status: 'live', ...both, logo: 'todoist', body: 'Create and complete tasks', bodyFr: 'Créer et terminer des tâches' }),
   app({ name: 'Google Tasks', cat: 'projects', status: 'live', ...both, logo: 'googletasks', body: 'Read and update your task lists and tasks', bodyFr: 'Lire et mettre à jour vos listes et vos tâches' }),
-  app({ name: 'Pipedrive', cat: 'crm', status: 'live', ...both, starts: true, body: 'Read and update deals, people and organizations', bodyFr: 'Lire et mettre à jour affaires, personnes et organisations' }),
-  app({ name: 'Attio', cat: 'crm', status: 'live', ...both, starts: true, body: 'Read and update the records of your CRM', bodyFr: 'Lire et mettre à jour les fiches de votre CRM' }),
+  app({ name: 'Pipedrive', cat: 'crm', status: 'live', ...both, starts: true, logo: 'pipedrive', body: 'Read and update deals, people and organizations', bodyFr: 'Lire et mettre à jour affaires, personnes et organisations' }),
+  app({ name: 'Attio', cat: 'crm', status: 'live', ...both, starts: true, logo: 'attio', body: 'Read and update the records of your CRM', bodyFr: 'Lire et mettre à jour les fiches de votre CRM' }),
   app({ name: 'Google Contacts', cat: 'crm', status: 'live', ...both, body: 'Read and update your contacts', bodyFr: 'Lire et mettre à jour vos contacts' }),
   app({ name: 'Mailchimp', cat: 'marketing', status: 'live', ...both, logo: 'mailchimp', body: 'Keep your audiences and send campaigns', bodyFr: 'Tenir vos audiences et envoyer des campagnes' }),
   app({ name: 'Brevo', cat: 'marketing', status: 'live', ...both, logo: 'brevo', body: 'Send emails, and keep your contacts and lists', bodyFr: 'Envoyer des e-mails, tenir vos contacts et vos listes' }),
@@ -85,13 +68,13 @@ export const connections: Connection[] = [
   app({ name: 'Discord', cat: 'messaging', status: 'live', ...both, logo: 'discord', body: "Post, edit, read and delete messages in a server's channels", bodyFr: "Publier, modifier, lire et supprimer des messages dans les salons d'un serveur" }),
   app({ name: 'Google Forms', cat: 'forms', status: 'live', ...both, logo: 'googleforms', body: 'Create and change forms, and read their answers', bodyFr: 'Créer et modifier des formulaires, lire leurs réponses' }),
   app({ name: 'Typeform', cat: 'forms', status: 'live', ...both, starts: true, logo: 'typeform', body: 'Read the answers to your forms', bodyFr: 'Lire les réponses à vos formulaires' }),
-  app({ name: 'Tally', cat: 'forms', status: 'live', ...both, starts: true, body: 'Read the answers to your forms', bodyFr: 'Lire les réponses à vos formulaires' }),
+  app({ name: 'Tally', cat: 'forms', status: 'live', ...both, starts: true, logo: 'tally', body: 'Read the answers to your forms', bodyFr: 'Lire les réponses à vos formulaires' }),
   app({ name: 'Calendly', cat: 'forms', status: 'live', ...both, starts: true, logo: 'calendly', body: 'The meetings people book with you', bodyFr: 'Les rendez-vous que l’on prend avec vous' }),
   app({ name: 'Cal.com', cat: 'forms', status: 'live', ...both, starts: true, logo: 'calcom', body: 'The meetings people book with you', bodyFr: 'Les rendez-vous que l’on prend avec vous' }),
   app({ name: 'Google Slides', cat: 'docs', status: 'live', ...both, logo: 'googleslides', body: 'Read and write presentations', bodyFr: 'Lire et écrire des présentations' }),
   app({ name: 'WordPress', cat: 'content', status: 'live', step: true, logo: 'wordpress', body: 'Publish and update posts and media', bodyFr: 'Publier et mettre à jour articles et médias' }),
   app({ name: 'Supabase Storage', cat: 'build', status: 'live', step: true, logo: 'supabase', body: 'Store and fetch files', bodyFr: 'Stocker et récupérer des fichiers' }),
-  app({ name: 'Recraft', cat: 'ai', status: 'live', step: true, body: 'Make images from a description', bodyFr: 'Créer des images à partir d’une description' }),
+  app({ name: 'Recraft', cat: 'ai', status: 'live', step: true, logo: 'recraft', body: 'Make images from a description', bodyFr: 'Créer des images à partir d’une description' }),
 
   app({ name: 'WooCommerce', cat: 'commerce', status: 'live', ...both, starts: true, logo: 'woocommerce', body: 'Orders, products and customers of your store', bodyFr: 'Commandes, produits et clients de votre boutique' }),
   app({ name: 'PayPal', cat: 'commerce', status: 'live', ...both, starts: true, logo: 'paypal', body: 'Payments, orders, invoices and disputes', bodyFr: 'Paiements, commandes, factures et litiges' }),
@@ -99,9 +82,9 @@ export const connections: Connection[] = [
   app({ name: 'Pennylane', cat: 'finance', status: 'live', ...both, starts: true, body: 'Your books: invoices, suppliers and customers', bodyFr: 'Votre comptabilité : factures, fournisseurs et clients' }),
   app({ name: 'Qonto', cat: 'finance', status: 'live', ...both, starts: true, body: 'Read your bank transactions and attach receipts', bodyFr: 'Lire vos opérations bancaires et joindre les justificatifs' }),
   app({ name: 'Klaviyo', cat: 'marketing', status: 'live', ...both, body: 'Profiles, lists and events of your email marketing', bodyFr: 'Profils, listes et événements de votre e-mailing' }),
-  app({ name: 'ActiveCampaign', cat: 'marketing', status: 'live', ...both, starts: true, body: 'Contacts, lists, tags and deals', bodyFr: 'Contacts, listes, tags et affaires' }),
+  app({ name: 'ActiveCampaign', cat: 'marketing', status: 'live', ...both, starts: true, logo: 'activecampaign', body: 'Contacts, lists, tags and deals', bodyFr: 'Contacts, listes, tags et affaires' }),
   app({ name: 'SendGrid', cat: 'email', status: 'live', ...both, starts: true, body: 'Send emails, and follow what became of them', bodyFr: 'Envoyer des e-mails et suivre ce qu’ils deviennent' }),
-  app({ name: 'Postmark', cat: 'email', status: 'live', ...both, starts: true, body: 'Send and receive emails from your application', bodyFr: 'Envoyer et recevoir des e-mails depuis votre application' }),
+  app({ name: 'Postmark', cat: 'email', status: 'live', ...both, starts: true, logo: 'postmark', body: 'Send and receive emails from your application', bodyFr: 'Envoyer et recevoir des e-mails depuis votre application' }),
   app({ name: 'Mailgun', cat: 'email', status: 'live', ...both, starts: true, logo: 'mailgun', body: 'Send and receive emails on your domain', bodyFr: 'Envoyer et recevoir des e-mails sur votre domaine' }),
   app({ name: 'Twilio', cat: 'messaging', status: 'live', ...both, starts: true, body: 'Send and receive text messages', bodyFr: 'Envoyer et recevoir des SMS' }),
   app({ name: 'WhatsApp Business', cat: 'messaging', status: 'live', ...both, starts: true, logo: 'whatsapp', body: 'Send and receive messages on your business number', bodyFr: 'Envoyer et recevoir des messages sur votre numéro professionnel' }),
@@ -111,11 +94,11 @@ export const connections: Connection[] = [
   app({ name: 'Dropbox', cat: 'docs', status: 'live', ...both, logo: 'dropbox', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
   app({ name: 'Box', cat: 'docs', status: 'live', ...both, starts: true, logo: 'box', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
   app({ name: 'Miro', cat: 'docs', status: 'live', ...both, logo: 'miro', body: 'Add notes and cards to your boards', bodyFr: 'Ajouter des notes et des cartes à vos tableaux' }),
-  app({ name: 'Microsoft Excel', cat: 'docs', status: 'live', ...both, body: 'Read and fill your workbooks', bodyFr: 'Lire et remplir vos classeurs' }),
-  app({ name: 'Outlook', cat: 'email', status: 'live', ...both, body: 'Read, sort and answer your emails', bodyFr: 'Lire, trier et répondre à vos e-mails' }),
-  app({ name: 'Microsoft Teams', cat: 'messaging', status: 'live', ...both, body: 'Post and read messages', bodyFr: 'Publier et lire des messages' }),
-  app({ name: 'OneDrive', cat: 'docs', status: 'live', ...both, body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
-  app({ name: 'SharePoint', cat: 'docs', status: 'live', ...both, body: 'Find, read and file documents in your sites', bodyFr: 'Trouver, lire et classer les documents de vos sites' }),
+  app({ name: 'Microsoft Excel', cat: 'docs', status: 'live', ...both, logo: 'microsoftexcel', body: 'Read and fill your workbooks', bodyFr: 'Lire et remplir vos classeurs' }),
+  app({ name: 'Outlook', cat: 'email', status: 'live', ...both, logo: 'microsoftoutlook', body: 'Read, sort and answer your emails', bodyFr: 'Lire, trier et répondre à vos e-mails' }),
+  app({ name: 'Microsoft Teams', cat: 'messaging', status: 'live', ...both, logo: 'microsoftteams', body: 'Post and read messages', bodyFr: 'Publier et lire des messages' }),
+  app({ name: 'OneDrive', cat: 'docs', status: 'live', ...both, logo: 'microsoftonedrive', body: 'Find, read and file documents', bodyFr: 'Trouver, lire et classer des documents' }),
+  app({ name: 'SharePoint', cat: 'docs', status: 'live', ...both, logo: 'microsoftsharepoint', body: 'Find, read and file documents in your sites', bodyFr: 'Trouver, lire et classer les documents de vos sites' }),
   app({ name: 'Salesforce', cat: 'crm', status: 'live', ...both, logo: 'salesforce', body: 'Read and update your CRM', bodyFr: 'Lire et mettre à jour votre CRM' }),
   app({ name: 'Zoho CRM', cat: 'crm', status: 'live', ...both, logo: 'zoho', body: 'Read and update leads, contacts and deals', bodyFr: 'Lire et mettre à jour prospects, contacts et affaires' }),
   app({ name: 'QuickBooks', cat: 'finance', status: 'live', ...both, logo: 'quickbooks', body: 'Read and create invoices and customers', bodyFr: 'Lire et créer des factures et des clients' }),
@@ -126,7 +109,7 @@ export const connections: Connection[] = [
 
   // The AI models: each agent picks its own.
   app({ name: 'OpenRouter', group: 'models', cat: 'ai', status: 'live', logo: 'openrouter', body: 'Many AI providers through one account', bodyFr: "De nombreux fournisseurs d'IA avec un seul compte" }),
-  app({ name: 'OpenAI', group: 'models', cat: 'ai', status: 'live', body: 'GPT models', bodyFr: 'Les modèles GPT' }),
+  app({ name: 'OpenAI', group: 'models', cat: 'ai', status: 'live', logo: 'openai', body: 'GPT models', bodyFr: 'Les modèles GPT' }),
   app({ name: 'Anthropic', group: 'models', cat: 'ai', status: 'live', logo: 'anthropic', body: 'Claude models', bodyFr: 'Les modèles Claude' }),
   app({ name: 'Google Gemini', group: 'models', cat: 'ai', status: 'live', logo: 'googlegemini', body: 'Gemini models', bodyFr: 'Les modèles Gemini' }),
   app({ name: 'Amazon Bedrock', group: 'models', cat: 'ai', status: 'live', body: 'The models of your AWS account', bodyFr: 'Les modèles de votre compte AWS' }),
@@ -142,5 +125,3 @@ export const connections: Connection[] = [
 
 /** The name of a connection on a page in that language: apps and models keep theirs; the building blocks have a French one. */
 export const nameOf = (item: Connection, lang: 'en' | 'fr') => (lang === 'fr' && item.fr) || item.name;
-/** What it does, in the page's language. */
-export const bodyOf = (item: Connection, lang: 'en' | 'fr') => (lang === 'fr' ? item.bodyFr : item.body);
