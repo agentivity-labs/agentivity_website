@@ -180,6 +180,11 @@
               "label": "Expense Checker",
               "href": "/fr/solutions/expense-checker",
               "live": true
+            },
+            {
+              "label": "Purchase Request Desk",
+              "href": "/fr/solutions/purchase-request-desk",
+              "live": true
             }
           ]
         },
@@ -6697,6 +6702,660 @@
         ]
       },
       {
+        "slug": "purchase-request-desk",
+        "story": {
+          "cta": {
+            "label": "Essayez-le pendant votre essai",
+            "href": "/fr/start?plan=pro",
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Il arrive avec une entreprise de démonstration, ses budgets, ses fournisseurs et sa politique d'achat. Aucune connexion à configurer."
+          },
+          "decide": {
+            "h2": "Cinq vraies demandes d'achat",
+            "intro": "Une bonne validation d'achat n'est pas seulement rapide. Chaque devis est lu selon les mêmes critères, le budget est calculé en code, et la bonne personne décide, avec la comparaison sous les yeux. Voici cinq vraies demandes, de celle que personne n'a à valider à celle qui n'est pas autorisée.",
+            "scenarios": [
+              {
+                "title": "Deux pieds à coulisse pour le laboratoire qualité.",
+                "caption": "Un devis de 450 $ d'un fournisseur préféré, sous 1 000 $ et dans le budget du laboratoire. Personne n'a à valider : la demande est approuvée dans les règles, avec 21 050 $ restants au budget et le texte du bon de commande prêt à copier.",
+                "image": "/media/purchase-request-desk-concept.webp"
+              },
+              {
+                "title": "Trois devis pour une imprimante, et le moins cher n'est pas le meilleur.",
+                "caption": "Copperline coûte 6 950 $ mais n'inclut pas l'installation et ne donne que six mois de garantie en atelier. Summit coûte 7 780 $ avec l'installation, la formation et trois ans sur site, chez un fournisseur préféré. Il recommande Summit et dit pourquoi. Le responsable informatique approuve, et le budget restant passe de 28 800 $ à 21 020 $.",
+                "image": "/media/purchase-request-desk-2-quotes.webp"
+              },
+              {
+                "title": "Une broche a cassé, et la machine est à l'arrêt.",
+                "caption": "Urgent, au-dessus des 9 000 $ restants au budget de la production, et seulement deux devis là où la politique en demande trois : c'est permis, parce que c'est urgent et que la raison est écrite. Il recommande la broche à 14 200 $ en stock plutôt que celle à 9 300 $ dans trois semaines. Le manager approuve, puis le directeur financier, l'un après l'autre.",
+                "image": "/media/purchase-request-desk-3-urgent.webp"
+              },
+              {
+                "title": "« Des chaises neuves pour le bureau. » Combien ? Sur quel budget ?",
+                "caption": "« Office » n'est pas l'un de vos services, et « pas encore sûr » n'est pas une quantité. Il pose la question avant de lire le moindre devis, et ne devine jamais. Office & Facilities, douze chaises : il recommande les chaises livrées montées avec cinq ans de garantie, 180 $ de plus que celles en kit livrées en huit semaines.",
+                "image": "/media/purchase-request-desk-4-asks.webp"
+              },
+              {
+                "title": "Des rayonnages chez un fournisseur bloqué.",
+                "caption": "Le fournisseur est bloqué dans votre table des fournisseurs, et un seul devis ne suffit pas pour 6 200 $. Non autorisé, avec les deux raisons et la marche à suivre : des devis d'autres fournisseurs. Aucun manager n'est sollicité.",
+                "image": "/media/purchase-request-desk-5-blocked.webp"
+              }
+            ],
+            "recorded": "Dessiné d'après de vraies demandes vérifiées dans le produit, sur une entreprise de démonstration.",
+            "compact": true
+          },
+          "versus": {
+            "h2": "Sans lui, avec lui",
+            "columns": [
+              "Aujourd'hui",
+              "Avec Purchase Request Desk"
+            ],
+            "rows": [
+              [
+                "La demande arrive par e-mail, avec un devis ou aucun.",
+                "La demande arrive sur le Desk avec ses devis, et ce qui manque est demandé avant tout le reste."
+              ],
+              [
+                "Personne ne vérifie ce qui reste au budget avant de dire oui.",
+                "Le budget restant est calculé en code à chaque demande, avant et après l'achat."
+              ],
+              [
+                "Le devis le moins cher l'emporte, et l'installation ou la garantie se découvrent plus tard.",
+                "Chaque devis est lu selon les mêmes critères, avec ce que chacun laisse de côté, et la recommandation dit pourquoi."
+              ],
+              [
+                "La politique dort dans un document que personne ne relit.",
+                "Chaque demande est vérifiée selon votre politique d'achat : assez de devis, fournisseurs préférés et bloqués, ce qui n'est pas permis."
+              ],
+              [
+                "Le manager valide à partir d'un message d'une ligne.",
+                "La bonne personne décide, avec la raison en tête, les devis comparés et le budget : le manager, et la finance quand la politique le prévoit."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "Comment il s'insère dans votre travail",
+            "steps": [
+              {
+                "title": "Chacun fait sa demande sur le Desk.",
+                "body": "Ce dont il a besoin, pourquoi, le service et la quantité, puis un à trois devis fournisseurs en PDF. Vos équipes l'utilisent là où votre entreprise utilise déjà ses équipes d'IA."
+              },
+              {
+                "title": "Il lit vos budgets, vos fournisseurs et votre politique.",
+                "body": "Le budget et le manager de chaque service, vos fournisseurs préférés et bloqués, et votre politique d'achat. Il n'écrit que la demande, et le budget consommé une fois l'achat approuvé. Il ne supprime jamais rien."
+              },
+              {
+                "title": "La décision revient au demandeur.",
+                "body": "La décision, l'offre retenue, le budget restant et qui a décidé, avec le texte du bon de commande prêt à copier. Chaque demande est gardée dans votre table Purchase Requests."
+              }
+            ]
+          },
+          "team": {
+            "h2": "De quoi il est fait",
+            "lead": "Un workflow se dessine boîte par boîte. Voici les pièces qu'utilise celui-ci.",
+            "members": [
+              {
+                "name": "Formulaire",
+                "role": "Ce qu'il faut, pourquoi, le service, la quantité, urgent ou non."
+              },
+              {
+                "name": "Cartes des devis",
+                "role": "Une carte d'envoi par devis, jusqu'à trois, puis « Another quote? »."
+              },
+              {
+                "name": "Comparaison des offres",
+                "role": "Un agent qui met chaque devis sur les mêmes critères, dit ce que chacun laisse de côté, et en recommande un."
+              },
+              {
+                "name": "Contrôle du budget",
+                "role": "Du code, pas de l'IA : le budget restant du service, avant et après l'achat."
+              },
+              {
+                "name": "Contrôle de la politique",
+                "role": "Un agent qui confronte la demande à votre politique d'achat et à vos fournisseurs."
+              },
+              {
+                "name": "Questions au demandeur",
+                "role": "Affichées seulement quand il manque quelque chose ou que c'est flou, comme le service ou la quantité."
+              },
+              {
+                "name": "Cartes de validation",
+                "role": "Le manager du service, puis le directeur financier quand la politique le prévoit : approuver, choisir une autre offre, ou refuser."
+              },
+              {
+                "name": "Table Purchase Requests",
+                "role": "Chaque demande enregistrée, avec son statut, le budget restant et qui a décidé."
+              }
+            ]
+          },
+          "never": {
+            "h2": "Ce qu'il ne fait jamais seul",
+            "items": [
+              {
+                "title": "Il ne commande jamais rien.",
+                "body": "Le demandeur copie le texte du bon de commande et l'envoie au fournisseur."
+              },
+              {
+                "title": "Il n'approuve jamais au-delà de vos règles.",
+                "body": "À partir de 1 000 $, le manager du service décide ; au-delà de 10 000 $, hors budget ou en urgence, le directeur financier aussi."
+              },
+              {
+                "title": "Il ne devine jamais.",
+                "body": "Un service qu'il ne connaît pas, une quantité floue ou un devis manquant est d'abord demandé au demandeur."
+              },
+              {
+                "title": "Il n'achète jamais chez un fournisseur bloqué.",
+                "body": "Quel que soit le prix, la demande n'est pas autorisée, et le demandeur apprend quoi faire à la place."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Faites-le vôtre",
+            "sub": "C'est un point de départ, pas un modèle figé.",
+            "further": {
+              "h3": "Allez plus loin",
+              "intro": "De vrais changements qu'une équipe finance ou achats peut faire une fois qu'il tourne, chacun construit avec les mêmes briques que la solution.",
+              "labels": {
+                "live": "Disponible aujourd'hui",
+                "soon": "Bientôt"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Prévenir le manager qu'une demande attend.",
+                  "body": "Quand une demande attend une décision, un message dans le canal du manager donne ce qui est demandé, le montant et la raison.",
+                  "uses": "Purchase Request Desk · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Envoyer le bon de commande une fois approuvé.",
+                  "body": "Après la validation, le bon de commande part au contact du fournisseur par e-mail, avec le demandeur en copie.",
+                  "uses": "Un workflow · la validation · E-mail"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets"
+                  ],
+                  "title": "Garder vos budgets dans votre tableur.",
+                  "body": "Lire le budget de chaque service dans le tableau que la finance tient déjà, et y ajouter le montant une fois l'achat approuvé.",
+                  "uses": "Purchase Request Desk · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Un point mensuel sur les budgets.",
+                  "body": "Le premier du mois, une planification publie le budget consommé et restant par service, et les demandes qui attendent encore.",
+                  "uses": "Une planification · la table Budgets · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "xero"
+                  ],
+                  "title": "Vérifier le fournisseur dans votre comptabilité.",
+                  "body": "Retrouver le fournisseur parmi vos contacts dans Xero avant que la demande parte au manager.",
+                  "uses": "Purchase Request Desk · Xero"
+                }
+              ],
+              "link": "Voir toutes les connexions",
+              "href": "/fr/connections",
+              "adapt": "Modifiez-le avec des mots simples"
+            },
+            "items": [
+              {
+                "title": "Votre politique.",
+                "body": "Remplacez la politique d'exemple par la vôtre, avec des mots simples : combien de devis, fournisseurs préférés, qui valide, ce qui n'est pas permis, achats urgents."
+              },
+              {
+                "title": "Vos seuils.",
+                "body": "En dessous de quel montant personne n'a à valider, et au-dessus duquel le directeur financier décide aussi."
+              },
+              {
+                "title": "Vos budgets et vos fournisseurs.",
+                "body": "Remplissez les tables dans le Studio ou par l'API, avec le manager et le budget de chaque service, et vos fournisseurs préférés et bloqués."
+              },
+              {
+                "title": "Vos étapes.",
+                "body": "Changez qui décide, ce qui est demandé au demandeur ou ce que dit le résultat, avec des mots simples, grâce à l'Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "Un seul endroit pour toutes les équipes que vous construisez",
+            "items": [
+              {
+                "title": "Chacun fait sa demande depuis le Desk.",
+                "body": "Partagé par toute l'entreprise, ce n'est pas l'assistant d'une seule personne : ils l'utilisent, ils ne peuvent pas le modifier.",
+                "link": "Comment fonctionne le Desk",
+                "href": "/fr/desk"
+              },
+              {
+                "title": "L'équipe suivante part avec de l'avance.",
+                "body": "Elle réutilise vos services, leurs managers et vos fournisseurs, déjà remplis."
+              },
+              {
+                "title": "Un seul endroit pour valider et pour suivre.",
+                "body": "Chaque conversation est gardée étape par étape, avec l'usage de l'IA de chaque membre et votre usage mensuel par modèle."
+              }
+            ],
+            "next": "L'étape suivante",
+            "next_items": [
+              {
+                "title": "Expense Checker",
+                "body": "Chaque ligne de frais vérifiée selon votre politique ; le manager décide des exceptions.",
+                "href": "/fr/solutions/expense-checker"
+              },
+              {
+                "title": "Contract Checker",
+                "body": "Les contrats fournisseurs vérifiés selon vos règles ; le juridique décide.",
+                "href": "/fr/solutions/contract-checker"
+              },
+              {
+                "title": "Votre propre équipe",
+                "body": "Décrivez-la à l'Assistant, avec vos mots.",
+                "href": "/fr/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "L'obtenir",
+            "body": "Ouvrez Purchase Request Desk pendant votre essai. Il arrive avec une entreprise de démonstration, Brennix Components, un fabricant de pièces dans l'Ohio, avec cinq services et leurs budgets, ses fournisseurs, sa politique d'achat et quatre demandes passées. Faites une demande avec vos devis en PDF, puis décidez en tant que manager : une seule personne peut essayer les deux côtés.",
+            "button": "Ouvrez-le pendant votre essai",
+            "href": "/fr/start?plan=pro",
+            "guide": "Dans le Studio, ouvrez **Templates**, choisissez **Purchase Request Desk** puis sélectionnez **Import**. Il apparaît ensuite sur le Desk.",
+            "more": [
+              {
+                "link": "Voir comment vos équipes l'utiliseraient sur le Desk",
+                "href": "/fr/desk"
+              },
+              {
+                "link": "Le voir sur Synergi",
+                "href": "https://synergi.agentivity.io/templates/purchase-request-desk"
+              }
+            ],
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "Comment ça marche",
+              "h2": "L'IA compare. Le code compte. La bonne personne décide.",
+              "sub": "Chaque pièce ne fait que ce qu'elle peut faire sans risque. L'IA lit les devis et la politique, mais n'écrit jamais un chiffre de budget. Ce qui manque est demandé au demandeur, ce qui est dans vos règles n'a besoin de personne, et le reste va au manager, puis à la finance quand votre politique le prévoit.",
+              "flow": {
+                "alt": "Comment fonctionne Purchase Request Desk : un employé fait sa demande sur le Desk avec un à trois devis fournisseurs ; la comparaison des offres (IA) met les devis sur les mêmes critères et en recommande un ; le contrôle du budget (code) calcule le budget restant du service ; le contrôle de la politique (IA) confronte la demande à votre politique d'achat et à vos fournisseurs, et demande au demandeur ce qui manque ; sous 1 000 $ dans les règles, c'est approuvé sans personne ; sinon le manager du service décide, puis le directeur financier au-delà de 10 000 $, hors budget ou en urgence. La décision et le texte du bon de commande reviennent au demandeur, et chaque demande est enregistrée dans la table Purchase Requests.",
+                "start": {
+                  "label": "Un employé, sur le Desk",
+                  "out": "Demande, avec les devis",
+                  "back": "Décision et bon de commande"
+                },
+                "nodes": [
+                  {
+                    "tag": "IA",
+                    "title": "Comparaison",
+                    "sub": "Chaque devis, mêmes critères"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "Contrôle du budget",
+                    "sub": "Budget restant, avant et après"
+                  },
+                  {
+                    "tag": "Vous",
+                    "title": "Manager, puis finance",
+                    "sub": "Seulement hors de vos règles",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Une recommandation, et pourquoi"
+                  },
+                  {
+                    "label": "Hors de vos règles"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Votre politique d'achat",
+                    "sub": "Devis requis · qui valide · ce qui n'est pas permis",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Assez de devis, le bon fournisseur"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Chaque seuil tiré d'elle"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Budgets · Suppliers · Requests",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Chaque demande enregistrée, qui a décidé",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "IA",
+                  "who": "Deux agents IA",
+                  "title": "Il compare, et vérifie la politique",
+                  "body": "Un agent met chaque devis sur les mêmes critères : prix, délai, garantie, conditions de paiement, ce qui est inclus et ce qui manque. Un autre confronte la demande à votre politique d'achat et à vos fournisseurs.",
+                  "points": [
+                    "Une recommandation qui n'est pas la moins chère quand la moins chère laisse des choses de côté",
+                    "Assez de devis pour le montant, fournisseurs préférés et bloqués",
+                    "Ce qui manque est demandé au demandeur, jamais deviné"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "Du code, pas de l'IA",
+                  "title": "Le budget, et le circuit",
+                  "body": "Le budget restant du service est calculé en code, avant et après l'achat, et la demande va à la bonne personne selon vos seuils.",
+                  "points": [
+                    "Sous 1 000 $ dans les règles : approuvé sans personne",
+                    "À partir de 1 000 $ : le manager du service",
+                    "Au-delà de 10 000 $, hors budget ou en urgence : le directeur financier aussi"
+                  ]
+                },
+                {
+                  "tag": "Vous",
+                  "who": "Le manager, puis la finance",
+                  "title": "La décision",
+                  "body": "La demande leur arrive sur le Desk avec la raison en tête, les devis comparés et le budget avant et après.",
+                  "points": [
+                    "Approuver l'offre recommandée, en choisir une autre, ou refuser avec une raison",
+                    "Le directeur financier voit la décision du manager",
+                    "L'équipement à immobiliser est signalé à la finance"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Les devis sur les mêmes critères, et une recommandation",
+                "Seulement ce qui dépasse vos règles"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Ce à quoi il se réfère",
+              "h2": "Il vérifie selon votre politique, pas selon l'habitude.",
+              "body": [
+                "Votre politique d'achat, section par section : combien de devis pour quel montant, fournisseurs préférés et bloqués, qui valide, ce qui n'est pas permis, achats urgents et équipement à immobiliser. Elle arrive avec une politique d'exemple : remplacez-la par la vôtre, avec des mots simples. Changez une règle une fois, et chaque demande suivante la respecte.",
+                "Vos budgets et vos fournisseurs sont dans des tables : le budget annuel de chaque service, ce qui est consommé et son manager, et chaque fournisseur avec sa catégorie, s'il est préféré, et s'il est bloqué."
+              ],
+              "sources_title": "Écrivez votre politique à partir de ce que vous avez déjà",
+              "sources": [
+                "Votre propre texte",
+                "Des fichiers",
+                "Des pages web",
+                "Une API"
+              ],
+              "apps_title": "Ou laissez-le lire là où la finance écrit déjà",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "live"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "live"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Branché sur vos outils",
+              "h2": "Il fonctionne avec les outils que la finance et les achats utilisent déjà.",
+              "sub": "Commencez sans rien connecter : il est livré avec ses propres tables de budgets, de fournisseurs et de demandes. Puis branchez vos outils, un par un.",
+              "hub": [
+                "Purchase Request Desk",
+                "Votre politique, appliquée"
+              ],
+              "groups": [
+                {
+                  "title": "D'où viennent les devis",
+                  "items": [
+                    [
+                      "@desk",
+                      "Le Desk, en PDF",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Google Drive",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Qui prévenir, qui décide",
+                  "items": [
+                    [
+                      "@desk",
+                      "« Waiting for you » sur le Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "E-mail",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Budgets et demandes",
+                  "items": [
+                    [
+                      "@table",
+                      "Ses propres tables",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Votre comptabilité",
+                  "items": [
+                    [
+                      "xero",
+                      "Xero",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Quand agir",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Planifications",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Tout le reste",
+                  "items": [
+                    [
+                      "@web",
+                      "Requêtes HTTP",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Serveurs MCP",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "En attendant qu'un outil soit dans la liste, un agent IA atteint tout outil doté d'une API par une requête HTTP ou un serveur MCP, et un autre service peut lancer un workflow par son webhook."
+            },
+            "company": {
+              "eyebrow": "Dans une vraie entreprise",
+              "h2": "Une seule vérification, partout où l'on dépense l'argent de l'entreprise.",
+              "sub": "Les achats avec devis fournisseurs sont le point de départ. La même vérification marche partout où une demande doit tenir dans un budget et une politique.",
+              "items": [
+                {
+                  "title": "Production",
+                  "body": "Pièces détachées, outillage et maintenance des machines, avec l'achat urgent permis quand une machine est à l'arrêt. La solution telle qu'elle arrive."
+                },
+                {
+                  "title": "Informatique",
+                  "body": "Ordinateurs, imprimantes et matériel réseau, comparés sur la garantie et l'installation, pas seulement sur le prix."
+                },
+                {
+                  "title": "Bureaux et services généraux",
+                  "body": "Mobilier, fournitures et entretien du bâtiment, chacun imputé au bon budget."
+                },
+                {
+                  "title": "Abonnements logiciels",
+                  "body": "Un nouvel outil demandé par une équipe, confronté au budget et à la liste des outils déjà payés. Ses propres étapes, décrites à l'Assistant."
+                },
+                {
+                  "title": "Formation",
+                  "body": "Un cours ou une conférence, confronté au budget formation du service."
+                },
+                {
+                  "title": "Experts-comptables et conseils",
+                  "body": "Mettez-le en place pour chaque client, avec ses propres budgets et sa politique. La même vérification, ses règles."
+                }
+              ],
+              "how": "Chacun a sa propre politique, écrite avec des mots simples, et la même vérification. Décrivez-la à l'Assistant, puis publiez-la sur le Desk pour les personnes qui achètent."
+            },
+            "labels": {
+              "live": "Disponible aujourd'hui",
+              "soon": "Bientôt"
+            }
+          }
+        },
+        "image": "/media/purchase-request-desk-hero.webp",
+        "width": 2048,
+        "height": 1536,
+        "tag": "Sans application",
+        "size": "Workflow",
+        "title": "Purchase Request Desk",
+        "for": "une entreprise où chacun peut avoir besoin d'acheter",
+        "summary": "Chacun fait sa demande d'achat sur le Desk avec les devis fournisseurs. Il les compare selon les mêmes critères, calcule le budget restant en code et vérifie votre politique d'achat. Dans vos règles, c'est approuvé ; au-delà, le manager décide, puis la finance. Rien n'est commandé.",
+        "alt": "Purchase Request Desk : trois devis d'imprimante comparés selon les mêmes critères, le moins cher sans installation, et l'offre recommandée approuvée par le manager.",
+        "h1": "Chaque achat vérifié selon votre budget et votre politique.",
+        "h1_accent": "La bonne personne valide, les devis comparés.",
+        "hero_image": "/media/purchase-request-desk-hero.webp",
+        "hero_image_alt": "Agentivity Purchase Request Desk : trois devis d'imprimante sur les mêmes critères, Copperline 6 950 $ sans installation et avec six mois de garantie, Summit 7 780 $ avec installation, formation et trois ans sur site, Lakeshore 8 420 $ ; Summit recommandé, et le budget informatique restant qui passe de 28 800 $ à 21 020 $.",
+        "lead": "Votre propre politique d'achat, appliquée de la même façon à chaque demande, quel que soit le demandeur. Purchase Request Desk lit chaque devis fournisseur selon les mêmes critères, dit ce que chacun laisse de côté, et en recommande un, pas toujours le moins cher. Il calcule en code le budget restant du service et vérifie votre politique. Dans vos règles, personne n'a à valider ; au-delà, le manager décide, puis la finance. Et il se branche sur les outils que vous utilisez déjà.",
+        "notice": "Il vérifie et recommande ; vos équipes décident. Purchase Request Desk ne commande rien : le demandeur envoie le bon de commande.",
+        "facts": {
+          "for": "Le directeur financier, l'office manager ou le responsable achats d'une entreprise où chacun peut avoir besoin d'acheter",
+          "use": "Sur le Desk : faites la demande avec les devis, répondez à ses questions, recevez la décision",
+          "behind": "Un workflow avec deux agents, un contrôle du budget en code, votre politique d'achat, vos budgets et vos fournisseurs"
+        },
+        "qa": [
+          {
+            "q": "Que fait Purchase Request Desk ?",
+            "a": "Chacun fait sa demande d'achat sur le Desk : quoi, pourquoi, le service, la quantité, urgent ou non, puis un à trois devis fournisseurs en PDF. Il compare les devis selon les mêmes critères et en recommande un, calcule en code le budget restant du service, et vérifie votre politique d'achat. Dans vos règles, c'est approuvé sans personne ; sinon le manager du service décide, et le directeur financier aussi quand votre politique le prévoit. Le demandeur reçoit la décision et le texte du bon de commande."
+          },
+          {
+            "q": "Est-ce qu'il commande quelque chose ?",
+            "a": "Non. Rien n'est commandé ni envoyé. Le demandeur copie le texte du bon de commande et l'envoie au fournisseur. Le budget consommé n'est mis à jour que quand un achat est approuvé."
+          },
+          {
+            "q": "Qui valide quoi ?",
+            "a": "Avec la politique d'exemple : sous 1 000 $, dans le budget et la politique, personne n'a à valider. À partir de 1 000 $, le manager du service décide. Au-delà de 10 000 $, hors budget, ou pour un achat urgent de plus de 1 000 $, le directeur financier décide aussi, après le manager. Un fournisseur bloqué n'est jamais permis. Remplacez ces règles par les vôtres."
+          },
+          {
+            "q": "Quels devis peut-il lire ?",
+            "a": "Des PDF dont le texte est sélectionnable, jusqu'à trois par demande. Un scan ou une photo n'est pas lu."
+          },
+          {
+            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
+            "a": "Les vérifications, les décisions et les demandes sont réelles, et elles sont écrites dans de vraies tables. Il arrive prêt à essayer avec Brennix Components, un fabricant de pièces dans l'Ohio : ses services et leurs budgets, ses fournisseurs, sa politique et quatre demandes passées. Remplacez-les par les vôtres. Rien n'est commandé."
+          },
+          {
+            "q": "Combien coûte une demande ?",
+            "a": "Votre usage de l'IA est facturé par votre fournisseur de modèle. Chaque devis est lu une fois, et deux agents travaillent sur chaque demande ; une demande avec plus de devis en utilise plus. L'onglet Observation montre les tokens utilisés."
+          },
+          {
+            "q": "Pour qui ?",
+            "a": "Le directeur financier, l'office manager ou le responsable achats d'une entreprise de quelques dizaines de personnes où chacun peut avoir besoin d'acheter, et l'expert-comptable ou l'intégrateur qui le met en place pour elles avec les budgets et la politique de chaque client."
+          },
+          {
+            "q": "Comment l'essayer ?",
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Importez Purchase Request Desk depuis Templates dans le Studio, puis ouvrez-le sur le Desk et faites une demande avec un devis en PDF."
+          }
+        ]
+      },
+      {
         "slug": "quote-desk",
         "story": {
           "cta": {
@@ -8847,6 +9506,10 @@
         },
         "expense-checker": {
           "line": "Chaque ligne de frais vérifiée selon votre politique : le manager décide des exceptions.",
+          "type": "Un workflow"
+        },
+        "purchase-request-desk": {
+          "line": "Un achat vérifié selon votre budget et votre politique, les devis comparés : la bonne personne valide.",
           "type": "Un workflow"
         },
         "trip-planner": {

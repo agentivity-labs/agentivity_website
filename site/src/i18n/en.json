@@ -165,6 +165,11 @@
               "label": "Expense Checker",
               "href": "/solutions/expense-checker",
               "live": true
+            },
+            {
+              "label": "Purchase Request Desk",
+              "href": "/solutions/purchase-request-desk",
+              "live": true
             }
           ]
         },
@@ -6599,6 +6604,660 @@
         ]
       },
       {
+        "slug": "purchase-request-desk",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company, its budgets, its suppliers and its purchasing policy. No connection to set up."
+          },
+          "decide": {
+            "h2": "Five real purchase requests",
+            "intro": "A good purchase approval is not only fast. Every quote is read on the same terms, the budget is worked out in code, and the right person decides, with the comparison in front of them. Here are five real requests, from one nobody has to approve to one that is not allowed.",
+            "scenarios": [
+              {
+                "title": "Two calipers for the Quality Lab.",
+                "caption": "One quote of $450 from a preferred supplier, under $1,000 and within the lab's budget. Nobody has to approve: it is approved within the rules, with $21,050 left in the budget and the purchase order text ready to copy.",
+                "image": "/media/purchase-request-desk-concept.webp"
+              },
+              {
+                "title": "Three quotes for a printer, and the cheapest is not the best.",
+                "caption": "Copperline is $6,950 but leaves out installation and gives a six-month depot warranty. Summit is $7,780 with installation, training and three years on site, from a preferred supplier. It recommends Summit and says why. The IT manager approves, and the budget left goes from $28,800 to $21,020.",
+                "image": "/media/purchase-request-desk-2-quotes.webp"
+              },
+              {
+                "title": "A spindle seized, and the machine is stopped.",
+                "caption": "Urgent, over the $9,000 left in Production's budget, and only two quotes where the policy asks for three: allowed, because it is urgent and the reason is written. It recommends the $14,200 spindle in stock over the $9,300 one in three weeks. The manager approves, then the finance director, in turn.",
+                "image": "/media/purchase-request-desk-3-urgent.webp"
+              },
+              {
+                "title": "“New chairs for the office.” How many? For which budget?",
+                "caption": "“Office” is not one of your departments, and “not sure yet” is not a quantity. It asks before reading any quote, and never guesses. Office & Facilities, twelve chairs: it recommends the assembled ones with five years of warranty, $180 more than the flat-packed ones in eight weeks.",
+                "image": "/media/purchase-request-desk-4-asks.webp"
+              },
+              {
+                "title": "Racking from a blocked supplier.",
+                "caption": "The supplier is blocked in your suppliers table, and one quote is not enough for $6,200. Not allowed, with both reasons and what to do next: quotes from other suppliers. No manager is asked.",
+                "image": "/media/purchase-request-desk-5-blocked.webp"
+              }
+            ],
+            "recorded": "Drawn from real requests checked in the product, on a demo company.",
+            "compact": true
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Purchase Request Desk"
+            ],
+            "rows": [
+              [
+                "The request comes by email, with one quote or none.",
+                "The request comes on the Desk with its quotes, and what is missing is asked before anything else."
+              ],
+              [
+                "Nobody checks what is left in the budget before saying yes.",
+                "The budget left is worked out in code on every request, before and after the purchase."
+              ],
+              [
+                "The cheapest quote wins, and installation or warranty turns up later.",
+                "Every quote is read on the same terms, with what each one leaves out, and the recommendation says why."
+              ],
+              [
+                "The policy sits in a document nobody re-reads.",
+                "Every request is checked against your purchasing policy: enough quotes, preferred and blocked suppliers, what is not allowed."
+              ],
+              [
+                "The manager approves from a one-line message.",
+                "The right person decides, with the reason on top, the quotes compared and the budget: the manager, and finance when the policy says so."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "Anyone asks on the Desk.",
+                "body": "What they need, why, the department and the quantity, then one to three supplier quotes as PDFs. Your people use it where your company already uses its AI teams."
+              },
+              {
+                "title": "It reads your budgets, suppliers and policy.",
+                "body": "Each department's budget and manager, your preferred and blocked suppliers, and your purchasing policy. It writes only the request, and the budget used once a purchase is approved. It never deletes anything."
+              },
+              {
+                "title": "The decision lands with the requester.",
+                "body": "The decision, the offer chosen, the budget left and who decided, with the purchase order text ready to copy. Every request is kept in your Purchase Requests table."
+              }
+            ]
+          },
+          "team": {
+            "h2": "What it is made of",
+            "lead": "A workflow is drawn box by box. These are the parts this one uses.",
+            "members": [
+              {
+                "name": "Form",
+                "role": "What is needed, why, the department, the quantity, urgent or not."
+              },
+              {
+                "name": "Quote cards",
+                "role": "One upload card per quote, up to three, then “Another quote?”."
+              },
+              {
+                "name": "Offer comparison",
+                "role": "An agent that puts every quote on the same terms, says what each one leaves out, and recommends one."
+              },
+              {
+                "name": "Budget check",
+                "role": "Code, not AI: the department's budget left, before and after the purchase."
+              },
+              {
+                "name": "Policy check",
+                "role": "An agent that holds the request against your purchasing policy and your suppliers."
+              },
+              {
+                "name": "Questions to the requester",
+                "role": "Shown only when something is missing or unclear, such as the department or the quantity."
+              },
+              {
+                "name": "Approval cards",
+                "role": "The department manager, then the finance director when the policy says so: approve, choose another offer, or refuse."
+              },
+              {
+                "name": "Purchase Requests table",
+                "role": "Every request saved, with its status, the budget left and who decided."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never orders anything.",
+                "body": "The requester copies the purchase order text and sends it to the supplier."
+              },
+              {
+                "title": "It never approves above your rules.",
+                "body": "From $1,000, the department manager decides; above $10,000, over budget or urgent, the finance director too."
+              },
+              {
+                "title": "It never guesses.",
+                "body": "A department it does not know, an unclear quantity or a missing quote is asked of the requester first."
+              },
+              {
+                "title": "It never buys from a blocked supplier.",
+                "body": "Whatever the price, the request is not allowed, and the requester is told what to do instead."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes a finance or purchasing team can make once it runs, each built from the same blocks as the solution.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Tell the manager a request is waiting.",
+                  "body": "When a request needs a decision, a message in the manager's channel gives what is asked, the amount and the reason.",
+                  "uses": "Purchase Request Desk · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Send the purchase order once it is approved.",
+                  "body": "After the approval, the purchase order goes to the supplier's contact by email, with the requester in copy.",
+                  "uses": "A workflow · the approval · Email"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets"
+                  ],
+                  "title": "Keep your budgets in your spreadsheet.",
+                  "body": "Read each department's budget from the sheet finance already keeps, and add the amount once a purchase is approved.",
+                  "uses": "Purchase Request Desk · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "A monthly look at the budgets.",
+                  "body": "On the first of the month, a schedule posts the budget used and left by department, and the requests still waiting.",
+                  "uses": "A schedule · the Budgets table · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "xero"
+                  ],
+                  "title": "Check the supplier in your accounting.",
+                  "body": "Find the supplier among your contacts in Xero before the request goes to the manager.",
+                  "uses": "Purchase Request Desk · Xero"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your policy.",
+                "body": "Replace the sample policy with yours, in plain words: how many quotes, preferred suppliers, who approves, what is not allowed, urgent purchases."
+              },
+              {
+                "title": "Your thresholds.",
+                "body": "Under which amount nobody has to approve, and above which the finance director decides too."
+              },
+              {
+                "title": "Your budgets and suppliers.",
+                "body": "Fill the tables in the Studio or through the API, with each department's manager and budget, and your preferred and blocked suppliers."
+              },
+              {
+                "title": "Your steps.",
+                "body": "Change who decides, what is asked of the requester or what the result says, in plain words with the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Everyone asks from the Desk.",
+                "body": "Shared by the whole company, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "It reuses your departments, their managers and your suppliers, already filled."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Expense Checker",
+                "body": "Every expense line checked against your policy; the manager decides the exceptions.",
+                "href": "/solutions/expense-checker"
+              },
+              {
+                "title": "Contract Checker",
+                "body": "Supplier contracts checked against your rules; legal decides.",
+                "href": "/solutions/contract-checker"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Purchase Request Desk in your trial. It comes with a demo company, Brennix Components, a parts maker in Ohio, with five departments and their budgets, its suppliers, its purchasing policy and four past requests. Ask for a purchase with your quotes as PDFs, then decide as the manager: one person can try both sides.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the Studio, open **Templates**, choose **Purchase Request Desk** and select **Import**. It then shows on the Desk.",
+            "more": [
+              {
+                "link": "See how your people would use it on the Desk",
+                "href": "/desk"
+              },
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/purchase-request-desk"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it works",
+              "h2": "The AI compares. Code counts. The right person decides.",
+              "sub": "Each part does only what it can do safely. The AI reads the quotes and the policy, but never writes a budget figure. What is missing is asked of the requester, what is within your rules needs no one, and the rest reaches the manager, then finance when your policy says so.",
+              "flow": {
+                "alt": "How Purchase Request Desk works: an employee asks on the Desk with one to three supplier quotes; the offer comparison (AI) puts the quotes on the same terms and recommends one; the budget check (code) works out the department's budget left; the policy check (AI) holds the request against your purchasing policy and suppliers, and asks the requester what is missing; under $1,000 within the rules it is approved with no one; otherwise the department manager decides, then the finance director above $10,000, over budget or when urgent. The decision and the purchase order text go back to the requester, and every request is saved in the Purchase Requests table.",
+                "start": {
+                  "label": "An employee, on the Desk",
+                  "out": "Asks, with the quotes",
+                  "back": "Decision and purchase order"
+                },
+                "nodes": [
+                  {
+                    "tag": "AI",
+                    "title": "Offer comparison",
+                    "sub": "Every quote on the same terms"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "Budget check",
+                    "sub": "Budget left, before and after"
+                  },
+                  {
+                    "tag": "You",
+                    "title": "Manager, then finance",
+                    "sub": "Only beyond your rules",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "A recommendation, and why"
+                  },
+                  {
+                    "label": "Beyond your rules"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your purchasing policy",
+                    "sub": "Quotes needed · who approves · what is not allowed",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Enough quotes, the right supplier"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Every threshold from it"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Budgets · Suppliers · Requests",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Every request saved, who decided",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "AI",
+                  "who": "Two AI agents",
+                  "title": "It compares, and checks the policy",
+                  "body": "One agent puts every quote on the same terms: price, delivery, warranty, payment terms, what is included and what is left out. Another holds the request against your purchasing policy and your suppliers.",
+                  "points": [
+                    "A recommendation that is not the cheapest when the cheapest leaves things out",
+                    "Enough quotes for the amount, preferred and blocked suppliers",
+                    "What is missing is asked of the requester, never guessed"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "Code, not AI",
+                  "title": "The budget, and the route",
+                  "body": "The department's budget left is worked out in code, before and after the purchase, and the request goes to the right person by your thresholds.",
+                  "points": [
+                    "Under $1,000 within the rules: approved with no one",
+                    "From $1,000: the department manager",
+                    "Above $10,000, over budget or urgent: the finance director too"
+                  ]
+                },
+                {
+                  "tag": "You",
+                  "who": "The manager, then finance",
+                  "title": "The decision",
+                  "body": "The request reaches them on the Desk with the reason on top, the quotes compared and the budget before and after.",
+                  "points": [
+                    "Approve the recommended offer, choose another, or refuse with a reason",
+                    "The finance director sees the manager's decision",
+                    "Equipment to capitalize is flagged for finance"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "The quotes on the same terms, and a recommendation",
+                "Only what goes beyond your rules"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "What it checks against",
+              "h2": "It checks against your policy, not against habit.",
+              "body": [
+                "Your purchasing policy, section by section: how many quotes for which amount, preferred and blocked suppliers, who approves, what is not allowed, urgent purchases and equipment to capitalize. It comes with a sample policy: replace it with yours, in plain words. Change a rule once, and every next request follows it.",
+                "Your budgets and suppliers live in tables: each department's yearly budget, what is used and its manager, and each supplier with its category, whether it is preferred, and whether it is blocked."
+              ],
+              "sources_title": "Write your policy from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "An API"
+              ],
+              "apps_title": "Or let it read where finance already writes",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "live"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "live"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools finance and purchasing already use.",
+              "sub": "Start with nothing to connect: it comes with its own budgets, suppliers and requests tables. Then plug in your tools, one by one.",
+              "hub": [
+                "Purchase Request Desk",
+                "Your policy, applied"
+              ],
+              "groups": [
+                {
+                  "title": "Where quotes come from",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk, as PDFs",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Google Drive",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell, who decides",
+                  "items": [
+                    [
+                      "@desk",
+                      "\"Waiting for you\" on the Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Budgets and requests",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own tables",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Your accounting",
+                  "items": [
+                    [
+                      "xero",
+                      "Xero",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One check, wherever someone spends the company's money.",
+              "sub": "Purchases with supplier quotes are where it starts. The same check works wherever a request must fit a budget and a policy.",
+              "items": [
+                {
+                  "title": "Production",
+                  "body": "Spare parts, tooling and machine service, with the urgent purchase allowed when a machine is stopped. The solution as it comes."
+                },
+                {
+                  "title": "IT",
+                  "body": "Computers, printers and network gear, compared on warranty and installation, not on price alone."
+                },
+                {
+                  "title": "Office and facilities",
+                  "body": "Furniture, supplies and building upkeep, each charged to the right budget."
+                },
+                {
+                  "title": "Software subscriptions",
+                  "body": "A new tool asked for by a team, held against the budget and the list of tools you already pay for. Its own steps, described to the Assistant."
+                },
+                {
+                  "title": "Training",
+                  "body": "A course or a conference, held against the training budget of the department."
+                },
+                {
+                  "title": "Accountants and advisers",
+                  "body": "Set it up for each client, with that client's own budgets and policy. The same check, their rules."
+                }
+              ],
+              "how": "Each one is its own policy in plain words, with the same check. Describe it to the Assistant, and publish it to the Desk for the people who buy."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
+          }
+        },
+        "image": "/media/purchase-request-desk-hero.webp",
+        "width": 2048,
+        "height": 1536,
+        "tag": "No app",
+        "size": "Workflow",
+        "title": "Purchase Request Desk",
+        "for": "a company where anyone may need to buy",
+        "summary": "Anyone asks for a purchase on the Desk with the supplier quotes. It compares them on the same terms, works out the budget left in code and checks your purchasing policy. Within your rules it is approved; beyond them, the manager decides, then finance. Nothing is ordered.",
+        "alt": "Purchase Request Desk: three printer quotes compared on the same terms, the cheapest leaving out installation, and the recommended one approved by the manager.",
+        "h1": "Every purchase checked against your budget and your policy.",
+        "h1_accent": "The right person approves, with the quotes compared.",
+        "hero_image": "/media/purchase-request-desk-hero.webp",
+        "hero_image_alt": "Agentivity Purchase Request Desk: three printer quotes on the same terms, Copperline $6,950 without installation and with a six-month warranty, Summit $7,780 with installation, training and three years on site, Lakeshore $8,420; Summit recommended, and the IT budget left going from $28,800 to $21,020.",
+        "lead": "Your own purchasing policy, applied the same way to every request, whoever asks. Purchase Request Desk reads every supplier quote on the same terms, says what each one leaves out, and recommends one, not always the cheapest. It works out the department's budget left in code and checks your policy. Within your rules, nobody has to approve; beyond them, the manager decides, then finance. And it plugs into the tools you already use.",
+        "notice": "It checks and recommends; your people decide. Purchase Request Desk orders nothing: the requester sends the purchase order.",
+        "facts": {
+          "for": "The finance director, office manager or purchasing lead of a company where anyone may need to buy",
+          "use": "On the Desk: ask with the quotes, answer its questions, get the decision",
+          "behind": "A workflow with two agents, a budget check in code, your purchasing policy, your budgets and your suppliers"
+        },
+        "qa": [
+          {
+            "q": "What does Purchase Request Desk do?",
+            "a": "Anyone asks for a purchase on the Desk: what, why, the department, the quantity, urgent or not, then one to three supplier quotes as PDFs. It compares the quotes on the same terms and recommends one, works out the department's budget left in code, and checks your purchasing policy. Within your rules it is approved with no one; otherwise the department manager decides, and the finance director too when your policy says so. The requester gets the decision and the purchase order text."
+          },
+          {
+            "q": "Does it order anything?",
+            "a": "No. Nothing is ordered or sent. The requester copies the purchase order text and sends it to the supplier. The budget used is updated only when a purchase is approved."
+          },
+          {
+            "q": "Who approves what?",
+            "a": "With the sample policy: under $1,000, within the budget and the policy, nobody has to approve. From $1,000, the department manager decides. Above $10,000, over the budget, or for an urgent purchase above $1,000, the finance director decides too, after the manager. A supplier marked blocked is never allowed. Change these rules to yours."
+          },
+          {
+            "q": "Which quotes can it read?",
+            "a": "PDFs with selectable text, up to three per request. A scan or a photo is not read."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The checks, the decisions and the requests are real, and they are written in real tables. It comes ready to try with Brennix Components, a parts maker in Ohio: its departments and budgets, its suppliers, its policy and four past requests. Replace them with your own. Nothing is ordered."
+          },
+          {
+            "q": "What does a request cost?",
+            "a": "Your AI usage is billed by your model provider. Each quote is read once, and two agents work on each request; a request with more quotes uses more. The Observation tab shows the tokens it used."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "The finance director, office manager or purchasing lead of a company of a few dozen people where anyone may need to buy, and the accountant or builder who sets it up for them with each client's own budgets and policy."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Import Purchase Request Desk from Templates in the Studio, then open it on the Desk and ask for a purchase with a quote as a PDF."
+          }
+        ]
+      },
+      {
         "slug": "quote-desk",
         "story": {
           "cta": {
@@ -8749,6 +9408,10 @@
         },
         "expense-checker": {
           "line": "Every expense line checked against your policy; the manager decides the exceptions.",
+          "type": "A workflow"
+        },
+        "purchase-request-desk": {
+          "line": "A purchase checked against your budget and policy, the quotes compared; the right person approves.",
           "type": "A workflow"
         },
         "trip-planner": {
