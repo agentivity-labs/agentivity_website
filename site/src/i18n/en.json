@@ -160,6 +160,11 @@
               "label": "Contract Checker",
               "href": "/solutions/contract-checker",
               "live": true
+            },
+            {
+              "label": "Expense Checker",
+              "href": "/solutions/expense-checker",
+              "live": true
             }
           ]
         },
@@ -5935,6 +5940,665 @@
         ]
       },
       {
+        "slug": "expense-checker",
+        "story": {
+          "cta": {
+            "label": "Try it in your trial",
+            "href": "/start?plan=pro",
+            "note": "14-day trial · no card · AI usage billed by your provider. It comes with a demo company, its expense policy and its caps by city. No connection to set up."
+          },
+          "decide": {
+            "h2": "Five real expense reports",
+            "intro": "A good expense check is not only fast. Every line is held against your policy, every figure is worked out in code, and the manager sees only what needs a decision. Here are five real reports, from one nobody has to approve to a receipt it cannot read.",
+            "scenarios": [
+              {
+                "title": "A customer visit to Chicago, all within the policy.",
+                "caption": "Four receipts: one hotel night at $221.89 under the $225 cap, two meals, a Lyft ride. Every line is within the policy, so nobody has to approve: $325.55 for payroll, at once.",
+                "image": "/media/expense-checker-concept.webp"
+              },
+              {
+                "title": "A trade show week, the hotel over the cap.",
+                "caption": "Every hotel near the venue was above $280 a night. The manager's card has one line, worked out per night: $292.33 against a $225 cap, $67.33 over for each of two nights, $134.66 in all, with the employee's reason quoted. She says no: the hotel is still paid up to the cap, $450, as the policy says, and the $134.66 is refused.",
+                "image": "/media/expense-checker-2-cap.webp"
+              },
+              {
+                "title": "A dinner with a supplier, nobody named.",
+                "caption": "$218.37 for one dinner, wine included, over the daily meal cap. Before any manager sees it, the employee is asked: was it a business meal, who was there, how many people? Three people: $72.79 each, under the $75 cap, and wine is allowed at a business meal. Paid, with no one to approve.",
+                "image": "/media/expense-checker-3-asks.webp"
+              },
+              {
+                "title": "A receipt already claimed.",
+                "caption": "A $129.99 purchase was already paid on the October report R-2026-10-07. It is refused, with that report named, without asking the manager: your policy refuses a duplicate even with approval. The parking is paid: $15 for payroll.",
+                "image": "/media/expense-checker-4-duplicate.webp"
+              },
+              {
+                "title": "A movie on the hotel bill, and a photo of a receipt.",
+                "caption": "The room is paid within the Troy cap. The in-room movie is a personal item, refused under the policy's section 11. The diner receipt is a photo, and photos are not read today: it is listed as not read, with a request for a PDF. It never guesses an amount.",
+                "image": "/media/expense-checker-5-photo.webp"
+              }
+            ],
+            "recorded": "Drawn from real reports checked in the product, on a demo company.",
+            "compact": true
+          },
+          "versus": {
+            "h2": "Without it, with it",
+            "columns": [
+              "Today",
+              "With Expense Checker"
+            ],
+            "rows": [
+              [
+                "Someone in finance checks every line by hand, against a policy nobody remembers.",
+                "Every line is checked against your policy, with the section quoted, and finance reads only what is outside it."
+              ],
+              [
+                "The manager approves the whole report from its total.",
+                "The manager sees only the lines outside the policy, each with its reason, on one card."
+              ],
+              [
+                "A hotel over the cap is paid in full, or argued over for a week.",
+                "The amount over the cap is worked out per night, and a refused night is still paid up to the cap."
+              ],
+              [
+                "A dinner comes with no names, and finance chases the employee.",
+                "When a meal is over the cap, the employee is asked who was there before it goes any further."
+              ],
+              [
+                "The same receipt is paid twice, months apart.",
+                "Each line is checked against earlier claims, and a duplicate is refused with the report it was paid on."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "How it fits your work",
+            "steps": [
+              {
+                "title": "The employee sends the receipts on the Desk.",
+                "body": "Their name and the purpose of the trip, then up to six receipts as PDFs, one after the other. Your people use it where your company already uses its AI teams."
+              },
+              {
+                "title": "It reads your policy and your limits.",
+                "body": "Your expense policy, your hotel and meal caps by city, your employees and their managers, and every earlier claim. It writes only the new report and its lines, and never deletes anything."
+              },
+              {
+                "title": "The total lands for payroll.",
+                "body": "The result lists the lines to reimburse, the lines refused and why, and the total for payroll. Every report is kept in your Expense Reports table."
+              }
+            ]
+          },
+          "team": {
+            "h2": "What it is made of",
+            "lead": "A workflow is drawn box by box. These are the parts this one uses.",
+            "members": [
+              {
+                "name": "Form",
+                "role": "Where the employee gives their name and the purpose of the trip."
+              },
+              {
+                "name": "Receipt cards",
+                "role": "One upload card per receipt, up to six, then “Another receipt?”."
+              },
+              {
+                "name": "Receipt readers",
+                "role": "AI that turns each receipt into lines: date, merchant, category, amount, city."
+              },
+              {
+                "name": "Checks in code",
+                "role": "Not AI: the total against the amounts printed on the receipt, the caps per night and per city, duplicates."
+              },
+              {
+                "name": "Policy check",
+                "role": "An agent that holds each line against your expense policy and quotes the section."
+              },
+              {
+                "name": "Questions to the employee",
+                "role": "Shown only when a meal is over the cap: was it a business meal, who was there, how many people."
+              },
+              {
+                "name": "Manager's card",
+                "role": "Only the lines outside the policy, each with Yes or No and a comment."
+              },
+              {
+                "name": "Expense tables",
+                "role": "Every report and every line saved, with its status and who decided."
+              }
+            ]
+          },
+          "never": {
+            "h2": "What it never does alone",
+            "items": [
+              {
+                "title": "It never pays.",
+                "body": "The result is the total for payroll. Paying stays with your people and your payroll."
+              },
+              {
+                "title": "It never decides an exception.",
+                "body": "A line outside the policy waits for the employee's manager. Only a Yes pays it."
+              },
+              {
+                "title": "It never guesses an amount.",
+                "body": "Every total is checked in code against the amounts printed on the receipt. A receipt it cannot read is listed as not read."
+              },
+              {
+                "title": "It never lets a duplicate through.",
+                "body": "A receipt already claimed, or a personal item, is refused with the policy's reason, even if a manager would say yes."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Make it yours",
+            "sub": "It is a starting point, not a fixed template.",
+            "further": {
+              "h3": "Take it further",
+              "intro": "Real changes a finance team can make once it runs, each built from the same blocks as the solution.",
+              "labels": {
+                "live": "Ready today",
+                "soon": "Coming soon"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Tell the manager a report is waiting.",
+                  "body": "When a report has lines outside the policy, a message in the manager's channel gives the employee, the total and the lines to decide.",
+                  "uses": "Expense Checker · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Send payroll the total.",
+                  "body": "Once a report is decided, the total and the lines to reimburse go to payroll by email.",
+                  "uses": "Expense Checker · Email"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets"
+                  ],
+                  "title": "Keep every line in your spreadsheet.",
+                  "body": "Each decided line is added to the expenses sheet finance already keeps, with the policy section and who decided.",
+                  "uses": "Expense Checker · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Chase the reports still waiting.",
+                  "body": "Every Monday, a schedule lists the reports still waiting for a manager, and posts the list for finance.",
+                  "uses": "A schedule · the Expense Reports table · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "dropbox"
+                  ],
+                  "title": "Pick the receipts where they are kept.",
+                  "body": "Read the receipts straight from the Dropbox or OneDrive folder where the team drops them.",
+                  "uses": "Expense Checker · Dropbox · OneDrive"
+                }
+              ],
+              "link": "See every connection",
+              "href": "/connections",
+              "adapt": "Change it in plain words"
+            },
+            "items": [
+              {
+                "title": "Your policy.",
+                "body": "Replace the sample policy with yours, in plain words: receipts, hotels, meals, alcohol, tips, personal items, deadlines."
+              },
+              {
+                "title": "Your limits.",
+                "body": "Your hotel cap per night and your meal cap per day, city by city, and the cap per person at a business meal."
+              },
+              {
+                "title": "Your people.",
+                "body": "Fill the employees table in the Studio or through the API, with each person's manager, so every exception reaches the right one."
+              },
+              {
+                "title": "Your steps.",
+                "body": "Change who decides, what is asked of the employee or what the result says, in plain words with the Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "One place for every team you build",
+            "items": [
+              {
+                "title": "Everyone who travels uses it from the Desk.",
+                "body": "Shared by the whole company, not one person's assistant: they use it, they cannot change it.",
+                "link": "How the Desk works",
+                "href": "/desk"
+              },
+              {
+                "title": "The next team starts further ahead.",
+                "body": "It reuses your employees table and their managers, already filled."
+              },
+              {
+                "title": "One place to approve and to watch.",
+                "body": "Every conversation is kept step by step, with the AI usage of each member and your monthly usage by model."
+              }
+            ],
+            "next": "The next step",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Your supplier invoices read, filed and every total checked.",
+                "href": "/solutions/invoice-clerk"
+              },
+              {
+                "title": "Contract Checker",
+                "body": "Supplier contracts checked against your rules; legal decides.",
+                "href": "/solutions/contract-checker"
+              },
+              {
+                "title": "Your own team",
+                "body": "Describe it to the Assistant, in plain words.",
+                "href": "/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "Get it",
+            "body": "Open Expense Checker in your trial. It comes with a demo company, Brennix Components, a parts maker in Ohio, with its expense policy, its caps by city, its employees and their managers, and earlier claims. Send a report as one of its employees, with your receipts as PDFs, then decide as the manager: one person can try both sides.",
+            "button": "Open it in your trial",
+            "href": "/start?plan=pro",
+            "guide": "In the Studio, open **Templates**, choose **Expense Checker** and select **Import**. On the Desk, it is called **Expense Report Checker**.",
+            "more": [
+              {
+                "link": "See how your people would use it on the Desk",
+                "href": "/desk"
+              },
+              {
+                "link": "See it on Synergi",
+                "href": "https://synergi.agentivity.io/templates/expense-checker"
+              }
+            ],
+            "note": "14-day trial · no card · AI usage billed by your provider"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "How it works",
+              "h2": "The AI reads. Code adds up. The manager decides the exceptions.",
+              "sub": "Each part does only what it can do safely. The AI reads the receipts and holds each line against your policy, but every total, cap and duplicate is worked out in code. What is missing is asked of the employee, what is outside the policy goes to the manager, and the rest needs no one.",
+              "flow": {
+                "alt": "How Expense Checker works: an employee sends the receipts on the Desk; the receipt readers (AI) turn each receipt into lines; the checks in code verify each total against the amounts printed on the receipt and work out the hotel cap per night, the meal cap per city and duplicates against earlier claims; the policy check (AI) holds each line against your expense policy and quotes the section, and asks the employee who was at a meal over the cap; only the lines outside the policy go to the manager, who says yes or no to each; the result gives the total for payroll, and every report and line is saved in your expense tables.",
+                "start": {
+                  "label": "An employee, on the Desk",
+                  "out": "Sends the receipts",
+                  "back": "The total for payroll"
+                },
+                "nodes": [
+                  {
+                    "tag": "AI",
+                    "title": "Receipt readers",
+                    "sub": "Each receipt into lines"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "Checks in code",
+                    "sub": "Totals, caps, duplicates"
+                  },
+                  {
+                    "tag": "You",
+                    "title": "The manager",
+                    "sub": "Only the lines outside the policy",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Lines, never a guessed amount"
+                  },
+                  {
+                    "label": "Outside the policy only"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Your expense policy and limits",
+                    "sub": "Sections quoted · hotel and meal caps by city",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Each line, its section quoted"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Every cap from your table"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Employees · Expense Lines · Reports",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Every line saved, who decided",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "AI",
+                  "who": "AI, then one agent",
+                  "title": "It reads, and holds each line to your policy",
+                  "body": "Each receipt becomes lines: date, merchant, category, amount, city. Then an agent checks each line against your expense policy and quotes the section.",
+                  "points": [
+                    "Within the policy, outside it, or something missing",
+                    "A meal over the cap: the employee is asked first who was there",
+                    "A receipt it cannot read is listed as not read, never guessed"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "Code, not AI",
+                  "title": "The checks in code",
+                  "body": "Every figure is worked out in code, from the receipt and from your tables, the same way on every report.",
+                  "points": [
+                    "The total held against the amounts printed on the receipt",
+                    "The hotel cap per night and the meal cap per city, from your limits",
+                    "Duplicates against every earlier claim, and $75 per person at a business meal"
+                  ]
+                },
+                {
+                  "tag": "You",
+                  "who": "The employee's manager",
+                  "title": "The decision",
+                  "body": "Only the lines outside the policy reach the manager on the Desk, on one card, each with its reason on top.",
+                  "points": [
+                    "Yes or No for each line, with a comment",
+                    "A refused hotel night is still paid up to the cap",
+                    "Duplicates and personal items are refused without asking"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Lines from the receipts, never a guessed amount",
+                "Only the lines outside your policy"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "What it checks against",
+              "h2": "It checks against your policy, not against habit.",
+              "body": [
+                "Your expense policy, section by section: receipts, hotels, meals and who was there, alcohol, tips, personal items, deadlines and duplicates. It comes with a sample policy: replace it with yours, in plain words. Change a section once, and every next report follows it.",
+                "Your caps live in a table, city by city: the hotel cap per night and the meal cap per day. It also reads your employees and their managers, and every line already claimed, so the same receipt is never paid twice."
+              ],
+              "sources_title": "Write your policy from what you already have",
+              "sources": [
+                "Your own text",
+                "Files",
+                "Web pages",
+                "An API"
+              ],
+              "apps_title": "Or let it read where finance already writes",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "live"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "live"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Plugged into your tools",
+              "h2": "It works with the tools finance already uses.",
+              "sub": "Start with nothing to connect: it comes with its own policy, limits and expense tables. Then plug in your tools, one by one.",
+              "hub": [
+                "Expense Checker",
+                "Your policy, applied"
+              ],
+              "groups": [
+                {
+                  "title": "Where receipts come from",
+                  "items": [
+                    [
+                      "@desk",
+                      "The Desk, as PDFs",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Google Drive",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Who to tell, who decides",
+                  "items": [
+                    [
+                      "@desk",
+                      "\"Waiting for you\" on the Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "Email",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Where reports are kept",
+                  "items": [
+                    [
+                      "@table",
+                      "Its own expense tables",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Your people",
+                  "items": [
+                    [
+                      "",
+                      "BambooHR",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Personio",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "When to act",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Schedules",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Anything else",
+                  "items": [
+                    [
+                      "@web",
+                      "HTTP requests",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "MCP servers",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "Until a tool is on the list, an AI agent reaches any tool with an API through an HTTP request or an MCP server, and another service can start a workflow through its webhook."
+            },
+            "company": {
+              "eyebrow": "In a real company",
+              "h2": "One check, wherever money is spent against a rule.",
+              "sub": "Travel expenses are where it starts. The same check works wherever someone spends first and a policy says what is paid back.",
+              "items": [
+                {
+                  "title": "Sales and field teams",
+                  "body": "Customer visits, trade shows and client dinners, every month. The solution as it comes."
+                },
+                {
+                  "title": "Engineers on site",
+                  "body": "Parts bought on the way, parking and meals on a site visit, checked against the same policy."
+                },
+                {
+                  "title": "Finance",
+                  "body": "One policy applied to every report, and only the exceptions left to read before payroll."
+                },
+                {
+                  "title": "Company cards",
+                  "body": "The month's card statement held against the same policy, line by line. Its own steps, described to the Assistant."
+                },
+                {
+                  "title": "Training and events",
+                  "body": "Course fees, travel and meals for a conference, held against the budget you set for it."
+                },
+                {
+                  "title": "Accountants and advisers",
+                  "body": "Set it up for each client, with that client's own policy and caps. The same check, their rules."
+                }
+              ],
+              "how": "Each one is its own policy in plain words, with the same check. Describe it to the Assistant, and publish it to the Desk for the people who spend."
+            },
+            "labels": {
+              "live": "Ready today",
+              "soon": "Coming soon"
+            }
+          }
+        },
+        "image": "/media/expense-checker-hero.webp",
+        "width": 2048,
+        "height": 1536,
+        "tag": "No app",
+        "size": "Workflow",
+        "title": "Expense Checker",
+        "for": "finance in a company where people travel",
+        "summary": "An employee sends the receipts on the Desk. Every line is checked against your expense policy, every cap and duplicate is worked out in code, and the manager decides only the lines outside the policy. It gives the total for payroll; it pays nothing.",
+        "alt": "Expense Checker: a hotel at $292.33 a night against a $225 cap, $67.33 over for each of two nights, and the manager's card on the Desk with section 4 of the policy.",
+        "h1": "Every expense line checked against your policy.",
+        "h1_accent": "Managers decide only the exceptions.",
+        "hero_image": "/media/expense-checker-hero.webp",
+        "hero_image_alt": "Agentivity Expense Checker: two hotel nights at $292.33 against a $225 cap, $67.33 over each, $134.66 in all, and the manager's card on the Desk with section 4 of the expense policy, Yes or No.",
+        "lead": "Your own expense policy, applied the same way to every report, whoever travels. Expense Checker reads each receipt into lines, works out every total, cap and duplicate in code, and quotes your policy for each line. When a dinner is over the cap, it asks the employee who was there before anyone else sees it. The manager decides only the lines outside the policy, and payroll gets the total. And it plugs into the tools you already use.",
+        "notice": "It checks; the manager decides. Expense Checker pays nothing: it gives the total for payroll.",
+        "facts": {
+          "for": "The finance lead or office manager who checks expense reports every month",
+          "use": "On the Desk: the employee sends the receipts, the manager decides the exceptions",
+          "behind": "A workflow with your expense policy, your caps by city and your expense tables"
+        },
+        "qa": [
+          {
+            "q": "What does Expense Checker do?",
+            "a": "An employee gives their name and the purpose of the trip on the Desk, then sends up to six receipts as PDFs. Each receipt becomes lines. Code checks every total against the amounts printed on the receipt and works out the hotel cap per night, the meal cap per city and duplicates. An agent checks each line against your expense policy and quotes the section. The manager decides only the lines outside the policy, and the result gives the total for payroll."
+          },
+          {
+            "q": "Does it pay anyone?",
+            "a": "No. Nothing is paid. The result lists the lines to reimburse, the lines refused and why, and the total for payroll, and the report is saved in your tables. Paying stays with your payroll."
+          },
+          {
+            "q": "What happens when a line is outside the policy?",
+            "a": "It goes to the employee's manager, on one card with every line outside the policy, each with its reason and the policy section. The manager says yes or no to each and can add a comment. Only a yes pays the line. A refused hotel night over the cap is still paid up to the cap, as the sample policy says. A duplicate or a personal item is refused without asking the manager."
+          },
+          {
+            "q": "Which receipts can it read?",
+            "a": "PDFs with selectable text, up to six per report. Photos of paper receipts are not read today: the result lists them as not read, so the employee can send them again as a PDF. It never guesses an amount."
+          },
+          {
+            "q": "What is real and what is simulated?",
+            "a": "The checks, the decisions and the reports are real, and they are written in real tables. It comes ready to try with Brennix Components, a parts maker in Ohio: its policy, its caps, its employees and their earlier claims. Replace them with your own. Nothing is paid."
+          },
+          {
+            "q": "What does a report cost?",
+            "a": "Your AI usage is billed by your model provider. Each receipt is read once, and each line is checked once against your policy; a report with more receipts uses more. The Observation tab shows the tokens it used."
+          },
+          {
+            "q": "Who is it for?",
+            "a": "The finance lead or office manager of a company of a few dozen people who travel or meet clients, and the accountant or builder who sets it up for them with each client's own policy."
+          },
+          {
+            "q": "How can I try it?",
+            "a": "Start the 14-day trial (no card) and connect your AI model with your own key. Import Expense Checker from Templates in the Studio, then open Expense Report Checker on the Desk and send a receipt as a PDF."
+          }
+        ]
+      },
+      {
         "slug": "quote-desk",
         "story": {
           "cta": {
@@ -8082,6 +8746,10 @@
         "contract-checker": {
           "line": "Supplier contracts checked against your rules; legal decides.",
           "type": "One agent"
+        },
+        "expense-checker": {
+          "line": "Every expense line checked against your policy; the manager decides the exceptions.",
+          "type": "A workflow"
         },
         "trip-planner": {
           "line": "A whole trip planned with you, from one sentence.",

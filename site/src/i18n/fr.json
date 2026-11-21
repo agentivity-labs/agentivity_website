@@ -175,6 +175,11 @@
               "label": "Contract Checker",
               "href": "/fr/solutions/contract-checker",
               "live": true
+            },
+            {
+              "label": "Expense Checker",
+              "href": "/fr/solutions/expense-checker",
+              "live": true
             }
           ]
         },
@@ -6033,6 +6038,665 @@
         ]
       },
       {
+        "slug": "expense-checker",
+        "story": {
+          "cta": {
+            "label": "Essayez-le pendant votre essai",
+            "href": "/fr/start?plan=pro",
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Il arrive avec une entreprise de démonstration, sa politique de frais et ses plafonds par ville. Aucune connexion à configurer."
+          },
+          "decide": {
+            "h2": "Cinq vraies notes de frais",
+            "intro": "Une bonne vérification des frais n'est pas seulement rapide. Chaque ligne est confrontée à votre politique, chaque montant est calculé en code, et le manager ne voit que ce qui demande une décision. Voici cinq vraies notes de frais, de celle que personne n'a à valider à un reçu qu'il ne peut pas lire.",
+            "scenarios": [
+              {
+                "title": "Une visite client à Chicago, tout dans la politique.",
+                "caption": "Quatre reçus : une nuit d'hôtel à 221,89 $ sous le plafond de 225 $, deux repas, une course Lyft. Chaque ligne est dans la politique, donc personne n'a à valider : 325,55 $ pour la paie, tout de suite.",
+                "image": "/media/expense-checker-concept.webp"
+              },
+              {
+                "title": "Une semaine de salon, l'hôtel au-dessus du plafond.",
+                "caption": "Tous les hôtels près du salon dépassaient 280 $ la nuit. La carte du manager tient en une ligne, calculée par nuit : 292,33 $ pour un plafond de 225 $, 67,33 $ de trop sur chacune des deux nuits, 134,66 $ au total, avec la raison de l'employé citée. Elle dit non : l'hôtel est quand même payé jusqu'au plafond, 450 $, comme le dit la politique, et les 134,66 $ sont refusés.",
+                "image": "/media/expense-checker-2-cap.webp"
+              },
+              {
+                "title": "Un dîner avec un fournisseur, sans aucun nom.",
+                "caption": "218,37 $ pour un dîner, vin compris, au-dessus du plafond de repas du jour. Avant qu'un manager le voie, l'employée doit répondre : était-ce un repas d'affaires, qui était là, combien de personnes ? Trois personnes : 72,79 $ chacune, sous le plafond de 75 $, et le vin est permis lors d'un repas d'affaires. Payé, sans personne pour valider.",
+                "image": "/media/expense-checker-3-asks.webp"
+              },
+              {
+                "title": "Un reçu déjà remboursé.",
+                "caption": "Un achat de 129,99 $ a déjà été payé sur la note d'octobre R-2026-10-07. Il est refusé, avec cette note citée, sans demander au manager : votre politique refuse un doublon même avec une validation. Le parking est payé : 15 $ pour la paie.",
+                "image": "/media/expense-checker-4-duplicate.webp"
+              },
+              {
+                "title": "Un film sur la facture d'hôtel, et la photo d'un reçu.",
+                "caption": "La chambre est payée dans le plafond de Troy. Le film regardé dans la chambre est une dépense personnelle, refusée selon la section 11 de la politique. Le reçu du diner est une photo, et les photos ne sont pas lues aujourd'hui : il est indiqué comme non lu, avec une demande de PDF. Il ne devine jamais un montant.",
+                "image": "/media/expense-checker-5-photo.webp"
+              }
+            ],
+            "recorded": "Dessiné d'après de vraies notes vérifiées dans le produit, sur une entreprise de démonstration.",
+            "compact": true
+          },
+          "versus": {
+            "h2": "Sans lui, avec lui",
+            "columns": [
+              "Aujourd'hui",
+              "Avec Expense Checker"
+            ],
+            "rows": [
+              [
+                "Quelqu'un à la comptabilité vérifie chaque ligne à la main, selon une politique que personne ne retient.",
+                "Chaque ligne est vérifiée selon votre politique, avec la section citée, et la comptabilité ne lit que ce qui en sort."
+              ],
+              [
+                "Le manager valide toute la note à partir de son total.",
+                "Le manager ne voit que les lignes hors politique, chacune avec sa raison, sur une seule carte."
+              ],
+              [
+                "Un hôtel au-dessus du plafond est payé en entier, ou discuté pendant une semaine.",
+                "Le dépassement est calculé par nuit, et une nuit refusée est quand même payée jusqu'au plafond."
+              ],
+              [
+                "Un dîner arrive sans aucun nom, et la comptabilité relance l'employé.",
+                "Quand un repas dépasse le plafond, l'employé doit dire qui était là avant que la note aille plus loin."
+              ],
+              [
+                "Le même reçu est payé deux fois, à quelques mois d'écart.",
+                "Chaque ligne est comparée aux notes déjà remboursées, et un doublon est refusé avec la note sur laquelle il a été payé."
+              ]
+            ]
+          },
+          "fits": {
+            "h2": "Comment il s'insère dans votre travail",
+            "steps": [
+              {
+                "title": "L'employé envoie ses reçus sur le Desk.",
+                "body": "Son nom et le motif du déplacement, puis jusqu'à six reçus en PDF, l'un après l'autre. Vos équipes l'utilisent là où votre entreprise utilise déjà ses équipes d'IA."
+              },
+              {
+                "title": "Il lit votre politique et vos plafonds.",
+                "body": "Votre politique de frais, vos plafonds d'hôtel et de repas par ville, vos employés et leurs managers, et chaque note déjà remboursée. Il n'écrit que la nouvelle note et ses lignes, et ne supprime jamais rien."
+              },
+              {
+                "title": "Le total arrive pour la paie.",
+                "body": "Le résultat liste les lignes à rembourser, les lignes refusées et pourquoi, et le total pour la paie. Chaque note est gardée dans votre table Expense Reports."
+              }
+            ]
+          },
+          "team": {
+            "h2": "De quoi il est fait",
+            "lead": "Un workflow se dessine boîte par boîte. Voici les pièces qu'utilise celui-ci.",
+            "members": [
+              {
+                "name": "Formulaire",
+                "role": "Là où l'employé indique son nom et le motif du déplacement."
+              },
+              {
+                "name": "Cartes des reçus",
+                "role": "Une carte d'envoi par reçu, jusqu'à six, puis « Another receipt? »."
+              },
+              {
+                "name": "Lecteurs de reçus",
+                "role": "De l'IA qui transforme chaque reçu en lignes : date, commerçant, catégorie, montant, ville."
+              },
+              {
+                "name": "Vérifications en code",
+                "role": "Pas de l'IA : le total comparé aux montants imprimés sur le reçu, les plafonds par nuit et par ville, les doublons."
+              },
+              {
+                "name": "Contrôle de la politique",
+                "role": "Un agent qui confronte chaque ligne à votre politique de frais et cite la section."
+              },
+              {
+                "name": "Questions à l'employé",
+                "role": "Affichées seulement quand un repas dépasse le plafond : repas d'affaires ou non, qui était là, combien de personnes."
+              },
+              {
+                "name": "Carte du manager",
+                "role": "Seulement les lignes hors politique, chacune avec Oui ou Non et un commentaire."
+              },
+              {
+                "name": "Tables des frais",
+                "role": "Chaque note et chaque ligne enregistrées, avec leur statut et qui a décidé."
+              }
+            ]
+          },
+          "never": {
+            "h2": "Ce qu'il ne fait jamais seul",
+            "items": [
+              {
+                "title": "Il ne paie jamais.",
+                "body": "Le résultat est le total pour la paie. Le paiement reste à vos équipes et à votre paie."
+              },
+              {
+                "title": "Il ne décide jamais d'une exception.",
+                "body": "Une ligne hors politique attend le manager de l'employé. Seul un Oui la fait payer."
+              },
+              {
+                "title": "Il ne devine jamais un montant.",
+                "body": "Chaque total est vérifié en code avec les montants imprimés sur le reçu. Un reçu qu'il ne peut pas lire est indiqué comme non lu."
+              },
+              {
+                "title": "Il ne laisse jamais passer un doublon.",
+                "body": "Un reçu déjà remboursé, ou une dépense personnelle, est refusé avec la raison de la politique, même si un manager dirait oui."
+              }
+            ]
+          },
+          "yours": {
+            "h2": "Faites-le vôtre",
+            "sub": "C'est un point de départ, pas un modèle figé.",
+            "further": {
+              "h3": "Allez plus loin",
+              "intro": "De vrais changements qu'une équipe financière peut faire une fois qu'il tourne, chacun construit avec les mêmes briques que la solution.",
+              "labels": {
+                "live": "Disponible aujourd'hui",
+                "soon": "Bientôt"
+              },
+              "items": [
+                {
+                  "status": "live",
+                  "logos": [
+                    "slack"
+                  ],
+                  "title": "Prévenir le manager qu'une note attend.",
+                  "body": "Quand une note a des lignes hors politique, un message dans le canal du manager donne l'employé, le total et les lignes à décider.",
+                  "uses": "Expense Checker · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@email"
+                  ],
+                  "title": "Envoyer le total à la paie.",
+                  "body": "Une fois la note décidée, le total et les lignes à rembourser partent à la paie par e-mail.",
+                  "uses": "Expense Checker · E-mail"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "googlesheets"
+                  ],
+                  "title": "Garder chaque ligne dans votre tableur.",
+                  "body": "Chaque ligne décidée s'ajoute au tableau des frais que la comptabilité tient déjà, avec la section de la politique et qui a décidé.",
+                  "uses": "Expense Checker · Google Sheets"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "@schedule",
+                    "slack"
+                  ],
+                  "title": "Relancer les notes qui attendent encore.",
+                  "body": "Chaque lundi, une planification liste les notes qui attendent encore un manager, et publie la liste pour la comptabilité.",
+                  "uses": "Une planification · la table Expense Reports · Slack"
+                },
+                {
+                  "status": "live",
+                  "logos": [
+                    "dropbox"
+                  ],
+                  "title": "Prendre les reçus là où ils sont rangés.",
+                  "body": "Lire les reçus directement dans le dossier Dropbox ou OneDrive où l'équipe les dépose.",
+                  "uses": "Expense Checker · Dropbox · OneDrive"
+                }
+              ],
+              "link": "Voir toutes les connexions",
+              "href": "/fr/connections",
+              "adapt": "Modifiez-le avec des mots simples"
+            },
+            "items": [
+              {
+                "title": "Votre politique.",
+                "body": "Remplacez la politique d'exemple par la vôtre, avec des mots simples : reçus, hôtels, repas, alcool, pourboires, dépenses personnelles, délais."
+              },
+              {
+                "title": "Vos plafonds.",
+                "body": "Votre plafond d'hôtel par nuit et votre plafond de repas par jour, ville par ville, et le plafond par personne lors d'un repas d'affaires."
+              },
+              {
+                "title": "Vos équipes.",
+                "body": "Remplissez la table des employés dans le Studio ou par l'API, avec le manager de chacun, pour que chaque exception arrive à la bonne personne."
+              },
+              {
+                "title": "Vos étapes.",
+                "body": "Changez qui décide, ce qui est demandé à l'employé ou ce que dit le résultat, avec des mots simples, grâce à l'Assistant."
+              }
+            ]
+          },
+          "platform": {
+            "h2": "Un seul endroit pour toutes les équipes que vous construisez",
+            "items": [
+              {
+                "title": "Tous ceux qui se déplacent l'utilisent depuis le Desk.",
+                "body": "Partagé par toute l'entreprise, ce n'est pas l'assistant d'une seule personne : ils l'utilisent, ils ne peuvent pas le modifier.",
+                "link": "Comment fonctionne le Desk",
+                "href": "/fr/desk"
+              },
+              {
+                "title": "L'équipe suivante part avec de l'avance.",
+                "body": "Elle réutilise votre table des employés et de leurs managers, déjà remplie."
+              },
+              {
+                "title": "Un seul endroit pour valider et pour suivre.",
+                "body": "Chaque conversation est gardée étape par étape, avec l'usage de l'IA de chaque membre et votre usage mensuel par modèle."
+              }
+            ],
+            "next": "L'étape suivante",
+            "next_items": [
+              {
+                "title": "Invoice Clerk",
+                "body": "Vos factures fournisseurs lues, classées et chaque total vérifié.",
+                "href": "/fr/solutions/invoice-clerk"
+              },
+              {
+                "title": "Contract Checker",
+                "body": "Les contrats fournisseurs vérifiés selon vos règles ; le juridique décide.",
+                "href": "/fr/solutions/contract-checker"
+              },
+              {
+                "title": "Votre propre équipe",
+                "body": "Décrivez-la à l'Assistant, avec vos mots.",
+                "href": "/fr/assistant"
+              }
+            ]
+          },
+          "get": {
+            "h2": "L'obtenir",
+            "body": "Ouvrez Expense Checker pendant votre essai. Il arrive avec une entreprise de démonstration, Brennix Components, un fabricant de pièces dans l'Ohio, avec sa politique de frais, ses plafonds par ville, ses employés et leurs managers, et des notes déjà remboursées. Envoyez une note en tant que l'un de ses employés, avec vos reçus en PDF, puis décidez en tant que manager : une seule personne peut essayer les deux côtés.",
+            "button": "Ouvrez-le pendant votre essai",
+            "href": "/fr/start?plan=pro",
+            "guide": "Dans le Studio, ouvrez **Templates**, choisissez **Expense Checker** puis sélectionnez **Import**. Sur le Desk, il s'appelle **Expense Report Checker**.",
+            "more": [
+              {
+                "link": "Voir comment vos équipes l'utiliseraient sur le Desk",
+                "href": "/fr/desk"
+              },
+              {
+                "link": "Le voir sur Synergi",
+                "href": "https://synergi.agentivity.io/templates/expense-checker"
+              }
+            ],
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur"
+          },
+          "power": {
+            "levels": {
+              "eyebrow": "Comment ça marche",
+              "h2": "L'IA lit. Le code calcule. Le manager décide des exceptions.",
+              "sub": "Chaque pièce ne fait que ce qu'elle peut faire sans risque. L'IA lit les reçus et confronte chaque ligne à votre politique, mais chaque total, plafond et doublon est calculé en code. Ce qui manque est demandé à l'employé, ce qui sort de la politique va au manager, et le reste n'a besoin de personne.",
+              "flow": {
+                "alt": "Comment fonctionne Expense Checker : un employé envoie ses reçus sur le Desk ; les lecteurs de reçus (IA) transforment chaque reçu en lignes ; les vérifications en code comparent chaque total aux montants imprimés sur le reçu et calculent le plafond d'hôtel par nuit, le plafond de repas par ville et les doublons avec les notes déjà remboursées ; le contrôle de la politique (IA) confronte chaque ligne à votre politique de frais, cite la section et demande à l'employé qui était à un repas au-dessus du plafond ; seules les lignes hors politique vont au manager, qui dit oui ou non à chacune ; le résultat donne le total pour la paie, et chaque note et chaque ligne sont enregistrées dans vos tables des frais.",
+                "start": {
+                  "label": "Un employé, sur le Desk",
+                  "out": "Envoie ses reçus",
+                  "back": "Le total pour la paie"
+                },
+                "nodes": [
+                  {
+                    "tag": "IA",
+                    "title": "Lecteurs de reçus",
+                    "sub": "Chaque reçu en lignes"
+                  },
+                  {
+                    "tag": "Code",
+                    "title": "Vérifications",
+                    "sub": "Totaux, plafonds, doublons"
+                  },
+                  {
+                    "tag": "Vous",
+                    "title": "Le manager",
+                    "sub": "Seulement les lignes hors politique",
+                    "you": true
+                  }
+                ],
+                "links": [
+                  {
+                    "label": "Des lignes, jamais un montant deviné"
+                  },
+                  {
+                    "label": "Hors politique seulement"
+                  }
+                ],
+                "below": [
+                  {
+                    "title": "Votre politique de frais et vos plafonds",
+                    "sub": "Sections citées · plafonds d'hôtel et de repas par ville",
+                    "from": 0,
+                    "to": 1,
+                    "links": [
+                      {
+                        "node": 0,
+                        "dir": "up",
+                        "label": "Chaque ligne, sa section citée"
+                      },
+                      {
+                        "node": 1,
+                        "dir": "up",
+                        "label": "Chaque plafond tiré de votre table"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Employees · Expense Lines · Reports",
+                    "from": 2,
+                    "to": 2,
+                    "kind": "records",
+                    "links": [
+                      {
+                        "node": 2,
+                        "dir": "both",
+                        "label": "Chaque ligne enregistrée, qui a décidé",
+                        "at": 0.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "tag": "IA",
+                  "who": "L'IA, puis un agent",
+                  "title": "Il lit, et confronte chaque ligne à votre politique",
+                  "body": "Chaque reçu devient des lignes : date, commerçant, catégorie, montant, ville. Puis un agent vérifie chaque ligne selon votre politique de frais et cite la section.",
+                  "points": [
+                    "Dans la politique, hors politique, ou quelque chose qui manque",
+                    "Un repas au-dessus du plafond : l'employé doit d'abord dire qui était là",
+                    "Un reçu illisible est indiqué comme non lu, jamais deviné"
+                  ]
+                },
+                {
+                  "tag": "Code",
+                  "who": "Du code, pas de l'IA",
+                  "title": "Les vérifications en code",
+                  "body": "Chaque montant est calculé en code, à partir du reçu et de vos tables, de la même façon sur chaque note.",
+                  "points": [
+                    "Le total comparé aux montants imprimés sur le reçu",
+                    "Le plafond d'hôtel par nuit et le plafond de repas par ville, tirés de vos plafonds",
+                    "Les doublons comparés à toutes les notes déjà remboursées, et 75 $ par personne lors d'un repas d'affaires"
+                  ]
+                },
+                {
+                  "tag": "Vous",
+                  "who": "Le manager de l'employé",
+                  "title": "La décision",
+                  "body": "Seules les lignes hors politique arrivent au manager sur le Desk, sur une seule carte, chacune avec sa raison en tête.",
+                  "points": [
+                    "Oui ou Non pour chaque ligne, avec un commentaire",
+                    "Une nuit d'hôtel refusée est quand même payée jusqu'au plafond",
+                    "Les doublons et les dépenses personnelles sont refusés sans demander"
+                  ],
+                  "you": true
+                }
+              ],
+              "handovers": [
+                "Des lignes tirées des reçus, jamais un montant deviné",
+                "Seulement les lignes hors de votre politique"
+              ]
+            },
+            "knowledge": {
+              "eyebrow": "Ce à quoi il se réfère",
+              "h2": "Il vérifie selon votre politique, pas selon l'habitude.",
+              "body": [
+                "Votre politique de frais, section par section : reçus, hôtels, repas et qui était là, alcool, pourboires, dépenses personnelles, délais et doublons. Elle arrive avec une politique d'exemple : remplacez-la par la vôtre, avec des mots simples. Changez une section une fois, et chaque note suivante la respecte.",
+                "Vos plafonds sont dans une table, ville par ville : le plafond d'hôtel par nuit et le plafond de repas par jour. Il lit aussi vos employés et leurs managers, et chaque ligne déjà remboursée, pour que le même reçu ne soit jamais payé deux fois."
+              ],
+              "sources_title": "Écrivez votre politique à partir de ce que vous avez déjà",
+              "sources": [
+                "Votre propre texte",
+                "Des fichiers",
+                "Des pages web",
+                "Une API"
+              ],
+              "apps_title": "Ou laissez-le lire là où la comptabilité écrit déjà",
+              "apps": [
+                [
+                  "notion",
+                  "Notion",
+                  "live"
+                ],
+                [
+                  "googledocs",
+                  "Google Docs",
+                  "live"
+                ],
+                [
+                  "confluence",
+                  "Confluence",
+                  "live"
+                ],
+                [
+                  "",
+                  "SharePoint",
+                  "live"
+                ]
+              ]
+            },
+            "connect": {
+              "eyebrow": "Branché sur vos outils",
+              "h2": "Il fonctionne avec les outils que la comptabilité utilise déjà.",
+              "sub": "Commencez sans rien connecter : il est livré avec sa propre politique, ses plafonds et ses tables des frais. Puis branchez vos outils, un par un.",
+              "hub": [
+                "Expense Checker",
+                "Votre politique, appliquée"
+              ],
+              "groups": [
+                {
+                  "title": "D'où viennent les reçus",
+                  "items": [
+                    [
+                      "@desk",
+                      "Le Desk, en PDF",
+                      "live"
+                    ],
+                    [
+                      "dropbox",
+                      "Dropbox",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "OneDrive",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Google Drive",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Qui prévenir, qui décide",
+                  "items": [
+                    [
+                      "@desk",
+                      "« Waiting for you » sur le Desk",
+                      "live"
+                    ],
+                    [
+                      "slack",
+                      "Slack",
+                      "live"
+                    ],
+                    [
+                      "@email",
+                      "E-mail",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Microsoft Teams",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Où les notes sont gardées",
+                  "items": [
+                    [
+                      "@table",
+                      "Ses propres tables des frais",
+                      "live"
+                    ],
+                    [
+                      "googlesheets",
+                      "Google Sheets",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Microsoft Excel",
+                      "live"
+                    ],
+                    [
+                      "airtable",
+                      "Airtable",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Vos équipes",
+                  "items": [
+                    [
+                      "",
+                      "BambooHR",
+                      "live"
+                    ],
+                    [
+                      "",
+                      "Personio",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Quand agir",
+                  "items": [
+                    [
+                      "@schedule",
+                      "Planifications",
+                      "live"
+                    ],
+                    [
+                      "@web",
+                      "Webhooks",
+                      "live"
+                    ]
+                  ]
+                },
+                {
+                  "title": "Tout le reste",
+                  "items": [
+                    [
+                      "@web",
+                      "Requêtes HTTP",
+                      "live"
+                    ],
+                    [
+                      "@chat",
+                      "Serveurs MCP",
+                      "live"
+                    ]
+                  ]
+                }
+              ],
+              "note": "En attendant qu'un outil soit dans la liste, un agent IA atteint tout outil doté d'une API par une requête HTTP ou un serveur MCP, et un autre service peut lancer un workflow par son webhook."
+            },
+            "company": {
+              "eyebrow": "Dans une vraie entreprise",
+              "h2": "Une seule vérification, partout où l'on dépense selon une règle.",
+              "sub": "Les frais de déplacement sont le point de départ. La même vérification marche partout où quelqu'un dépense d'abord et où une politique dit ce qui est remboursé.",
+              "items": [
+                {
+                  "title": "Commerciaux et équipes terrain",
+                  "body": "Visites clients, salons et dîners avec des clients, chaque mois. La solution telle qu'elle arrive."
+                },
+                {
+                  "title": "Techniciens sur site",
+                  "body": "Les pièces achetées en route, le parking et les repas lors d'une intervention, vérifiés selon la même politique."
+                },
+                {
+                  "title": "Comptabilité",
+                  "body": "Une seule politique appliquée à chaque note, et seulement les exceptions à lire avant la paie."
+                },
+                {
+                  "title": "Cartes d'entreprise",
+                  "body": "Le relevé de carte du mois confronté à la même politique, ligne par ligne. Ses propres étapes, décrites à l'Assistant."
+                },
+                {
+                  "title": "Formations et événements",
+                  "body": "Frais d'inscription, déplacements et repas d'une conférence, comparés au budget fixé pour elle."
+                },
+                {
+                  "title": "Experts-comptables et conseils",
+                  "body": "Mettez-le en place pour chaque client, avec sa propre politique et ses plafonds. La même vérification, ses règles."
+                }
+              ],
+              "how": "Chacun a sa propre politique, écrite avec des mots simples, et la même vérification. Décrivez-la à l'Assistant, puis publiez-la sur le Desk pour les personnes qui dépensent."
+            },
+            "labels": {
+              "live": "Disponible aujourd'hui",
+              "soon": "Bientôt"
+            }
+          }
+        },
+        "image": "/media/expense-checker-hero.webp",
+        "width": 2048,
+        "height": 1536,
+        "tag": "Sans application",
+        "size": "Workflow",
+        "title": "Expense Checker",
+        "for": "la comptabilité d'une entreprise dont les équipes se déplacent",
+        "summary": "Un employé envoie ses reçus sur le Desk. Chaque ligne est vérifiée selon votre politique de frais, chaque plafond et doublon est calculé en code, et le manager ne décide que des lignes hors politique. Il donne le total pour la paie ; il ne paie rien.",
+        "alt": "Expense Checker : un hôtel à 292,33 $ la nuit pour un plafond de 225 $, 67,33 $ de trop sur chacune des deux nuits, et la carte du manager sur le Desk avec la section 4 de la politique.",
+        "h1": "Chaque ligne de frais vérifiée selon votre politique.",
+        "h1_accent": "Les managers ne décident que des exceptions.",
+        "hero_image": "/media/expense-checker-hero.webp",
+        "hero_image_alt": "Agentivity Expense Checker : deux nuits d'hôtel à 292,33 $ pour un plafond de 225 $, 67,33 $ de trop chacune, 134,66 $ au total, et la carte du manager sur le Desk avec la section 4 de la politique de frais, Oui ou Non.",
+        "lead": "Votre propre politique de frais, appliquée de la même façon à chaque note, quel que soit celui qui se déplace. Expense Checker transforme chaque reçu en lignes, calcule chaque total, plafond et doublon en code, et cite votre politique pour chaque ligne. Quand un dîner dépasse le plafond, il demande à l'employé qui était là avant que quelqu'un d'autre le voie. Le manager ne décide que des lignes hors politique, et la paie reçoit le total. Et il se branche sur les outils que vous utilisez déjà.",
+        "notice": "Il vérifie ; le manager décide. Expense Checker ne paie rien : il donne le total pour la paie.",
+        "facts": {
+          "for": "La personne de la comptabilité ou l'office manager qui vérifie les notes de frais chaque mois",
+          "use": "Sur le Desk : l'employé envoie ses reçus, le manager décide des exceptions",
+          "behind": "Un workflow avec votre politique de frais, vos plafonds par ville et vos tables des frais"
+        },
+        "qa": [
+          {
+            "q": "Que fait Expense Checker ?",
+            "a": "Un employé indique son nom et le motif du déplacement sur le Desk, puis envoie jusqu'à six reçus en PDF. Chaque reçu devient des lignes. Le code vérifie chaque total avec les montants imprimés sur le reçu et calcule le plafond d'hôtel par nuit, le plafond de repas par ville et les doublons. Un agent vérifie chaque ligne selon votre politique de frais et cite la section. Le manager ne décide que des lignes hors politique, et le résultat donne le total pour la paie."
+          },
+          {
+            "q": "Est-ce qu'il paie quelqu'un ?",
+            "a": "Non. Rien n'est payé. Le résultat liste les lignes à rembourser, les lignes refusées et pourquoi, et le total pour la paie, et la note est enregistrée dans vos tables. Le paiement reste à votre paie."
+          },
+          {
+            "q": "Que se passe-t-il quand une ligne sort de la politique ?",
+            "a": "Elle va au manager de l'employé, sur une seule carte avec toutes les lignes hors politique, chacune avec sa raison et la section de la politique. Le manager dit oui ou non à chacune et peut ajouter un commentaire. Seul un oui fait payer la ligne. Une nuit d'hôtel refusée au-dessus du plafond est quand même payée jusqu'au plafond, comme le dit la politique d'exemple. Un doublon ou une dépense personnelle est refusé sans demander au manager."
+          },
+          {
+            "q": "Quels reçus peut-il lire ?",
+            "a": "Des PDF dont le texte est sélectionnable, jusqu'à six par note. Les photos de reçus papier ne sont pas lues aujourd'hui : le résultat les indique comme non lues, pour que l'employé puisse les renvoyer en PDF. Il ne devine jamais un montant."
+          },
+          {
+            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
+            "a": "Les vérifications, les décisions et les notes sont réelles, et elles sont écrites dans de vraies tables. Il arrive prêt à essayer avec Brennix Components, un fabricant de pièces dans l'Ohio : sa politique, ses plafonds, ses employés et leurs notes déjà remboursées. Remplacez-les par les vôtres. Rien n'est payé."
+          },
+          {
+            "q": "Combien coûte une note ?",
+            "a": "Votre usage de l'IA est facturé par votre fournisseur de modèle. Chaque reçu est lu une fois, et chaque ligne est vérifiée une fois selon votre politique ; une note avec plus de reçus en utilise plus. L'onglet Observation montre les tokens utilisés."
+          },
+          {
+            "q": "Pour qui ?",
+            "a": "La personne de la comptabilité ou l'office manager d'une entreprise de quelques dizaines de personnes qui se déplacent ou rencontrent des clients, et l'expert-comptable ou l'intégrateur qui le met en place pour elles avec la politique de chaque client."
+          },
+          {
+            "q": "Comment l'essayer ?",
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Importez Expense Checker depuis Templates dans le Studio, puis ouvrez Expense Report Checker sur le Desk et envoyez un reçu en PDF."
+          }
+        ]
+      },
+      {
         "slug": "quote-desk",
         "story": {
           "cta": {
@@ -8180,6 +8844,10 @@
         "contract-checker": {
           "line": "Les contrats fournisseurs vérifiés selon vos règles : le juridique décide.",
           "type": "Un agent"
+        },
+        "expense-checker": {
+          "line": "Chaque ligne de frais vérifiée selon votre politique : le manager décide des exceptions.",
+          "type": "Un workflow"
         },
         "trip-planner": {
           "line": "Tout un voyage organisé avec vous, à partir d'une phrase.",
