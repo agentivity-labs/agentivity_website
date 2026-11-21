@@ -615,7 +615,7 @@
         {
           "title": "Trip Manager Team",
           "body": "Plans a full trip with the traveller, who decides at each step. Bookings and payment are simulated.",
-          "meta": "Travel · a manager and 12 specialists",
+          "meta": "Travel · team of 13",
           "href": "/solutions/trip-planner"
         },
         {
@@ -2094,7 +2094,7 @@
               "sub": "Start with nothing to connect: it comes with its own trips and bookings tables. Then plug in your tools, one by one.",
               "hub": [
                 "Trip Planner",
-                "1 manager · 12 specialists"
+                "A team of 13"
               ],
               "groups": [
                 {
@@ -10496,7 +10496,7 @@
           "gain": "A whole trip, planned by a team.",
           "body": "One sentence in. A Trip Manager calls the specialists the trip needs, and the traveller picks every part. A demo: nothing is really booked or paid.",
           "points": [
-            "Thirteen specialists",
+            "A team of 13",
             "Inside your own app",
             "The traveller chooses"
           ],

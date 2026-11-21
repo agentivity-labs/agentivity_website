@@ -289,7 +289,7 @@
           {
             "icon": "agency",
             "label": "Freelances et agences",
-            "body": "Livrez automatisations et IA à vos clients",
+            "body": "Livrez des automatisations et de l'IA à vos clients",
             "href": "/fr/solutions/freelancers-and-agencies"
           },
           {
@@ -721,7 +721,7 @@
         {
           "title": "Trip Manager Team",
           "body": "Planifie un voyage complet avec le voyageur, qui décide à chaque étape. Les réservations et le paiement sont simulés.",
-          "meta": "Voyage · un manager et 12 spécialistes",
+          "meta": "Voyage · équipe de 13",
           "href": "/fr/docs/showcases/trip-manager-team"
         },
         {
@@ -1671,7 +1671,7 @@
           "cta": {
             "label": "Essayez-le pendant votre essai",
             "href": "/fr/start?plan=pro",
-            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Une démonstration \u0001 rien n'est réellement réservé ni payé."
+            "note": "Essai de 14 jours · sans carte · usage de l'IA facturé par votre fournisseur. Une démonstration : rien n'est réellement réservé ni payé."
           },
           "decide": {
             "h2": "Trois vrais moments",
@@ -1680,10 +1680,10 @@
               {
                 "title": "Lisbonne à deux, en une phrase.",
                 "media": "trip-planner",
-                "caption": "Le voyageur écrit une phrase. Le manager confie chaque partie à un spécialiste, et l'application affiche une carte chaque fois que le voyageur doit choisir \u0001 le vol, l'hôtel, le dîner. Puis le paiement et le récapitulatif."
+                "caption": "Le voyageur écrit une phrase. Le manager confie chaque partie à un spécialiste, et l'application affiche une carte chaque fois que le voyageur doit choisir : le vol, l'hôtel, le dîner. Puis le paiement et le récapitulatif."
               },
               {
-                "title": "Un week-end en ville \u0001 pas besoin de voiture.",
+                "title": "Un week-end en ville : pas besoin de voiture.",
                 "caption": "Le manager n'appelle que les spécialistes dont le voyage a besoin.",
                 "media": "trip-planner-2-no-car"
               },
@@ -1693,7 +1693,7 @@
                 "media": "trip-planner-3-payment"
               }
             ],
-            "recorded": "Filmé dans le vrai produit. Une démonstration \u0001 rien n'est réservé ni payé.",
+            "recorded": "Filmé dans le vrai produit. Une démonstration : rien n'est réservé ni payé.",
             "compact": true
           },
           "versus": {
@@ -1734,7 +1734,7 @@
               },
               {
                 "title": "Il propose, le voyageur choisit.",
-                "body": "Vols, hôtel, trajet et dîner reviennent sous forme de cartes. Tel qu'il est livré, il invente les options \u0001 branchez les spécialistes sur vos propres offres."
+                "body": "Vols, hôtel, trajet et dîner reviennent sous forme de cartes. Tel qu'il est livré, il invente les options : branchez les spécialistes sur vos propres offres."
               },
               {
                 "title": "Le voyage arrive dans vos tables.",
@@ -1805,7 +1805,7 @@
             "items": [
               {
                 "title": "Il ne choisit jamais à la place du voyageur.",
-                "body": "Chaque partie est une carte \u0001 le voyageur la choisit, ou en demande une autre."
+                "body": "Chaque partie est une carte : le voyageur la choisit, ou en demande une autre."
               },
               {
                 "title": "Il ne réserve jamais avant le paiement.",
@@ -1848,7 +1848,7 @@
                     "@desk"
                   ],
                   "title": "Validez le voyage avant que le client le voie.",
-                  "body": "Placez une personne entre l'équipe et le client \u0001 le voyage complet attend le oui de votre agent de voyages sur le Desk.",
+                  "body": "Placez une personne entre l'équipe et le client : le voyage complet attend le oui de votre agent de voyages sur le Desk.",
                   "uses": "Un workflow · une validation · le Desk"
                 },
                 {
@@ -1885,7 +1885,7 @@
                     "whatsapp"
                   ],
                   "title": "De l'aide pendant le voyage, sur WhatsApp.",
-                  "body": "Un vol en retard ou un changement de programme \u0001 l'On-Trip Assistant répond au voyageur là où il écrit déjà.",
+                  "body": "Un vol en retard ou un changement de programme : l'On-Trip Assistant répond au voyageur là où il écrit déjà.",
                   "uses": "On-Trip Assistant · WhatsApp"
                 }
               ],
@@ -1900,7 +1900,7 @@
               },
               {
                 "title": "Votre équipe.",
-                "body": "Retirez les spécialistes dont vous n'avez pas besoin, ou ajoutez-en un \u0001 un guide, une école de ski, un lieu de congrès."
+                "body": "Retirez les spécialistes dont vous n'avez pas besoin, ou ajoutez-en un : un guide, une école de ski, un lieu de congrès."
               },
               {
                 "title": "Un autre genre de projet.",
@@ -1908,7 +1908,7 @@
               },
               {
                 "title": "Votre propre application.",
-                "body": "Le code de l'application Trip Planner est public \u0001 changez son apparence, ou construisez votre propre VibeApp sur la même équipe."
+                "body": "Le code de l'application Trip Planner est public : changez son apparence, ou construisez votre propre VibeApp sur la même équipe."
               }
             ]
           },
@@ -1917,13 +1917,13 @@
             "items": [
               {
                 "title": "Une équipe derrière chaque porte.",
-                "body": "Vos agents de voyages l'utilisent sur le Desk \u0001 vos clients, dans votre application. La même équipe répond aux deux.",
+                "body": "Vos agents de voyages l'utilisent sur le Desk : vos clients, dans votre application. La même équipe répond aux deux.",
                 "link": "Comment fonctionne le Desk",
                 "href": "/fr/desk"
               },
               {
                 "title": "Construisez l'application que voient vos clients.",
-                "body": "Celle-ci est une VibeApp \u0001 une application sur votre propre site, faite pour un seul métier, avec l'équipe derrière.",
+                "body": "Celle-ci est une VibeApp : une application sur votre propre site, faite pour un seul métier, avec l'équipe derrière.",
                 "link": "Ce qu'est une VibeApp",
                 "href": "/fr/blog/what-is-a-vibeapp"
               },
@@ -1975,7 +1975,7 @@
               "h2": "Organisé comme une bonne agence de voyages.",
               "sub": "Le manager parle au voyageur et répartit le travail. Chaque spécialiste connaît un seul métier. Le voyageur fait chaque choix, et l'argent vient en dernier. Un treizième membre, l'On-Trip Assistant, gère les changements une fois le voyage confirmé.",
               "flow": {
-                "alt": "Comment Trip Planner est organisé \u0001 un voyageur écrit une phrase \u0001 le Trip Manager confie chaque partie, une à la fois, au spécialiste dont elle a besoin \u0001 le spécialiste propose des options avec leurs prix \u0001 le voyageur choisit chacune sur une carte \u0001 une fois le paiement autorisé, le Reservation Agent enregistre chaque réservation et le voyageur reçoit le récapitulatif complet. Les spécialistes peuvent proposer à partir de vos propres offres une fois que vous les avez ajoutées, et chaque voyage et chaque réservation sont gardés dans deux tables.",
+                "alt": "Comment Trip Planner est organisé : un voyageur écrit une phrase : le Trip Manager confie chaque partie, une à la fois, au spécialiste dont elle a besoin : le spécialiste propose des options avec leurs prix : le voyageur choisit chacune sur une carte : une fois le paiement autorisé, le Reservation Agent enregistre chaque réservation et le voyageur reçoit le récapitulatif complet. Les spécialistes peuvent proposer à partir de vos propres offres une fois que vous les avez ajoutées, et chaque voyage et chaque réservation sont gardés dans deux tables.",
                 "start": {
                   "label": "Un voyageur",
                   "out": "Une phrase",
@@ -2065,9 +2065,9 @@
                   "tag": "1",
                   "who": "IA, le manager",
                   "title": "Le Trip Manager",
-                  "body": "Parle avec le voyageur jusqu'à connaître la destination, les dates, qui part et le budget. Puis il confie chaque partie à un spécialiste à la fois. Il ne cherche jamais un vol lui-même \u0001 il sait qui doit le faire.",
+                  "body": "Parle avec le voyageur jusqu'à connaître la destination, les dates, qui part et le budget. Puis il confie chaque partie à un spécialiste à la fois. Il ne cherche jamais un vol lui-même : il sait qui doit le faire.",
                   "points": [
-                    "Pas d'ordre fixe \u0001 un week-end en ville se passe de voiture",
+                    "Pas d'ordre fixe : un week-end en ville se passe de voiture",
                     "Avant le paiement, vérifie que le voyage est vraiment faisable",
                     "Demande au voyageur avant d'ajouter ce qui manque"
                   ]
@@ -2076,7 +2076,7 @@
                   "tag": "2",
                   "who": "IA, neuf spécialistes",
                   "title": "Des spécialistes qui proposent",
-                  "body": "Vols, hôtel, voiture de location, transferts, dîner et assurance ont chacun leur spécialiste. Trois autres conseillent \u0001 un programme jour par jour, visa et documents, change et budget.",
+                  "body": "Vols, hôtel, voiture de location, transferts, dîner et assurance ont chacun leur spécialiste. Trois autres conseillent : un programme jour par jour, visa et documents, change et budget.",
                   "points": [
                     "Chacun parle au voyageur de sa propre partie",
                     "Jusqu'à trois hôtels, avec celui qu'il recommande",
@@ -2087,7 +2087,7 @@
                   "tag": "3",
                   "who": "Le voyageur",
                   "title": "Chaque choix lui revient",
-                  "body": "Dans l'application, chaque proposition est une carte \u0001 une couverture du voyage, des hôtels avec des photos de leur quartier, un programme jour par jour, le budget en graphique.",
+                  "body": "Dans l'application, chaque proposition est une carte : une couverture du voyage, des hôtels avec des photos de leur quartier, un programme jour par jour, le budget en graphique.",
                   "points": [
                     "Accepter, ou en demander une autre, autant de fois qu'il veut",
                     "L'équipe s'allume à côté du chat pendant qu'elle travaille",
@@ -2148,8 +2148,8 @@
               "eyebrow": "Ce qu'il propose",
               "h2": "Vos offres, pas des offres inventées.",
               "body": [
-                "Tel qu'il est livré, chaque spécialiste joue un service de réservation et invente des options plausibles, pour que vous puissiez l'essayer dès aujourd'hui sur n'importe quelle ville. Pour vos clients, donnez à chaque spécialiste ce que vous vendez vraiment \u0001 vos hôtels et leurs tarifs, vos restaurants partenaires, vos excursions, vos assurances.",
-                "Puis dites-lui avec des mots simples de ne proposer que ces offres. Vos agents gardent le dernier mot \u0001 le voyage entier peut attendre leur oui sur le Desk avant que le client le voie."
+                "Tel qu'il est livré, chaque spécialiste joue un service de réservation et invente des options plausibles, pour que vous puissiez l'essayer dès aujourd'hui sur n'importe quelle ville. Pour vos clients, donnez à chaque spécialiste ce que vous vendez vraiment : vos hôtels et leurs tarifs, vos restaurants partenaires, vos excursions, vos assurances.",
+                "Puis dites-lui avec des mots simples de ne proposer que ces offres. Vos agents gardent le dernier mot : le voyage entier peut attendre leur oui sur le Desk avant que le client le voie."
               ],
               "sources_title": "À partir de ce que vous avez déjà",
               "sources": [
@@ -2189,10 +2189,10 @@
             "connect": {
               "eyebrow": "Branché sur vos outils",
               "h2": "Il marche avec ce que votre agence utilise déjà.",
-              "sub": "Commencez sans rien brancher \u0001 il arrive avec ses propres tables de voyages et de réservations. Puis branchez vos outils, un par un.",
+              "sub": "Commencez sans rien brancher : il arrive avec ses propres tables de voyages et de réservations. Puis branchez vos outils, un par un.",
               "hub": [
                 "Trip Planner",
-                "1 manager · 12 spécialistes"
+                "Une équipe de 13"
               ],
               "groups": [
                 {
@@ -2334,7 +2334,7 @@
                 },
                 {
                   "title": "Un hôtel ou un complexe hôtelier",
-                  "body": "Les chambres, le restaurant, les transferts depuis l'aéroport, les excursions \u0001 une seule demande du client, et chaque partie proposée à partir de ce que vous avez."
+                  "body": "Les chambres, le restaurant, les transferts depuis l'aéroport, les excursions : une seule demande du client, et chaque partie proposée à partir de ce que vous avez."
                 },
                 {
                   "title": "Les voyages d'affaires",
@@ -2353,7 +2353,7 @@
                   "body": "Le matériel, les comptes et un programme pour la première semaine, chacun géré par son propre spécialiste."
                 }
               ],
-              "how": "Chacun est le même manager avec d'autres spécialistes, d'autres offres et d'autres règles \u0001 retirez un spécialiste, ajoutez-en un ou renommez-le, en le demandant simplement à l'Assistant."
+              "how": "Chacun est le même manager avec d'autres spécialistes, d'autres offres et d'autres règles : retirez un spécialiste, ajoutez-en un ou renommez-le, en le demandant simplement à l'Assistant."
             },
             "labels": {
               "live": "Disponible aujourd'hui",
@@ -2369,10 +2369,10 @@
         "title": "Trip Planner",
         "for": "une agence de voyages",
         "summary": "Une phrase suffit. Un manager et douze spécialistes organisent le voyage, et le voyageur choisit les vols, l'hôtel et le dîner.",
-        "alt": "Un enregistrement de l'application Trip Planner \u0001 un voyageur demande un séjour à Lisbonne, un manager répartit le travail entre des spécialistes, et l'application demande au voyageur de valider le vol et de choisir l'hôtel, puis prend le paiement et affiche le récapitulatif des réservations",
+        "alt": "Un enregistrement de l'application Trip Planner : un voyageur demande un séjour à Lisbonne, un manager répartit le travail entre des spécialistes, et l'application demande au voyageur de valider le vol et de choisir l'hôtel, puis prend le paiement et affiche le récapitulatif des réservations",
         "h1": "Tout un voyage organisé par une équipe,",
         "h1_accent": "dont le voyageur choisit chaque partie.",
-        "lead": "Une équipe de voyage dans votre application. Le voyageur écrit une phrase. Un Trip Manager n'appelle que les spécialistes dont le voyage a besoin, un à la fois \u0001 vols, hôtel, transferts, dîner, visa, budget. Chaque partie revient sous forme de carte, et le voyageur choisit. Rien n'est réservé avant le paiement, et chaque voyage arrive dans vos tables. Donnez-lui vos propres offres, et mettez-le sur votre propre site.",
+        "lead": "Une équipe de voyage dans votre application. Le voyageur écrit une phrase. Un Trip Manager n'appelle que les spécialistes dont le voyage a besoin, un à la fois : vols, hôtel, transferts, dîner, visa, budget. Chaque partie revient sous forme de carte, et le voyageur choisit. Rien n'est réservé avant le paiement, et chaque voyage arrive dans vos tables. Donnez-lui vos propres offres, et mettez-le sur votre propre site.",
         "facts": {
           "for": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties",
           "use": "Une VibeApp, faite pour ce seul métier",
@@ -2381,7 +2381,7 @@
         "steps": [
           {
             "title": "La demande",
-            "body": "Une phrase \u0001 Lisbonne à deux, les dates, le budget."
+            "body": "Une phrase : Lisbonne à deux, les dates, le budget."
           },
           {
             "title": "Le manager prend la main",
@@ -2389,7 +2389,7 @@
           },
           {
             "title": "Les spécialistes proposent",
-            "body": "Vols, hôtel, transferts, dîner \u0001 chacun revient avec des options qui tiennent dans le budget."
+            "body": "Vols, hôtel, transferts, dîner : chacun revient avec des options qui tiennent dans le budget."
           },
           {
             "title": "Le voyageur choisit",
@@ -2468,29 +2468,29 @@
           "media": "studio-trip-run",
           "width": 1600,
           "height": 900,
-          "alt": "Trip Manager Team au travail dans le Studio \u0001 le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape",
+          "alt": "Trip Manager Team au travail dans le Studio : le manager confie le voyage à chaque spécialiste tour à tour, et le voyageur répond dans la conversation à côté, à chaque étape",
           "caption": "La même équipe, vue dans le Studio, là où elle est construite et lancée. Filmé dans le produit, en accéléré."
         },
         "article": "/blog/ai-trip-planner-manager-and-specialists",
         "qa": [
           {
-            "q": "Que fait Trip Planner \u0001",
-            "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient \u0001 les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations."
+            "q": "Que fait Trip Planner ?",
+            "a": "Le voyageur écrit en une phrase le voyage qu'il veut. Un agent manager confie chaque partie au bon spécialiste, et l'application demande au voyageur de choisir chaque fois que la décision lui revient : les vols, l'hôtel, le trajet, la table pour le dîner. À la fin, elle prend le paiement et affiche le récapitulatif des réservations."
           },
           {
-            "q": "Pour qui \u0001",
-            "a": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties avec une personne qui décide \u0001 un événement, une offre pour un client, l'arrivée d'un nouvel employé."
+            "q": "Pour qui ?",
+            "a": "Une agence de voyages, ou toute activité qui vend une offre en plusieurs parties avec une personne qui décide : un événement, une offre pour un client, l'arrivée d'un nouvel employé."
           },
           {
-            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé \u0001",
-            "a": "Tout ce qui coûterait de l'argent est simulé \u0001 aucun vol, aucun hôtel ni aucune table n'est réservé, aucun paiement n'est débité, et les codes de confirmation sont inventés. Les noms des compagnies aériennes, des hôtels et des restaurants sont inventés aussi. Les villes et leurs lieux sont réels."
+            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
+            "a": "Tout ce qui coûterait de l'argent est simulé : aucun vol, aucun hôtel ni aucune table n'est réservé, aucun paiement n'est débité, et les codes de confirmation sont inventés. Les noms des compagnies aériennes, des hôtels et des restaurants sont inventés aussi. Les villes et leurs lieux sont réels."
           },
           {
-            "q": "Comment l'essayer \u0001",
+            "q": "Comment l'essayer ?",
             "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Trip Manager Team depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Exécution et demandez un voyage en une phrase. L'application Trip Planner elle-même est un exemple public sur GitHub, pour un développeur."
           }
         ],
-        "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés \u0001 rien n'est réellement réservé ni débité.",
+        "note": "C'est une démonstration. Les vols, les hôtels et le paiement sont simulés : rien n'est réellement réservé ni débité.",
         "get": {
           "body": "Ouvrez l'équipe derrière Trip Planner dans votre essai et demandez un voyage en une phrase. L'application Trip Planner elle-même est un code public sur GitHub, pour un développeur.",
           "link": "L'ouvrir dans votre essai",
@@ -2510,7 +2510,7 @@
             }
           ]
         },
-        "meta_title": "Trip Planner \u0001 tout un voyage organisé par une équipe d'agents IA | Agentivity"
+        "meta_title": "Trip Planner : tout un voyage organisé par une équipe d'agents IA | Agentivity"
       },
       {
         "slug": "product-compare-team",
@@ -2533,7 +2533,7 @@
                 "title": "Un chiffre qu'aucun magasin ne donne.",
                 "caption": "L'équipe ne comble jamais un manque par une supposition.",
                 "what_happens": [
-                  "Un magasin donne l'autonomie d'un casque audio \u0001 l'autre non.",
+                  "Un magasin donne l'autonomie d'un casque audio : l'autre non.",
                   "Le Spec Normalizer met les chiffres dans les mêmes unités et laisse vide celui qui manque.",
                   "L'acheteur voit ce qui n'a pas été publié, et en tient compte."
                 ]
@@ -2556,7 +2556,7 @@
             "rows": [
               [
                 "Un acheteur ouvre dix onglets et recopie les prix dans un tableur.",
-                "Un éclaireur par magasin lit ses pages \u0001 prix, notes, avis, photos et caractéristiques."
+                "Un éclaireur par magasin lit ses pages : prix, notes, avis, photos et caractéristiques."
               ],
               [
                 "Le même produit apparaît sous deux noms dans deux magasins.",
@@ -2564,7 +2564,7 @@
               ],
               [
                 "Les caractéristiques n'ont pas les mêmes unités, et les manques sont comblés par des suppositions.",
-                "Les chiffres sont mis dans les mêmes unités \u0001 un chiffre manquant reste manquant."
+                "Les chiffres sont mis dans les mêmes unités : un chiffre manquant reste manquant."
               ],
               [
                 "Le choix dépend de qui a fait la recherche.",
@@ -2688,7 +2688,7 @@
                     "@table"
                   ],
                   "title": "Notez sur ce qui compte pour vous.",
-                  "body": "Modifiez le script de notation \u0001 délai de livraison, garantie, consommation d'énergie. Chaque produit est alors classé selon vos critères.",
+                  "body": "Modifiez le script de notation : délai de livraison, garantie, consommation d'énergie. Chaque produit est alors classé selon vos critères.",
                   "uses": "Scoring Analyst · son script"
                 },
                 {
@@ -2698,7 +2698,7 @@
                     "googlesheets"
                   ],
                   "title": "Surveillez les prix chaque semaine.",
-                  "body": "Chaque lundi, une planification demande le même brief et ajoute les prix dans une Google Sheet \u0001 vous voyez quand l'un d'eux baisse.",
+                  "body": "Chaque lundi, une planification demande le même brief et ajoute les prix dans une Google Sheet : vous voyez quand l'un d'eux baisse.",
                   "uses": "Une planification · Google Sheets"
                 },
                 {
@@ -2729,7 +2729,7 @@
             "items": [
               {
                 "title": "D'autres choses à comparer.",
-                "body": "Des fournisseurs, des abonnements logiciels, des formations \u0001 la même équipe compare tout ce qui a une page et un prix."
+                "body": "Des fournisseurs, des abonnements logiciels, des formations : la même équipe compare tout ce qui a une page et un prix."
               },
               {
                 "title": "Votre brief.",
@@ -2737,7 +2737,7 @@
               },
               {
                 "title": "Votre rapport.",
-                "body": "Changez ce que le Report Writer met en premier \u0001 le moins cher, le mieux noté, ou vos propres priorités."
+                "body": "Changez ce que le Report Writer met en premier : le moins cher, le mieux noté, ou vos propres priorités."
               }
             ]
           },
@@ -2746,7 +2746,7 @@
             "items": [
               {
                 "title": "Vos collaborateurs l'utilisent depuis le Desk.",
-                "body": "Partagée par toute l'équipe, pas l'assistant d'une seule personne \u0001 ils l'utilisent, ils ne peuvent pas la modifier.",
+                "body": "Partagée par toute l'équipe, pas l'assistant d'une seule personne : ils l'utilisent, ils ne peuvent pas la modifier.",
                 "link": "Comment fonctionne le Desk",
                 "href": "/fr/desk"
               },
@@ -2802,7 +2802,7 @@
               "h2": "Neuf spécialistes, une tâche chacun, en quatre étapes.",
               "sub": "Chaque membre fait une tâche courte et enregistre son travail dans des tables partagées. Le suivant part de ce qui est enregistré, pas d'un résumé. Personne ne devine ce que voulait dire le précédent.",
               "flow": {
-                "alt": "Comment fonctionne Product Compare Team \u0001 un acheteur décrit un besoin \u0001 le Needs Analyst et le Query Planner en font un brief, et la recherche ne démarre qu'après le oui de l'acheteur \u0001 deux Store Scouts lisent les pages de chaque magasin \u0001 quatre analystes regroupent les produits, mettent les caractéristiques dans les mêmes unités, lisent les avis et notent chaque produit avec un script \u0001 le Report Writer remet un rapport avec ses sources. Chaque membre enregistre son travail dans cinq tables partagées, et chaque note vient d'un même script fixe.",
+                "alt": "Comment fonctionne Product Compare Team : un acheteur décrit un besoin : le Needs Analyst et le Query Planner en font un brief, et la recherche ne démarre qu'après le oui de l'acheteur : deux Store Scouts lisent les pages de chaque magasin : quatre analystes regroupent les produits, mettent les caractéristiques dans les mêmes unités, lisent les avis et notent chaque produit avec un script : le Report Writer remet un rapport avec ses sources. Chaque membre enregistre son travail dans cinq tables partagées, et chaque note vient d'un même script fixe.",
                 "start": {
                   "label": "Un acheteur",
                   "out": "Décrit un besoin",
@@ -2889,10 +2889,10 @@
                   "tag": "1",
                   "who": "Needs Analyst · Query Planner",
                   "title": "Un brief que l'acheteur confirme",
-                  "body": "Le Needs Analyst ne demande que ce qu'il ne sait pas encore \u0001 le budget, l'usage, les marques, les indispensables, ce qui compte le plus. C'est le seul membre qui parle à l'acheteur.",
+                  "body": "Le Needs Analyst ne demande que ce qu'il ne sait pas encore : le budget, l'usage, les marques, les indispensables, ce qui compte le plus. C'est le seul membre qui parle à l'acheteur.",
                   "points": [
                     "Cinq questions au plus, en formulaires et en choix",
-                    "Un récapitulatif, puis « Lancer la recherche avec ce brief \u0001 \u0001",
+                    "Un récapitulatif, puis « Lancer la recherche avec ce brief ? »",
                     "Le Query Planner en tire une recherche par magasin"
                   ]
                 },
@@ -2900,7 +2900,7 @@
                   "tag": "2",
                   "who": "Deux Store Scouts",
                   "title": "Les pages des magasins eux-mêmes",
-                  "body": "Chaque éclaireur lit un magasin \u0001 sa page de recherche, puis jusqu'à quatre pages produit, avec le lecteur de pages intégré au produit. Aucun service de recherche payant.",
+                  "body": "Chaque éclaireur lit un magasin : sa page de recherche, puis jusqu'à quatre pages produit, avec le lecteur de pages intégré au produit. Aucun service de recherche payant.",
                   "points": [
                     "Prix, note, avis, photos et caractéristiques",
                     "Une valeur absente de la page reste vide",
@@ -2914,7 +2914,7 @@
                   "body": "Le Product Matcher regroupe le même produit entre magasins. Le Spec Normalizer met les chiffres dans les mêmes unités. Le Customer Reviews Analyst lit les avis. Le Scoring Analyst note.",
                   "points": [
                     "Regroupés par code-barres, puis par modèle, puis par titre",
-                    "Un chiffre manquant reste « inconnu \u0001",
+                    "Un chiffre manquant reste « inconnu »",
                     "Un seul script, pondéré par les priorités de l'acheteur"
                   ]
                 },
@@ -2922,7 +2922,7 @@
                   "tag": "4",
                   "who": "Report Writer",
                   "title": "Un rapport que vous pouvez vérifier",
-                  "body": "Remis dans le chat en une seule fois \u0001 un verdict, les meilleurs choix avec photos, des graphiques, un tableau des caractéristiques, les points de vigilance et les sources.",
+                  "body": "Remis dans le chat en une seule fois : un verdict, les meilleurs choix avec photos, des graphiques, un tableau des caractéristiques, les points de vigilance et les sources.",
                   "points": [
                     "Chaque prix avec son magasin et sa date de lecture",
                     "Les poids et la formule derrière chaque note",
@@ -2941,7 +2941,7 @@
               "h2": "Elle lit ce que publient les magasins, pas ce dont elle se souvient.",
               "body": [
                 "Les éclaireurs lisent les pages publiques de chaque magasin au moment de l'exécution, avec le lecteur de pages intégré au produit, pas un service de recherche payant. Ils n'enregistrent que ce qu'une page montre. Un prix, une note ou une caractéristique que la page ne donne pas reste vide, et le rapport dit ce qui manque.",
-                "La note vient d'un script que chacun peut ouvrir, avec les priorités de l'acheteur comme poids. Le rapport montre ces poids et la formule \u0001 un acheteur voit pourquoi un produit arrive en tête, et « Best overall \u0001 revient à un produit d'au moins 30 avis quand il y en a un."
+                "La note vient d'un script que chacun peut ouvrir, avec les priorités de l'acheteur comme poids. Le rapport montre ces poids et la formule : un acheteur voit pourquoi un produit arrive en tête, et « Best overall » revient à un produit d'au moins 30 avis quand il y en a un."
               ],
               "sources_title": "Ce qu'un éclaireur enregistre de chaque page",
               "sources": [
@@ -2957,7 +2957,7 @@
             "connect": {
               "eyebrow": "Branchée sur vos outils",
               "h2": "Elle démarre là où vos équipes demandent, et le rapport va où vous le décidez.",
-              "sub": "Commencez sans rien connecter \u0001 elle arrive avec ses cinq tables et lit deux magasins tels que livrés. Ajoutez ensuite votre catalogue et vos outils, un par un.",
+              "sub": "Commencez sans rien connecter : elle arrive avec ses cinq tables et lit deux magasins tels que livrés. Ajoutez ensuite votre catalogue et vos outils, un par un.",
               "hub": [
                 "Product Compare Team",
                 "9 spécialistes, tour à tour"
@@ -3089,7 +3089,7 @@
             "company": {
               "eyebrow": "Dans une vraie entreprise",
               "h2": "Une même forme pour tout ce qui a une page et un prix.",
-              "sub": "Les produits ne sont qu'un début. Clarifier, collecter, regrouper, comparer, noter, rendre compte \u0001 les mêmes six étapes conviennent à chaque choix qu'une entreprise fait entre plusieurs offres.",
+              "sub": "Les produits ne sont qu'un début. Clarifier, collecter, regrouper, comparer, noter, rendre compte : les mêmes six étapes conviennent à chaque choix qu'une entreprise fait entre plusieurs offres.",
               "items": [
                 {
                   "title": "Un magasin",
@@ -3097,11 +3097,11 @@
                 },
                 {
                   "title": "Un service achats",
-                  "body": "Équipement, fournitures, mobilier \u0001 un brief, une comparaison et les sources, prêts pour la personne qui signe."
+                  "body": "Équipement, fournitures, mobilier : un brief, une comparaison et les sources, prêts pour la personne qui signe."
                 },
                 {
                   "title": "Un service de comparaison",
-                  "body": "Le même rapport pour la question de chaque lecteur \u0001 meilleurs choix, graphiques, points de vigilance et provenance de chaque prix."
+                  "body": "Le même rapport pour la question de chaque lecteur : meilleurs choix, graphiques, points de vigilance et provenance de chaque prix."
                 },
                 {
                   "title": "Des offres de fournisseurs",
@@ -3116,7 +3116,7 @@
                   "body": "Des formations comparées sur le prix, la durée et le contenu, pour l'équipe qui les réserve."
                 }
               ],
-              "how": "Chacune est la même équipe avec d'autres instructions \u0001 changez le magasin d'un éclaireur, les questions du brief ou le script de notation, en mots simples avec l'Assistant."
+              "how": "Chacune est la même équipe avec d'autres instructions : changez le magasin d'un éclaireur, les questions du brief ou le script de notation, en mots simples avec l'Assistant."
             },
             "labels": {
               "live": "Disponible aujourd'hui",
@@ -3132,7 +3132,7 @@
         "title": "Product Compare Team",
         "for": "un magasin, un acheteur, un service de comparaison",
         "summary": "Un acheteur décrit son besoin. Neuf spécialistes lisent les pages des magasins eux-mêmes, comparent, notent et rédigent un rapport illustré.",
-        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail \u0001 un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour, et le rapport montre le meilleur choix et chaque fiche produit",
+        "alt": "Un enregistrement de la démonstration Shopping Lab dans le portail : un acheteur demande un casque audio, valide le brief, puis neuf spécialistes travaillent tour à tour, et le rapport montre le meilleur choix et chaque fiche produit",
         "h1": "Une équipe d'achat de neuf spécialistes.",
         "h1_accent": "Et un conseil que vous pouvez vérifier, ligne par ligne.",
         "lead": "Une équipe qui travaille comme un acheteur attentif. Un spécialiste fixe le brief avec l'acheteur. Deux lisent les pages des magasins eux-mêmes. Quatre regroupent, comparent, lisent les avis et notent avec un script. Un dernier rédige un rapport avec chaque prix, son magasin et sa date de lecture. L'acheteur confirme le brief, et c'est l'acheteur qui choisit.",
@@ -3144,11 +3144,11 @@
         "steps": [
           {
             "title": "Le besoin",
-            "body": "Une envie floue devient un brief précis \u0001 produit, budget, critères indispensables, priorités."
+            "body": "Une envie floue devient un brief précis : produit, budget, critères indispensables, priorités."
           },
           {
             "title": "Les magasins",
-            "body": "Un éclaireur par magasin lit ses pages \u0001 prix réels, notes, avis, photos et caractéristiques."
+            "body": "Un éclaireur par magasin lit ses pages : prix réels, notes, avis, photos et caractéristiques."
           },
           {
             "title": "La comparaison",
@@ -3208,20 +3208,20 @@
         "article": "/blog/ai-agents-compare-products-shopping-lab",
         "qa": [
           {
-            "q": "Que fait Product Compare Team \u0001",
-            "a": "Un acheteur décrit son besoin et son budget. Neuf spécialistes IA valident le brief avec lui, lisent deux boutiques en ligne, retrouvent le même produit dans les deux, comparent les caractéristiques dans les mêmes unités, notent chaque produit avec un script et rédigent un rapport \u0001 un verdict, les meilleurs choix et les sources."
+            "q": "Que fait Product Compare Team ?",
+            "a": "Un acheteur décrit son besoin et son budget. Neuf spécialistes IA valident le brief avec lui, lisent deux boutiques en ligne, retrouvent le même produit dans les deux, comparent les caractéristiques dans les mêmes unités, notent chaque produit avec un script et rédigent un rapport : un verdict, les meilleurs choix et les sources."
           },
           {
-            "q": "Pour qui \u0001",
-            "a": "Une boutique, un service achats ou un service de comparaison. La même forme convient à d'autres comparaisons \u0001 des offres de fournisseurs, des abonnements logiciels, des formations."
+            "q": "Pour qui ?",
+            "a": "Une boutique, un service achats ou un service de comparaison. La même forme convient à d'autres comparaisons : des offres de fournisseurs, des abonnements logiciels, des formations."
           },
           {
-            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé \u0001",
-            "a": "Rien n'est simulé. Les éclaireurs lisent les pages publiques des boutiques au moment de l'exécution \u0001 les prix et les produits sont ceux publiés à cet instant. La démonstration est écrite pour deux boutiques des États-Unis et fonctionne en anglais. Si une boutique change ses pages, un éclaireur peut ne rien trouver."
+            "q": "Qu'est-ce qui est réel, qu'est-ce qui est simulé ?",
+            "a": "Rien n'est simulé. Les éclaireurs lisent les pages publiques des boutiques au moment de l'exécution : les prix et les produits sont ceux publiés à cet instant. La démonstration est écrite pour deux boutiques des États-Unis et fonctionne en anglais. Si une boutique change ses pages, un éclaireur peut ne rien trouver."
           },
           {
-            "q": "Comment l'essayer \u0001",
-            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Shopping Lab, le Template de cette solution, depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Exécution et demandez un produit avec un budget. Neuf membres travaillent l'un après l'autre \u0001 une exécution dure plusieurs minutes et fait plus d'appels au modèle qu'une simple question."
+            "q": "Comment l'essayer ?",
+            "a": "Démarrez l'essai de 14 jours (sans carte) et connectez votre modèle d'IA avec votre propre clé. Ajoutez Shopping Lab, le Template de cette solution, depuis le guide de bienvenue, ouvrez-le dans Studio > Agents & Workflows, passez en Exécution et demandez un produit avec un budget. Neuf membres travaillent l'un après l'autre : une exécution dure plusieurs minutes et fait plus d'appels au modèle qu'une simple question."
           }
         ],
         "note": "La démonstration lit deux magasins en ligne. Ajoutez un éclaireur, et l'équipe en couvre un de plus.",
@@ -3244,7 +3244,7 @@
             }
           ]
         },
-        "meta_title": "Product Compare Team \u0001 une IA qui compare les produits entre magasins | Agentivity"
+        "meta_title": "Product Compare Team : une IA qui compare les produits entre magasins | Agentivity"
       },
       {
         "slug": "cv-screener",
@@ -8149,7 +8149,7 @@
         "People (HR)": "Pour les personnes qui recrutent de nouveaux collègues et les accueillent.",
         "Marketing": "Pour les personnes qui font les images, les publications et les campagnes.",
         "Operations": "Pour les personnes qui gèrent le stock, la production et les expéditions.",
-        "Personal & fun": "Pour votre temps libre \u0001 voyages, entraînement, repas et jeux.",
+        "Personal & fun": "Pour votre temps libre : voyages, entraînement, repas et jeux.",
         "Creators": "Pour les personnes qui font des vidéos, des podcasts et des newsletters."
       },
       "cards": {
@@ -8178,7 +8178,7 @@
           "type": "Une automatisation"
         },
         "contract-checker": {
-          "line": "Les contrats fournisseurs vérifiés selon vos règles \u0001 le juridique décide.",
+          "line": "Les contrats fournisseurs vérifiés selon vos règles : le juridique décide.",
           "type": "Un agent"
         },
         "trip-planner": {
@@ -8223,7 +8223,7 @@
     },
     "built_for": {
       "eyebrow": "Pour qui",
-      "h2": "Est-ce pour vous \u0001",
+      "h2": "Est-ce pour vous ?",
       "h2_accent": "Choisissez votre chemin.",
       "company_link": "Voir toute une entreprise IA au travail",
       "company_href": "/fr/blog/ai-company-observation"
@@ -8236,7 +8236,7 @@
       "primary_href": "/fr/start?plan=pro",
       "secondary": "Ou décrivez la vôtre à l'Assistant",
       "secondary_href": "/fr/assistant",
-      "services": "Un projet plus large dans votre organisation \u0001",
+      "services": "Un projet plus large dans votre organisation ?",
       "services_link": "Découvrir nos services",
       "services_href": "/fr/services"
     }
@@ -9741,7 +9741,7 @@
           "gain": "Un voyage entier, préparé par une équipe.",
           "body": "Une phrase suffit. Un Trip Manager fait appel aux spécialistes dont le voyage a besoin, et le voyageur choisit chaque partie. Une démonstration : rien n'est vraiment réservé ni payé.",
           "points": [
-            "Treize spécialistes",
+            "Une équipe de 13",
             "Dans votre propre app",
             "Le voyageur choisit"
           ],
@@ -10838,12 +10838,12 @@
     "_comment": "The Solutions pages by who the visitor is (KB-0320, plan of 2026-11-09), English only. Texts v1.1 of Content & CRO (2026-11-09), not reviewed yet. For companies is the Desk page (/desk).",
     "builders": {
       "meta": {
-        "title": "Livrez automatisation et IA à vos clients | Agentivity",
+        "title": "Livrez des automatisations et de l'IA à vos clients | Agentivity",
         "description": "Construisez une fois automatisations, agents IA et équipes d'agents IA, gardez chaque client dans son propre espace, et donnez à ses équipes une application ou un portail. Essai de 14 jours, sans carte."
       },
       "hero": {
         "eyebrow": "Freelances et agences",
-        "h1": "Livrez automatisations et IA à vos clients,",
+        "h1": "Livrez des automatisations et de l'IA à vos clients,",
         "h1_accent": "sous votre nom.",
         "sub": "Construisez une fois automatisations, agents IA et équipes d'agents IA, gardez chaque client dans son propre espace, et donnez à ses équipes une application ou un portail qu'elles peuvent utiliser.",
         "cta": "Démarrer l'essai",
