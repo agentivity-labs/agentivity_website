@@ -57,6 +57,15 @@ A role is a list of rights. **Roles** shows every role and what it lets a person
 | **Operator** | Use what is built: read the library and the data, read and start executions, make API keys. |
 | **Reader** | Look: read the library, the data and the executions. |
 
+Two more roles belong to the help desk of the Desk, and are made in every workspace. They give no other right, and no administration:
+
+| Role | What it lets a person do |
+|---|---|
+| **Helpdesk agent** | Answer what the people of the Desk ask, for their teams, and pass to the support of Agentivity what is beyond them. |
+| **Helpdesk lead** | Lead the help desk: see every request, set its teams, its categories and its saved replies, and answer like an agent. |
+
+See [Run the help desk](/docs/desk/run-the-help-desk/).
+
 Each person sees only the executions they started, whatever their role. The right "See and act on the executions others started" lifts that: the Administrator has it, and you can give it to a role of your own.
 
 Select **New role** to make your own: give it a name and tick the rights it holds. A default role that you delete does not come back. When you delete a role that people hold, the Studio asks you to choose a role to put in its place (**Delete and replace**).

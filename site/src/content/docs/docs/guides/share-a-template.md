@@ -55,7 +55,7 @@ What the Solutions share is carried once. Every Solution keeps its Solution mark
 
 On a hosted workspace, you can publish your Templates in the catalogue of the marketplace, under a name of your own.
 
-1. Open **Templates**. At the top, a switch has two views: **Catalogue**, and **Mine**.
+1. Open **Templates**. At the top, a switch has two views: **All**, and **Mine**.
 2. In **Mine**, the first time, choose **the name you publish under**: your name, or your company's, and your website if you want. People see it on your Templates. It is yours alone: nobody else can publish under it. **Change name** lets you change it.
 3. Select **Publish a file…**, or select **Publish** in the window **Create a Template**.
 4. The header says "You publish as" followed by your name. It says either that what you publish is in the catalogue at once, or that it is reviewed before it goes online.
@@ -66,6 +66,20 @@ Each Template of yours shows its state: **Online**, **Out of the catalogue**, **
 - **Delete** removes a Template of yours for good, also one already out of the catalogue.
 
 You need to be signed in, with an e-mail address on your account. Publishing is open to the hosted workspaces of Agentivity.
+
+## Keep your Template up to date
+
+Your Solution changes after you published its Template. In **Mine**, a pencil appears on the card of your Template when you point at it: **Edit this Template**. It opens the same window as when you made it, on the version that is online.
+
+- The window says what changed in the workspace since: "Your workspace has a newer version of it". Taking it in is your choice: select **Update the Template with these changes** to carry the new state of the Solution, its agents, its teams, its workflows and its tables. Otherwise the Template keeps what it holds now, and only its words and its picture change.
+- Select **Publish the update**. It goes out as the next version, with its picture.
+- If the Solution is not in this workspace, or the Template does not say which Solution it was made from, only its words and its picture can be changed, not what it holds.
+
+A Template that you publish or delete shows at once in the Studio.
+
+### The cover
+
+The cover tells what the Template changes: the problem it takes away and the result it gives, as a before and an after. Its ground is a colour you choose, as everywhere else in the Studio: from the palettes, with the picker, or by its hex code. The deep blue of the site is the default. Drawing a cover needs an OpenAI account: add a connection to OpenAI in **Administration** › **Credentials**.
 
 ## The Knowledge Bases in a Template
 

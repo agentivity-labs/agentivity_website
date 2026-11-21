@@ -24,7 +24,10 @@ Every request you make is a conversation. After a few weeks you have many. The D
 | **Recent** | Your latest conversations. |
 | **All conversations** | Every conversation of yours, with its search. |
 | **Archived (n)** | The conversations you put away. It shows as soon as you archived one. |
-| **Getting started** | Just above your name: the welcome of the Desk again. |
+| **Help** | Your requests to the help desk of your company, when it has one. A number says how many answers you have not read. See [Ask for help in the Desk](/docs/desk/ask-for-help-in-the-desk/). |
+| **Getting started** | Just above your account: the welcome of the Desk again. |
+
+A dot on the right of a name says that something waits for you. Under the pointer, it says what: for a cockpit, how many of its conversations wait for your answer.
 
 Select the title **Cockpits**, **Groups** or **Recent** to fold it, and again to open it. Your browser remembers how you left them. A done conversation untouched for 30 days leaves **Recent** by itself and stays in **All conversations**.
 

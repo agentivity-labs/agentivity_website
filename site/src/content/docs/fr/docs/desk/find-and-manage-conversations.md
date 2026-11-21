@@ -24,7 +24,10 @@ Chaque demande que vous faites est une conversation. Après quelques semaines, e
 | **Recent** | Vos dernières conversations. |
 | **All conversations** | Toutes vos conversations, avec leur recherche. |
 | **Archived (n)** | Les conversations que vous avez mises de côté. Il apparaît dès que vous en avez archivé une. |
-| **Getting started** | Juste au-dessus de votre nom : l'accueil du Desk, à revoir. |
+| **Help** | Vos demandes au help desk de votre entreprise, quand elle en a un. Un nombre dit combien de réponses vous n'avez pas lues. |
+| **Getting started** | Juste au-dessus de votre compte : l'accueil du Desk, à revoir. |
+
+Un point à droite d'un nom dit que quelque chose vous attend. Sous le pointeur, il dit quoi : pour un cockpit, combien de ses conversations attendent votre réponse.
 
 Sélectionnez le titre **Cockpits**, **Groups** ou **Recent** pour replier la rubrique, et à nouveau pour l'ouvrir. Votre navigateur se souvient de la façon dont vous les avez laissées. Une conversation terminée qu'on n'a pas touchée depuis 30 jours quitte **Recent** toute seule et reste dans **All conversations**.
 

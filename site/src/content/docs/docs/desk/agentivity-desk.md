@@ -27,11 +27,13 @@ You build agents, teams and workflows in the Studio. The people who need their w
 | **Answer** | When a Solution needs a decision or an approval, the conversation waits under **Waiting for you**. See [Answer what waits for you](/docs/desk/answer-what-waits-for-you/). |
 | **Find and keep order** | Search, group, archive and share their conversations. See [Find and manage your conversations](/docs/desk/find-and-manage-conversations/). |
 | **Start from their department** | The cockpit of a department is its starting page. See [Build a cockpit](/docs/desk/build-a-cockpit/). |
+| **Ask for help** | When a Solution gives a wrong answer, or they need an access or a new Solution, they ask the help desk of their company. See [Ask for help in the Desk](/docs/desk/ask-for-help-in-the-desk/). |
 
 ## What a builder does for the Desk
 
 1. [Set up the Desk](/docs/desk/set-up-the-desk/): one card guides you through the first steps.
 2. [Publish Solutions to the Desk](/docs/desk/publish-solutions-to-the-desk/): choose what your colleagues can start.
+3. [Run the help desk](/docs/desk/run-the-help-desk/): answer what they ask when something goes wrong.
 3. [Give the Desk your brand](/docs/desk/brand-your-desk/): name, colour, logo and a welcome line.
 4. [Invite people on a Desk seat](/docs/desk/seats-and-rights-of-the-desk/): who can do what.
 5. [Build a cockpit](/docs/desk/build-a-cockpit/) for each department, with its [blocks](/docs/desk/cockpit-blocks/) and its [layout and look](/docs/desk/lay-out-and-style-a-cockpit/). Some [ideas by department](/docs/desk/cockpit-examples/).

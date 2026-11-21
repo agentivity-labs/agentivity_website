@@ -26,7 +26,7 @@ This page is for the people who use the Desk. It follows one request, from the q
 | **Recent** | Your latest conversations, those that wait for you first, each with where it stands. Above them, how many wait for you, are in progress and are done this week. **All conversations** opens the whole list. |
 | **Favorites** | The Solutions you starred. Choose one, and it is the one asked. |
 | **Popular in your company** | The Solutions most started this week by the people of your workspace, among those you can see, five at most. A star beside each one adds it to your favorites. |
-| **Time saved** | The time your Solutions saved you this week and this year, the last 14 days, and where it came from. It stays empty until they have done some work for you. |
+| **Time saved** | One line: the time your Solutions saved you this week and this year, and where most of it came from. It stays empty until they have done some work for you. |
 
 ## Ask for work
 

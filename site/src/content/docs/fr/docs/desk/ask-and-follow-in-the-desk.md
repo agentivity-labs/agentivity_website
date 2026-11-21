@@ -26,7 +26,7 @@ Cette page est pour les personnes qui utilisent le Desk. Elle suit une demande, 
 | **Recent** | Vos dernières conversations, celles qui vous attendent d'abord, chacune avec où elle en est. Au-dessus, combien vous attendent, sont en cours et sont terminées cette semaine. **All conversations** ouvre toute la liste. |
 | **Favorites** | Les Solutions que vous avez marquées d'une étoile. Choisissez-en une : c'est celle à qui l'on demande. |
 | **Popular in your company** | Les Solutions les plus lancées cette semaine par les personnes de votre espace de travail, parmi celles que vous voyez, cinq au plus. Une étoile à côté de chacune l'ajoute à vos favoris. |
-| **Le temps gagné** | Le temps que vos Solutions vous ont fait gagner cette semaine et cette année, les 14 derniers jours, et d'où il vient. Il reste vide tant qu'elles n'ont pas travaillé pour vous. |
+| **Le temps gagné** | Une ligne : le temps que vos Solutions vous ont fait gagner cette semaine et cette année, et d'où vient l'essentiel. Elle reste vide tant qu'elles n'ont pas travaillé pour vous. |
 
 ## Demander du travail
 
