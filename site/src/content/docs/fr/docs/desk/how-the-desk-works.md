@@ -59,7 +59,7 @@ L'exécution est aussi dans **Executions** dans le Studio, où une personne qui 
 ## Chacun son Desk
 
 - Personne ne voit les conversations d'une autre personne, sauf celles partagées avec elle.
-- Les titres, les épingles, les archives et les groupes sont à vous. Sur une conversation partagée, chacun garde les siens.
+- Les titres, les archives et les groupes sont à vous. Sur une conversation partagée, chacun garde les siens.
 - Tout ce que le Desk montre se met à jour tout seul, sans recharger la page.
 
 ## Étape suivante

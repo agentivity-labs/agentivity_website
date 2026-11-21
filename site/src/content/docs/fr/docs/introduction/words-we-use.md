@@ -37,8 +37,8 @@ Voici les mots que vous rencontrez dans le Studio et dans ces pages, expliqués 
 |---|---|
 | **Studio** | L'éditeur visuel d'Agentivity, dans votre navigateur. |
 | **Workspace** (espace de travail) | Tout ce que contient une installation : vos agents, équipes, workflows, tables et réglages. |
-| **Assistant** | La partie du Studio qui construit un agent, une équipe ou un workflow à partir de votre description. |
-| **Draft** (brouillon) | Ce que l'Assistant a construit et que vous n'avez pas encore enregistré. |
+| **Winston** | La partie du Studio qui construit un agent, une équipe ou un workflow à partir de votre description. |
+| **Draft** (brouillon) | Ce que Winston a construit et que vous n'avez pas encore publié. |
 | **Canvas** (canevas) | La zone d'un éditeur où un agent, une équipe ou un workflow est dessiné. |
 | **Publish** | Le bouton qui enregistre vos modifications dans un éditeur. |
 

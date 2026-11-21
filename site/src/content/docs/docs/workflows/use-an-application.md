@@ -76,6 +76,30 @@ These steps are in the category **Email sending**. A send only says the e-mail w
 | **Postmark** | Send an e-mail, written here or from a template. List the sent messages, the bounces and the templates. | The connection takes the API token of one server. |
 | **Mailgun** | Send an e-mail, written here or from a template. List the domains. Add or update a member of a mailing list. | The connection takes an API key, the sending domain (`mg.acme.co`) and the region (`us`, or `eu` when you open Mailgun at app.eu.mailgun.com). |
 
+### Spreadsheets and databases
+
+These steps are in the category **Spreadsheets and databases**, beside Airtable and [Google Sheets](/docs/workflows/use-google-sheets-and-google-calendar/). Adding, changing and deleting rows are changes: an agent does them only when you allow them on its tool.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **Supabase** | List tables. List rows (with PostgREST's filters, columns and order), insert (or upsert), update, delete rows. Call a function. | It uses the same Supabase connection as the Supabase storage node: the address of the project and an API key. A **secret key** (`sb_secret_…`) reaches every table; a publishable or anon key reaches only what the row level security of the tables allows. Filters are written as PostgREST's: `status=eq.active&age=gte.18`. An update or a delete needs a filter. It changes one row at most, unless you give a higher number: a filter written too wide changes nothing and says so. It works on supabase.co, or on a Supabase of your own reachable on the public web. It has no trigger: Supabase makes its webhooks in its dashboard or in SQL only. |
+| **Baserow** | List tables and fields. List rows (search, filters, order, view), read, create, create many, update, delete. | The connection takes a database token, with the tables and permissions it is given. It works on baserow.io, or on a Baserow of your own reachable on the public web. Rows are read and written by field name. It has no trigger: a database token cannot make a webhook in Baserow. |
+| **NocoDB** | List bases and tables. List records (filter, order), read, create, create or update, update, delete. | The connection takes an API token. The triggers need its webhooks permission. It works on app.nocodb.com, or on a NocoDB of your own reachable on the public web. Filters are written as NocoDB's: `(Status,eq,Lead)~and(Age,gte,18)`. |
+| **Coda** | List docs and tables. List rows (by the value of a column), read, add or update (by key columns), update, delete, push a button. | The connection takes an API token, which can be limited to some docs or tables. Coda now calls itself Superhuman Docs; its API is the same. Coda applies a change a few seconds after the step ends. **Push button** does what the maker of the doc set the button to do. It has no trigger: Coda has no webhooks for a change. |
+| **SmartSuite** | List solutions and tables. List records (filter, order), read, create, update, delete. | The connection takes the API key of a user and the ID of the workspace; it acts as that user. Values are given by the slug of each field, which **Table: list** shows. SmartSuite takes five calls a second at most. |
+
+### Product analytics
+
+These steps are in the category **Product analytics**. Sending events and setting the properties of a person are changes: an agent does them only when you allow them on its tool.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **PostHog** | Run a query in HogQL. List insights and people. List feature flags, evaluate one for a person. Capture an event. | The connection takes a personal API key with its scopes, and the ID of the project. The token of the project (`phc_…`) is also needed to capture events or evaluate flags. It works on PostHog's US cloud (the default), on its EU cloud (give `eu.posthog.com` as the host), or on a PostHog of your own reachable on the public web. **Run HogQL** lets an agent answer questions on the use of the product in PostHog's SQL. It gives 100 rows unless the `LIMIT` of the query says more. |
+| **Mixpanel** | List event names, today's top events, count an event (or segment it by a property), send an event. Read an Insights report. List and read funnels. Find a profile, read its activity, set its properties. | The connection takes a service account (username and secret), the ID of the project and its data residency (`us`, `eu` or `in`). The token of the project is also needed to set profiles. Mixpanel answers 60 queries an hour per project. When no days are given, a count covers the last 30 days. It has no trigger: its webhooks are made in its own settings only. |
+| **Plausible** | List sites. Query the stats (metrics, broken down, filtered), see the visitors now. Send an event. | The connection takes a Stats API key, a Business plan feature. It works on plausible.io, or on a Plausible of your own reachable on the public web. The period is `day`, `7d`, `30d`, `month`, `year`, or two days. An event sent from a workflow counts as a visitor's: the server's. It has no trigger: Plausible's alerts are e-mails. |
+| **Amplitude** | List and count events (segmented), send an event. Count active users, find a user, read their activity, set their properties. Read a chart. | The connection takes the API key and the secret key of the project, and the region (`us` or `eu`). When no days are given, a count covers the last 30 days. **Find** gives the Amplitude ID of a user, which **Read activity** takes. It has no trigger: its webhooks are made in its own settings only. |
+| **Umami** | List websites. Summary of the stats, pageviews by day, the top (pages, sources, countries…), the visitors now. Send an event. | The connection takes an API key. It works on Umami Cloud, or on an Umami of your own reachable on the public web. When no days are given, the stats cover the last 30 days. It has no trigger: Umami has no webhooks. |
+
 ### Tables and payments
 
 The payment steps are in the category **Payments**. **A refund is made only by a step of a workflow, never by an agent:** Mollie and PayPal never offer a refund to an agent, even when changes are allowed on its tool.
@@ -89,12 +113,14 @@ The payment steps are in the category **Payments**. **A refund is made only by a
 
 ### Accounting and banking
 
-These steps are in the category **Accounting and banking**.
+These steps are in the category **Accounting and banking**, which also holds quotes. **Making an invoice, and writing the answer of a customer to a quote (accepted or refused), are made only by a step of a workflow, never by an agent.**
 
 | Application | What you can do | Worth knowing |
 |---|---|---|
 | **Pennylane** | List and read customer invoices, create a draft, finalize it, mark it as paid. List customers, create a company or a person. List supplier invoices, products and bank transactions. | The connection takes a company API token (Essential plan or higher). Choose **Read and write** to draft invoices or add customers. Prices on an invoice line are before tax, and the VAT rate is given by its code: `FR_200` is 20 %. A draft gets its number when it is finalized. |
 | **Qonto** | List the bank accounts, with their balances. List transactions (money in or out, since a date, or those without a receipt), read one, attach a receipt to it. List labels and members. | **Qonto never moves money here.** It reads the accounts and attaches receipts; transfers stay in Qonto, where they are approved. The connection takes the login of the organization and its secret key. A receipt is given by its public address (PDF, JPEG or PNG). |
+| **Sellsy** | List, read and create companies. List and create contacts. List, read and create quotes, and change the status of one (a step only). List and read invoices, and create one (a step only). List opportunities. | The connection takes a personal API client (client ID and secret), made on Sellsy's Developer page. It acts as you. Setting the status of a quote to "sent" only marks it so: Sellsy does not e-mail it. The lines of a quote take one tax for all, given by its ID in Sellsy. It has no trigger: Sellsy's webhooks can be made by its API, but how it signs their calls is not documented. |
+| **Axonaut** | List, read and create companies. List and create contacts. List, read and create quotes, and mark one accepted or refused (a step only). List and read invoices, and create one (a step only). List payments. | The connection takes the API key of the account (**Settings** › **API**), which reaches the whole account. It has no trigger: Axonaut's webhooks are made in its own settings only. |
 
 ### Projects and tasks
 
@@ -122,13 +148,18 @@ These steps are in the category **Accounting and banking**.
 
 ### Customer support
 
-These steps are in the category **Customer support**.
+These steps are in the category **Customer support**. Replying to a customer, writing in a chat, closing or resolving a conversation are changes: an agent does them only when you allow them on its tool.
 
 | Application | What you can do | Worth knowing |
 |---|---|---|
 | **Zendesk** | List, search (with Zendesk's search, up to 1,000 results), read, create, update and delete tickets. Reply or add a note, and list the comments of a ticket. Search, read and create people. | The connection asks for the account (`acme` for acme.zendesk.com), the e-mail address of the agent and an API token. The tags set by **Update** replace the tags the ticket has. |
 | **Freshdesk** | List, search (with Freshdesk's query language, up to 300 results), read (with its conversation), create, update and delete tickets. Reply or add a note. List, find (by e-mail or phone), read, create and update contacts. | The connection asks for the help desk (`acme` for acme.freshdesk.com) and the API key of the agent. The list of tickets covers the last 30 days unless you give a date. It has no trigger. |
 | **Intercom** | Search, read, create (a user or a lead) and update contacts, and add a note. Search (by state), read, reply to, add a note to, assign and close conversations. List teammates. | The token is the access token of an app, from Intercom's Developer Hub. Replies, notes, assignments and closings are written as a teammate, chosen from a list. The connection asks for the region of the workspace: US (the default), EU or Australia. It has no trigger. |
+| **Help Scout** | List conversations (of a mailbox, by status, with Help Scout's search), read one with its threads, create one, reply, add a note, change the status. List customers or find one by e-mail. List mailboxes. | The connection takes an app of your own (**Your Profile** › **My apps**): its App ID and App Secret. Agentivity asks Help Scout for a token with them, and again when it ends, every two days. What it does is written as the user of the app: replies and notes are yours. A reply goes to the customer of the conversation by e-mail, and can close the conversation at once. |
+| **Crisp** | List conversations (those not resolved, or by words), read one and its messages, send a message (to the visitor, or a note), change the state (resolve). Read and create people. | The connection takes a workspace API token, made by the owner of the workspace (its identifier and its key), and the website ID. If the token has an IP allowlist, the address of this instance must be on it. It has no trigger: Crisp's webhooks are made in its own settings, or through a Crisp plugin. |
+| **Gorgias** | List tickets, read one with its messages, create one, reply (by e-mail, or as an internal note), update (close, reopen, priority, tags). List customers or find one by e-mail, create one. | The connection takes the account (`acme` for acme.gorgias.com), the e-mail address of an admin and their API key. Replies are written as that person and sent by e-mail to the customer of the ticket. |
+| **Front** | List conversations (by status), search (with Front's search), read one and its messages, update (archive, reopen, assign), comment, reply. List contacts and teammates. | The connection takes an API token made by an admin, with the scopes of what it does (read, write, send). A reply archives the conversation unless **Keep the conversation open** is set. It has no trigger: Front's webhooks are made in its own settings only. |
+| **LiveChat** | List the chats going on now, search past chats (by words, between two days), read one, send a message (to the customer, or to agents only), end a chat. | The connection takes the Account ID and a personal access token, from LiveChat's Developer Console. For an account hosted in Europe, give `fra` as the region. The triggers also need the Client ID of an app made in the Developer Console, because LiveChat's webhooks belong to an app. Messages are written as the agent of the token. |
 
 ### E-commerce
 
@@ -156,6 +187,44 @@ These steps are in the category **CMS**, named **Sites and the content they publ
 | **Dropbox** | List a folder, search, read the details of a file or a folder, read a text file, upload (a text, or a file from a public address), create a folder, move or rename, delete, make a share link. | It is connected by **signing in with Dropbox**, with a button, as for [Google](/docs/guides/connect-google/): Agentivity never sees your password, and you can remove its access in Dropbox, under **Settings** › **Connected apps**. When the installation has no Agentivity app for Dropbox, make one in Dropbox's App Console (**Scoped access**) and give its app key and secret in the connection. Its guide gives the permissions and the redirect address. **Read text** reads text files only (`.txt`, `.md`, `.csv`, `.json`…), 2 MB at most: a PDF is read by a Document step. It has no trigger: Dropbox sets its webhooks only in the console of an app. |
 | **Box** | List and create folders. Search files, read their details and their text, upload, make a share link, comment. | The connection is a **Custom App** with Client Credentials Grant (client ID, client secret and enterprise ID), approved by a Box admin. It works as its own service account: share with it the folders it uses. The triggers need the signature keys of the app, from the Developer Console. Box cannot watch the root folder. |
 | **Miro** | List, read and create boards, invite people. List items, add a sticky note, a card or a frame. | The step is in the category **Documents, presentations and whiteboards**. The connection takes the token given by **Install app and get OAuth token** in the Miro app, which must be made with **Expire user authorization token** unticked so that the token lasts. It has no trigger: Miro removed its webhooks on 5 December 2025. |
+
+### Signatures and proposals
+
+These steps are in the category **Signatures and proposals**. Sending a document to be signed, voiding or canceling it, and making a quote are changes: an agent does them only when you allow them on its tool.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **Yousign** | List and read signature requests, send a document for signature, remind the signers, cancel a request. | The connection takes an API key and its environment: `production`, or `sandbox` to try it out. A key reaches its own environment only. Yousign's API needs a Plus, Pro or Scale plan, and its triggers a production key. **Send for signature** fetches the document (PDF or Word) from its address. Each signer gets it by e-mail and signs with a code sent by e-mail. The signature fields go at the foot of the last page, or where the anchors of the document say. Yousign now calls itself Youtrust; its API is the same. |
+| **DocuSign** | List templates. List and read envelopes, send one from a template, send a document, resend, void. | It is connected by **signing in with DocuSign**, with a button, as for [Dropbox](/docs/workflows/use-an-application/#meetings-files-and-boards): Agentivity never sees your password, and you can remove its access in DocuSign, under **My Profile** › **Connected Apps**. Your default account is used, unless you give an account ID. When the installation has no Agentivity app for DocuSign, make one in **Apps and Keys** (its guide gives the redirect address). **Send a document** fetches it from its address; the signers sign in turn, where the document has the anchor text, or where they choose. A DocuSign developer (demo) account cannot be connected. The triggers need an admin of the account and a Connect key made in DocuSign (**Settings** › **Connect** › **Connect Keys**), given on the connection: DocuSign makes none by its API. |
+| **PandaDoc** | List templates. List and read documents, create one from a template (and send it), send one. | The connection takes an API key. A sandbox key marks its documents `[DEV]` and sends them only to e-mail addresses of your own domain. A production key needs PandaDoc's Enterprise plan. A document made from a template takes a few seconds to be ready: **Create** waits for it before sending, when asked to send. |
+
+**How to write the signers and the lines**
+- **Signers and recipients**, one per line: `Anna Lee <anna@acme.co>`. For the role of a template, add it after: `Anna Lee <anna@acme.co> as Client`.
+- **Lines of a quote or an invoice**, one per line: `2 x Consulting day @ 600 (20%)`, that is the quantity, the product, the price before tax and the tax rate. Only the product and the price are needed.
+
+### Development and operations
+
+These steps are in the category **Development and operations**. Running a pipeline, deploying or resolving an incident are changes: an agent does them only when you allow them on its tool.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **GitLab** | List projects. List, read, create, update (or close and reopen) and comment on issues. List, read and comment on merge requests. List and run pipelines. | The connection takes an access token with the **api** scope. It works on gitlab.com, or on a GitLab of your own if it is reachable on the public web: a GitLab on a private network is refused. The triggers need a Maintainer of the project, because they make its webhook. |
+| **Sentry** | List projects. List issues (with Sentry's search), read one, read its latest event with the stack trace, update it (resolve, ignore, assign). | The connection takes the token of an internal integration, the slug of the organization and the region (`us`, or `de` for Europe). A list gives its first page, 100 at most. |
+| **Vercel** | List projects. List, read, redeploy, promote to production and cancel deployments. List the environment variables of a project. | The connection takes an access token, and the ID of the team for a team. Environment variables are listed by name only: their values are never read. The triggers need a Pro or Enterprise plan. |
+| **PagerDuty** | List, read, create, acknowledge and resolve incidents, and add a note. Send an alert. List who is on call, services and users. | The connection takes an API key (full access to change incidents, read-only otherwise), the e-mail address of the PagerDuty user the changes are made as, and the region (`us` or `eu`). **Send an alert** takes the routing key of a service integration: PagerDuty then opens or groups incidents by the rules of the service. |
+| **Bitbucket** | List repositories. List, read, create and comment on pull requests. List and run pipelines. | The connection takes an access token of a workspace or a repository, because app passwords no longer exist, and the slug of the workspace. The token needs the scopes of what it does, with webhooks for the triggers. |
+
+### People and recruiting
+
+These steps are in the category **People and recruiting**. They hold the data of employees and candidates. **An agent reads by default and changes nothing unless you allow it on its tool. Disqualifying a Workable candidate is made only by a step of a workflow, never by an agent.** Lucca only reads.
+
+| Application | What you can do | Worth knowing |
+|---|---|---|
+| **Lucca** | List and read people. List absences (of some people or a department, between two days) and leave requests. List departments and legal entities. | It only reads: nothing is changed in Lucca. The connection takes an API key and the account (`acme` for acme.ilucca.net). In Lucca, the role of the key says what it may read: give it the **Directory** and **Absences**. It has no trigger yet: Lucca's newer API, which has webhooks, gives no absences. |
+| **BambooHR** | List the directory, read, create and update employees. List time-off requests, see who is out, request time off. List jobs and applications. | The connection takes an API key and the domain of the company (`acme` for acme.bamboohr.com). The triggers need a user allowed to manage webhooks. |
+| **Personio** | List people or find one by e-mail, read. List absences and their kinds, request an absence. List applications. | The connection takes API credentials (client ID and secret) with the access of what they do. Personio gives a token that lasts a day, and Agentivity asks for a new one by itself. |
+| **Greenhouse** | List candidates or find one by e-mail, read, create (with their application to a job, or as a prospect), add a note. List applications and move them. List jobs and users. | The connection takes **Harvest V3** credentials (client ID and secret). To write notes and moves as a person rather than as the integration, give the Greenhouse ID of that user too. Greenhouse's older Harvest API, with a key, was removed in August 2026. A list gives its first page, 500 at most. It has no trigger: Greenhouse sets its webhooks only in its own settings. |
+| **Workable** | List jobs. List, read, create, move and comment on candidates, and disqualify one (a workflow step only). List members. | The connection takes an access token and the account (`acme` for acme.workable.com). A change, such as a move or a comment, is written as a member, given by their ID from **List members**. A candidate you add is "sourced", with no e-mail to them, unless you say "as if they applied". |
 
 ### Forms and bookings
 

@@ -32,16 +32,16 @@ Recorded from the product, played faster.
 
 ## Import a solution
 
-From the welcome guide:
+From the Studio:
 
-1. Open the [welcome guide](/docs/getting-started/welcome-guide/) and go to the step **First team**.
-2. On the card of the solution, select **Add it**. The window **Import a Template** opens. It shows the name of the Template, its version and author, what you get, and where it goes.
+1. In the menu on the left, select **Templates**. At the end of the [welcome guide](/docs/getting-started/welcome-guide/), **Start from a Template** opens the same section.
+2. Select the card of the solution, then **Import**. The window **Import a Template** opens. It shows the name of the Template, its version and author, what you get, and where it goes.
 
 ![The window Import a Template for Trip Manager Team: its picture, its version and author, its description, "What you get" (1 team, 13 agents, 2 data tables), "Where it goes" with the folder Top level, and the buttons Choose another file, Cancel and Import](images/import-a-template.jpg)
 
 3. Select **Import**.
 4. Wait for the message **Template imported**. It says "is in your library" and counts what was created, for example "16 new items, ready to use": 1 team, 13 agents and 2 data tables.
-5. Select **Open Trip Manager Team**, the button of the message, to open it in its editor. In the guide there is only **Close**: the guide goes on.
+5. Select **Open Trip Manager Team**, the button of the message, to open it in its editor.
 
 ![The message Template imported: Trip Manager Team is in your library, 16 new items, with 1 team, 13 agents and 2 data tables, a green line that says which model credentials the agents now use, and the buttons Close and Open Trip Manager Team](images/template-imported.jpg)
 
@@ -76,4 +76,4 @@ For **Trip Manager Team**, you see the manager, a larger dark hexagon, at the to
 
 ## Next step
 
-[Run a team and read its work](/docs/teams/run-a-team/), with the team you just imported. Or [build your own team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+[Run a team and read its work](/docs/teams/run-a-team/), with the team you just imported. Or [build your own team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).

@@ -75,4 +75,4 @@ Pour **Trip Manager Team**, vous voyez le manager en haut et ses spécialistes e
 
 ## Étape suivante
 
-[Lancer une équipe et lire son travail](/fr/docs/teams/run-a-team/), avec l'équipe que vous venez d'importer. Ou [construisez votre propre équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).
+[Lancer une équipe et lire son travail](/fr/docs/teams/run-a-team/), avec l'équipe que vous venez d'importer. Ou [construisez votre propre équipe avec Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).

@@ -33,7 +33,7 @@ No. It takes the repetitive work and comes back to your people for the decisions
 
 ### Do I need to know how to code?
 
-No, to build. You describe what you need to the Assistant, or you build in the Studio with names, descriptions in plain words, and drag and drop.
+No, to build. You describe what you need to Winston, or you build in the Studio with names, descriptions in plain words, and drag and drop.
 
 Two things need a technical colleague: installing the Community edition on a server, and building an application of your own on top of it.
 

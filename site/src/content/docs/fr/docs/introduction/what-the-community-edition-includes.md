@@ -14,7 +14,7 @@ L'édition Community est l'édition d'Agentivity que vous installez vous-même, 
 ## Ce qui est inclus
 
 - **Le Studio**, l'éditeur visuel dans votre navigateur.
-- **L'Assistant**, qui construit un agent, une équipe ou un workflow à partir de votre description.
+- **Winston**, qui construit un agent, une équipe ou un workflow à partir de votre description.
 - **Les agents**, chacun avec son rôle, ses instructions et son modèle.
 - **Les équipes**, avec les cinq façons de travailler ensemble : Sequential, Concurrent, Handoff, Group Chat et Manager-led. Un membre d'une équipe peut être une autre équipe ou un workflow.
 - **Les workflows**, avec des conditions, des boucles, des étapes qui attendent une personne, et des étapes d'IA.

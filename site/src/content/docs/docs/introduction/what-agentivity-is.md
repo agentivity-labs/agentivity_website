@@ -31,7 +31,7 @@ To choose between them, read [Choose between an agent, a team and a workflow](/d
 
 - **The engine.** The program that runs your agents, teams and workflows. It runs on your own machine or server, with Docker.
 - **The Studio.** The visual editor, in your browser. This is where you build, run and follow everything. See [Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/).
-- **The Assistant.** A part of the Studio that builds for you. You describe what you need in your own words; it asks questions, shows a plan and builds a draft that you check and save.
+- **Winston.** Your AI builder, a part of the Studio that builds for you. You describe what you need in your own words; he asks questions, shows a plan and builds a draft that you check and publish.
 - **Ready-made solutions.** Four showcases that you can import and open, to see how a finished solution is built.
 
 ## Two ways to have it

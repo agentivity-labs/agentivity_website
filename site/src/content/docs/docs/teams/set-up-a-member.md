@@ -26,7 +26,7 @@ The name of a member is shown in the answer of a **Concurrent** team: each answe
 
 A window opens with the name of the member and the line "How this member looks in this team."
 
-The same menu has **Copy**, **Delete**, and two entries that open the Assistant on this member.
+The same menu has **Copy**, **Delete**, and two entries that open Winston on this member.
 
 ## Put members in a group
 

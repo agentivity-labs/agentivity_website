@@ -1,6 +1,6 @@
 ---
 title: "Suivre le guide de bienvenue du Studio"
-description: "La première fois que vous ouvrez le Studio, un court guide vous aide à connecter un modèle d'IA et à essayer une Solution prête à l'emploi. Voici chaque étape."
+description: "La première fois que vous ouvrez le Studio, un court guide vous aide à connecter un modèle d'IA, puis vous dit par où commencer. Voici chaque étape."
 sidebar:
   order: 2
 editUrl: false
@@ -9,32 +9,31 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/fr/getting-started/welcome-guide.md. Do not edit here: edit the source and publish again. -->
 
-La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. Il compte quatre étapes courtes. La liste de gauche montre aussi l'écran d'accueil et l'écran de fin, qui ne sont pas comptés comme des étapes. Vous pouvez passer n'importe quelle étape et y revenir plus tard.
+La première fois que vous ouvrez le Studio, un guide de bienvenue apparaît. En haut, trois repères montrent où vous en êtes : **Welcome**, **Model** et **Ready**. Vous pouvez passer le guide et y revenir plus tard.
 
 ## Ce dont vous avez besoin
 
 - Agentivity qui tourne, avec le Studio ouvert dans votre navigateur. Sinon, commencez par [Installer Agentivity avec Docker](/fr/docs/getting-started/install-community/).
-- Pour l'étape 1, un compte OpenRouter, que vous pouvez créer en chemin, ou une clé API d'un fournisseur de modèles d'IA si vous préférez la vôtre. Une clé API est un code secret qui permet à Agentivity d'utiliser votre compte chez ce fournisseur.
-- Pour l'étape 2, une connexion Internet sur la machine où tourne Agentivity.
+- Pour l'étape **Model**, un compte OpenRouter, que vous pouvez créer en chemin, ou une clé API d'un fournisseur de modèles d'IA si vous préférez la vôtre. Une clé API est un code secret qui permet à Agentivity d'utiliser votre compte chez ce fournisseur. Sur un espace de travail hébergé, vous pouvez aussi avoir un code de crédit IA.
 
 ## Lancer le guide
 
-![Le guide de bienvenue du Studio : la liste des étapes à gauche, de Welcome à You are set, et, à droite, les trois cartes Connect your model, Try a ready-made solution et Take the two-minute tour, avec le bouton Get started](images/welcome-guide.jpg)
+<!-- IMAGE images/welcome-guide.jpg: Le premier écran du guide de bienvenue, avec les trois repères en haut, le titre « Start with one workflow. Grow to a whole AI company. », les boutons Let's start et Not now, et une carte marine qui liste les deux étapes pour démarrer. -->
 
-L'écran de bienvenue montre ce que couvre le guide : **Connect your model**, **Try a ready-made solution** et **Take the two-minute tour**.
+Le premier écran dit « Start with one workflow. Grow to a whole AI company. » Choisissez un travail que vous faites à la main, et ajoutez des agents et des équipes à mesure que le travail grandit : vous gardez la main. Une carte, **Two steps to start**, liste la suite : **Connect a model**, puis **Tell Winston what you want to automate**.
 
-1. Sélectionnez **Get started**.
+1. Sélectionnez **Let's start**.
 
-Si vous préférez d'abord jeter un œil, sélectionnez **Not now** ou **Skip the guide**. Voyez [Rouvrir le guide](#rouvrir-le-guide).
+Si vous préférez d'abord jeter un œil, sélectionnez **Not now**, ou **Skip the guide** en haut à droite. Voyez [Rouvrir le guide](#rouvrir-le-guide).
 
-## Étape 1 : connecter votre modèle d'IA
+## Étape 1 : connecter un modèle d'IA
 
-Vos agents ont besoin d'un modèle d'IA pour réfléchir. L'étape propose deux voies, dans deux cases :
+Winston et vos agents ont besoin d'un modèle d'IA pour réfléchir. L'étape, appelée **One step before you start**, propose deux voies, dans deux cases :
 
 - **One OpenRouter account**, marquée **Recommended** : pas de clé à copier, des modèles de plusieurs fournisseurs, et vous payez ce que vous utilisez. Si vous avez déjà un compte, vous vous connectez simplement.
 - **Use my own key** : pour qui paye déjà un fournisseur d'IA, comme Anthropic ou OpenAI. Vous collez une clé, et Agentivity la vérifie aussitôt.
 
-![L'étape 1 du guide de bienvenue : les deux cases One OpenRouter account, marquée Recommended, et Use my own key, le bouton Connect with OpenRouter et le bouton Skip for now](images/guide-step1-choices.png)
+![L'étape du guide de bienvenue où l'on connecte un modèle : les deux cases One OpenRouter account, marquée Recommended, et Use my own key, le bouton Connect with OpenRouter et le bouton Skip for now](images/guide-step1-choices.png)
 
 ### Avec un compte OpenRouter
 
@@ -46,7 +45,7 @@ Vous pourrez changer de modèle plus tard, dans **Administration** > **Credentia
 
 ### Avec votre propre clé
 
-![L'étape 1 du guide de bienvenue avec votre propre clé : cinq fournisseurs au choix (Claude, GPT, Gemini, Grok, DeepSeek), un champ pour la clé API, et les boutons Check the key et Skip for now](images/guide-step1.jpg)
+![L'étape du guide de bienvenue avec votre propre clé : cinq fournisseurs au choix (Claude, GPT, Gemini, Grok, DeepSeek), un champ pour la clé API, et les boutons Check the key et Skip for now](images/guide-step1.jpg)
 
 1. Sélectionnez **Use my own key**, puis choisissez votre fournisseur : **Claude**, **GPT**, **Gemini**, **Grok** ou **DeepSeek**. **Back to the choices** revient aux deux cases.
 2. Collez votre clé API dans le champ, puis sélectionnez **Check the key**. Agentivity demande au fournisseur si la clé fonctionne. Rien n'est encore enregistré. Si le fournisseur refuse la clé, son message s'affiche.
@@ -55,47 +54,27 @@ Vous pourrez changer de modèle plus tard, dans **Administration** > **Credentia
 
 La clé est stockée sur votre serveur et n'est plus jamais affichée.
 
+Sur un espace de travail hébergé, une troisième voie peut être proposée : **I have an AI credit code**. Collez le code qu'on vous a donné et sélectionnez **Use the code** : Agentivity paie les appels au modèle, jusqu'au crédit du code, et la connexion est faite aussitôt. La clé qui se cache derrière le code reste chez Agentivity.
+
 Pour le faire plus tard, sélectionnez **Skip for now**. Si vous lancez un chat ou une exécution sans modèle connecté, le Studio propose les deux mêmes choix dans une fenêtre : rien n'est perdu. La page [Connecter un modèle d'IA](/fr/docs/guides/connect-a-model/) explique la voie de la clé personnelle en détail.
-
-## Étape 2 : essayer une première Solution
-
-Une solution, c'est ce que vous lancez pour qu'un besoin soit pris en charge de bout en bout. Cette étape propose des Solutions prêtes à l'emploi : vous en voyez une fonctionner avant de construire quoi que ce soit. Chaque carte indique ce que contient la Solution, par exemple « 1 team · 13 agents · 2 data tables ».
-
-![L'étape 2 du guide de bienvenue, Try a first solution : les cartes CV Screening, Invoice Clerk, Shopping Lab et Trip Manager Team, chacune avec son contenu et un lien Try it](images/four-showcases.jpg)
-
-1. Sur la carte de la Solution qui vous intéresse, sélectionnez **Try it**. La fenêtre **Import a Template** s'ouvre. Un Template est un fichier unique qui contient une Solution et tout ce dont elle a besoin.
-2. Sélectionnez **Import**.
-3. Quand **Template imported** s'affiche, sélectionnez **Open it** pour ouvrir la Solution dans son éditeur, ou **Close** pour rester dans le guide.
-
-L'import crée de nouvelles copies dans votre espace de travail. Rien de ce que vous avez déjà n'est modifié.
-
-Les Solutions prêtes à l'emploi sont téléchargées depuis le catalogue de Templates d'Agentivity, par Internet. Si le catalogue est injoignable, le guide vous le signale et vous laisse continuer. Vous pourrez importer des Templates plus tard, dans la section **Templates**.
-
-Pour plus de détails, lisez [Essayer une Solution prête à l'emploi](/fr/docs/getting-started/try-a-ready-made-solution/).
-
-## Étape 3 : regarder l'introduction
-
-Une courte vidéo montre ce que vous pouvez construire et par où commencer. Vous pouvez la passer.
-
-## Étape 4 : rester informé
-
-Vous pouvez donner votre adresse e-mail pour recevoir les nouvelles d'Agentivity : nouveaux Templates et nouvelles versions. Cette étape est facultative. Pour vous abonner, cochez la case pour donner votre accord, puis sélectionnez **Subscribe**. Vous recevez un seul e-mail de confirmation, et vous pouvez vous désabonner à tout moment.
 
 ## Comment savoir que ça marche
 
-Le guide se termine sur l'écran **You are set**. Sélectionnez **Open my workspace** pour aller dans le Studio.
+Le guide se termine sur l'écran **Your workspace is ready.** Il demande « Where would you like to start? » et propose deux cartes : **Tell Winston what you want to automate** (il construit le déclencheur, les étapes, les agents et les équipes, et qui valide) et **Start from a Template** (des workflows, des agents et des équipes prêts à adapter). Sélectionnez **Open my workspace** pour aller dans le Studio. Si vous avez passé le modèle, l'écran dit d'en connecter un d'abord : Winston et vos agents en ont besoin pour travailler.
+
+La première fois, une courte visite du Studio suit. Elle montre, un écran à la fois, ce qu'est le Studio, puis les workflows, les agents, les équipes, les connexions, Winston et le Desk avec ses cockpits. La visite se rouvre depuis **Getting started**, dans le menu de gauche, juste au-dessus de votre nom.
 
 ## Rouvrir le guide
 
-Ce que vous avez passé n'est pas perdu. Dans le Studio, sélectionnez **Getting started**, en bas du menu de gauche. Le guide s'ouvre à nouveau.
+Ce que vous avez passé n'est pas perdu. La visite du Studio se rouvre avec **Getting started**, dans le menu de gauche, juste au-dessus de votre nom. Le guide de démarrage lui-même reste dans le menu de votre compte, sous votre nom.
 
 ## Si ça ne marche pas
 
 - **La fenêtre d'OpenRouter ne s'ouvre pas.** Votre navigateur a bloqué la fenêtre. Autorisez les fenêtres pour cette page, puis sélectionnez **Try again**.
 - **« Paste your API key first. »** Le champ de la clé est vide.
 - **La clé est refusée.** Le Studio affiche le message de votre fournisseur.
-- **« The marketplace could not be reached. »** La machine où tourne Agentivity n'a pas accès au catalogue de Templates. Vérifiez sa connexion Internet, ou passez l'étape et importez un Template plus tard à partir d'un fichier.
+- **« Choose the model your agents will use. »** Choisissez un modèle dans la liste avant de sélectionner **Save**.
 
 ## Étape suivante
 
-[Vous repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/), puis [construire votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).
+[Vous repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/), puis [construire votre première équipe avec Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).

@@ -54,7 +54,7 @@ Vous pouvez ajouter ou modifier une connexion à tout moment :
 1. Dans le Studio, ouvrez **Settings**, puis **Credentials**.
 2. Sélectionnez **New credentials**. La fenêtre **New connection** demande « What do you want to connect to? »
 3. Sélectionnez **AI models**, puis votre fournisseur.
-4. Remplissez le formulaire et enregistrez. Le formulaire est le même partout : ici, quand vous copiez une connexion, et quand l'Assistant vous en demande une.
+4. Remplissez le formulaire et enregistrez. Le formulaire est le même partout : ici, quand vous copiez une connexion, et quand Winston vous en demande une.
 
 Vous pouvez garder plusieurs connexions, par exemple une par fournisseur, et choisir sur laquelle tournent vos agents.
 
@@ -93,8 +93,8 @@ Chaque champ est vérifié pendant que vous tapez, et le problème s'affiche sou
 - **Le Studio refuse d'enregistrer et nomme le champ « Model ».** Le modèle est obligatoire : choisissez-le dans la liste, ou tapez son ID.
 - **Un message sous un champ.** La valeur n'est pas valide : une adresse doit commencer par `https://` ou `http://`, et un champ numérique doit contenir un nombre. Corrigez le champ, et le message disparaît.
 
-- **« The model did not answer »**, avec un message qui parle d'une connexion SSL, quand un agent ou l'Assistant tourne. La machine où tourne Agentivity n'arrive pas à établir une connexion sécurisée avec le fournisseur. Cela arrive quand un antivirus ou un proxy d'entreprise inspecte le trafic Internet de cette machine. Voyez [Si un antivirus bloque les connexions d'Agentivity](/fr/docs/guides/if-an-antivirus-inspects-your-connections/).
+- **« The model did not answer »**, avec un message qui parle d'une connexion SSL, quand un agent ou Winston tourne. La machine où tourne Agentivity n'arrive pas à établir une connexion sécurisée avec le fournisseur. Cela arrive quand un antivirus ou un proxy d'entreprise inspecte le trafic Internet de cette machine. Voyez [Si un antivirus bloque les connexions d'Agentivity](/fr/docs/guides/if-an-antivirus-inspects-your-connections/).
 
 ## Étape suivante
 
-[Construisez votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/), ou [essayez d'abord une Solution prête à l'emploi](/fr/docs/getting-started/try-a-ready-made-solution/).
+[Construisez votre première équipe avec Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/), ou [essayez d'abord une Solution prête à l'emploi](/fr/docs/getting-started/try-a-ready-made-solution/).

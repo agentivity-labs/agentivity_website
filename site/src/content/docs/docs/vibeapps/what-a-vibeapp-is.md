@@ -69,7 +69,7 @@ Shopping Lab shows the first way. A shopper asks for headphones. Nine specialist
 ## What is true behind it
 
 - **The people stay in charge.** The team proposes, and the application stops and asks each time a choice belongs to the person.
-- **You change the work without a developer.** The team is built and changed in the Studio, in plain words and by drag and drop. The Assistant creates and changes a team from a description. The application stays the same.
+- **You change the work without a developer.** The team is built and changed in the Studio, in plain words and by drag and drop. Winston creates and changes a team from a description. The application stays the same.
 - **Your server and your keys.** The Community edition runs on your own server, and you bring your own key from your AI model provider.
 - **Real work, with people deciding.** The other showcases, Invoice Clerk and CV Screening, show teams that do the work and leave the key decisions to a person.
 

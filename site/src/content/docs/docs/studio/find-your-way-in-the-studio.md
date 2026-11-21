@@ -26,7 +26,7 @@ Under the logo, the **Space** switcher says which space you work in: see [People
 | Entry | What you do there |
 |---|---|
 | **Home** | See what is running and what is waiting for you, and start something new. |
-| **Assistant** | Describe what you need in your own words. The Assistant builds an agent, a team or a workflow as a draft. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/). |
+| **Winston** | Describe what you need in your own words. Winston, your AI builder, builds an agent, a team or a workflow as a draft. See [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/). |
 | **Templates** | Ready-made solutions to import, and **Import from file** for a Template you received. |
 | **Studio** > **Agents & Workflows** | The list of your agents, your teams and your workflows. Open one to change it or to run it. |
 | **Studio** > **Prompts** | The prompts you write and test. A prompt is the text of instructions that is sent to an AI model. |
@@ -37,39 +37,37 @@ Under the logo, the **Space** switcher says which space you work in: see [People
 
 If you do not know the difference between an agent, a team and a workflow, read [Choose between an agent, a team and a workflow](/docs/introduction/agent-team-or-workflow/).
 
+Just above that card, **Getting started** opens a short tour of the Studio again: what it is, then workflows, agents, teams, connections, Winston and the Desk.
+
 At the bottom of the menu, a card shows your name and your edition (for example **Business · Owner**). Select it to open your account menu:
 
 - **Your account**: see [Your account](/docs/administration/your-account-and-api-keys/);
 - **Appearance**: the sun and the moon switch between a light and a dark screen, and a list changes the accent colour;
-- **Getting started** opens the [welcome guide](/docs/getting-started/welcome-guide/) again;
+- **Setup guide** opens the [welcome guide](/docs/getting-started/welcome-guide/) again;
 - **Sign out**, on a workspace that asks for a sign-in.
 
 ## The home page
 
-The home page is the first screen of the Studio. It greets you by your first name ("Good morning, Alex") and says in one sentence what the week looked like, for example "Your workspace ran 2 executions this week and saved about 15 minutes. One thing waits for you." It lets you start something new, and it shows what your workspace did recently.
+The home page is the first screen of the Studio. It greets you by your first name ("Good morning, Alex") and asks first what you want to do.
 
-### The two buttons
+### What do you want to automate?
 
-At the top right:
+When Winston is available, a field asks "Describe the job… we'll build the team, agent or workflow". Write the job in your own words and select the arrow: a conversation with Winston begins, and he chooses what it becomes. See [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
-- **Ask the Assistant** opens the Assistant, to build from a description. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+### The buttons
+
+- **Ask Winston**, at the top right, opens Winston, to build from a description.
 - **New** opens a menu: **Agent**, **Team** or **Workflow**. Each one asks for a name.
-
-### The four cards
-
-| Card | What it does |
-|---|---|
-| **A workflow** | Asks for a name, then opens a new workflow in its editor. See [Create a workflow](/docs/workflows/create-a-workflow/). |
-| **An agent** | Asks for a name, then opens a new agent in its editor. See [Create an agent](/docs/agents/create-an-agent/). |
-| **A team** | Asks for a name, then asks how the members work together. See [Create a team of agents](/docs/teams/create-a-team/). |
-| **From a template** | Opens the [Templates screen](/docs/studio/templates/). |
+- On a line, the ways to make something by hand: **Agent**, **Team**, **Workflow** (see [Create a workflow](/docs/workflows/create-a-workflow/), [Create an agent](/docs/agents/create-an-agent/) and [Create a team of agents](/docs/teams/create-a-team/)), and **From a template**, which opens the [Templates screen](/docs/studio/templates/).
 
 ### The counters
 
 | Counter | What it counts |
 |---|---|
-| **Executions this week**, **Executions this year** | The number of executions of your agents, teams and workflows. |
+| **Plan used** | On a hosted workspace, how much of the executions of the plan the month used, and when it starts again. It shows to the people who manage the plan. |
 | **Saved this week**, **Saved this year** | An estimate of the time these executions saved, in minutes. |
+| **Waiting for you** | What waits for your answer, with a way to the questions. |
+| **Executions this week**, **Executions this year** | The number of executions of your agents, teams and workflows. |
 
 ### The recent activity
 
@@ -78,7 +76,9 @@ At the top right:
 
 ### Active & needs attention
 
-This block lists the executions that are in progress and the executions that need you. A running execution and a failed one carry a label, **Running** or **Failed**. An execution that waits for a person has the button **Answer**, which opens it so that you can reply. When there is nothing, it says "Nothing running and nothing waiting on you right now." For the complete list, open the [Executions screen](/docs/studio/executions/).
+This block lists the executions that are in progress and the executions that need you. The executions of one same agent, team or workflow make one row, with how many wait for you, failed or are running. A row says what it is about, taken from what started it, the question it waits on and how many, or why it failed. Its button **Answer** opens that execution so that you can answer. A switch shows all of them, the **Questions**, the **Failed** ones or the **Running** ones.
+
+Of what failed, the home keeps the last seven days. Older failures are found in **Executions**.
 
 ## The list of agents and teams
 
@@ -109,8 +109,8 @@ When you open an agent or a team, its editor takes the place of the list. Every 
 
 ## How to know it worked
 
-You can open **Home**, **Assistant**, **Studio** > **Agents & Workflows** and **Administration** from the menu, and each one shows the screen described above.
+You can open **Home**, **Winston**, **Studio** > **Agents & Workflows** and **Administration** from the menu, and each one shows the screen described above.
 
 ## Next step
 
-[Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/), or [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/) first.
+[Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/), or [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/) first.

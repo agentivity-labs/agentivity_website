@@ -13,7 +13,7 @@ A team is several agents that work together on one request. This page builds a t
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/teams/images/create-a-team.mp4" aria-label="A recording of the Studio: a team named Payment Reminders is created, Use Sequential is chosen, two agents are found with Add member and dragged onto the canvas, and the team is published"></video>
 
-Recorded from the product, played faster. To have a team built from a description instead, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+Recorded from the product, played faster. To have a team built from a description instead, read [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
 ## What you need
 
@@ -74,7 +74,7 @@ Publish before you leave the editor. The team editor does not ask you to save wh
 ## If it does not work
 
 - **"Team name is required."** The name field is empty.
-- **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with the Assistant.
+- **The list of members is empty.** You have no agent yet. Import a ready-made solution, or build agents with Winston.
 - **Publish cannot be selected.** There is nothing new to save.
 - **The menu entry Agents & Workflows does nothing.** You are in an editor of that section. Select the house at the left of the path, or **Home**, first, then **Studio** > **Agents & Workflows**.
 - **A Manager-led team refuses to run.** It needs a member at the top position, which is the manager, and at least one worker below. See [Choose how a team works together](/docs/teams/choose-how-a-team-works/).

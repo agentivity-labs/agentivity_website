@@ -13,7 +13,7 @@ Une équipe IA fait le travail répétitif. Les décisions restent les vôtres. 
 
 ## Quand vous construisez
 
-- **L'Assistant travaille sur un brouillon.** Ce qu'il construit n'est pas dans votre espace de travail tant que vous n'avez pas sélectionné **Save**. Avant d'enregistrer, vous voyez ce qui sera ajouté et où cela ira. Si vous supprimez le brouillon, rien ne change dans votre espace de travail.
+- **Winston travaille sur un brouillon.** Ce qu'il construit n'est pas dans votre espace de travail tant que vous n'avez pas sélectionné **Publish**. Avant de publier, vous voyez ce qui sera ajouté et où cela ira. Si vous supprimez le brouillon, rien ne change dans votre espace de travail.
 - **Vous publiez vous-même vos modifications.** Dans un éditeur, une modification est enregistrée quand vous sélectionnez **Publish**.
 
 ## Quand une solution tourne

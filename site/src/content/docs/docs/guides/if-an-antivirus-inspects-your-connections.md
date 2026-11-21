@@ -13,7 +13,7 @@ Some antivirus programs and company proxies read your secure internet connection
 
 ## What you see
 
-- In the Studio, an agent or the Assistant stops with **The model did not answer**, with a text about an SSL connection.
+- In the Studio, an agent or Winston stops with **The model did not answer**, with a text about an SSL connection.
 - The check of your key says that the provider could not be reached, although your browser reaches it: **Check the key** in the welcome guide, or the button **Test** of a connection.
 - The list of models stays empty. You can still type the ID of your model by hand, but the agents will not run until the certificate is trusted.
 - In the logs (`docker logs agentivity`): "The SSL connection could not be established".

@@ -14,7 +14,7 @@ The Community edition is the edition of Agentivity that you install yourself, on
 ## What is included
 
 - **The Studio**, the visual editor in your browser.
-- **The Assistant**, which builds an agent, a team or a workflow from your description.
+- **Winston**, your AI builder, who builds an agent, a team or a workflow from your description.
 - **Agents**, each with its role, its instructions and its model.
 - **Teams**, with the five ways of working together: Sequential, Concurrent, Handoff, Group Chat and Manager-led. A member of a team can be another team or a workflow.
 - **Workflows**, with conditions, loops, steps that wait for a person, and AI steps.

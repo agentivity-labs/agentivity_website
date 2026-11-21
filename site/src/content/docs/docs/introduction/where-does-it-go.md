@@ -59,11 +59,11 @@ A Vector Store is never the way to give an agent its knowledge. Give it a Knowle
 
 The Prompts library is a workbench. You write a prompt, try it, improve it. No step and no agent reads it: when it is good, you copy it where it is used. See [What Prompt Studio is for](/docs/prompts/what-prompt-studio-is/). Not to be confused with the step **LLM Prompt**, which is a step of a workflow, with a prompt written in it.
 
-## What the Assistant does
+## What Winston does
 
-The Assistant of the Studio follows the same rules when it builds a solution for you. It puts rows in a Data Table, texts in a Knowledge Base, and the conversation in a session. It never uses a Vector Store for what an agent must know.
+Winston follows the same rules when he builds a solution for you. He puts rows in a Data Table, texts in a Knowledge Base, and the conversation in a session. He never uses a Vector Store for what an agent must know.
 
-The Assistant cannot create a Knowledge Base. When your texts are in no base yet, it tells you which base to create and what it should read, and it plugs the base in once it exists. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/).
+Winston cannot create a Knowledge Base. When your texts are in no base yet, he tells you which base to create and what it should read, and he plugs the base in once it exists. See [What a Knowledge Base is for](/docs/knowledge-bases/what-a-knowledge-base-is/).
 
 ## Go further
 

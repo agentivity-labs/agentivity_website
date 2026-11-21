@@ -1,6 +1,6 @@
 ---
 title: "Workspace panes: credentials, data and network"
-description: "The panes of the group Workspace. Credentials, AI Assistant, Voice dictation, Configurations, Place and time, Data to export or import, Network and Desk."
+description: "The panes of the group Workspace. Credentials, Winston, Voice dictation, Configurations, Place and time, Data to export or import, Network and Desk."
 sidebar:
   order: 4
 editUrl: false
@@ -15,9 +15,9 @@ The group **Workspace** of [Administration](/docs/administration/what-administra
 
 The keys and accounts that your agents, teams and workflows connect with: an AI model, a mailbox, a search service. The pane is the one described in [The Settings screen](/docs/studio/settings-theme-and-controls/) and in [Manage credentials](/docs/guides/manage-credentials/). When spaces are on, a credential is for **Every space** or **Only in** one space.
 
-## AI Assistant
+## Winston
 
-The model that the [Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/) thinks with. It uses one of your model connections, and that provider bills it. **Automatic**, the default, takes the first model connection of **Credentials** that holds a key. Choose a connection in the list to keep it.
+The model that [Winston, your AI builder,](/docs/getting-started/build-your-first-team-with-the-assistant/) thinks with. It uses one of your model connections, and that provider bills it. **Automatic**, the default, takes the first model connection of **Credentials** that holds a key. Choose a connection in the list to keep it.
 
 ## Voice dictation
 

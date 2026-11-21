@@ -115,14 +115,14 @@ When the agent is a member of a team, its named outputs are seen by the next mem
 
 From Claude 4.7 on, the models of Anthropic no longer use the creativity setting (the temperature): the value of this setting is ignored, with no error. Agentivity adapts its requests to each generation of Claude model, and there is nothing to set.
 
-## Ask the Assistant to improve the instructions
+## Ask Winston to improve the instructions
 
 1. Right-click the box **AI Agent**.
 2. Select **Improve its instructions…**
 
-![The menu of the AI Agent node: Explain with the assistant, Improve with the assistant, Improve its instructions, Edit, Inspect, Duplicate, Copy and Delete](images/agent-menu.jpg)
+![The menu of the AI Agent node: Explain with Winston, Improve with Winston, Improve its instructions, Edit, Inspect, Duplicate, Copy and Delete](images/agent-menu.jpg)
 
-The Assistant reviews the instructions and makes them clearer and more precise, keeping what they are meant to do. It works on a draft: nothing changes until you save.
+Winston reviews the instructions and makes them clearer and more precise, keeping what they are meant to do. He works on a draft: nothing changes until you publish.
 
 ## How to know it worked
 

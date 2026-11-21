@@ -25,7 +25,7 @@ You build agents, teams and workflows in the Studio. The people who need their w
 |---|---|
 | **Ask for work** | Describe what they need in the field of the home, or type **@** to choose whom to ask. See [Ask for work and follow it](/docs/desk/ask-and-follow-in-the-desk/). |
 | **Answer** | When a Solution needs a decision or an approval, the conversation waits under **Waiting for you**. See [Answer what waits for you](/docs/desk/answer-what-waits-for-you/). |
-| **Find and keep order** | Search, group, pin, archive and share their conversations. See [Find and manage your conversations](/docs/desk/find-and-manage-conversations/). |
+| **Find and keep order** | Search, group, archive and share their conversations. See [Find and manage your conversations](/docs/desk/find-and-manage-conversations/). |
 | **Start from their department** | The cockpit of a department is its starting page. See [Build a cockpit](/docs/desk/build-a-cockpit/). |
 
 ## What a builder does for the Desk

@@ -26,7 +26,7 @@ Also in this section: [how a person stays in control](/docs/introduction/how-a-p
 1. [Install Agentivity with Docker](/docs/getting-started/install-community/): run the free Community edition on your own machine or server.
 2. [Follow the welcome guide](/docs/getting-started/welcome-guide/): the four short steps you see the first time you open the Studio.
 3. [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/): import a showcase and see how it is built.
-4. [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/): describe what you need and get a draft.
+4. [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/): describe what you need and get a draft.
 
 ## Build, one block at a time
 

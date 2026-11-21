@@ -47,7 +47,7 @@ Un espace de travail compte jusqu'à 30 cockpits.
 
 Un nouveau cockpit part de l'accueil du Desk. Modifiez-le, puis publiez-le. D'ici là, il indique **Not published** : personne ne le voit dans le Desk.
 
-Dans la liste, le menu d'un cockpit propose **Open the designer** (pour y revenir plus tard), **See it in the Desk**, **Move up**, **Move down**, **Take it off the Desk** et **Delete**. **Move up** et **Move down** fixent l'ordre des cockpits dans la barre latérale du Desk.
+Dans la liste, le menu d'un cockpit propose **Open the designer** (pour y revenir plus tard), **See it in the Desk**, **Move up**, **Move down**, **Take it off the Desk** et **Delete**. **Move up** et **Move down** fixent l'ordre des cockpits dans la barre latérale du Desk. Vous pouvez aussi glisser une carte à la place d'une autre : le Desk liste les cockpits dans cet ordre.
 
 ## Le designer
 

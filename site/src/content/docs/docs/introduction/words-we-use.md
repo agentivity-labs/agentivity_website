@@ -37,8 +37,8 @@ These are the words you meet in the Studio and in these pages, in plain terms.
 |---|---|
 | **Studio** | The visual editor of Agentivity, in your browser. |
 | **Workspace** | Everything one installation holds: your agents, teams, workflows, tables and settings. |
-| **Assistant** | The part of the Studio that builds an agent, a team or a workflow from your description. |
-| **Draft** | What the Assistant has built and you have not saved yet. |
+| **Winston** | Your AI builder: the part of the Studio that builds an agent, a team or a workflow from your description. |
+| **Draft** | What Winston has built and you have not published yet. |
 | **Canvas** | The area of an editor where an agent, a team or a workflow is drawn. |
 | **Publish** | The button that saves your changes in an editor. |
 

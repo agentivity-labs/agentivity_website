@@ -47,7 +47,7 @@ Above the canvas, a small bar has four buttons: **Run**, **Pause**, **Resume** a
 | Button | What it does |
 |---|---|
 | The box | Opens **Create a Template**, to pack what you are editing into one file. |
-| The sparkle | Opens the Assistant on what you are editing. |
+| The sparkle | Opens Winston on what you are editing. |
 
 ## The panel on the right
 
@@ -68,9 +68,9 @@ Right-click an element of the canvas. The menu has, depending on the element:
 
 | Entry | What it does |
 |---|---|
-| **Explain with the assistant** | Asks the Assistant what this element does. |
-| **Improve with the assistant…** | Asks the Assistant to change it. |
-| **Improve its instructions…** | For an agent: asks the Assistant to make its instructions clearer. |
+| **Explain with Winston** | Asks Winston what this element does. |
+| **Improve with Winston…** | Asks Winston to change it. |
+| **Improve its instructions…** | For an agent: asks Winston to make its instructions clearer. |
 | **Edit** | Opens the settings of the element. |
 | **Inspect...** | Opens the inspection of the element. |
 | **Duplicate**, **Copy** | Make a copy. |

@@ -26,7 +26,7 @@ Dans cette section aussi : [comment une personne garde la main](/fr/docs/introdu
 1. [Installer Agentivity avec Docker](/fr/docs/getting-started/install-community/) : lancez l'édition Community gratuite sur votre machine ou votre serveur.
 2. [Suivre le guide de bienvenue](/fr/docs/getting-started/welcome-guide/) : les quatre courtes étapes que vous voyez la première fois que vous ouvrez le Studio.
 3. [Essayer une Solution prête à l'emploi](/fr/docs/getting-started/try-a-ready-made-solution/) : importez une démonstration et voyez comment elle est construite.
-4. [Construire votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/) : décrivez votre besoin et obtenez un brouillon.
+4. [Construire votre première équipe avec Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/) : décrivez votre besoin et obtenez un brouillon.
 
 ## Construire, une brique à la fois
 

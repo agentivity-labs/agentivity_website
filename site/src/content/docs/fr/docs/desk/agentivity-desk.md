@@ -25,7 +25,7 @@ Vous construisez des agents, des équipes et des workflows dans le Studio. Les p
 |---|---|
 | **Demande du travail** | Elle décrit ce qu'il lui faut dans le champ de l'accueil, ou tape **@** pour choisir à qui demander. Voyez [Demander du travail et le suivre](/fr/docs/desk/ask-and-follow-in-the-desk/). |
 | **Répond** | Quand une Solution a besoin d'une décision ou d'une validation, la conversation attend sous **Waiting for you**. Voyez [Répondre à ce qui vous attend](/fr/docs/desk/answer-what-waits-for-you/). |
-| **Retrouve et range** | Elle cherche, groupe, épingle, archive et partage ses conversations. Voyez [Retrouver et gérer vos conversations](/fr/docs/desk/find-and-manage-conversations/). |
+| **Retrouve et range** | Elle cherche, groupe, archive et partage ses conversations. Voyez [Retrouver et gérer vos conversations](/fr/docs/desk/find-and-manage-conversations/). |
 | **Part de son département** | Le cockpit d'un département est sa page de départ. Voyez [Construire un cockpit](/fr/docs/desk/build-a-cockpit/). |
 
 ## Ce que fait une personne qui construit pour le Desk

@@ -33,7 +33,7 @@ Agents need an AI model to think with. Agentivity does not provide one. You have
 
 ![Step 1 of the welcome guide, Connect your AI model: five providers to choose from (Claude, GPT, Gemini, Grok, DeepSeek), a field for the API key, and the buttons Check the key and Skip for now](images/guide-step1.jpg)
 
-1. Open the Studio. In the welcome guide, go to **Step 1 of 3** and select **Use my own key** (the other box is **One OpenRouter account**).
+1. Open the Studio. In the welcome guide, go to the step **Model** and select **Use my own key** (the other box is **One OpenRouter account**).
 2. Choose your provider.
 3. Paste your API key, then select **Check the key**. Agentivity asks the provider whether the key works. This costs nothing, and nothing is saved yet. A key that the provider refuses shows the message of the provider.
 4. Choose the **model**. It is required. The list holds the models that your key can use, and you can type in it to filter it. If the list could not be loaded (a network problem, or a limit of your provider), type the ID of the model yourself.
@@ -52,7 +52,7 @@ You can add or change a connection at any time:
 1. In the Studio, open **Administration**, then **Credentials**.
 2. Select **New credentials**. The window **New credentials** asks "Which service are they for?"
 3. Select **AI models**, then your provider.
-4. Fill in the form and save. The form is the same everywhere: here, when you copy a connection, and when the Assistant asks you for one.
+4. Fill in the form and save. The form is the same everywhere: here, when you copy a connection, and when Winston asks you for one.
 
 You can keep several connections, for example one per provider, and choose which one your agents run on.
 
@@ -91,8 +91,8 @@ Each field is checked while you type, and the problem is shown under the field:
 - **The Studio refuses to save and names the field "Model".** The model is required: choose it in the list, or type its ID.
 - **A message under a field.** The value is not valid: an address must start with `https://` or `http://`, and a numeric field must hold a number. Correct the field, and the message goes away.
 
-- **"The model did not answer"**, with a message about an SSL connection, when an agent or the Assistant runs. The machine where Agentivity runs cannot make a secure connection to the provider. This happens when an antivirus or a company proxy inspects the internet traffic of that machine. See [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/).
+- **"The model did not answer"**, with a message about an SSL connection, when an agent or Winston runs. The machine where Agentivity runs cannot make a secure connection to the provider. This happens when an antivirus or a company proxy inspects the internet traffic of that machine. See [If an antivirus blocks the connections of Agentivity](/docs/guides/if-an-antivirus-inspects-your-connections/).
 
 ## Next step
 
-[Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/), or [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/) first.
+[Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/), or [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/) first.

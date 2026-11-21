@@ -59,7 +59,7 @@ The execution is also in **Executions** in the Studio, where a builder can follo
 ## Each person has their own Desk
 
 - Nobody sees the conversations of another person, except those shared with them.
-- Titles, pins, archives and groups are yours. On a shared conversation, each person keeps their own.
+- Titles, archives and groups are yours. On a shared conversation, each person keeps their own.
 - Everything the Desk shows updates by itself, without reloading the page.
 
 ## Next step

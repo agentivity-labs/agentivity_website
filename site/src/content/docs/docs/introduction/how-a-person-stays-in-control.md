@@ -13,7 +13,7 @@ An AI team does the repetitive work. The decisions stay with you. This page list
 
 ## When you build
 
-- **The Assistant works on a draft.** What it builds is not in your workspace until you select **Save**. Before you save, you see what will be added and where it will go. If you remove the draft, nothing in your workspace changes.
+- **Winston works on a draft.** What he builds is not in your workspace until you select **Publish**. Before you publish, you see what will be added and where it will go. If you remove the draft, nothing in your workspace changes.
 - **You publish your changes yourself.** In an editor, a change is saved when you select **Publish**.
 
 ## When a solution runs

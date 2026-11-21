@@ -22,14 +22,15 @@ Cette page est pour les personnes qui utilisent le Desk. Elle suit une demande, 
 
 | Partie | Ce que c'est |
 |---|---|
-| **Le champ pour demander** | Au-dessus, le mot d'accueil de votre entreprise. Décrivez ce qu'il vous faut, ou tapez **@** pour choisir à qui demander. Vous pouvez aussi dicter, et ajouter une image quand vous demandez à un agent. |
-| **Les suggestions** | Des demandes à lancer d'un clic. |
-| **Waiting for you** | Les questions que vos Solutions vous posent, et les décisions qu'elles attendent. |
-| **Le temps gagné** | Le temps que vos équipes vous ont fait gagner cette semaine et cette année, les 14 derniers jours, et d'où il vient. Il reste vide tant qu'elles n'ont pas travaillé pour vous. |
+| **Le champ pour demander** | Au-dessus, le mot d'accueil de votre entreprise, « What do you need today? ». Décrivez ce qu'il vous faut, ou tapez **@** pour choisir à qui demander. Vous pouvez aussi dicter, et ajouter une image quand vous demandez à un agent. |
+| **Recent** | Vos dernières conversations, celles qui vous attendent d'abord, chacune avec où elle en est. Au-dessus, combien vous attendent, sont en cours et sont terminées cette semaine. **All conversations** ouvre toute la liste. |
+| **Favorites** | Les Solutions que vous avez marquées d'une étoile. Choisissez-en une : c'est celle à qui l'on demande. |
+| **Popular in your company** | Les Solutions les plus lancées cette semaine par les personnes de votre espace de travail, parmi celles que vous voyez, cinq au plus. Une étoile à côté de chacune l'ajoute à vos favoris. |
+| **Le temps gagné** | Le temps que vos Solutions vous ont fait gagner cette semaine et cette année, les 14 derniers jours, et d'où il vient. Il reste vide tant qu'elles n'ont pas travaillé pour vous. |
 
 ## Demander du travail
 
-1. Dans le champ de l'accueil, décrivez ce qu'il vous faut. Tapez **@** pour choisir la Solution à qui demander. Un bouton sous le champ nomme la Solution qui sera sollicitée : sélectionnez-le pour ouvrir **Who do you ask?**, une fenêtre où vous cherchez les Solutions par leur nom ou par ce qu'elles font.
+1. Dans le champ de l'accueil, décrivez ce qu'il vous faut. Tapez **@** pour choisir la Solution à qui demander. Un bouton sous le champ nomme la Solution qui sera sollicitée : sélectionnez-le pour ouvrir **Who do you ask?**, une fenêtre où vous cherchez les Solutions par leur nom ou par ce qu'elles font. Elle montre d'abord vos favoris, puis les Solutions utilisées récemment, puis les autres par cockpit, avec une ligne sur ce que fait chacune. Une étoile à côté d'une Solution l'ajoute à vos favoris ou l'en retire.
 2. Envoyez. Une conversation s'ouvre et commence avec votre premier message. Un workflow n'a qu'une entrée : ce que vous tapez le démarre, et répond à sa première question quand c'est tout ce qu'il demande. Il n'y a pas de bouton Start.
 3. Suivez le travail à mesure qu'il avance. La Solution demande ce dont elle a besoin en chemin : une question, un choix, une validation.
 4. Répondez dans la zone sous la conversation. Elle dit à qui vous parlez : l'agent, l'équipe ou le workflow.

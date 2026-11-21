@@ -15,7 +15,9 @@ The Studio, the SDKs and your own applications talk to an Agentivity server thro
 
 ## Before you call the API
 
-- **There is no sign-in.** Anyone who can reach the server can call every route. See [Keep your server private](/docs/guides/keep-your-server-private/).
+- **On a Community server, there is no sign-in.** Anyone who can reach the server can call every route. See [Keep your server private](/docs/guides/keep-your-server-private/).
+- **On a hosted workspace, a key is required.** Send an API key (`agv_…`) with each call, either as `Authorization: Bearer <key>` or as `x-api-key: <key>`. A key works only in its own space, and only for what its permissions allow: **Run** (start executions and follow them), **Assets** (Data Tables and their rows) and **MCP**. See [API keys](/docs/administration/api-keys/).
+- **When a call is refused**, the answer says why: `401` with `invalid_key` (the key is wrong, deleted, renewed or expired), `403` with `key_scope` (the key lacks the permission this route needs) or `403` with `key_solutions` (this route is not open to keys: a key opens only the Solutions it is given and the assets of its space).
 - **A path part between single curly braces is a value to replace**, for example the ID of a run.
 - **A route with no text in the last column has no description in the product yet.**
 - To build an application, use the SDK instead of calling the routes yourself. See [Start with the React SDK](/docs/vibeapps/start-with-the-react-sdk/).

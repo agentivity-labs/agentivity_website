@@ -18,7 +18,7 @@ OpenRouter gives your agents access to models from several providers with one ac
 
 ## Connect your account
 
-1. In the welcome guide, **Step 1 of 3**, keep **One OpenRouter account** and select **Connect with OpenRouter**. If you skipped the guide, select the same button in **Administration** > **Credentials**. When you start a run with no model connected, the Studio offers it in a window.
+1. In the welcome guide, at the step **Model**, keep **One OpenRouter account** and select **Connect with OpenRouter**. If you skipped the guide, select the same button in **Administration** > **Credentials**. When you start a run with no model connected, the Studio offers it in a window.
 2. In the window that opens at OpenRouter, sign up or sign in, then select **Authorize**. If a new account first shows you a key and some code, ignore them and select **Continue** until you see **Authorize**.
 3. The window closes and the Studio says "Connected to OpenRouter. You are ready."
 

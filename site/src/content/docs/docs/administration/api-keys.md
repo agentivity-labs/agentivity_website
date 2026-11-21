@@ -64,7 +64,7 @@ A window shows the key. Put it on the server of the system that uses it, never i
 
 The window then says what to do, depending on the permissions:
 
-- **Run.** Your server sends the key with each call, in the header `Authorization: Bearer <key>`.
+- **Run.** Your server sends the key with each call, in the header `Authorization: Bearer <key>`, or `x-api-key: <key>`.
 - **MCP.** Add the MCP server to your AI assistant with that header. See [Connect an AI assistant](/docs/guides/connect-an-ai-assistant/).
 - **Users, the users of your system.** Your server asks for a token for each of its users, with `POST /api/v1/keys/user-tokens` and `{ userId, name, email }`. Your page gives it to the React SDK, which asks for a new one before it expires.
 - **Users, visitors of a demo.** Your server asks for a visitor token for each new page, with `POST /api/v1/keys/visitors`. Your page gives it to the React SDK, which keeps it between visits.

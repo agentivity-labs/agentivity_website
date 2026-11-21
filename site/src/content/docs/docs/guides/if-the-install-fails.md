@@ -109,9 +109,9 @@ The Studio works, but its screens do not update by themselves, and the chat of a
 
 ## The ready-made solutions do not load
 
-**Message in the welcome guide:** "The marketplace could not be reached."
+**Message in Templates:** "The marketplace could not be reached."
 
-The machine cannot reach the Agentivity marketplace over the internet. You can skip this step and import a Template later.
+The machine cannot reach the Agentivity marketplace over the internet. You can import a Template later, or from a file.
 
 ## Still stuck
 

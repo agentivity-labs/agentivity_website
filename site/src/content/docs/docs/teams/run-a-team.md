@@ -13,7 +13,7 @@ An execution is one request handled by a team, from the task you give to the fin
 
 ## What you need
 
-- A team in your workspace. To get one, [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/), [build one with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/) or [create one by hand](/docs/teams/create-a-team/).
+- A team in your workspace. To get one, [try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/), [build one with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/) or [create one by hand](/docs/teams/create-a-team/).
 - A model connection that works. See [Connect an AI model](/docs/guides/connect-a-model/). Each execution uses the AI model, and your provider bills you for it.
 
 ## Give a task to the team

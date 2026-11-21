@@ -13,7 +13,7 @@ Certains antivirus et proxys d'entreprise lisent vos connexions Internet sécuri
 
 ## Ce que vous voyez
 
-- Dans le Studio, un agent ou l'Assistant s'arrête avec **The model did not answer**, avec un texte qui parle d'une connexion SSL.
+- Dans le Studio, un agent ou Winston s'arrête avec **The model did not answer**, avec un texte qui parle d'une connexion SSL.
 - La vérification de votre clé indique que le fournisseur n'a pas pu être joint, alors que votre navigateur y arrive : **Check the key** dans le guide de bienvenue, ou le bouton **Test** d'une connexion.
 - La liste des modèles reste vide. Vous pouvez quand même taper l'ID de votre modèle à la main, mais les agents ne tourneront pas tant que le certificat n'est pas accepté.
 - Dans les journaux (`docker logs agentivity`) : « The SSL connection could not be established ».

@@ -22,14 +22,15 @@ This page is for the people who use the Desk. It follows one request, from the q
 
 | Part | What it is |
 |---|---|
-| **The field to ask** | Over it, the welcome line of your company. Describe what you need, or type **@** to choose whom to ask. You can also dictate, and add an image when you ask an agent. |
-| **Suggestions** | Requests you can start in one click. |
-| **Waiting for you** | The questions your Solutions ask you, and the decisions they wait for. |
-| **Time saved** | The time your teams saved you this week and this year, the last 14 days, and where it came from. It stays empty until they have done some work for you. |
+| **The field to ask** | Over it, the welcome line of your company, "What do you need today?". Describe what you need, or type **@** to choose whom to ask. You can also dictate, and add an image when you ask an agent. |
+| **Recent** | Your latest conversations, those that wait for you first, each with where it stands. Above them, how many wait for you, are in progress and are done this week. **All conversations** opens the whole list. |
+| **Favorites** | The Solutions you starred. Choose one, and it is the one asked. |
+| **Popular in your company** | The Solutions most started this week by the people of your workspace, among those you can see, five at most. A star beside each one adds it to your favorites. |
+| **Time saved** | The time your Solutions saved you this week and this year, the last 14 days, and where it came from. It stays empty until they have done some work for you. |
 
 ## Ask for work
 
-1. In the field of the home, describe what you need. Type **@** to choose the Solution to ask. A button under the field names the Solution that will be asked: select it to open **Who do you ask?**, a window where you search the Solutions by name or by what they do.
+1. In the field of the home, describe what you need. Type **@** to choose the Solution to ask. A button under the field names the Solution that will be asked: select it to open **Who do you ask?**, a window where you search the Solutions by name or by what they do. It shows your favorites first, then the Solutions you used lately, then the others by cockpit, with a line on what each one does. A star beside a Solution adds it to your favorites or takes it off.
 2. Send it. A conversation opens and starts with your first message. A workflow has one way in: what you type starts it, and answers its first question when that is all it asks. There is no Start button.
 3. Follow the work as it goes. The Solution asks what it needs along the way: a question, a choice, an approval.
 4. Reply in the box under the conversation. It says who you are talking to: the agent, the team or the workflow.

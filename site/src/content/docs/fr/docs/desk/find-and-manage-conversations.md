@@ -1,6 +1,6 @@
 ---
 title: "Retrouver et gérer vos conversations"
-description: "Cherchez, groupez, épinglez, archivez, closez, supprimez et partagez vos conversations dans le Desk, et rangez-les avec vos propres groupes."
+description: "Cherchez, archivez, closez, supprimez et partagez vos conversations dans le Desk, et rangez-les dans vos propres dossiers que vous remplissez en les glissant."
 sidebar:
   order: 9
 editUrl: false
@@ -19,11 +19,12 @@ Chaque demande que vous faites est une conversation. Après quelques semaines, e
 |---|---|
 | **Home** | Le champ pour demander, et ce qui est au-dessus. |
 | **Waiting for you** | Toutes les conversations qui attendent votre réponse. Voyez [Répondre à ce qui vous attend](/fr/docs/desk/answer-what-waits-for-you/). |
-| **Cockpits** | La page de départ de chaque département. |
-| **Groups** | Vos propres groupes de conversations. |
+| **Cockpits** | La page de départ de chaque département, dans l'ordre que lui ont donné les personnes qui gèrent les cockpits. |
+| **Groups** | Vos propres dossiers de conversations. Ouvrez-en un pour lister ses huit dernières conversations, avec **See all** quand il y en a plus. |
 | **Recent** | Vos dernières conversations. |
 | **All conversations** | Toutes vos conversations, avec leur recherche. |
 | **Archived (n)** | Les conversations que vous avez mises de côté. Il apparaît dès que vous en avez archivé une. |
+| **Getting started** | Juste au-dessus de votre nom : l'accueil du Desk, à revoir. |
 
 Sélectionnez le titre **Cockpits**, **Groups** ou **Recent** pour replier la rubrique, et à nouveau pour l'ouvrir. Votre navigateur se souvient de la façon dont vous les avez laissées. Une conversation terminée qu'on n'a pas touchée depuis 30 jours quitte **Recent** toute seule et reste dans **All conversations**.
 
@@ -32,7 +33,7 @@ Sélectionnez le titre **Cockpits**, **Groups** ou **Recent** pour replier la ru
 **All conversations** liste toutes vos conversations, et seulement les vôtres.
 
 - **La recherche.** Elle porte sur les titres et sur ce qui a été dit.
-- **Les filtres.** **Waiting for you**, **In progress**, **Done**, **Stopped**, un par cockpit, et **Pinned**.
+- **Les filtres.** **Waiting for you**, **In progress**, **Done**, **Stopped**, et un par cockpit.
 - **Group by.** Les range par **Solution**, **Cockpit**, **Group**, **Status** ou **Date**.
 - **Plusieurs à la fois.** Cochez plusieurs conversations pour agir sur toutes.
 
@@ -43,7 +44,6 @@ Ouvrez le menu d'une conversation (**More**) :
 | Action | Ce qu'elle fait |
 |---|---|
 | **Rename** | Lui donne un titre à vous, 200 caractères au plus. Vide, elle retrouve ses premiers mots. |
-| **Pin** | La garde en haut. **Unpin** la remet à sa place. |
 | **Put in a group** | La range dans un de vos groupes. |
 | **Archive** | La déplace dans **Archived**. |
 | **Stop** | La conversation travaille encore, ou vous attend. Plus rien n'est fait, et plus rien ne vous y attend. |
@@ -60,16 +60,17 @@ Une conversation archivée ne compte plus dans **Waiting for you**, dans les gro
 
 ## Les groupes
 
-Un groupe est un dossier à vous. Personne d'autre ne le voit.
+Un groupe est un dossier à vous, pour un projet, un client ou un dossier de travail. Personne d'autre ne le voit, et il garde les conversations que vous y mettez, quelle que soit la Solution avec laquelle elles se font.
 
 1. Dans la barre latérale, sélectionnez **+** à côté de **Groups**. La fenêtre **New group** s'ouvre.
-2. Donnez-lui un nom, par exemple `Clôture annuelle`, et une couleur.
-3. Choisissez **Its Solutions** : les conversations de ces Solutions y entrent toutes seules. Ou n'en choisissez aucune, et rangez les conversations à la main avec **Put in a group**.
-4. Sélectionnez **Make the group**.
+2. Donnez-lui un nom, par exemple `Compte Northline`, et une couleur.
+3. Sélectionnez **Make the group**.
 
-Pour le modifier, ouvrez **Edit the group**. **Delete the group** garde ses conversations, sans groupe.
+Ensuite, **glissez des conversations dessus**, dans la barre latérale ou depuis une liste. Cochez plusieurs conversations pour les glisser ensemble. Le Desk dit « Put in … » et propose **Undo**. Une conversation lancée depuis la page d'un groupe entre dans ce groupe.
 
-![La fenêtre New group avec un nom, une couleur et ses Solutions.](images/desk-group.jpg)
+Pour modifier un groupe, ouvrez **Edit the group**. **Delete the group** garde ses conversations, sans groupe.
+
+<!-- IMAGE images/desk-group.jpg: La fenêtre New group avec un nom et une couleur. -->
 
 ## Partager une conversation
 
@@ -80,7 +81,7 @@ Pour le modifier, ouvrez **Edit the group**. **Delete the group** garde ses conv
 
 Sous **Shared with**, chaque collègue apparaît avec **Reads** ou **Reads and replies**. **Stop sharing** à côté d'un nom y met fin. Un collègue quitte une conversation partagée avec **Leave this conversation**.
 
-Les titres, épingles, archives et groupes d'une conversation partagée sont à vous : chacun garde les siens.
+Les titres, archives et groupes d'une conversation partagée sont à vous : chacun garde les siens.
 
 ## Quand une conversation quitte le Desk
 
@@ -88,7 +89,7 @@ Une conversation quitte le Desk quand son agent, son équipe ou son workflow est
 
 ## Comment savoir que ça marche
 
-La conversation apparaît là où vous l'avez mise : dans son groupe, en haut une fois épinglée, ou dans **Archived (n)**.
+La conversation apparaît là où vous l'avez mise : dans son groupe, ou dans **Archived (n)**.
 
 ## Si ça ne marche pas
 

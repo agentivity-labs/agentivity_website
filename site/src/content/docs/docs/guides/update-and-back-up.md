@@ -28,7 +28,7 @@ A Docker volume is a storage space that Docker keeps apart from the container. I
 | Data Tables and their rows | What you see in **Resources** > **Data Tables**. |
 | Knowledge Bases | What you see in **Resources** > **Knowledge Bases**: their source and their settings, and what they hold. |
 | Prompts | What you see in **Studio** > **Prompts**. |
-| The drafts of the Assistant | The conversations of the section **Assistant**. |
+| The drafts of Winston | The conversations of the section **Winston**. |
 | Credentials | Your keys and accounts. |
 
 The backup file holds your credentials. Keep it as carefully as a password.

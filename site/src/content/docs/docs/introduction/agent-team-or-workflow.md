@@ -46,7 +46,7 @@ Choose a workflow when the path must be the same every time, when some steps mus
 | The same steps every time, with rules and approvals | A workflow |
 | Fixed steps, with one step that needs several specialists | A workflow that uses a team |
 
-You do not have to choose alone. The [Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/) proposes an agent, a team or a workflow from your description.
+You do not have to choose alone. [Winston](/docs/getting-started/build-your-first-team-with-the-assistant/) proposes an agent, a team or a workflow from your description.
 
 ## In the Studio
 

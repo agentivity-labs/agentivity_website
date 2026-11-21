@@ -59,11 +59,11 @@ Un Vector Store n'est jamais le moyen de donner ses connaissances à un agent. D
 
 La bibliothèque de Prompts est un atelier. Vous écrivez un prompt, vous l'essayez, vous l'améliorez. Aucune étape et aucun agent ne la lit : quand le prompt est bon, vous le copiez là où il sert. Voyez [À quoi sert Prompt Studio](/fr/docs/prompts/what-prompt-studio-is/). À ne pas confondre avec l'étape **LLM Prompt**, qui est une étape de workflow dans laquelle un prompt est écrit.
 
-## Ce que fait l'Assistant
+## Ce que fait Winston
 
-L'Assistant du Studio suit les mêmes règles quand il construit une solution pour vous. Il met les lignes dans une Data Table, les textes dans une Knowledge Base, et la conversation dans une session. Il n'utilise jamais un Vector Store pour ce qu'un agent doit savoir.
+Winston suit les mêmes règles quand il construit une solution pour vous. Il met les lignes dans une Data Table, les textes dans une Knowledge Base, et la conversation dans une session. Il n'utilise jamais un Vector Store pour ce qu'un agent doit savoir.
 
-L'Assistant ne peut pas créer de Knowledge Base. Quand vos textes ne sont encore dans aucune base, il vous dit quelle base créer et ce qu'elle doit lire, puis il branche la base une fois qu'elle existe. Voyez [À quoi sert une Knowledge Base](/fr/docs/knowledge-bases/what-a-knowledge-base-is/).
+Winston ne peut pas créer de Knowledge Base. Quand vos textes ne sont encore dans aucune base, il vous dit quelle base créer et ce qu'elle doit lire, puis il branche la base une fois qu'elle existe. Voyez [À quoi sert une Knowledge Base](/fr/docs/knowledge-bases/what-a-knowledge-base-is/).
 
 ## Pour aller plus loin
 

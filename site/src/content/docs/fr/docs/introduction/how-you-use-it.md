@@ -1,6 +1,6 @@
 ---
 title: "Trois façons d'utiliser Agentivity"
-description: "Décrivez votre besoin à l'Assistant, construisez à la main dans le Studio, ou mettez-le à disposition d'autres personnes dans une app. Et qui fait quoi."
+description: "Décrivez votre besoin à Winston, construisez à la main dans le Studio, ou mettez-le à disposition d'autres personnes dans une app. Et qui fait quoi."
 sidebar:
   order: 4
 editUrl: false
@@ -18,19 +18,19 @@ Avec Agentivity, il y a deux moments : construire une solution, et l'utiliser. C
 
 Dans une petite entreprise, ce peut être la même personne.
 
-## Façon 1 : le décrire à l'Assistant
+## Façon 1 : le décrire à Winston
 
-Vous dites ce dont vous avez besoin, avec vos mots, comme vous le feriez à un collègue. L'Assistant demande ce qu'il doit savoir, montre un plan, puis construit un brouillon : un agent, une équipe ou un workflow. Vous regardez le brouillon, demandez des modifications, et l'enregistrez quand il vous convient. Rien n'est ajouté à votre espace de travail tant que vous n'avez pas enregistré.
+Vous dites ce dont vous avez besoin, avec vos mots, comme vous le feriez à un collègue. Winston demande ce qu'il doit savoir, montre un plan, puis construit un brouillon : un agent, une équipe ou un workflow. Vous regardez le brouillon, demandez des modifications, et le publiez quand il vous convient. Rien n'est ajouté à votre espace de travail tant que vous n'avez pas publié.
 
 C'est la façon la plus rapide de commencer, et elle ne demande aucune connaissance technique.
 
-Voyez [Construire votre première équipe avec l'Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).
+Voyez [Construire votre première équipe avec Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/).
 
 ## Façon 2 : le construire à la main dans le Studio
 
 Vous créez vous-même l'agent, l'équipe ou le workflow, et vous en réglez chaque partie : le rôle, les instructions, le modèle, les membres, les étapes. Vous avez la main sur tout.
 
-Les deux façons se complètent. Ce que construit l'Assistant est un agent, une équipe ou un workflow ordinaire : vous pouvez l'ouvrir dans son éditeur et le modifier à la main. Et depuis un éditeur, vous pouvez demander à l'Assistant d'expliquer ou d'améliorer ce que vous avez construit.
+Les deux façons se complètent. Ce que construit Winston est un agent, une équipe ou un workflow ordinaire : vous pouvez l'ouvrir dans son éditeur et le modifier à la main. Et depuis un éditeur, vous pouvez demander à Winston d'expliquer ou d'améliorer ce que vous avez construit.
 
 Voyez [Créer un agent](/fr/docs/agents/create-an-agent/), [Créer une équipe d'agents](/fr/docs/teams/create-a-team/) et [Créer un workflow](/fr/docs/workflows/create-a-workflow/).
 
@@ -52,7 +52,7 @@ Voyez [Ce qu'est une VibeApp](/fr/docs/vibeapps/what-a-vibeapp-is/) et [Une app 
 
 ## Quelle façon choisir
 
-- Vous débutez : utilisez l'**Assistant**.
+- Vous débutez : utilisez **Winston**.
 - Vous savez exactement ce que vous voulez, ou vous voulez ajuster un détail : travaillez **à la main**.
 - Vos collègues ou vos clients doivent l'utiliser sans voir le Studio : prévoyez un **portail** ou une **VibeApp**.
 

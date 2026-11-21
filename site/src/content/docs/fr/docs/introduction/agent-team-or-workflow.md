@@ -46,7 +46,7 @@ Choisissez un workflow quand le chemin doit être le même à chaque fois, quand
 | Les mêmes étapes à chaque fois, avec des règles et des validations | Un workflow |
 | Des étapes fixes, dont une demande plusieurs spécialistes | Un workflow qui utilise une équipe |
 
-Vous n'avez pas à choisir seul. L'[Assistant](/fr/docs/getting-started/build-your-first-team-with-the-assistant/) propose un agent, une équipe ou un workflow à partir de votre description.
+Vous n'avez pas à choisir seul. [Winston](/fr/docs/getting-started/build-your-first-team-with-the-assistant/) propose un agent, une équipe ou un workflow à partir de votre description.
 
 ## Dans le Studio
 

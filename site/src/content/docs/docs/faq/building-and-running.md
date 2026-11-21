@@ -1,6 +1,6 @@
 ---
 title: "Questions about building and running"
-description: "Short answers about the Assistant, agents, teams and workflows, about executions, and about what Agentivity does not do yet."
+description: "Short answers about Winston, agents, teams and workflows, about executions, and about what Agentivity does not do yet."
 sidebar:
   order: 2
 editUrl: false
@@ -11,27 +11,27 @@ lastUpdated: false
 
 Short answers about building in the Studio and running what you built.
 
-## The Assistant
+## Winston
 
-### What is the Assistant?
+### Who is Winston?
 
-The part of the Studio where you describe what you need, and it builds an agent, a team or a workflow for you. It asks questions, shows a plan, and builds a draft that you review and save. See [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+Winston, your AI builder, is the part of the Studio where you describe what you need, and he builds an agent, a team or a workflow for you. He asks questions, shows a plan, and builds a draft that you review and publish. See [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
-### Is the Assistant in the Community edition?
+### Is Winston in the Community edition?
 
 Yes. It needs a connection to an AI model, which you set up once.
 
-### Can the Assistant change something without asking me?
+### Can Winston change something without asking me?
 
-No. It works on a draft. Nothing is added to your workspace, and nothing in it is changed, until you save.
+No. He works on a draft. Nothing is added to your workspace, and nothing in it is changed, until you publish.
 
 ### Can I use it on something I already built?
 
-Yes. Open the Assistant and choose to work on an existing one, or start it from the editor of your agent, team or workflow. It opens in a new conversation.
+Yes. Open Winston and choose to work on an existing one, or start from the editor of your agent, team or workflow with **Improve with Winston…**. It opens in a new conversation.
 
 ### Does it replace building by hand?
 
-No. The Assistant is the fast way to a first version, to a change, or to a second opinion. What it builds is an ordinary agent, team or workflow, which you can open and change by hand.
+No. Winston is the fast way to a first version, to a change, or to a second opinion. What it builds is an ordinary agent, team or workflow, which you can open and change by hand.
 
 ### Is a first draft good enough to use?
 

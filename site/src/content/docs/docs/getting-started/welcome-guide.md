@@ -1,6 +1,6 @@
 ---
 title: "Follow the welcome guide in the Studio"
-description: "The first time you open the Studio, a short guide helps you connect an AI model and try a ready-made solution. Here is what each step does."
+description: "The first time you open the Studio, a short guide helps you connect an AI model, then tells you where to start. Here is what each step does."
 sidebar:
   order: 2
 editUrl: false
@@ -9,27 +9,26 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/getting-started/welcome-guide.md. Do not edit here: edit the source and publish again. -->
 
-The first time you open the Studio, a welcome guide appears. At the top, five stops show where you are: **Welcome**, **Model**, **First team**, **News** and **Ready**. Three of them are steps (**Step 1 of 3**, **Step 2 of 3**, **Step 3 of 3**). You can skip any step and come back to it later.
+The first time you open the Studio, a welcome guide appears. At the top, three stops show where you are: **Welcome**, **Model** and **Ready**. You can skip the guide and come back to it later.
 
 ## What you need
 
 - Agentivity running, with the Studio open in your browser. If it is not, start with [Install Agentivity with Docker](/docs/getting-started/install-community/).
-- For step 1, an OpenRouter account, which you can create on the way, or an API key from an AI model provider if you prefer to use your own. An API key is a secret code that lets Agentivity use your account with that provider.
-- For step 2, an internet connection on the machine where Agentivity runs.
+- For the step **Model**, an OpenRouter account, which you can create on the way, or an API key from an AI model provider if you prefer to use your own. An API key is a secret code that lets Agentivity use your account with that provider. On a hosted workspace, you may also have an AI credit code.
 
 ## Start the guide
 
-![The first screen of the welcome guide: the five stops at the top, the title "Your next hire is an AI team.", the buttons Let's start and Not now, and a navy card that lists what the next three minutes cover](images/welcome-guide.jpg)
+<!-- IMAGE images/welcome-guide.jpg: The first screen of the welcome guide, with the three stops at the top, the title "Start with one workflow. Grow to a whole AI company.", the buttons Let's start and Not now, and a navy card that lists the two steps to start. -->
 
-The first screen says what the guide covers, in a card called **In the next three minutes**: **Connect a model**, **Bring in a ready-made team** and **Build your own**.
+The first screen says "Start with one workflow. Grow to a whole AI company." Pick one job you do by hand, and add agents and teams as the work grows: you stay in charge. A card called **Two steps to start** lists what comes next: **Connect a model**, then **Tell Winston what you want to automate**.
 
 1. Select **Let's start**.
 
 If you prefer to look around first, select **Not now**, or **Skip the guide** at the top right. See [Open the guide again](#open-the-guide-again).
 
-## Step 1: give your team a brain
+## Step 1: connect a model
 
-Your agents need an AI model to think with. The step offers two ways, in two boxes:
+Winston and your agents need an AI model to think with. The step is called **One step before you start**, and offers two ways, in two boxes:
 
 - **One OpenRouter account**, marked **Recommended**: no key to copy, models from several providers, and you pay for what you use. If you already have an account, you just sign in.
 - **Use my own key**: for someone who already pays an AI provider, such as Anthropic or OpenAI. You paste a key, and Agentivity checks it at once.
@@ -57,44 +56,19 @@ The key is stored in your workspace and is never shown again.
 
 If a model connection already exists, a green line says so ("You already have a model connection") and you can select **Continue**, or add another one.
 
+On a hosted workspace, a third way may be offered: **I have an AI credit code**. Paste the code you were given and select **Use the code**: Agentivity pays for the model calls, up to the credit of the code, and the connection is made at once. The key behind the code stays at Agentivity.
+
 To do this later, select **Skip for now**. If you start a chat or a run with no model connected, the Studio offers the same two choices in a window, so nothing is lost. The page [Connect an AI model](/docs/guides/connect-a-model/) explains the own-key step in detail.
-
-## Step 2: start with a ready-made team
-
-This step offers ready-made solutions, so you can see one work before you build anything. A solution is something you launch to get a need handled from start to finish. Each card says what the solution contains, for example "1 agent · 1 data table".
-
-![Step 2 of the welcome guide, "Start with a ready-made team": the cards CV Screening and Invoice Clerk, each with its picture, what it does, what it contains and the link Add it](images/four-showcases.jpg)
-
-1. On the card of the solution you want, select **Add it**. The window **Import a Template** opens. A Template is one file that holds a solution and everything it needs.
-2. Select **Import**.
-3. The message **Template imported** says what was created. Close it: the guide goes on to the next step.
-
-The import creates new copies in your workspace. Nothing you already have is changed. You will find what was imported among your agents and workflows.
-
-The cards are four: **CV Screening**, **Invoice Clerk**, **Shopping Lab** and **Trip Manager Team**. Scroll to see them all.
-
-The ready-made solutions are downloaded from the Agentivity catalogue of Templates, over the internet. If the catalogue cannot be reached, the guide tells you so and lets you continue. You can import Templates later, in the **Templates** section.
-
-To skip this step, select **Skip for now**. For more detail, read [Try a ready-made solution](/docs/getting-started/try-a-ready-made-solution/).
-
-## Step 3: stay in the loop
-
-You can receive news from Agentivity: new Templates, releases and what we are building. This step is optional.
-
-1. Tick the box **I agree to receive news from Agentivity by e-mail.** On a workspace where you sign in, the box reads **Send the news to** and your address: you do not type it.
-2. Select **Subscribe**. A message says to check your inbox and click the confirmation link. You receive one confirmation e-mail, and you can unsubscribe at any time.
-
-To pass, select **No thanks**.
 
 ## How to know it worked
 
-The guide ends on the screen **Your team is ready.** When you skipped a step, it says **Your workspace is ready.** and tells you that what you skipped can wait. A small mark for each stop says whether it was done or skipped.
+The guide ends on the screen **Your workspace is ready.** It asks "Where would you like to start?" and offers two cards: **Tell Winston what you want to automate** (he builds the trigger, the steps, the agents and teams, and who approves) and **Start from a Template** (workflows, agents and teams ready to adapt). Select **Open my workspace** to go to the Studio. If you skipped the model, the screen says to connect one first: Winston and your agents need one to work.
 
-The screen offers three ways to go on: **Describe a team** (the Assistant builds it for you), **Start from a Template**, and **Open your agents**. Select **Open my workspace** to go to the Studio. At the top right, **Close** does the same.
+The first time, a short tour of the Studio follows. It shows, one screen at a time, what the Studio is, then workflows, agents, teams, connections, Winston and the Desk with its cockpits. The tour opens again from **Getting started**, in the menu on the left, just above your name.
 
 ## Open the guide again
 
-What you skipped is not lost. In the Studio, open your account menu, at the bottom of the menu on the left: select your name, then **Getting started**. The guide opens again.
+What you skipped is not lost. The tour of the Studio opens again with **Getting started**, in the menu on the left, just above your name. The setup guide itself stays in your account menu, under your name.
 
 ## If it does not work
 
@@ -102,8 +76,6 @@ What you skipped is not lost. In the Studio, open your account menu, at the bott
 - **"Paste your API key first."** The key field is empty.
 - **"This key was refused by" your provider.** The Studio shows the message of your provider.
 - **"Choose the model your agents will use."** Choose a model in the list before you select **Save**.
-- **"The marketplace could not be reached."** The machine where Agentivity runs has no access to the catalogue of Templates. Check its internet connection, or skip the step and import a Template later from a file.
-
 ## Next step
 
-[Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/), then [build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+[Find your way around the Studio](/docs/studio/find-your-way-in-the-studio/), then [build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).

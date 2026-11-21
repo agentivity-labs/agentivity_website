@@ -9,7 +9,7 @@ lastUpdated: false
 
 <!-- GENERATED from agentivity_docs/en/agents/create-an-agent.md. Do not edit here: edit the source and publish again. -->
 
-An agent is one AI specialist with a role. To see what an agent is made of first, read [What an agent is made of](/docs/agents/what-an-agent-is/). This page builds an agent by hand. It takes more steps than the Assistant: to have an agent built from a description, read [Build your first team with the Assistant](/docs/getting-started/build-your-first-team-with-the-assistant/).
+An agent is one AI specialist with a role. To see what an agent is made of first, read [What an agent is made of](/docs/agents/what-an-agent-is/). This page builds an agent by hand. It takes more steps than asking Winston: to have an agent built from a description, read [Build your first team with Winston](/docs/getting-started/build-your-first-team-with-the-assistant/).
 
 <video controls muted playsinline preload="metadata" src="/docs-media/en/agents/images/create-an-agent.mp4" aria-label="A recording of the Studio: in Agents & Workflows, New then Agent is selected, the name Reminder Writer is typed, the role is written, an Anthropic Model is dragged from the Nodes catalog onto the canvas and linked to the first diamond of the agent"></video>
 

@@ -47,7 +47,7 @@ A workspace holds up to 30 cockpits.
 
 A new cockpit starts as the home of the Desk. Change it, then publish it. Until then it says **Not published**: nobody sees it in the Desk.
 
-In the list, the menu of a cockpit offers **Open the designer** (to come back to it later), **See it in the Desk**, **Move up**, **Move down**, **Take it off the Desk** and **Delete**. **Move up** and **Move down** set the order of the cockpits in the side bar of the Desk.
+In the list, the menu of a cockpit offers **Open the designer** (to come back to it later), **See it in the Desk**, **Move up**, **Move down**, **Take it off the Desk** and **Delete**. **Move up** and **Move down** set the order of the cockpits in the side bar of the Desk. You can also drag a card onto the place of another: the Desk lists the cockpits in that order.
 
 ## The designer
 

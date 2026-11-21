@@ -78,7 +78,7 @@ The [Terms of Sale](/legal/terms-of-sale) cover the trial, payment, changing pla
 
 ### What is in the Community edition?
 
-The Studio, the Assistant, agents, teams with the five ways of working, workflows, Data Tables, Prompt Studio, Templates and folders. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
+The Studio, Winston, agents, teams with the five ways of working, workflows, Data Tables, Prompt Studio, Templates and folders. See [What the Community edition includes](/docs/introduction/what-the-community-edition-includes/).
 
 ### What is not in it?
 

@@ -31,7 +31,7 @@ Pour choisir entre les trois, lisez [Choisir entre un agent, une équipe et un w
 
 - **Le moteur.** Le programme qui fait tourner vos agents, vos équipes et vos workflows. Il tourne sur votre propre machine ou serveur, avec Docker.
 - **Le Studio.** L'éditeur visuel, dans votre navigateur. C'est là que vous construisez, lancez et suivez tout. Voyez [Se repérer dans le Studio](/fr/docs/studio/find-your-way-in-the-studio/).
-- **L'Assistant.** Une partie du Studio qui construit pour vous. Vous décrivez votre besoin avec vos mots ; il pose des questions, montre un plan et construit un brouillon que vous vérifiez et enregistrez.
+- **Winston.** Votre constructeur IA, une partie du Studio qui construit pour vous. Vous décrivez votre besoin avec vos mots ; il pose des questions, montre un plan et construit un brouillon que vous vérifiez et publiez.
 - **Des Solutions toutes prêtes.** Quatre Solutions de démonstration que vous pouvez importer et ouvrir, pour voir comment une solution terminée est construite.
 
 ## Deux façons de l'avoir
