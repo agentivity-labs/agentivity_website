@@ -470,6 +470,8 @@
     "github_label": "Agentivity sur GitHub",
     "linkedin_href": "https://www.linkedin.com/company/agentivity-io/",
     "linkedin_label": "Agentivity sur LinkedIn",
+    "youtube_href": "https://www.youtube.com/@agentivity",
+    "youtube_label": "Agentivity sur YouTube",
     "docker_hub_href": "https://hub.docker.com/r/agentivitylabs/agentivity",
     "install": "Installer Community",
     "install_href": "/fr/community",
