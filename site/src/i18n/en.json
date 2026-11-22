@@ -11731,7 +11731,10 @@
       "h1_accent": "Grow to a whole AI company.",
       "sub": "AI agents that do the real work, from one task to a whole company.",
       "trial_note": "{trial_days}-day trial · no card",
-      "video_alt": "A short film from the product: one agent becomes a team, then a team in every department, then a whole AI company on one screen."
+      "video_alt": "The Agentivity film: what if you could build your AI company just by describing it? Agents and teams, the Desk where every employee works with your agents, and VibeApps your customers use.",
+      "play_label": "Play the film, 1 min 26 s, with sound",
+      "play_text": "Watch the film · 1:26",
+      "film_note": "Portraits are illustrative, AI-generated."
     },
     "ladder": {
       "eyebrow": "For a one-person bakery, or a company of 500 people.",

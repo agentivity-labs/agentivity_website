@@ -47,11 +47,16 @@ const schema = {
       <p class="trial-note">{h.hero.trial_note.replace('{trial_days}', String(plans.trial.days))}</p>
     </div>
     <figure class="h3-film">
-      <!-- The current film from 12.5 s on: it opens on a title card the home no longer uses. -->
-      <video id="h3-film" muted loop playsinline autoplay preload="auto" poster="/media/home/hero-film-en-teams.jpg" width="1600" height="900" aria-label={h.hero.video_alt}>
-        <source src="/media/home/hero-film-en-teams.mp4" type="video/mp4" />
+      <!-- The film with voice and music: it waits on its poster, the visitor starts it (nothing is loaded before). -->
+      <video id="h3-film" playsinline preload="none" poster="/media/home/hero-film-v9.jpg" width="1920" height="1080" aria-label={h.hero.video_alt}>
+        <source src="/media/home/hero-film-v9.mp4" type="video/mp4" />
       </video>
+      <button class="h3-film-play" type="button" aria-label={h.hero.play_label}>
+        <span class="h3-film-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg></span>
+        <span class="h3-film-play-text">{h.hero.play_text}</span>
+      </button>
     </figure>
+    <p class="h3-film-note">{h.hero.film_note}</p>
   </section>
 
   <!-- 2. From one helper to an AI company -->
@@ -314,9 +319,16 @@ const schema = {
 </Base>
 
 <script>
-  // The hero film stands still for people who asked their system for less motion (the poster stays).
+  // The hero film starts only when the visitor asks, with its sound; the player's own controls then take over.
   const film = document.getElementById('h3-film') as HTMLVideoElement | null;
-  if (film && matchMedia('(prefers-reduced-motion: reduce)').matches) { film.removeAttribute('autoplay'); film.pause(); }
+  const play = document.querySelector('.h3-film-play') as HTMLButtonElement | null;
+  if (film && play) {
+    play.addEventListener('click', () => {
+      film.controls = true;
+      play.hidden = true;
+      film.play().catch(() => { play.hidden = false; });
+    });
+  }
 
   const moving = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -470,7 +482,18 @@ const schema = {
 .h3 :global(.h3-reveal) { opacity: 0; transform: translateY(56px); }
 .h3 :global(.h3-reveal.is-in) { opacity: 1; transform: none; transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1); }
 .h3-film { width: 100%; margin: 16px 0 0; border-radius: 24px; overflow: hidden; background: var(--ed-navy); box-shadow: 0 40px 70px -40px rgba(16, 26, 46, .6); }
+.h3-film { position: relative; }
 .h3-film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.h3-film-play { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border: 0; padding: 0; background: rgba(14, 27, 48, .18); color: #fff; font: inherit; cursor: pointer; transition: background .2s; }
+.h3-film-play:hover, .h3-film-play:focus-visible { background: rgba(14, 27, 48, .32); }
+.h3-film-play:focus-visible { outline: 3px solid var(--ed-yellow, #F5C542); outline-offset: -6px; }
+.h3-film-play-icon { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; background: var(--ed-yellow, #F5C542); color: var(--ed-navy, #0E1B30); box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .6); transition: transform .2s; }
+.h3-film-play-icon svg { margin-left: 4px; }
+.h3-film-play:hover .h3-film-play-icon { transform: scale(1.06); }
+.h3-film-play-text { font-size: 15px; font-weight: 600; letter-spacing: .01em; padding: 6px 14px; border-radius: 999px; background: rgba(14, 27, 48, .72); }
+.h3-film-play[hidden] { display: none; }
+.h3-film-note { margin: 10px 4px 0; font-size: 13px; color: var(--ed-muted, #5B6475); text-align: right; }
+@media (max-width: 640px) { .h3-film-play-icon { width: 64px; height: 64px; } .h3-film-play-text { font-size: 13px; } }
 
 .h3-shot { margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .h3-shot img, .h3-shot video { display: block; width: 100%; height: auto; }

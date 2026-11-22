@@ -10976,7 +10976,10 @@
       "h1_accent": "Allez jusqu'à toute une entreprise IA.",
       "sub": "Des agents IA qui font le vrai travail, d'une seule tâche à toute une entreprise.",
       "trial_note": "Essai de {trial_days} jours · sans carte",
-      "video_alt": "Un court film tiré du produit : un agent devient une équipe, puis une équipe dans chaque département, puis toute une entreprise IA sur un seul écran."
+      "video_alt": "Le film d'Agentivity : et si vous pouviez construire votre entreprise IA rien qu'en la décrivant ? Des agents et des équipes, le Desk où chaque employé travaille avec vos agents, et les VibeApps qu'utilisent vos clients.",
+      "play_label": "Lancer le film, 1 min 26 s, avec le son",
+      "play_text": "Voir le film · 1:26",
+      "film_note": "Portraits d'illustration, générés par IA."
     },
     "ladder": {
       "eyebrow": "Pour un boulanger seul, ou pour une entreprise de 500 personnes.",
