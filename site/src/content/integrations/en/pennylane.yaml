@@ -1,5 +1,4 @@
 app: Pennylane
-draft: true
 title: 'Pennylane AI Agents: Invoices and Customers | Agentivity'
 description: A Pennylane AI agent drafts customer invoices, adds customers, reads supplier invoices and bank transactions, and starts work on each e-invoice.
 h1: Pennylane
@@ -13,7 +12,7 @@ does:
   - title: Add customers
     body: It adds a company with its billing address, SIREN and VAT number, or a person, as a customer.
   - title: Read your books
-    body: It lists and reads customer invoices, supplier invoices, customers and bank transactions, with Pennylane's filters.
+    body: It lists customer invoices, supplier invoices, customers and bank transactions with Pennylane's filters, and reads an invoice with its lines.
   - title: Start on an e-invoice
     body: 'A supplier''s e-invoice received, or a customer e-invoice that changes status (delivered, refused, collected): each can start an agent, a team or a workflow.'
 example:

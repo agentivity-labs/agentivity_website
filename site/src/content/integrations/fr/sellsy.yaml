@@ -1,17 +1,16 @@
 app: Sellsy
-draft: true
 title: 'Agents IA Sellsy : devis, factures et clients | Agentivity'
 description: Un agent IA Sellsy ajoute entreprises et contacts, prépare devis et factures avec leurs lignes, et change le statut d'un devis au fil de la vente.
 h1: Sellsy
 h1_accent: agents IA
-lead: Un agent IA Sellsy transforme une demande en brouillon de devis dans Sellsy, avec ses lignes, pour que personne ne la ressaisisse. Il ajoute aussi l'entreprise et son contact, et prépare la facture quand le devis est accepté.
+lead: Un agent IA Sellsy transforme une demande en brouillon de devis dans Sellsy, avec ses lignes, pour que personne ne la ressaisisse. Il ajoute aussi l'entreprise et le contact, et prépare la facture d'une entreprise cliente.
 does:
   title: Ce que vos agents font dans Sellsy
   items:
   - title: Entreprises et contacts
     body: Il trouve une entreprise par son nom ou son adresse e-mail, la lit, et ajoute une entreprise (un prospect, sauf indication contraire) ou un contact avec son poste.
   - title: Préparer des devis
-    body: Il prépare un devis pour une entreprise avec ses lignes (« 2 x Journée de conseil @ 600 »), la taxe de chaque ligne, sa date de validité et sa devise.
+    body: Il prépare un devis pour une entreprise avec ses lignes (« 2 x Journée de conseil @ 600 »), une taxe pour toutes ses lignes, sa date de validité et sa devise.
   - title: Suivre le devis
     body: 'Il change le statut d''un devis : envoyé, accepté, refusé ou annulé.'
   - title: Préparer des factures
@@ -21,10 +20,10 @@ example:
   body: D'une demande de devis à un brouillon dans Sellsy.
   steps:
   - 'Une demande de devis arrive par votre formulaire : le workflow démarre.'
-  - Un agent la lit et trouve l'entreprise dans Sellsy, ou l'ajoute comme prospect avec son contact.
+  - Un agent la lit et trouve l'entreprise dans Sellsy, ou l'ajoute comme prospect, et ajoute le contact.
   - Il prépare le devis avec les lignes et les prix de votre table de tarifs.
   - Une personne vérifie le brouillon dans Sellsy et l'envoie.
-  result: Le devis est prêt à vérifier quelques minutes après la demande, avec l'entreprise et le contact déjà dans Sellsy.
+  result: Le devis est prêt à vérifier dès l'arrivée de la demande, avec l'entreprise et le contact déjà dans Sellsy.
 connect:
   title: Connecter Sellsy
   steps:

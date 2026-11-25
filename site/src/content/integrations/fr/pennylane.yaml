@@ -1,5 +1,4 @@
 app: Pennylane
-draft: true
 title: 'Agents IA pour Pennylane : factures et clients | Agentivity'
 description: Un agent IA Pennylane prépare vos factures clients, ajoute vos clients, lit factures fournisseurs et transactions, et démarre à chaque e-facture.
 h1: Pennylane
@@ -13,7 +12,7 @@ does:
   - title: Ajouter des clients
     body: Il ajoute une entreprise avec son adresse de facturation, son SIREN et son numéro de TVA, ou une personne, comme client.
   - title: Lire votre comptabilité
-    body: Il liste et lit les factures clients, les factures fournisseurs, les clients et les transactions bancaires, avec les filtres de Pennylane.
+    body: Il liste les factures clients, les factures fournisseurs, les clients et les transactions bancaires avec les filtres de Pennylane, et lit une facture avec ses lignes.
   - title: Démarrer sur une e-facture
     body: 'Une facture électronique fournisseur reçue, ou une e-facture client qui change de statut (délivrée, refusée, encaissée) : chacune peut lancer un agent, une équipe ou un workflow.'
 example:

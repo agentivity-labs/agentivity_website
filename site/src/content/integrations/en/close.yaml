@@ -1,10 +1,9 @@
 app: Close
-draft: true
 title: 'Close CRM AI Agents: Leads Kept Up to Date | Agentivity'
 description: A Close AI agent adds leads, updates their status, adds opportunities, notes and tasks, and starts work when a lead moves or a deal is won.
 h1: Close
 h1_accent: AI agents
-lead: A Close AI agent keeps your pipeline true without anyone typing into the CRM. It adds the lead after a form, writes the note after a call, and starts the next step when a lead changes status or an opportunity is won.
+lead: A Close AI agent keeps your pipeline up to date without anyone typing into the CRM. It adds the lead after a form, writes the note after a call, and starts the next step when a lead changes status or an opportunity is won.
 does:
   title: What your agents do in Close
   items:

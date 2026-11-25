@@ -1,5 +1,4 @@
 app: Attio
-draft: true
 title: 'Attio AI Agents: Your CRM Records Kept Current | Agentivity'
 description: An Attio AI agent finds, creates and updates your CRM records, adds notes and tasks, and starts work when a record is added or changes.
 h1: Attio
@@ -29,7 +28,7 @@ connect:
   title: Connect Attio
   steps:
   - In Attio, open Workspace settings, then Developers, then Access tokens, and press Create token.
-  - 'Give it the scopes of what it does: Records (read and write), Object configuration (read), Notes and Tasks (read and write), and Webhooks for the triggers.'
+  - 'Give it the scopes of what it does: Records (read and write), Object configuration (read), Notes and Tasks (read and write), and Webhooks (read and write) for the triggers.'
   - Copy the token and paste it in a new Attio connection, in Administration, Credentials.
   docs:
     label: How connections work

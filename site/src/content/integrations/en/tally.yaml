@@ -1,5 +1,4 @@
 app: Tally
-draft: true
 title: 'Tally AI Agents: Act on Every Form Answer | Agentivity'
 description: 'A Tally AI agent starts on each form submission, reads every answer under its question and does the work: reply, file, qualify, alert.'
 h1: Tally
@@ -22,7 +21,7 @@ example:
   - 'An agent reads the answers and sorts the request: a sales lead, a support question or something else.'
   - A sales lead is added to your CRM; a support question goes to your support team.
   - The agent drafts a reply for the person who answered, for you to check.
-  result: Each request lands in the right place, with a reply ready, a few seconds after it is sent.
+  result: Each request lands in the right place, with a reply ready, as soon as it is sent.
 connect:
   title: Connect Tally
   steps:

@@ -1,5 +1,4 @@
 app: Linear
-draft: true
 title: 'Linear AI Agents: Issues From Every Request | Agentivity'
 description: A Linear AI agent turns requests and bug reports into Linear issues, updates their state, comments, and starts work when an issue moves.
 h1: Linear
@@ -21,7 +20,7 @@ example:
   body: A bug report that becomes a ready issue.
   steps:
   - 'A customer reports a bug through your support form: this starts the workflow.'
-  - An agent reads the report, asks for nothing it already has, and writes a clear title, the steps to reproduce and the expected result.
+  - An agent reads the report, and writes a clear title, the steps to reproduce and the expected result.
   - It creates the issue in the right Linear team, with a priority.
   - When the issue moves to Done, a second workflow drafts the reply to the customer.
   result: Bug reports reach the team as clean issues, and customers hear back when the fix is done.

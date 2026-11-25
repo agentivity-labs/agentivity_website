@@ -1,17 +1,16 @@
 app: Sellsy
-draft: true
 title: 'Sellsy AI Agents: Quotes, Invoices, Companies | Agentivity'
 description: A Sellsy AI agent adds companies and contacts, drafts quotes and invoices with their lines, and changes a quote's status as the deal moves.
 h1: Sellsy
 h1_accent: AI agents
-lead: A Sellsy AI agent turns a request into a draft quote in Sellsy, with its lines, so nobody types it twice. It also adds the company and its contact, and drafts the invoice when the quote is accepted.
+lead: A Sellsy AI agent turns a request into a draft quote in Sellsy, with its lines, so nobody types it twice. It also adds the company and the contact, and drafts the invoice for a customer company.
 does:
   title: What your agents do in Sellsy
   items:
   - title: Companies and contacts
     body: It finds a company by name or email address, reads it, and adds a company (a prospect unless said otherwise) or a contact with their position.
   - title: Draft quotes
-    body: It drafts a quote for a company with its lines ("2 x Consulting day @ 600"), the tax of each line, its validity date and currency.
+    body: It drafts a quote for a company with its lines ("2 x Consulting day @ 600"), one tax for all its lines, its validity date and currency.
   - title: Follow the quote
     body: 'It changes a quote''s status: sent, accepted, refused or cancelled.'
   - title: Draft invoices
@@ -21,10 +20,10 @@ example:
   body: From a request for a quote to a draft in Sellsy.
   steps:
   - 'A request for a quote arrives through your form: this starts the workflow.'
-  - An agent reads it and finds the company in Sellsy, or adds it as a prospect with its contact.
+  - An agent reads it and finds the company in Sellsy, or adds it as a prospect, and adds the contact.
   - It drafts the quote with the lines and prices from your price table.
   - A person checks the draft in Sellsy and sends it.
-  result: The quote is ready to check minutes after the request, with the company and the contact already in Sellsy.
+  result: The quote is ready to check when the request arrives, with the company and the contact already in Sellsy.
 connect:
   title: Connect Sellsy
   steps:
