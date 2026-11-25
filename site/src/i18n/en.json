@@ -894,14 +894,14 @@
   },
   "community_page": {
     "meta": {
-      "title": "Install the Agentivity Community Edition — Free, On Your Own Server",
-      "description": "The free Community edition of Agentivity runs on your own machine or server with Docker. One command to start, the Studio included."
+      "title": "Self-Hosted AI Agents: Agentivity Community Edition",
+      "description": "Run AI agents, teams and workflows on your own server. The Community edition of Agentivity installs with one Docker command, the visual Studio included."
     },
     "hero": {
       "eyebrow": "Community edition",
-      "h1": "Free forever.",
-      "h1_accent": "On your own server.",
-      "sub": "The Community edition is for people who are comfortable with Docker. One command starts Agentivity on your machine or your server, with the Studio included.",
+      "h1": "Self-hosted AI agents,",
+      "h1_accent": "on your own server.",
+      "sub": "Run your AI agents, teams and workflows on your own machine or server, with the visual Studio included. The Community edition is free to use for your own business. You need to be comfortable with Docker: one command starts it.",
       "github": "Star on GitHub",
       "hub": "See the image on Docker Hub",
       "not_technical": "Not technical? The cloud version needs no installation.",
@@ -933,6 +933,29 @@
         {
           "title": "Connect an AI model",
           "body": "Add the key of the provider you use: OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock. Then create your first agent and run it."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "Why self-host",
+      "h2": "Your agents,",
+      "h2_accent": "your server.",
+      "items": [
+        {
+          "title": "Your data stays with you",
+          "body": "Agents, teams, workflows and tables live in a volume on your server. Only what an AI step sends goes to the model provider you choose."
+        },
+        {
+          "title": "Your own model keys",
+          "body": "OpenAI, Anthropic, Gemini, DeepSeek, xAI or AWS Bedrock: you pick the provider and pay it directly."
+        },
+        {
+          "title": "The same Studio as the hosted version",
+          "body": "Build agents, teams of agents and workflows visually, and test them in their chat."
+        },
+        {
+          "title": "Move when you need more",
+          "body": "Sign-in for your colleagues and roles come with the hosted plans, the Desk with Pro and Business. Start on your server, and move when the team grows."
         }
       ]
     },
@@ -11193,6 +11216,7 @@
     }
   },
 "connections_page": {
+  "app_page": { "crumb": "Connections", "crumbs_label": "Breadcrumb", "back": "See all connections" },
   "_comment": "The Connections page (/connections and /fr/connections), refounded on value (2026-11-19): what changes for the customer's teams first, the integrations in sliding rows with \"and many more\", three plain steps, one line of trust. No feature explanation (step or tool, AI models): that is for the docs. The list itself is in src/data/connections.ts.",
   "meta": {
     "title": "Connections: The Work Between Your Apps, Done | Agentivity",

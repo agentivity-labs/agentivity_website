@@ -1,0 +1,49 @@
+app: Resend
+draft: true
+title: 'Resend AI Agents: Send Emails From Workflows | Agentivity'
+description: A Resend AI agent sends your emails, with files attached, checks what happened to each one and keeps your Resend contacts up to date.
+h1: Resend
+h1_accent: AI agents
+lead: 'A Resend AI agent sends the emails your work produces: a confirmation, a report, an invoice in PDF. It sends them from your own domain, and it can check later whether each one was delivered, opened or bounced.'
+does:
+  title: What your agents do in Resend
+  items:
+  - title: Send an email
+    body: 'From an address on a domain verified in Resend, as HTML or plain text, with files attached: a PDF a step made, photos. It can also schedule the email for later.'
+  - title: Check what happened to it
+    body: 'It reads a sent email: its recipients, its subject and its latest status (delivered, opened, bounced). So a workflow can follow up when an email bounced.'
+  - title: Keep your contacts
+    body: It adds, reads, changes and deletes Resend contacts, and marks one as unsubscribed.
+example:
+  title: One example
+  body: A workflow that sends each new customer their welcome pack.
+  steps:
+  - 'A new customer is added: a webhook from your shop or your form starts the workflow.'
+  - An agent writes a short welcome message from your template and the customer's details.
+  - A step makes the welcome pack as a PDF.
+  - Resend sends the email from hello@your-domain, with the PDF attached, and adds the customer as a contact.
+  result: Every new customer gets their pack within the same workflow, and you can see whether it was delivered.
+connect:
+  title: Connect Resend
+  steps:
+  - 'In Resend, open API keys and create a key: Full access to manage contacts too, Sending access to send only.'
+  - Copy the key (it starts with re_) and paste it in a new Resend connection, in Administration, Credentials.
+  - 'Make sure your sending domain is verified in Resend: Domains, then Add domain.'
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - Emails go out only from an address on a domain verified in Resend.
+  - An email has 50 recipients at most.
+  - 'Resend shows a key only once: keep it until you paste it.'
+faq:
+  title: Questions
+  items:
+  - q: Can an agent decide what the email says?
+    a: Yes. An agent writes the subject and the text from your instructions and the data of the workflow; the Resend step sends it. Put an approval before the send when a person should read it first.
+  - q: Can it send attachments?
+    a: 'Yes: files made earlier in the workflow, such as a PDF or photos.'
+  - q: Does it send newsletters?
+    a: It sends emails one by one, up to 50 recipients each. For campaigns to a whole list, use your email marketing tool.

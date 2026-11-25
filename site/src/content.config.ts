@@ -199,4 +199,41 @@ const cases = defineCollection({
   }),
 });
 
-export const collections = { blog, docs, landings, cases };
+
+// A page per connected application, at /connections/<file name>/ (and /fr/connections/<file name>/ when the French file
+// exists): what the agents do with the app, one real example, how to connect it, its limits and a FAQ. An application's
+// publisher can link to it. One YAML file per app and per language, src/content/integrations/<lang>/<slug>.yaml. There is no
+// page without its own text: an app with no file keeps only its tile on /connections. A file marked draft shows only on the
+// local server (astro dev).
+const integrations = defineCollection({
+  loader: glob({ pattern: '**/*.{yaml,yml}', base: './src/content/integrations' }),
+  schema: z.object({
+    // The name of the app as written in src/data/connections.ts: its mark and its tile on /connections come from there.
+    app: z.string(),
+    // Google cuts a title past about 60 characters: "<App> AI agents | Agentivity" fits.
+    title: z.string().max(60),
+    description: z.string().min(50).max(160),
+    draft: z.boolean().default(false),
+    h1: z.string(),
+    h1_accent: z.string().optional(),
+    lead: z.string(),
+    does: z.object({ title: z.string(), items: z.array(z.object({ title: z.string(), body: z.string() })).min(2) }),
+    example: z.object({
+      title: z.string(),
+      body: z.string().optional(),
+      steps: z.array(z.string()).min(2),
+      result: z.string().optional(),
+      // A page of the site that shows it at work (a solution, an article).
+      link: z.object({ label: z.string(), href: z.string() }).optional(),
+    }),
+    connect: z.object({
+      title: z.string(),
+      steps: z.array(z.string()).min(1),
+      docs: z.object({ label: z.string(), href: z.string() }).optional(),
+    }),
+    limits: z.object({ title: z.string(), items: z.array(z.string()).min(1) }).optional(),
+    faq: z.object({ title: z.string(), items: z.array(z.object({ q: z.string(), a: z.string() })).min(2) }),
+  }),
+});
+
+export const collections = { blog, docs, landings, cases, integrations };

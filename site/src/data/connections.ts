@@ -61,7 +61,7 @@ export const connections: Connection[] = [
   app({ name: 'Google Contacts', cat: 'crm', status: 'live', ...both, body: 'Read and update your contacts', bodyFr: 'Lire et mettre à jour vos contacts' }),
   app({ name: 'Mailchimp', cat: 'marketing', status: 'live', ...both, logo: 'mailchimp', body: 'Keep your audiences and send campaigns', bodyFr: 'Tenir vos audiences et envoyer des campagnes' }),
   app({ name: 'Brevo', cat: 'marketing', status: 'live', ...both, logo: 'brevo', body: 'Send emails, and keep your contacts and lists', bodyFr: 'Envoyer des e-mails, tenir vos contacts et vos listes' }),
-  app({ name: 'MailerLite', cat: 'marketing', status: 'live', ...both, body: 'Keep your subscribers and send campaigns', bodyFr: 'Tenir vos abonnés et envoyer des campagnes' }),
+  app({ name: 'MailerLite', cat: 'marketing', status: 'live', ...both, body: 'Keep your subscribers and their groups up to date', bodyFr: 'Tenir à jour vos abonnés et leurs groupes' }),
   app({ name: 'Resend', cat: 'email', status: 'live', ...both, logo: 'resend', body: 'Send emails from your application', bodyFr: 'Envoyer des e-mails depuis votre application' }),
   app({ name: 'Email', cat: 'email', status: 'live', step: true, tool: true, body: 'Send and read emails with any mailbox (SMTP and IMAP)', bodyFr: "Envoyer et lire des e-mails avec n'importe quelle boîte (SMTP et IMAP)" }),
   app({ name: 'Telegram', cat: 'messaging', status: 'live', ...both, starts: true, logo: 'telegram', body: 'Send messages, photos and files from a bot, and read chats', bodyFr: "Envoyer messages, photos et fichiers depuis un bot, et lire les discussions" }),

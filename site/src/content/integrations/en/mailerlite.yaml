@@ -1,0 +1,51 @@
+app: MailerLite
+draft: true
+title: 'MailerLite AI Agents: Subscribers Kept Current | Agentivity'
+description: A MailerLite AI agent adds and updates your subscribers, puts them in the right groups and removes them, from your forms, orders and CRM.
+h1: MailerLite
+h1_accent: AI agents
+lead: A MailerLite AI agent keeps your subscriber list right without anyone exporting a file. After a form, a purchase or a call, it adds the person or updates them, and puts them in the right groups.
+does:
+  title: What your agents do in MailerLite
+  items:
+  - title: Add or update a subscriber
+    body: 'By email address: it adds the person, or updates them if they exist, with their fields (name, company…) and their groups. Fields left out keep their value.'
+  - title: Sort them into groups
+    body: It puts a subscriber in a group or takes them out, for example "Customers" after a first order.
+  - title: Read and list
+    body: It reads a subscriber by ID or email address, and lists your subscribers, all or those with a status.
+  - title: Remove or forget
+    body: It removes a subscriber from the account, or deletes them and their data for good, as the GDPR requires.
+example:
+  title: One example
+  body: Turning a buyer into a customer in your list.
+  steps:
+  - 'A new order arrives: a webhook from your shop starts the workflow.'
+  - 'An agent reads the order: who bought, and what.'
+  - MailerLite updates the buyer as a subscriber, with their name, and puts them in the group "Customers" and the group of the product.
+  - The buyer leaves the group "Leads".
+  result: Your next campaign to customers reaches the right people, with no export and no copy.
+connect:
+  title: Connect MailerLite
+  steps:
+  - In MailerLite, open Integrations, then MailerLite API, then Use.
+  - Press Generate new token, give it a name and copy it.
+  - Paste it in a new MailerLite connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - 'It works on subscribers and groups. It does not write or send your campaigns: you do that in MailerLite.'
+  - 'MailerLite accepts 120 calls a minute: a step that goes through many subscribers waits when it needs to.'
+  - '"Forget" deletes the subscriber''s data for good, within 30 days.'
+faq:
+  title: Questions
+  items:
+  - q: Can an agent choose the groups?
+    a: Yes. From the order, the form or the conversation, the agent decides which groups fit, following your instructions.
+  - q: Will it create duplicates?
+    a: No. "Create or update" finds the subscriber by email address and updates them when they exist.
+  - q: Can it send a campaign?
+    a: No. It keeps the list up to date; the campaigns are sent from MailerLite.

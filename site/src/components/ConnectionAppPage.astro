@@ -1,0 +1,159 @@
+---
+// The page of one connected application (/connections/<slug>/ and /fr/connections/<slug>/), from its YAML file in
+// src/content/integrations/<lang>/: what the agents do with the app, one real example, how to connect it, its limits and a FAQ,
+// then the last call of /connections. The app's mark comes from src/data/connections.ts and src/data/brand-logos.ts. An app's
+// publisher can link to this page: it is in the sitemap and names itself as canonical.
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import StartFree from './StartFree.astro';
+import TrialNote from './TrialNote.astro';
+import { useTranslations, type Lang } from '../i18n/utils';
+import { connections } from '../data/connections';
+import { brandLogos, brandFiles } from '../data/brand-logos';
+import { integrationPages, type IntegrationPage } from '../lib/integrations';
+
+const { page, lang = 'en' } = Astro.props as { page: IntegrationPage; lang?: Lang };
+const t = useTranslations(lang);
+const p = t.connections_page as any;
+const a = p.app_page as any;
+const d = page.data;
+const prefix = lang === 'fr' ? '/fr' : '';
+const item = connections.find((c) => c.name === d.app);
+const mark = item?.logo ? brandLogos[item.logo] : undefined;
+const file = item?.logo ? brandFiles[item.logo] : undefined;
+// hreflang only when the page exists in the other language too.
+const other = await integrationPages(lang === 'fr' ? 'en' : 'fr');
+const both = other.some((o) => o.slug === page.slug);
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: a.crumb, item: new URL(`${prefix}/connections/`, Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: d.app, item: new URL(`${prefix}/connections/${page.slug}/`, Astro.site).href },
+    ],
+  },
+];
+---
+<Base title={d.title} description={d.description} lang={lang} look="editorial" schema={schema} alternates={both}>
+
+<SiteHeader lang={lang} ctaHref={p.hero.cta_href} />
+
+<main class="ca ed-page">
+
+  <!-- 1. The app and what changes with it -->
+  <section class="ed-wrap ca-hero">
+    <nav class="ca-crumbs" aria-label={a.crumbs_label}>
+      <a class="ed-link" href={`${prefix}/connections/`}>{a.crumb}</a>
+      <span aria-hidden="true">/</span>
+      <span>{d.app}</span>
+    </nav>
+    <p class="ca-mark" aria-hidden="true">
+      {mark ? <svg viewBox="0 0 24 24"><path d={mark.d} /></svg> : file ? <img src={file} alt="" width="40" height="40" /> : <b>{d.app.charAt(0)}</b>}
+    </p>
+    <h1>{d.h1} {d.h1_accent && <em>{d.h1_accent}</em>}</h1>
+    <p class="ca-lead">{d.lead}</p>
+    <div class="ca-act">
+      <a class="ed-btn ed-btn--navy" href={p.hero.cta_href}>{p.hero.cta}</a>
+      <TrialNote lang={lang} />
+    </div>
+  </section>
+
+  <!-- 2. What the agents do with it -->
+  <section class="ed-band--mist">
+    <div class="ed-wrap ed-sec">
+      <header class="ed-sec-head"><h2 class="ed-h2 ed-h2--md">{d.does.title}</h2></header>
+      <ul class="ca-does">
+        {d.does.items.map((x) => <li><strong>{x.title}</strong><span>{x.body}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. One real example -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head">
+      <h2 class="ed-h2 ed-h2--md">{d.example.title}</h2>
+      {d.example.body && <p class="ed-sec-sub">{d.example.body}</p>}
+    </header>
+    <ol class="ca-flow">
+      {d.example.steps.map((s, i) => <li><span class="ca-n">{i + 1}</span><span>{s}</span></li>)}
+    </ol>
+    {d.example.result && <p class="ca-result">{d.example.result}</p>}
+    {d.example.link && <p class="ca-more"><a class="ed-link" href={d.example.link.href}>{d.example.link.label}</a></p>}
+  </section>
+
+  <!-- 4. How to connect it, and its limits -->
+  <section class="ed-band--mist">
+    <div class={`ed-wrap ed-sec ca-two${d.limits ? '' : ' ca-two--one'}`}>
+      <div>
+        <h2 class="ed-h2 ed-h2--md">{d.connect.title}</h2>
+        <ol class="ca-steps">{d.connect.steps.map((s) => <li>{s}</li>)}</ol>
+        {d.connect.docs && <p class="ca-more"><a class="ed-link" href={d.connect.docs.href}>{d.connect.docs.label}</a></p>}
+      </div>
+      {d.limits && (
+        <div>
+          <h2 class="ed-h2 ed-h2--md">{d.limits.title}</h2>
+          <ul class="ca-limits">{d.limits.items.map((s) => <li>{s}</li>)}</ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- 5. Questions -->
+  <section class="ed-wrap ed-sec">
+    <header class="ed-sec-head"><h2 class="ed-h2 ed-h2--md">{d.faq.title}</h2></header>
+    <div class="ca-faq">
+      {d.faq.items.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </div>
+    <p class="ca-more"><a class="ed-link" href={`${prefix}/connections/`}>{a.back}</a></p>
+  </section>
+
+  <!-- 6. The last call, as on /connections -->
+  <section class="ed-band--yellow">
+    <div class="ed-wrap ed-final">
+      <h2>{p.cta.h2}</h2>
+      <p class="ed-final-sub">{p.cta.sub}</p>
+      <StartFree lang={lang} label={p.cta.button} plan="pro" />
+    </div>
+  </section>
+
+</main>
+
+<SiteFooter lang={lang} />
+
+</Base>
+
+<style>
+.ca-hero { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-block: clamp(32px, 5vw, 64px) clamp(48px, 6vw, 80px); }
+.ca-crumbs { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ed-ink-3); }
+.ca-mark { display: grid; place-items: center; width: 76px; height: 76px; margin: 8px 0 0; border-radius: 20px; background: #fff; border: 1px solid var(--ed-line); }
+.ca-mark svg { width: 40px; height: 40px; fill: var(--ed-ink); }
+.ca-mark b { font-size: 30px; color: var(--ed-ink-3); }
+.ca-hero h1 { max-width: 920px; margin: 0; font-family: var(--ed-serif); font-weight: 400; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.02; color: var(--ed-ink); }
+.ca-hero h1 em { font-style: italic; }
+.ca-lead { max-width: 680px; margin: 0; font-size: 19px; line-height: 1.55; color: var(--ed-ink-2); }
+.ca-act { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 6px; }
+.ca-does { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.ca-does li { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 18px; background: #fff; border: 1px solid var(--ed-line); font-size: 16px; line-height: 1.55; color: var(--ed-ink-2); }
+.ca-does strong { font-family: var(--ed-serif); font-weight: 400; font-size: 26px; line-height: 1.1; color: var(--ed-ink); }
+.ca-flow { display: flex; flex-direction: column; gap: 12px; max-width: 820px; margin: 0; padding: 0; list-style: none; }
+.ca-flow li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 20px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); font-size: 16.5px; line-height: 1.5; color: var(--ed-ink-2); }
+.ca-n { flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--ed-navy); color: #fff; font-size: 13px; font-weight: 700; }
+.ca-result { max-width: 820px; margin: 20px 0 0; padding: 16px 20px; border-left: 4px solid var(--ed-yellow); background: var(--ed-mist); font-size: 16.5px; line-height: 1.5; color: var(--ed-ink); }
+.ca-more { margin: 22px 0 0; }
+.ca-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 5vw, 72px); }
+.ca-two--one { grid-template-columns: minmax(0, 820px); }
+.ca-steps, .ca-limits { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 0; padding-left: 22px; font-size: 16.5px; line-height: 1.55; color: var(--ed-ink-2); }
+.ca-faq { display: flex; flex-direction: column; gap: 10px; max-width: 900px; }
+.ca-faq details { padding: 18px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); }
+.ca-faq summary { cursor: pointer; font-size: 17px; font-weight: 600; color: var(--ed-ink); }
+.ca-faq p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--ed-ink-2); }
+@media (max-width: 820px) { .ca-two { grid-template-columns: minmax(0, 1fr); } }
+</style>

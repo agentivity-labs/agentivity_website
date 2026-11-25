@@ -1,0 +1,48 @@
+app: Close
+draft: true
+title: 'Close CRM AI Agents: Leads Kept Up to Date | Agentivity'
+description: A Close AI agent adds leads, updates their status, adds opportunities, notes and tasks, and starts work when a lead moves or a deal is won.
+h1: Close
+h1_accent: AI agents
+lead: A Close AI agent keeps your pipeline true without anyone typing into the CRM. It adds the lead after a form, writes the note after a call, and starts the next step when a lead changes status or an opportunity is won.
+does:
+  title: What your agents do in Close
+  items:
+  - title: Add and update leads
+    body: It adds a lead (a company) with its first contact, and changes its status, name, description or custom fields.
+  - title: Opportunities, notes and tasks
+    body: It adds an opportunity with its value and how likely it is, adds a note to a lead, and creates a task for its owner or a colleague.
+  - title: Start the work from Close
+    body: 'A lead added, a lead that changes status, an opportunity added or won: each can start an agent, a team or a workflow.'
+example:
+  title: One example
+  body: What happens when a deal is won.
+  steps:
+  - 'An opportunity moves to a won status in Close: this starts the workflow.'
+  - 'An agent reads the lead and the opportunity: the company, the contact, the amount.'
+  - It drafts the welcome email and the handover note for the team that delivers.
+  - 'It adds a task on the lead in Close: "Kick-off call", for its owner.'
+  result: Every won deal starts its onboarding the same day, and the next step is in Close.
+connect:
+  title: Connect Close
+  steps:
+  - In Close, open Settings, then Developer, then API Keys, and press New API Key.
+  - Copy the key (Close shows it once) and paste it in a new Close connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The key belongs to your user in the organization, and acts with your rights.
+  - The triggers need the right to manage webhooks in Close.
+  - Some actions depend on your Close plan.
+faq:
+  title: Questions
+  items:
+  - q: Can it read the history of a lead?
+    a: Yes. It reads a lead with its contacts and status before it writes, so the note or the email fits.
+  - q: Will it change my pipeline on its own?
+    a: Only what your workflow tells it to change. Put an approval before a step when a person should decide first.
+  - q: Which events can start the work?
+    a: A lead added, a lead status changed, an opportunity added, an opportunity won.

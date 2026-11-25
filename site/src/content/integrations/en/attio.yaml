@@ -1,0 +1,51 @@
+app: Attio
+draft: true
+title: 'Attio AI Agents: Your CRM Records Kept Current | Agentivity'
+description: An Attio AI agent finds, creates and updates your CRM records, adds notes and tasks, and starts work when a record is added or changes.
+h1: Attio
+h1_accent: AI agents
+lead: An Attio AI agent keeps your CRM records current without manual entry. It adds or updates the person, the company or the deal, writes the note after a call, and starts the next step when a record changes.
+does:
+  title: What your agents do in Attio
+  items:
+  - title: Find records
+    body: It finds the records of an object (people, companies, deals or one of yours) with Attio's filter and order, and reads a record with its values as they are now.
+  - title: Create or update
+    body: It updates the record that matches an attribute (an email address for people, a domain for companies), or adds it when there is none. It also changes or deletes a record.
+  - title: Notes and tasks
+    body: It adds a note to a record, such as a call's summary, and creates a task linked to a record, for a member of your workspace.
+  - title: Start the work from Attio
+    body: 'A record added, or a record that changes: each can start an agent, a team or a workflow, with its values.'
+example:
+  title: One example
+  body: The notes after a sales call, filed without typing.
+  steps:
+  - After a call, your colleague pastes the call notes on the Desk.
+  - An agent finds the person and the company in Attio by email address and domain, or adds them.
+  - 'It adds a short note to the company record: what was said and what was agreed.'
+  - 'It creates a task for the account owner: "Send the proposal", due Friday.'
+  result: Every call leaves a note and a next step in Attio, and nobody retypes it.
+connect:
+  title: Connect Attio
+  steps:
+  - In Attio, open Workspace settings, then Developers, then Access tokens, and press Create token.
+  - 'Give it the scopes of what it does: Records (read and write), Object configuration (read), Notes and Tasks (read and write), and Webhooks for the triggers.'
+  - Copy the token and paste it in a new Attio connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The token belongs to the workspace, not to a person.
+  - 'Each action needs its scope on the token: without it, Attio refuses.'
+  - 'Values are written by attribute slug: list an object''s attributes to know them.'
+faq:
+  title: Questions
+  items:
+  - q: Does it work with my own objects?
+    a: 'Yes: people, companies, deals, or an object of yours, by its slug.'
+  - q: Will it create duplicates?
+    a: 'No, with "Create or update": it finds the record by email address, domain or another unique attribute first.'
+  - q: Which events can start the work?
+    a: A record created, and a record updated, with the attribute that changed.

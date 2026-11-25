@@ -1,0 +1,51 @@
+app: Pennylane
+draft: true
+title: 'Agents IA pour Pennylane : factures et clients | Agentivity'
+description: Un agent IA Pennylane prépare vos factures clients, ajoute vos clients, lit factures fournisseurs et transactions, et démarre à chaque e-facture.
+h1: Pennylane
+h1_accent: agents IA
+lead: 'Un agent IA Pennylane vous libère des tâches de comptabilité : il prépare la facture client, ajoute le nouveau client et réagit quand la facture électronique d''un fournisseur arrive. Vous gardez le dernier mot avant que rien ne soit définitif.'
+does:
+  title: Ce que vos agents font dans Pennylane
+  items:
+  - title: Préparer et finaliser les factures
+    body: Il prépare une facture pour un client, une ligne par article, la finalise pour lui donner son numéro, et marque comme payée une facture finalisée quand Pennylane n'a pas vu le paiement.
+  - title: Ajouter des clients
+    body: Il ajoute une entreprise avec son adresse de facturation, son SIREN et son numéro de TVA, ou une personne, comme client.
+  - title: Lire votre comptabilité
+    body: Il liste et lit les factures clients, les factures fournisseurs, les clients et les transactions bancaires, avec les filtres de Pennylane.
+  - title: Démarrer sur une e-facture
+    body: 'Une facture électronique fournisseur reçue, ou une e-facture client qui change de statut (délivrée, refusée, encaissée) : chacune peut lancer un agent, une équipe ou un workflow.'
+example:
+  title: Un exemple
+  body: Une facture fournisseur vérifiée avant d'être payée.
+  steps:
+  - 'La facture électronique d''un fournisseur arrive dans Pennylane : le workflow démarre.'
+  - 'Un agent la lit et la compare à la commande de votre table : le fournisseur, le montant, les lignes.'
+  - Si tout correspond, l'agent écrit un court résumé. Sinon, il dit ce qui diffère.
+  - Une personne approuve ou refuse, et l'équipe est prévenue.
+  result: Chaque facture fournisseur est vérifiée par rapport à la commande, et ce qui ne colle pas va à une personne.
+connect:
+  title: Connecter Pennylane
+  steps:
+  - Dans Pennylane (offre Essentiel ou plus, en administrateur), ouvrez Paramètres, puis Connectivité, puis Développeurs, et cliquez sur Générer un token API.
+  - Choisissez Lecture et écriture pour préparer des factures ou ajouter des clients, ou Lecture seule pour lire.
+  - Copiez le token (Pennylane ne l'affiche qu'une fois) et collez-le dans une nouvelle connexion Pennylane, dans Administration, Credentials.
+  docs:
+    label: Comment fonctionnent les connexions
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Bon à savoir
+  items:
+  - L'API demande l'offre Essentiel ou plus, et un administrateur pour créer le token.
+  - Un token en lecture seule ne peut rien modifier.
+  - 'Les déclencheurs portent sur les e-factures : factures fournisseurs reçues, et statut des e-factures clients.'
+faq:
+  title: Questions
+  items:
+  - q: Envoie-t-il des factures sans moi ?
+    a: 'Il les prépare. La finalisation donne son numéro à la facture : placez une approbation avant cette étape pour qu''une personne vérifie d''abord.'
+  - q: Peut-il lire mes transactions bancaires ?
+    a: Oui, il les liste telles que Pennylane les a, avec ses filtres. Il ne déplace pas d'argent.
+  - q: Faut-il savoir coder ?
+    a: Non. Vous construisez le workflow dans le Studio visuel, ou vous le décrivez à Winston, qui en fait une première version.

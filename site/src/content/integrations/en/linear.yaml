@@ -1,0 +1,51 @@
+app: Linear
+draft: true
+title: 'Linear AI Agents: Issues From Every Request | Agentivity'
+description: A Linear AI agent turns requests and bug reports into Linear issues, updates their state, comments, and starts work when an issue moves.
+h1: Linear
+h1_accent: AI agents
+lead: A Linear AI agent turns a request, a bug report or an agent's finding into a clear Linear issue, in the right team. When an issue is created, moves to another state or gets a comment, it can start the next step.
+does:
+  title: What your agents do in Linear
+  items:
+  - title: Create issues
+    body: It creates an issue in a team, in its first backlog state, with a title and a description in Markdown.
+  - title: Update and comment
+    body: It changes an issue's title, description, priority or state ("In Progress", "Done"), and adds comments in Markdown.
+  - title: Read the work
+    body: It reads an issue by its identifier, such as ENG-123, and lists the issues of a team or all of them, the most recently changed first.
+  - title: Start the work from Linear
+    body: 'An issue created, an issue that changes state, a comment added: each can start an agent, a team or a workflow.'
+example:
+  title: One example
+  body: A bug report that becomes a ready issue.
+  steps:
+  - 'A customer reports a bug through your support form: this starts the workflow.'
+  - An agent reads the report, asks for nothing it already has, and writes a clear title, the steps to reproduce and the expected result.
+  - It creates the issue in the right Linear team, with a priority.
+  - When the issue moves to Done, a second workflow drafts the reply to the customer.
+  result: Bug reports reach the team as clean issues, and customers hear back when the fix is done.
+connect:
+  title: Connect Linear
+  steps:
+  - In Linear, open Settings, then Account, then Security & access.
+  - Under Personal API keys, press New key, give it a name and copy it (it starts with lin_api_).
+  - Paste it in a new Linear connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The key acts for you, with your access to the teams.
+  - The triggers make a webhook on a team, which needs the key of a Linear workspace admin.
+  - A new issue starts in the team's first backlog state.
+faq:
+  title: Questions
+  items:
+  - q: Can it pick the right team?
+    a: Yes. From the request and your instructions, the agent chooses the team; you can also fix it in the workflow.
+  - q: Does it close issues on its own?
+    a: Only if your workflow tells it to move an issue to a state. Put an approval before a step when a person should decide.
+  - q: Which events can start the work?
+    a: An issue created, an issue state changed, a comment added.

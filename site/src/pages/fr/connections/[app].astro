@@ -1,0 +1,10 @@
+---
+import ConnectionAppPage from '../../../components/ConnectionAppPage.astro';
+import { integrationPages } from '../../../lib/integrations';
+
+export async function getStaticPaths() {
+  return (await integrationPages('fr')).map((page) => ({ params: { app: page.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<ConnectionAppPage page={page} lang="fr" />

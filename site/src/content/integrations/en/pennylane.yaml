@@ -1,0 +1,51 @@
+app: Pennylane
+draft: true
+title: 'Pennylane AI Agents: Invoices and Customers | Agentivity'
+description: A Pennylane AI agent drafts customer invoices, adds customers, reads supplier invoices and bank transactions, and starts work on each e-invoice.
+h1: Pennylane
+h1_accent: AI agents
+lead: 'A Pennylane AI agent takes the bookkeeping chores off your desk: it drafts the customer invoice, adds the new customer, and reacts when a supplier''s e-invoice arrives. You keep the last word before anything is final.'
+does:
+  title: What your agents do in Pennylane
+  items:
+  - title: Draft and finalize invoices
+    body: It drafts an invoice for a customer, one line per item, finalizes it to give it its number, and marks a finalized invoice as paid when Pennylane did not see the payment.
+  - title: Add customers
+    body: It adds a company with its billing address, SIREN and VAT number, or a person, as a customer.
+  - title: Read your books
+    body: It lists and reads customer invoices, supplier invoices, customers and bank transactions, with Pennylane's filters.
+  - title: Start on an e-invoice
+    body: 'A supplier''s e-invoice received, or a customer e-invoice that changes status (delivered, refused, collected): each can start an agent, a team or a workflow.'
+example:
+  title: One example
+  body: A supplier e-invoice checked before it is paid.
+  steps:
+  - 'A supplier''s e-invoice reaches your company in Pennylane: this starts the workflow.'
+  - 'An agent reads it and compares it with the order in your table: the supplier, the amount, the lines.'
+  - If it matches, the agent writes a short summary. If it does not, it says what differs.
+  - A person approves or refuses, and the team is told.
+  result: Every supplier invoice is checked against what was ordered, and what does not add up goes to a person.
+connect:
+  title: Connect Pennylane
+  steps:
+  - In Pennylane (Essential plan or higher, as an admin), open Settings, then Connectivity, then Developers, and press Generate an API token.
+  - Choose Read and write to draft invoices or add customers, or Read only to read.
+  - Copy the token (Pennylane shows it once) and paste it in a new Pennylane connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The API needs the Essential plan or higher, and an admin to make the token.
+  - A Read only token cannot change anything.
+  - 'The triggers start on e-invoices: supplier e-invoices received, and the status of customer e-invoices.'
+faq:
+  title: Questions
+  items:
+  - q: Will it send invoices without me?
+    a: It drafts them. Finalizing gives the invoice its number; put an approval before that step so a person checks it first.
+  - q: Can it read my bank transactions?
+    a: Yes, it lists them as Pennylane has them, with Pennylane's filters. It does not move money.
+  - q: Do I need to code?
+    a: No. You build the workflow in the visual Studio, or describe it to Winston, who builds a first version.

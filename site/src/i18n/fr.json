@@ -994,14 +994,14 @@
   },
   "community_page": {
     "meta": {
-      "title": "Installer l'édition Community d'Agentivity — gratuite, sur votre serveur",
-      "description": "L'édition Community d'Agentivity, gratuite, tourne sur votre machine ou votre serveur avec Docker. Une commande pour démarrer, le Studio inclus."
+      "title": "Agents IA auto-hébergés : l'édition Community d'Agentivity",
+      "description": "Faites tourner des agents IA, des équipes et des workflows sur votre propre serveur. L'édition Community s'installe avec une commande Docker, Studio inclus."
     },
     "hero": {
       "eyebrow": "Édition Community",
-      "h1": "Gratuite pour toujours.",
-      "h1_accent": "Sur votre propre serveur.",
-      "sub": "L'édition Community s'adresse à ceux qui sont à l'aise avec Docker. Une commande lance Agentivity sur votre machine ou votre serveur, Studio inclus.",
+      "h1": "Des agents IA auto-hébergés,",
+      "h1_accent": "sur votre propre serveur.",
+      "sub": "Faites tourner vos agents IA, vos équipes et vos workflows sur votre machine ou votre serveur, avec le Studio visuel inclus. L'édition Community est gratuite pour votre propre activité. Il faut être à l'aise avec Docker : une commande la lance.",
       "github": "Star on GitHub",
       "hub": "Voir l'image sur Docker Hub",
       "not_technical": "Pas technicien ? La version cloud ne demande aucune installation.",
@@ -1033,6 +1033,29 @@
         {
           "title": "Connectez un modèle d'IA",
           "body": "Ajoutez la clé du fournisseur que vous utilisez : OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock. Puis créez votre premier agent et lancez-le."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "Pourquoi auto-héberger",
+      "h2": "Vos agents,",
+      "h2_accent": "votre serveur.",
+      "items": [
+        {
+          "title": "Vos données restent chez vous",
+          "body": "Agents, équipes, workflows et tables sont stockés dans un volume sur votre serveur. Seul ce qu'une étape IA envoie part chez le fournisseur de modèle que vous choisissez."
+        },
+        {
+          "title": "Vos propres clés de modèle",
+          "body": "OpenAI, Anthropic, Gemini, DeepSeek, xAI ou AWS Bedrock : vous choisissez le fournisseur et vous le payez directement."
+        },
+        {
+          "title": "Le même Studio que la version hébergée",
+          "body": "Construisez visuellement des agents, des équipes d'agents et des workflows, et testez-les dans leur chat."
+        },
+        {
+          "title": "Passez à la suite quand il le faut",
+          "body": "La connexion pour vos collègues et les rôles viennent avec les offres hébergées, le Desk avec Pro et Business. Commencez sur votre serveur, et passez à l'hébergé quand l'équipe grandit."
         }
       ]
     },
@@ -11962,6 +11985,7 @@
     }
   },
   "connections_page": {
+    "app_page": { "crumb": "Connexions", "crumbs_label": "Fil d'Ariane", "back": "Voir toutes les connexions" },
     "_comment": "The Connections page (/connections and /fr/connections), refounded on value (2026-11-19): what changes for the customer's teams first, the integrations in sliding rows with \"and many more\", three plain steps, one line of trust. No feature explanation (step or tool, AI models): that is for the docs. The list itself is in src/data/connections.ts.",
     "meta": {
       "title": "Connexions : le travail entre vos applications, fait pour vous | Agentivity",

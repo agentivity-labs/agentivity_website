@@ -1,0 +1,152 @@
+---
+// A comparison page (/compare/agentivity-vs-<tool>/ and /fr/compare/…), drawn from its entry in src/data/compare.ts:
+// the hero with "<Tool> alternative", the short answer (stay with them if… / choose Agentivity if…), the table side by side,
+// what changes with Agentivity, the honest note, the FAQ and the last call. Rewritten 2026-11-25 (ACT-233): one competitor per
+// page, facts about it from its own pages, read on the date given under the table. The look is the one of the earlier pages
+// (the cmp-* styles of legacy-pages.css).
+import Base from '../layouts/Base.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { ComparePage, Status } from '../data/compare';
+
+const { page, lang = 'en' } = Astro.props as { page: ComparePage; lang?: 'en' | 'fr' };
+const fr = lang === 'fr';
+const L = fr
+  ? { yes: 'Oui', partial: 'En partie', no: 'Non', none: '—', feature: 'Fonctionnalité', stay: `Restez sur ${page.tool} si…`, choose: 'Choisissez Agentivity si…', short: 'La réponse courte', side: 'Côte à côte', changes: 'Ce qui change avec Agentivity', honest: 'En toute franchise', faq: 'Questions fréquentes' }
+  : { yes: 'Yes', partial: 'Partly', no: 'No', none: '—', feature: 'Feature', stay: `Stay with ${page.tool} if…`, choose: 'Choose Agentivity if…', short: 'The short answer', side: 'Side by side', changes: 'What changes with Agentivity', honest: 'Honest note', faq: 'Questions' };
+const badge = (s: Status, label?: string) => ({ cls: s === 'none' ? 'no' : s, text: label ?? L[s] });
+
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: page.schemaName, description: page.description },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+<Base look="editorial" title={page.title} description={page.description} schema={schema} lang={lang}>
+  <SiteHeader lang={lang} />
+<main class="ed-page cmp-page">
+
+  <!-- HERO -->
+  <section class="s-black cmp-hero">
+    <div class="cmp-hero-bg" aria-hidden="true"></div>
+    <div class="wrap cmp-hero-inner">
+      <span class="eyebrow" style="color:var(--cyan)">{page.eyebrow}</span>
+      <h1 class="h1 cmp-h1">{page.h1} <span class="cmp-vs-name">{page.h1Accent}</span></h1>
+      <p class="cmp-sub">{page.sub}</p>
+      <div class="cmp-hero-pills">
+        {page.pills.map((pill, i) => <span class="cmp-pill" style={`--c:var(${i === page.pills.length - 1 ? '--cyan' : '--mint'})`}>{pill}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHORT ANSWER -->
+  <section class="s-navy cmp-verdict-section">
+    <div class="wrap">
+      <h2 class="h3 cmp-section-title">{L.short}</h2>
+      <div class="cmp-verdict-grid">
+        <div class="cmp-verdict-card cmp-verdict-card--them">
+          <h3 class="cmp-verdict-name">{L.stay}</h3>
+          <ul class="cmp-verdict-list">{page.stay.map((x) => <li>{x}</li>)}</ul>
+        </div>
+        <div class="cmp-verdict-card cmp-verdict-card--us">
+          <div class="cmp-verdict-badge">Agentivity</div>
+          <h3 class="cmp-verdict-name">{L.choose}</h3>
+          <ul class="cmp-verdict-list">{page.choose.map((x) => <li>{x}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDE BY SIDE -->
+  <section class="s-black cmp-table-section">
+    <div class="wrap">
+      <h2 class="h2 cmp-section-title" style="color:#fff">{L.side}</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th class="cmp-th-feature">{L.feature}</th>
+              <th class="cmp-th-ag">Agentivity</th>
+              <th class="cmp-th-them">{page.tool}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.rows.map((row, i) => {
+              const ag = badge(row.ag, row.agLabel);
+              const them = badge(row.them, row.themLabel);
+              return (
+                <tr class={i % 2 === 0 ? 'cmp-row-even' : ''}>
+                  <td class="cmp-td-feature">
+                    <span class="cmp-feat-name">{row.feature}</span>
+                    {row.note && <span class="cmp-td-note">{row.note}</span>}
+                  </td>
+                  <td class="cmp-td-ag"><span class={`cmp-badge cmp-badge--${ag.cls}`}>{ag.text}</span></td>
+                  <td class="cmp-td-them"><span class={`cmp-badge cmp-badge--${them.cls}`}>{them.text}</span></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <p class="cmp-table-legend">{page.checked}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT CHANGES WITH AGENTIVITY -->
+  <section class="s-navy cmp-deep-section">
+    <div class="wrap">
+      <h2 class="h2 cmp-section-title" style="color:#fff;margin-bottom:8px">{L.changes}</h2>
+      <div class="cmp-studios">
+        {page.changes.map((c) => (
+          <div class="cmp-studio-card">
+            <div class="cmp-studio-header">
+              <div class="cmp-studio-dot" style="--c:var(--mint)"></div>
+              <h3 class="cmp-studio-name">{c.title}</h3>
+            </div>
+            <p class="cmp-studio-body">{c.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="cmp-honest-box">
+        <span class="cmp-honest-label">{L.honest}</span>
+        <p class="cmp-honest-text">{page.honest}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="s-black cmp-faq-section">
+    <div class="wrap">
+      <h2 class="h2 cmp-section-title">{L.faq}</h2>
+      <div class="cmp-faq">
+        {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="s-violet cmp-cta">
+    <div class="wrap cmp-cta-inner">
+      <h2 class="h2 cmp-cta-h2">{page.cta.h2}<br /><span class="grad-text">{page.cta.accent}</span></h2>
+      <p class="cmp-cta-sub">{page.cta.sub}</p>
+      <div class="cmp-cta-btns">
+        <a href={page.cta.primary.href} class="btn btn-primary lg">{page.cta.primary.label}</a>
+        <a href={page.cta.secondary.href} class="btn btn-ghost">{page.cta.secondary.label}</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+<SiteFooter lang={lang} />
+</Base>
+
+<style>
+.cmp-faq-section { padding-block: clamp(56px, 7vw, 96px); }
+.cmp-faq { display: flex; flex-direction: column; gap: 10px; max-width: 900px; margin-top: 28px; }
+.cmp-faq details { padding: 18px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--ed-line); }
+.cmp-faq summary { cursor: pointer; font-size: 17px; font-weight: 600; color: var(--ed-ink); }
+.cmp-faq p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--ed-ink-2); }
+</style>

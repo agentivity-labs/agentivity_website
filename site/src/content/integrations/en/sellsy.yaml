@@ -1,0 +1,50 @@
+app: Sellsy
+draft: true
+title: 'Sellsy AI Agents: Quotes, Invoices, Companies | Agentivity'
+description: A Sellsy AI agent adds companies and contacts, drafts quotes and invoices with their lines, and changes a quote's status as the deal moves.
+h1: Sellsy
+h1_accent: AI agents
+lead: A Sellsy AI agent turns a request into a draft quote in Sellsy, with its lines, so nobody types it twice. It also adds the company and its contact, and drafts the invoice when the quote is accepted.
+does:
+  title: What your agents do in Sellsy
+  items:
+  - title: Companies and contacts
+    body: It finds a company by name or email address, reads it, and adds a company (a prospect unless said otherwise) or a contact with their position.
+  - title: Draft quotes
+    body: It drafts a quote for a company with its lines ("2 x Consulting day @ 600"), the tax of each line, its validity date and currency.
+  - title: Follow the quote
+    body: 'It changes a quote''s status: sent, accepted, refused or cancelled.'
+  - title: Draft invoices
+    body: It drafts an invoice for a customer company, with its lines and due date, and reads quotes and invoices.
+example:
+  title: One example
+  body: From a request for a quote to a draft in Sellsy.
+  steps:
+  - 'A request for a quote arrives through your form: this starts the workflow.'
+  - An agent reads it and finds the company in Sellsy, or adds it as a prospect with its contact.
+  - It drafts the quote with the lines and prices from your price table.
+  - A person checks the draft in Sellsy and sends it.
+  result: The quote is ready to check minutes after the request, with the company and the contact already in Sellsy.
+connect:
+  title: Connect Sellsy
+  steps:
+  - In Sellsy, open the Developer page and make an API client of the personal kind, with the permissions it needs (companies, contacts, quotes, invoices).
+  - Copy its client ID and client secret into a new Sellsy connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The API client acts as you. Its token lasts an hour, and Agentivity asks for a new one when it ends.
+  - 'Marking a quote as sent changes its status only: Sellsy does not email it.'
+  - Some actions depend on your Sellsy plan and on the permissions of the API client.
+faq:
+  title: Questions
+  items:
+  - q: Does it send the quote to the customer?
+    a: No. It drafts the quote and changes its status; sending it stays with you, in Sellsy or by email.
+  - q: Where do the prices come from?
+    a: 'From what you give it: a price table in Agentivity, the request itself, or your instructions.'
+  - q: Do I need to code?
+    a: No. You build the workflow in the visual Studio, or describe it to Winston, who builds a first version.

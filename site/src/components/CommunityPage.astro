@@ -59,6 +59,21 @@ const local = (path: string) => (lang === 'fr' ? '/fr' + path : path);
     </div>
   </section>
 
+  <section class="ed-wrap ed-sec" id="why">
+    <header class="ed-sec-head">
+      <p class="ed-eyebrow">{p.why.eyebrow}</p>
+      <h2 class="ed-h2">{p.why.h2} <em>{p.why.h2_accent}</em></h2>
+    </header>
+    <ul class="cm-know">
+      {p.why.items.map((item: any) => (
+        <li>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
   <section class="ed-wrap ed-sec" id="know">
     <header class="ed-sec-head">
       <p class="ed-eyebrow">{p.know.eyebrow}</p>
