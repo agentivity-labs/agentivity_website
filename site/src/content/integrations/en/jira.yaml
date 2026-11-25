@@ -1,0 +1,51 @@
+app: Jira
+title: 'Jira AI Agents: Issues Written and Moved | Agentivity'
+description: A Jira AI agent creates clear Jira issues, finds them with JQL, updates and comments them, and moves them along your workflow.
+h1: Jira
+h1_accent: AI agents
+lead: A Jira AI agent turns a request or a bug report into a clear Jira issue in the right project. It finds the issues a JQL search returns, comments them, and moves them along your workflow.
+does:
+  title: What your agents do in Jira
+  items:
+  - title: Create issues
+    body: It creates an issue in a project, with its type (Task, Bug, Story…), a summary, a description and labels, and any other field by its Jira ID, such as the priority.
+  - title: Read and search
+    body: It reads an issue by its key, such as ENG-42, and finds issues with JQL, with their summary, status, assignee, priority, type and labels.
+  - title: Update and comment
+    body: It changes an issue's summary, description, labels or other fields, and what it leaves empty stays as it is. It adds comments to an issue.
+  - title: Move along the workflow
+    body: It moves an issue by the transition's name, as Jira shows it on the issue (Start progress, Done). When the issue cannot take it now, the step says which transitions it can.
+example:
+  title: One example
+  body: A weekly look at the issues that wait.
+  steps:
+  - Each Monday morning, a schedule starts the workflow.
+  - An agent searches Jira with JQL for the open issues of the project not updated for two weeks.
+  - It reads each one and adds a comment that asks where it stands.
+  - It writes the list for the team lead, with each issue, its status and how long it has waited.
+  result: No issue sits forgotten, and the team lead starts the week knowing what waits.
+connect:
+  title: Connect Jira
+  steps:
+  - In your Atlassian account, at id.atlassian.com, open Security, then API tokens, and press Create API token.
+  - Give it a name and an expiry (one year at most), and copy the token.
+  - In Administration, Credentials, make a new Jira connection, and give your Jira site (the name before .atlassian.net), the email address of your Atlassian account and the token.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - It works with Jira Cloud, on a site at .atlassian.net.
+  - The token acts for you, with your access to the projects.
+  - 'Atlassian tokens last a year at most: when one expires, make a new one and paste it in the connection.'
+  - Descriptions and comments are written as plain text, each line a paragraph.
+faq:
+  title: Questions
+  items:
+  - q: Can it set the priority or a custom field?
+    a: 'Yes, by the field''s Jira ID, for example {"priority": {"name": "High"}} or a customfield_ ID.'
+  - q: Does it close issues on its own?
+    a: 'Only if you allow it: a workflow step that moves the issue, or the Move permission on an agent''s Jira tool, which is off until you turn it on. Put an approval before a step when a person should decide.'
+  - q: Can a workflow and an agent both use it?
+    a: 'Yes: Jira is a step of a workflow, and a tool an agent uses when it decides to.'

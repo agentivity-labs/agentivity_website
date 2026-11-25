@@ -1,0 +1,51 @@
+app: Google Calendar
+title: 'Google Calendar AI Agents: Meetings Booked | Agentivity'
+description: A Google Calendar AI agent lists what is planned, books meetings with their guests, and moves or removes events in your Google calendars.
+h1: Google Calendar
+h1_accent: AI agents
+lead: A Google Calendar AI agent reads what is planned and books, moves or removes events for you. It finds the events of a period, creates a meeting with its guests, and changes it when plans change.
+does:
+  title: What your agents do in Google Calendar
+  items:
+  - title: See what is planned
+    body: It lists the events of a calendar between two moments, in time order, and can keep only those with given words. Each occurrence of a repeating event is listed on its own.
+  - title: Book events
+    body: It creates an event with its title, start and end, time zone, description, place and guests. Google sends the guests its invitation. A day alone makes an all-day event.
+  - title: Move or remove
+    body: It changes an event, and what it leaves empty stays as it is. It deletes an event, without notifying its guests.
+  - title: Any of your calendars
+    body: It works on the account's own calendar, or on another one by its ID, and reads a single event by its ID.
+example:
+  title: One example
+  body: A meeting booked from a request on the Desk.
+  steps:
+  - 'Your colleague asks on the Desk: book an hour next week with a customer to review the quote.'
+  - An agent lists the events of the calendar for next week and finds a free hour.
+  - It proposes the slot, and your colleague approves it.
+  - It creates the event with its title, the place and the customer's email address. Google sends the invitation.
+  result: The meeting is in the calendar with its invitation sent, without going back and forth.
+connect:
+  title: Connect Google Calendar
+  steps:
+  - In Administration, Credentials, select New credentials and choose Google.
+  - Select Connect with Google, choose the account, and allow what Agentivity asks.
+  - The connection is named after the account. The same connection serves Google Calendar, Sheets and the other Google steps.
+  docs:
+    label: Read the guide
+    href: /docs/guides/connect-google/
+limits:
+  title: Good to know
+  items:
+  - 'You connect by signing in with Google: there is no key to paste, and Agentivity never sees your password.'
+  - It works on the events of the calendars the account can reach. It does not create or share calendars.
+  - A time given without an offset is read in the time zone you give, in UTC otherwise.
+  - Deleting an event does not notify its guests.
+faq:
+  title: Questions
+  items:
+  - q: Does it send invitations?
+    a: Yes. When an event names guests, Google sends them its invitation, as it would from Google Calendar itself.
+  - q: Can it book all-day events?
+    a: 'Yes: give a day alone, such as 2026-11-12. For the end, give the day after the last day.'
+  - q: Can it use a shared calendar?
+    a: Yes, by the calendar's ID, if the account of the connection can reach it. Without one, it uses the account's own calendar.

@@ -1,0 +1,53 @@
+app: Slack
+title: 'Slack AI Agents: Post, Read and Ask in Slack | Agentivity'
+description: A Slack AI agent posts and reads messages, shares files and asks a person in Slack when it needs an answer, then carries on with the reply.
+h1: Slack
+h1_accent: AI agents
+lead: A Slack AI agent posts what your work produces in the right channel, reads what was said there, and asks a person in Slack when something is missing. The reply in the thread goes straight back to the agent.
+does:
+  title: What your agents do in Slack
+  items:
+  - title: Ask a person and wait
+    body: 'With a Slack channel on the agent, it asks its question in a channel, mentioning the people you name, and takes the reply in the thread. You can choose who may answer and how long it waits.'
+  - title: Post and reply
+    body: It posts a message to a channel or in a thread, changes or deletes a message it posted, and adds an emoji reaction to a message.
+  - title: Read channels
+    body: It lists the channels it can see, reads the latest messages of a channel, only those after a given message if asked, and reads a person's profile.
+  - title: Share files
+    body: It shares a file in a channel, from text a step wrote or from a public address, with a message.
+example:
+  title: One example
+  body: A request that is missing a detail, settled in Slack.
+  steps:
+  - Your colleague sends a request on the Desk, but the reason is missing.
+  - The agent asks its question in your team's Slack channel and waits for the reply in the thread.
+  - A colleague answers in the thread; the agent takes the answer and finishes the request.
+  - It posts the complete request, and its advice, in the manager's channel.
+  result: The manager reads one complete message in Slack, and nobody chases the missing detail.
+connect:
+  title: Connect Slack
+  steps:
+  - On api.slack.com/apps, press Create New App, then From scratch.
+  - 'In OAuth & Permissions, add the bot token scopes: chat:write, channels:read, groups:read, channels:history, groups:history, files:write, reactions:write and users:read.'
+  - Press Install to Workspace, copy the Bot User OAuth Token (it starts with xoxb-) and paste it in a new Slack connection, in Administration, Credentials.
+  - In each channel the agent uses, type /invite and the app's name.
+  - 'To wait for replies: copy the Signing Secret from Basic Information into the connection, turn Socket Mode off, and turn on Event Subscriptions with the message.channels event.'
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The token belongs to your Slack app, not to a person, and acts in the workspace where you installed it.
+  - The app reads and posts only in the channels it was invited to.
+  - It can change or delete only the messages it posted.
+  - 'Waiting for a reply needs the signing secret and the app''s events sent to Agentivity.'
+faq:
+  title: Questions
+  items:
+  - q: Can the agent ask someone a question in Slack?
+    a: 'Yes. Put a Slack channel on the agent: when it needs an answer, it asks in the channel you chose and continues with the reply from the thread.'
+  - q: Can I choose who may answer?
+    a: Yes. Give the Slack user IDs allowed to answer; a reply from anyone else is not taken.
+  - q: What can the agent do in Slack on its own?
+    a: 'The Slack operations you allow on its Slack channel: reading is allowed by default, and you allow only the changes the job needs, such as posting.'

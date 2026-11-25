@@ -1,0 +1,52 @@
+app: Airtable
+title: 'Airtable AI Agents: Your Tables Kept Up to Date | Agentivity'
+description: An Airtable AI agent lists, reads, adds, updates and deletes your records, and starts work when a record is added or changes.
+h1: Airtable
+h1_accent: AI agents
+lead: An Airtable AI agent works in the tables your team already uses. It reads and writes records by their field names, and a record added or changed can start an agent, a team or a workflow.
+does:
+  title: What your agents do in Airtable
+  items:
+  - title: Find records
+    body: It lists the records of a table, all of them or only those that match an Airtable formula or a view, and reads a record by ID.
+  - title: Add and update
+    body: It adds one record or many, changes the fields it is given and leaves the others as they are, and deletes a record. Airtable can convert text to the field's type, such as a date or a choice.
+  - title: Create or update
+    body: It updates the record that matches on one to three fields, such as Email, or adds it when there is none.
+  - title: Start the work from Airtable
+    body: 'A record added to a table, or a record that changes: each can start an agent, a team or a workflow, with the record''s fields by name.'
+example:
+  title: One example
+  body: Requests sorted as soon as they reach your table.
+  steps:
+  - 'A request is added to your Requests table, by your form or a colleague: this starts the workflow, with its fields.'
+  - An agent reads the request and decides its type, its priority and a one-line summary.
+  - It updates the same record with the Type, Priority and Summary fields.
+  - When the priority is High, a message goes to your team's Slack channel.
+  result: Every request in the table is sorted and summed up, and the urgent ones reach the team.
+connect:
+  title: Connect Airtable
+  steps:
+  - Open airtable.com/create/tokens and press Create token.
+  - 'Give it the scopes: data.records:read and data.records:write, schema.bases:read to choose bases and tables from a list, webhook:manage for the triggers, and user.email:read if you want to see which account is connected.'
+  - Under Access, add the bases it may use, or all of them.
+  - Copy the token (it starts with pat) and paste it in a new Airtable connection, in Administration, Credentials. Airtable shows it only once.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The token reaches only the bases added under its Access.
+  - The triggers need the webhook:manage scope and creator access to the base.
+  - 'Airtable takes five calls a second per base: a step that writes many records waits when it needs to.'
+  - Create or update fails when several records match.
+faq:
+  title: Questions
+  items:
+  - q: Do I need to know the field IDs?
+    a: 'No. Fields are given by their names: {"Status": "Lead", "Priority": "High"}.'
+  - q: Will it create duplicates?
+    a: 'No, with "Create or update": it finds the record by the fields you name, such as Email, first.'
+  - q: Which events can start the work?
+    a: A record added to a table, and a record of a table that changes, with its fields as they are now.

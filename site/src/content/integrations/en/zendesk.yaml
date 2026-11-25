@@ -1,0 +1,55 @@
+app: Zendesk
+title: 'Zendesk AI Agents: Tickets Answered and Sorted | Agentivity'
+description: A Zendesk AI agent reads, answers and updates tickets, adds private notes, and starts work when a ticket is opened, moves or gets a comment.
+h1: Zendesk
+h1_accent: AI agents
+lead: A Zendesk AI agent takes the first pass on your support tickets. It reads the ticket and its comments, sets the priority, the tags and the agent, writes a reply or a private note, and starts as soon as a ticket is opened or a customer answers.
+does:
+  title: What your agents do in Zendesk
+  items:
+  - title: Find and read tickets
+    body: It lists the tickets, the most recently changed first, finds them with Zendesk's search (status, priority, requester, tags, date), and reads a ticket and its comments, with who wrote them.
+  - title: Reply or add a note
+    body: It adds a reply the customer gets by email, or a private note for your agents, and can set the ticket's status with it.
+  - title: Sort and open tickets
+    body: It changes a ticket's subject, status, priority, tags or assigned agent, and opens a ticket for a customer by their email address. It can also delete a ticket.
+  - title: People
+    body: It finds people by name or email address, reads a person with their role and organization, and adds a customer.
+  - title: Start the work from Zendesk
+    body: 'A ticket opened, a ticket that changes status, a comment added: each can start an agent, a team or a workflow, with the ticket''s subject, description, tags and requester.'
+example:
+  title: One example
+  body: Every new ticket sorted before an agent opens it.
+  steps:
+  - 'A ticket is opened in Zendesk, by email, form, chat or an agent: this starts the workflow, with its subject, description and requester.'
+  - An agent searches Zendesk for the customer's other tickets, to see what they asked before.
+  - It sets the priority and the tags, and assigns the ticket to the right agent by email address.
+  - It adds a private note with a draft reply, for the agent who takes the ticket.
+  result: Each new ticket reaches the right person with a priority, tags and a draft answer to start from.
+connect:
+  title: Connect Zendesk
+  steps:
+  - In Zendesk, open the Admin Center, then Apps and integrations, then APIs, then API tokens, and press Add API token.
+  - Copy the token (Zendesk shows it once).
+  - In a new Zendesk connection, in Administration, Credentials, give your account (acme for acme.zendesk.com), the email address of the agent the token acts as, and the token.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The token acts with the access of the agent whose email address you give.
+  - 'For the triggers, that agent must be an admin: the triggers make webhooks in Zendesk.'
+  - A search gives 1,000 tickets at most.
+  - Tags written on a ticket replace those it has.
+faq:
+  title: Questions
+  items:
+  - q: Will the customer see what the agent writes?
+    a: Only a reply. A private note stays among your agents. Put an approval before the reply when a person should read it first.
+  - q: Can it open a ticket from a form?
+    a: Yes, by the customer's email address. Zendesk adds the customer as a person when they are new.
+  - q: Can a deleted ticket come back?
+    a: Yes. Zendesk keeps a deleted ticket 30 days among the deleted tickets, where it can be restored.
+  - q: Which events can start the work?
+    a: A ticket created, a ticket status changed, with its status before and now, and a comment added, from the customer or an agent, public or private.

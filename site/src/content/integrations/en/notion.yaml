@@ -1,0 +1,51 @@
+app: Notion
+title: 'Notion AI Agents: Your Pages and Databases | Agentivity'
+description: A Notion AI agent reads and writes your Notion pages and databases, fills their fields, adds content and finds pages by title.
+h1: Notion
+h1_accent: AI agents
+lead: A Notion AI agent writes the results of your work where your team already reads them. It adds pages to a database with their fields, writes text into a page, and reads a database to know what is planned or done.
+does:
+  title: What your agents do in Notion
+  items:
+  - title: Fill a database
+    body: 'It adds a page to a database with its fields and its text, and changes the fields of a page. Fields are given as plain values by name: a title, a number, a select, a status, a date, tags.'
+  - title: Read a database
+    body: It lists the pages of a database, filtered and sorted with Notion's own filters, reads a page and its fields, and reads which fields a database has and their types.
+  - title: Write pages
+    body: It creates a page under another page, with a title and text, and adds text or Notion blocks at the end of a page, such as headings and lists.
+  - title: Find and tidy
+    body: It finds the pages shared with it by their title, reads the content of a page, and moves a page to Notion's trash, where it can be restored.
+example:
+  title: One example
+  body: A weekly report written in Notion, from the database your team keeps.
+  steps:
+  - 'Every Monday morning, a schedule starts the workflow.'
+  - An agent lists the pages of your Projects database whose status is In progress or Done, with a Notion filter.
+  - It writes a short report, project by project.
+  - It creates the page "Week report" under your Reports page, with the report as its text.
+  result: The report is in Notion on Monday, where the team reads it, and nobody compiles it by hand.
+connect:
+  title: Connect Notion
+  steps:
+  - In Notion, create an integration for your workspace and copy its token. A workspace owner can do it.
+  - Give it the capabilities to read, update and insert content.
+  - Paste the token in a new Notion connection, in Administration, Credentials.
+  - 'Share each page or database with it: in Notion, open the page, choose •••, then Add connections, and pick it.'
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - The agent sees only the pages and databases shared with the connection, and the pages under them.
+  - 'Without that share, Notion answers that the page cannot be found.'
+  - 'Plain values cover title, text, number, checkbox, select, status, tags, date, URL, email and phone fields; other fields are written in Notion''s own format.'
+faq:
+  title: Questions
+  items:
+  - q: Does it need to know Notion's format?
+    a: 'No. It gives the fields by their names, as plain values: {"Name": "Launch", "Status": "Done"}. It reads the database''s fields first to write each one right.'
+  - q: Can it delete my pages?
+    a: It moves a page to Notion's trash, where it can be restored. It does not delete anything for good.
+  - q: Why can't it find my page?
+    a: The page is not shared with the connection yet. Open it in Notion, choose •••, then Add connections.

@@ -1,0 +1,54 @@
+app: Shopify
+title: 'Shopify AI Agents: Orders, Products, Customers | Agentivity'
+description: A Shopify AI agent reads orders, adds draft products, tags customers, and starts work when an order is placed, paid or fulfilled.
+h1: Shopify
+h1_accent: AI agents
+lead: A Shopify AI agent takes the routine work of your store off your hands. It reads an order with its lines and address, adds a product as a draft, tags a customer, and starts the next step when an order is placed, paid or fulfilled, or a customer is added.
+does:
+  title: What your agents do in Shopify
+  items:
+  - title: Read orders
+    body: It lists the orders, newest first, or finds them with Shopify's search, and reads one with its customer, shipping address, lines, totals and statuses. It adds tags to an order, keeping those it has.
+  - title: Products
+    body: It lists the products with their status, vendor, type, tags and stock, and reads one with its variants, their price, SKU and stock. It adds a product as a draft, and changes a product's name, description, vendor, type, tags or status.
+  - title: Customers
+    body: It finds customers by email address or tag, with their orders and amount spent, reads a customer with their addresses and last orders, adds a customer, and adds tags to a customer.
+  - title: Start the work from Shopify
+    body: 'An order placed, an order paid, an order fulfilled, a customer added: each can start an agent, a team or a workflow, with the order''s lines, total, customer and shipping address, or the new customer''s details.'
+example:
+  title: One example
+  body: Your best customers, tagged as they order.
+  steps:
+  - 'An order is paid in full in Shopify: this starts the workflow, with its total and the customer''s email address.'
+  - An agent finds the customer in Shopify by email address, with their number of orders and the amount they have spent.
+  - When the customer passes the line your team set, such as a third order, it adds the tag "vip" to them, keeping their other tags.
+  - It writes a short line for your team on who joined the list and why.
+  result: Your list of best customers stays current in Shopify, ready for the next thank-you or campaign.
+connect:
+  title: Connect Shopify
+  steps:
+  - Open Shopify's Dev Dashboard with the account that owns your store, and press Create app.
+  - 'Give the app the Admin API scopes of what it does: read_orders and write_orders, read_products and write_products, read_customers and write_customers. Release the version.'
+  - Install the app on your store, then open its Settings and copy the Client ID and the Client secret.
+  - Paste them in a new Shopify connection, in Administration, Credentials, with your store's name (acme for acme.myshopify.com).
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - Shopify gives the app a token that lasts a day; Agentivity asks for a new one when it ends.
+  - Shopify gives the orders of the last 60 days unless the app may read all orders.
+  - 'Each action needs its scope on the app: without it, Shopify refuses.'
+  - A custom app made in your store's admin before 2026 still works, with its Admin API access token and its API secret key.
+faq:
+  title: Questions
+  items:
+  - q: Can it change prices or stock?
+    a: 'No. It reads the price and stock of each variant, but they are set on the variant in Shopify, which it does not change.'
+  - q: Will it publish products on its own?
+    a: A product it adds is a draft, unless your workflow sets another status.
+  - q: Will it create duplicate customers?
+    a: No. Shopify refuses a new customer whose email address or phone number another customer has.
+  - q: Which events can start the work?
+    a: An order created, an order paid in full, an order fulfilled, and a customer created.

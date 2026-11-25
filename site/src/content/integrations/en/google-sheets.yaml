@@ -1,0 +1,50 @@
+app: Google Sheets
+title: 'Google Sheets AI Agents: Rows Read and Written | Agentivity'
+description: A Google Sheets AI agent reads your rows as records, adds rows under the right columns, and updates or clears cells in the sheets your team uses.
+h1: Google Sheets
+h1_accent: AI agents
+lead: A Google Sheets AI agent works in the spreadsheet your team already uses. It reads the rows as records, adds new rows under the right columns, and updates or clears cells, so nobody copies figures by hand.
+does:
+  title: What your agents do in Google Sheets
+  items:
+  - title: Read rows
+    body: It reads a sheet, or a range of it such as Sheet1!A1:D20. With a header row, each row becomes a record whose fields are named by the first row.
+  - title: Add rows
+    body: It adds rows after the last row of a sheet. Given by column name, each value lands under its column; a name that is not a column stops the step, it is never lost.
+  - title: Update or clear cells
+    body: 'It writes values into a range of cells as a person types them: a date stays a date, a formula is computed. It also empties a range and keeps its formatting.'
+  - title: Know the spreadsheet
+    body: It reads the title of a spreadsheet and the names of its sheets. You give the spreadsheet by its address or its ID.
+example:
+  title: One example
+  body: A weekly summary written from the team's sheet.
+  steps:
+  - Each Monday morning, a schedule starts the workflow.
+  - An agent reads the rows of the Orders sheet as records, named by the first row.
+  - 'It sums up the week in a few lines: what came in, what is late, what stands out.'
+  - It adds one row to the Weekly sheet, with the date and its summary.
+  result: The summary of the week is in the sheet every Monday, and nobody copies rows by hand.
+connect:
+  title: Connect Google Sheets
+  steps:
+  - In Administration, Credentials, select New credentials and choose Google.
+  - Select Connect with Google, choose the account, and allow what Agentivity asks.
+  - The connection is named after the account. The same connection serves Google Sheets, Calendar and the other Google steps.
+  docs:
+    label: Read the guide
+    href: /docs/guides/connect-google/
+limits:
+  title: Good to know
+  items:
+  - 'You connect by signing in with Google: there is no key to paste, and Agentivity never sees your password.'
+  - It reaches the spreadsheets the account of the connection can open. Share a spreadsheet with that account to use it.
+  - Records by column name follow the first row exactly. Without names in the first row, give the rows as plain lists of cells.
+faq:
+  title: Questions
+  items:
+  - q: Does my sheet need a header row?
+    a: It helps. With one, each row is a record by column name. Without one, the agent reads and writes plain rows of cells.
+  - q: Can a workflow and an agent both use it?
+    a: 'Yes: Google Sheets is a step of a workflow, and a tool an agent uses when it decides to.'
+  - q: Will it overwrite my formulas?
+    a: Only in the cells it is told to write or clear. Values go in as typed, so a formula it writes is computed, and clearing keeps the formatting.

@@ -1,0 +1,51 @@
+app: HubSpot
+title: 'HubSpot AI Agents: Your CRM Kept Up to Date | Agentivity'
+description: A HubSpot AI agent finds, creates and updates contacts, companies, deals and tickets, and adds notes and tasks to them.
+h1: HubSpot
+h1_accent: AI agents
+lead: A HubSpot AI agent keeps your CRM up to date without manual entry. It finds or adds the contact, the company, the deal or the ticket, changes their properties, and writes the note and the next task on the record.
+does:
+  title: What your agents do in HubSpot
+  items:
+  - title: Find records
+    body: It searches contacts, companies, deals and tickets by words or by HubSpot filters, lists them, reads one by ID with the properties you name, and reads the members of a contact list.
+  - title: Create or update
+    body: It creates a contact, a company, a deal or a ticket, changes its properties, custom ones included, and sets its owner. For a contact, it updates the one with that email address, or adds it.
+  - title: Notes and tasks
+    body: It adds a note, such as a call's summary, or a task to a contact, a company, a deal or a ticket.
+  - title: Clean up
+    body: It deletes a record, which HubSpot moves to its recycling bin.
+example:
+  title: One example
+  body: A request from your website, filed in HubSpot without typing.
+  steps:
+  - 'A request arrives from your website form: a webhook starts the workflow.'
+  - An agent creates or updates the contact by email address, with the first name, the last name and the phone number.
+  - It searches the companies by the email's domain, and creates the company when there is none.
+  - 'It adds a note to the contact with a short summary of the request, and a task on it: "Call back about the request".'
+  result: Every request is in HubSpot with its contact, its company found or added, and a next step, and nobody retypes it.
+connect:
+  title: Connect HubSpot
+  steps:
+  - In HubSpot, open Settings, then Integrations, then Service Keys. A super admin can do it.
+  - 'Create a key with the scopes of what it does: read and write on contacts, companies, deals and tickets, owners (read), lists (read), and the scopes for notes and tasks if you add them.'
+  - Copy the key and paste it in a new HubSpot connection, in Administration, Credentials.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - An access token from an existing private app works too; HubSpot no longer lets you create those.
+  - 'Each action needs its scope on the key: without it, HubSpot refuses.'
+  - Deal and ticket stages, and custom properties, are given by their internal name or ID in HubSpot.
+  - A search gives at most 10,000 results.
+faq:
+  title: Questions
+  items:
+  - q: Will it create duplicate contacts?
+    a: 'No, with "Create or update": it finds the contact by email address first, and adds it only when there is none.'
+  - q: Can it fill my own properties?
+    a: 'Yes. Any property, custom ones included, by its internal name: {"lifecyclestage": "lead"}.'
+  - q: Does it delete records for good?
+    a: No. A deleted record goes to HubSpot's recycling bin.

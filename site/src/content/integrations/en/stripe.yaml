@@ -1,0 +1,52 @@
+app: Stripe
+title: 'Stripe AI Agents: Customers, Payments, Invoices | Agentivity'
+description: A Stripe AI agent finds and updates customers, reads payments and invoices, makes payment links, and starts work when a payment succeeds.
+h1: Stripe
+h1_accent: AI agents
+lead: A Stripe AI agent follows your customers and payments for you. It finds or updates the customer, makes a payment link for a price, reads which invoices are open, and starts the next step when a payment succeeds, an invoice is paid or a subscription changes.
+does:
+  title: What your agents do in Stripe
+  items:
+  - title: Customers
+    body: It creates and changes customers (email address, name, phone, an internal note, your own metadata), reads one, lists them by email address, and finds them with Stripe's search. It can also delete a customer.
+  - title: Payments, invoices and balance
+    body: It lists payments, newest first, for a customer or for all, and reads one with its amount, status and customer. It lists invoices by customer or by status (draft, open, paid, uncollectible, void), and reads the balance, available and pending, by currency.
+  - title: Payment links
+    body: It makes a link to a Stripe payment page for one of your prices and a quantity, to send to a customer.
+  - title: Start the work from Stripe
+    body: 'A payment succeeded, a checkout completed, an invoice paid, a subscription started, changed or ended, a customer added: each can start an agent, a team or a workflow, with the amount, the customer and your metadata.'
+example:
+  title: One example
+  body: A renewal that did not go through, followed up the same day.
+  steps:
+  - 'A subscription moves to past due in Stripe: this starts the workflow, with its status before and now, and its customer.'
+  - An agent reads the customer in Stripe and lists their open invoices.
+  - It drafts a short reminder for the account owner, with the invoices still open.
+  - The account owner checks the draft and sends it.
+  result: Nobody has to spot a failed renewal in the dashboard; the reminder is ready when the subscription slips.
+connect:
+  title: Connect Stripe
+  steps:
+  - 'Start in test mode: in Stripe, open the Developers page, then API keys.'
+  - 'Press Create restricted key and allow only what the workflows need, for example Customers: Write, PaymentIntents: Read, Invoices: Read, Payment Links: Write, Prices: Read, Balance: Read, and Webhook Endpoints: Write for the triggers. Or copy the Secret key, which can do everything.'
+  - 'Paste it in a new Stripe connection, in Administration, Credentials: the connection test says whether the key is in test or live mode.'
+  - When the workflows are ready, make a live key the same way, in a new connection.
+  docs:
+    label: How connections work
+    href: /docs/guides/manage-credentials/
+limits:
+  title: Good to know
+  items:
+  - 'A test key (sk_test_ or rk_test_) works on test data only: no money moves.'
+  - 'A restricted key does only what it allows: without a permission, Stripe refuses.'
+  - A new customer can take a minute to appear in a search.
+  - Deleting a customer is permanent and cancels their subscriptions.
+faq:
+  title: Questions
+  items:
+  - q: Can it charge a card or refund a payment?
+    a: 'No. It reads payments and makes payment links: the customer pays on Stripe''s own page.'
+  - q: Can I try it without real money?
+    a: Yes. Connect a test key first; the workflows then run on Stripe's test data.
+  - q: Which events can start the work?
+    a: A payment succeeded, a checkout completed, an invoice paid, a subscription created, updated or ended, and a customer created.
