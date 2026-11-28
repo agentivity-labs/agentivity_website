@@ -1,20 +1,20 @@
 app: Sellsy
 title: 'Sellsy AI Agents: Quotes, Invoices, Companies | Agentivity'
-description: A Sellsy AI agent adds companies and contacts, drafts quotes and invoices with their lines, and changes a quote's status as the deal moves.
+description: A Sellsy AI agent adds companies and contacts and drafts quotes with their lines; a workflow step drafts the invoice and follows the quote.
 h1: Sellsy
 h1_accent: AI agents
-lead: A Sellsy AI agent turns a request into a draft quote in Sellsy, with its lines, so nobody types it twice. It also adds the company and the contact, and drafts the invoice for a customer company.
+lead: A Sellsy AI agent turns a request into a draft quote in Sellsy, with its lines, so nobody types it twice. It also adds the company and the contact. A workflow step drafts the invoice for a customer company.
 does:
-  title: What your agents do in Sellsy
+  title: What your agents and workflows do in Sellsy
   items:
   - title: Companies and contacts
     body: It finds a company by name or email address, reads it, and adds a company (a prospect unless said otherwise) or a contact with their position.
   - title: Draft quotes
     body: It drafts a quote for a company with its lines ("2 x Consulting day @ 600"), one tax for all its lines, its validity date and currency.
   - title: Follow the quote
-    body: 'It changes a quote''s status: sent, accepted, refused or cancelled.'
+    body: 'A workflow step changes a quote''s status: sent, accepted, refused or cancelled. An agent lists quotes by status.'
   - title: Draft invoices
-    body: It drafts an invoice for a customer company, with its lines and due date, and reads quotes and invoices.
+    body: A workflow step drafts an invoice for a customer company, with its lines and due date. An agent lists and reads quotes and invoices.
 example:
   title: One example
   body: From a request for a quote to a draft in Sellsy.
@@ -42,7 +42,7 @@ faq:
   title: Questions
   items:
   - q: Does it send the quote to the customer?
-    a: No. It drafts the quote and changes its status; sending it stays with you, in Sellsy or by email.
+    a: No. The agent drafts the quote, and a workflow step can change its status; sending it stays with you, in Sellsy or by email.
   - q: Where do the prices come from?
     a: 'From what you give it: a price table in Agentivity, the request itself, or your instructions.'
   - q: Do I need to code?

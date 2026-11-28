@@ -59,7 +59,7 @@ export const connections: Connection[] = [
   app({ name: 'Pipedrive', cat: 'crm', status: 'live', ...both, starts: true, logo: 'pipedrive', body: 'Read and update deals, people and organizations', bodyFr: 'Lire et mettre à jour affaires, personnes et organisations' }),
   app({ name: 'Attio', cat: 'crm', status: 'live', ...both, starts: true, logo: 'attio', body: 'Read and update the records of your CRM', bodyFr: 'Lire et mettre à jour les fiches de votre CRM' }),
   app({ name: 'Google Contacts', cat: 'crm', status: 'live', ...both, body: 'Read and update your contacts', bodyFr: 'Lire et mettre à jour vos contacts' }),
-  app({ name: 'Mailchimp', cat: 'marketing', status: 'live', ...both, logo: 'mailchimp', body: 'Keep your audiences and send campaigns', bodyFr: 'Tenir vos audiences et envoyer des campagnes' }),
+  app({ name: 'Mailchimp', cat: 'marketing', status: 'live', ...both, logo: 'mailchimp', body: 'Keep your audience contacts and their tags up to date', bodyFr: 'Tenir à jour les contacts de vos audiences et leurs étiquettes' }),
   app({ name: 'Brevo', cat: 'marketing', status: 'live', ...both, logo: 'brevo', body: 'Send emails, and keep your contacts and lists', bodyFr: 'Envoyer des e-mails, tenir vos contacts et vos listes' }),
   app({ name: 'MailerLite', cat: 'marketing', status: 'live', ...both, body: 'Keep your subscribers and their groups up to date', bodyFr: 'Tenir à jour vos abonnés et leurs groupes' }),
   app({ name: 'Resend', cat: 'email', status: 'live', ...both, logo: 'resend', body: 'Send emails from your application', bodyFr: 'Envoyer des e-mails depuis votre application' }),
