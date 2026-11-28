@@ -207,4 +207,4 @@ Before you choose, three questions help you see where you stand today:
 None of these questions is about technology. They are about how your company works, and they are worth asking whether or not
 you use the Desk.
 
-[See how the Desk works](https://www.agentivity.io/desk/?utm_source=blog&utm_medium=article&utm_campaign=desk-launch)
+[See how the Desk works](/desk/)

@@ -23,6 +23,40 @@ const cookieCopy = pageLang === 'fr'
     // Cookie consent + GTM gate
     const CONSENT_KEY = 'ag_cookie_consent';
 
+    // Where this visit came from (another site's address, the utm_* of the landing page), kept in this tab only
+    // until the visitor chooses: nothing is sent before Accept, and it is deleted on Decline. Without it, a visitor
+    // who accepts on a later page is counted as a direct visit (ACT-192, founder's yes 2026-11-28).
+    const LANDING_KEY = 'ag_landing';
+    const CAMPAIGN: Record<string, string> = { utm_source: 'campaign_source', utm_medium: 'campaign_medium', utm_campaign: 'campaign_name', utm_term: 'campaign_term', utm_content: 'campaign_content' };
+    function rememberLanding() {
+      try {
+        let referrer = '';
+        try { if (document.referrer && new URL(document.referrer).hostname !== location.hostname) referrer = document.referrer; } catch { /* not an address */ }
+        const params = new URLSearchParams(location.search);
+        const landing: Record<string, string> = {};
+        Object.entries(CAMPAIGN).forEach(([param, field]) => { const value = params.get(param); if (value) landing[field] = value; });
+        if (referrer) landing.page_referrer = referrer;
+        if (Object.keys(landing).length) sessionStorage.setItem(LANDING_KEY, JSON.stringify(landing));
+      } catch { /* storage blocked: nothing kept */ }
+    }
+    function forgetLanding() {
+      try { sessionStorage.removeItem(LANDING_KEY); } catch { /* storage blocked */ }
+    }
+    // On Accept, before Tag Manager loads: hands it the kept source (dataLayer keys landing_page_referrer,
+    // landing_campaign_source…), which the Google tag reads for this page's events; then forgets it.
+    function pushLanding() {
+      try {
+        const kept = sessionStorage.getItem(LANDING_KEY);
+        forgetLanding();
+        if (!kept) return;
+        const entry: Record<string, string> = {};
+        Object.entries(JSON.parse(kept) as Record<string, string>).forEach(([field, value]) => { entry['landing_' + field] = value; });
+        const w = window as any;
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push(entry);
+      } catch { /* storage blocked or damaged: Tag Manager reads the page as it is */ }
+    }
+
     // Called only after the visitor has accepted, and at most once per page.
     function loadGTM() {
       const w = window as any;
@@ -63,16 +97,22 @@ const cookieCopy = pageLang === 'fr'
 
       const stored = readChoice();
       if (stored === 'accepted') loadGTM();
-      else if (stored !== 'declined') setTimeout(show, 800); // no choice yet: ask, after a short delay
+      else if (stored !== 'declined') {
+        // No choice yet: keep where the visit came from, and ask at once, so that most visitors choose on the page they landed on.
+        rememberLanding();
+        show();
+      }
 
       document.getElementById('cookie-accept')?.addEventListener('click', () => {
         saveChoice('accepted');
         hide();
+        pushLanding();
         loadGTM();
       });
       document.getElementById('cookie-decline')?.addEventListener('click', () => {
         saveChoice('declined');
         hide();
+        forgetLanding();
         deleteAnalyticsCookies();
         // Tag Manager was already running on this page: reload so that it stops.
         if ((window as any).__gtmLoaded) location.reload();
